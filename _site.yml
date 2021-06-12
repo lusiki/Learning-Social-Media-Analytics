@@ -54,7 +54,7 @@ right:
 href: site-info.html
 - icon: ion-social-github
 href: https://github.com/lusiki/Learning-Social-Media-Analytics
-output_dir: "docs"
+output_dir: "/docs"
 output:
   html_document:
   theme: flatly
