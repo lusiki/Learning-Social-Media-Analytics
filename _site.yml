@@ -1,61 +1,56 @@
 name: "Learning Social Media Analytics" 
 navbar:
   title: "LSMA"
-left:
-  - text: "General"
-href: index.html
-- text: "About"
-href: about.html
-- text: "Schedule"
-href: schedule.html
+  left:
+    - text: "General"
+      href: index.html
+    - text: "About"
+      href: about.html
+    - text: "Schedule"
+      href: schedule.html
 
-- text: "Courses"
-menu:
-  - text: "Course introduction"
-href: ""
-- text: "Current state and latest trends in the social media space"
-href: "" 
-- text: "IT prerequisites and programming language syntax (R, Python) for the social media analysis "
-href: ""
-- text: "Big Data infrastructure and data acquisition procedures (API, Web/Screen Scraping) for social media analysis"
-href: ""
-- text: "Methods for social media analysis I (descriptive statistics, visualization)"
-href: ""
-- text: "Methods for social media analysis II (network analysis, Natural Language Processing)"
-href: ""
-- text: "Methods for social media analysis III (time series, machine learning, deep learning, neural networks)"
-href: ""
-- text: "General principles of digital marketing (key performance indicators, search engine optimization, social media listening)"
-href: ""
-- text: "Twitter: trend formation and event detection"
-href: ""
-- text: "Facebook: analysis of the institutional, political and brand reach"
-href: ""
-- text: "Instagram: influencer market space and image recognition"
-href: ""
-- text: "LinkedIn: business network and geolocation analysis"
-href: ""
-- text: "Online portals and forums: text analysis and application od NLP methods"
-href: ""
-- text: "Traditional media (newspaper, TV, radio): public sentiment analysis and opinion polarity"
-href: ""
-- text: "Future trends in social media"
-href: ""
-- text: ""
-href: ""
+    - text: "Courses"
+      menu:
+        - text: "Course introduction"
+          href: ""
+        - text: "Current state and latest trends in the social media space"
+          href: "" 
+        - text: "IT prerequisites and programming language syntax (R, Python) for the social media analysis"
+          href: ""
+        - text: "Infencijalna statistika"
+          href: ""
+        - text: "Analiza glavnih komponenti"
+          href: ""
+        - text: "Faktorska analiza"
+          href: ""
+        - text: "Klaster analiza"
+          href: ""
+        - text: "Multivarijatna regresijska analiza"
+          href: ""
+        - text: "Analiza sadržaja"
+          href: ""
+        - text: "Online portals and forums: text analysis and application od NLP methods"
+          href: ""
+        - text: "Traditional media (newspaper, TV, radio): public sentiment analysis and opinion polarity"
+          href: ""
+        - text: "Future trends in social media"
+          href: ""
+        - text: ""
+          href: ""
+        
 
-- text: "News"
-href: news.html  
-- text: "Resources"
-href: resources.html   
+    - text: "News"
+      href: news.html  
+    - text: "Resources"
+      href: resources.html   
 
-right:
-  - text: "Site Info"
-href: site-info.html
-- icon: ion-social-github
-href: https://github.com/lusiki/Learning-Social-Media-Analytics
-output_dir: "/docs"
+  right:
+    - text: "Site-info"
+      href: site-info.html
+    - icon: ion-social-github
+      href: https://github.com/lusiki/WebMultiVar
+output_dir: "docs"
 output:
   html_document:
-  theme: flatly
-highlight: textmate
+    theme: flatly
+    highlight: textmate

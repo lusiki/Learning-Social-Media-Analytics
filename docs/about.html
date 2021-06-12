@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>about.utf8</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">LSMA</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">General</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="schedule.html">Schedule</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Courses
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="">Course introduction</a>
+    </li>
+    <li>
+      <a href="">Current state and latest trends in the social media space</a>
+    </li>
+    <li>
+      <a href="">IT prerequisites and programming language syntax (R, Python) for the social media analysis</a>
+    </li>
+    <li>
+      <a href="">Infencijalna statistika</a>
+    </li>
+    <li>
+      <a href="">Analiza glavnih komponenti</a>
+    </li>
+    <li>
+      <a href="">Faktorska analiza</a>
+    </li>
+    <li>
+      <a href="">Klaster analiza</a>
+    </li>
+    <li>
+      <a href="">Multivarijatna regresijska analiza</a>
+    </li>
+    <li>
+      <a href="">Analiza sadržaja</a>
+    </li>
+    <li>
+      <a href="">Online portals and forums: text analysis and application od NLP methods</a>
+    </li>
+    <li>
+      <a href="">Traditional media (newspaper, TV, radio): public sentiment analysis and opinion polarity</a>
+    </li>
+    <li>
+      <a href="">Future trends in social media</a>
+    </li>
+    <li>
+      <a href=""></a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="news.html">News</a>
+</li>
+<li>
+  <a href="resources.html">Resources</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="site-info.html">Site-info</a>
+</li>
+<li>
+  <a href="https://github.com/lusiki/WebMultiVar">
+    <span class="ion ion-social-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<p><br> <br> <br> <br></p>
+<p>The social media has become a powerful tool to create knowledge and propagate opinions. Simultaneously, social media has created an unprecedented opportunity for companies to engage real-time interactions with consumers. Furthermore, the size and richness of social media data has provided a deep reservoir of insights to understand the society and transform business and marketing operations.</p>
+<p>The <em>Learning social media analytics</em> course will enable students to understand social media and grasp the analytics tools to leverage social media data. The course will describe the current state and trends in the social media space, clarify the technology infrastructure for social media platforms and show how AI, linguistic and statistical methods can be used to study relevant social media topics. The course will introduce state of the art tools for social media analysis such as: data visualization, sentiment analysis, topic modelling, social network analysis, machine learning, natural language processing, neural networks. This toolset will equip students with the ability to independently interpret, analyse and develop social media strategy.</p>
+<p>This is an <strong>Open Source</strong> course in the <strong>Computational Social Science</strong> approach and uses standard tools and methods from <strong>Data Science</strong> and <strong>Statistical Analysis</strong>. R and Python will be be used for the purposes of demonstrating key principles and methods. Prior knowledge od the respective programming language syntax is not necessery for the understanding of key concepts. However, to utilize the course content in the standalone analysis, learning some of the basic syntax is warmly remommended.</p>
+<p>ristupa društvenim znanostima i integrira standardne alate eksplorativne i konfirmatorne statističke analize u sintaksu programskog jezika R. Predznanje programskog jezika R nije nužno ali se preporuča. Pored razumijevanja i provođenja multivarijatne (naprdene) statističke analize, u kolegiju će se obrađivati i niz popratnih informatičkih tehnologija poput: markdown jezika (<em>RMarkdown</em>), platformi za suradnju razmjenu koda (<em>Git</em>, <em>GitHub</em>), vizualizacije podataka (<em>Tableau</em>, <em>ggplot2</em>), podrške za manipulaciju podatcima (<em>tidyverse</em>, <em>data.table</em>), preuzimanja podataka (<em>web scraping</em>, <em>API</em>) i rada sa bazama podataka (<em>SQL</em>,<em>Google Big Querry</em>).</p>
+<p>Kolegij nije zamišljen kao sveobuhvatna referenca za rad s <em>Big Data</em> tehnologijama u društvenim znanostima jer materijali ne pokrivaju: rad sa terminalom (<em>Bash Shell</em>), rad sa platformama za suradnju i razmjenu koda (<em>Git</em>, <em>GitHub</em>), rad sa <em>Docker</em>-om, programiranje i iteraciju, paralelno programiranje, rad u oblaku (<em>Cloud</em>), ostale programske jezike (<em>Python</em>, <em>Java</em>, <em>HTML</em>, <em>Scala</em>).</p>
+<p>Cilj kolegija je upoznavanje sa:</p>
+<ol style="list-style-type: decimal">
+<li>Standardnim eksplorativnim i konfirmatornim multivarijatnim metodama</li>
+<li>Alatima za obradu i manipulaciju podataka</li>
+<li>Modernom metodologijom za analizu podataka</li>
+<li>Alatima za prezentaciju i dijeljenje rezulata</li>
+<li>Programskim jezikom R</li>
+</ol>
+<p><br></p>
+<p>Kolegij će osposobiti studente za razumijevanje i provedbu napredne statističke analize, te omogućiti uključivanje u modernu analitičku paradigmu (<em>computational social science</em>) i tehnološke (<em>frontier</em>) tokove u obradi podataka (<em>data science</em>). Osim naglaska na akademsku primjenu stečenog znanja, kroz kolegij će se studentima olakšati uključivanje u poslovni IT sektor na strani analitike.</p>
+<p><br></p>
+<div id="literatura" class="section level3">
+<h3>Literatura</h3>
+<p>Koristiti ćemo mnoštvo različitih knjiga i resursa koje će biti dostupne na linkovima kod svakog predavanja.</p>
+<p>Sljedeće knjige ulaze u literaturu za kolegij:</p>
+<ul>
+<li><p><a href="http://www.alinea.hr/105.html">Udžbenik</a> iz multivarijatnih statističkih metoda na hrvatskom jeziku.</p></li>
+<li><p><a href="https://link.springer.com/book/10.1007/978-1-4419-9650-3">Uvodni udžbenik</a> za multivarijatne metode u R.</p></li>
+<li><p><a href="https://github.com/gabi493/ADEI/blob/master/Husson%20F.%20et%20al.%20-%20Exploratory%20Multivariate%20Analysis%20by%20Example%20-%20Using%20R%20-%202011.pdf">Udžbenik</a> iz eksplorativne multivarijatne analize u R.</p></li>
+<li><p><a href="https://www.springer.com/gp/book/9783642360046">Detaljni udžbenik</a> za multivarijatnu statistiku.</p></li>
+<li><p><a href="https://us.sagepub.com/en-us/nam/using-r-with-multivariate-statistics/book243861#contents">Sveobuhvatni udžbenik</a> za multivarijatnu statistiku u R.</p></li>
+<li><p><a href="https://web.uniroma1.it/memotef/sites/default/files/file%20lezioni/102b_textbook.pdf">Tehnički udžbenik</a> za multivarijatne metode u R.</p></li>
+<li><p>Za pregled modernog pristupa društvenim znanostima na osnovi podataka: <a href="https://www.bitbybitbook.com/en/1st-ed/preface/">Bit by Bit: Social Research in the Digital Age</a>.</p></li>
+<li><p>Ovo je klasična literatura za <a href="https://r4ds.had.co.nz/">R</a>.</p></li>
+</ul>
+<p><br></p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
