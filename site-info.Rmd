@@ -1,0 +1,10 @@
+---
+title: " "
+---
+
+This page is made in [R Markdown](http://rmarkdown.rstudio.com/) kroz [RStudio](http://rstudio.com).
+
+```{r, child="_sessioninfo.Rmd"}
+
+```
+

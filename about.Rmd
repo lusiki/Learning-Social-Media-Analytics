@@ -1,0 +1,61 @@
+---
+title: " "
+---
+
+<br>
+<br>
+<br>
+<br>
+
+
+The social media has become a powerful tool to create knowledge and propagate opinions. Simultaneously, social media has created an unprecedented opportunity for companies to engage real-time interactions with consumers. Furthermore, the size and richness of social media data has provided a deep reservoir of insights to understand the society and transform business and marketing operations.
+
+The *Learning social media analytics* course will enable students to understand social media and grasp the analytics tools to leverage social media data. The course will describe the current state and trends in the social media space, clarify the technology infrastructure for social media platforms and show how AI, linguistic and statistical methods can be used to study relevant social media topics. The course will introduce state of the art tools for social media analysis such as: data visualization, sentiment analysis, topic modelling, social network analysis, machine learning, natural language processing, neural networks. This toolset will equip students with the ability to independently interpret, analyse and develop social media strategy.  
+
+This is an **Open Source** course in the **Computational Social Science** approach and uses standard tools and methods from **Data Science** and **Statistical Analysis**. R and Python will be be used for the purposes of demonstrating key principles and methods. Prior knowledge od the respective programming language syntax is not necessery for the understanding of key concepts. However, to utilize the course content in the standalone analysis, learning some of the basic syntax is warmly remommended.
+
+
+ristupa društvenim znanostima i integrira standardne alate eksplorativne i konfirmatorne statističke analize u sintaksu programskog jezika R. Predznanje programskog jezika R nije nužno ali se preporuča. Pored razumijevanja i provođenja multivarijatne (naprdene) statističke analize, u kolegiju će se obrađivati i niz popratnih informatičkih tehnologija poput: markdown jezika (*RMarkdown*), platformi za suradnju razmjenu koda (*Git*, *GitHub*), vizualizacije podataka (*Tableau*, *ggplot2*), podrške za manipulaciju podatcima (*tidyverse*, *data.table*), preuzimanja podataka (*web scraping*, *API*) i rada sa bazama podataka (*SQL*,*Google Big Querry*).
+
+
+Kolegij nije zamišljen kao sveobuhvatna referenca za rad s *Big Data* tehnologijama u društvenim znanostima jer materijali ne pokrivaju: rad sa terminalom (*Bash Shell*), rad sa platformama za suradnju i razmjenu koda (*Git*, *GitHub*), rad sa *Docker*-om, programiranje i iteraciju, paralelno programiranje, rad u oblaku (*Cloud*), ostale programske jezike (*Python*, *Java*, *HTML*, *Scala*). 
+
+Cilj kolegija je upoznavanje sa:
+
+1) Standardnim eksplorativnim i konfirmatornim multivarijatnim metodama 
+2) Alatima za obradu i manipulaciju podataka 
+3) Modernom metodologijom za analizu podataka 
+4) Alatima za prezentaciju i dijeljenje rezulata 
+5) Programskim jezikom R
+
+
+<br>
+
+Kolegij će osposobiti studente za razumijevanje i provedbu napredne statističke analize, te omogućiti uključivanje u modernu analitičku paradigmu (*computational social science*) i tehnološke (*frontier*) tokove u obradi podataka (*data science*). Osim naglaska na akademsku primjenu stečenog znanja, kroz kolegij će se studentima olakšati uključivanje u poslovni IT sektor na strani analitike.
+
+
+<br>
+
+### Literatura
+
+Koristiti ćemo mnoštvo različitih knjiga i resursa koje će biti dostupne na linkovima kod svakog predavanja.
+
+Sljedeće knjige ulaze u literaturu za kolegij:
+
+- [Udžbenik](http://www.alinea.hr/105.html) iz multivarijatnih statističkih metoda na hrvatskom jeziku.
+
+- [Uvodni udžbenik](https://link.springer.com/book/10.1007/978-1-4419-9650-3) za multivarijatne metode u R.
+
+- [Udžbenik](https://github.com/gabi493/ADEI/blob/master/Husson%20F.%20et%20al.%20-%20Exploratory%20Multivariate%20Analysis%20by%20Example%20-%20Using%20R%20-%202011.pdf) iz eksplorativne multivarijatne analize u R.
+
+- [Detaljni udžbenik](https://www.springer.com/gp/book/9783642360046) za multivarijatnu statistiku.
+
+- [Sveobuhvatni udžbenik](https://us.sagepub.com/en-us/nam/using-r-with-multivariate-statistics/book243861#contents) za multivarijatnu statistiku u R.
+
+- [Tehnički udžbenik](https://web.uniroma1.it/memotef/sites/default/files/file%20lezioni/102b_textbook.pdf) za multivarijatne metode u R.
+
+- Za pregled modernog pristupa društvenim znanostima na osnovi podataka: [Bit by Bit: Social Research in the Digital Age](https://www.bitbybitbook.com/en/1st-ed/preface/).
+
+- Ovo je klasična literatura za [R](https://r4ds.had.co.nz/).
+
+<br>

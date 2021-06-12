@@ -1,0 +1,159 @@
+---
+title: " "
+---
+
+<br>
+<br>
+<br>
+<br>
+
+*Napomena*: .html i .Rmd formats can be accessed from the  [repository](https://github.com/lusiki/Learning-Social-Media-Analytics).
+<br>
+
+### Lecture 01: Course introduction
+
+
+- 
+- 
+- 
+
+<br>
+**Format:** [.html]() | [.rmd]()
+<br>
+**Readings:**  []()
+<br>
+<br>
+
+### Lecture 02: Osnove programskog jezika R
+
+- 
+- 
+- 
+
+<br>
+**Format:** [.html]() | [.Rmd]() 
+<br>
+**Readings:** []() + []()
+<br>
+<br>
+
+### Lecture 03: 
+
+- 
+- 
+- 
+
+**Format:** [.html]() | [.Rmd]() 
+<br>
+**Readings:** []() + []()
+<br>
+<br>
+
+
+
+### Lecture 04: 
+
+-
+-  
+- 
+
+
+**Format predavanja:** [.html]()) | [.Rmd]() 
+<br>
+**Čitanje:** []() + []()
+<br>
+<br>
+
+### Lecture 05: 
+
+- 
+- 
+- 
+
+
+**Format predavanja:** [.html]() | [.Rmd]() 
+<br>
+**Čitanje:** []()
+<br>
+<br>
+
+### Lecture 06: 
+
+- 
+- 
+- 
+
+
+
+**Format predavanja:** [.html]() | [.Rmd]() 
+<br>
+**Čitanje:** []]() + []() + []()
+<br>
+<br>
+
+
+### Lecture 07: 
+
+- 
+- 
+- 
+
+**Format predavanja:** [.html]()) | [.Rmd]() 
+<br>
+**Čitanje:** []() + []() + []()
+<br>
+<br>
+
+### Lecture 08:  
+
+- 
+- 
+-
+
+
+
+**Format predavanja:** [.html]() | [.Rmd]() 
+<br>
+**Čitanje:** []() + []() + []()
+<br>
+<br>
+
+### Lecture 09: 
+
+- 
+- 
+- 
+
+
+**Format predavanja:** [.html]() | [.Rmd]() 
+<br>
+**Čitanje:** []() + []() + []()
+<br>
+<br>
+
+### Lecture 10:
+
+- 
+- 
+- 
+
+
+**Format predavanja:** [.html]() | [.Rmd]) 
+<br>
+**Čitanje:** []() + []() + []()
+<br>
+<br>
+
+
+### Lecture 11: 
+
+- 
+- 
+- 
+
+
+**Format predavanja:** [.html] | [.Rmd]() 
+<br>
+**Čitanje:** []() + []() + []()
+<br>
+<br>
