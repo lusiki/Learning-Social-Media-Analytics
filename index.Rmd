@@ -22,7 +22,7 @@ title: " "
 <br>
 <br>
 
-Wellcome to the course <b>Learning Social Media Analytics</b> that runs in the academic year, 2021/22 at the University of Croatian Studies, Zagreb. The course and repository materials are maintained by Luka Šikić, PhD. The course <b>Learning Social Media Analytics</b> is made for graduate level students from humanistic, interdisciplinary or/and social science background that have understanding of introductory statistics. The course uses R and Python programming language but doesnt require prior knowledge of the programming syntax. 
+This is the official website of the course <b>Learning Social Media Analytics</b> at the [Faculty of Croatian Studies](https://www.hrstud.unizg.hr/en). The course is made for graduate level students with humanistic, interdisciplinary  and social science background that have been introduced to the basic statistics (101) and desirably have some practical experience with empirical analysis. The course doesn`t assume prior knowledge of programming language syntax (R, Python) and all necessary data science (IT) concepts will be explained along the way. However, to make a practical use of the course content, participants should be open to learn new technical skills and concepts *en route*. This course is an **Open Source** project and all [repository materials](https://github.com/lusiki/Learning-Social-Media-Analytics) are maintained by Luka Šikić.
 
 <br>
 <br>
