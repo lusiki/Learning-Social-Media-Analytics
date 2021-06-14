@@ -126,7 +126,8 @@ title: " "
 [Social Media Scraper Apify](https://apify.com/)
 <br>
 [Social Media Data](https://data.world/datasets/social-media)
-
+<br>
+[Datareportal](https://datareportal.com/)
 
 
 ## Github repositories
