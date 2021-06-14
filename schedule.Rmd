@@ -8,7 +8,7 @@ title: " "
 <br>
 <br>
 
-## Course content and reading lists
+# Course content and reading lists
 *Note*: .html i .Rmd formats can be accessed from the  [repository](https://github.com/lusiki/Learning-Social-Media-Analytics).
 <br>
 <br>
