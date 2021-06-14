@@ -6,15 +6,16 @@ title: " "
 <br>
 <br>
 <br>
-
-
-### Course content and reading lists
-<br>
-<br>
 <br>
 
-*Napomena*: .html i .Rmd formats can be accessed from the  [repository](https://github.com/lusiki/Learning-Social-Media-Analytics).
+## Course content and reading lists
+*Note*: .html i .Rmd formats can be accessed from the  [repository](https://github.com/lusiki/Learning-Social-Media-Analytics).
 <br>
+<br>
+<br>
+<br>
+
+
 
 ### Lecture 01: Course introduction
 
@@ -179,7 +180,21 @@ title: " "
 <br>
 
 
-### Lecture 13: Instagram - influencer market space and image recognition
+
+### Lecture 13: Online portals and forums - text analysis and application od NLP methods
+
+- 
+- 
+- 
+
+
+**Format predavanja:** [.html] | [.Rmd]() 
+<br>
+**Čitanje:** []() + []() + []()
+<br>
+<br>
+
+### Lecture 14: Traditional media (newspaper, TV, radio) - public sentiment analysis and opinion polarity
 
 - 
 - 
@@ -193,34 +208,7 @@ title: " "
 <br>
 
 
-### Lecture 14: Online portals and forums - text analysis and application od NLP methods
-
-- 
-- 
-- 
-
-
-**Format predavanja:** [.html] | [.Rmd]() 
-<br>
-**Čitanje:** []() + []() + []()
-<br>
-<br>
-
-### Lecture 15: Traditional media (newspaper, TV, radio) - public sentiment analysis and opinion polarity
-
-- 
-- 
-- 
-
-
-**Format predavanja:** [.html] | [.Rmd]() 
-<br>
-**Čitanje:** []() + []() + []()
-<br>
-<br>
-
-
-### Lecture 16: Future trends in social media
+### Lecture 15: Future trends in social media
 
 - 
 - 
