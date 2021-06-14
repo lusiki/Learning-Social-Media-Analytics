@@ -17,42 +17,36 @@ R and Python will be be used for the purposes of demonstrating methods. Prior kn
 The course will touch upon several *data science* concepts that have become standard tools in the analysis of social media (but also have more general relevance) such as: working with databases (*SQL*,*Google Big Querry*), web data (*web scraping*, *API*), data manipulation and cleaning (*tidyverse*, *pandas*, *data.table*), IT ollaboration and code sharing (*Git*, *GitHub*) and open source reporting (*RMarkdown*).
 
 
-Cilj kolegija je upoznavanje sa:
+Main aims of the course are:
 
-1) Standardnim eksplorativnim i konfirmatornim multivarijatnim metodama 
-2) Alatima za obradu i manipulaciju podataka 
-3) Modernom metodologijom za analizu podataka 
-4) Alatima za prezentaciju i dijeljenje rezulata 
-5) Programskim jezikom R
-
-
-<br>
-
-Kolegij će osposobiti studente za razumijevanje i provedbu napredne statističke analize, te omogućiti uključivanje u modernu analitičku paradigmu (*computational social science*) i tehnološke (*frontier*) tokove u obradi podataka (*data science*). Osim naglaska na akademsku primjenu stečenog znanja, kroz kolegij će se studentima olakšati uključivanje u poslovni IT sektor na strani analitike.
+1) Catching up with the current state and trends in the social media space 
+2) Understanding IT infrastructure (Big Data) of social media platforms  
+3) Identification of relevant topics in social media research and business 
+4) Understanding tools, methodology and results in social media analytics
+5) Application of key pricniples, tools and methods for independent social media research
 
 
 <br>
 
-### Literatura
+The course will enable students to understand and implement advanced statistical analysis, facilitate inclusion in the modern analytical paradigm (*computational social science*) and cutting edge technological trends in data processing (*data science*). In addition to the emphasis on the academic application of the acquired knowledge, the course will make it easier for students to get involved in the business IT sector on the side of analytics as well as management.
 
-Koristiti ćemo mnoštvo različitih knjiga i resursa koje će biti dostupne na linkovima kod svakog predavanja.
 
-Sljedeće knjige ulaze u literaturu za kolegij:
+<br>
 
-- [Udžbenik](http://www.alinea.hr/105.html) iz multivarijatnih statističkih metoda na hrvatskom jeziku.
+#### Course Literature
 
-- [Uvodni udžbenik](https://link.springer.com/book/10.1007/978-1-4419-9650-3) za multivarijatne metode u R.
 
-- [Udžbenik](https://github.com/gabi493/ADEI/blob/master/Husson%20F.%20et%20al.%20-%20Exploratory%20Multivariate%20Analysis%20by%20Example%20-%20Using%20R%20-%202011.pdf) iz eksplorativne multivarijatne analize u R.
+There is no comprehensive book on the topic of social media analysis. Furthermore, this field is rapidly changing and lerning materials depreciate quickly (mostly due to data avaliability). Therefore, the following following list of books are recommended:
 
-- [Detaljni udžbenik](https://www.springer.com/gp/book/9783642360046) za multivarijatnu statistiku.
+- [Mining the Social Web](https://www.webpages.uidaho.edu/~stevel/504/mining-the-social-web-2nd-edition.pdf) 
 
-- [Sveobuhvatni udžbenik](https://us.sagepub.com/en-us/nam/using-r-with-multivariate-statistics/book243861#contents) za multivarijatnu statistiku u R.
+- [Learning Social Media Analytics with R](https://www.packtpub.com/product/learning-social-media-analytics-with-r/9781787127524)
 
-- [Tehnički udžbenik](https://web.uniroma1.it/memotef/sites/default/files/file%20lezioni/102b_textbook.pdf) za multivarijatne metode u R.
+- [Mastering Social Media Mining with Python](https://www.packtpub.com/product/mastering-social-media-mining-with-python/9781783552016) 
 
-- Za pregled modernog pristupa društvenim znanostima na osnovi podataka: [Bit by Bit: Social Research in the Digital Age](https://www.bitbybitbook.com/en/1st-ed/preface/).
+- [Social Media Data Mining and Analytics](https://www.wiley.com/en-us/Social+Media+Data+Mining+and+Analytics-p-9781118824856) 
 
-- Ovo je klasična literatura za [R](https://r4ds.had.co.nz/).
+- [Social Media Analytics Strategy](https://www.apress.com/us/book/9781484231012)
+
 
 <br>
