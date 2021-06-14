@@ -53,23 +53,45 @@ title: " "
 [Purdue University: Digital Media Analytics](https://www.futurelearn.com/programs/digital-media-analytics?utm_source=RakutenMarketing&utm_medium=Affiliate&utm_campaign=3372305:Digital+Defynd&utm_content=10:1&utm_term=USNetwork&ranMID=44015&ranEAID=vedj0cWlu2Y&ranSiteID=vedj0cWlu2Y-rFD..k0J1VoIFtJkHheEWQ)
 <br>
 [UCLA: Social Media Data Analytics ](https://ashleyrsanders.com/social-media-data-analytics-spring-2019-syllabus/)
+<br>
+[Tilburg University: Social Media Analytics](https://catalogus.tilburguniversity.edu/osiris_student_tiuprd/OnderwijsCatalogusSelect.do?selectie=cursus&collegejaar=2019&taal=en&cursus=800861-M-3)
+<br>
+[Social Media Analytics syllabus](https://comm.osu.edu/sites/default/files/AU20%20Comm%204558%20Syllabus%20Bayer.pdf)
+<br>
+[Stanord: Social Media Analytics Tracking, Modeling and Predicting the Flow of Information through Networks](https://snap.stanford.edu/proj/socmedia-kdd/)
+
+## Journals
+
+<br>
+[Social Media Journals](https://strategicsocialmedialab.com/top-10-academic-journals-for-social-media-research/)
 
 
 ## Open Source repositories
 
 [University of Bath: Collecting Social Media Data](https://library.bath.ac.uk/research-software/social-media-data)
-
+<br>
+[University of Colorado](https://libguides.colorado.edu/c.php?g=740614&p=5296852)
 
 
 
 # Analytic groups and platforms
 
 [Social Media Analytics for Society and Crisis Communication](https://social-media-analytics.org/)
+<br>
+[The Digital Methods Initiative](https://wiki.digitalmethods.net/Dmi/DmiAbout)
 
 
 ## Tutorials
 
 [Twitter Social media data in R](https://www.earthdatascience.org/courses/earth-analytics/get-data-using-apis/intro-to-social-media-text-mining-r/)
+<br>
+[Github tutorial](https://github.com/maria-pro/useR2019_tutorial)
+<br> 
+[Excellent presentation about Social Media Analysis](https://uoa-eresearch.github.io/HackyHour/static/tipstricks/Social%20media%20data%20-%20tips%20and%20tricks.pdf)
+<br>
+[Scraping with R](https://willbowditch.github.io/scraping_with_R/)
+<br>
+[Visualizing Nine Years on LinkedIn using R](https://towardsdatascience.com/nine-years-on-linkedin-in-data-b34047c77223)
 
 
 
@@ -82,11 +104,28 @@ title: " "
 [Reddit:Social Media](https://www.reddit.com/r/socialmedia/)
 <br>
 [Tristan Hotham](https://tristanhotham.com/blog/)
+<br>
+[Social Media Analytics: The Definitive Guide](https://blog.loomly.com/social-media-analytics/)
 
 
-## Data collection tools
+## Useful texts
+
+[The rise of social media](https://ourworldindata.org/rise-of-social-media)
+<br>
+[Social media data in research: a review of the current landscape](https://ocean.sagepub.com/blog/social-media-data-in-research-a-review-of-the-current-landscape)
+
+
+## Data tools
 
 [wikidot list of social media data collection tools](http://socialmediadata.wikidot.com/)
+<br>
+[Social Media Research Toolkit](https://socialmediadata.org/social-media-research-toolkit/)
+<br>
+[Social media - statistics on the use by enterprises](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Social_media_-_statistics_on_the_use_by_enterprises)
+<br>
+[Social Media Scraper Apify](https://apify.com/)
+<br>
+[Social Media Data](https://data.world/datasets/social-media)
 
 
 
@@ -97,8 +136,12 @@ title: " "
 [Learning Social Media Analytics with R](https://github.com/PacktPublishing/Learning-Social-Media-Analytics-with-R)
 <br>
 [Social Media Analysis](https://github.com/vivek2319/SocialMediaAnalysis)
-
-
+<br>
+[Instagram Crawler](https://github.com/JonasSchroeder/InstaCrawlR)
+<br>
+[Mining data from social media platforms](https://github.com/lamthuyvo/social-media-data-scripts)
+<br>
+[Curated list of awesome analyics](https://github.com/0xnr/awesome-analytics)
 
 ## Other
 
