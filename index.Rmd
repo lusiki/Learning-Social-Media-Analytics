@@ -22,7 +22,7 @@ title: " "
 <br>
 <br>
 
-This is the official website of the course <b>Learning Social Media Analytics</b> at the [Faculty of Croatian Studies](https://www.hrstud.unizg.hr/en). The course is made for graduate level students with humanistic, interdisciplinary  and social science background that have been introduced to the basic statistics (101) and desirably have some practical experience with empirical analysis. The course doesn`t assume prior knowledge of programming language syntax (R, Python) and all necessary data science (IT) concepts will be explained along the way. However, to make a practical use of the course content, participants should be open to learn new technical skills and concepts *en route*. This course is an **Open Source** project and all [repository materials](https://github.com/lusiki/Learning-Social-Media-Analytics) are maintained by Luka Šikić.
+This is the official website of the course <b>Learning Social Media Analytics</b> at the [Faculty of Croatian Studies](https://www.hrstud.unizg.hr/en). The aim of the course is to introduce students to the important concepts of the social media and demonstrate state of the art methods for the analysis of social media data. The course is made for graduate level students with humanistic, interdisciplinary and social science background that have been introduced to the basic statistics (101) and desirably have some practical experience with empirical analysis. After the course, students will be able to: 1) understand data generation and infrastructure behind (different) social media, 2) identify, interpret and follow frontier research and business trends in social media, 3) independently analyze social media data for research and business purposes. The course doesn`t assume prior knowledge of programming language syntax (R, Python) and all necessary data science (IT) concepts will be explained along the way. However, to make a practical use of the course content, participants should be open to learn new technical skills and concepts *en route*. This course  aims to promote **computational approach** to social sciences and inclusive learning through **Open Source** principles. All [repository materials](https://github.com/lusiki/Learning-Social-Media-Analytics) are maintained by Luka Sikic.
 
 <br>
 <br>
@@ -31,7 +31,7 @@ This is the official website of the course <b>Learning Social Media Analytics</b
 
 
 
-[Luka Šikić](https://www.lukasikic.info/), PhD</br>
+[Luka Sikic](https://www.lukasikic.info/), PhD</br>
 Faculty of Croatian Studies, Department of Sociology</br>
 <b>Office hours</b>&nbsp;&nbsp;&nbsp;Tuesday,&nbsp;od 11h do 12h</br>
 mail: lsikic@hrstud.hr</br>
