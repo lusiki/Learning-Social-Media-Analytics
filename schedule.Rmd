@@ -7,6 +7,12 @@ title: " "
 <br>
 <br>
 
+
+### Course content and reading lists
+<br>
+<br>
+<br>
+
 *Napomena*: .html i .Rmd formats can be accessed from the  [repository](https://github.com/lusiki/Learning-Social-Media-Analytics).
 <br>
 
@@ -24,7 +30,7 @@ title: " "
 <br>
 <br>
 
-### Lecture 02: Osnove programskog jezika R
+### Lecture 02: Current state and latest trends in the social media space
 
 - 
 - 
@@ -37,7 +43,7 @@ title: " "
 <br>
 <br>
 
-### Lecture 03: 
+### Lecture 03: IT prerequisites and programming language syntax (R, Python)
 
 - 
 - 
@@ -51,7 +57,7 @@ title: " "
 
 
 
-### Lecture 04: 
+### Lecture 04: Big Data infrastructure and data acquisition procedures (API, Web/Screen Scraping) 
 
 -
 -  
@@ -64,7 +70,7 @@ title: " "
 <br>
 <br>
 
-### Lecture 05: 
+### Lecture 05: Methods for social media analysis I (descriptive statistics, visualization)
 
 - 
 - 
@@ -77,7 +83,7 @@ title: " "
 <br>
 <br>
 
-### Lecture 06: 
+### Lecture 06: Methods for social media analysis II (network analysis, Natural Language Processing)
 
 - 
 - 
@@ -92,7 +98,7 @@ title: " "
 <br>
 
 
-### Lecture 07: 
+### Lecture 07: Methods for social media analysis III (time series, machine learning, deep learning, neural networks)
 
 - 
 - 
@@ -104,7 +110,7 @@ title: " "
 <br>
 <br>
 
-### Lecture 08:  
+### Lecture 08: General principles of digital marketing (key performance indicators, search engine optimization, social media listening)
 
 - 
 - 
@@ -118,7 +124,7 @@ title: " "
 <br>
 <br>
 
-### Lecture 09: 
+### Lecture 09: Twitter - trend formation and event detection
 
 - 
 - 
@@ -131,7 +137,7 @@ title: " "
 <br>
 <br>
 
-### Lecture 10:
+### Lecture 10: Facebook - analysis of the institutional, political and brand reach
 
 - 
 - 
@@ -145,7 +151,76 @@ title: " "
 <br>
 
 
-### Lecture 11: 
+### Lecture 11: Instagram - influencer market space and image recognition
+
+- 
+- 
+- 
+
+
+**Format predavanja:** [.html] | [.Rmd]() 
+<br>
+**Čitanje:** []() + []() + []()
+<br>
+<br>
+
+
+### Lecture 12: LinkedIn - business network and geolocation analysis
+
+- 
+- 
+- 
+
+
+**Format predavanja:** [.html] | [.Rmd]() 
+<br>
+**Čitanje:** []() + []() + []()
+<br>
+<br>
+
+
+### Lecture 13: Instagram - influencer market space and image recognition
+
+- 
+- 
+- 
+
+
+**Format predavanja:** [.html] | [.Rmd]() 
+<br>
+**Čitanje:** []() + []() + []()
+<br>
+<br>
+
+
+### Lecture 14: Online portals and forums - text analysis and application od NLP methods
+
+- 
+- 
+- 
+
+
+**Format predavanja:** [.html] | [.Rmd]() 
+<br>
+**Čitanje:** []() + []() + []()
+<br>
+<br>
+
+### Lecture 15: Traditional media (newspaper, TV, radio) - public sentiment analysis and opinion polarity
+
+- 
+- 
+- 
+
+
+**Format predavanja:** [.html] | [.Rmd]() 
+<br>
+**Čitanje:** []() + []() + []()
+<br>
+<br>
+
+
+### Lecture 16: Future trends in social media
 
 - 
 - 
