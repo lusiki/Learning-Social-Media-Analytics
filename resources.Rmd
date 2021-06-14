@@ -38,12 +38,34 @@ title: " "
 
 [Data Camp: Analyzing Social Media Data in R](https://www.datacamp.com/courses/analyzing-social-media-data-in-r)
 <br>
-[Coursera: Social Media Data Analytics](https://www.coursera.org/learn/social-media-data-analyticsv)
+[Coursera: Social Media Data Analytics](https://www.coursera.org/learn/social-media-data-analytics?ranMID=40328&ranEAID=vedj0cWlu2Y&ranSiteID=vedj0cWlu2Y-445AtQnqXSIP36TMlNd8bA&siteID=vedj0cWlu2Y-445AtQnqXSIP36TMlNd8bA&utm_content=10&utm_medium=partners&utm_source=linkshare&utm_campaign=vedj0cWlu2Y#syllabus)
+<br>
+[Quintly: Free Social Media Analytics Course](https://academy.quintly.com/courses/free-social-media-analytics)
+<br>
+[Experfy Training: Social Media Analytics](https://www.experfy.com/training/courses/social-media-analytics-6b828917-4d6d-4752-b19e-92aa60ee6ace)
+
+
+## University courses
+
+
+[Social Media Analytics: Using Data to Understand Public Conversations by Queensland University of Technology](https://www.futurelearn.com/courses/social-media-analytics?utm_source=RakutenMarketing&utm_medium=Affiliate&utm_campaign=3372305:Digital+Defynd&utm_content=10:1&utm_term=USNetwork&ranMID=44015&ranEAID=vedj0cWlu2Y&ranSiteID=vedj0cWlu2Y-JiJOW5RAxa.IezsIKn8vqA)
+<br>
+[Purdue University: Digital Media Analytics](https://www.futurelearn.com/programs/digital-media-analytics?utm_source=RakutenMarketing&utm_medium=Affiliate&utm_campaign=3372305:Digital+Defynd&utm_content=10:1&utm_term=USNetwork&ranMID=44015&ranEAID=vedj0cWlu2Y&ranSiteID=vedj0cWlu2Y-rFD..k0J1VoIFtJkHheEWQ)
+<br>
+[UCLA: Social Media Data Analytics ](https://ashleyrsanders.com/social-media-data-analytics-spring-2019-syllabus/)
 
 
 ## Open Source repositories
 
 [University of Bath: Collecting Social Media Data](https://library.bath.ac.uk/research-software/social-media-data)
+
+
+
+
+# Analytic groups and platforms
+
+[Social Media Analytics for Society and Crisis Communication](https://social-media-analytics.org/)
+
 
 ## Tutorials
 
@@ -52,19 +74,29 @@ title: " "
 
 
 
+
+
+
 ## Blogs and forums
 
 [Reddit:Social Media](https://www.reddit.com/r/socialmedia/)
+<br>
+[Tristan Hotham](https://tristanhotham.com/blog/)
+
+
+## Data collection tools
+
+[wikidot list of social media data collection tools](http://socialmediadata.wikidot.com/)
 
 
 
+## Github repositories
 
-
-
-
-## Computational social science
-
-
+[Twitter Stream Downloader](https://github.com/mdredze/twitter_stream_downloader)
+<br>
+[Learning Social Media Analytics with R](https://github.com/PacktPublishing/Learning-Social-Media-Analytics-with-R)
+<br>
+[Social Media Analysis](https://github.com/vivek2319/SocialMediaAnalysis)
 
 
 
@@ -79,7 +111,7 @@ title: " "
 <br>
 [Multivariate methods](https://lusiki.github.io/WebMultiVar/)
 <br>
-[Working with data](https://lusiki.github.io/WebObradaPodataka/)
+[Computational social science](https://lusiki.github.io/WebObradaPodataka/)
 <br>
 [Natural language processing](https://github.com/lusiki/Analiza-teksta) *Beta version*.
 
