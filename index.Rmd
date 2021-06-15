@@ -16,7 +16,7 @@ title: " "
 <br>
 
 <p align="center">
-  <img src="Foto/SoMe1.png" width="950" title="hover text">
+  <img src="Foto/SoMe9.jpeg" width="950" height="400" title="hover text">
 </p>
 
 <br>
