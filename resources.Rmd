@@ -81,7 +81,8 @@ title: " "
 [The Digital Methods Initiative](https://wiki.digitalmethods.net/Dmi/DmiAbout)
 <br>
 [mediabiasfactcheck](https://mediabiasfactcheck.com/)
-
+<br> 
+[Pew Research Center](https://www.pewresearch.org/)
 
 ## Tutorials
 
@@ -132,6 +133,8 @@ title: " "
 [Social Media Data](https://data.world/datasets/social-media)
 <br>
 [Datareportal](https://datareportal.com/)
+<br>
+[Mediacloud](https://mediacloud.org/)
 
 
 ## Social data vendors
@@ -153,8 +156,13 @@ title: " "
 <br>
 [Curated list of awesome analyics](https://github.com/0xnr/awesome-analytics)
 <br>
-[Reddit pushshift](https://github.com/pushshift/api)
-
+[Reddit pushshift API](https://github.com/pushshift/api)
+<br>
+[Instagram influencer dataset](https://github.com/ksb2043/instagram_influencer_dataset)
+<br>
+[Genius dataset (music)](https://github.com/cptq/genius-expertise)
+<br>
+[Amazon Review Data](https://nijianmo.github.io/amazon/index.html)
 
 ## Other
 
