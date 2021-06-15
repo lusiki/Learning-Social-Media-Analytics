@@ -79,6 +79,8 @@ title: " "
 [Social Media Analytics for Society and Crisis Communication](https://social-media-analytics.org/)
 <br>
 [The Digital Methods Initiative](https://wiki.digitalmethods.net/Dmi/DmiAbout)
+<br>
+[mediabiasfactcheck](https://mediabiasfactcheck.com/)
 
 
 ## Tutorials
@@ -106,6 +108,8 @@ title: " "
 [Tristan Hotham](https://tristanhotham.com/blog/)
 <br>
 [Social Media Analytics: The Definitive Guide](https://blog.loomly.com/social-media-analytics/)
+<br>
+[Brandwatch blog](https://www.brandwatch.com/blog/)
 
 
 ## Useful texts
@@ -130,6 +134,11 @@ title: " "
 [Datareportal](https://datareportal.com/)
 
 
+## Social data vendors
+
+
+[Brandwatch](https://www.brandwatch.com/)
+
 ## Github repositories
 
 [Twitter Stream Downloader](https://github.com/mdredze/twitter_stream_downloader)
@@ -143,6 +152,9 @@ title: " "
 [Mining data from social media platforms](https://github.com/lamthuyvo/social-media-data-scripts)
 <br>
 [Curated list of awesome analyics](https://github.com/0xnr/awesome-analytics)
+<br>
+[Reddit pushshift](https://github.com/pushshift/api)
+
 
 ## Other
 
