@@ -84,6 +84,8 @@ title: " "
 [mediabiasfactcheck](https://mediabiasfactcheck.com/)
 <br> 
 [Pew Research Center](https://www.pewresearch.org/)
+<br>
+[Media Cloud](https://mediacloud.org/)
 
 ## Tutorials
 
@@ -142,12 +144,25 @@ title: " "
 [Socialblade](https://socialblade.com/)
 <br>
 [Influencer data](https://starngage.com/app/global)
+<br>
+[Internet Archive](https://archive.org/)
+<br>
+[WebHose](https://webhose.io/)
+<br>
+[NewsAPI](https://newsapi.ai/)
 
 
 ## Social data vendors
 
 
 [Brandwatch](https://www.brandwatch.com/)
+<br>
+[LexisNexis](https://www.lexisnexis.co.uk/)
+<br>
+[mediastack](https://mediastack.com/)
+<br>
+[GDELT](https://www.gdeltproject.org/data.html)
+
 
 ## Github repositories
 
@@ -170,6 +185,8 @@ title: " "
 [Genius dataset (music)](https://github.com/cptq/genius-expertise)
 <br>
 [Amazon Review Data](https://nijianmo.github.io/amazon/index.html)
+<br>
+[Youtube data](https://github.com/epfl-dlab/YouNiverse)
 
 ## Other
 
