@@ -32,7 +32,23 @@ title: " "
 <br>
 [Python Social Media Analytics](https://www.packtpub.com/product/python-social-media-analytics/9781787121485)
 
+## Free time books 
 
+[The Next Billion Users ](https://www.amazon.com/Next-Billion-Users-Digital-Beyond/dp/0674983785)
+<br>
+[The Cause: The Power of Digital Storytelling for Social Good](https://www.amazon.com/Cause-Power-Digital-Storytelling-Social/dp/0615782159)
+<br>
+[Instafame Graffiti and Street Art in the Instagram Era](https://www.intellectbooks.com/instafame)
+<br>
+[Reset: Reclaiming the Internet for Civil Society](https://www.goodreads.com/book/show/51236404-reset)
+<br>
+[Recasting the Disney Princess in an Era of New Media and Social Movements](https://rowman.com/ISBN/9781793604019/Recasting-the-Disney-Princess-in-an-Era-of-New-Media-and-Social-Movements)
+<br>
+[Research Perspectives on Social Media Influencers and Brand Communication](https://rowman.com/ISBN/9781793613615/Research-Perspectives-on-Social-Media-Influencers-and-Brand-Communication)
+<br>
+[Violence and Trolling on Social Media: History, Affect, and Effects of Online Vitriol ](https://www.jstor.org/stable/j.ctv1b0fvrn)
+<br>
+[Outside Insight: the leading resource for decision-makers](https://outsideinsight.com/)
 
 ## Online courses 
 
@@ -65,7 +81,24 @@ title: " "
 <br>
 [Social Media Journals](https://strategicsocialmedialab.com/top-10-academic-journals-for-social-media-research/)
 <br>
-[International AAAI Conference on Web and Social Media](https://ojs.aaai.org/index.php/ICWSM/issue/archive)
+[International Conference on Web and Social Media](https://ojs.aaai.org/index.php/ICWSM/issue/archive)
+<br>
+[The Journal of Social Media in Society](https://www.thejsms.org/index.php/TSMRI/index)
+<br>
+[International Journal of Research in Marketing](https://www.sciencedirect.com/journal/international-journal-of-research-in-marketing)
+<br>
+[Online Social Networks and Media](https://www.sciencedirect.com/journal/online-social-networks-and-media)
+<br>
+[Cyberpsychology, Behavior, and Social Networking](https://home.liebertpub.com/publications/cyberpsychology-behavior-and-social-networking/10/overview)
+<br>
+[Convergence: The International Journal of Research into New Media Technologies](https://journals.sagepub.com/home/con)
+<br>
+[Social Networks](https://www.journals.elsevier.com/social-networks)
+<br>
+[Social Media + Society](https://journals.sagepub.com/home/sms)
+<br>
+[International Journal of Social Media and Interactive Learning Environments](https://www.inderscience.com/jhome.php?jcode=ijsmile)
+
 
 ## Open Source repositories
 
