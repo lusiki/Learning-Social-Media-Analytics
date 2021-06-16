@@ -60,11 +60,12 @@ title: " "
 <br>
 [Stanord: Social Media Analytics Tracking, Modeling and Predicting the Flow of Information through Networks](https://snap.stanford.edu/proj/socmedia-kdd/)
 
-## Journals
+## Journals and Conferences
 
 <br>
 [Social Media Journals](https://strategicsocialmedialab.com/top-10-academic-journals-for-social-media-research/)
-
+<br>
+[International AAAI Conference on Web and Social Media](https://ojs.aaai.org/index.php/ICWSM/issue/archive)
 
 ## Open Source repositories
 
@@ -135,6 +136,12 @@ title: " "
 [Datareportal](https://datareportal.com/)
 <br>
 [Mediacloud](https://mediacloud.org/)
+<br>
+[Youtube crawler](https://channelcrawler.com/)
+<br>
+[Socialblade](https://socialblade.com/)
+<br>
+[Influencer data](https://starngage.com/app/global)
 
 
 ## Social data vendors
