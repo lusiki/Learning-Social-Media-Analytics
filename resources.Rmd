@@ -12,6 +12,49 @@ title: " "
 <br>
 <br>
 
+
+## University courses
+
+
+[Social Media Analytics: Using Data to Understand Public Conversations by Queensland University of Technology](https://www.futurelearn.com/courses/social-media-analytics?utm_source=RakutenMarketing&utm_medium=Affiliate&utm_campaign=3372305:Digital+Defynd&utm_content=10:1&utm_term=USNetwork&ranMID=44015&ranEAID=vedj0cWlu2Y&ranSiteID=vedj0cWlu2Y-JiJOW5RAxa.IezsIKn8vqA)
+<br>
+[Purdue University: Digital Media Analytics](https://www.futurelearn.com/programs/digital-media-analytics?utm_source=RakutenMarketing&utm_medium=Affiliate&utm_campaign=3372305:Digital+Defynd&utm_content=10:1&utm_term=USNetwork&ranMID=44015&ranEAID=vedj0cWlu2Y&ranSiteID=vedj0cWlu2Y-rFD..k0J1VoIFtJkHheEWQ)
+<br>
+[UCLA: Social Media Data Analytics ](https://ashleyrsanders.com/social-media-data-analytics-spring-2019-syllabus/)
+<br>
+[Tilburg University: Social Media Analytics](https://catalogus.tilburguniversity.edu/osiris_student_tiuprd/OnderwijsCatalogusSelect.do?selectie=cursus&collegejaar=2019&taal=en&cursus=800861-M-3)
+<br>
+[Social Media Analytics syllabus](https://comm.osu.edu/sites/default/files/AU20%20Comm%204558%20Syllabus%20Bayer.pdf)
+<br>
+[Stanord: Social Media Analytics Tracking, Modeling and Predicting the Flow of Information through Networks](https://snap.stanford.edu/proj/socmedia-kdd/)
+<br>
+
+
+
+
+
+
+
+
+
+
+
+## Online courses 
+
+[Data Camp: Analyzing Social Media Data in R](https://www.datacamp.com/courses/analyzing-social-media-data-in-r)
+<br>
+[Coursera: Social Media Data Analytics](https://www.coursera.org/learn/social-media-data-analytics?ranMID=40328&ranEAID=vedj0cWlu2Y&ranSiteID=vedj0cWlu2Y-445AtQnqXSIP36TMlNd8bA&siteID=vedj0cWlu2Y-445AtQnqXSIP36TMlNd8bA&utm_content=10&utm_medium=partners&utm_source=linkshare&utm_campaign=vedj0cWlu2Y#syllabus)
+<br>
+[Quintly: Free Social Media Analytics Course](https://academy.quintly.com/courses/free-social-media-analytics)
+<br>
+[Experfy Training: Social Media Analytics](https://www.experfy.com/training/courses/social-media-analytics-6b828917-4d6d-4752-b19e-92aa60ee6ace)
+
+<br>
+
+
+
+
+
 ## Books
 
 [Social Media Data Mining and Analytics](https://www.wiley.com/en-us/Social+Media+Data+Mining+and+Analytics-p-9781118824856)
@@ -50,38 +93,15 @@ title: " "
 <br>
 [Outside Insight: the leading resource for decision-makers](https://outsideinsight.com/)
 
-## Online courses 
-
-[Data Camp: Analyzing Social Media Data in R](https://www.datacamp.com/courses/analyzing-social-media-data-in-r)
 <br>
-[Coursera: Social Media Data Analytics](https://www.coursera.org/learn/social-media-data-analytics?ranMID=40328&ranEAID=vedj0cWlu2Y&ranSiteID=vedj0cWlu2Y-445AtQnqXSIP36TMlNd8bA&siteID=vedj0cWlu2Y-445AtQnqXSIP36TMlNd8bA&utm_content=10&utm_medium=partners&utm_source=linkshare&utm_campaign=vedj0cWlu2Y#syllabus)
-<br>
-[Quintly: Free Social Media Analytics Course](https://academy.quintly.com/courses/free-social-media-analytics)
-<br>
-[Experfy Training: Social Media Analytics](https://www.experfy.com/training/courses/social-media-analytics-6b828917-4d6d-4752-b19e-92aa60ee6ace)
-
-
-## University courses
-
-
-[Social Media Analytics: Using Data to Understand Public Conversations by Queensland University of Technology](https://www.futurelearn.com/courses/social-media-analytics?utm_source=RakutenMarketing&utm_medium=Affiliate&utm_campaign=3372305:Digital+Defynd&utm_content=10:1&utm_term=USNetwork&ranMID=44015&ranEAID=vedj0cWlu2Y&ranSiteID=vedj0cWlu2Y-JiJOW5RAxa.IezsIKn8vqA)
-<br>
-[Purdue University: Digital Media Analytics](https://www.futurelearn.com/programs/digital-media-analytics?utm_source=RakutenMarketing&utm_medium=Affiliate&utm_campaign=3372305:Digital+Defynd&utm_content=10:1&utm_term=USNetwork&ranMID=44015&ranEAID=vedj0cWlu2Y&ranSiteID=vedj0cWlu2Y-rFD..k0J1VoIFtJkHheEWQ)
-<br>
-[UCLA: Social Media Data Analytics ](https://ashleyrsanders.com/social-media-data-analytics-spring-2019-syllabus/)
-<br>
-[Tilburg University: Social Media Analytics](https://catalogus.tilburguniversity.edu/osiris_student_tiuprd/OnderwijsCatalogusSelect.do?selectie=cursus&collegejaar=2019&taal=en&cursus=800861-M-3)
-<br>
-[Social Media Analytics syllabus](https://comm.osu.edu/sites/default/files/AU20%20Comm%204558%20Syllabus%20Bayer.pdf)
-<br>
-[Stanord: Social Media Analytics Tracking, Modeling and Predicting the Flow of Information through Networks](https://snap.stanford.edu/proj/socmedia-kdd/)
 
 ## Journals and Conferences
 
-<br>
-[Social Media Journals](https://strategicsocialmedialab.com/top-10-academic-journals-for-social-media-research/)
+
 <br>
 [International Conference on Web and Social Media](https://ojs.aaai.org/index.php/ICWSM/issue/archive)
+<br>
+[Social Media Conferences](https://conferenceindex.org/conferences/social-media)
 <br>
 [The Journal of Social Media in Society](https://www.thejsms.org/index.php/TSMRI/index)
 <br>
@@ -98,13 +118,13 @@ title: " "
 [Social Media + Society](https://journals.sagepub.com/home/sms)
 <br>
 [International Journal of Social Media and Interactive Learning Environments](https://www.inderscience.com/jhome.php?jcode=ijsmile)
-
-
-## Open Source repositories
-
-[University of Bath: Collecting Social Media Data](https://library.bath.ac.uk/research-software/social-media-data)
 <br>
-[University of Colorado](https://libguides.colorado.edu/c.php?g=740614&p=5296852)
+[International Journal of Social Media and Online Communitie](https://www.igi-global.com/journal/international-journal-social-media-online/224362#table-of-contents)
+<br>
+[International Journal of Web Based Communities](https://www.inderscience.com/jhome.php?jcode=ijwbc&csid=orob1f5204egv8bikst23mbvs0)
+
+<br>
+
 
 
 
@@ -120,6 +140,15 @@ title: " "
 <br>
 [Media Cloud](https://mediacloud.org/)
 
+
+<br>
+
+## Open Source repositories
+
+[University of Bath: Collecting Social Media Data](https://library.bath.ac.uk/research-software/social-media-data)
+<br>
+[University of Colorado](https://libguides.colorado.edu/c.php?g=740614&p=5296852)
+
 ## Tutorials
 
 [Twitter Social media data in R](https://www.earthdatascience.org/courses/earth-analytics/get-data-using-apis/intro-to-social-media-text-mining-r/)
@@ -131,8 +160,6 @@ title: " "
 [Scraping with R](https://willbowditch.github.io/scraping_with_R/)
 <br>
 [Visualizing Nine Years on LinkedIn using R](https://towardsdatascience.com/nine-years-on-linkedin-in-data-b34047c77223)
-
-
 
 
 
