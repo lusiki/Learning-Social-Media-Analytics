@@ -26,7 +26,7 @@ title: " "
 <br>
 [Social Media Analytics syllabus](https://comm.osu.edu/sites/default/files/AU20%20Comm%204558%20Syllabus%20Bayer.pdf)
 <br>
-[Stanord: Social Media Analytics Tracking, Modeling and Predicting the Flow of Information through Networks](https://snap.stanford.edu/proj/socmedia-kdd/)
+[Stanford: Social Media Analytics Tracking, Modeling and Predicting the Flow of Information through Networks](https://snap.stanford.edu/proj/socmedia-kdd/)
 <br>
 
 
@@ -102,6 +102,8 @@ title: " "
 [International Conference on Web and Social Media](https://ojs.aaai.org/index.php/ICWSM/issue/archive)
 <br>
 [Social Media Conferences](https://conferenceindex.org/conferences/social-media)
+<br>
+[Information, Communication & Society](https://www.tandfonline.com/toc/rics20/current)
 <br>
 [The Journal of Social Media in Society](https://www.thejsms.org/index.php/TSMRI/index)
 <br>
@@ -181,7 +183,10 @@ title: " "
 [The rise of social media](https://ourworldindata.org/rise-of-social-media)
 <br>
 [Social media data in research: a review of the current landscape](https://ocean.sagepub.com/blog/social-media-data-in-research-a-review-of-the-current-landscape)
-
+<br>
+[Mapping YouTube](https://eprints.qut.edu.au/202962/1/View_of_Mapping_YouTube_First_Monday.pdf)
+<br>
+[After the ‘APIcalypse](https://www.tandfonline.com/doi/abs/10.1080/1369118X.2019.1637447)
 
 ## Data tools
 
@@ -203,6 +208,8 @@ title: " "
 <br>
 [Socialblade](https://socialblade.com/)
 <br>
+[Starngage](https://starngage.com/app/global)
+<br>
 [Influencer data](https://starngage.com/app/global)
 <br>
 [Internet Archive](https://archive.org/)
@@ -210,6 +217,10 @@ title: " "
 [WebHose](https://webhose.io/)
 <br>
 [NewsAPI](https://newsapi.ai/)
+<br>
+[ClaimBuster](https://zenodo.org/record/3836810#.YMsZSUxJ0uV)
+
+
 
 
 ## Social data vendors
