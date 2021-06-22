@@ -11,6 +11,7 @@ library(stringr)
 library(rebus)
 library(XML)
 library(tidyr)
+library(lubridate)
 
 
 ####################
@@ -239,63 +240,60 @@ url  <- "https://channelcrawler.com/eng/results/48267/sort:Channel.subscribers/d
 page <- read_html(url)
 
 
-naziv <- page %>%
-  html_nodes(., "h4") %>% 
+parsanjeProizvoda <- function(url) {
+  
+name <- html_nodes(url, "h4") %>% 
   html_nodes(., "a") %>%
   html_attr(.,"title")
   
-links <- page %>%
-  html_nodes(., "h4") %>% 
+link <- html_nodes(url, "h4") %>% 
   html_nodes(.,"a") %>%
   html_attr(.,"href")
   
-zanr <- page %>%
-  html_nodes(.,  "b") %>%
+genre <-  html_nodes(url,  "b") %>%
   .[seq(1,length(.),2)] %>%
   html_text()
 
-meta <- page %>%
-  html_nodes(.,"#main-content.container") %>% 
+meta <- html_nodes(url,"#main-content.container") %>% 
   html_nodes(.,  "p") %>%
   html_nodes(., "small") %>% 
   .[seq(1,length(.),2)] %>%
   html_text() %>%
-  str_replace_all(., "[\t]" , "") %>%   
-  data.frame(do.call("rbind", strsplit(as.character(meta), " ", fixed = TRUE))) 
+  str_replace_all(., "[\t]" , "") %>% 
+  gsub("\n", "-", .) %>%
+  data.frame(do.call("rbind", strsplit(as.character(.), "-", fixed = TRUE))) %>%
+  select(X2:X5)
 
-meta %>%  separate_rows(., sep = " ") 
+subscribers <- meta$X2 %>%
+  gsub(" Subscribers", "",. ) %>%
+  gsub("M", "000000",.) %>%
+  gsub("K","000",.) %>%
+  gsub("\\.", "",.) %>%
+  as.numeric() 
 
+videos <- meta$X3 %>%
+  gsub(" Videos","",.) %>%
+  as.numeric()
 
-separ%>%
-  strsplit(., "[\n]")
- 
-strsplit(., "[\n]", fixed = T)
+views <- meta$X4 %>%
+  gsub(" Total Views","",.) %>%
+  gsub("B", "00000000",.) %>%
+  gsub("M","000000",.) %>%
+  gsub("K","000",.) %>%
+  gsub("\\.", "",.) 
+  
+lastvideo <- meta$X5 %>%
+  gsub("Latest Video: ", "",.) %>% 
+  mdy("%b %d %Y") %>%
+  na.omit()
 
-meta %>%
-  separate(meta$., c("A"), "[\n]") 
+description <- cbind.data.frame(name, genre, subscribers, videos, 
+                                    views, lastvideo,link, # link_proizvod, # brand_,
+                                    stringsAsFactors = FALSE)
 
-x <-  do.call(rbind, strsplit(meta, "[\n]"))
-  str_split_fixed(meta, "[\n]",4)
+return(decription)
 
-x <- as.data.frame(x)
-x %>% separate(meta,  sep ="[\n]")
-
-x %>% gsub("\\t","",.)
-
-meta <-str_replace_all(meta, "[\t]" , "") 
-
-
-
-df <- data.frame(ID=11:13, FOO=c('a|b','b|c','x|y'))
-foo <- data.frame(do.call('rbind', strsplit(as.character(df$FOO),'|',fixed=TRUE)))
-
-df <- data.frame(x = c(NA, "x?y", "x.z", "y:z"))
-df %>% separate(x, c("A","B"), sep = "([.?:])")
-
-
-
-
-
+}
 
 
 
