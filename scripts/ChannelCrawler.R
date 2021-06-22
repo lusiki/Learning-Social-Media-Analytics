@@ -236,25 +236,44 @@ saveRDS(proizvodiSave, file = "my_ljekarna.rds")
 
 
 
-url  <- "https://channelcrawler.com/eng/results/48267/sort:Channel.subscribers/direction:desc"
-page <- read_html(url)
+page  <- "https://channelcrawler.com/eng/results/48267/sort:Channel.subscribers/direction:desc"
+
+nums <- seq(2,50)
+
+links <- c(page,
+           paste0("https://www.channelcrawler.com/eng/results/48267/page:"
+                       ,nums,
+                       "/sort:Channel.subscribers/direction:desc"))
+links
 
 
-parsanjeProizvoda <- function(url) {
+proba <- links[3:10]
+
+parser(proba)
+
+
+parser <- function(url) {
   
-name <- html_nodes(url, "h4") %>% 
+name <- read_html(url) %>%
+  html_nodes(., "h4") %>% 
   html_nodes(., "a") %>%
-  html_attr(.,"title")
+  html_attr(.,"title") %>%
+  ifelse(length(.) == 0, NA, .)
   
-link <- html_nodes(url, "h4") %>% 
+link <- read_html(url) %>%
+  html_nodes(., "h4") %>% 
   html_nodes(.,"a") %>%
-  html_attr(.,"href")
+  html_attr(.,"href") %>%
+  ifelse(length(.) == 0, NA, .)
   
-genre <-  html_nodes(url,  "b") %>%
+genre <- read_html(url) %>%
+  html_nodes(.,  "b") %>%
   .[seq(1,length(.),2)] %>%
-  html_text()
+  html_text() %>%
+  ifelse(length(.) == 0, NA, .)
 
-meta <- html_nodes(url,"#main-content.container") %>% 
+meta <- read_html(url) %>%
+  html_nodes(.,"#main-content.container") %>% 
   html_nodes(.,  "p") %>%
   html_nodes(., "small") %>% 
   .[seq(1,length(.),2)] %>%
@@ -280,7 +299,8 @@ views <- meta$X4 %>%
   gsub("B", "00000000",.) %>%
   gsub("M","000000",.) %>%
   gsub("K","000",.) %>%
-  gsub("\\.", "",.) 
+  gsub("\\.", "",.) %>%
+  as.numeric()
   
 lastvideo <- meta$X5 %>%
   gsub("Latest Video: ", "",.) %>% 
@@ -291,13 +311,12 @@ description <- cbind.data.frame(name, genre, subscribers, videos,
                                     views, lastvideo,link, # link_proizvod, # brand_,
                                     stringsAsFactors = FALSE)
 
-return(decription)
+return(description)
 
 }
 
 
-
-
+all <- lapply(links, parser)
 
 
 
