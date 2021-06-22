@@ -10,6 +10,7 @@ library(datapasta) #for recreating tibble's with ease
 library(stringr)
 library(rebus)
 library(XML)
+library(tidyr)
 
 
 ####################
@@ -258,16 +259,48 @@ meta <- page %>%
   html_nodes(.,  "p") %>%
   html_nodes(., "small") %>% 
   .[seq(1,length(.),2)] %>%
-  html_text()
+  html_text() %>%
+  str_replace_all(., "[\t]" , "") %>%   
+  data.frame(do.call("rbind", strsplit(as.character(meta), " ", fixed = TRUE))) 
 
-subscr <- meta %>% str_extract(meta,"[^bers]")
+meta %>%  separate_rows(., sep = " ") 
 
-x <- as.data.frame(meta)
-x %>% separate(x, c("A","B"), sep = ',')
+
+separ%>%
+  strsplit(., "[\n]")
+ 
+strsplit(., "[\n]", fixed = T)
+
+meta %>%
+  separate(meta$., c("A"), "[\n]") 
+
+x <-  do.call(rbind, strsplit(meta, "[\n]"))
+  str_split_fixed(meta, "[\n]",4)
+
+x <- as.data.frame(x)
+x %>% separate(meta,  sep ="[\n]")
 
 x %>% gsub("\\t","",.)
 
-str_replace_all(meta, "[\t]" , "")
+meta <-str_replace_all(meta, "[\t]" , "") 
+
+
+
+df <- data.frame(ID=11:13, FOO=c('a|b','b|c','x|y'))
+foo <- data.frame(do.call('rbind', strsplit(as.character(df$FOO),'|',fixed=TRUE)))
+
+df <- data.frame(x = c(NA, "x?y", "x.z", "y:z"))
+df %>% separate(x, c("A","B"), sep = "([.?:])")
+
+
+
+
+
+
+
+
+
+
 
 
 
