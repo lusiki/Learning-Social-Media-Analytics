@@ -8,6 +8,8 @@ library(tibble)
 library(purrr) #for map functions
 library(datapasta) #for recreating tibble's with ease
 library(stringr)
+library(rebus)
+library(XML)
 
 
 ####################
@@ -232,77 +234,41 @@ saveRDS(proizvodiSave, file = "my_ljekarna.rds")
 
 
 
-dsa_reviews <- 
-  read_html("https://www.directsalesaid.com/companies/traveling-vineyard#reviews")
-
-
-
-review_names <- html_nodes(dsa_reviews,'#reviews span')
-
-
 url  <- "https://channelcrawler.com/eng/results/48267/sort:Channel.subscribers/direction:desc"
+page <- read_html(url)
 
 
-
-
-
-naziv <- read_html(url) %>% html_nodes(., "h4") %>% #html_attr("href")
+naziv <- page %>%
+  html_nodes(., "h4") %>% 
+  html_nodes(., "a") %>%
+  html_attr(.,"title")
+  
+links <- page %>%
+  html_nodes(., "h4") %>% 
+  html_nodes(.,"a") %>%
+  html_attr(.,"href")
+  
+zanr <- page %>%
+  html_nodes(.,  "b") %>%
+  .[seq(1,length(.),2)] %>%
   html_text()
 
+meta <- page %>%
+  html_nodes(.,"#main-content.container") %>% 
+  html_nodes(.,  "p") %>%
+  html_nodes(., "small") %>% 
+  .[seq(1,length(.),2)] %>%
+  html_text()
 
-%>%
-  ifelse(length(.) == 0, NA, .)
+subscr <- meta %>% str_extract(meta,"[^bers]")
 
-cijena <- html_node(url, ".flex-container") %>%
-  html_text() %>%
-  str_extract(.,"\\d.*K") %>%
-  ifelse(length(.) == 0, NA, .)
+x <- as.data.frame(meta)
+x %>% separate(x, c("A","B"), sep = ',')
 
-opis_kratki <- html_node(url, "#product-description-short > p:nth-child(1)") %>%
-  html_text() %>%
-  ifelse(length(.) == 0, NA, .)
+x %>% gsub("\\t","",.)
 
-kategorije <- html_node(url, "#product-categories") %>%
-  html_text() %>%
-  ifelse(length(.) == 0, NA, .) %>%
-  gsub(".*[[:blank:]]", "",.) %>%
-  gsub("\n"," ",.) %>%
-  trimws() %>%
-  str_squish() %>%
-  gsub(" ",";",.)
-
-opis_dugi <- html_node(url, css = "div.product-description:nth-child(1)") %>%
-  html_text()%>%
-  ifelse(length(.) == 0, NA, .)
+str_replace_all(meta, "[\t]" , "")
 
 
-detalji_proizvod <- html_node(url, css = "html body div.container.main div#content div#main-content.container div.row div.channel.col-xs-12.col-sm-4.col-lg-3 h4 a") %>%
-  html_text() %>%
-  ifelse(length(.) == 0, NA, .)
-
-link_img <- html_node(url, css = '.js-qv-product-cover' ) %>%
-  html_attr('src') %>%
-  .[1] %>%
-  ifelse(length(.) == 0, NA, .)
-
-
-library(xml2)
-data <- read_xml("https://channelcrawler.com/eng/results/48267/sort:Channel.subscribers/direction:desc")
-
-# Point locations
-point <- data %>% xml_find_all("//point")
-point %>% xml_attr("latitude") %>% as.numeric()
-point %>% xml_attr("longitude") %>% as.numeric()
-
-# Start time
-data %>% 
-  xml_find_all("//start-valid-time") %>% 
-  xml_text()
-
-# Temperature
-data %>% 
-  xml_find_all("//temperature[@type='hourly']/value") %>% 
-  xml_text() %>% 
-  as.integer()
 
 
