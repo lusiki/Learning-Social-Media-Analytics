@@ -15,7 +15,7 @@ library(lubridate)
 
 
 ####################
-#SCRAP MOJA_LJEKARNA
+#SCRAP CHANNEL CRAWLER
 ####################
 
 
@@ -99,188 +99,49 @@ parse_proizvodi_vise_pokusaja_ <- function(url, broj_pokusaja = 5) {
 
 
 
-#, brand
-#, o
-parsanjeProizvoda <- function(url) {
-  
-  
-  naziv <-  html_node(url, css = "div.channel:nth-child(1) > h4:nth-child(1) > a:nth-child(1)") %>%
-    html_text() %>%
-    ifelse(length(.) == 0, NA, .)
-  
-  cijena <- html_node(url, ".flex-container") %>%
-    html_text() %>%
-    str_extract(.,"\\d.*K") %>%
-    ifelse(length(.) == 0, NA, .)
-  
-  opis_kratki <- html_node(url, "#product-description-short > p:nth-child(1)") %>%
-    html_text() %>%
-    ifelse(length(.) == 0, NA, .)
-  
-  kategorije <- html_node(url, "#product-categories") %>%
-    html_text() %>%
-    ifelse(length(.) == 0, NA, .) %>%
-    gsub(".*[[:blank:]]", "",.) %>%
-    gsub("\n"," ",.) %>%
-    trimws() %>%
-    str_squish() %>%
-    gsub(" ",";",.)
-  
-  opis_dugi <- html_node(url, css = "div.product-description:nth-child(1)") %>%
-    html_text()%>%
-    ifelse(length(.) == 0, NA, .)
-  
-  
-  detalji_proizvod <- html_node(url, css = "section.product-features:nth-child(4) > dl:nth-child(2)") %>%
-    html_text() %>%
-    ifelse(length(.) == 0, NA, .)
-  
-  link_img <- html_node(url, css = '.js-qv-product-cover' ) %>%
-    html_attr('src') %>%
-    .[1] %>%
-    ifelse(length(.) == 0, NA, .)
-  
-  #  link_proizvod <- o 
-  
-  #  brand_ <- brand %>%
-  #    str_extract(., "\\-(.*)") %>%
-  #    gsub("-", " ",.) %>%
-  #    trimws() %>%
-  #    toupper() %>%
-  #    str_extract(., "(^.*)?\\?") %>%
-  #    gsub("\\?", "",.)
-  
-  
-  podatciProizvod <- cbind.data.frame(naziv, opis_kratki, cijena, opis_dugi, kategorije, 
-                                      detalji_proizvod, link_img,# link_proizvod, # brand_,
-                                      stringsAsFactors = FALSE)
-  
-  return(podatciProizvod)
-  
-}
 
 
 
 
-
-
-
-
-
-
-#--------------#
-#              #
-#    SCRAP     #
-#              #
-#--------------#
-
-
-
-
-
-
-proizvodaci <- read_html("https://www.mojaljekarna.hr/proizvodjaci", encoding = "UTF-8") %>% 
-  html_node(xpath = "//*[@id='main']/div") %>% 
-  html_nodes("a") %>% 
-  html_attr("href") %>% 
-  .[str_detect(., "/\\d+")]
-
-
-
-brandoviLoop <- list()
-proizvodi <- c()
-for (i in 1:100) { #seq_along(proizvodaci)
-  
-  # dodati 10 stranica na linkove kako bi obuhvatio sve
-  proizvodaci_i <- proizvodaci[i] %>% 
-    paste0(., "?page=", 1:6)
-  
-  # loop kroz sve, prekini kada stranica nema vise proizvoda
-  for (j in seq_along(proizvodaci_i)) {
-    proizvodi_j <- parse_proizvodi_vise_pokusaja(proizvodaci_i[j])
-    
-    if (length(proizvodi_j) == 0) {
-      break()
-    } else{
-      proizvodi <- c(proizvodi, proizvodi_j)
-    }
-    Sys.sleep(0.3)
-  } 
-  
-  
-  lista <- list()
-  
-  for(k in seq_along(proizvodi)) {
-    
-    proizvod <- parse_proizvodi_vise_pokusaja_(proizvodi[k])
-    
-    #    brand <- proizvodaci_i[j]
-    #    o <- proizvodi[k]
-    lista[[k]] <- parsanjeProizvoda(proizvod)#,o) #, brand)
-  }
-  
-  brandoviLoop[[i]] <- do.call(rbind, lista)
-}
-
-
-
-proizvodiSave100 <- do.call(rbind, brandoviLoop)
-
-
-save(proizvodiSave, file = "my_ljekarna.xlsx")
-
-myl <- readRDS("E:/Luka/FREELANCE/APOTHE_KOS/my_ljekarna.rds")
-
-saveRDS(proizvodiSave, file = "my_ljekarna.rds")
-
-
-
-
-page  <- "https://channelcrawler.com/eng/results/48267/sort:Channel.subscribers/direction:desc"
+page  <- "https://channelcrawler.com/eng/results/48267/sort:Channel.subscribers/direction:asc"
 
 nums <- seq(2,50)
 
 links <- c(page,
            paste0("https://www.channelcrawler.com/eng/results/48267/page:"
                        ,nums,
-                       "/sort:Channel.subscribers/direction:desc"))
-links
+                       "/sort:Channel.subscribers/direction:asc"))
 
-
-proba <- links[3:10]
-
-parser(proba)
 
 
 parser <- function(url) {
+
+Sys.sleep(runif(1, min = 3, max = 11))
   
 name <- read_html(url) %>%
   html_nodes(., "h4") %>% 
   html_nodes(., "a") %>%
-  html_attr(.,"title") %>%
-  ifelse(length(.) == 0, NA, .)
+  html_attr(.,"title") 
   
 link <- read_html(url) %>%
   html_nodes(., "h4") %>% 
   html_nodes(.,"a") %>%
-  html_attr(.,"href") %>%
-  ifelse(length(.) == 0, NA, .)
+  html_attr(.,"href") 
   
 genre <- read_html(url) %>%
   html_nodes(.,  "b") %>%
   .[seq(1,length(.),2)] %>%
-  html_text() %>%
-  ifelse(length(.) == 0, NA, .)
+  html_text() 
 
 meta <- read_html(url) %>%
   html_nodes(.,"#main-content.container") %>% 
   html_nodes(.,  "p") %>%
   html_nodes(., "small") %>% 
   .[seq(1,length(.),2)] %>%
-  html_text() %>%
+  html_text()  %>%
   str_replace_all(., "[\t]" , "") %>% 
-  gsub("\n", "-", .) %>%
-  data.frame(do.call("rbind", strsplit(as.character(.), "-", fixed = TRUE))) %>%
+  gsub("\n", "*", .) %>%
+  data.frame(do.call("rbind", strsplit(as.character(.), "*", fixed = TRUE))) %>%
   select(X2:X5)
 
 subscribers <- meta$X2 %>%
@@ -316,7 +177,25 @@ return(description)
 }
 
 
-all <- lapply(links, parser)
+
+
+all <- lapply(links[1:10],parser)
+all2 <- lapply(links[11:20],parser)
+all3 <- lapply(links[21:30],parser)
+all4 <- lapply(links[31:40],parser)
+all5 <- lapply(links[41:50],parser)
+
+allLIst <- c(all, all2, all3, all4, all5)
+
+df <- bind_rows(allLIst, .id = "column_label")
+
+
+lowYT <- bind_rows(df)
+
+
+write.csv2(lowYT, file = "./data/lowYT.csv")
+
+
 
 
 
