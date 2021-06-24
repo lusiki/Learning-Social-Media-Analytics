@@ -8,10 +8,14 @@ library(tibble)
 library(purrr) #for map functions
 library(datapasta) #for recreating tibble's with ease
 library(stringr)
+library(rebus)
+library(XML)
+library(tidyr)
+library(lubridate)
 
 
 ####################
-#SCRAP MOJA_LJEKARNA
+#SCRAP CHANNEL CRAWLER
 ####################
 
 
@@ -95,214 +99,105 @@ parse_proizvodi_vise_pokusaja_ <- function(url, broj_pokusaja = 5) {
 
 
 
-#, brand
-#, o
-parsanjeProizvoda <- function(url) {
+
+
+
+
+page  <- "https://channelcrawler.com/eng/results/48267/sort:Channel.subscribers/direction:asc"
+
+nums <- seq(2,50)
+
+links <- c(page,
+           paste0("https://www.channelcrawler.com/eng/results/48267/page:"
+                       ,nums,
+                       "/sort:Channel.subscribers/direction:asc"))
+
+
+
+parser <- function(url) {
+
+Sys.sleep(runif(1, min = 3, max = 11))
   
+name <- read_html(url) %>%
+  html_nodes(., "h4") %>% 
+  html_nodes(., "a") %>%
+  html_attr(.,"title") 
   
-  naziv <-  html_node(url, css = "div.channel:nth-child(1) > h4:nth-child(1) > a:nth-child(1)") %>%
-    html_text() %>%
-    ifelse(length(.) == 0, NA, .)
+link <- read_html(url) %>%
+  html_nodes(., "h4") %>% 
+  html_nodes(.,"a") %>%
+  html_attr(.,"href") 
   
-  cijena <- html_node(url, ".flex-container") %>%
-    html_text() %>%
-    str_extract(.,"\\d.*K") %>%
-    ifelse(length(.) == 0, NA, .)
+genre <- read_html(url) %>%
+  html_nodes(.,  "b") %>%
+  .[seq(1,length(.),2)] %>%
+  html_text() 
+
+meta <- read_html(url) %>%
+  html_nodes(.,"#main-content.container") %>% 
+  html_nodes(.,  "p") %>%
+  html_nodes(., "small") %>% 
+  .[seq(1,length(.),2)] %>%
+  html_text()  %>%
+  str_replace_all(., "[\t]" , "") %>% 
+  gsub("\n", "*", .) %>%
+  data.frame(do.call("rbind", strsplit(as.character(.), "*", fixed = TRUE))) %>%
+  select(X2:X5)
+
+subscribers <- meta$X2 %>%
+  gsub(" Subscribers", "",. ) %>%
+  gsub("M", "000000",.) %>%
+  gsub("K","000",.) %>%
+  gsub("\\.", "",.) %>%
+  as.numeric() 
+
+videos <- meta$X3 %>%
+  gsub(" Videos","",.) %>%
+  as.numeric()
+
+views <- meta$X4 %>%
+  gsub(" Total Views","",.) %>%
+  gsub("B", "00000000",.) %>%
+  gsub("M","000000",.) %>%
+  gsub("K","000",.) %>%
+  gsub("\\.", "",.) %>%
+  as.numeric()
   
-  opis_kratki <- html_node(url, "#product-description-short > p:nth-child(1)") %>%
-    html_text() %>%
-    ifelse(length(.) == 0, NA, .)
-  
-  kategorije <- html_node(url, "#product-categories") %>%
-    html_text() %>%
-    ifelse(length(.) == 0, NA, .) %>%
-    gsub(".*[[:blank:]]", "",.) %>%
-    gsub("\n"," ",.) %>%
-    trimws() %>%
-    str_squish() %>%
-    gsub(" ",";",.)
-  
-  opis_dugi <- html_node(url, css = "div.product-description:nth-child(1)") %>%
-    html_text()%>%
-    ifelse(length(.) == 0, NA, .)
-  
-  
-  detalji_proizvod <- html_node(url, css = "section.product-features:nth-child(4) > dl:nth-child(2)") %>%
-    html_text() %>%
-    ifelse(length(.) == 0, NA, .)
-  
-  link_img <- html_node(url, css = '.js-qv-product-cover' ) %>%
-    html_attr('src') %>%
-    .[1] %>%
-    ifelse(length(.) == 0, NA, .)
-  
-  #  link_proizvod <- o 
-  
-  #  brand_ <- brand %>%
-  #    str_extract(., "\\-(.*)") %>%
-  #    gsub("-", " ",.) %>%
-  #    trimws() %>%
-  #    toupper() %>%
-  #    str_extract(., "(^.*)?\\?") %>%
-  #    gsub("\\?", "",.)
-  
-  
-  podatciProizvod <- cbind.data.frame(naziv, opis_kratki, cijena, opis_dugi, kategorije, 
-                                      detalji_proizvod, link_img,# link_proizvod, # brand_,
-                                      stringsAsFactors = FALSE)
-  
-  return(podatciProizvod)
-  
+lastvideo <- meta$X5 %>%
+  gsub("Latest Video: ", "",.) %>% 
+  mdy("%b %d %Y") %>%
+  na.omit()
+
+description <- cbind.data.frame(name, genre, subscribers, videos, 
+                                    views, lastvideo,link, # link_proizvod, # brand_,
+                                    stringsAsFactors = FALSE)
+
+return(description)
+
 }
 
 
 
 
+all <- lapply(links[1:10],parser)
+all2 <- lapply(links[11:20],parser)
+all3 <- lapply(links[21:30],parser)
+all4 <- lapply(links[31:40],parser)
+all5 <- lapply(links[41:50],parser)
+
+allLIst <- c(all, all2, all3, all4, all5)
+
+df <- bind_rows(allLIst, .id = "column_label")
+
+
+lowYT <- bind_rows(df)
+
+
+write.csv2(lowYT, file = "./data/lowYT.csv")
 
 
 
 
 
-
-#--------------#
-#              #
-#    SCRAP     #
-#              #
-#--------------#
-
-
-
-
-
-
-proizvodaci <- read_html("https://www.mojaljekarna.hr/proizvodjaci", encoding = "UTF-8") %>% 
-  html_node(xpath = "//*[@id='main']/div") %>% 
-  html_nodes("a") %>% 
-  html_attr("href") %>% 
-  .[str_detect(., "/\\d+")]
-
-
-
-brandoviLoop <- list()
-proizvodi <- c()
-for (i in 1:100) { #seq_along(proizvodaci)
-  
-  # dodati 10 stranica na linkove kako bi obuhvatio sve
-  proizvodaci_i <- proizvodaci[i] %>% 
-    paste0(., "?page=", 1:6)
-  
-  # loop kroz sve, prekini kada stranica nema vise proizvoda
-  for (j in seq_along(proizvodaci_i)) {
-    proizvodi_j <- parse_proizvodi_vise_pokusaja(proizvodaci_i[j])
-    
-    if (length(proizvodi_j) == 0) {
-      break()
-    } else{
-      proizvodi <- c(proizvodi, proizvodi_j)
-    }
-    Sys.sleep(0.3)
-  } 
-  
-  
-  lista <- list()
-  
-  for(k in seq_along(proizvodi)) {
-    
-    proizvod <- parse_proizvodi_vise_pokusaja_(proizvodi[k])
-    
-    #    brand <- proizvodaci_i[j]
-    #    o <- proizvodi[k]
-    lista[[k]] <- parsanjeProizvoda(proizvod)#,o) #, brand)
-  }
-  
-  brandoviLoop[[i]] <- do.call(rbind, lista)
-}
-
-
-
-proizvodiSave100 <- do.call(rbind, brandoviLoop)
-
-
-save(proizvodiSave, file = "my_ljekarna.xlsx")
-
-myl <- readRDS("E:/Luka/FREELANCE/APOTHE_KOS/my_ljekarna.rds")
-
-saveRDS(proizvodiSave, file = "my_ljekarna.rds")
-
-
-
-
-dsa_reviews <- 
-  read_html("https://www.directsalesaid.com/companies/traveling-vineyard#reviews")
-
-
-
-review_names <- html_nodes(dsa_reviews,'#reviews span')
-
-
-url  <- "https://channelcrawler.com/eng/results/48267/sort:Channel.subscribers/direction:desc"
-
-
-
-
-
-naziv <- read_html(url) %>% html_nodes(., "h4") %>% #html_attr("href")
-  html_text()
-
-
-%>%
-  ifelse(length(.) == 0, NA, .)
-
-cijena <- html_node(url, ".flex-container") %>%
-  html_text() %>%
-  str_extract(.,"\\d.*K") %>%
-  ifelse(length(.) == 0, NA, .)
-
-opis_kratki <- html_node(url, "#product-description-short > p:nth-child(1)") %>%
-  html_text() %>%
-  ifelse(length(.) == 0, NA, .)
-
-kategorije <- html_node(url, "#product-categories") %>%
-  html_text() %>%
-  ifelse(length(.) == 0, NA, .) %>%
-  gsub(".*[[:blank:]]", "",.) %>%
-  gsub("\n"," ",.) %>%
-  trimws() %>%
-  str_squish() %>%
-  gsub(" ",";",.)
-
-opis_dugi <- html_node(url, css = "div.product-description:nth-child(1)") %>%
-  html_text()%>%
-  ifelse(length(.) == 0, NA, .)
-
-
-detalji_proizvod <- html_node(url, css = "html body div.container.main div#content div#main-content.container div.row div.channel.col-xs-12.col-sm-4.col-lg-3 h4 a") %>%
-  html_text() %>%
-  ifelse(length(.) == 0, NA, .)
-
-link_img <- html_node(url, css = '.js-qv-product-cover' ) %>%
-  html_attr('src') %>%
-  .[1] %>%
-  ifelse(length(.) == 0, NA, .)
-
-
-library(xml2)
-data <- read_xml("https://channelcrawler.com/eng/results/48267/sort:Channel.subscribers/direction:desc")
-
-# Point locations
-point <- data %>% xml_find_all("//point")
-point %>% xml_attr("latitude") %>% as.numeric()
-point %>% xml_attr("longitude") %>% as.numeric()
-
-# Start time
-data %>% 
-  xml_find_all("//start-valid-time") %>% 
-  xml_text()
-
-# Temperature
-data %>% 
-  xml_find_all("//temperature[@type='hourly']/value") %>% 
-  xml_text() %>% 
-  as.integer()
 
 
