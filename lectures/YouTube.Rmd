@@ -1,0 +1,82 @@
+---
+title: "Pregled hrvatskog YouTube-a"
+author: "Lux"
+date: '28 06 2021 '
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(ggthemes)
+library(cowplot)
+library(magick)
+library(png)
+library(RCurl)
+
+```
+
+
+## Općenito o YouTube platformi
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+## YouTube u Hrvatskoj
+
+```{r data}
+yt <- read.csv2("../data/topYT.csv")
+
+
+```
+
+## Najpopularnije kategorije kanala
+
+
+
+```{r kanali, echo=FALSE}
+kanali <- yt %>%
+  group_by(genre) %>%
+  count() %>%
+  arrange(.,desc(n)) %>%
+  ungroup() %>%
+  slice(.,1:(n()-1))
+
+  
+topGenre <- ggplot(kanali, aes(x = n, y = reorder(genre,n))) +
+  geom_bar(stat = "identity") +
+  ylab("") +
+  xlab("Number of channels") +
+  ggtitle("Top (1k) Croatian YouTube channels by genre") +
+  theme_economist() +
+  scale_colour_economist() + 
+  draw_image(
+  "http://www.green-owner.com/wp-content/uploads/2017/12/Youtube-logo.png",
+  x = 5, y = 3, width = 25, height = 25
+)
+
+ggplot(kanali, aes(x = n, y = reorder(genre,n))) +
+  geom_bar(stat = "identity") +
+  ylab("") +
+  xlab("Number of channels") +
+  ggtitle("Top (1k) Croatian YouTube channels by genre") +
+  theme_economist() +
+  scale_colour_economist() 
+
+
+my_image <-  readPNG(getURLContent('https://www.chch.com/wp-content/uploads/2018/12/YouTube.jpg'))
+
+
+img <- readPNG(source = "../Foto/yt2.jpeg")
+# add rater      
+g <- rasterGrob(img, interpolate=TRUE) 
+
+```
+
+
