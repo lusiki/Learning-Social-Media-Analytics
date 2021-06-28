@@ -18,27 +18,23 @@ library(cowplot)
 library(magick)
 library(png)
 library(RCurl)
-
+library(patchwork) 
+library(grid)
+library(ggpubr)
 ```
 
 
 ## Općenito o YouTube platformi
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
 ## YouTube u Hrvatskoj
 
 ```{r data}
 yt <- read.csv2("../data/topYT.csv")
-
-
 ```
 
 ## Najpopularnije kategorije kanala
-
-
 
 ```{r kanali, echo=FALSE}
 kanali <- yt %>%
@@ -48,35 +44,23 @@ kanali <- yt %>%
   ungroup() %>%
   slice(.,1:(n()-1))
 
-  
+img <- jpeg::readJPEG("../Foto/yt8.jpg")
+ 
 topGenre <- ggplot(kanali, aes(x = n, y = reorder(genre,n))) +
-  geom_bar(stat = "identity") +
+  background_image(img) +
+  geom_bar(stat = "identity", alpha = 1) +
   ylab("") +
   xlab("Number of channels") +
-  ggtitle("Top (1k) Croatian YouTube channels by genre") +
-  theme_economist() +
-  scale_colour_economist() + 
-  draw_image(
-  "http://www.green-owner.com/wp-content/uploads/2017/12/Youtube-logo.png",
-  x = 5, y = 3, width = 25, height = 25
-)
+  ggtitle("Top (1k) Croatian YouTube channels by genre")+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+  panel.background = element_blank(), axis.line = element_line(colour = "black")) 
 
-ggplot(kanali, aes(x = n, y = reorder(genre,n))) +
-  geom_bar(stat = "identity") +
-  ylab("") +
-  xlab("Number of channels") +
-  ggtitle("Top (1k) Croatian YouTube channels by genre") +
-  theme_economist() +
-  scale_colour_economist() 
-
-
-my_image <-  readPNG(getURLContent('https://www.chch.com/wp-content/uploads/2018/12/YouTube.jpg'))
-
-
-img <- readPNG(source = "../Foto/yt2.jpeg")
-# add rater      
-g <- rasterGrob(img, interpolate=TRUE) 
 
 ```
+
+
+
+
+
 
 
