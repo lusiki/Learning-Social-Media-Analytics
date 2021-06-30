@@ -12,6 +12,9 @@ title: " "
 <br>
 <br>
 
+
+**30/06/2021** - YouTube data and web scrap `code` added 
+
 **16/06/2021** - Extended *Curated List* of resources 
 
 **14/06/2021** - Updated site  
