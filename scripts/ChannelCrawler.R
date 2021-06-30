@@ -116,7 +116,7 @@ links <- c(page,
 
 parser <- function(url) {
 
-Sys.sleep(runif(1, min = 3, max = 11))
+Sys.sleep(runif(1, min = 2, max = 7))
   
 name <- read_html(url) %>%
   html_nodes(., "h4") %>% 
@@ -146,10 +146,10 @@ meta <- read_html(url) %>%
 
 subscribers <- meta$X2 %>%
   gsub(" Subscribers", "",. ) %>%
-  gsub("M", "000000",.) %>%
-  gsub("K","000",.) %>%
-  gsub("\\.", "",.) %>%
-  as.numeric() 
+  gsub("M", "*1000000",.) %>%
+  gsub("K","*1000",.) #%>%
+ # gsub("\\.", "",.) %>%
+ # as.numeric() 
 
 videos <- meta$X3 %>%
   gsub(" Videos","",.) %>%
@@ -157,11 +157,11 @@ videos <- meta$X3 %>%
 
 views <- meta$X4 %>%
   gsub(" Total Views","",.) %>%
-  gsub("B", "00000000",.) %>%
-  gsub("M","000000",.) %>%
-  gsub("K","000",.) %>%
-  gsub("\\.", "",.) %>%
-  as.numeric()
+  gsub("B", "*100000000",.) %>%
+  gsub("M","*1000000",.) %>%
+  gsub("K","*1000",.) #%>%
+ # gsub("\\.", "",.) %>%
+ # as.numeric()
   
 lastvideo <- meta$X5 %>%
   gsub("Latest Video: ", "",.) %>% 
@@ -190,10 +190,45 @@ allLIst <- c(all, all2, all3, all4, all5)
 df <- bind_rows(allLIst, .id = "column_label")
 
 
-lowYT <- bind_rows(df)
+df <- df %>%
+  separate(subscribers, c("subscribers", "multiply1"), "\\*") %>%
+  separate(views, c("views", "multiply2"), "\\*") %>% 
+  filter(subscribers != "Subscribers hidden") %>%
+  mutate(subscribers = as.numeric(subscribers))%>%
+  mutate(multiply1 = as.numeric(multiply1))%>%
+  mutate(views = as.numeric(views))%>%
+  mutate(multiply2 = as.numeric(multiply2))
+
+df[is.na(df)] <- 1
+
+df <- df %>%
+  mutate(subscribers = subscribers * multiply1)%>%
+  mutate(views = views * multiply2) %>%
+  select(-multiply1,-multiply2)
 
 
-write.csv2(lowYT, file = "./data/lowYT.csv")
+
+
+write.csv2(df, file = "./data/YouTube/lowYT.csv")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
