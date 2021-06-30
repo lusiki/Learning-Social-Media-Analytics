@@ -103,14 +103,14 @@ parse_proizvodi_vise_pokusaja_ <- function(url, broj_pokusaja = 5) {
 
 
 
-page  <- "https://channelcrawler.com/eng/results/48267/sort:Channel.subscribers/direction:asc"
+page  <- "https://www.channelcrawler.com/eng/results/48267/sort:Channel.subscribers/direction:desc"
 
 nums <- seq(2,50)
 
 links <- c(page,
            paste0("https://www.channelcrawler.com/eng/results/48267/page:"
                        ,nums,
-                       "/sort:Channel.subscribers/direction:asc"))
+                       "/sort:Channel.subscribers/direction:desc"))
 
 
 
@@ -209,16 +209,22 @@ df <- df %>%
 
 
 
-write.csv2(df, file = "./data/YouTube/lowYT.csv")
+write.csv2(df, file = "./data/YouTube/topYT.csv")
+
+
+topYT <- read.csv2("./data/YouTube/topYT.csv")
+lowYT <- read.csv2("./data/YouTube/lowYT.csv") %>%
+  arrange(desc(subscribers)) %>%
+  filter(X<=417)
+
+
+allYT <- dplyr::bind_rows(topYT, lowYT) %>% 
+  select(-X, -column_label)
 
 
 
 
-
-
-
-
-
+write.csv2(allYT, "./data/YouTube/YT.csv")
 
 
 
