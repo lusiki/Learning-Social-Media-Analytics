@@ -20,6 +20,7 @@ library(RCurl)
 library(patchwork) 
 library(grid)
 library(ggpubr)
+library(scales)
 ```
 
 
@@ -38,7 +39,9 @@ Iako je YouTube dugo vremena bio istraživački zanemaren u usporedbi sa Faceboo
 Danas je YouTube jedna od dominantnih platformi u svijetu društvenih medija, odnosno, nakon Facebook-a, druga najveći globalni društveni medij na svijetu sa oko [2,9 mlrd korisnika](https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/) u 2021. godini, a prema [DIGITAL 2021: CROATIA](https://datareportal.com/reports/digital-2021-croatia?rq=Croatia) izvještaju za 2021. godinu YouTube u Hrvatskoj ima doseg od 2,8 mil stanovnika. Isti izvještaj procjenjuje mjesečni broj posjeta stranici u širokom rasponu od 19 mil - 60 mil (ovisno o servisu: [SEMRUSH](https://www.semrush.com/) ili [similarweb](https://www.similarweb.com/)) te broj jedinstvenih posjeta u rasponu od 1.99 mil - 2.65 mil. Zanimljivo je i znati da prosječni Youtube posjetitelj provede otprilike od 20 do 30 min na platformi i pregleda u prosjeku između 3 i 14 kanala. Visoka popularnost platforme se očituje i na čestom unosu "YouTube" u google tražilicu, odmah nakon najvećih domaćih portala sa vijestima. Korisno je spomenuti da se YouTube-u u Hrvatskoj najčešće pristupa na račanunalu ili laptopu, što nije tipično za ostale web adrese koje se dominantno pregledavaju na mobilnim uređajima te da je YouTube publika relativno mlada i više od pola posjetitelja je u rasponu starosti od 18 do 34 godine. 
 
 ```{r data, echo=FALSE,message=FALSE,warning=FALSE}
-yt <- read.csv2("../data/YouTube/topYT.csv")
+yt <- read.csv2("../data/YouTube/topYT.csv") %>%
+  mutate(subscribers = subscribers / 100) %>%
+  mutate(views = views / 10)
 ```
 
 
@@ -83,7 +86,43 @@ topGenre
 
 Najpopularniji kanali među tisuću kanala sa najvećim brojem pretplatnika u Hrvatskoj su glazba, video igre, zabava te ljudi i blogovi dok se manji broj kanala bavi političkim temama, neprofitnim djelovanjem i aktivizmom. Zanimljivo je da obrazovne teme zauzimaju sredinu i ima ih čak više nego sportskih kanala.
 
+```{r}
+kanali_video <- yt %>%
+  group_by(genre) %>%
+  summarize(videos = sum(videos, na.rm = TRUE)) %>%
+  arrange(.,desc(videos)) %>%
+  ungroup() %>%
+  slice(.,1:(n()-1))
 
+ggplot(kanali_video, aes(x = videos, y = reorder(genre,videos))) +
+  geom_bar(stat = "identity", alpha = 1) +
+  ylab("") +
+  xlab("Number of videos") +
+  ggtitle("Top (1k) Croatian YouTube channels by genre")+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+  panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  scale_x_continuous(labels = scales::comma)
+```
+
+```{r}
+kanali_subs <- yt %>%
+  mutate(subscribers = subscribers / 100) %>%
+  group_by(genre) %>%
+  summarize(subscribers = sum(subscribers, na.rm = TRUE)) %>%
+  arrange(.,desc(subscribers)) %>%
+  ungroup() %>%
+  slice(.,1:(n()-1))
+
+ggplot(kanali_subs, aes(x = subscribers, y = reorder(genre,subscribers))) +
+  geom_bar(stat = "identity", alpha = 1) +
+  ylab("") +
+  xlab("Number of subscribers") +
+  ggtitle("Top (1k) Croatian YouTube channels by genre")+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+  panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  scale_x_continuous(labels = scales::comma)
+
+```
 
 
 
