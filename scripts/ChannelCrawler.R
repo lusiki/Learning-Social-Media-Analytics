@@ -177,8 +177,6 @@ return(description)
 }
 
 
-
-
 all <- lapply(links[1:10],parser)
 all2 <- lapply(links[11:20],parser)
 all3 <- lapply(links[21:30],parser)
@@ -220,8 +218,6 @@ lowYT <- read.csv2("./data/YouTube/lowYT.csv") %>%
 
 allYT <- dplyr::bind_rows(topYT, lowYT) %>% 
   select(-X, -column_label)
-
-
 
 
 write.csv2(allYT, "./data/YouTube/YT.csv")
