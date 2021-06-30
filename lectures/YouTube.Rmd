@@ -1,5 +1,5 @@
 ---
-title: "Pregled hrvatskog YouTube-a"
+title: "YouTube u Hrvatskoj"
 author: "Lux"
 date: '28 06 2021 '
 output: html_document
@@ -9,8 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
-```{r}
+```{r, echo=FALSE,message=FALSE,warning=FALSE}
 library(tidyverse)
 library(ggplot2)
 library(ggthemes)
@@ -24,17 +23,29 @@ library(ggpubr)
 ```
 
 
-## Općenito o YouTube platformi
 
+<br>
+<br>
+<br>
+
+Društveni mediji danas imaju jako važnu ulogu na globalnoj i lokalnoj razini te su postali predmet analitičkog interesa u biznisu i znanosti. U poslovnom svijetu se to odražava u sve većem broju aplikacija za praćenje društvenih medija, a u znanosti u rastućem broju objvaljenih radova i knjiga na tu temu. Analitika društvenih medija u poslovanju je danas standardni alat dok u znanosti još uvijek predstavlja svojevrsnu avangardu zbog spore prilagodbe društvenih znanosti trendovima u IT svijetu ali i općenite tromosti u (društvenim) znanostima. Veću zastupljenost društvenih medija u znanstvenim istraživanjima usporava općenito nezgodan ali i, u zadnje vrijeme dodatno otežan, pristup podatcima koji je u literaturi domišljato okarakteriziran kao  [APIkalipsa](https://www.tandfonline.com/doi/abs/10.1080/1369118X.2019.1637447) zbog restrikcija u strojnom pristupu podatcima sa društveni platformi. Glavni razlog takvim restrikcijama je Facebook-ova afera sa tvrtkom Cambridge Analytica što je dobro prikazano u kontraverznom dokumentarnom filmu [The social Dilemma](https://www.thesocialdilemma.com/) koji sjajno prikazije "duh vremena".
+
+Iako je YouTube dugo vremena bio istraživački zanemaren u usporedbi sa Facebook-om i Twitter-om, u zadnjih nekoliko godina se to počelo mijenjati kada su teme [političkog ekstremizma](https://dl.acm.org/doi/10.1145/3351095.3372879), [dezinformacija](https://firstmonday.org/article/view/10112/8332), [kulturne medijacije](https://www.sciencedirect.com/science/article/abs/pii/S0304422X16300973), [radikalizacije društva](https://www.nytimes.com/2018/03/10/opinion/sunday/youtube-politics-radical.html), [odnosa globalnih i lokalnih medijskih struktura](https://ijoc.org/index.php/ijoc/article/view/5725) te [nasilja nad djecom](https://medium.com/@jamesbridle/something-is-wrong-on-the-internet-c39c471271d2) počele dobivati na društvenoj relevantnosti. U ovom ću postu dati pregled YouTube-a, platforme koja je u zadnjih 15ak godina od servisa za dijeljenje video sadržaja postala globalna medijska kompanija sa jasnim komercijalnim fokusom na monetizaciju objavljenog sadržaja i prihodom od preko 15mlrd USD što čini oko 10-ak posto prihoda njgovog vlasnika Google-a. Cilj je (deskriptivno) prikazati YouTube sadržaj koji je generiran u Hrvatskoj i vidjeti u kakvom je odnosu sa globalnim karakteristikama YouTube platforme. Analiza je inspirana nizom ([I](https://journals.sagepub.com/doi/10.1177/1354856517736979),[II](https://scholarspace.manoa.hawaii.edu/handle/10125/59701),[III](https://eprints.qut.edu.au/202962/1/View_of_Mapping_YouTube_First_Monday.pdf)) nedavno objavljenih radova koji nastoje okarakterizirati (agregatni) YouTube na osnovi različitih podataka i sa različitim uspjehom. Podatci i `code` za ovu analizu su (*web scraped*) preuzeti sa stranica za analizu društvenih medija [SOCIAL BLADE](https://socialblade.com/) i [ChannelCrawler](https://channelcrawler.com/) i OpenSource-ani zajedno sa u [repozitoriju](https://github.com/lusiki/Learning-Social-Media-Analytics) kolegija [Learning Social Media Analytics](https://lusiki.github.io/Learning-Social-Media-Analytics/) u pripremi za sljedeću 2021/22 godinu na [FHS](https://www.hrstud.unizg.hr/).
 
 
 ## YouTube u Hrvatskoj
 
-```{r data}
-yt <- read.csv2("../data/topYT.csv")
+Danas je YouTube jedna od dominantnih platformi u svijetu društvenih medija, odnosno, nakon Facebook-a, druga najveći globalni društveni medij na svijetu sa oko [2,9 mlrd korisnika](https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/) u 2021. godini, a prema [DIGITAL 2021: CROATIA](https://datareportal.com/reports/digital-2021-croatia?rq=Croatia) izvještaju za 2021. godinu YouTube u Hrvatskoj ima doseg od 2,8 mil stanovnika. Isti izvještaj procjenjuje mjesečni broj posjeta stranici u širokom rasponu od 19 mil - 60 mil (ovisno o servisu: [SEMRUSH](https://www.semrush.com/) ili [similarweb](https://www.similarweb.com/)) te broj jedinstvenih posjeta u rasponu od 1.99 mil - 2.65 mil. Zanimljivo je i znati da prosječni Youtube posjetitelj provede otprilike od 20 do 30 min na platformi i pregleda u prosjeku između 3 i 14 kanala. Visoka popularnost platforme se očituje i na čestom unosu "YouTube" u google tražilicu, odmah nakon najvećih domaćih portala sa vijestima. Korisno je spomenuti da se YouTube-u u Hrvatskoj najčešće pristupa na račanunalu ili laptopu, što nije tipično za ostale web adrese koje se dominantno pregledavaju na mobilnim uređajima te da je YouTube publika relativno mlada i više od pola posjetitelja je u rasponu starosti od 18 do 34 godine. 
+
+```{r data, echo=FALSE,message=FALSE,warning=FALSE}
+yt <- read.csv2("../data/YouTube/topYT.csv")
 ```
 
-## Najpopularnije kategorije kanala
+
+<br>
+<br>
+
+#### Najpopularnije kategorije kanala
 
 ```{r kanali, echo=FALSE}
 kanali <- yt %>%
@@ -44,6 +55,17 @@ kanali <- yt %>%
   ungroup() %>%
   slice(.,1:(n()-1))
 
+ggplot(kanali, aes(x = n, y = reorder(genre,n))) +
+  geom_bar(stat = "identity", alpha = 1) +
+  ylab("") +
+  xlab("Number of channels") +
+  ggtitle("Top (1k) Croatian YouTube channels by genre")+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+  panel.background = element_blank(), axis.line = element_line(colour = "black"))
+
+```
+
+```{r kanaliZAlinkedin, echo=FALSE, eval=FALSE}
 img <- jpeg::readJPEG("../Foto/yt8.jpg")
  
 topGenre <- ggplot(kanali, aes(x = n, y = reorder(genre,n))) +
@@ -55,8 +77,11 @@ topGenre <- ggplot(kanali, aes(x = n, y = reorder(genre,n))) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
   panel.background = element_blank(), axis.line = element_line(colour = "black")) 
 
+topGenre
 
 ```
+
+Najpopularniji kanali među tisuću kanala sa najvećim brojem pretplatnika u Hrvatskoj su glazba, video igre, zabava te ljudi i blogovi dok se manji broj kanala bavi političkim temama, neprofitnim djelovanjem i aktivizmom. Zanimljivo je da obrazovne teme zauzimaju sredinu i ima ih čak više nego sportskih kanala.
 
 
 
