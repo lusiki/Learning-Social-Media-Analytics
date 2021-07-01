@@ -206,7 +206,7 @@ ranges %>%
 
 YouTube kanala (na strani ponude) "proizvedenih" u hrvatskoj ima oko 1500. U svijetu ima skoro 40mil kanala danas. što treba staviti u ko
 
-
+U Hrvatskoj je otprilike Pareto
 
 ```{r rangesANDcategories, echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -218,7 +218,8 @@ rangesCategory <- ranges %>%
   mutate(Total = sum(Number, na.rm = TRUE)) %>%
   mutate("Share %" = (Number / Total)*100) %>%
   select(- Total) %>% 
-  arrange(.,desc("Share %"))
+  #ungroup() %>%
+  arrange(desc(`Share %`),.by_group = TRUE)
   
 
 rangesCategory %>%
@@ -230,6 +231,30 @@ rangesCategory %>%
 
 
 
+```{r descriptivesPERchannel, echo=FALSE, message=FALSE, warning=FALSE}
+options(digits = 2, scipen = 999)
+
+descriptivesChannel <- yt %>%
+  mutate(Ranges = cut(subscribers,c(0,1000,10000,100000,Inf))) %>%
+  mutate(Ranges = recode_factor(.$Ranges,
+                                "(0,1e+03]" = "Bugs",
+                                "(1e+03,1e+04]" = "Rodents",
+                                "(1e+04,1e+05]" = "Mammals",
+                                "(1e+05,Inf]" = "Dinosours")) %>%
+  select(-link,-lastvideo,-X,-name,-genre) %>%
+  gather(.,Category, Number, videos, subscribers, views) %>%
+  group_by(Category,Ranges ) %>%
+  summarise(Mean = mean(Number,na.rm = TRUE),
+            Median = median(Number,na.rm = TRUE),
+            std = sd(Number, na.rm = TRUE)) %>%
+  na.omit()
+
+descriptivesChannel %>%
+  kable(format.args = list(decimal.mark = ',', big.mark = ".")) %>%
+  kable_styling()
+
+
+```
 
 
 
