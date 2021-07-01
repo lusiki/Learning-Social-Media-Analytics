@@ -289,8 +289,10 @@ ranges %>%
   select(-X, -name,- link,-lastvideo) %>% 
   select(genre, subscribers, Ranges) %>%
   mutate(total = sum(subscribers, na.rm = TRUE)) %>%
-  group_by(genre) %>%
-  mutate()
+  mutate(Ranges = as.character(Ranges)) %>%
+  ungroup() %>%
+  dplyr:::group_by(genre, Ranges) %>%
+  dplyr::summarise(pct = (subscribers / total)*100)
 
 
 
