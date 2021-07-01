@@ -21,6 +21,7 @@ library(patchwork)
 library(grid)
 library(ggpubr)
 library(scales)
+library(kableExtra)
 ```
 
 
@@ -39,7 +40,7 @@ https://www.tubics.com/blog/number-of-youtube-channels/
 
 ## YouTube u Hrvatskoj
 
-Danas je YouTube jedna od dominantnih platformi u svijetu društvenih medija, odnosno, nakon Facebook-a, druga najveći globalni društveni medij na svijetu sa oko [2,9 mlrd korisnika](https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/) u 2021. godini, a prema [DIGITAL 2021: CROATIA](https://datareportal.com/reports/digital-2021-croatia?rq=Croatia) izvještaju za 2021. godinu YouTube u Hrvatskoj ima doseg od 2,8 mil stanovnika. Isti izvještaj procjenjuje mjesečni broj posjeta stranici u širokom rasponu od 19 mil - 60 mil (ovisno o servisu: [SEMRUSH](https://www.semrush.com/) ili [similarweb](https://www.similarweb.com/)) te broj jedinstvenih posjeta u rasponu od 1.99 mil - 2.65 mil. Zanimljivo je i znati da prosječni Youtube posjetitelj provede otprilike od 20 do 30 min na platformi i pregleda u prosjeku između 3 i 14 kanala. Visoka popularnost platforme se očituje i na čestom unosu "YouTube" u google tražilicu, odmah nakon najvećih domaćih portala sa vijestima. Korisno je spomenuti da se YouTube-u u Hrvatskoj najčešće pristupa na račanunalu ili laptopu, što nije tipično za ostale web adrese koje se dominantno pregledavaju na mobilnim uređajima te da je YouTube publika relativno mlada i više od pola posjetitelja je u rasponu starosti od 18 do 34 godine. 
+Danas je YouTube jedna od dominantnih platformi u svijetu društvenih medija, odnosno, nakon Facebook-a, druga najveći globalni društveni medij na svijetu sa oko [2,9 mlrd korisnika](https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/) u 2021. godini, a prema [DIGITAL 2021: CROATIA](https://datareportal.com/reports/digital-2021-croatia?rq=Croatia) izvještaju za 2021. godinu YouTube (na strani potražnje) u Hrvatskoj ima doseg od 2,8 mil stanovnika. Isti izvještaj procjenjuje mjesečni broj posjeta stranici u širokom rasponu od 19 mil - 60 mil (ovisno o servisu: [SEMRUSH](https://www.semrush.com/) ili [similarweb](https://www.similarweb.com/)) te broj jedinstvenih posjeta u rasponu od 1.99 mil - 2.65 mil. Zanimljivo je i znati da prosječni Youtube posjetitelj provede otprilike od 20 do 30 min na platformi i pregleda u prosjeku između 3 i 14 kanala. Visoka popularnost platforme se očituje i na čestom unosu "YouTube" u google tražilicu, odmah nakon najvećih domaćih portala sa vijestima. Korisno je spomenuti da se YouTube-u u Hrvatskoj najčešće pristupa na račanunalu ili laptopu, što nije tipično za ostale web adrese koje se dominantno pregledavaju na mobilnim uređajima te da je YouTube publika relativno mlada i više od pola posjetitelja je u rasponu starosti od 18 do 34 godine. 
 
 ```{r data, echo=FALSE,message=FALSE,warning=FALSE}
 yt <- read.csv2("../data/YouTube/YT.csv") 
@@ -50,6 +51,8 @@ yt <- read.csv2("../data/YouTube/YT.csv")
 <br>
 
 #### Najpopularnije kategorije kanala
+
+ 
 
 ```{r, echo=FALSE,message=FALSE,warning=FALSE, fig.height=6, fig.width=10}
 
@@ -79,6 +82,8 @@ yt %>%
   
 
 ```
+
+Najpopularniji kanali među tisuću kanala sa najvećim brojem pretplatnika u Hrvatskoj su glazba, video igre, zabava te ljudi i blogovi dok se manji broj kanala bavi političkim temama, neprofitnim djelovanjem i aktivizmom. Zanimljivo je da obrazovne teme zauzimaju sredinu i ima ih čak više nego sportskih kanala.
 
 
 ```{r kanali, echo=FALSE, eval=FALSE}
@@ -114,8 +119,6 @@ topGenre <- ggplot(kanali, aes(x = n, y = reorder(genre,n))) +
 topGenre
 
 ```
-
-Najpopularniji kanali među tisuću kanala sa najvećim brojem pretplatnika u Hrvatskoj su glazba, video igre, zabava te ljudi i blogovi dok se manji broj kanala bavi političkim temama, neprofitnim djelovanjem i aktivizmom. Zanimljivo je da obrazovne teme zauzimaju sredinu i ima ih čak više nego sportskih kanala.
 
 ```{r, echo=FALSE, eval=FALSE}
 kanali_video <- yt %>%
@@ -171,5 +174,71 @@ ggplot(kanali_subs, aes(x = views, y = reorder(genre,views))) +
   panel.background = element_blank(), axis.line = element_line(colour = "black")) +
   scale_x_continuous(labels = scales::comma)
 ```
+
+
+
+```{r ranges, echo=FALSE, message=FALSE, warning=FALSE}
+
+options(digits = 2, scipen = 999)
+ranges <- yt %>%
+  mutate(Ranges = cut(subscribers,c(0,1000,10000,100000,Inf))) %>%
+  mutate(Ranges = recode_factor(.$Ranges,
+                                "(0,1e+03]" = "Bugs",
+                                "(1e+03,1e+04]" = "Rodents",
+                                "(1e+04,1e+05]" = "Mammals",
+                                "(1e+05,Inf]" = "Dinosours")) %>%
+  group_by(Ranges) %>%
+  summarise(Channels = n(),
+            Videos = sum(videos, na.rm = TRUE),
+            Subscribers = sum(subscribers, na.rm = TRUE),
+            Views = sum(views, na.rm = TRUE)) %>%
+  ungroup() %>%
+  slice(-5)
+
+
+
+ranges %>%
+  kable(format.args = list(decimal.mark = ',', big.mark = ".")) %>%
+  kable_styling()
+```
+
+
+
+YouTube kanala (na strani ponude) "proizvedenih" u hrvatskoj ima oko 1500. U svijetu ima skoro 40mil kanala danas. što treba staviti u ko
+
+
+
+```{r rangesANDcategories, echo=FALSE, message=FALSE, warning=FALSE}
+
+options(digits = 2, scipen = 999)
+
+rangesCategory <- ranges %>%
+  gather(.,Category, Number, Channels,Videos, Subscribers, Views) %>%
+  group_by(Category) %>%
+  mutate(Total = sum(Number, na.rm = TRUE)) %>%
+  mutate("Share %" = (Number / Total)*100) %>%
+  select(- Total) %>% 
+  arrange(.,desc("Share %"))
+  
+
+rangesCategory %>%
+  kable(format.args = list(decimal.mark = ',', big.mark = ".")) %>%
+  kable_styling()
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
