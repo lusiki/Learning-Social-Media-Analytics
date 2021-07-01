@@ -262,39 +262,30 @@ descriptivesChannel %>%
 ```
 
 
-```{r}
-ranges %>%
-  select(-X, -name,- link,-lastvideo) %>% 
+```{r genreBYrange, echo=FALSE, message=FALSE, warning=FALSE}
+
+
+genreBYrange <- ranges %>%
+  select(-X, -name,- link,-lastvideo) %>%
   gather(., Category, Number, subscribers, videos, views) %>%
-  group_by(Category) %>%
-  mutate(total = sum(Number, na.rm = TRUE)) %>%
+  group_by(Ranges) %>%
+  mutate(TotBYRange = sum(Number, na.rm = TRUE)) %>%
   ungroup() %>%
-  group_by(Category, Ranges, genre) %>%
-  
-  
-  summarise(Share = Number / total)
-  
-  
-  group_by(genre, Ranges) %>%
-  mutate(total = sum(Number, na.rm = TRUE)) %>%
-  spread(.,Category, Number)
-
-
-
-
-  summarise(``)
-  
-
-ranges %>%
-  select(-X, -name,- link,-lastvideo) %>% 
-  select(genre, subscribers, Ranges) %>%
-  mutate(total = sum(subscribers, na.rm = TRUE)) %>%
-  mutate(Ranges = as.character(Ranges)) %>%
+  group_by(genre,Ranges, TotBYRange, Category) %>%
+  summarise(TotBYGenre = sum(Number, na.rm = TRUE)) %>%
   ungroup() %>%
-  dplyr:::group_by(genre, Ranges) %>%
-  dplyr::summarise(pct = (subscribers / total)*100)
+  mutate(Share = (TotBYGenre / TotBYRange)*100 ) %>%
+  slice(-3) %>%
+  na.omit() %>%
+  select(-TotBYGenre,-TotBYRange)
+  
+  
+  
+  
 
 
+genreBYrange %>% filter(Category == "videos")
+  ggplot(.,)
 
 ```
 
