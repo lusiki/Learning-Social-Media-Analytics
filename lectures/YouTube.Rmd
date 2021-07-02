@@ -191,7 +191,8 @@ ranges <- yt %>%
                                 "(0,1e+03]" = "Bugs",
                                 "(1e+03,1e+04]" = "Rodents",
                                 "(1e+04,1e+05]" = "Mammals",
-                                "(1e+05,Inf]" = "Dinosours")) 
+                                "(1e+05,Inf]" = "Dinosours")) %>%
+  mutate(Ranges = as.character(Ranges))
 
  rangesGeneral <- ranges %>%
   group_by(Ranges) %>%
@@ -219,7 +220,7 @@ U Hrvatskoj je otprilike Pareto
 options(digits = 2, scipen = 999)
 
 rangesCategory <- ranges %>%
-  gather(.,Category, Number, Channels,Videos, Subscribers, Views) %>%
+  gather(.,Category, Number,videos, subscribers, views) %>%
   group_by(Category) %>%
   mutate(Total = sum(Number, na.rm = TRUE)) %>%
   mutate("Share %" = (Number / Total)*100) %>%
@@ -262,30 +263,33 @@ descriptivesChannel %>%
 ```
 
 
-```{r genreBYrange, echo=FALSE, message=FALSE, warning=FALSE}
+```{r genreBYrange, echo=FALSE, message=FALSE, warning=FALSE, fig.height=7,fig.width=10}
 
+options(digits = 2, scipen = 999)
 
 genreBYrange <- ranges %>%
   select(-X, -name,- link,-lastvideo) %>%
   gather(., Category, Number, subscribers, videos, views) %>%
-  group_by(Ranges) %>%
-  mutate(TotBYRange = sum(Number, na.rm = TRUE)) %>%
+  group_by(Category) %>%
+  mutate(TotBYcategory = sum(Number, na.rm = TRUE)) %>%
   ungroup() %>%
-  group_by(genre,Ranges, TotBYRange, Category) %>%
-  summarise(TotBYGenre = sum(Number, na.rm = TRUE)) %>%
+  group_by(Category,Ranges) %>%
+  mutate(TotBYCategoryANDRange = sum(Number, na.rm = TRUE)) %>%
   ungroup() %>%
-  mutate(Share = (TotBYGenre / TotBYRange)*100 ) %>%
-  slice(-3) %>%
-  na.omit() %>%
-  select(-TotBYGenre,-TotBYRange)
+  group_by(Category,Ranges,genre,TotBYCategoryANDRange,TotBYcategory) %>%
+  summarise(TotBYCategoryANDRangeANDGenre = sum(Number, na.rm = TRUE)) %>%
+  mutate(`Share %` = (TotBYCategoryANDRangeANDGenre / TotBYCategoryANDRange)*100) %>%
+  na.omit()
+  
+  genreBYrange %>%
+    ggplot(.,aes(x = Ranges,y = `Share %`, group= genre)) +
+    geom_line(aes(color=genre)) +
+    geom_point(aes(color=genre)) + 
+    facet_wrap(~Category) +
+    theme_bw(base_size = 16) +
+    theme(axis.text.x=element_text(angle=45,hjust=1))
   
   
-  
-  
-
-
-genreBYrange %>% filter(Category == "videos")
-  ggplot(.,)
 
 ```
 
