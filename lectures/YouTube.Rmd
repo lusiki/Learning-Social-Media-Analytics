@@ -60,7 +60,7 @@ Channel categories are divided into seven main branches. Entertainment, gaming, 
 
 ```{r, echo=FALSE,message=FALSE,warning=FALSE, fig.height=6, fig.width=10}
 
-img <- jpeg::readJPEG("../Foto/yt8.jpg")
+#img <- jpeg::readJPEG("../Foto/yt8.jpg")
 
 
 yt %>%
@@ -73,7 +73,7 @@ yt %>%
   ungroup() %>%
   gather(., Category, Number, Channels,Videos,Subscribers,Views) %>%
   ggplot(., aes(x = Number, y = reorder(genre,Number))) +
-  background_image(img) +
+ # background_image(img) +
   geom_bar(stat = "identity", alpha = 1) +
   ylab("") +
   xlab("Number") +
@@ -263,7 +263,7 @@ descriptivesChannel %>%
 ```
 
 
-```{r genreBYrange, echo=FALSE, message=FALSE, warning=FALSE, fig.height=7,fig.width=10}
+```{r genreBYrange, echo=FALSE, message=FALSE, warning=FALSE, fig.height=10,fig.width=12}
 
 options(digits = 2, scipen = 999)
 
@@ -279,22 +279,38 @@ genreBYrange <- ranges %>%
   group_by(Category,Ranges,genre,TotBYCategoryANDRange,TotBYcategory) %>%
   summarise(TotBYCategoryANDRangeANDGenre = sum(Number, na.rm = TRUE)) %>%
   mutate(`Share %` = (TotBYCategoryANDRangeANDGenre / TotBYCategoryANDRange)*100) %>%
-  na.omit()
+  na.omit() %>%
+  filter(genre != "")
   
-  genreBYrange %>%
-    ggplot(.,aes(x = Ranges,y = `Share %`, group= genre)) +
-    geom_line(aes(color=genre)) +
-    geom_point(aes(color=genre)) + 
+  
+
+  
+  
+   genreBYrange %>%
+ #   filter(`Share %` >= 6) %>% 
+    ggplot(.,aes(x = factor(Ranges, level = c("Bugs", "Rodents", "Mammals","Dinosours")),
+                 y = `Share %`, group= genre)) +
+    geom_line(aes(color=genre),size = 1.5) +
+    geom_point(aes(color=genre),size = 3) + 
     facet_wrap(~Category) +
     theme_bw(base_size = 16) +
-    theme(axis.text.x=element_text(angle=45,hjust=1))
-  
+    theme(axis.text.x=element_text(angle=45,hjust=1)) +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+    panel.background = element_blank(), axis.line = element_line(colour = "black"), legend.title=element_blank()) +
+    xlab("Channel size") +
+    scale_y_continuous(breaks = scales::pretty_breaks(n = 15)) 
   
 
 ```
 
 
+Glavne zaključke o YouTube platformi je moguće sažeti na sljedeći način:
 
+**Prvo**, riječ je o platformi na kojoj dominira mali broj velikih (*dinnosour*) kanala. U toj skupini najvećih se dodatno ističe još manja skupina *elitnih* kanala koji imaju preko 1 mil pretplatnika i dodatno iskrivljuje distribuciju u korist veličine. Iako bi donošenje dubljih zaključaka o prirodi ove distribucije zahtijevalo detaljniju analizu, jasno je da hrvatski YouTube nije sinonim za *informacijsku demokratizaciju* već masovni medij na kojem mali broj *elitnih* kanala dominira velikim mnoštvom malih aspirantskih kanala.
+
+**Drugo**, iako ne nužno vidljivo u podatcima za ovu analizu, "ručni" pregled kanala upućuje na profesionalizaciju platforme, primjerice kroz sve veću duljinu trajanja uspješnih video-a, organiziranog oglašavanja, umrežavanja kanala, povećanje kvalitete opisa i metapodataka...Također je očito i sve veće oslanjanje manjih kanala (manje pretplatnika) na eksterno financiranje poput *Patreon-a*. Valja spomenut i kako najuspješniji kanali orjentirani na zabavni (ne nužno edukativni,informativni ili politički) sadržaj privlače najviše reklama (često i po dvije prilikom pokretanja video-a).
+
+**Treće**, vidljiva je
 
 Daljnja analiza bi uključivala detaljnije podatke o objavljenim video-ima. 
 
