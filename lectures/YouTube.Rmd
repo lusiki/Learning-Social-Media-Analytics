@@ -215,7 +215,7 @@ YouTube kanala (na strani ponude) "proizvedenih" u hrvatskoj ima oko 1500. U svi
 
 U Hrvatskoj je otprilike Pareto
 
-```{r rangesANDcategories, echo=FALSE, message=FALSE, warning=FALSE}
+```{r rangesANDcategories, echo=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 
 options(digits = 2, scipen = 999)
 
