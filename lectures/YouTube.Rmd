@@ -306,6 +306,8 @@ descriptivesChannel %>%
 ```
 
 
+Za kraj ćemo pogledati istu stvar u relativnim odnosima (%) na ponešto kaotičnom donjem grafikonu. 
+
 ```{r genreBYrange, echo=FALSE, message=FALSE, warning=FALSE, fig.height=10,fig.width=12}
 
 options(digits = 2, scipen = 999)
