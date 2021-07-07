@@ -1,5 +1,5 @@
 ---
-title: "YouTube kanali u Hrvatskoj"
+title: "Analiza YouTube scene u Hrvatskoj"
 author: "Lux"
 date: '28 06 2021 '
 output: html_document
@@ -45,8 +45,10 @@ YouTube je, nakon Facebook-a, (drugi) najveći globalni društveni medij na svij
 yt <- read.csv2("../data/YouTube/YT.csv") 
 ```
 
+Na strani YouTube **ponude** u Hrvatskoj se nalazi ~1400 kanala koji imaju više od 0 pretplatnika, a za usporedbu je korisno spomenuti da globalni YouTube ima oko ~40 mil kanala u 2021. godini prema istom kriteriju. Pri tome je stratifikacija kanala izrazito naglašena pa *zlatnih* (preko 1mil pretplatnika) hrvatskih kanala ima 6 ^[elitni] dok globalni YouTube ima oko ~25k takvih kanala. Ovdje prikazujem broj pretplatnika kao glavni kriterij za stratifikaciju kanala jer je na osnovi njega organiziran YouTube-ov monetizacijski sustav no pri tome valja naglasiti da broj pretplatnika ne prikazuje cjelovitu sliku popularnosti kanala. Koliko sadržaja (video-a) vi gledate, a da niste nužno pretplaćeni na kanal koji ga je objavio? Sljedeća YouTube-ova monetizacijska kategorija su *srebrni* kanali koji imaju više od 100k i manje od 1mil pretplatnika. Takvih je kanala u Hrvatskoj 122 i oko ~250k na globalnom YouTube-u. Najveći domaćih kanala (+550) se kreće u rasponu od 1k do 10k pretplatnika, a dosta (400) je i kanala koji su u rasponu od 10k do 100k. Nije zanemariv niti broj domaćih (~220) kanala u rasponu od 100 -1k dok je u svijetu takvih oko 12 mil.
 
-```{r , echo=FALSE,message=FALSE,warning=FALSE, fig.height=6, fig.width=10}
+
+```{r ponudaVSpotraznja, echo=FALSE,message=FALSE,warning=FALSE, fig.height=6, fig.width=10}
 options(scipen = 999)
 hist <- yt %>%
   mutate(Ranges = cut(subscribers,c(0,100,1000,10000,100000,200000,300000,400000,500000,1000000, Inf))) %>%
@@ -86,22 +88,16 @@ gghist
 
 ```
 
-
-Na strani YouTube **ponude** u Hrvatskoj se nalazi ~1400 kanala koji imaju više od 0 pretplatnika, a za usporedbu je korisno spomenuti da globalni YouTube ima oko ~40 mil kanala u 2021. godini prema istom kriteriju. Pri tome je stratifikacija kanala izrazito naglašena pa *zlatnih* (preko 1mil pretplatnika) hrvatskih kanala ima 6 ^[elitni] dok globalni YouTube ima oko ~25k takvih kanala. Ovdje prikazujem broj pretplatnika kao glavni kriterij za stratifikaciju kanala jer je na osnovi njega organiziran YouTube-ov monetizacijski sustav no pri tome valja naglasiti da broj pretplatnika ne prikazuje cjelovitu sliku popularnosti kanala. Koliko sadržaja (video-a) vi gledate, a da niste nužno pretplaćeni na kanal koji ga je objavio? Sljedeća YouTube-ova monetizacijska kategorija su *srebrni* kanali koji imaju više od 100k i manje od 1mil pretplatnika. Takvih je kanala u Hrvatskoj 122 i oko ~250k na globalnom YouTube-u. Najveći domaćih kanala (+550) se kreće u rasponu od 1k do 10k pretplatnika, a dosta (400) je i kanala koji su u rasponu od 10k do 100k. Nije zanemariv niti broj domaćih (~220) kanala u rasponu od 100 -1k dok je u svijetu takvih oko 12 mil.
-
 Na gornjem grafikonu je (još malo detaljnije) prikazana stratifikacijska struktura hrvatskih kanala po veličini za broj kanalam pretplatnika, video-a i pregleda. Čini mi se da je zanimljivo primijetiti još tri stvari: **1)** Skoro bimodalnu distribuciju pretplatnika i pregleda tumačim interesom za lokalnim sadržajem (na hrvatskom jeziku) jer manji i lokalni kanali imaju puno lokalnih pretplatnika dok veći i globalnoj publici orjentirani kanali imaju puno stranih prtplatnika. Ovu hipotezu nisam testirao u podatcima ali pregled ("golim okom") kanala u 10-100k rasponu me upućuje na takav zaključak, a postoje i dobri [dokazi](https://eprints.qut.edu.au/202962/1/View_of_Mapping_YouTube_First_Monday.pdf) o YouTube homofiliji (važnosti lokalno generiranog sadržaja). **2)** Ovo mi također ukazuje na to da broj pretplatnika kao kriterij za procjenu veličine i uspjeha kanala nije idealan jer manji, odnosno srednje veliki kanali također imaju velik broj pregleda. Sa druge strane je također i očito da broj pregleda, koliko god nesavršen kao pokazatelj popularnosti, [ipak jako dobro definira razinu popularnosti](https://www.youtube.com/watch?v=y9Hn9a1WC-0&t=101s). **3)**  Manji kanali moraju proizvesti puno više (video) sadržaja za jednak ili manji broj pretplatnika i pregleda što upkazuje na veliku konkurenciju, težak i trnovit put do YouTube uspjeha i postojanje znatnih prinosa na opseg odnosno industrijalnizaciju YouTube platforme. 
 
 
-
 <br>
 <br>
 
-## Najpopularnije kategorije 
+## Kategorije 
 
 
-Channel categories are divided into seven main branches. Entertainment, gaming, lifestyle, music, society, and sportseach come with their own subcategories, but a seventh topic, knowledge, is not divided any further. Channels may becategorized into one or several parent topics, and they may or may not be slotted further into subtopics. 
-
-[Kumar](https://policyreview.info/articles/analysis/algorithmic-dance-youtubes-adpocalypse-and-gatekeeping-cultural-content-digital)
+YouTube platforma kroz egzotičan i složen [algoritamski ples](https://policyreview.info/articles/analysis/algorithmic-dance-youtubes-adpocalypse-and-gatekeeping-cultural-content-digital) sa kreatorima sadržaja tematski organizira kanale u sedam glavnih kategorija koji se, ne skroz jasnom logikom, dalje granaju u podkategorije. Glavne kategorije sa podkategoijama su: *entertainment, gaming, lifestyle, music, society* i *sports*, dok sedma kategorija, *knowledge*, nema podkategorija. Ovdje 
 
 
 ```{r, echo=FALSE,message=FALSE,warning=FALSE, fig.height=6, fig.width=10}
@@ -366,6 +362,7 @@ Glavne zaključke o YouTube platformi je moguće sažeti na sljedeći način:
 
 
 ^[servis]: Ovisno o izvoru [SEMRUSH](https://www.semrush.com/) ili [similarweb](https://www.similarweb.com/).
+<br>
 ^[elitni]: 2CELLOS (5.68mil), HAUSER (1.85mil), Doctor D.S. (1.75mil), KingsOfFailsShow (1.15mil), agadmator's Chess Channel (1.11mil),BloodMaster (1.07mil)
 
 <br>
