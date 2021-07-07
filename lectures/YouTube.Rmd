@@ -97,7 +97,9 @@ Na gornjem grafikonu je (još malo detaljnije) prikazana stratifikacijska strukt
 ## Kategorije 
 
 
-YouTube platforma kroz egzotičan i složen [algoritamski ples](https://policyreview.info/articles/analysis/algorithmic-dance-youtubes-adpocalypse-and-gatekeeping-cultural-content-digital) sa kreatorima sadržaja tematski organizira kanale u sedam glavnih kategorija koji se, ne skroz jasnom logikom, dalje granaju u podkategorije. Glavne kategorije sa podkategoijama su: *entertainment, gaming, lifestyle, music, society* i *sports*, dok sedma kategorija, *knowledge*, nema podkategorija. Ovdje 
+YouTube platforma kroz egzotičan i složen [algoritamski ples](https://policyreview.info/articles/analysis/algorithmic-dance-youtubes-adpocalypse-and-gatekeeping-cultural-content-digital) sa kreatorima sadržaja tematski organizira kanale u sedam glavnih kategorija koji se, ne skroz jasnom logikom, dalje granaju u podkategorije. Glavne kategorije sa podkategoijama su: *entertainment, gaming, lifestyle, music, society* i *sports*, dok sedma kategorija, *knowledge*, nema podkategorija. U ovoj analizi prikazujem nešto više kategorija jer su tako označene na podatcima o hrvatskim YouTube kanalima. Razlog za to nije skroz jasan no možda je YouTube jednostavno odlučio na taj način kategorizirati somaće kanale. Inače, kategorizacija YouTube kanala nije samo tehnička stvar već ju platforma vješto koristi kako bi promovirala, odnodno prikrila manje poželjan sadržaj poput političkog, aktivističkog pa čak i edukativnog što je predmet određenih [kontroverzi](https://journals.sagepub.com/doi/10.1177/1354856517736979). 
+
+Na donjem grafikonu je vidljivo da su najpopularniji domaći kanali prema broju kanala, broju pretplatnika, video-a i pregleda u Hrvatskoj konzistentno  glazba, video igre, zabava te ljudi i blogovi dok se manji broj kanala bavi političkim temama, neprofitnim djelovanjem i aktivizmom. . Ovakva je podjela karakteristična i za globalnu YouTube platformu i odražava globalni karakter platforme orjentirane na zabavni sadržaj, ne toliko različite od Netflix-a koji se razvija u sličnom smjeru. Zanimljivo je da obrazovne teme u Hrvatskoj zauzimaju sredinu distribucije te da ima ih čak više nego sportskih kanala. Za buduće domaće YouTube poduzetnike ovaj grafikon može biti koristan jer pokazuje da je relativno najviše truda (broj video-a) potrebno za uspjeh u gaming katgoriji gdje je konkurencija (broj kanala) najveća i donosi najmanje (pregleda i pretplatnika). Kategorija zabave je pak najisplativiji pristup. Također je vidljivo i da najviše truda (količina sdržaja odnosno broja video-a) za najmanje rezlultata (pregleda i pretplatnika) dodnosi kategorija vijesti, politike i sporta što osim niske potražnje za kvalitetnim sadržajem odražava i prethodno spomenuti (algoritamski) fokus YouTube platforme na zabavu.
 
 
 ```{r, echo=FALSE,message=FALSE,warning=FALSE, fig.height=6, fig.width=10}
@@ -128,9 +130,6 @@ yt %>%
   
 
 ```
-
-Najpopularniji kanali među tisuću kanala sa najvećim brojem pretplatnika u Hrvatskoj su glazba, video igre, zabava te ljudi i blogovi dok se manji broj kanala bavi političkim temama, neprofitnim djelovanjem i aktivizmom. Zanimljivo je da obrazovne teme zauzimaju sredinu i ima ih čak više nego sportskih kanala.
-
 
 
 ```{r kanali, echo=FALSE, eval=FALSE}
