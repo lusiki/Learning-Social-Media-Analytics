@@ -223,7 +223,7 @@ ggplot(kanali_subs, aes(x = views, y = reorder(genre,views))) +
 
 ## Kategorije i veličina kanala
 
-Nakon pregleda osnovnih karakteristika i kategorija YouTube kanala ćemo pogledati još nekoliko detalja koji dolaze do izrađaja kada se zajedno promotri odnos kategorija i kanala. Za potrebe tog pregleda ćemo pojednostavniti kategorizaciju kanala prema broju pretplatnika i nazvati sve kanali do 1k preptlatnika "Bugs", od 1k do 10k će biti "Rodents", od 10k do 100k su "Mammals", a sve preko 100k će biti "Dinosours". 
+Nakon pregleda osnovnih karakteristika i kategorija YouTube kanala ćemo pogledati još nekoliko detalja koji dolaze do izrađaja kada se zajedno promotri odnos kategorija i kanala. Za potrebe tog pregleda ćemo pojednostavniti kategorizaciju kanala prema broju pretplatnika i nazvati sve kanali do 1k preptlatnika "Bube", od 1k do 10k će biti "Glodavci", od 10k do 100k su "Sisavci", a sve preko 100k su "Dinosauri". Podatci su prikazani u donjoj tablici i jasno pokazuju nesrazmjer između dinosaura i svih drugih nižih vrsta u svim kategorijama. Dinosauri su rijetkost prema broju kanala i na maloj količini sadržaja ostvaruju daleko najviše pretplatnika i pregleda. Daleko ispod dinosaura se nalaze sisavci i glodavci koji na sličnoj količini sadržaja (broj video-a) ostvaruju oko ~5x razliku u broju pretplatnika i pregleda. Na samom dnu su bube po svim pokazateljima su bube koje imaju zanemariv broj pretplatnika i pregleda ali pokazuju entuzijazam kroz relativno velik broj kanala.    
 
 ```{r ranges, echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -231,10 +231,10 @@ options(digits = 2, scipen = 999)
 ranges <- yt %>%
   mutate(Ranges = cut(subscribers,c(0,1000,10000,100000,Inf))) %>%
   mutate(Ranges = recode_factor(.$Ranges,
-                                "(0,1e+03]" = "Bugs",
-                                "(1e+03,1e+04]" = "Rodents",
-                                "(1e+04,1e+05]" = "Mammals",
-                                "(1e+05,Inf]" = "Dinosours")) %>%
+                                "(0,1e+03]" = "Bube",
+                                "(1e+03,1e+04]" = "Glodavci",
+                                "(1e+04,1e+05]" = "Sisavci",
+                                "(1e+05,Inf]" = "Dinosauri")) %>%
   mutate(Ranges = as.character(Ranges))
 
  rangesGeneral <- ranges %>%
@@ -246,20 +246,16 @@ ranges <- yt %>%
   ungroup() %>%
   slice(-5) %>%
   arrange(factor(Ranges,
-                 levels = c("Bugs", "Rodents", "Mammals","Dinosours")))
+                 levels = c("Bube", "Glodavci", "Sisavci","Dinosauri")))
 
 
 
 rangesGeneral %>%
   kable(format.args = list(decimal.mark = ',', big.mark = "."),
-        caption = "This is the table caption") %>%
+        caption = "Pregled kanala prema veličini") %>%
   kable_styling()
 ```
 
-
-YouTube kanala (na strani ponude) "proizvedenih" u hrvatskoj ima oko 1500. U svijetu ima skoro 40mil kanala danas. što treba staviti u ko
-
-U Hrvatskoj je otprilike Pareto
 
 ```{r rangesANDcategories, echo=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 
