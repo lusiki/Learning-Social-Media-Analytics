@@ -103,20 +103,20 @@ parse_proizvodi_vise_pokusaja_ <- function(url, broj_pokusaja = 5) {
 
 
 
-page  <- "https://channelcrawler.com/eng/results/48267/sort:Channel.subscribers/direction:asc"
+page  <- "https://www.channelcrawler.com/eng/results/48267/sort:Channel.subscribers/direction:desc"
 
 nums <- seq(2,50)
 
 links <- c(page,
            paste0("https://www.channelcrawler.com/eng/results/48267/page:"
                        ,nums,
-                       "/sort:Channel.subscribers/direction:asc"))
+                       "/sort:Channel.subscribers/direction:desc"))
 
 
 
 parser <- function(url) {
 
-Sys.sleep(runif(1, min = 3, max = 11))
+Sys.sleep(runif(1, min = 2, max = 7))
   
 name <- read_html(url) %>%
   html_nodes(., "h4") %>% 
@@ -146,10 +146,10 @@ meta <- read_html(url) %>%
 
 subscribers <- meta$X2 %>%
   gsub(" Subscribers", "",. ) %>%
-  gsub("M", "000000",.) %>%
-  gsub("K","000",.) %>%
-  gsub("\\.", "",.) %>%
-  as.numeric() 
+  gsub("M", "*1000000",.) %>%
+  gsub("K","*1000",.) #%>%
+ # gsub("\\.", "",.) %>%
+ # as.numeric() 
 
 videos <- meta$X3 %>%
   gsub(" Videos","",.) %>%
@@ -157,11 +157,11 @@ videos <- meta$X3 %>%
 
 views <- meta$X4 %>%
   gsub(" Total Views","",.) %>%
-  gsub("B", "00000000",.) %>%
-  gsub("M","000000",.) %>%
-  gsub("K","000",.) %>%
-  gsub("\\.", "",.) %>%
-  as.numeric()
+  gsub("B", "*100000000",.) %>%
+  gsub("M","*1000000",.) %>%
+  gsub("K","*1000",.) #%>%
+ # gsub("\\.", "",.) %>%
+ # as.numeric()
   
 lastvideo <- meta$X5 %>%
   gsub("Latest Video: ", "",.) %>% 
@@ -177,8 +177,6 @@ return(description)
 }
 
 
-
-
 all <- lapply(links[1:10],parser)
 all2 <- lapply(links[11:20],parser)
 all3 <- lapply(links[21:30],parser)
@@ -190,10 +188,49 @@ allLIst <- c(all, all2, all3, all4, all5)
 df <- bind_rows(allLIst, .id = "column_label")
 
 
-lowYT <- bind_rows(df)
+df <- df %>%
+  separate(subscribers, c("subscribers", "multiply1"), "\\*") %>%
+  separate(views, c("views", "multiply2"), "\\*") %>% 
+  filter(subscribers != "Subscribers hidden") %>%
+  mutate(subscribers = as.numeric(subscribers))%>%
+  mutate(multiply1 = as.numeric(multiply1))%>%
+  mutate(views = as.numeric(views))%>%
+  mutate(multiply2 = as.numeric(multiply2))
+
+df[is.na(df)] <- 1
+
+df <- df %>%
+  mutate(subscribers = subscribers * multiply1)%>%
+  mutate(views = views * multiply2) %>%
+  select(-multiply1,-multiply2)
 
 
-write.csv2(lowYT, file = "./data/lowYT.csv")
+
+
+write.csv2(df, file = "./data/YouTube/topYT.csv")
+
+
+topYT <- read.csv2("./data/YouTube/topYT.csv")
+lowYT <- read.csv2("./data/YouTube/lowYT.csv") %>%
+  arrange(desc(subscribers)) %>%
+  filter(X<=417)
+
+
+allYT <- dplyr::bind_rows(topYT, lowYT) %>% 
+  select(-X, -column_label)
+
+
+write.csv2(allYT, "./data/YouTube/YT.csv")
+
+
+
+
+
+
+
+
+
+
 
 
 
