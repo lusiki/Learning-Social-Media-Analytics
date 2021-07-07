@@ -37,15 +37,58 @@ U ovom ću stoga dati pregled YouTube-a, platforme koja je u zadnjih 15ak godina
 
 
 
-## YouTube kanali u Hrvatskoj
+## YouTube kanali u Hrvatskoj (ponuda i potražnja)
 
-YouTube je, nakon Facebook-a, (drugi) najveći globalni društveni medij na svijetu sa oko [2,9 mlrd korisnika](https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/) u 2021. godini, a prema [podatcima](https://datareportal.com/reports/digital-2021-croatia?rq=Croatia) za 2021. godinu YouTube u Hrvatskoj ima doseg (potražnju) od 2,8 mil stanovnika. Isti podatci navode mjesečni broj posjeta YouTube stranici u rasponu od 19 mil do 60 mil ^[servis] te broj jedinstvenih posjeta u rasponu od 1.99 mil - 2.65 mil ^[servis]. Zanimljivo je i spomenuti da prosječni Youtube posjetitelj provede otprilike od 20 do 30 min na platformi, pregledavajući u prosjeku između 3 i 14 kanala. Visoka popularnost platforme se očituje i u čestom *googlanja* riječi "YouTube", odmah nakon nekoliko najvećih domaćih novinskih i informativnih portala. Također je važno i spomenuti da se YouTube platformi u Hrvatskoj najčešće pristupa na račanunalu ili laptopu, što nije tipično za ostale društvene medije koji se dominantno pregledavaju na mobilnim uređajima. Na kraju valja i reći da je YouTube publika relativno mlada pai više od pola posjetitelja je u rasponu starosti od 18 do 34 godine. 
-
-
+YouTube je, nakon Facebook-a, (drugi) najveći globalni društveni medij na svijetu sa oko [2,9 mlrd korisnika](https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/) u 2021. godini, a prema [podatcima](https://datareportal.com/reports/digital-2021-croatia?rq=Croatia) za 2021. godinu **potražnja** za YouTube sadržajem u Hrvatskoj ima doseg od 2,8 mil stanovnika. Isti podatci navode mjesečni broj posjeta YouTube stranici u rasponu od 19 mil do 60 mil ^[servis] te broj jedinstvenih posjeta u rasponu od 1.99 mil - 2.65 mil ^[servis]. Zanimljivo je i spomenuti da prosječni Youtube posjetitelj provede otprilike od 20 do 30 min na platformi, pregledavajući u prosjeku između 3 i 14 kanala. Visoka popularnost platforme se očituje i u čestom *googlanja* riječi "YouTube", odmah nakon nekoliko najvećih domaćih novinskih i informativnih portala. Također je važno i spomenuti da se YouTube platformi u Hrvatskoj najčešće pristupa na račanunalu ili laptopu, što nije tipično za ostale društvene medije koji se dominantno pregledavaju na mobilnim uređajima. Na kraju valja i reći da je YouTube publika relativno mlada pai više od pola posjetitelja je u rasponu starosti od 18 do 34 godine. 
 
 ```{r data, echo=FALSE,message=FALSE,warning=FALSE}
 yt <- read.csv2("../data/YouTube/YT.csv") 
 ```
+
+
+```{r , echo=FALSE,message=FALSE,warning=FALSE, fig.height=6, fig.width=10}
+options(scipen = 999)
+hist <- yt %>%
+  mutate(Ranges = cut(subscribers,c(0,100,1000,10000,100000,200000,300000,400000,500000,1000000, Inf))) %>%
+  mutate(Ranges = recode_factor(.$Ranges,
+                                "(0,100]" = "100",
+                                "(100,1e+03]" = "1k",
+                                "(1e+03,1e+04]" = "10k",
+                                "(1e+04,1e+05]" = "100k",
+                                "(1e+05,2e+05]" = "200k",
+                                "(2e+05,3e+05]" = "300k",
+                                "(3e+05,4e+05]" = "400k",
+                                "(4e+05,5e+05]" = "500k",
+                                "(5e+05,1e+06]" = "600k",
+                                "(1e+06,Inf]"   = "+1mil")) %>%
+  na.omit(.) %>%
+  group_by(Ranges) %>%
+  summarise(Channels = n(),
+            Subscribers = sum(subscribers, na.rm = TRUE),
+            Videos = sum(videos, na.rm = TRUE),
+            Views = sum(views, na.rm = TRUE)) %>%
+  gather(.,Category,Number, -Ranges)
+
+
+
+hist %>% ggplot(.,aes(Ranges,Number)) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~Category, scales = "free") +
+  scale_y_continuous(labels = scales::comma) +
+  ylab("Number of channels") +
+  xlab("") +
+  ggtitle("Croatian YouTube channels by  size")+
+  theme_bw() +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+  panel.background = element_blank(), axis.line = element_line(colour = "black")) 
+
+
+```
+
+
+Na strani YouTube **ponude** u Hrvatskoj se nalazi ~1400 kanala koji imaju više od 0 pretplatnika, a za usporedbu je korisno spomenuti da globalni YouTube ima oko ~40 mil kanala u 2021. godini prema istom kriteriju. 
+
+
 
 <br>
 <br>
