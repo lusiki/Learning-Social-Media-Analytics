@@ -280,9 +280,9 @@ rangesCategory %>%
 
 ```
 
-Donja tablica prikazuje odnose veličine kada se svi pokazatelji stave u prosječni odnos na razini kanala i skreće pozornost na dodatne YouTube nesrazmjere koji postoje i unutar samih kategorija i veličina. Razlike između prosječnih i srednjih vrijednosti prema kriteriju veličine i kategorije su to veće što je kanal veći (ima više pretplatnika). Ove su pak razlike najizraženije kod broja pregleda pa upućuju na zaključak da korisnici ipak sami najbolje znaju što vole gledati (YouTube živi i na strani potražnje, a ne samo ponude). Također je zanimljivo i primjetiti veliku razliku u rasponu broju videa kod dinosaura što ukazuje da određeni veliki i uspješni kanali uz znatno manje napora postižu isti cilj, odnosno imaju bolju YouTube strategiju. U budućnosti bi bilo korisno identificirati upravo te kanale i pogledati njihove karakteristike što bi bio informiran doprinos  [popularnim debatama](https://www.reddit.com/r/NewTubers/comments/cmdewu/12_true_facts_about_success_on_youtube/) o strategijama uspjeha na YouTube-u.  
+Donji grafikon daje deskriptivni prikaz na razini kanala i skreće pozornost na dodatne YouTube nesrazmjere koji postoje i unutar samih kategorija i veličina. Razlike između prosječnih i srednjih vrijednosti prema kriteriju veličine i kategorije su to veće što je kanal veći (ima više pretplatnika). Ove su pak razlike najizraženije kod broja pregleda pa upućuju na zaključak da korisnici ipak sami najbolje znaju što vole gledati (YouTube živi i na strani potražnje, a ne samo ponude). Također je zanimljivo i primjetiti veliku razliku u rasponu broju videa kod dinosaura što ukazuje da određeni veliki i uspješni kanali uz znatno manje napora postižu isti cilj, odnosno imaju bolju YouTube strategiju. U budućnosti bi bilo korisno identificirati upravo te kanale i pogledati njihove karakteristike što bi bio informiran doprinos  [popularnim debatama](https://www.reddit.com/r/NewTubers/comments/cmdewu/12_true_facts_about_success_on_youtube/) o strategijama uspjeha na YouTube-u.  
 
-```{r descriptivesPERchannel, echo=FALSE, message=FALSE, warning=FALSE}
+```{r descriptivesPERchannel, echo=FALSE, message=FALSE, warning=FALSE,fig.height=10,fig.width=12}
 options(digits = 2, scipen = 999)
 
 descriptivesChannel <- yt %>%
@@ -293,23 +293,44 @@ descriptivesChannel <- yt %>%
                                 "(1e+04,1e+05]" = "Sisavci",
                                 "(1e+05,Inf]" = "Dinosauri")) %>%
   select(-link,-lastvideo,-X,-name,-genre) %>%
-  group_by(Ranges) %>%
-  mutate(channels = n()) %>%
+#  group_by(Ranges) %>%
+#  mutate(channels = n()) %>%
   ungroup() %>%
-  gather(.,Category, Number, videos, subscribers, views,channels) %>%
-  group_by(Category,Ranges ) %>%
+  gather(.,Category, Number, videos, subscribers, views) %>%
+#  group_by(Category,Ranges ) %>%
  # summarise(Mean = mean(Number,na.rm = TRUE),
  #           Median = median(Number,na.rm = TRUE),
  #           std = sd(Number, na.rm = TRUE)) %>%
   na.omit()
 
 
-descriptivesChannel %>%
-  ggplot(.,aes(Ranges,Number)) +
-  geom_boxplot() + 
-  facet_wrap(~Category,scales = "free")
 
-descriptivesChannel %>%
+
+calc_stat <- function(x) {
+  coef <- 1.5
+  n <- sum(!is.na(x))
+  # calculate quantiles
+  stats <- quantile(x, probs = c(0.1, 0.25, 0.5, 0.75, 0.9))
+  names(stats) <- c("ymin", "lower", "middle", "upper", "ymax")
+  return(stats)
+}
+
+
+dscGG <- descriptivesChannel %>%
+  ggplot(.,aes(Ranges,Number)) +
+  stat_summary(fun.data = calc_stat, geom="boxplot") +
+  facet_wrap(~Category,scales = "free") +
+  theme_bw(base_size = 16) +
+    theme(axis.text.x=element_text(angle=45,hjust=1)) +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+    panel.background = element_blank(), axis.line = element_line(colour = "black"), legend.title=element_blank()) +
+    xlab("Veličina kanala") +
+    scale_y_continuous(breaks = scales::pretty_breaks(n = 5),labels = scales::number_format( big.mark = "." )) 
+
+
+dscGG
+
+dscTABLE <- descriptivesChannel %>%
   kable(format.args = list(decimal.mark = ',', big.mark = "."),
         caption = "Pregled srednjih veličina po kanalu") %>%
   kable_styling()
