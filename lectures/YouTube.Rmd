@@ -223,7 +223,7 @@ ggplot(kanali_subs, aes(x = views, y = reorder(genre,views))) +
 
 ## Kategorije i veličina kanala
 
-Nakon pregleda osnovnih karakteristika i kategorija YouTube kanala valja pogledati i njihov zajednički odnos. Za potrebe takvog pregleda ćemo pojednostavniti kategorizaciju kanala prema broju pretplatnika i nazvati sve kanale do 1k preptlatnika - "Bube", od 1k do 10k - "Glodavci", od 10k do 100k - "Sisavci", a sve preko 100k - "Dinosauri". Podatci su prikazani u donjoj tablici i jasno pokazuju nesrazmjer između dinosaura i nižih vrsta u svim kategorijama. Dinosaur kanali su malobrojni i na malo sadržaja ostvaruju  najviše pretplatnika i pregleda. Daleko ispod dinosaura se nalaze sisavci i glodavci koji na sličnoj količini sadržaja (broj videa) ostvaruju oko ~5x manje pretplatnika i pregleda. Na samom dnu su bube  koje imaju zanemariv broj pretplatnika i pregleda ali pokazuju znatan YouTube entuzijazam kroz relativno velik broj kanala.    
+Nakon pregleda osnovnih karakteristika i kategorija YouTube kanala valja pogledati i njihov međusobni odnos. Za potrebe takvog pregleda ćemo pojednostavniti kategorizaciju kanala prema broju pretplatnika i nazvati sve kanale do 1k preptlatnika - "Bube", od 1k do 10k - "Glodavci", od 10k do 100k - "Sisavci", a sve preko 100k - "Dinosauri". Podatci su prikazani u donjoj tablici i jasno pokazuju (**agregatni**) nesrazmjer između dinosaura i nižih vrsta u svim kategorijama. Dinosaur kanali su malobrojni i na malo sadržaja ostvaruju najviše pretplatnika i pregleda. Daleko ispod dinosaura se nalaze sisavci i glodavci koji na sličnoj količini sadržaja (broj videa) ostvaruju oko ~5x manje pretplatnika i pregleda. Na samom dnu su bube koje imaju zanemariv broj pretplatnika i pregleda ali pokazuju znatan YouTube entuzijazam kroz relativno velik broj kanala.    
 
 ```{r ranges, echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -282,7 +282,7 @@ rangesCategory %>%
 
 Donji grafikon daje deskriptivni prikaz na razini kanala i skreće pozornost na dodatne YouTube nesrazmjere koji postoje i unutar samih kategorija i veličina. Razlike između prosječnih i srednjih vrijednosti prema kriteriju veličine i kategorije su to veće što je kanal veći (ima više pretplatnika). Ove su pak razlike najizraženije kod broja pregleda pa upućuju na zaključak da korisnici ipak sami najbolje znaju što vole gledati (YouTube živi i na strani potražnje, a ne samo ponude). Također je zanimljivo i primjetiti veliku razliku u rasponu broju videa kod dinosaura što ukazuje da određeni veliki i uspješni kanali uz znatno manje napora postižu isti cilj, odnosno imaju bolju YouTube strategiju. U budućnosti bi bilo korisno identificirati upravo te kanale i pogledati njihove karakteristike što bi bio informiran doprinos  [popularnim debatama](https://www.reddit.com/r/NewTubers/comments/cmdewu/12_true_facts_about_success_on_youtube/) o strategijama uspjeha na YouTube-u.  
 
-```{r descriptivesPERchannel, echo=FALSE, message=FALSE, warning=FALSE,fig.height=10,fig.width=12}
+```{r descriptivesPERchannel, echo=FALSE, message=FALSE, warning=FALSE,fig.height=8,fig.width=12}
 options(digits = 2, scipen = 999)
 
 descriptivesChannel <- yt %>%
@@ -296,7 +296,11 @@ descriptivesChannel <- yt %>%
 #  group_by(Ranges) %>%
 #  mutate(channels = n()) %>%
   ungroup() %>%
-  gather(.,Category, Number, videos, subscribers, views) %>%
+  gather(.,Category, Number, videos, subscribers, views)  %>%
+  mutate(Category = recode_factor(.$Category,
+                                "videos" = "Video",
+                                "subscribers" = "Pretplatnici",
+                                "views" = "Pregledi")) %>%
 #  group_by(Category,Ranges ) %>%
  # summarise(Mean = mean(Number,na.rm = TRUE),
  #           Median = median(Number,na.rm = TRUE),
@@ -316,6 +320,7 @@ calc_stat <- function(x) {
 }
 
 
+
 dscGG <- descriptivesChannel %>%
   ggplot(.,aes(Ranges,Number)) +
   stat_summary(fun.data = calc_stat, geom="boxplot") +
@@ -325,6 +330,7 @@ dscGG <- descriptivesChannel %>%
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
     panel.background = element_blank(), axis.line = element_line(colour = "black"), legend.title=element_blank()) +
     xlab("Veličina kanala") +
+    ylab("Broj") +
     scale_y_continuous(breaks = scales::pretty_breaks(n = 5),labels = scales::number_format( big.mark = "." )) 
 
 
