@@ -215,7 +215,7 @@ ggplot(kanali_subs, aes(x = views, y = reorder(genre,views))) +
 
 ## Kategorije i veličina kanala
 
-Nakon pregleda osnovnih karakteristika i kategorija YouTube kanala treba pogledati i njihov međusobni odnos. Za potrebe toga ćemo pojednostavniti kategorizaciju kanala prema broju pretplatnika i nazvati sve kanale do 1k preptlatnika - "Bube", od 1k do 10k - "Glodavci", od 10k do 100k - "Sisavci", a sve preko 100k - "Dinosauri". Podatci prikazani u donjoj tablici i jasno pokazuju (**agregatni**) nesrazmjer između dinosaura i nižih vrsta u svim kategorijama. Dinosauri su malobrojni i na malo sadržaja ostvaruju najviše pretplatnika i pregleda. Daleko ispod dinosaura se nalaze sisavci i glodavci koji na sličnoj količini sadržaja (broj videa) ostvaruju oko ~5x manje pretplatnika i pregleda. Na samom dnu su bube koje imaju zanemariv broj pretplatnika i pregleda ali pokazuju znatan YouTube entuzijazam kroz relativno velik broj kanala.    
+Nakon pregleda osnovnih karakteristika i kategorija YouTube kanala treba pogledati i njihov međusobni odnos. Za potrebe toga ćemo pojednostavniti kategorizaciju kanala prema broju pretplatnika i nazvati sve kanale do 1k preptlatnika - "Bube", od 1k do 10k - "Glodavci", od 10k do 100k - "Sisavci", a sve preko 100k - "Dinosauri". Podatci prikazani u donjoj tablici i jasno pokazuju (**agregatni**) nesrazmjer između dinosaura i nižih vrsta u svim metrikama Dinosauri su malobrojni i na malo sadržaja ostvaruju najviše pretplatnika i pregleda. Daleko ispod dinosaura se nalaze sisavci i glodavci koji na sličnoj količini sadržaja (broj videa) ostvaruju oko ~5x manje pretplatnika i pregleda. Na samom dnu su bube koje imaju zanemariv broj pretplatnika i pregleda ali pokazuju znatan YouTube entuzijazam kroz relativno velik broj kanala.    
 
 ```{r ranges, echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -244,7 +244,7 @@ ranges <- yt %>%
 
 rangesGeneral %>%
   kable(format.args = list(decimal.mark = ',', big.mark = "."),
-        caption = "Agregatni pregled pokazatelja prema veličini kanala") %>%
+        caption = "Agregatni pregled metrika prema veličini kanala") %>%
   kable_styling()
 ```
 
@@ -272,7 +272,7 @@ rangesCategory %>%
 
 ```
 
-Donji grafikon deskriptivno prikazuje prosječne veličine na razini kanala i broja pretplatnika za broj videa, pretplatnika i pregleda. Prije svega je vidljivo da najveće razlike (rasponi) postoje unutar najvećih kategorija. Najveći raspon (vidljivo kao visina kvadrata na box-plot dijagramu) kod dinosaura ukazuje na znatne razlike u efikasnosti poslovne YouTube strategije kod najvećih pa bi u nekom od budućih istraživanja bi bilo korisno identificirati najefikasnije među velikim kanalima, vidjeti njihove karakteristike i tako informirano doprijeti [popularnim debatama](https://www.reddit.com/r/NewTubers/comments/cmdewu/12_true_facts_about_success_on_youtube/) o strategijama uspjeha na YouTube-u. Na donjem grafikonu je također vidljivo da (dinosauri) imaju najviši prosjek u kategoriji "Video" što jasno upućuje na profesionalizaciju rada na YouTube-u kod velikih kanala, odnosno da najveći kanali objavljuju u prosjeku oko 250 videa. Uz to se na grafikonu vrlo dobro vidi i dobitak na efikasnosti vezan uz veličinu, pogotovo prema broju pretplatnika.    
+Donji grafikon deskriptivno prikazuje prosjek matrika na razini veličine kanala. Prije svega je vidljivo da najveće razlike (rasponi) postoje unutar najvećih kategorija (dinosaura). Najveći raspon (vidljivo kao visina kvadrata na box-plot dijagramu) kod dinosaura ukazuje na znatne razlike u efikasnosti poslovne YouTube strategije kod najvećih pa bi u nekom od budućih istraživanja bi bilo korisno identificirati najefikasnije dinosaure, vidjeti njihove karakteristike i tako informirano doprijeti [popularnim debatama](https://www.reddit.com/r/NewTubers/comments/cmdewu/12_true_facts_about_success_on_youtube/) o strategijama uspjeha na YouTube-u. Na donjem grafikonu je također vidljivo da dinosauri imaju najviši prosjek u kategoriji "Video" što jasno upućuje na profesionalizaciju rada na YouTube-u kod velikih kanala, odnosno da najveći kanali objavljuju u prosjeku oko 250 videa. Uz to se na grafikonu vrlo dobro vidi i dobitak na efikasnosti vezan uz veličinu, pogotovo prema broju pretplatnika.    
 
 ```{r descriptivesPERchannel, echo=FALSE, message=FALSE, warning=FALSE,fig.height=8,fig.width=12}
 options(digits = 2, scipen = 999)
@@ -324,7 +324,7 @@ dscGG <- descriptivesChannel %>%
     xlab("Veličina kanala") +
     ylab("Broj") +
     scale_y_continuous(breaks = scales::pretty_breaks(n = 5),labels = scales::number_format( big.mark = "." )) +
-  ggtitle("Deskriptivni pregled prosječnog kanala prema veličini")
+  ggtitle("Prosjek metrika prema prema veličini kanala")
 
 
 dscGG
@@ -338,7 +338,7 @@ dscTABLE <- descriptivesChannel %>%
 ```
 
 
-Za kraj ćemo pogledati istu stvar ali u relativnim (%) odnosima . Iako donji grafikon izgleda  kaotično, jasno se vidi porast udjela s lijeva na desno za svaku kategoriju i veličinu kanala uz poneke iznimke kod glodavaca i sisavaca. *Gaming, entertainment i music* su kategorije koji dominiraju prema svim metrikama i tu dinsoauri uzimaju najviše pregleda, videa i pretplatnika. Jedina iznimka je *music* kategorija gdje sisavci imaju veći udio što odražava već prije spmenutu YouTube homofiliju. Zanimljivo je i primjetiti da kategorije *people&blogs*, *autos&videos*, *comedy* i *education* imaju više (ili barem jednako) pregleda i videa u među glodavcima i bubama ponovno potvrđujući specifične lokalne interese za specifične kategorije (kanale) na hrvatskom jeziku. Strategija pokretanja lokalno interesantnog kanala u tim kategorijama se u svakom slučaju isplati za promociju pa iako neće dovesti do monetizacijskih YouTube razina, ostavlja prostora za alternativne sustave financiranja poput Pateron-a.     
+Za kraj ćemo pogledati relativne (%) odnose veličine kanala i kategorije. Iako donji grafikon izgleda konfuzno, jasno se vidi porast udjela s lijeva na desno za svaku metriku i veličinu kanala uz poneke iznimke kod glodavaca i sisavaca. *Gaming, entertainment i music* su kategorije koji dominiraju prema svim metrikama i tu dinsoauri imaju najviše pregleda, videa i pretplatnika. Jedina iznimka je *music* kategorija gdje sisavci imaju veći udio što odražava već prije spmenutu YouTube homofiliju. Zanimljivo je i primjetiti da kategorije *people&blogs*, *autos&videos*, *comedy* i *education* imaju veći (ili barem jednak) udio pregleda i videa u među glodavcima i bubama ponovno potvrđujući specifične lokalne interese za određene kategorije na hrvatskom jeziku. Strategija pokretanja lokalno interesantnog kanala u tim kategorijama se u svakom slučaju isplati za promociju iako neće dovesti do monetizacijskih YouTube razina te ostavlja prostora za alternativne sustave financiranja poput Pateron-a.     
 
 ```{r genreBYrange, echo=FALSE, message=FALSE, warning=FALSE, fig.height=10,fig.width=12}
 
@@ -374,8 +374,9 @@ genreBYrange <- ranges %>%
     theme(axis.text.x=element_text(angle=45,hjust=1)) +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
     panel.background = element_blank(), axis.line = element_line(colour = "black"), legend.title=element_blank()) +
-    xlab("Channel size") +
-    scale_y_continuous(breaks = scales::pretty_breaks(n = 15)) 
+    xlab("Velicina kanala") +
+    scale_y_continuous(breaks = scales::pretty_breaks(n = 15)) +
+    ggtitle("Relativni prikaz metrika po kategorijama i veličini kanala")
   
 
 ```
