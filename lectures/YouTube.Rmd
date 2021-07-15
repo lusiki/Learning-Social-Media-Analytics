@@ -337,7 +337,7 @@ dscTABLE <- descriptivesChannel %>%
 
 ```
 
-Na donjem grafikonu se jasno vidi porast udjela s lijeva na desno za svaku metriku i veličinu kanala uz poneke iznimke kod glodavaca i sisavaca. *Gaming, entertainment i music* su kategorije koji dominiraju u svim metrikama i tu dinsoauri imaju najviše pregleda, videa i pretplatnika. Jedina iznimka je *music* kategorija gdje sisavci imaju veći udio što odražava već prije spomenutu YouTube homofiliju. Zanimljivo je primjetiti da kategorije *people&blogs*, *autos&videos*, *comedy* i *education* imaju veći (ili barem jednak) udio pregleda i videa u među glodavcima i bubama ponovno potvrđujući specifične lokalne interese za određene kategorije na hrvatskom jeziku. Strategija pokretanja lokalno interesantnog kanala u tim kategorijama se u svakom slučaju isplati za osobnu ili poslovnu promociju iako neće dovesti do monetizacijskih YouTube razina. Monetizacija je u tom slučaju moguća kroz alternativne sustave financiranja poput Pateron-a, kojima uostalom pribjegava sve [veći broj kanala](https://firstmonday.org/ojs/index.php/fm/article/download/10667/9575) na globalnom YouTube-u.     
+Na donjem grafikonu se jasno vidi porast udjela s lijeva na desno za svaku metriku i veličinu kanala uz poneke iznimke kod glodavaca i sisavaca. *Gaming, entertainment i music* su kategorije koji dominiraju u svim metrikama i tu dinsoauri imaju najviše pregleda, videa i pretplatnika. Jedina iznimka je *music* kategorija gdje sisavci imaju veći udio što odražava već prije spomenutu YouTube homofiliju. Zanimljivo je primjetiti da kategorije *people&blogs*, *autos&videos*, *comedy* i *education* imaju veći (ili barem jednak) udio pregleda i videa u među glodavcima i bubama ponovno potvrđujući specifične lokalne interese za određene kategorije na hrvatskom jeziku. Strategija pokretanja lokalno interesantnog kanala u tim kategorijama se u svakom slučaju isplati za osobnu ili poslovnu promociju iako neće dovesti do monetizacijskih YouTube razina. Monetizacija je u tom slučaju moguća kroz alternativne sustave financiranja poput Pateron-a, kojima uostalom pribjegava [sve veći broj kanala](https://firstmonday.org/ojs/index.php/fm/article/download/10667/9575) na globalnom YouTube-u.     
 
 ```{r genreBYrange, echo=FALSE, message=FALSE, warning=FALSE, fig.height=10,fig.width=12}
 
@@ -381,13 +381,13 @@ genreBYrange <- ranges %>%
 ```
 
 
-Nakon pregleda osnovnih veličina i kategorija hrvatske YouTube scene je moguće donijeti nekoliko glavnih zaključaka::
+Na osnovi prethodnog pregleda hrvatske YouTube scene je moguće donijeti nekoliko glavnih zaključaka::
 
-**Prvo**, globalni ali i hrvatski YouTube je platforma na kojoj dominira mali broj velikih kanala. U toj skupini velikih se dodatno ističe još manja skupina *elitnih* kanala koji imaju preko 1 mil pretplatnika i dodatno iskrivljuje distribuciju u korist veličine. Iako bi donošenje dubljih zaključaka o prirodi ove distribucije zahtijevalo detaljniju analizu, jasno je da hrvatski YouTube nije sinonim za *informacijsku demokratizaciju* već za masovni medij na kojem dominira mali broj *elitnih* kanala.
+**Prvo**,  hrvatski (i globalni) YouTube je platforma na kojoj dominira mali broj velikih kanala. U toj skupini velikih se dodatno ističe još manja skupina *elitnih* kanala koji imaju preko 1 mil pretplatnika i dodatno iskrivljuje distribuciju u korist veličine. Iako bi donošenje dubljih zaključaka o prirodi ove distribucije zahtijevalo detaljniju analizu, jasno je da hrvatski YouTube nije sinonim za *informacijsku demokratizaciju* već za masovni medij na kojem dominira mali broj veliih kanala.
 
 **Drugo**, pregled najzastupljenijih kategorija među domaćim kanalima ukazuje na fokus YouTube platforme na prema zabavnom sadržaju. Osim što edukativni, društveni i politički sadržaj znatno teže ulazi u monetizacijske kategorije, takav sadržaj zahtjeva znatno više angažmana (videa) za jednak ili manji broj pretplatnika i/ili pogleda.   
 
-**Treće**, na osnovi jednostavnog deskriptivnog pregleda je vidljiva (kulturološka) dominacija engleskog govornog područja među najvećim i najuspješnijim domaćim video-ima no također i veliki interes za kanale specijalizirane za lokalno relevantne teme. Također je moguće dodati da principi koji vrijede na globalnoj YouTube platformi vrijede i u Hrvatskoj.
+**Treće**, na osnovi jednostavnog deskriptivnog pregleda je vidljiva (kulturološka) dominacija engleskog govornog područja među najvećim i najuspješnijim domaćim kanalima no također i značajan interes za kanale specijalizirane za lokalno relevantne teme. Tu je je moguće dodati da principi koji vrijede na globalnoj YouTube platformi, uvelike vrijede i u Hrvatskoj.
 
 **Četvrto**, ova analiza predstavlja tek deskriptivni pregled na razini kanala i kao takva može ponuditi zanimljive i korisne ali ipak ograničene uvide u strukturu i trendove na domaćoj YouTube sceni. Daljnja analiza bi zahtijevala detaljnije (meta) podatke na razini pojedinog video-a, potencijalno uključujući transkribirani tekst pogodan za analizu sadržaja no to ostavljam za neki drugi put.
 
