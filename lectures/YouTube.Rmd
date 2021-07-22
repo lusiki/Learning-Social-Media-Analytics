@@ -29,7 +29,7 @@ library(kableExtra)
 
 Društveni su mediji danas najvažniji izvor informacija o društvu i podloga su za sve važnije poslovne i političke odluke. U zadnje vrijeme primjetan je sve veći broj istraživanja koja se temelje na podatcima s društvenih medija, unatoč sveopćoj  [APIkalipsi](https://www.tandfonline.com/doi/abs/10.1080/1369118X.2019.1637447) koja je tamo postala sveprisutna. "APIkalipsa" odnosno uvođenje restrikcija u strojnom pristupu podatcima s društvenih medija rezultat je Facebookove afere povezane s tvrtkom Cambridge Analytica koja je izvrsno opisana u dokumentarnom filmu [The social Dilemma](https://www.thesocialdilemma.com/).U istraživanjima društvenih medija YouTube platforma dugo je vremena bila zanemarena u usporedbi s Facebookom i Twitterom, no u zadnjih se nekoliko godina to počelo mijenjati kada su teme [političkog ekstremizma](https://dl.acm.org/doi/10.1145/3351095.3372879), [dezinformacija](https://firstmonday.org/article/view/10112/8332), [kulturne medijacije](https://www.sciencedirect.com/science/article/abs/pii/S0304422X16300973), [radikalizacije društva](https://www.nytimes.com/2018/03/10/opinion/sunday/youtube-politics-radical.html), [odnosa globalnih i lokalnih medijskih struktura](https://ijoc.org/index.php/ijoc/article/view/5725) te [nasilja nad djecom](https://medium.com/@jamesbridle/something-is-wrong-on-the-internet-c39c471271d2) počele dobivati na važnosti, a upravo je YouTube dobar izvor podataka za analizu tih fenomena. 
 
-Nadovezujući se na rastuću istraživačku popularnost YouTube platforme, u ovom ću postu dati opći pregled hrvatskoga YouTubea. Pregled se odnosi na osnovne značajke i uključuje: **1)** deskriptivni prikaz domaćih YouTube kanala, **2)** pregled kanala prema veličini i kategorijama te **3)**  stratifikacijski pregled. Analiza je inspirirana nizom ([I](https://journals.sagepub.com/doi/10.1177/1354856517736979),[II](https://scholarspace.manoa.hawaii.edu/handle/10125/59701),[III](https://eprints.qut.edu.au/202962/1/View_of_Mapping_YouTube_First_Monday.pdf)) nedavno objavljenih radova koji analiziraju YouTube platformu na osnovi različitih podataka i na drugačiji način. Za ovaj su post korišteni podatci s oko (~)2 tisuće (k) hrvatskih YouTube kanala preuzeti sa [SOCIAL BLADE](https://socialblade.com/) i [ChannelCrawler](https://channelcrawler.com/). Podatci i `code` su "opensourceani" u [repozitoriju](https://github.com/lusiki/Learning-Social-Media-Analytics) kolegija [Learning Social Media Analytics](https://lusiki.github.io/Learning-Social-Media-Analytics/) koji je u pripremi za 2021/22 godinu na [FHS](https://www.hrstud.unizg.hr/)(Fakultetu hrvatskih studija).
+Nadovezujući se na rastuću istraživačku popularnost YouTube platforme, u ovom ću postu dati opći pregled hrvatskoga YouTubea. Pregled se odnosi na osnovne značajke i uključuje: **1)** deskriptivni prikaz domaćih YouTube kanala, **2)** pregled kanala prema veličini i kategorijama te **3)**  stratifikacijski pregled. Analiza je inspirirana nizom ([I](https://journals.sagepub.com/doi/10.1177/1354856517736979),[II](https://scholarspace.manoa.hawaii.edu/handle/10125/59701),[III](https://eprints.qut.edu.au/202962/1/View_of_Mapping_YouTube_First_Monday.pdf)) nedavno objavljenih radova koji analiziraju YouTube platformu na osnovi različitih podataka i na drugačiji način. Za ovaj su post korišteni podatci s oko (~)2 tisuće (k) hrvatskih YouTube kanala preuzeti sa [SOCIAL BLADE](https://socialblade.com/) i [ChannelCrawler](https://channelcrawler.com/). Podatci i `code` su "opensourceani". u [repozitoriju](https://github.com/lusiki/Learning-Social-Media-Analytics) kolegija [Learning Social Media Analytics](https://lusiki.github.io/Learning-Social-Media-Analytics/) koji je u pripremi za 2021/22 godinu na [FHS](https://www.hrstud.unizg.hr/)(Fakultetu hrvatskih studija).
 
 <br>
 
@@ -71,7 +71,7 @@ gghist <- hist %>% ggplot(.,aes(Ranges,Number)) +
   geom_bar(stat = "identity") +
   facet_wrap(~Category, scales = "free") +
   scale_y_continuous(labels = scales::comma) +
-  ylab("Broj kanala") +
+  ylab("Broj") +
   xlab("Broj pretplatnika") +
   ggtitle("Hrvatski YouTube kanali po veličini")+
   theme_bw() +
@@ -81,6 +81,37 @@ gghist <- hist %>% ggplot(.,aes(Ranges,Number)) +
 gghist
 
 ```
+
+
+```{r jezik, echo=FALSE, message=FALSE, warning=FALSE, eval = FALSE}
+
+
+ytLag <- read.csv2("../data/YouTube/YT_languages.csv")
+
+ytLag %>% group_by(lang) %>% count()
+
+
+
+ytLag %>% group_by(lang) %>%
+  top_n(50, wt= views) %>%
+  count()
+
+arrange(desc(views)) %>%
+  top_n(views,50) %>% 
+  group_by(lang) %>%
+  count()
+
+
+ytLag %>%
+  ungroup() %>%
+  arrange(desc(subscribers)) %>%
+  do(head(.,99)) %>%
+  group_by(lang) %>%
+  count() 
+
+```
+
+
 
 Na gornjem je grafikonu prikazan skupni pregled hrvatskih YouTube kanala po veličini, za tri kriterija: broj kanala, videa i pregleda. Prikaz upućuje na tri stvari: **1)** Bimodalnu distribuciju pregleda koja odražava potražnju za lokalnim sadržajem (na hrvatskom jeziku) budući da manji i lokalni kanali imaju puno lokalnih pretplatnika dok veći i globalnoj publici orijentirani kanali imaju puno stranih pretplatnika. Ovu pretpostavku nisam eksplicitno testirao na podatcima, ali pregled (“golim okom”) kanala u rasponu 10k-100k pretplatnika upućuje na takav zaključak, a postoje i dobri  [dokazi](https://eprints.qut.edu.au/202962/1/View_of_Mapping_YouTube_First_Monday.pdf) o YouTube homofiliji (važnosti lokalno generiranog sadržaja); **2)** Spomenuta bimodalnost također ukazuje na to da broj pretplatnika kao kriterij za procjenu veličine i uspjeha kanala nije idealan jer manji odnosno srednje veliki kanali također mogu imati značajan broj pregleda. S druge je strane također očito da broj pregleda, koliko god bio nesavršen kao pokazatelj popularnosti, [ipak dobro određuje razinu popularnosti](https://www.youtube.com/watch?v=y9Hn9a1WC-0&t=101s). **3)** Manji kanali moraju proizvesti puno više (video) sadržaja za jednak ili manji broj pretplatnika i pregleda, što ukazuje na veliku konkurenciju, težak i trnovit put do YouTube uspjeha.  
 
@@ -333,6 +364,45 @@ dscTABLE <- descriptivesChannel %>%
   kable(format.args = list(decimal.mark = ',', big.mark = "."),
         caption = "Pregled srednjih veličina po kanalu") %>%
   kable_styling()
+
+
+```
+
+
+
+
+```{r netokracijaProfile, eval = FALSE, echo=FALSE, message=FALSE, warning=FALSE,fig.height=8,fig.width=12}
+
+
+#img <- jpeg::readJPEG("../Foto/yt8.jpg")
+
+calc_stat <- function(x) {
+  coef <- 1.5
+  n <- sum(!is.na(x))
+  # calculate quantiles
+  stats <- quantile(x, probs = c(0.1, 0.25, 0.5, 0.75, 0.9))
+  names(stats) <- c("ymin", "lower", "middle", "upper", "ymax")
+  return(stats)
+}
+
+
+
+dscGG <- descriptivesChannel %>%
+  ggplot(.,aes(Ranges,Number)) +
+#  background_image(img) +
+  stat_summary(fun.data = calc_stat, geom="boxplot") +
+  facet_wrap(~Category,scales = "free") +
+  theme_bw(base_size = 16) +
+  theme(axis.text.x=element_text(angle=45,hjust=1)) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+  panel.background = element_blank(), axis.line = element_line(colour = "black"), legend.title=element_blank()) +
+  xlab("") +
+  ylab("") +
+  scale_y_continuous(breaks = scales::pretty_breaks(n = 5),labels = scales::number_format( big.mark = "." )) +
+  ggtitle("")
+
+dscGG
+
 
 
 ```
