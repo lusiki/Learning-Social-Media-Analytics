@@ -37,8 +37,6 @@ title: " "
 
 
 
-
-
 ## Online courses 
 
 [Data Camp: Analyzing Social Media Data in R](https://www.datacamp.com/courses/analyzing-social-media-data-in-r)
@@ -92,6 +90,11 @@ title: " "
 [Violence and Trolling on Social Media: History, Affect, and Effects of Online Vitriol ](https://www.jstor.org/stable/j.ctv1b0fvrn)
 <br>
 [Outside Insight: the leading resource for decision-makers](https://outsideinsight.com/)
+<br>
+
+
+
+
 
 <br>
 
@@ -162,6 +165,8 @@ title: " "
 [Scraping with R](https://willbowditch.github.io/scraping_with_R/)
 <br>
 [Visualizing Nine Years on LinkedIn using R](https://towardsdatascience.com/nine-years-on-linkedin-in-data-b34047c77223)
+<br>
+[Analysing Social Media Network Data with R](https://arxiv.org/pdf/2011.13327.pdf)
 
 
 
@@ -223,7 +228,8 @@ title: " "
 [tubular](https://tubularlabs.com/)
 <br>
 [Youtube data](https://tools.digitalmethods.net/netvizz/youtube/index.php)
-
+<br>
+[VOSONLab Dashboard](https://github.com/vosonlab/VOSONDash)
 
 
 ## Social data vendors
@@ -265,7 +271,6 @@ title: " "
 [Bernhard Reider](https://github.com/bernorieder?tab=repositories)
 
 ## Other
-
 
 
 
