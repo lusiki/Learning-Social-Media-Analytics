@@ -124,9 +124,14 @@ title: " "
 <br>
 [International Journal of Social Media and Interactive Learning Environments](https://www.inderscience.com/jhome.php?jcode=ijsmile)
 <br>
-[International Journal of Social Media and Online Communitie](https://www.igi-global.com/journal/international-journal-social-media-online/224362#table-of-contents)
+[International Journal of Social Media and Online Communities](https://www.igi-global.com/journal/international-journal-social-media-online/224362#table-of-contents)
 <br>
 [International Journal of Web Based Communities](https://www.inderscience.com/jhome.php?jcode=ijwbc&csid=orob1f5204egv8bikst23mbvs0)
+<br>
+[European Conference on Information Systems](https://dblp.org/db/conf/ecis/index.html)
+<br>
+[International Conference on Social Informatics](https://link.springer.com/conference/socinfo)
+
 
 <br>
 
@@ -144,6 +149,8 @@ title: " "
 [Pew Research Center](https://www.pewresearch.org/)
 <br>
 [Media Cloud](https://mediacloud.org/)
+<br>
+[Sage Ocean](https://ocean.sagepub.com/)
 
 
 <br>
@@ -167,7 +174,8 @@ title: " "
 [Visualizing Nine Years on LinkedIn using R](https://towardsdatascience.com/nine-years-on-linkedin-in-data-b34047c77223)
 <br>
 [Analysing Social Media Network Data with R](https://arxiv.org/pdf/2011.13327.pdf)
-
+<br>
+[Collecting and Analyzing Twitter Data Using R](https://www.mzes.uni-mannheim.de/socialsciencedatalab/article/collecting-and-analyzing-twitter-using-r/)
 
 
 
@@ -230,7 +238,8 @@ title: " "
 [Youtube data](https://tools.digitalmethods.net/netvizz/youtube/index.php)
 <br>
 [VOSONLab Dashboard](https://github.com/vosonlab/VOSONDash)
-
+<br>
+[Media Cloud](https://explorer.mediacloud.org/#/home)
 
 ## Social data vendors
 
