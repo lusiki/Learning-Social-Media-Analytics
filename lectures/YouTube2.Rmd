@@ -34,12 +34,14 @@ yt <- read.csv2("../data/YouTube/YT.csv")
 
 
 ```{r, eval = TRUE}
+
+
 yt %>%
   mutate(id = str_sub(link,-24)) %>%
   select(id) -> id
 
 
-idNO <- id %>% slice(100:200)
+idNO <- id %>% slice(251:350) # %>% slice(-19)
 
 ids <- paste(idNO$id,collapse = ",") 
 
