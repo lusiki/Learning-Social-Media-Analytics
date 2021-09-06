@@ -47,9 +47,41 @@ yt %>%
   mutate(id = str_sub(link,-24)) %>%
   select(id) -> id
 
+
+listID <- split(id, seq(nrow(id)) %/% n)
+
+ids <- sapply(listID, paste, collapse=",")
+
+
+library(purrr)
+
+ids <- listID %>%
+  map(paste0, collapse = ",")
+
+
+
+
 ids <- paste(id$id,collapse = ",") 
 
 write.table(ids, "C:/Users/Lukas/OneDrive/Desktop/ytid.txt")
+
+
+
+
+
+
+
+ mylist<- list(c("PDLIM5", "CBG"), c("PDLIM5", "GTA"), "DDX60")
+
+
+
+
+
+
+
+
+
+
 ```
 
 Na strani YouTube **ponude** u Hrvatskoj je ~1.400 kanala (s pozitivnim brojem pretplatnika). Za usporedbu korisno je spomenuti da globalni YouTube danas ima oko ~40 mil. kanala. Globalnu YouTube platformu karakterizira izrazita stratifikacija kanala, a u tome ni Hrvatska nije iznimka sa 6 3 *zlatnih* (oni s više od 1 mil. pretplatnika) kanala. U svijetu je sada oko ~25k takvih kanala (zlatnih). Broj pretplatnika koristim kao glavni kriterij za stratifikaciju jer je na toj osnovi organiziran YouTubeov monetizacijski sustav. Treba imati na umu da broj pretplatnika ne odražava baš uvijek pravu sliku popularnosti nekog kanala. Uostalom, koliko sadržaja i sami gledate, a da niste ujedno pretplaćeni na kanal koji ga je objavio? Slijedeću YouTubeovu monetizacijsku razinu čine *srebrni* kanali koji imaju manje od 1 mil. pretplatnika, ali više od 100k. Takvih je u Hrvatskoj 122 kanala, a na globalnom YouTubeu takvih je ~250k kanala. Najveći broj domaćih kanala, njih oko ~550, ima od 1k do 10k pretplatnika, a oko ~400 kanala ima od 10k do 100k pretplatnika. Broj domaćih kanala sa 100 do 1k pretplatnika je ~220, dok u svijetu takvih ima ~12 mil.
