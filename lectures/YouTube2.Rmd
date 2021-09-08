@@ -33,7 +33,7 @@ yt <- read.csv2("../data/YouTube/YT.csv")
 ```
 
 
-```{r, eval = TRUE}
+```{r, eval = TRUE, include=FALSE}
 
 
 yt %>%
@@ -41,7 +41,7 @@ yt %>%
   select(id) -> id
 
 
-idNO <- id %>% slice(1251:1350) # %>% slice(-19)
+idNO <- id %>% slice(250:350) # %>% slice(-19)
 
 ids <- paste(idNO$id,collapse = ",") 
 
@@ -56,10 +56,132 @@ write.table(ids, "C:/Users/Lukas/OneDrive/Desktop/ytid.txt")
 
 
 ```{r}
-str(yt)
 
 
-yt[yt$videos == 0, ]
+filelist = list.files(path = "C:/Users/Lukas/OneDrive/Desktop/YouTube",
+                      pattern = "*.txt",
+                      full.names = TRUE)
+
+
+library(vroom)
+
+# Read all the files and create a FileName column to store filenames
+df <- vroom(filelist) 
+
+
+yt <- yt %>%
+  mutate(id = str_sub(link,-24))
+
+
+length(setdiff(yt$id,df$channelId))
+
+razlika1 = setdiff(df$channelId,yt$id)
+razlika2 = setdiff(yt$id,df$channelId)
+
+
+full <- left_join(df, yt, by = c("channelId"="id")) %>% arrange(desc(subscribers))
+
+yt <- read.delim(filelist[1],
+                 header = TRUE,
+                 quote = "",
+                 stringsAsFactors = F)
+
+Encoding(yt$channelTitle)= "UTF-8"
+
+
+library(readr)
+
+
+yt1 = read_delim(filelist[1],
+                quote = "")
+
+
+#assuming tab separated values with a header    
+datalist = lapply(filelist, function(x) read_delim(x,
+                          quote = "")) 
+
+#assuming the same header/columns for all files
+datafr = do.call("rbind", datalist) 
+
+
+#install.packages("data.table", repos = "https://cran.rstudio.com")
+library(data.table)
+
+# Read all the files and create a FileName column to store filenames
+DT <- rbindlist(sapply(filelist, fread, simplify = FALSE),
+                use.names = TRUE, idcol = "FileName")
+
+library(tidyverse)
+
+# Read all the files and create a FileName column to store filenames
+df <- filelist %>%
+  set_names(.) %>%
+  map_df(readtext::readtext, .id = "FileName")
+
+
+
+
+
+
+
+library(data.table)
+
+# Read all the files and create a FileName column to store filenames
+DT <- rbindlist(sapply(filelist, fread, simplify = FALSE),
+                use.names = TRUE, idcol = "FileName")
+
+
+
+
+df <- filelist %>%
+  set_names(.) %>%
+  map_df(read_table2, .id = "FileName")
+
+
+
+
+
+library(foreign)
+
+setwd("/path/to/directory")
+
+files <-list.files()
+
+data <- c()
+
+
+for (i in filelist) {
+
+data <- read_delim(i,quote = "")
+   
+} 
+
+
+txt_files_df <- lapply(filelist, function(x) {read_delim(file = x,quote = "")})
+# Combine them
+combined_df <- do.call("rbind", lapply(txt_files_df, as.data.frame))
+
+
+
+myData_list <- lapply(filelist, function(x) {
+  out <- data.table::fread(x, header = T)
+  out$source_file <- x
+  return(out)
+})
+
+myData <- data.table::rbindlist(yData)
+
+yData <- lapply(seq_along(filelist), function(x) {
+    tryCatch(
+        {
+            dt <- read.table(filelist[x], header = F, quote = "")
+            dt$index <- x   # or files[x] is you want to use the file name instead
+            dt
+        },
+        error=function(e) { NULL }
+    )
+})
+
 ```
 
 
