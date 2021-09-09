@@ -28,7 +28,7 @@ library(kableExtra)
 <br>
 
 
-```{r data, echo=FALSE,message=FALSE,warning=FALSE}
+```{r channels, echo=FALSE,message=FALSE,warning=FALSE}
 yt <- read.csv2("../data/YouTube/YT.csv") 
 ```
 
@@ -55,7 +55,7 @@ write.table(ids, "C:/Users/Lukas/OneDrive/Desktop/ytid.txt")
 
 
 
-```{r}
+```{r videos, echo=FALSE,message=FALSE,warning=FALSE}
 
 
 filelist = list.files(path = "C:/Users/Lukas/OneDrive/Desktop/YouTube",
@@ -79,6 +79,22 @@ razlika1 = setdiff(df$channelId,yt$id)
 razlika2 = setdiff(yt$id,df$channelId)
 
 
+razlika3 = setdiff(df$channelTitle,yt$name)
+razlika4 = setdiff(yt$name,df$channelTitle)
+
+
+razlika <- yt[yt$id %in% razlika2,]  %>% View()
+  mutate(id = str_sub(link,-24)) %>%
+  select(id)
+
+ids <- paste(razlika$id,collapse = ",") 
+
+write.table(ids, "C:/Users/Lukas/OneDrive/Desktop/ytid.txt")
+
+razlika = read_delim("C:/Users/Lukas/OneDrive/Desktop/YouTube/razlika.txt",
+                quote = "")
+
+
 full <- left_join(df, yt, by = c("channelId"="id")) %>% arrange(desc(subscribers))
 
 yt <- read.delim(filelist[1],
@@ -92,8 +108,7 @@ Encoding(yt$channelTitle)= "UTF-8"
 library(readr)
 
 
-yt1 = read_delim(filelist[1],
-                quote = "")
+
 
 
 #assuming tab separated values with a header    
