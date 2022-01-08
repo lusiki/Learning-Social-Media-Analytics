@@ -297,15 +297,15 @@ Zastupljenost brand-ova po medijima je jednaka kao u cjelokupnom medijskom prost
 
 <br>
 
-# **Pregled po izabranim medijima**
+# **Izabrani mediji**
 
 ***
 
-U ovom dijelu je dan pregled najvažnijih medija, odnosno web-a u youtube-a. važnost web-a proizlazi iz obujma objava, a youtube-a zbog visokog fokusa (attention span) koji korisnici posvećuju sadržaju na ovoj platformi.
+U ovom dijelu je dan pregled najvažnijih medija, odnosno web-a u youtube-a. Važnost web-a proizlazi iz obujma objava, a youtube-a zbog visokog fokusa (attention span) koji korisnici posvećuju sadržaju na ovoj platformi.
 
 <br>
 
-#### **Web**
+### **Web**
 
 ***
 
@@ -877,7 +877,7 @@ U ovom dijelu je dan pregled najvažnijih medija, odnosno web-a u youtube-a. va�
 
 <br>
 
-### Izabrani brand
+# **Izabrani brandovi**
 
 ***
 
@@ -887,10 +887,13 @@ U ovom dijelu je dan pregled najvažnijih medija, odnosno web-a u youtube-a. va�
 
 
 
-
+<br>
 
 ### **Bosch** 
 
+***
+
+<br>
 
 
 
@@ -909,20713 +912,20713 @@ U ovom dijelu je dan pregled najvažnijih medija, odnosno web-a u youtube-a. va�
   <tr>
    <td style="text-align:left;"> bosch </td>
    <td style="text-align:right;"> 1764 </td>
-   <td style="text-align:right;"> 1697.63 </td>
+   <td style="text-align:right;"> 1697.6335502 </td>
    <td style="text-align:right;"> 13636 </td>
    <td style="text-align:right;"> 468 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> den </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 50.96 </td>
+   <td style="text-align:right;"> 50.9599254 </td>
    <td style="text-align:right;"> 20 </td>
    <td style="text-align:right;"> 66 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kn </td>
    <td style="text-align:right;"> 116 </td>
-   <td style="text-align:right;"> 61.10 </td>
+   <td style="text-align:right;"> 61.0968179 </td>
    <td style="text-align:right;"> 404 </td>
    <td style="text-align:right;"> 53 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dodao </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 5.98 </td>
+   <td style="text-align:right;"> 5.9768141 </td>
    <td style="text-align:right;"> 54 </td>
    <td style="text-align:right;"> 52 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> la </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 51 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fc </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 49 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kvotama </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 47 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> okladu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 47 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> for </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 46 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> predviđanjem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 44 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ulog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 39 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> više </td>
    <td style="text-align:right;"> 268 </td>
-   <td style="text-align:right;"> 143.46 </td>
+   <td style="text-align:right;"> 143.4582989 </td>
    <td style="text-align:right;"> 775 </td>
    <td style="text-align:right;"> 39 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hrvatska </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 10.04 </td>
+   <td style="text-align:right;"> 10.0427413 </td>
    <td style="text-align:right;"> 83 </td>
    <td style="text-align:right;"> 28 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> upozorio </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 28.84 </td>
+   <td style="text-align:right;"> 28.8360746 </td>
    <td style="text-align:right;"> 9 </td>
    <td style="text-align:right;"> 24 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> njemačke </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 28.84 </td>
+   <td style="text-align:right;"> 28.8360746 </td>
    <td style="text-align:right;"> 9 </td>
    <td style="text-align:right;"> 23 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> akcija </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 8.87 </td>
+   <td style="text-align:right;"> 8.8737286 </td>
    <td style="text-align:right;"> 1570 </td>
    <td style="text-align:right;"> 22 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čipova </td>
    <td style="text-align:right;"> 35 </td>
-   <td style="text-align:right;"> 31.70 </td>
+   <td style="text-align:right;"> 31.7047813 </td>
    <td style="text-align:right;"> 159 </td>
    <td style="text-align:right;"> 22 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> godine </td>
    <td style="text-align:right;"> 70 </td>
-   <td style="text-align:right;"> 26.42 </td>
+   <td style="text-align:right;"> 26.4184386 </td>
    <td style="text-align:right;"> 296 </td>
    <td style="text-align:right;"> 22 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> novi </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9460002 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 22 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proizvodnju </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 5.07 </td>
+   <td style="text-align:right;"> 5.0723973 </td>
    <td style="text-align:right;"> 71 </td>
    <td style="text-align:right;"> 22 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> projekt </td>
    <td style="text-align:right;"> 90 </td>
-   <td style="text-align:right;"> 203.29 </td>
+   <td style="text-align:right;"> 203.2919833 </td>
    <td style="text-align:right;"> 962 </td>
    <td style="text-align:right;"> 22 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tehnološke </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 28.84 </td>
+   <td style="text-align:right;"> 28.8360746 </td>
    <td style="text-align:right;"> 9 </td>
    <td style="text-align:right;"> 22 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> shoeters </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 21 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> godini </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9460002 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 20 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tvrtke </td>
    <td style="text-align:right;"> 52 </td>
-   <td style="text-align:right;"> 213.54 </td>
+   <td style="text-align:right;"> 213.5351065 </td>
    <td style="text-align:right;"> 578 </td>
    <td style="text-align:right;"> 20 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dodatno </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 268.58 </td>
+   <td style="text-align:right;"> 268.5803097 </td>
    <td style="text-align:right;"> 141 </td>
    <td style="text-align:right;"> 19 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jc </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 18 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> njemačka </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 257.10 </td>
+   <td style="text-align:right;"> 257.0995530 </td>
    <td style="text-align:right;"> 140 </td>
    <td style="text-align:right;"> 18 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> planira </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.64 </td>
+   <td style="text-align:right;"> 3.6388977 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 18 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> predstavila </td>
    <td style="text-align:right;"> 53 </td>
-   <td style="text-align:right;"> 268.07 </td>
+   <td style="text-align:right;"> 268.0726230 </td>
    <td style="text-align:right;"> 278 </td>
    <td style="text-align:right;"> 18 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> roda </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 18 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> škola </td>
    <td style="text-align:right;"> 90 </td>
-   <td style="text-align:right;"> 212.36 </td>
+   <td style="text-align:right;"> 212.3575457 </td>
    <td style="text-align:right;"> 958 </td>
    <td style="text-align:right;"> 18 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> aparati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 37.46 </td>
+   <td style="text-align:right;"> 37.4604462 </td>
    <td style="text-align:right;"> 15 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> benvenuti </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 257.10 </td>
+   <td style="text-align:right;"> 257.0995530 </td>
    <td style="text-align:right;"> 140 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bijela </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 108.00 </td>
+   <td style="text-align:right;"> 108.0000000 </td>
    <td style="text-align:right;"> 24 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> eura </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 13.29 </td>
+   <td style="text-align:right;"> 13.2878719 </td>
    <td style="text-align:right;"> 152 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> istarskih </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 257.10 </td>
+   <td style="text-align:right;"> 257.0995530 </td>
    <td style="text-align:right;"> 140 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izabrala </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 257.10 </td>
+   <td style="text-align:right;"> 257.0995530 </td>
    <td style="text-align:right;"> 140 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kabola </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 257.10 </td>
+   <td style="text-align:right;"> 257.0995530 </td>
    <td style="text-align:right;"> 140 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kućanski </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 37.12 </td>
+   <td style="text-align:right;"> 37.1218583 </td>
    <td style="text-align:right;"> 8 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> maslinova </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 257.10 </td>
+   <td style="text-align:right;"> 257.0995530 </td>
    <td style="text-align:right;"> 140 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> matošević </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 257.10 </td>
+   <td style="text-align:right;"> 257.0995530 </td>
    <td style="text-align:right;"> 140 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> meneghetti </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 257.10 </td>
+   <td style="text-align:right;"> 257.0995530 </td>
    <td style="text-align:right;"> 140 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> milijuna </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9545386 </td>
    <td style="text-align:right;"> 152 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najpoznatija </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 257.10 </td>
+   <td style="text-align:right;"> 257.0995530 </td>
    <td style="text-align:right;"> 140 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najpoznatijih </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 257.10 </td>
+   <td style="text-align:right;"> 257.0995530 </td>
    <td style="text-align:right;"> 140 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nastavlja </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 0.55 </td>
+   <td style="text-align:right;"> 0.5500382 </td>
    <td style="text-align:right;"> 28 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> neke </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 257.10 </td>
+   <td style="text-align:right;"> 257.0995530 </td>
    <td style="text-align:right;"> 140 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> paula </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 257.10 </td>
+   <td style="text-align:right;"> 257.0995530 </td>
    <td style="text-align:right;"> 140 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pojedinačno </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 257.10 </td>
+   <td style="text-align:right;"> 257.0995530 </td>
    <td style="text-align:right;"> 140 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poluvodiča </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.82 </td>
+   <td style="text-align:right;"> 1.8194488 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pomagati </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 0.55 </td>
+   <td style="text-align:right;"> 0.5500382 </td>
    <td style="text-align:right;"> 28 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prezentaciji </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 257.10 </td>
+   <td style="text-align:right;"> 257.0995530 </td>
    <td style="text-align:right;"> 140 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sommelierka </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 257.10 </td>
+   <td style="text-align:right;"> 257.0995530 </td>
    <td style="text-align:right;"> 140 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sudjelovala </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 257.10 </td>
+   <td style="text-align:right;"> 257.0995530 </td>
    <td style="text-align:right;"> 140 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sv </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tehnika </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 108.00 </td>
+   <td style="text-align:right;"> 108.0000000 </td>
    <td style="text-align:right;"> 24 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vina </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 257.10 </td>
+   <td style="text-align:right;"> 257.0995530 </td>
    <td style="text-align:right;"> 140 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vinarija </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 257.10 </td>
+   <td style="text-align:right;"> 257.0995530 </td>
    <td style="text-align:right;"> 140 </td>
    <td style="text-align:right;"> 17 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> budućnosti </td>
    <td style="text-align:right;"> 45 </td>
-   <td style="text-align:right;"> 108.09 </td>
+   <td style="text-align:right;"> 108.0925386 </td>
    <td style="text-align:right;"> 479 </td>
    <td style="text-align:right;"> 16 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> godina </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 86.47 </td>
+   <td style="text-align:right;"> 86.4658919 </td>
    <td style="text-align:right;"> 396 </td>
    <td style="text-align:right;"> 16 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prezentirana </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 245.97 </td>
+   <td style="text-align:right;"> 245.9724547 </td>
    <td style="text-align:right;"> 137 </td>
    <td style="text-align:right;"> 16 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cijena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 2.15 </td>
+   <td style="text-align:right;"> 2.1546403 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 15 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> direktor </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9460002 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 15 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izvršni </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9460002 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 15 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kompanije </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9460002 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 15 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mogućnosti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.21 </td>
+   <td style="text-align:right;"> 5.2087201 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 15 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proizvodnje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.21 </td>
+   <td style="text-align:right;"> 5.2087201 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 15 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> by </td>
    <td style="text-align:right;"> 346 </td>
-   <td style="text-align:right;"> 82.31 </td>
+   <td style="text-align:right;"> 82.3096908 </td>
    <td style="text-align:right;"> 3159 </td>
    <td style="text-align:right;"> 14 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hartung </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9460002 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 14 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mali </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.12 </td>
+   <td style="text-align:right;"> 1.1218583 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 14 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mercedes </td>
    <td style="text-align:right;"> 87 </td>
-   <td style="text-align:right;"> 256.70 </td>
+   <td style="text-align:right;"> 256.7046284 </td>
    <td style="text-align:right;"> 959 </td>
    <td style="text-align:right;"> 14 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> perilica </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 0.4037006 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 14 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ponudi </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 76.26 </td>
+   <td style="text-align:right;"> 76.2626947 </td>
    <td style="text-align:right;"> 225 </td>
    <td style="text-align:right;"> 14 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> posuđa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.12 </td>
+   <td style="text-align:right;"> 1.1218583 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 14 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> powered </td>
    <td style="text-align:right;"> 346 </td>
-   <td style="text-align:right;"> 82.31 </td>
+   <td style="text-align:right;"> 82.3096908 </td>
    <td style="text-align:right;"> 3159 </td>
    <td style="text-align:right;"> 14 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stefan </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9460002 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 14 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ugradbena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 14 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> banovini </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.2750191 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 13 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gorenje </td>
    <td style="text-align:right;"> 39 </td>
-   <td style="text-align:right;"> 154.49 </td>
+   <td style="text-align:right;"> 154.4905573 </td>
    <td style="text-align:right;"> 203 </td>
    <td style="text-align:right;"> 13 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ponedjeljak </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 12.15 </td>
+   <td style="text-align:right;"> 12.1500698 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 13 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rata </td>
    <td style="text-align:right;"> 37 </td>
-   <td style="text-align:right;"> 9.43 </td>
+   <td style="text-align:right;"> 9.4273676 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 13 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rublja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 0.4037006 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 13 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tvornice </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 13.68 </td>
+   <td style="text-align:right;"> 13.6780289 </td>
    <td style="text-align:right;"> 148 </td>
    <td style="text-align:right;"> 13 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vozila </td>
    <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 3.46 </td>
+   <td style="text-align:right;"> 3.4598409 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 13 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zahvaljujući </td>
    <td style="text-align:right;"> 45 </td>
-   <td style="text-align:right;"> 108.12 </td>
+   <td style="text-align:right;"> 108.1220927 </td>
    <td style="text-align:right;"> 479 </td>
    <td style="text-align:right;"> 13 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dalje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.89 </td>
+   <td style="text-align:right;"> 4.8900743 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 12 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> grijanje </td>
    <td style="text-align:right;"> 21 </td>
-   <td style="text-align:right;"> 103.93 </td>
+   <td style="text-align:right;"> 103.9305486 </td>
    <td style="text-align:right;"> 445 </td>
    <td style="text-align:right;"> 12 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> imaju </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 122.16 </td>
+   <td style="text-align:right;"> 122.1562764 </td>
    <td style="text-align:right;"> 150 </td>
    <td style="text-align:right;"> 12 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> končar </td>
    <td style="text-align:right;"> 92 </td>
-   <td style="text-align:right;"> 186.82 </td>
+   <td style="text-align:right;"> 186.8214297 </td>
    <td style="text-align:right;"> 857 </td>
    <td style="text-align:right;"> 12 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poklon </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 16.35 </td>
+   <td style="text-align:right;"> 16.3535225 </td>
    <td style="text-align:right;"> 226 </td>
    <td style="text-align:right;"> 12 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> posebno </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 77.46 </td>
+   <td style="text-align:right;"> 77.4565197 </td>
    <td style="text-align:right;"> 240 </td>
    <td style="text-align:right;"> 12 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> redovna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 2.15 </td>
+   <td style="text-align:right;"> 2.1546403 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 12 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ulaže </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 12 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uložiti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.82 </td>
+   <td style="text-align:right;"> 1.8194488 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 12 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> croatia </td>
    <td style="text-align:right;"> 45 </td>
-   <td style="text-align:right;"> 110.75 </td>
+   <td style="text-align:right;"> 110.7502014 </td>
    <td style="text-align:right;"> 479 </td>
    <td style="text-align:right;"> 11 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> grue </td>
    <td style="text-align:right;"> 36 </td>
-   <td style="text-align:right;"> 132.87 </td>
+   <td style="text-align:right;"> 132.8739640 </td>
    <td style="text-align:right;"> 345 </td>
    <td style="text-align:right;"> 11 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nadmašuje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.21 </td>
+   <td style="text-align:right;"> 5.2087201 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 11 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osiguranje </td>
    <td style="text-align:right;"> 45 </td>
-   <td style="text-align:right;"> 110.75 </td>
+   <td style="text-align:right;"> 110.7502014 </td>
    <td style="text-align:right;"> 479 </td>
    <td style="text-align:right;"> 11 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> potražnja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.89 </td>
+   <td style="text-align:right;"> 4.8900743 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 11 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> radi </td>
    <td style="text-align:right;"> 274 </td>
-   <td style="text-align:right;"> 166.04 </td>
+   <td style="text-align:right;"> 166.0405001 </td>
    <td style="text-align:right;"> 1055 </td>
    <td style="text-align:right;"> 11 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sušilica </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 11 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> garancije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.12 </td>
+   <td style="text-align:right;"> 1.1218583 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 10 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> microsoft </td>
    <td style="text-align:right;"> 43 </td>
-   <td style="text-align:right;"> 106.18 </td>
+   <td style="text-align:right;"> 106.1787729 </td>
    <td style="text-align:right;"> 428 </td>
    <td style="text-align:right;"> 10 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mini </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 10 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> muza </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 12.08 </td>
+   <td style="text-align:right;"> 12.0809090 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 10 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zlatni </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 89.63 </td>
+   <td style="text-align:right;"> 89.6253878 </td>
    <td style="text-align:right;"> 181 </td>
    <td style="text-align:right;"> 10 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> aparata </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 31.67 </td>
+   <td style="text-align:right;"> 31.6702672 </td>
    <td style="text-align:right;"> 202 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cijeli </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 38.09 </td>
+   <td style="text-align:right;"> 38.0932235 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dana </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.30 </td>
+   <td style="text-align:right;"> 11.3004212 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> diljem </td>
    <td style="text-align:right;"> 45 </td>
-   <td style="text-align:right;"> 106.18 </td>
+   <td style="text-align:right;"> 106.1787729 </td>
    <td style="text-align:right;"> 479 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dresdenu </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 5.07 </td>
+   <td style="text-align:right;"> 5.0723973 </td>
    <td style="text-align:right;"> 71 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kapacitet </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.12 </td>
+   <td style="text-align:right;"> 1.1218583 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kavu </td>
    <td style="text-align:right;"> 142 </td>
-   <td style="text-align:right;"> 69.93 </td>
+   <td style="text-align:right;"> 69.9333664 </td>
    <td style="text-align:right;"> 1517 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kompanija </td>
    <td style="text-align:right;"> 45 </td>
-   <td style="text-align:right;"> 106.18 </td>
+   <td style="text-align:right;"> 106.1787729 </td>
    <td style="text-align:right;"> 479 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kovčeg </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> line </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 46.49 </td>
+   <td style="text-align:right;"> 46.4864865 </td>
    <td style="text-align:right;"> 41 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> listopad </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> navedenih </td>
    <td style="text-align:right;"> 45 </td>
-   <td style="text-align:right;"> 106.18 </td>
+   <td style="text-align:right;"> 106.1787729 </td>
    <td style="text-align:right;"> 479 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> njemački </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9460002 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> podršci </td>
    <td style="text-align:right;"> 45 </td>
-   <td style="text-align:right;"> 106.18 </td>
+   <td style="text-align:right;"> 106.1787729 </td>
    <td style="text-align:right;"> 479 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> podržali </td>
    <td style="text-align:right;"> 45 </td>
-   <td style="text-align:right;"> 106.18 </td>
+   <td style="text-align:right;"> 106.1787729 </td>
    <td style="text-align:right;"> 479 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poslovni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 56.88 </td>
+   <td style="text-align:right;"> 56.8776371 </td>
    <td style="text-align:right;"> 25 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> priliku </td>
    <td style="text-align:right;"> 182 </td>
-   <td style="text-align:right;"> 101.89 </td>
+   <td style="text-align:right;"> 101.8914589 </td>
    <td style="text-align:right;"> 1714 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pro </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 53.63 </td>
+   <td style="text-align:right;"> 53.6255282 </td>
    <td style="text-align:right;"> 116 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proizvoda </td>
    <td style="text-align:right;"> 61 </td>
-   <td style="text-align:right;"> 82.31 </td>
+   <td style="text-align:right;"> 82.3147851 </td>
    <td style="text-align:right;"> 725 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> robert </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 27.89 </td>
+   <td style="text-align:right;"> 27.8930138 </td>
    <td style="text-align:right;"> 5 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> samsung </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 64.88 </td>
+   <td style="text-align:right;"> 64.8847412 </td>
    <td style="text-align:right;"> 9 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sport </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 44.29 </td>
+   <td style="text-align:right;"> 44.2943292 </td>
    <td style="text-align:right;"> 104 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tv </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 79.19 </td>
+   <td style="text-align:right;"> 79.1858506 </td>
    <td style="text-align:right;"> 133 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uvelike </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.21 </td>
+   <td style="text-align:right;"> 5.2087201 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> car </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 40.32 </td>
+   <td style="text-align:right;"> 40.3151640 </td>
    <td style="text-align:right;"> 28 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čelnik </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.89 </td>
+   <td style="text-align:right;"> 4.8900743 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> frank </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 86.02 </td>
+   <td style="text-align:right;"> 86.0249388 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gotova </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9460002 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> grupe </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.89 </td>
+   <td style="text-align:right;"> 4.8900743 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> industrije </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9460002 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izbor </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 31.29 </td>
+   <td style="text-align:right;"> 31.2914430 </td>
    <td style="text-align:right;"> 202 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jasno </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9460002 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jednu </td>
    <td style="text-align:right;"> 198 </td>
-   <td style="text-align:right;"> 22.35 </td>
+   <td style="text-align:right;"> 22.3495476 </td>
    <td style="text-align:right;"> 204 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> km </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 2.15 </td>
+   <td style="text-align:right;"> 2.1546403 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> knjiga </td>
    <td style="text-align:right;"> 50 </td>
-   <td style="text-align:right;"> 144.97 </td>
+   <td style="text-align:right;"> 144.9666517 </td>
    <td style="text-align:right;"> 500 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> komplet </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kriza </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9460002 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> među </td>
    <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 58.55 </td>
+   <td style="text-align:right;"> 58.5492881 </td>
    <td style="text-align:right;"> 98 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> moramo </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9460002 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najveći </td>
    <td style="text-align:right;"> 75 </td>
-   <td style="text-align:right;"> 68.08 </td>
+   <td style="text-align:right;"> 68.0792731 </td>
    <td style="text-align:right;"> 279 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> opskrbi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.89 </td>
+   <td style="text-align:right;"> 4.8900743 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> over </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> philips </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 45.27 </td>
+   <td style="text-align:right;"> 45.2651481 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pretula </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 86.57 </td>
+   <td style="text-align:right;"> 86.5652765 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> reći </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9460002 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rekao </td>
    <td style="text-align:right;"> 33 </td>
-   <td style="text-align:right;"> 26.82 </td>
+   <td style="text-align:right;"> 26.8204753 </td>
    <td style="text-align:right;"> 57 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> reserves </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> servisi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 40.32 </td>
+   <td style="text-align:right;"> 40.3151640 </td>
    <td style="text-align:right;"> 28 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> shimano </td>
    <td style="text-align:right;"> 542 </td>
-   <td style="text-align:right;"> 31.72 </td>
+   <td style="text-align:right;"> 31.7150555 </td>
    <td style="text-align:right;"> 4726 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sklopu </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 101.74 </td>
+   <td style="text-align:right;"> 101.7432000 </td>
    <td style="text-align:right;"> 152 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sustav </td>
    <td style="text-align:right;"> 223 </td>
-   <td style="text-align:right;"> 81.07 </td>
+   <td style="text-align:right;"> 81.0689405 </td>
    <td style="text-align:right;"> 531 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> svjetskog </td>
    <td style="text-align:right;"> 45 </td>
-   <td style="text-align:right;"> 31.22 </td>
+   <td style="text-align:right;"> 31.2187275 </td>
    <td style="text-align:right;"> 29 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> šef </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9460002 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> šok </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.21 </td>
+   <td style="text-align:right;"> 5.2087201 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> utrecht </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> važna </td>
    <td style="text-align:right;"> 26 </td>
-   <td style="text-align:right;"> 134.39 </td>
+   <td style="text-align:right;"> 134.3898433 </td>
    <td style="text-align:right;"> 226 </td>
    <td style="text-align:right;"> 8 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ajanović </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 86.02 </td>
+   <td style="text-align:right;"> 86.0249388 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> alat </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> atos </td>
    <td style="text-align:right;"> 43 </td>
-   <td style="text-align:right;"> 106.18 </td>
+   <td style="text-align:right;"> 106.1787729 </td>
    <td style="text-align:right;"> 428 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> automobilske </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9460002 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> autori </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 86.02 </td>
+   <td style="text-align:right;"> 86.0249388 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> avl </td>
    <td style="text-align:right;"> 43 </td>
-   <td style="text-align:right;"> 106.18 </td>
+   <td style="text-align:right;"> 106.1787729 </td>
    <td style="text-align:right;"> 428 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bit </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 46.49 </td>
+   <td style="text-align:right;"> 46.4864865 </td>
    <td style="text-align:right;"> 41 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bojlera </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 46.64 </td>
+   <td style="text-align:right;"> 46.6405229 </td>
    <td style="text-align:right;"> 210 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> de </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 86.02 </td>
+   <td style="text-align:right;"> 86.0249388 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dijelni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dobavljač </td>
    <td style="text-align:right;"> 219 </td>
-   <td style="text-align:right;"> 21.68 </td>
+   <td style="text-align:right;"> 21.6813661 </td>
    <td style="text-align:right;"> 391 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dobavljača </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9460002 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dostava </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dragan </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 86.02 </td>
+   <td style="text-align:right;"> 86.0249388 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ford </td>
    <td style="text-align:right;"> 78 </td>
-   <td style="text-align:right;"> 159.85 </td>
+   <td style="text-align:right;"> 159.8456493 </td>
    <td style="text-align:right;"> 810 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fotografija </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 86.02 </td>
+   <td style="text-align:right;"> 86.0249388 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> graia </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 86.02 </td>
+   <td style="text-align:right;"> 86.0249388 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gulić </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 86.02 </td>
+   <td style="text-align:right;"> 86.0249388 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> https </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 38.09 </td>
+   <td style="text-align:right;"> 38.0932235 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> implementirat </td>
    <td style="text-align:right;"> 43 </td>
-   <td style="text-align:right;"> 106.18 </td>
+   <td style="text-align:right;"> 106.1787729 </td>
    <td style="text-align:right;"> 428 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izazvala </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.89 </td>
+   <td style="text-align:right;"> 4.8900743 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kartice </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 2.15 </td>
+   <td style="text-align:right;"> 2.1546403 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lejla </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 86.02 </td>
+   <td style="text-align:right;"> 86.0249388 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> merlo </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 86.02 </td>
+   <td style="text-align:right;"> 86.0249388 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> microblink </td>
    <td style="text-align:right;"> 43 </td>
-   <td style="text-align:right;"> 106.18 </td>
+   <td style="text-align:right;"> 106.1787729 </td>
    <td style="text-align:right;"> 428 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> miroslav </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 86.02 </td>
+   <td style="text-align:right;"> 86.0249388 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najvećeg </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9460002 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ostale </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pandemija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.89 </td>
+   <td style="text-align:right;"> 4.8900743 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> partnere </td>
    <td style="text-align:right;"> 43 </td>
-   <td style="text-align:right;"> 106.18 </td>
+   <td style="text-align:right;"> 106.1787729 </td>
    <td style="text-align:right;"> 428 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poluvodičima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.89 </td>
+   <td style="text-align:right;"> 4.8900743 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poluvodičkih </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 3.07 </td>
+   <td style="text-align:right;"> 3.0723331 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> povećava </td>
    <td style="text-align:right;"> 21 </td>
-   <td style="text-align:right;"> 4.51 </td>
+   <td style="text-align:right;"> 4.5058327 </td>
    <td style="text-align:right;"> 83 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> premium </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 30.55 </td>
+   <td style="text-align:right;"> 30.5484089 </td>
    <td style="text-align:right;"> 202 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prevladan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.89 </td>
+   <td style="text-align:right;"> 4.8900743 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> projektne </td>
    <td style="text-align:right;"> 43 </td>
-   <td style="text-align:right;"> 106.18 </td>
+   <td style="text-align:right;"> 106.1787729 </td>
    <td style="text-align:right;"> 428 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> servis </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 1.95 </td>
+   <td style="text-align:right;"> 1.9506517 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> snaga </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.08 </td>
+   <td style="text-align:right;"> 1.0773202 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> softver </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.17 </td>
+   <td style="text-align:right;"> 1.1707317 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> span </td>
    <td style="text-align:right;"> 43 </td>
-   <td style="text-align:right;"> 106.18 </td>
+   <td style="text-align:right;"> 106.1787729 </td>
    <td style="text-align:right;"> 428 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stanley </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> školska </td>
    <td style="text-align:right;"> 43 </td>
-   <td style="text-align:right;"> 106.18 </td>
+   <td style="text-align:right;"> 106.1787729 </td>
    <td style="text-align:right;"> 428 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tehnologije </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 10.70 </td>
+   <td style="text-align:right;"> 10.7023962 </td>
    <td style="text-align:right;"> 71 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tijekom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 51.30 </td>
+   <td style="text-align:right;"> 51.3004212 </td>
    <td style="text-align:right;"> 12 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tjednik </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 23.95 </td>
+   <td style="text-align:right;"> 23.9460002 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> toyota </td>
    <td style="text-align:right;"> 78 </td>
-   <td style="text-align:right;"> 159.85 </td>
+   <td style="text-align:right;"> 159.8456493 </td>
    <td style="text-align:right;"> 810 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tvrtka </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 10.94 </td>
+   <td style="text-align:right;"> 10.9416858 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> univerzalni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.59 </td>
+   <td style="text-align:right;"> 0.5853659 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> usisivač </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 2.15 </td>
+   <td style="text-align:right;"> 2.1546403 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> aktivnosti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.59 </td>
+   <td style="text-align:right;"> 0.5853659 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> blender </td>
    <td style="text-align:right;"> 41 </td>
-   <td style="text-align:right;"> 84.83 </td>
+   <td style="text-align:right;"> 84.8328865 </td>
    <td style="text-align:right;"> 500 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> blu </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 85.48 </td>
+   <td style="text-align:right;"> 85.4846010 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> brendova </td>
    <td style="text-align:right;"> 73 </td>
-   <td style="text-align:right;"> 75.30 </td>
+   <td style="text-align:right;"> 75.3023105 </td>
    <td style="text-align:right;"> 417 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> činjenica </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 96.86 </td>
+   <td style="text-align:right;"> 96.8589791 </td>
    <td style="text-align:right;"> 149 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čipovima </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 1.25 </td>
+   <td style="text-align:right;"> 1.2528842 </td>
    <td style="text-align:right;"> 13 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> daimler </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 96.86 </td>
+   <td style="text-align:right;"> 96.8589791 </td>
    <td style="text-align:right;"> 149 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dodaj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ekonomski </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 96.86 </td>
+   <td style="text-align:right;"> 96.8589791 </td>
    <td style="text-align:right;"> 149 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> electrolux </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 77.68 </td>
+   <td style="text-align:right;"> 77.6777042 </td>
    <td style="text-align:right;"> 113 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> električni </td>
    <td style="text-align:right;"> 202 </td>
-   <td style="text-align:right;"> 65.71 </td>
+   <td style="text-align:right;"> 65.7107299 </td>
    <td style="text-align:right;"> 1638 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> energije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.78 </td>
+   <td style="text-align:right;"> 0.7804878 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ey </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 96.86 </td>
+   <td style="text-align:right;"> 96.8589791 </td>
    <td style="text-align:right;"> 149 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fakultet </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 96.86 </td>
+   <td style="text-align:right;"> 96.8589791 </td>
    <td style="text-align:right;"> 149 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> god </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.12 </td>
+   <td style="text-align:right;"> 1.1218583 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> govori </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 96.86 </td>
+   <td style="text-align:right;"> 96.8589791 </td>
    <td style="text-align:right;"> 149 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> idealan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.78 </td>
+   <td style="text-align:right;"> 0.7804878 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> iskoristite </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 38.31 </td>
+   <td style="text-align:right;"> 38.3076923 </td>
    <td style="text-align:right;"> 10 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izračun </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.08 </td>
+   <td style="text-align:right;"> 1.0773202 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jedinicu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.59 </td>
+   <td style="text-align:right;"> 0.5853659 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> košaricu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kućanskih </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 30.55 </td>
+   <td style="text-align:right;"> 30.5484089 </td>
    <td style="text-align:right;"> 202 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lg </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 64.88 </td>
+   <td style="text-align:right;"> 64.8847412 </td>
    <td style="text-align:right;"> 9 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> marke </td>
    <td style="text-align:right;"> 99 </td>
-   <td style="text-align:right;"> 10.88 </td>
+   <td style="text-align:right;"> 10.8820909 </td>
    <td style="text-align:right;"> 102 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mikrovalne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> min </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mjeri </td>
    <td style="text-align:right;"> 160 </td>
-   <td style="text-align:right;"> 133.20 </td>
+   <td style="text-align:right;"> 133.1968760 </td>
    <td style="text-align:right;"> 835 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mjesta </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.82 </td>
+   <td style="text-align:right;"> 1.8194488 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> može </td>
    <td style="text-align:right;"> 100 </td>
-   <td style="text-align:right;"> 18.86 </td>
+   <td style="text-align:right;"> 18.8608360 </td>
    <td style="text-align:right;"> 179 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najljepši </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.2750191 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nekoliko </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 72.26 </td>
+   <td style="text-align:right;"> 72.2644673 </td>
    <td style="text-align:right;"> 37 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nekome </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.2750191 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nestašica </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 1.25 </td>
+   <td style="text-align:right;"> 1.2528842 </td>
    <td style="text-align:right;"> 13 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nudi </td>
    <td style="text-align:right;"> 30 </td>
-   <td style="text-align:right;"> 2.51 </td>
+   <td style="text-align:right;"> 2.5057685 </td>
    <td style="text-align:right;"> 26 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nulte </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.78 </td>
+   <td style="text-align:right;"> 0.7804878 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> oltremare </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 85.48 </td>
+   <td style="text-align:right;"> 85.4846010 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osijek </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 96.86 </td>
+   <td style="text-align:right;"> 96.8589791 </td>
    <td style="text-align:right;"> 149 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osijeku </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 96.86 </td>
+   <td style="text-align:right;"> 96.8589791 </td>
    <td style="text-align:right;"> 149 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ostali </td>
    <td style="text-align:right;"> 32 </td>
-   <td style="text-align:right;"> 120.21 </td>
+   <td style="text-align:right;"> 120.2140989 </td>
    <td style="text-align:right;"> 183 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ovogodišnji </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 74.83 </td>
+   <td style="text-align:right;"> 74.8344062 </td>
    <td style="text-align:right;"> 10 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pećnica </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pećnice </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pforzheim </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 96.86 </td>
+   <td style="text-align:right;"> 96.8589791 </td>
    <td style="text-align:right;"> 149 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> plavetnilo </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 85.48 </td>
+   <td style="text-align:right;"> 85.4846010 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ploča </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> podijeli </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pomoći </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.2750191 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> porsche </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 96.86 </td>
+   <td style="text-align:right;"> 96.8589791 </td>
    <td style="text-align:right;"> 149 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> porto </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 85.48 </td>
+   <td style="text-align:right;"> 85.4846010 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> potpuno </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 47.95 </td>
+   <td style="text-align:right;"> 47.9469327 </td>
    <td style="text-align:right;"> 48 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> projektima </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 96.86 </td>
+   <td style="text-align:right;"> 96.8589791 </td>
    <td style="text-align:right;"> 149 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> radnih </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 16.69 </td>
+   <td style="text-align:right;"> 16.6926883 </td>
    <td style="text-align:right;"> 326 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> razvojne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.59 </td>
+   <td style="text-align:right;"> 0.5853659 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> reutlingenu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.82 </td>
+   <td style="text-align:right;"> 1.8194488 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> salvore </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 85.48 </td>
+   <td style="text-align:right;"> 85.4846010 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sat </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 85.48 </td>
+   <td style="text-align:right;"> 85.4846010 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> savudrija </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 85.48 </td>
+   <td style="text-align:right;"> 85.4846010 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> savudrijske </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 85.48 </td>
+   <td style="text-align:right;"> 85.4846010 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> simpozija </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 96.86 </td>
+   <td style="text-align:right;"> 96.8589791 </td>
    <td style="text-align:right;"> 149 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> smart </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 45.64 </td>
+   <td style="text-align:right;"> 45.6405525 </td>
    <td style="text-align:right;"> 109 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> spaja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.59 </td>
+   <td style="text-align:right;"> 0.5853659 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stara </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 85.48 </td>
+   <td style="text-align:right;"> 85.4846010 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> studenti </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 96.86 </td>
+   <td style="text-align:right;"> 96.8589791 </td>
    <td style="text-align:right;"> 149 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sudjelovati </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 96.86 </td>
+   <td style="text-align:right;"> 96.8589791 </td>
    <td style="text-align:right;"> 149 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> suradnja </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 96.86 </td>
+   <td style="text-align:right;"> 96.8589791 </td>
    <td style="text-align:right;"> 149 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tehnologija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> the </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> umaško </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 85.48 </td>
+   <td style="text-align:right;"> 85.4846010 </td>
    <td style="text-align:right;"> 177 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> under </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrijeme </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 6.94 </td>
+   <td style="text-align:right;"> 6.9439791 </td>
    <td style="text-align:right;"> 15 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> županije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> airbus </td>
    <td style="text-align:right;"> 61 </td>
-   <td style="text-align:right;"> 122.31 </td>
+   <td style="text-align:right;"> 122.3147851 </td>
    <td style="text-align:right;"> 733 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> al </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> alarm </td>
    <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 4.57 </td>
+   <td style="text-align:right;"> 4.5714286 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> aparat </td>
    <td style="text-align:right;"> 142 </td>
-   <td style="text-align:right;"> 68.47 </td>
+   <td style="text-align:right;"> 68.4729201 </td>
    <td style="text-align:right;"> 1510 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> aris </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> asortimana </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 30.55 </td>
+   <td style="text-align:right;"> 30.5484089 </td>
    <td style="text-align:right;"> 202 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> auto </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> banka </td>
    <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 4.57 </td>
+   <td style="text-align:right;"> 4.5714286 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> baterija </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> benfica </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> božićno </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.2750191 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> buderus </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> covida </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.89 </td>
+   <td style="text-align:right;"> 4.8900743 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čišćenje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> d.o.o </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.30 </td>
+   <td style="text-align:right;"> 11.3004212 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> defriesland </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dječji </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> einhell </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> energetski </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.94 </td>
+   <td style="text-align:right;"> 5.9390932 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> exxonmobil </td>
    <td style="text-align:right;"> 61 </td>
-   <td style="text-align:right;"> 122.31 </td>
+   <td style="text-align:right;"> 122.3147851 </td>
    <td style="text-align:right;"> 733 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ge </td>
    <td style="text-align:right;"> 61 </td>
-   <td style="text-align:right;"> 122.31 </td>
+   <td style="text-align:right;"> 122.3147851 </td>
    <td style="text-align:right;"> 733 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> glavnih </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 42.46 </td>
+   <td style="text-align:right;"> 42.4581920 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> globalnog </td>
    <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 40.97 </td>
+   <td style="text-align:right;"> 40.9676986 </td>
    <td style="text-align:right;"> 54 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hina </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.57 </td>
+   <td style="text-align:right;"> 4.5714286 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hrvatskoj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 6.71 </td>
+   <td style="text-align:right;"> 6.7064137 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ibm </td>
    <td style="text-align:right;"> 61 </td>
-   <td style="text-align:right;"> 122.31 </td>
+   <td style="text-align:right;"> 122.3147851 </td>
    <td style="text-align:right;"> 733 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> imamo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> it </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 30.55 </td>
+   <td style="text-align:right;"> 30.5484089 </td>
    <td style="text-align:right;"> 202 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izdvojit </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 30.55 </td>
+   <td style="text-align:right;"> 30.5484089 </td>
    <td style="text-align:right;"> 202 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> klima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kućica </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.56 </td>
+   <td style="text-align:right;"> 1.5609756 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> laptopa </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 30.55 </td>
+   <td style="text-align:right;"> 30.5484089 </td>
    <td style="text-align:right;"> 202 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> led </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.27 </td>
+   <td style="text-align:right;"> 0.2715671 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> leeuwarden </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lisboa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mall.hr </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nastavaka </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nzeb </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.92 </td>
+   <td style="text-align:right;"> 4.9212746 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> objekta </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.78 </td>
+   <td style="text-align:right;"> 0.7804878 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> odgovor </td>
    <td style="text-align:right;"> 30 </td>
-   <td style="text-align:right;"> 3.97 </td>
+   <td style="text-align:right;"> 3.9662147 </td>
    <td style="text-align:right;"> 33 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ogledalo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 74.29 </td>
+   <td style="text-align:right;"> 74.2940685 </td>
    <td style="text-align:right;"> 10 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ovdje </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 37.66 </td>
+   <td style="text-align:right;"> 37.6636575 </td>
    <td style="text-align:right;"> 207 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ovu </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 26.58 </td>
+   <td style="text-align:right;"> 26.5836988 </td>
    <td style="text-align:right;"> 56 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> periferija </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 30.55 </td>
+   <td style="text-align:right;"> 30.5484089 </td>
    <td style="text-align:right;"> 202 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> plinskog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ponudu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> postrojenja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> primjer </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.78 </td>
+   <td style="text-align:right;"> 0.7804878 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pripada </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 5.03 </td>
+   <td style="text-align:right;"> 5.0324798 </td>
    <td style="text-align:right;"> 1565 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pronaći </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.61 </td>
+   <td style="text-align:right;"> 20.6068847 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> računala </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 30.55 </td>
+   <td style="text-align:right;"> 30.5484089 </td>
    <td style="text-align:right;"> 202 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rješenje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> roadshow </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.92 </td>
+   <td style="text-align:right;"> 4.9212746 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sada </td>
    <td style="text-align:right;"> 86 </td>
-   <td style="text-align:right;"> 47.21 </td>
+   <td style="text-align:right;"> 47.2131003 </td>
    <td style="text-align:right;"> 423 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> salvorine </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 47.39 </td>
+   <td style="text-align:right;"> 47.3893630 </td>
    <td style="text-align:right;"> 168 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.75 </td>
+   <td style="text-align:right;"> 11.7495337 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> srijedu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.89 </td>
+   <td style="text-align:right;"> 4.8900743 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> subjekti </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 96.86 </td>
+   <td style="text-align:right;"> 96.8589791 </td>
    <td style="text-align:right;"> 149 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> svrdala </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> širokoj </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 30.55 </td>
+   <td style="text-align:right;"> 30.5484089 </td>
    <td style="text-align:right;"> 202 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> top </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uwc </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vaillant </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> velikoj </td>
    <td style="text-align:right;"> 61 </td>
-   <td style="text-align:right;"> 122.31 </td>
+   <td style="text-align:right;"> 122.3147851 </td>
    <td style="text-align:right;"> 733 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrtić </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ado </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ah </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> akumulatorski </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> aparate </td>
    <td style="text-align:right;"> 99 </td>
-   <td style="text-align:right;"> 10.88 </td>
+   <td style="text-align:right;"> 10.8820909 </td>
    <td style="text-align:right;"> 102 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> automagazinu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> automatski </td>
    <td style="text-align:right;"> 126 </td>
-   <td style="text-align:right;"> 14.51 </td>
+   <td style="text-align:right;"> 14.5145182 </td>
    <td style="text-align:right;"> 1491 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> baterije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> beko </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 61.30 </td>
+   <td style="text-align:right;"> 61.2972973 </td>
    <td style="text-align:right;"> 9 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> black </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> block </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bluetooth </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bolje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.14 </td>
+   <td style="text-align:right;"> 4.1407867 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bontrager </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> boscha </td>
    <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 2.87 </td>
+   <td style="text-align:right;"> 2.8744750 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> boschove </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.78 </td>
+   <td style="text-align:right;"> 0.7804878 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> breda </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> brže </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.82 </td>
+   <td style="text-align:right;"> 1.8194488 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bušilica </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čak </td>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 23.36 </td>
+   <td style="text-align:right;"> 23.3551198 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> članak </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> d'oro </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 29.61 </td>
+   <td style="text-align:right;"> 29.6115852 </td>
    <td style="text-align:right;"> 167 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> degree </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dnevnik </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dolazi </td>
    <td style="text-align:right;"> 11 </td>
-   <td style="text-align:right;"> 53.43 </td>
+   <td style="text-align:right;"> 53.4267056 </td>
    <td style="text-align:right;"> 286 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> donosi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.98 </td>
+   <td style="text-align:right;"> 1.9814241 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dostupan </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 46.49 </td>
+   <td style="text-align:right;"> 46.4864865 </td>
    <td style="text-align:right;"> 41 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> električne </td>
    <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 47.71 </td>
+   <td style="text-align:right;"> 47.7061006 </td>
    <td style="text-align:right;"> 59 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> georziev </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> groups </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 38.09 </td>
+   <td style="text-align:right;"> 38.0932235 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> grupi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 38.09 </td>
+   <td style="text-align:right;"> 38.0932235 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> haag </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hague </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> home </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.98 </td>
+   <td style="text-align:right;"> 1.9814241 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hrvatske </td>
    <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 9.81 </td>
+   <td style="text-align:right;"> 9.8137444 </td>
    <td style="text-align:right;"> 52 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> industriji </td>
    <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 37.53 </td>
+   <td style="text-align:right;"> 37.5308642 </td>
    <td style="text-align:right;"> 77 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> irobot </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ispravan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izdatke </td>
    <td style="text-align:right;"> 21 </td>
-   <td style="text-align:right;"> 4.51 </td>
+   <td style="text-align:right;"> 4.5058327 </td>
    <td style="text-align:right;"> 83 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izložbenom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.30 </td>
+   <td style="text-align:right;"> 11.3004212 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kapitalne </td>
    <td style="text-align:right;"> 21 </td>
-   <td style="text-align:right;"> 4.51 </td>
+   <td style="text-align:right;"> 4.5058327 </td>
    <td style="text-align:right;"> 83 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> knauf </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 33.76 </td>
+   <td style="text-align:right;"> 33.7552743 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> knock </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kolačići </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> koprivnica </td>
    <td style="text-align:right;"> 45 </td>
-   <td style="text-align:right;"> 62.24 </td>
+   <td style="text-align:right;"> 62.2384415 </td>
    <td style="text-align:right;"> 84 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kronike </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 38.09 </td>
+   <td style="text-align:right;"> 38.0932235 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kuhinji </td>
    <td style="text-align:right;"> 113 </td>
-   <td style="text-align:right;"> 7.08 </td>
+   <td style="text-align:right;"> 7.0772579 </td>
    <td style="text-align:right;"> 1430 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> l'ora </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 29.61 </td>
+   <td style="text-align:right;"> 29.6115852 </td>
    <td style="text-align:right;"> 167 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ljudi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mahnito </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> medija.hr </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mogu </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 32.49 </td>
+   <td style="text-align:right;"> 32.4917288 </td>
    <td style="text-align:right;"> 202 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> možete </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.61 </td>
+   <td style="text-align:right;"> 20.6068847 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nac </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nada </td>
    <td style="text-align:right;"> 39 </td>
-   <td style="text-align:right;"> 101.61 </td>
+   <td style="text-align:right;"> 101.6129202 </td>
    <td style="text-align:right;"> 178 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nadležnim </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.2750191 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nalazi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 42.78 </td>
+   <td style="text-align:right;"> 42.7836361 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> napon </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> neophodni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nevenka </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 60.48 </td>
+   <td style="text-align:right;"> 60.4755537 </td>
    <td style="text-align:right;"> 73 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> novo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> novu </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 2.66 </td>
+   <td style="text-align:right;"> 2.6563930 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> njemačkoj </td>
    <td style="text-align:right;"> 37 </td>
-   <td style="text-align:right;"> 7.27 </td>
+   <td style="text-align:right;"> 7.2727273 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> objavljeno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> održat </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.30 </td>
+   <td style="text-align:right;"> 11.3004212 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> odvijač </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> of </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> opis </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> organizaciji </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 9.47 </td>
+   <td style="text-align:right;"> 9.4741201 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osigurao </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> oss </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pandemije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 45.93 </td>
+   <td style="text-align:right;"> 45.9259259 </td>
    <td style="text-align:right;"> 9 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> penangu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pitanju </td>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 23.36 </td>
+   <td style="text-align:right;"> 23.3551198 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> platinum </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pločica </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.82 </td>
+   <td style="text-align:right;"> 1.8194488 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ponekad </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ponude </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> popusta </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> posuda </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> posudom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pranje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.12 </td>
+   <td style="text-align:right;"> 1.1218583 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pratite </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 37.51 </td>
+   <td style="text-align:right;"> 37.5081464 </td>
    <td style="text-align:right;"> 49 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prednosti </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.78 </td>
+   <td style="text-align:right;"> 0.7804878 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proizvodi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proizvođača </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> promo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prostoru </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.30 </td>
+   <td style="text-align:right;"> 11.3004212 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pumpa </td>
    <td style="text-align:right;"> 98 </td>
-   <td style="text-align:right;"> 53.46 </td>
+   <td style="text-align:right;"> 53.4607864 </td>
    <td style="text-align:right;"> 1398 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pumpom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> putopis </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 38.09 </td>
+   <td style="text-align:right;"> 38.0932235 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rad </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 21.19 </td>
+   <td style="text-align:right;"> 21.1855273 </td>
    <td style="text-align:right;"> 421 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> raste </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> razloga </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.78 </td>
+   <td style="text-align:right;"> 0.7804878 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> raznovrsnu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> remco </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rješenja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.62 </td>
+   <td style="text-align:right;"> 4.6153846 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rog </td>
    <td style="text-align:right;"> 346 </td>
-   <td style="text-align:right;"> 52.70 </td>
+   <td style="text-align:right;"> 52.6974172 </td>
    <td style="text-align:right;"> 3152 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> roomba </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> royals </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> saznaj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> score </td>
    <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 4.57 </td>
+   <td style="text-align:right;"> 4.5714286 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> službama </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.2750191 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> softvera </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sony </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.59 </td>
+   <td style="text-align:right;"> 3.5874439 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stanovnicima </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.2750191 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stručno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 9.77 </td>
+   <td style="text-align:right;"> 9.7684417 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> studenog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 72.00 </td>
+   <td style="text-align:right;"> 72.0000000 </td>
    <td style="text-align:right;"> 16 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> suradnji </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.2750191 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sustava </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 18.31 </td>
+   <td style="text-align:right;"> 18.3076923 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sušenje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.12 </td>
+   <td style="text-align:right;"> 1.1218583 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> svijetom </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 1.25 </td>
+   <td style="text-align:right;"> 1.2528842 </td>
    <td style="text-align:right;"> 13 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> svojim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.94 </td>
+   <td style="text-align:right;"> 1.9433198 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> štednjak </td>
    <td style="text-align:right;"> 39 </td>
-   <td style="text-align:right;"> 101.61 </td>
+   <td style="text-align:right;"> 101.6129202 </td>
    <td style="text-align:right;"> 178 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> također </td>
    <td style="text-align:right;"> 211 </td>
-   <td style="text-align:right;"> 27.74 </td>
+   <td style="text-align:right;"> 27.7409958 </td>
    <td style="text-align:right;"> 258 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> thule </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 38.09 </td>
+   <td style="text-align:right;"> 38.0932235 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> toplinskom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uključeno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uređaj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> usisavači </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 30.55 </td>
+   <td style="text-align:right;"> 30.5484089 </td>
    <td style="text-align:right;"> 202 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> usluga </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 3.25 </td>
+   <td style="text-align:right;"> 3.2529484 </td>
    <td style="text-align:right;"> 70 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uštedu </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 30.55 </td>
+   <td style="text-align:right;"> 30.5484089 </td>
    <td style="text-align:right;"> 202 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> veći </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> velike </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> viessmann </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vitamaxx </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 46.08 </td>
+   <td style="text-align:right;"> 46.0831978 </td>
    <td style="text-align:right;"> 848 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vlada </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 1.25 </td>
+   <td style="text-align:right;"> 1.2528842 </td>
    <td style="text-align:right;"> 13 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> voćaka </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vode </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.62 </td>
+   <td style="text-align:right;"> 4.6153846 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> volendam </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrećice </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 25.97 </td>
+   <td style="text-align:right;"> 25.9749907 </td>
    <td style="text-align:right;"> 427 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vremena </td>
    <td style="text-align:right;"> 113 </td>
-   <td style="text-align:right;"> 7.08 </td>
+   <td style="text-align:right;"> 7.0772579 </td>
    <td style="text-align:right;"> 1430 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> web </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.59 </td>
+   <td style="text-align:right;"> 3.5874439 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> www.facebook.com </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 38.09 </td>
+   <td style="text-align:right;"> 38.0932235 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> yes </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zagreb </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 40.94 </td>
+   <td style="text-align:right;"> 40.9369369 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zagrebačka </td>
    <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 4.57 </td>
+   <td style="text-align:right;"> 4.5714286 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zagrebu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.14 </td>
+   <td style="text-align:right;"> 4.1407867 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zaliha </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 0.9248555 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zatopljenja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 38.09 </td>
+   <td style="text-align:right;"> 38.0932235 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> alata </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> and </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> antikorozivnom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 40.00 </td>
+   <td style="text-align:right;"> 40.0000000 </td>
    <td style="text-align:right;"> 8 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> asortiman </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 36.00 </td>
+   <td style="text-align:right;"> 36.0000000 </td>
    <td style="text-align:right;"> 8 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> automagazin </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 37.51 </td>
+   <td style="text-align:right;"> 37.5081464 </td>
    <td style="text-align:right;"> 28 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> automania.hr </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> automobil </td>
    <td style="text-align:right;"> 213 </td>
-   <td style="text-align:right;"> 19.22 </td>
+   <td style="text-align:right;"> 19.2199389 </td>
    <td style="text-align:right;"> 321 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> automobilskoj </td>
    <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 37.53 </td>
+   <td style="text-align:right;"> 37.5308642 </td>
    <td style="text-align:right;"> 77 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> automobilsku </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> back </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> basket </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bočkovec </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 59.94 </td>
+   <td style="text-align:right;"> 59.9352160 </td>
    <td style="text-align:right;"> 73 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> broj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> brojni </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 19.53 </td>
+   <td style="text-align:right;"> 19.5304869 </td>
    <td style="text-align:right;"> 36 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> brojnih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.14 </td>
+   <td style="text-align:right;"> 4.1407867 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> candy </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 39.59 </td>
+   <td style="text-align:right;"> 39.5874439 </td>
    <td style="text-align:right;"> 8 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cijene </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 10.97 </td>
+   <td style="text-align:right;"> 10.9730700 </td>
    <td style="text-align:right;"> 138 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> comp </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> copyright </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> core </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> daljnje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.59 </td>
+   <td style="text-align:right;"> 0.5853659 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> decker </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> delonghi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> deore </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 2.79 </td>
+   <td style="text-align:right;"> 2.7866452 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dijelu </td>
    <td style="text-align:right;"> 31 </td>
-   <td style="text-align:right;"> 29.76 </td>
+   <td style="text-align:right;"> 29.7607092 </td>
    <td style="text-align:right;"> 358 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> distributer </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dobre </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.14 </td>
+   <td style="text-align:right;"> 4.1407867 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> donacija </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.2750191 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> doručak </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dosad </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 40.00 </td>
+   <td style="text-align:right;"> 40.0000000 </td>
    <td style="text-align:right;"> 8 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> druga </td>
    <td style="text-align:right;"> 114 </td>
-   <td style="text-align:right;"> 72.93 </td>
+   <td style="text-align:right;"> 72.9332897 </td>
    <td style="text-align:right;"> 318 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> eksperti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> električna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> et </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> facebooku </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.61 </td>
+   <td style="text-align:right;"> 20.6068847 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fakulteta </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.14 </td>
+   <td style="text-align:right;"> 4.1407867 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> farkaševac </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 59.94 </td>
+   <td style="text-align:right;"> 59.9352160 </td>
    <td style="text-align:right;"> 73 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> funkcija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> godinu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:right;"> 0.5403377 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> građevinskog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.14 </td>
+   <td style="text-align:right;"> 4.1407867 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gramofon </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 59.94 </td>
+   <td style="text-align:right;"> 59.9352160 </td>
    <td style="text-align:right;"> 73 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> grijanja </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 46.64 </td>
+   <td style="text-align:right;"> 46.6405229 </td>
    <td style="text-align:right;"> 210 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> grundig </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 59.94 </td>
+   <td style="text-align:right;"> 59.9352160 </td>
    <td style="text-align:right;"> 73 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gume </td>
    <td style="text-align:right;"> 202 </td>
-   <td style="text-align:right;"> 13.76 </td>
+   <td style="text-align:right;"> 13.7597152 </td>
    <td style="text-align:right;"> 1702 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hižanovec </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 59.94 </td>
+   <td style="text-align:right;"> 59.9352160 </td>
    <td style="text-align:right;"> 73 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hladnjak </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hotel </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 90.81 </td>
+   <td style="text-align:right;"> 90.8108108 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> intimno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.61 </td>
+   <td style="text-align:right;"> 20.6068847 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> isteka </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izgradnje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.92 </td>
+   <td style="text-align:right;"> 4.9212746 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izložbu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.61 </td>
+   <td style="text-align:right;"> 20.6068847 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izuzetno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.61 </td>
+   <td style="text-align:right;"> 20.6068847 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> javnost </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.14 </td>
+   <td style="text-align:right;"> 4.1407867 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jenjala </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 40.00 </td>
+   <td style="text-align:right;"> 40.0000000 </td>
    <td style="text-align:right;"> 8 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jesen </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 6.92 </td>
+   <td style="text-align:right;"> 6.9230769 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kave </td>
    <td style="text-align:right;"> 226 </td>
-   <td style="text-align:right;"> 14.15 </td>
+   <td style="text-align:right;"> 14.1545158 </td>
    <td style="text-align:right;"> 2860 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kenđelovec </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 59.94 </td>
+   <td style="text-align:right;"> 59.9352160 </td>
    <td style="text-align:right;"> 73 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kočnice </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 10.97 </td>
+   <td style="text-align:right;"> 10.9730700 </td>
    <td style="text-align:right;"> 138 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> komponenti </td>
    <td style="text-align:right;"> 32 </td>
-   <td style="text-align:right;"> 76.00 </td>
+   <td style="text-align:right;"> 75.9977888 </td>
    <td style="text-align:right;"> 360 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> konceptualno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.61 </td>
+   <td style="text-align:right;"> 20.6068847 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kontrolom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> korisnici </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> košar </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 59.94 </td>
+   <td style="text-align:right;"> 59.9352160 </td>
    <td style="text-align:right;"> 73 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> križevci </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 59.94 </td>
+   <td style="text-align:right;"> 59.9352160 </td>
    <td style="text-align:right;"> 73 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kuća </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.98 </td>
+   <td style="text-align:right;"> 1.9814241 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kuhinja </td>
    <td style="text-align:right;"> 100 </td>
-   <td style="text-align:right;"> 12.03 </td>
+   <td style="text-align:right;"> 12.0319882 </td>
    <td style="text-align:right;"> 120 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kuntić </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 59.94 </td>
+   <td style="text-align:right;"> 59.9352160 </td>
    <td style="text-align:right;"> 73 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kupnju </td>
    <td style="text-align:right;"> 67 </td>
-   <td style="text-align:right;"> 42.91 </td>
+   <td style="text-align:right;"> 42.9147692 </td>
    <td style="text-align:right;"> 408 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kvarove </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lani </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 40.00 </td>
+   <td style="text-align:right;"> 40.0000000 </td>
    <td style="text-align:right;"> 8 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lenco </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 59.94 </td>
+   <td style="text-align:right;"> 59.9352160 </td>
    <td style="text-align:right;"> 73 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> liebherr </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.88 </td>
+   <td style="text-align:right;"> 16.8776371 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lukinec </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 59.94 </td>
+   <td style="text-align:right;"> 59.9352160 </td>
    <td style="text-align:right;"> 73 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> manje </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 56.82 </td>
+   <td style="text-align:right;"> 56.8157720 </td>
    <td style="text-align:right;"> 216 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> miele </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> milimetara </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.82 </td>
+   <td style="text-align:right;"> 1.8194488 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mirko </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 59.94 </td>
+   <td style="text-align:right;"> 59.9352160 </td>
    <td style="text-align:right;"> 73 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mjenjač </td>
    <td style="text-align:right;"> 186 </td>
-   <td style="text-align:right;"> 8.76 </td>
+   <td style="text-align:right;"> 8.7634593 </td>
    <td style="text-align:right;"> 1618 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mjenjača </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 2.79 </td>
+   <td style="text-align:right;"> 2.7866452 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mjestu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mm </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mogućnost </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 29.01 </td>
+   <td style="text-align:right;"> 29.0094405 </td>
    <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> money </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> motor </td>
    <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 48.79 </td>
+   <td style="text-align:right;"> 48.7897120 </td>
    <td style="text-align:right;"> 52 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mrvčić </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 59.94 </td>
+   <td style="text-align:right;"> 59.9352160 </td>
    <td style="text-align:right;"> 73 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> načinio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.61 </td>
+   <td style="text-align:right;"> 20.6068847 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> načinom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.14 </td>
+   <td style="text-align:right;"> 4.1407867 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najavio </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 3.25 </td>
+   <td style="text-align:right;"> 3.2529484 </td>
    <td style="text-align:right;"> 70 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> napitci </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> naprotiv </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 40.00 </td>
+   <td style="text-align:right;"> 40.0000000 </td>
    <td style="text-align:right;"> 8 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nestašici </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nikola </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 59.94 </td>
+   <td style="text-align:right;"> 59.9352160 </td>
    <td style="text-align:right;"> 73 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nove </td>
    <td style="text-align:right;"> 28 </td>
-   <td style="text-align:right;"> 21.60 </td>
+   <td style="text-align:right;"> 21.5961227 </td>
    <td style="text-align:right;"> 330 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> novom </td>
    <td style="text-align:right;"> 61 </td>
-   <td style="text-align:right;"> 82.31 </td>
+   <td style="text-align:right;"> 82.3147851 </td>
    <td style="text-align:right;"> 725 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> o'plant </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 7.42 </td>
+   <td style="text-align:right;"> 7.4242864 </td>
    <td style="text-align:right;"> 12 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> odabir </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.61 </td>
+   <td style="text-align:right;"> 20.6068847 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> odlična </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 12.37 </td>
+   <td style="text-align:right;"> 12.3663602 </td>
    <td style="text-align:right;"> 206 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> okoliša </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> opremljen </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 5.03 </td>
+   <td style="text-align:right;"> 5.0324798 </td>
    <td style="text-align:right;"> 1565 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> otvorio </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 1.25 </td>
+   <td style="text-align:right;"> 1.2528842 </td>
    <td style="text-align:right;"> 13 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ovih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pametna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 2.97 </td>
+   <td style="text-align:right;"> 2.9721362 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> parma </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> partneri </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 27.54 </td>
+   <td style="text-align:right;"> 27.5443038 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> performance </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 94.63 </td>
+   <td style="text-align:right;"> 94.6323831 </td>
    <td style="text-align:right;"> 65 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> perilice </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> perm </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> počinje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 13.46 </td>
+   <td style="text-align:right;"> 13.4621808 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pogon </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 2.79 </td>
+   <td style="text-align:right;"> 2.7866452 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pokrenut </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.14 </td>
+   <td style="text-align:right;"> 4.1407867 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ponuda </td>
    <td style="text-align:right;"> 346 </td>
-   <td style="text-align:right;"> 3.90 </td>
+   <td style="text-align:right;"> 3.9013033 </td>
    <td style="text-align:right;"> 3128 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> popuste </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 36.00 </td>
+   <td style="text-align:right;"> 36.0000000 </td>
    <td style="text-align:right;"> 8 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poseban </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.61 </td>
+   <td style="text-align:right;"> 20.6068847 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> potražnju </td>
    <td style="text-align:right;"> 30 </td>
-   <td style="text-align:right;"> 2.51 </td>
+   <td style="text-align:right;"> 2.5057685 </td>
    <td style="text-align:right;"> 26 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> potreba </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 40.00 </td>
+   <td style="text-align:right;"> 40.0000000 </td>
    <td style="text-align:right;"> 8 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> potresa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poznatih </td>
    <td style="text-align:right;"> 30 </td>
-   <td style="text-align:right;"> 89.51 </td>
+   <td style="text-align:right;"> 89.5078031 </td>
    <td style="text-align:right;"> 430 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> predavanja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 12.34 </td>
+   <td style="text-align:right;"> 12.3421263 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> predstavlja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> preko </td>
    <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pripremu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.62 </td>
+   <td style="text-align:right;"> 4.6153846 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prirodi </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 21.19 </td>
+   <td style="text-align:right;"> 21.1855273 </td>
    <td style="text-align:right;"> 421 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> professional </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:right;"> 0.5811138 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prohygenic </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prostora </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proširivanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.82 </td>
+   <td style="text-align:right;"> 1.8194488 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> puno </td>
    <td style="text-align:right;"> 226 </td>
-   <td style="text-align:right;"> 14.15 </td>
+   <td style="text-align:right;"> 14.1545158 </td>
    <td style="text-align:right;"> 2860 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> putem </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 46.64 </td>
+   <td style="text-align:right;"> 46.6405229 </td>
    <td style="text-align:right;"> 210 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> radove </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rasprodaja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> reaction </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> recikliranih </td>
    <td style="text-align:right;"> 32 </td>
-   <td style="text-align:right;"> 76.00 </td>
+   <td style="text-align:right;"> 75.9977888 </td>
    <td style="text-align:right;"> 360 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> redovitom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rezultat </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.14 </td>
+   <td style="text-align:right;"> 4.1407867 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rezultati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 40.00 </td>
+   <td style="text-align:right;"> 40.0000000 </td>
    <td style="text-align:right;"> 8 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> romobil </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 59.94 </td>
+   <td style="text-align:right;"> 59.9352160 </td>
    <td style="text-align:right;"> 73 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ručice </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 2.79 </td>
+   <td style="text-align:right;"> 2.7866452 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ručni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sadržaj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sami </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> santos </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> security </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 32.00 </td>
+   <td style="text-align:right;"> 32.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> serije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 0.9248555 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> siemens </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 70.05 </td>
+   <td style="text-align:right;"> 70.0511989 </td>
    <td style="text-align:right;"> 216 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sigurnosnih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 26.67 </td>
+   <td style="text-align:right;"> 26.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> slučaju </td>
    <td style="text-align:right;"> 213 </td>
-   <td style="text-align:right;"> 18.43 </td>
+   <td style="text-align:right;"> 18.4284177 </td>
    <td style="text-align:right;"> 321 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> snage </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> soba </td>
    <td style="text-align:right;"> 109 </td>
-   <td style="text-align:right;"> 57.52 </td>
+   <td style="text-align:right;"> 57.5226138 </td>
    <td style="text-align:right;"> 312 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> speed </td>
    <td style="text-align:right;"> 346 </td>
-   <td style="text-align:right;"> 5.57 </td>
+   <td style="text-align:right;"> 5.5732904 </td>
    <td style="text-align:right;"> 3128 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sportklub </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 40.32 </td>
+   <td style="text-align:right;"> 40.3151640 </td>
    <td style="text-align:right;"> 28 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> spriječite </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stan </td>
    <td style="text-align:right;"> 198 </td>
-   <td style="text-align:right;"> 21.76 </td>
+   <td style="text-align:right;"> 21.7641818 </td>
    <td style="text-align:right;"> 204 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stranica </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stranici </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> strateške </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.59 </td>
+   <td style="text-align:right;"> 0.5853659 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sudionika </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.14 </td>
+   <td style="text-align:right;"> 4.1407867 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> suradnje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.14 </td>
+   <td style="text-align:right;"> 4.1407867 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> surface </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> suši </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sušilicu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sveučilišta </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.14 </td>
+   <td style="text-align:right;"> 4.1407867 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> svijet </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> svim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> šifra </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> širenje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> škare </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:right;"> 0.5811138 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> takvim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.14 </td>
+   <td style="text-align:right;"> 4.1407867 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tekuće </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> terra </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 139.46 </td>
+   <td style="text-align:right;"> 139.4594595 </td>
    <td style="text-align:right;"> 123 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> traje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> trek </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 50.75 </td>
+   <td style="text-align:right;"> 50.7467655 </td>
    <td style="text-align:right;"> 1588 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> trenutno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.78 </td>
+   <td style="text-align:right;"> 0.7804878 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> turi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.78 </td>
+   <td style="text-align:right;"> 0.7804878 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> učinkovita </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.82 </td>
+   <td style="text-align:right;"> 4.8172349 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ulaganje </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 3.25 </td>
+   <td style="text-align:right;"> 3.2529484 </td>
    <td style="text-align:right;"> 70 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ulogu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.93 </td>
+   <td style="text-align:right;"> 5.9259259 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> unlimited </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> upoznalo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.14 </td>
+   <td style="text-align:right;"> 4.1407867 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> upravljanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> usisavač </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 41.68 </td>
+   <td style="text-align:right;"> 41.6777042 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> valjak </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 59.94 </td>
+   <td style="text-align:right;"> 59.9352160 </td>
    <td style="text-align:right;"> 73 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> van </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 31.01 </td>
+   <td style="text-align:right;"> 31.0122358 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> veću </td>
    <td style="text-align:right;"> 30 </td>
-   <td style="text-align:right;"> 2.51 </td>
+   <td style="text-align:right;"> 2.5057685 </td>
    <td style="text-align:right;"> 26 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> veseli </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vesna </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 59.94 </td>
+   <td style="text-align:right;"> 59.9352160 </td>
    <td style="text-align:right;"> 73 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vodeći </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vodu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> volkswagen </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> what’s </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> xl </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.08 </td>
+   <td style="text-align:right;"> 1.0773202 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> your </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zadovoljan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.61 </td>
+   <td style="text-align:right;"> 20.6068847 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zadru </td>
    <td style="text-align:right;"> 346 </td>
-   <td style="text-align:right;"> 7.63 </td>
+   <td style="text-align:right;"> 7.6333487 </td>
    <td style="text-align:right;"> 3129 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zaokružen </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.61 </td>
+   <td style="text-align:right;"> 20.6068847 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zapravo </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 11.47 </td>
+   <td style="text-align:right;"> 11.4684231 </td>
    <td style="text-align:right;"> 151 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zaštitom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 40.00 </td>
+   <td style="text-align:right;"> 40.0000000 </td>
    <td style="text-align:right;"> 8 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zdravlje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> abs </td>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 55.36 </td>
+   <td style="text-align:right;"> 55.3644960 </td>
    <td style="text-align:right;"> 320 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> acura </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> advent </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> agronomska </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> akcije </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 23.85 </td>
+   <td style="text-align:right;"> 23.8471169 </td>
    <td style="text-align:right;"> 207 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> akumulatorska </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> alati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> alex </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> antonio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.88 </td>
+   <td style="text-align:right;"> 4.8842209 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> arhitekte </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.88 </td>
+   <td style="text-align:right;"> 4.8842209 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> arthura </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> asenlv </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> audio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.40 </td>
+   <td style="text-align:right;"> 1.4035088 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> autoindustrije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> automatizirana </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> automobili </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> automobilskog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> axle </td>
    <td style="text-align:right;"> 346 </td>
-   <td style="text-align:right;"> 5.57 </td>
+   <td style="text-align:right;"> 5.5732904 </td>
    <td style="text-align:right;"> 3128 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> banovine </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bat </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.88 </td>
+   <td style="text-align:right;"> 16.8776371 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> baziranih </td>
    <td style="text-align:right;"> 61 </td>
-   <td style="text-align:right;"> 82.31 </td>
+   <td style="text-align:right;"> 82.3147851 </td>
    <td style="text-align:right;"> 725 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bearing </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> benzin </td>
    <td style="text-align:right;"> 98 </td>
-   <td style="text-align:right;"> 53.46 </td>
+   <td style="text-align:right;"> 53.4607864 </td>
    <td style="text-align:right;"> 1398 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bežični </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bicikala </td>
    <td style="text-align:right;"> 346 </td>
-   <td style="text-align:right;"> 3.90 </td>
+   <td style="text-align:right;"> 3.9013033 </td>
    <td style="text-align:right;"> 3128 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bicikl </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 5.03 </td>
+   <td style="text-align:right;"> 5.0324798 </td>
    <td style="text-align:right;"> 1565 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bicikli </td>
    <td style="text-align:right;"> 346 </td>
-   <td style="text-align:right;"> 3.90 </td>
+   <td style="text-align:right;"> 3.9013033 </td>
    <td style="text-align:right;"> 3128 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bijele </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bile </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bimota </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 21.95 </td>
+   <td style="text-align:right;"> 21.9461400 </td>
    <td style="text-align:right;"> 276 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> blackfriday </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 36.00 </td>
+   <td style="text-align:right;"> 36.0000000 </td>
    <td style="text-align:right;"> 8 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bmw </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bolesti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bottom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> brendovima </td>
    <td style="text-align:right;"> 46 </td>
-   <td style="text-align:right;"> 46.71 </td>
+   <td style="text-align:right;"> 46.7102397 </td>
    <td style="text-align:right;"> 68 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> brojne </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> broju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 12.07 </td>
+   <td style="text-align:right;"> 12.0701754 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> brzine </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> budućnost </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bušilicu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> caffe </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cartridge </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ceresit </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.88 </td>
+   <td style="text-align:right;"> 16.8776371 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> chromos </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.88 </td>
+   <td style="text-align:right;"> 16.8776371 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cijeni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cilj </td>
    <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 2.87 </td>
+   <td style="text-align:right;"> 2.8744750 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cinestar </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> coffee </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> compo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.88 </td>
+   <td style="text-align:right;"> 16.8776371 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> compress </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 6.42 </td>
+   <td style="text-align:right;"> 6.4162004 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> content </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> covid </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> curver </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cx </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 48.92 </td>
+   <td style="text-align:right;"> 48.9180974 </td>
    <td style="text-align:right;"> 42 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čekaju </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 15.95 </td>
+   <td style="text-align:right;"> 15.9538042 </td>
    <td style="text-align:right;"> 206 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čemu </td>
    <td style="text-align:right;"> 213 </td>
-   <td style="text-align:right;"> 18.43 </td>
+   <td style="text-align:right;"> 18.4284177 </td>
    <td style="text-align:right;"> 321 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čitanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čudan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 60.54 </td>
+   <td style="text-align:right;"> 60.5405405 </td>
    <td style="text-align:right;"> 12 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> današnja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dejan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:right;"> 0.5403377 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> delacroixa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> demo </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 5.03 </td>
+   <td style="text-align:right;"> 5.0324798 </td>
    <td style="text-align:right;"> 1565 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> deveteroznamenkasto </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dimenzije </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 16.00 </td>
+   <td style="text-align:right;"> 15.9950977 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> disc </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dizalicu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 6.42 </td>
+   <td style="text-align:right;"> 6.4162004 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dobiva </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 60.94 </td>
+   <td style="text-align:right;"> 60.9446735 </td>
    <td style="text-align:right;"> 450 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dobivate </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dogovorili </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> donar </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> došao </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 5.98 </td>
+   <td style="text-align:right;"> 5.9768141 </td>
    <td style="text-align:right;"> 54 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dovoljno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> draw </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> drugih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 0.9248555 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> društvo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.59 </td>
+   <td style="text-align:right;"> 0.5853659 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dućana </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 5.03 </td>
+   <td style="text-align:right;"> 5.0324798 </td>
    <td style="text-align:right;"> 1565 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dyson </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.59 </td>
+   <td style="text-align:right;"> 3.5874439 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> easycontrol </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> easypump </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> eco </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> edgar </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> electus </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.88 </td>
+   <td style="text-align:right;"> 16.8776371 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> električnim </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 51.01 </td>
+   <td style="text-align:right;"> 51.0099242 </td>
    <td style="text-align:right;"> 245 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> električno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:right;"> 0.5811138 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> email </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 5.03 </td>
+   <td style="text-align:right;"> 5.0324798 </td>
    <td style="text-align:right;"> 1565 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> emedjimurje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.88 </td>
+   <td style="text-align:right;"> 16.8776371 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> emisiju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 37.51 </td>
+   <td style="text-align:right;"> 37.5081464 </td>
    <td style="text-align:right;"> 28 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> enduro </td>
    <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 13.57 </td>
+   <td style="text-align:right;"> 13.5723655 </td>
    <td style="text-align:right;"> 152 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> energetskom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> equipe </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> european </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 21.33 </td>
+   <td style="text-align:right;"> 21.3333333 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> faber </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.88 </td>
+   <td style="text-align:right;"> 16.8776371 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fantastiku </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ferrari </td>
    <td style="text-align:right;"> 213 </td>
-   <td style="text-align:right;"> 18.43 </td>
+   <td style="text-align:right;"> 18.4284177 </td>
    <td style="text-align:right;"> 321 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fitness </td>
    <td style="text-align:right;"> 346 </td>
-   <td style="text-align:right;"> 3.90 </td>
+   <td style="text-align:right;"> 3.9013033 </td>
    <td style="text-align:right;"> 3128 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fsa </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 2.79 </td>
+   <td style="text-align:right;"> 2.7866452 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> futbolmaestro </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> garnitura </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> generacije </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 46.49 </td>
+   <td style="text-align:right;"> 46.4864865 </td>
    <td style="text-align:right;"> 41 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> glavnog </td>
    <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gnojiva </td>
    <td style="text-align:right;"> 74 </td>
-   <td style="text-align:right;"> 14.55 </td>
+   <td style="text-align:right;"> 14.5454545 </td>
    <td style="text-align:right;"> 46 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> go </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gradnje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gradu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 40.94 </td>
+   <td style="text-align:right;"> 40.9369369 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> groningen </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hansgrohe </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> harmoniji </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hc </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> henkel </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 44.75 </td>
+   <td style="text-align:right;"> 44.7539016 </td>
    <td style="text-align:right;"> 215 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> highroller </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hladnjaku </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 25.30 </td>
+   <td style="text-align:right;"> 25.2972973 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hlađenje </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 48.95 </td>
+   <td style="text-align:right;"> 48.9482152 </td>
    <td style="text-align:right;"> 212 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hydraulic </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ide </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.2750191 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> imate </td>
    <td style="text-align:right;"> 113 </td>
-   <td style="text-align:right;"> 10.79 </td>
+   <td style="text-align:right;"> 10.7894011 </td>
    <td style="text-align:right;"> 1436 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> imati </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 5.03 </td>
+   <td style="text-align:right;"> 5.0324798 </td>
    <td style="text-align:right;"> 1565 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> imena </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 45.48 </td>
+   <td style="text-align:right;"> 45.4757061 </td>
    <td style="text-align:right;"> 215 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> implementiran </td>
    <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> industriju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> inovacije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.94 </td>
+   <td style="text-align:right;"> 1.9433198 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> instalaciji </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 12.07 </td>
+   <td style="text-align:right;"> 12.0701754 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> instalatera </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 6.42 </td>
+   <td style="text-align:right;"> 6.4162004 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> install </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> insulation </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.88 </td>
+   <td style="text-align:right;"> 16.8776371 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> integrated </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> inženjere </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.88 </td>
+   <td style="text-align:right;"> 4.8842209 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> injector </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> isplati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ispred </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ističu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 27.20 </td>
+   <td style="text-align:right;"> 27.2002178 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izazvati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> iznimno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.20 </td>
+   <td style="text-align:right;"> 0.2018503 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izvora </td>
    <td style="text-align:right;"> 61 </td>
-   <td style="text-align:right;"> 82.31 </td>
+   <td style="text-align:right;"> 82.3147851 </td>
    <td style="text-align:right;"> 725 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jbl </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jednom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jelenleg </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> joma </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 47.66 </td>
+   <td style="text-align:right;"> 47.6649374 </td>
    <td style="text-align:right;"> 1587 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> joma.hr </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 5.03 </td>
+   <td style="text-align:right;"> 5.0324798 </td>
    <td style="text-align:right;"> 1565 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jub </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.88 </td>
+   <td style="text-align:right;"> 16.8776371 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kakvo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kamata </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kamera </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 12.07 </td>
+   <td style="text-align:right;"> 12.0701754 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kamere </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 12.07 </td>
+   <td style="text-align:right;"> 12.0701754 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kanalima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 37.51 </td>
+   <td style="text-align:right;"> 37.5081464 </td>
    <td style="text-align:right;"> 28 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kandidata </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> karakteristike </td>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 23.36 </td>
+   <td style="text-align:right;"> 23.3551198 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kärcher </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> karlosovic </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> karticom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kategoriji </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 5.03 </td>
+   <td style="text-align:right;"> 5.0324798 </td>
    <td style="text-align:right;"> 1565 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kg </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> klase </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> klimatizaciju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.88 </td>
+   <td style="text-align:right;"> 4.8842209 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kluba </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 37.51 </td>
+   <td style="text-align:right;"> 37.5081464 </td>
    <td style="text-align:right;"> 28 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kojega </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.88 </td>
+   <td style="text-align:right;"> 4.8842209 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kojem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kojom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> koketiraju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 25.30 </td>
+   <td style="text-align:right;"> 25.2972973 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kombinacija </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 44.75 </td>
+   <td style="text-align:right;"> 44.7539016 </td>
    <td style="text-align:right;"> 215 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> komponentama </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 46.32 </td>
+   <td style="text-align:right;"> 46.3169963 </td>
    <td style="text-align:right;"> 373 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kondenzacijskih </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 46.64 </td>
+   <td style="text-align:right;"> 46.6405229 </td>
    <td style="text-align:right;"> 210 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> konvektor </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> korak </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> korake </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.59 </td>
+   <td style="text-align:right;"> 0.5853659 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> koristi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kraj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kući </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kućicu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kuhanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kuna </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 12.37 </td>
+   <td style="text-align:right;"> 12.3663602 </td>
    <td style="text-align:right;"> 206 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kupnjom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kupujete </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kvalitete </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kvalitetni </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> liga </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lijepljenje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> likeabosch </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> limited </td>
    <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 92.97 </td>
+   <td style="text-align:right;"> 92.9729730 </td>
    <td style="text-align:right;"> 82 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> linus </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.98 </td>
+   <td style="text-align:right;"> 1.9814241 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lock </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.98 </td>
+   <td style="text-align:right;"> 1.9814241 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lumex </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.88 </td>
+   <td style="text-align:right;"> 16.8776371 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ljeto </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 10.97 </td>
+   <td style="text-align:right;"> 10.9730700 </td>
    <td style="text-align:right;"> 138 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> m.r </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> majci </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 21.19 </td>
+   <td style="text-align:right;"> 21.1855273 </td>
    <td style="text-align:right;"> 421 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> makita </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> maleziji </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mališić </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> malo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mašine </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 2.24 </td>
+   <td style="text-align:right;"> 2.2437165 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> midea </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.88 </td>
+   <td style="text-align:right;"> 16.8776371 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> miješanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mikrovalna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mikser </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mikseri </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> milijun </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> minuta </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.33 </td>
+   <td style="text-align:right;"> 5.3333333 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mjera </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mlađim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mnogo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mobilna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mobilnosti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.59 </td>
+   <td style="text-align:right;"> 0.5853659 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> model </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 10.97 </td>
+   <td style="text-align:right;"> 10.9730700 </td>
    <td style="text-align:right;"> 138 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> modela </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 92.20 </td>
+   <td style="text-align:right;"> 92.2007722 </td>
    <td style="text-align:right;"> 64 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> modele </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> modeli </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 5.03 </td>
+   <td style="text-align:right;"> 5.0324798 </td>
    <td style="text-align:right;"> 1565 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> motorom </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 5.98 </td>
+   <td style="text-align:right;"> 5.9768141 </td>
    <td style="text-align:right;"> 54 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mozak </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mrobsolete </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mtb </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 5.03 </td>
+   <td style="text-align:right;"> 5.0324798 </td>
    <td style="text-align:right;"> 1565 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mučit </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> multipraktik </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 41.68 </td>
+   <td style="text-align:right;"> 41.6777042 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mybosch </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> način </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> načina </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 6.79 </td>
+   <td style="text-align:right;"> 6.7861828 </td>
    <td style="text-align:right;"> 76 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> načinima </td>
    <td style="text-align:right;"> 114 </td>
-   <td style="text-align:right;"> 13.86 </td>
+   <td style="text-align:right;"> 13.8634407 </td>
    <td style="text-align:right;"> 1506 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nagrada </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 41.68 </td>
+   <td style="text-align:right;"> 41.6777042 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nagrade </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.88 </td>
+   <td style="text-align:right;"> 16.8776371 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najbolje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najmlađi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najnovije </td>
    <td style="text-align:right;"> 99 </td>
-   <td style="text-align:right;"> 10.88 </td>
+   <td style="text-align:right;"> 10.8820909 </td>
    <td style="text-align:right;"> 102 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nalaze </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> naravno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 0.9248555 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> našim </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 5.03 </td>
+   <td style="text-align:right;"> 5.0324798 </td>
    <td style="text-align:right;"> 1565 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> natječaju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 7.42 </td>
+   <td style="text-align:right;"> 7.4242864 </td>
    <td style="text-align:right;"> 12 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> navodi </td>
    <td style="text-align:right;"> 238 </td>
-   <td style="text-align:right;"> 21.30 </td>
+   <td style="text-align:right;"> 21.3028927 </td>
    <td style="text-align:right;"> 372 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nazire </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> naziva </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.78 </td>
+   <td style="text-align:right;"> 0.7804878 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nebojša </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 6.42 </td>
+   <td style="text-align:right;"> 6.4162004 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nestašicom </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 3.25 </td>
+   <td style="text-align:right;"> 3.2529484 </td>
    <td style="text-align:right;"> 70 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nikad </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 2.39 </td>
+   <td style="text-align:right;"> 2.3853017 </td>
    <td style="text-align:right;"> 8 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nova </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> novitet </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 25.30 </td>
+   <td style="text-align:right;"> 25.2972973 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> novog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> npr </td>
    <td style="text-align:right;"> 61 </td>
-   <td style="text-align:right;"> 82.31 </td>
+   <td style="text-align:right;"> 82.3147851 </td>
    <td style="text-align:right;"> 725 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nježna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nježno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> obnovi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> obnovljivih </td>
    <td style="text-align:right;"> 61 </td>
-   <td style="text-align:right;"> 82.31 </td>
+   <td style="text-align:right;"> 82.3147851 </td>
    <td style="text-align:right;"> 725 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> obrezivanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.16 </td>
+   <td style="text-align:right;"> 1.1622276 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ocjena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> očekuje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> odabrane </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> odlikuje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ogromnu </td>
    <td style="text-align:right;"> 50 </td>
-   <td style="text-align:right;"> 13.25 </td>
+   <td style="text-align:right;"> 13.2495414 </td>
    <td style="text-align:right;"> 77 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> omogućili </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.88 </td>
+   <td style="text-align:right;"> 16.8776371 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> onog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> opreme </td>
    <td style="text-align:right;"> 346 </td>
-   <td style="text-align:right;"> 3.90 </td>
+   <td style="text-align:right;"> 3.9013033 </td>
    <td style="text-align:right;"> 3128 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> organizirat </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 6.42 </td>
+   <td style="text-align:right;"> 6.4162004 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ormari </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osigurati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.82 </td>
+   <td style="text-align:right;"> 1.8194488 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osmisliti </td>
    <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 6.59 </td>
+   <td style="text-align:right;"> 6.5866182 </td>
    <td style="text-align:right;"> 57 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osobama </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osoblju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 12.07 </td>
+   <td style="text-align:right;"> 12.0701754 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ostalim </td>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 23.36 </td>
+   <td style="text-align:right;"> 23.3551198 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osvojiti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.71 </td>
+   <td style="text-align:right;"> 3.7121432 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> oštećena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> otkriva </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ouma </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ovim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 15.36 </td>
+   <td style="text-align:right;"> 15.3609831 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ožičenju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 12.07 </td>
+   <td style="text-align:right;"> 12.0701754 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> paketa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.71 </td>
+   <td style="text-align:right;"> 3.7121432 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> paletom </td>
    <td style="text-align:right;"> 61 </td>
-   <td style="text-align:right;"> 82.31 </td>
+   <td style="text-align:right;"> 82.3147851 </td>
    <td style="text-align:right;"> 725 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pametnim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.98 </td>
+   <td style="text-align:right;"> 1.9814241 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pametnom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 25.30 </td>
+   <td style="text-align:right;"> 25.2972973 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> panasonic </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> panoramske </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 12.07 </td>
+   <td style="text-align:right;"> 12.0701754 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> partnera </td>
    <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> patentiranih </td>
    <td style="text-align:right;"> 61 </td>
-   <td style="text-align:right;"> 82.31 </td>
+   <td style="text-align:right;"> 82.3147851 </td>
    <td style="text-align:right;"> 725 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pažnje </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 21.19 </td>
+   <td style="text-align:right;"> 21.1855273 </td>
    <td style="text-align:right;"> 421 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> petak </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 36.00 </td>
+   <td style="text-align:right;"> 36.0000000 </td>
    <td style="text-align:right;"> 8 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> piezo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pilot </td>
    <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> piston </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pištolj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pkp </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pla </td>
    <td style="text-align:right;"> 61 </td>
-   <td style="text-align:right;"> 82.31 </td>
+   <td style="text-align:right;"> 82.3147851 </td>
    <td style="text-align:right;"> 725 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> plaćanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> plastike </td>
    <td style="text-align:right;"> 61 </td>
-   <td style="text-align:right;"> 82.31 </td>
+   <td style="text-align:right;"> 82.3147851 </td>
    <td style="text-align:right;"> 725 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ploče </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> početna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> podno </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> područja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poduzima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.59 </td>
+   <td style="text-align:right;"> 0.5853659 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pogodnosti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 2.31 </td>
+   <td style="text-align:right;"> 2.3076923 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pokazao </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.40 </td>
+   <td style="text-align:right;"> 3.4037661 </td>
    <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pokriva </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 12.07 </td>
+   <td style="text-align:right;"> 12.0701754 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> položaju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.59 </td>
+   <td style="text-align:right;"> 0.5853659 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ponašanju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> popis </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> popust </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> posebna </td>
    <td style="text-align:right;"> 346 </td>
-   <td style="text-align:right;"> 3.90 </td>
+   <td style="text-align:right;"> 3.9013033 </td>
    <td style="text-align:right;"> 3128 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> posljednjih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 25.30 </td>
+   <td style="text-align:right;"> 25.2972973 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> postati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pošaljite </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 5.03 </td>
+   <td style="text-align:right;"> 5.0324798 </td>
    <td style="text-align:right;"> 1565 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> potrebe </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.66 </td>
+   <td style="text-align:right;"> 1.6622965 </td>
    <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> potrebnih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 12.07 </td>
+   <td style="text-align:right;"> 12.0701754 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> potrebno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> powerfly </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 5.03 </td>
+   <td style="text-align:right;"> 5.0324798 </td>
    <td style="text-align:right;"> 1565 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pozicionirani </td>
    <td style="text-align:right;"> 61 </td>
-   <td style="text-align:right;"> 82.31 </td>
+   <td style="text-align:right;"> 82.3147851 </td>
    <td style="text-align:right;"> 725 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poznate </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 10.97 </td>
+   <td style="text-align:right;"> 10.9730700 </td>
    <td style="text-align:right;"> 138 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poznati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pr </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> praktično </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 6.42 </td>
+   <td style="text-align:right;"> 6.4162004 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> praktik </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.88 </td>
+   <td style="text-align:right;"> 16.8776371 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pranja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.12 </td>
+   <td style="text-align:right;"> 1.1218583 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pravi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pravila </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pravo </td>
    <td style="text-align:right;"> 71 </td>
-   <td style="text-align:right;"> 38.20 </td>
+   <td style="text-align:right;"> 38.1988163 </td>
    <td style="text-align:right;"> 850 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> predavanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.88 </td>
+   <td style="text-align:right;"> 4.8842209 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> predstavio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> predstavljanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.88 </td>
+   <td style="text-align:right;"> 4.8842209 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> premijerno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 37.51 </td>
+   <td style="text-align:right;"> 37.5081464 </td>
    <td style="text-align:right;"> 28 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pretvara </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prezentacije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 6.42 </td>
+   <td style="text-align:right;"> 6.4162004 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prezentiraju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.78 </td>
+   <td style="text-align:right;"> 0.7804878 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prijave </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 5.03 </td>
+   <td style="text-align:right;"> 5.0324798 </td>
    <td style="text-align:right;"> 1565 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prijavljeni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prikaz </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prilagođava </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> principima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.78 </td>
+   <td style="text-align:right;"> 0.7804878 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> priprema </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.46 </td>
+   <td style="text-align:right;"> 1.4604462 </td>
    <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> privatnosti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> problem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 0.9248555 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> probleme </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prodaja </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 1.95 </td>
+   <td style="text-align:right;"> 1.9506517 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> program </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.93 </td>
+   <td style="text-align:right;"> 5.9259259 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> programu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proizvodima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> provjere </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 25.30 </td>
+   <td style="text-align:right;"> 25.2972973 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> provjeriti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pruner </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:right;"> 0.5811138 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pružaju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prve </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> punog </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 16.33 </td>
+   <td style="text-align:right;"> 16.3336857 </td>
    <td style="text-align:right;"> 332 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> punjačem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> punjenjem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 0.4037006 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> puta </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> računalo </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 5.98 </td>
+   <td style="text-align:right;"> 5.9768141 </td>
    <td style="text-align:right;"> 54 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rada </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 6.79 </td>
+   <td style="text-align:right;"> 6.7861828 </td>
    <td style="text-align:right;"> 76 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> radijator </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> radio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.88 </td>
+   <td style="text-align:right;"> 16.8776371 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> radionica </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> radius </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ram </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> raspon </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rasvjeta </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ravier </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> razred </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.12 </td>
+   <td style="text-align:right;"> 1.1218583 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> razredu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> razvio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> razvoj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.93 </td>
+   <td style="text-align:right;"> 5.9259259 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> razvoju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> recikliranim </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 46.32 </td>
+   <td style="text-align:right;"> 46.3169963 </td>
    <td style="text-align:right;"> 373 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> repair </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> reuters </td>
    <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 2.87 </td>
+   <td style="text-align:right;"> 2.8744750 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rezultate </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> režija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rhythm </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ripple </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rolete </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> servisera </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 6.42 </td>
+   <td style="text-align:right;"> 6.4162004 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> set </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> setova </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.12 </td>
+   <td style="text-align:right;"> 1.1218583 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sigurnosnom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 12.07 </td>
+   <td style="text-align:right;"> 12.0701754 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> silenceplus </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> simeong </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sirovinama </td>
    <td style="text-align:right;"> 61 </td>
-   <td style="text-align:right;"> 82.31 </td>
+   <td style="text-align:right;"> 82.3147851 </td>
    <td style="text-align:right;"> 725 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sistem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> službeno </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 13.41 </td>
+   <td style="text-align:right;"> 13.4117429 </td>
    <td style="text-align:right;"> 151 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sljedeći </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 36.00 </td>
+   <td style="text-align:right;"> 36.0000000 </td>
    <td style="text-align:right;"> 8 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> smatra </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> snagu </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 5.98 </td>
+   <td style="text-align:right;"> 5.9768141 </td>
    <td style="text-align:right;"> 54 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> spavaća </td>
    <td style="text-align:right;"> 99 </td>
-   <td style="text-align:right;"> 10.88 </td>
+   <td style="text-align:right;"> 10.8820909 </td>
    <td style="text-align:right;"> 102 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sprijeda </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 0.4037006 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sredstvo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> srijede </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 37.51 </td>
+   <td style="text-align:right;"> 37.5081464 </td>
    <td style="text-align:right;"> 28 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ssd </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stakla </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stipendija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stojadinović </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 6.42 </td>
+   <td style="text-align:right;"> 6.4162004 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stolarija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stolna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stvar </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stvarnost </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> subota </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 36.00 </td>
+   <td style="text-align:right;"> 36.0000000 </td>
    <td style="text-align:right;"> 8 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> supernova </td>
    <td style="text-align:right;"> 32 </td>
-   <td style="text-align:right;"> 4.61 </td>
+   <td style="text-align:right;"> 4.6064510 </td>
    <td style="text-align:right;"> 22 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> suradnju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sustavi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sustavima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.88 </td>
+   <td style="text-align:right;"> 4.8842209 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sušenja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> suunto </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sva </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> svake </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 37.51 </td>
+   <td style="text-align:right;"> 37.5081464 </td>
    <td style="text-align:right;"> 28 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> svakom </td>
    <td style="text-align:right;"> 213 </td>
-   <td style="text-align:right;"> 48.70 </td>
+   <td style="text-align:right;"> 48.6986879 </td>
    <td style="text-align:right;"> 327 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> svega </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> svrdla </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> swiss </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 2.79 </td>
+   <td style="text-align:right;"> 2.7866452 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> systems </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.00 </td>
+   <td style="text-align:right;"> 16.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> školovanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 6.42 </td>
+   <td style="text-align:right;"> 6.4162004 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> škripcu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> takav </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 25.30 </td>
+   <td style="text-align:right;"> 25.2972973 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> talijanski </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 6.79 </td>
+   <td style="text-align:right;"> 6.7861828 </td>
    <td style="text-align:right;"> 76 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tc </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> televizori </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> teoretsko </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 6.42 </td>
+   <td style="text-align:right;"> 6.4162004 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> testirati </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 5.03 </td>
+   <td style="text-align:right;"> 5.0324798 </td>
    <td style="text-align:right;"> 1565 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> thru </td>
    <td style="text-align:right;"> 346 </td>
-   <td style="text-align:right;"> 5.57 </td>
+   <td style="text-align:right;"> 5.5732904 </td>
    <td style="text-align:right;"> 3128 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tipa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tisuća </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 12.37 </td>
+   <td style="text-align:right;"> 12.3663602 </td>
    <td style="text-align:right;"> 206 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tjedana </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 1.25 </td>
+   <td style="text-align:right;"> 1.2528842 </td>
    <td style="text-align:right;"> 13 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tools </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.88 </td>
+   <td style="text-align:right;"> 16.8776371 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tople </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 2.31 </td>
+   <td style="text-align:right;"> 2.3076923 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> topline </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 6.42 </td>
+   <td style="text-align:right;"> 6.4162004 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> toudi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> traktor </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> trebaju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> trebate </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tržište </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tržištu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 25.30 </td>
+   <td style="text-align:right;"> 25.2972973 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> turbo </td>
    <td style="text-align:right;"> 14 </td>
-   <td style="text-align:right;"> 97.16 </td>
+   <td style="text-align:right;"> 97.1566265 </td>
    <td style="text-align:right;"> 488 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tvornica </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tvornicu </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 1.25 </td>
+   <td style="text-align:right;"> 1.2528842 </td>
    <td style="text-align:right;"> 13 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ubojica </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ubrizgavanje </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> učinkovitim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> učinkovitost </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.88 </td>
+   <td style="text-align:right;"> 2.8843393 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> učinkovitosti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.94 </td>
+   <td style="text-align:right;"> 1.9433198 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ugradbene </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ukupno </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> united </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> univerzalno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uno </td>
    <td style="text-align:right;"> 14 </td>
-   <td style="text-align:right;"> 97.16 </td>
+   <td style="text-align:right;"> 97.1566265 </td>
    <td style="text-align:right;"> 488 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> unutarnja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uploads </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uređaje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uređaji </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> usavršavanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.88 </td>
+   <td style="text-align:right;"> 4.8842209 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> usisavača </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uši </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uštede </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 46.64 </td>
+   <td style="text-align:right;"> 46.6405229 </td>
    <td style="text-align:right;"> 210 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uštedjele </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 12.07 </td>
+   <td style="text-align:right;"> 12.0701754 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uvijek </td>
    <td style="text-align:right;"> 213 </td>
-   <td style="text-align:right;"> 19.89 </td>
+   <td style="text-align:right;"> 19.8888639 </td>
    <td style="text-align:right;"> 328 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vašem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> veliki </td>
    <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 37.53 </td>
+   <td style="text-align:right;"> 37.5308642 </td>
    <td style="text-align:right;"> 77 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> velikim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> velikom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> veliku </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> video </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.40 </td>
+   <td style="text-align:right;"> 1.4035088 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vidimo </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 92.20 </td>
+   <td style="text-align:right;"> 92.2007722 </td>
    <td style="text-align:right;"> 64 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vidović </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.88 </td>
+   <td style="text-align:right;"> 4.8842209 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vilice </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> visoke </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.94 </td>
+   <td style="text-align:right;"> 1.9433198 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> visokokvalitetna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> visoku </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 30.55 </td>
+   <td style="text-align:right;"> 30.5484089 </td>
    <td style="text-align:right;"> 202 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vodećem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.59 </td>
+   <td style="text-align:right;"> 0.5853659 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vožnjama </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 5.03 </td>
+   <td style="text-align:right;"> 5.0324798 </td>
    <td style="text-align:right;"> 1565 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vožnju </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 5.03 </td>
+   <td style="text-align:right;"> 5.0324798 </td>
    <td style="text-align:right;"> 1565 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vratima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.98 </td>
+   <td style="text-align:right;"> 1.9814241 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrf </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.88 </td>
+   <td style="text-align:right;"> 4.8842209 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrijedne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.88 </td>
+   <td style="text-align:right;"> 16.8776371 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrtiću </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.2750191 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> whirlpool </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> wire </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 2.79 </td>
+   <td style="text-align:right;"> 2.7866452 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> wp </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> yalea </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.98 </td>
+   <td style="text-align:right;"> 1.9814241 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> yoast </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> yossarian </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zadnji </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 2.79 </td>
+   <td style="text-align:right;"> 2.7866452 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zamrzavanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zaslon </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zaštiti </td>
    <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 37.53 </td>
+   <td style="text-align:right;"> 37.5308642 </td>
    <td style="text-align:right;"> 77 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zatekne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zatim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.25 </td>
+   <td style="text-align:right;"> 11.2474361 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> znak </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 21.19 </td>
+   <td style="text-align:right;"> 21.1855273 </td>
    <td style="text-align:right;"> 421 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zvučnika </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 12.07 </td>
+   <td style="text-align:right;"> 12.0701754 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> abarth </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> abrams </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ac </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ada </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> adriatic </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> aeg </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> africa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> air </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> akcijski </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> akcijskih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> akcijsku </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> akciju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> aktivnim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.94 </td>
+   <td style="text-align:right;"> 1.9433198 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> aktualno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> aku </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> akumulator </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> akumulatora </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> akumulatorskih </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> akumulatorsku </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> alarmantna </td>
    <td style="text-align:right;"> 213 </td>
-   <td style="text-align:right;"> 18.43 </td>
+   <td style="text-align:right;"> 18.4284177 </td>
    <td style="text-align:right;"> 321 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> alergijama </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.20 </td>
+   <td style="text-align:right;"> 0.2018503 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> all </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> allena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> aluminium </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> am </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> amalia </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 11.47 </td>
+   <td style="text-align:right;"> 11.4684231 </td>
    <td style="text-align:right;"> 151 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> amazon </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 8.00 </td>
+   <td style="text-align:right;"> 8.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ambalaže </td>
    <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 37.53 </td>
+   <td style="text-align:right;"> 37.5308642 </td>
    <td style="text-align:right;"> 77 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> americi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> američkih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> amg </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> amonijaka </td>
    <td style="text-align:right;"> 37 </td>
-   <td style="text-align:right;"> 7.27 </td>
+   <td style="text-align:right;"> 7.2727273 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> amper </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> anarhije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> anketa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> aparatima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> aplikacija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> app </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> apsorbiranje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> are </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> argo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> armstrong </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ashley </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> asimptomatska </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> assessment </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ate </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ateljeu </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> atrij </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> auckland </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> austin </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> autočipova </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> autoindustrija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.57 </td>
+   <td style="text-align:right;"> 4.5714286 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> automatsko </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> automobile </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> automobilska </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> autopilot </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> autor </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> avenio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> baker </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> balinta </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> banovinu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bar </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bara </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> baran </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:right;"> 0.5403377 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> barem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> baseus </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> baš </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> baterijom </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 46.49 </td>
+   <td style="text-align:right;"> 46.4864865 </td>
    <td style="text-align:right;"> 41 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> batinske </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 41.68 </td>
+   <td style="text-align:right;"> 41.6777042 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bauhausa </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bauhausu </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bavi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bazi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bead </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bećirović </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bendovi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> benelli </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 10.97 </td>
+   <td style="text-align:right;"> 10.9730700 </td>
    <td style="text-align:right;"> 138 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> berlin </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> berloni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bes </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> beskontaktna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> besplatno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bestupanjski </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bežične </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:right;"> 0.5811138 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bežičnih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bežičnog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bianco </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bicikla </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bicikle </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 1.95 </td>
+   <td style="text-align:right;"> 1.9506517 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> big </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> biljana </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> biram </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.71 </td>
+   <td style="text-align:right;"> 3.7121432 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> blagdanskom </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 12.37 </td>
+   <td style="text-align:right;"> 12.3663602 </td>
    <td style="text-align:right;"> 206 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> blagojević </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> blanco </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> blendanja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> blois </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bogate </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bogatu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> boje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> boji </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bojler </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bolju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> boravku </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> boris </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:right;"> 0.5403377 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> boscheva </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> boschova </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> box </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> boxx </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> boys </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 0.9248555 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> br </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> braće </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 48.58 </td>
+   <td style="text-align:right;"> 48.5783133 </td>
    <td style="text-align:right;"> 244 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> brandove </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> brandovi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.59 </td>
+   <td style="text-align:right;"> 3.5874439 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bratzel </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> brava </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.99 </td>
+   <td style="text-align:right;"> 0.9907121 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> brembo </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 10.97 </td>
+   <td style="text-align:right;"> 10.9730700 </td>
    <td style="text-align:right;"> 138 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> brenda </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 45.71 </td>
+   <td style="text-align:right;"> 45.7142857 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> brendovi </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> breuegel </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> britanije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> brizgaljke </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 5.98 </td>
+   <td style="text-align:right;"> 5.9768141 </td>
    <td style="text-align:right;"> 54 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> broja </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 5.98 </td>
+   <td style="text-align:right;"> 5.9768141 </td>
    <td style="text-align:right;"> 54 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> brojku </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> brose </td>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 23.36 </td>
+   <td style="text-align:right;"> 23.3551198 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> brother </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> brušenje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bruxelles </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bržeg </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bsh </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bude </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 21.19 </td>
+   <td style="text-align:right;"> 21.1855273 </td>
    <td style="text-align:right;"> 421 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> budući </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> buke </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bukovih </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> buonarroti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bušenja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> bušilice </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> buzin </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cage </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cak </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> calliper </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> camp </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> capital </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> caritasovoj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> carter </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> casa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cassandre </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cecil </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cells </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> centar </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cesta </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cestu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> champion </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 2.79 </td>
+   <td style="text-align:right;"> 2.7866452 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> chengdu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.40 </td>
+   <td style="text-align:right;"> 1.4035088 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cijeđenja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cijelom </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 46.64 </td>
+   <td style="text-align:right;"> 46.6405229 </td>
    <td style="text-align:right;"> 210 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cijenama </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cijev </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 46.49 </td>
+   <td style="text-align:right;"> 46.4864865 </td>
    <td style="text-align:right;"> 41 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cilja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.94 </td>
+   <td style="text-align:right;"> 1.9433198 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cisterna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> city </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> clevermixx </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> club </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cm </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> coess </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> confederation </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> connection </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> consultation </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> continental </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> contra </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> cornering </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 6.79 </td>
+   <td style="text-align:right;"> 6.7861828 </td>
    <td style="text-align:right;"> 76 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> covidom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> crvene </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ct </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čarobni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čelika </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> četiri </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> četveroznamenkastog </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 5.98 </td>
+   <td style="text-align:right;"> 5.9768141 </td>
    <td style="text-align:right;"> 54 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> četvrtak </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čije </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čiji </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čimbenik </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čini </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 44.75 </td>
+   <td style="text-align:right;"> 44.7539016 </td>
    <td style="text-align:right;"> 215 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čipovi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.57 </td>
+   <td style="text-align:right;"> 4.5714286 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čišćenja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> članka </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> čudna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ćelije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> d’oro </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 17.78 </td>
+   <td style="text-align:right;"> 17.7777778 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> daikin </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> daješ </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> daljinomjer </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> daljinomjeri </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> daljinsko </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> danas </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> današnje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dani </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.46 </td>
+   <td style="text-align:right;"> 1.4604462 </td>
    <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> danima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> de'longhi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> decor </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> definirana </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> delfino </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> demokratske </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> der </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> designer </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.33 </td>
+   <td style="text-align:right;"> 5.3333333 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> detalj </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> detalja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> detektiva </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> development </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> devet </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> di </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dica </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> digitalni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dijalogu </td>
    <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 2.87 </td>
+   <td style="text-align:right;"> 2.8744750 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dijamantna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dijana </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dijelova </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 1.95 </td>
+   <td style="text-align:right;"> 1.9506517 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> diners </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> diodama </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.94 </td>
+   <td style="text-align:right;"> 1.9433198 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> direktorica </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.93 </td>
+   <td style="text-align:right;"> 5.9259259 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> diseases </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> distribuirano </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 46.64 </td>
+   <td style="text-align:right;"> 46.6405229 </td>
    <td style="text-align:right;"> 210 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> divisie </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dizajn </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.71 </td>
+   <td style="text-align:right;"> 3.7121432 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dizajna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dizajniranjem </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 21.19 </td>
+   <td style="text-align:right;"> 21.1855273 </td>
    <td style="text-align:right;"> 421 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dizajnirati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.33 </td>
+   <td style="text-align:right;"> 5.3333333 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dizelaše </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dizne </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dječjem </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.2750191 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> djedovom </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> djelo </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> djelovanja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.08 </td>
+   <td style="text-align:right;"> 1.0773202 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> djevojke </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dnevnih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dnevnom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dobavljače </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dobavljačima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dobitnici </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 41.68 </td>
+   <td style="text-align:right;"> 41.6777042 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dobitnika </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 41.68 </td>
+   <td style="text-align:right;"> 41.6777042 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dobra </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 44.75 </td>
+   <td style="text-align:right;"> 44.7539016 </td>
    <td style="text-align:right;"> 215 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dobro </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 21.19 </td>
+   <td style="text-align:right;"> 21.1855273 </td>
    <td style="text-align:right;"> 421 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dodacima </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 21.19 </td>
+   <td style="text-align:right;"> 21.1855273 </td>
    <td style="text-align:right;"> 421 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dodan </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 48.58 </td>
+   <td style="text-align:right;"> 48.5783133 </td>
    <td style="text-align:right;"> 244 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dodatni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dodatnu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dodijeljeno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> događa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> događaja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dogovoru </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> doi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dom </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 11.47 </td>
+   <td style="text-align:right;"> 11.4684231 </td>
    <td style="text-align:right;"> 151 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dominirati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.59 </td>
+   <td style="text-align:right;"> 0.5853659 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> doni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> donosimo </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 41.68 </td>
+   <td style="text-align:right;"> 41.6777042 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> donositi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> donju </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 46.49 </td>
+   <td style="text-align:right;"> 46.4864865 </td>
    <td style="text-align:right;"> 41 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dopustio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dosao </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dostavlja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dostupna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dostupno </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 46.49 </td>
+   <td style="text-align:right;"> 46.4864865 </td>
    <td style="text-align:right;"> 41 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> double </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dovratnici </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> download </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dpa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> drugim </td>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 23.36 </td>
+   <td style="text-align:right;"> 23.3551198 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> drugoligaša </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> drvenom </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 12.37 </td>
+   <td style="text-align:right;"> 12.3663602 </td>
    <td style="text-align:right;"> 206 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> drveta </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dry </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dt </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 2.79 </td>
+   <td style="text-align:right;"> 2.7866452 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dublin </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dugo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dulje </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 21.19 </td>
+   <td style="text-align:right;"> 21.1855273 </td>
    <td style="text-align:right;"> 421 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dun </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dušična </td>
    <td style="text-align:right;"> 37 </td>
-   <td style="text-align:right;"> 7.27 </td>
+   <td style="text-align:right;"> 7.2727273 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dušičnih </td>
    <td style="text-align:right;"> 37 </td>
-   <td style="text-align:right;"> 7.27 </td>
+   <td style="text-align:right;"> 7.2727273 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> duži </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dve </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dvoje </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dvorac </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dvoslojni </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dvostrukom </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 5.98 </td>
+   <td style="text-align:right;"> 5.9768141 </td>
    <td style="text-align:right;"> 54 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> dvoznamenkasti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> đumbir </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> east </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> easyaccess </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> eduard </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> eerste </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> efektni </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 48.58 </td>
+   <td style="text-align:right;"> 48.5783133 </td>
    <td style="text-align:right;"> 244 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> eimear </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ekološke </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.94 </td>
+   <td style="text-align:right;"> 1.9433198 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ekološkim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.94 </td>
+   <td style="text-align:right;"> 1.9433198 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ekranom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ekskluzivne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ekspanziju </td>
    <td style="text-align:right;"> 37 </td>
-   <td style="text-align:right;"> 7.27 </td>
+   <td style="text-align:right;"> 7.2727273 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> eksplozivni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> eleanor </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> električnih </td>
    <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 2.87 </td>
+   <td style="text-align:right;"> 2.8744750 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> elektroničkoj </td>
    <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 37.53 </td>
+   <td style="text-align:right;"> 37.5308642 </td>
    <td style="text-align:right;"> 77 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> elektronika </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> elektroniku </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 10.97 </td>
+   <td style="text-align:right;"> 10.9730700 </td>
    <td style="text-align:right;"> 138 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> elvadas </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> em </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> emitiranja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> energetske </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> energetskim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> enmon </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> epa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> epizoda </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> epizodi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> esp </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> espreso </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> espresso </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> essa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> etažno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> etažnog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> etiology </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> eu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.94 </td>
+   <td style="text-align:right;"> 1.9433198 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> europa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.33 </td>
+   <td style="text-align:right;"> 5.3333333 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> europaneli </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> europe </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> europskih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> europsko </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> evaluation </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> excello </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> exo </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 2.79 </td>
+   <td style="text-align:right;"> 2.7866452 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> extra </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> extradry </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> faca </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> facebook </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 17.49 </td>
+   <td style="text-align:right;"> 17.4863388 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fairy </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fasadni </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> favorita </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fbi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fds </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fero </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fiat </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fieldmann </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> filmova </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 0.9248555 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> filter </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.08 </td>
+   <td style="text-align:right;"> 1.0773202 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> firebird </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> firme </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fiskars </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fitbit </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.59 </td>
+   <td style="text-align:right;"> 3.5874439 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fleabag </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 0.9248555 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fmg </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> focus </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.80 </td>
+   <td style="text-align:right;"> 11.7959304 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fordu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> foru </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> forum </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> foto </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fotografiranje </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 11.47 </td>
+   <td style="text-align:right;"> 11.4684231 </td>
    <td style="text-align:right;"> 151 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fracuskog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> francisco </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> friday </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> from </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> frost </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fuel </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> funkcijom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> funkciju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> funko </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gadže </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> galeković </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gaming </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> garden </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> garmin </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gasa </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gastro </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> geberit </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gek </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gen </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 45.71 </td>
+   <td style="text-align:right;"> 45.7142857 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> generaciju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> general </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> generalna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.93 </td>
+   <td style="text-align:right;"> 5.9259259 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> generatore </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.94 </td>
+   <td style="text-align:right;"> 1.9433198 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gerenčir </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:right;"> 0.5403377 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gilbert </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gilbertu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gladak </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> glasnogovornik </td>
    <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 2.87 </td>
+   <td style="text-align:right;"> 2.8744750 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> glasovnom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> glass </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> glm </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> global </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> globalnom </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 3.25 </td>
+   <td style="text-align:right;"> 3.2529484 </td>
    <td style="text-align:right;"> 70 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> glodalica </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> glumi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> godišnje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> godišnji </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gof </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> golf </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> golfa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> goliath </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 0.9248555 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gorivne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gorivo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gost </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> goste </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gotovo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 0.9248555 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> govore </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> grabancijaš </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> grabi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> grad </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gradimo </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 46.64 </td>
+   <td style="text-align:right;"> 46.6405229 </td>
    <td style="text-align:right;"> 210 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> građana </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> građevinske </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gran </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gratis </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> grijana </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> grijani </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> grijanjem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> grije </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 46.64 </td>
+   <td style="text-align:right;"> 46.6405229 </td>
    <td style="text-align:right;"> 210 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> grla </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gruesalvorine </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 38.10 </td>
+   <td style="text-align:right;"> 38.0952381 </td>
    <td style="text-align:right;"> 9 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> grupa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gts </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> guideline </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gumenom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> gus </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> haaga </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 11.47 </td>
+   <td style="text-align:right;"> 11.4684231 </td>
    <td style="text-align:right;"> 151 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> haber </td>
    <td style="text-align:right;"> 37 </td>
-   <td style="text-align:right;"> 7.27 </td>
+   <td style="text-align:right;"> 7.2727273 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> haig </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hans </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hed </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.94 </td>
+   <td style="text-align:right;"> 1.9433198 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hieronymus </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> highlander </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> himan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hladnjaka </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hodniku </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> holanda </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hole </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> holivudskih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 0.9248555 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> holivudsku </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hollywood </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> holjevca </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> home.com </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> honde </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hora </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> horor </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hr </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hrana </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 21.19 </td>
+   <td style="text-align:right;"> 21.1855273 </td>
    <td style="text-align:right;"> 421 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hrane </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hrastov </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hrvoje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> huis </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 11.47 </td>
+   <td style="text-align:right;"> 11.4684231 </td>
    <td style="text-align:right;"> 151 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hyeronimus </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> idealni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.46 </td>
+   <td style="text-align:right;"> 1.4604462 </td>
    <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> iduće </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 10.97 </td>
+   <td style="text-align:right;"> 10.9730700 </td>
    <td style="text-align:right;"> 138 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> idućoj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> igrači </td>
    <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 37.53 </td>
+   <td style="text-align:right;"> 37.5308642 </td>
    <td style="text-align:right;"> 77 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> igrao </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> imanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> imaš </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ime </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> impressum </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> in </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> inčne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> index.hr </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> indikatoru </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> industrijsku </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> inerciju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> info </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> informacija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.71 </td>
+   <td style="text-align:right;"> 3.7121432 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> informacije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> iniezione </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> inovacijama </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.94 </td>
+   <td style="text-align:right;"> 1.9433198 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> inovativna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> inovativnih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> inovativnim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> inox </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> instalirati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.99 </td>
+   <td style="text-align:right;"> 0.9907121 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> institucije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> integrirano </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> integriranom </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 46.49 </td>
+   <td style="text-align:right;"> 46.4864865 </td>
    <td style="text-align:right;"> 41 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> interezante </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> interlamp </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> international </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> intuitivna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> inverter </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> investirati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ion </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ipak </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> iris </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> isaac </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> isključiti </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 6.79 </td>
+   <td style="text-align:right;"> 6.7861828 </td>
    <td style="text-align:right;"> 76 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> isključivanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> iskopao </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> iskra </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> iskusno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ispitanika </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> isporučuje </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 10.97 </td>
+   <td style="text-align:right;"> 10.9730700 </td>
    <td style="text-align:right;"> 138 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ispravljanjem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.94 </td>
+   <td style="text-align:right;"> 1.9433198 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> isti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.46 </td>
+   <td style="text-align:right;"> 1.4604462 </td>
    <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ističe </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> isto </td>
    <td style="text-align:right;"> 99 </td>
-   <td style="text-align:right;"> 10.88 </td>
+   <td style="text-align:right;"> 10.8820909 </td>
    <td style="text-align:right;"> 102 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> istom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> istovremeno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> istrazi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> istraživanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> istražuju </td>
    <td style="text-align:right;"> 213 </td>
-   <td style="text-align:right;"> 18.43 </td>
+   <td style="text-align:right;"> 18.4284177 </td>
    <td style="text-align:right;"> 321 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> iščekivanja </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 10.97 </td>
+   <td style="text-align:right;"> 10.9730700 </td>
    <td style="text-align:right;"> 138 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> italija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> item </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> iv </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ivan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ivana </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> iveta </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izboru </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izdržljivost </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izdvajamo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izgleda </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izgradnji </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izgubi </td>
    <td style="text-align:right;"> 213 </td>
-   <td style="text-align:right;"> 18.43 </td>
+   <td style="text-align:right;"> 18.4284177 </td>
    <td style="text-align:right;"> 321 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izlaz </td>
    <td style="text-align:right;"> 99 </td>
-   <td style="text-align:right;"> 10.88 </td>
+   <td style="text-align:right;"> 10.8820909 </td>
    <td style="text-align:right;"> 102 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izlaznu </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 5.98 </td>
+   <td style="text-align:right;"> 5.9768141 </td>
    <td style="text-align:right;"> 54 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izmedu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izmjereno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> iznad </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 12.37 </td>
+   <td style="text-align:right;"> 12.3663602 </td>
    <td style="text-align:right;"> 206 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> iznajmljivanje </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 1.95 </td>
+   <td style="text-align:right;"> 1.9506517 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> iznajmljuje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> iznenađeni </td>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 23.36 </td>
+   <td style="text-align:right;"> 23.3551198 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> iznos </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izražena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izvana </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 48.58 </td>
+   <td style="text-align:right;"> 48.5783133 </td>
    <td style="text-align:right;"> 244 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izvanredne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izvedene </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izvedeno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izvlačnim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izvrsne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izvrsnih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> izvrstan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.46 </td>
+   <td style="text-align:right;"> 1.4604462 </td>
    <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jackpota </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jamstvo </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> janay </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jedina </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 11.47 </td>
+   <td style="text-align:right;"> 11.4684231 </td>
    <td style="text-align:right;"> 151 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jedinica </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jedino </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jedn </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jednim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jednog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jednostavan </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jednostavna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.46 </td>
+   <td style="text-align:right;"> 1.4604462 </td>
    <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jednostavnim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jednostavno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jedva </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 12.37 </td>
+   <td style="text-align:right;"> 12.3663602 </td>
    <td style="text-align:right;"> 206 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jeftinije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jelena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jelica </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 41.68 </td>
+   <td style="text-align:right;"> 41.6777042 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jeruzalem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jetronic </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jezivih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jogará </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> journala </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.46 </td>
+   <td style="text-align:right;"> 1.4604462 </td>
    <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jugoistočna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.33 </td>
+   <td style="text-align:right;"> 5.3333333 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> justin </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> jysk </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> k.i.t.t </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kakve </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kamerama </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.40 </td>
+   <td style="text-align:right;"> 1.4035088 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kamione </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kanalu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kandidatima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kapaciteta </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kapeli </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kapitala </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> karantena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> karijerama </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kartera </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> katova </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> katu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kava </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.46 </td>
+   <td style="text-align:right;"> 1.4604462 </td>
    <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kaže </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kažu </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kb </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 10.97 </td>
+   <td style="text-align:right;"> 10.9730700 </td>
    <td style="text-align:right;"> 138 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kečkeš </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:right;"> 0.5403377 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kenwood </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> keramička </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> keramika </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> keynot </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kilometrom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kinesku </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.40 </td>
+   <td style="text-align:right;"> 1.4035088 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> king </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kini </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kirt </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kitchenaid </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> klan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> klasična </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> klijentima </td>
    <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 37.53 </td>
+   <td style="text-align:right;"> 37.5308642 </td>
    <td style="text-align:right;"> 77 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kliješta </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ključan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ključna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ključni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> knicks </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> knight </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> knjige </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kodnenzacijskog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kojeg </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kojih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kolarić </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 41.68 </td>
+   <td style="text-align:right;"> 41.6777042 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> količina </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> količinom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> komb </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kombinirani </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> komentiraj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kompaktan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kompaktno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kompatibilni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> komprimirani </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> koncu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> konfederacija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> konferencija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> konferencije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> konijnendijk </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kontinuirano </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kontrola </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 6.79 </td>
+   <td style="text-align:right;"> 6.7861828 </td>
    <td style="text-align:right;"> 76 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kontrole </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kopričanec </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 41.68 </td>
+   <td style="text-align:right;"> 41.6777042 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> koracima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> koristiti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> korištenje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kormila </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> koronavirusa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> korozije </td>
    <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 37.53 </td>
+   <td style="text-align:right;"> 37.5308642 </td>
    <td style="text-align:right;"> 77 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> koroziju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> koševa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kotač </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 6.79 </td>
+   <td style="text-align:right;"> 6.7861828 </td>
    <td style="text-align:right;"> 76 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kotače </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 5.98 </td>
+   <td style="text-align:right;"> 5.9768141 </td>
    <td style="text-align:right;"> 54 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kožom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.20 </td>
+   <td style="text-align:right;"> 0.2018503 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> krađu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kraja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> krajem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> krajter </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kralj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kralja </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kraljevske </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 11.47 </td>
+   <td style="text-align:right;"> 11.4684231 </td>
    <td style="text-align:right;"> 151 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kratice </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kraticom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> krčmar </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 41.68 </td>
+   <td style="text-align:right;"> 41.6777042 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kreator </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kreditnom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kreiram </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.71 </td>
+   <td style="text-align:right;"> 3.7121432 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> krenite </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> krešimira </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kreveta </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> krevete </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> krilo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> krivi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> križni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> krono </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> krovni </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 48.58 </td>
+   <td style="text-align:right;"> 48.5783133 </td>
    <td style="text-align:right;"> 244 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> krups </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kućice </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kućištu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kudrić </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.93 </td>
+   <td style="text-align:right;"> 5.9259259 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kuhala </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kuhinje </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 12.37 </td>
+   <td style="text-align:right;"> 12.3663602 </td>
    <td style="text-align:right;"> 206 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kuhinjskih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kumtel </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kupaca </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kupaone </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kupaonicama </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kupaonici </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kupca </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kupce </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 12.37 </td>
+   <td style="text-align:right;"> 12.3663602 </td>
    <td style="text-align:right;"> 206 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kupnjog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kupovinu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kušanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kutijom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kvalitetne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kvalitetnije </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 46.64 </td>
+   <td style="text-align:right;"> 46.6405229 </td>
    <td style="text-align:right;"> 210 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kvalitetu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> kwh </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> l’ora </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 17.78 </td>
+   <td style="text-align:right;"> 17.7777778 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> l’orad’oro </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 38.10 </td>
+   <td style="text-align:right;"> 38.0952381 </td>
    <td style="text-align:right;"> 9 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lagan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lajsne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lako </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> laoghaire </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> laser </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> laserski </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lazarević </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lcd </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ldnio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> legrand </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> length </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lenovo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.59 </td>
+   <td style="text-align:right;"> 3.5874439 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> leptiri </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> letvicu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 8.00 </td>
+   <td style="text-align:right;"> 8.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lever </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lider </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.57 </td>
+   <td style="text-align:right;"> 4.5714286 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lijepim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> likovnoj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lipanj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.99 </td>
+   <td style="text-align:right;"> 0.9907121 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lipnja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.33 </td>
+   <td style="text-align:right;"> 5.3333333 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> listić </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> listu </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 41.68 </td>
+   <td style="text-align:right;"> 41.6777042 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> litre </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ll </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lodovico </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> logičan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> london </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> long </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> looking </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> losanđeleskog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lower </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lozinka </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> luksuza </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> luksuznim </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> luksuznima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> luku </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.40 </td>
+   <td style="text-align:right;"> 1.4035088 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> lutke </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> luts </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> luxell </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ljigavac </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ljubavi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ljudski </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> makedonka </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> male </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> malih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> managera </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> maranella </td>
    <td style="text-align:right;"> 213 </td>
-   <td style="text-align:right;"> 18.43 </td>
+   <td style="text-align:right;"> 18.4284177 </td>
    <td style="text-align:right;"> 321 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> maranello </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> marica </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 41.68 </td>
+   <td style="text-align:right;"> 41.6777042 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> marka </td>
    <td style="text-align:right;"> 213 </td>
-   <td style="text-align:right;"> 18.43 </td>
+   <td style="text-align:right;"> 18.4284177 </td>
    <td style="text-align:right;"> 321 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> market </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> marko </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 41.68 </td>
+   <td style="text-align:right;"> 41.6777042 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> marljivost </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 44.75 </td>
+   <td style="text-align:right;"> 44.7539016 </td>
    <td style="text-align:right;"> 215 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> marzocchi </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 10.97 </td>
+   <td style="text-align:right;"> 10.9730700 </td>
    <td style="text-align:right;"> 138 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> maski </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> masovnom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mastercard </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> matičnoj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> max </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> maxxecu </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 5.98 </td>
+   <td style="text-align:right;"> 5.9768141 </td>
    <td style="text-align:right;"> 54 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> maxxis </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 2.79 </td>
+   <td style="text-align:right;"> 2.7866452 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mcbride </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> meadows </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> measureon </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> međutim </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> međuvremenu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mega </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.40 </td>
+   <td style="text-align:right;"> 1.4035088 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> megashop </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mehanikom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> meka </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> memento </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> memling </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> men </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> merch </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mhc </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mia </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:right;"> 0.5403377 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> michelangelo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> miješalica </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mikročipova </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mikroelektronika </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> miksere </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> milijarde </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> milijunskog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> minha </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> miris </td>
    <td style="text-align:right;"> 113 </td>
-   <td style="text-align:right;"> 7.08 </td>
+   <td style="text-align:right;"> 7.0772579 </td>
    <td style="text-align:right;"> 1430 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mirjana </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mirsada </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.93 </td>
+   <td style="text-align:right;"> 5.9259259 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> misli </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.08 </td>
+   <td style="text-align:right;"> 1.0773202 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mjere </td>
    <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 2.87 </td>
+   <td style="text-align:right;"> 2.8744750 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mjerenje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mjeseca </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 12.37 </td>
+   <td style="text-align:right;"> 12.3663602 </td>
    <td style="text-align:right;"> 206 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mjeseci </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mjesecu </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 12.37 </td>
+   <td style="text-align:right;"> 12.3663602 </td>
    <td style="text-align:right;"> 206 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mjuzikl </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ml </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mladi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mlinci </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mljevene </td>
    <td style="text-align:right;"> 113 </td>
-   <td style="text-align:right;"> 7.08 </td>
+   <td style="text-align:right;"> 7.0772579 </td>
    <td style="text-align:right;"> 1430 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mnoga </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 44.75 </td>
+   <td style="text-align:right;"> 44.7539016 </td>
    <td style="text-align:right;"> 215 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mnogi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mnogobrojne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mnoštvo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mobilne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mobilnost </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mockus </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> moćan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> modernom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> modular </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mogao </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> moguće </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> molve </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 41.68 </td>
+   <td style="text-align:right;"> 41.6777042 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> momenta </td>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 23.36 </td>
+   <td style="text-align:right;"> 23.3551198 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> montreal </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mora </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> moritz </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> moskva </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mostar </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> motocikla </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> motora </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> motorima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 45.71 </td>
+   <td style="text-align:right;"> 45.7142857 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> motronic </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mount </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> moye </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mozda </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> možda </td>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 23.36 </td>
+   <td style="text-align:right;"> 23.3551198 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> možemo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mrs </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ms </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> multi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> multipoint </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 48.58 </td>
+   <td style="text-align:right;"> 48.5783133 </td>
    <td style="text-align:right;"> 244 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> mutabdžija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> muy </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nacrtima </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> načinović </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:right;"> 0.5403377 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> naći </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nadzorni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nagradnom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.71 </td>
+   <td style="text-align:right;"> 3.7121432 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nagrađen </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najboljeg </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najčešće </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najkreativniji </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 21.19 </td>
+   <td style="text-align:right;"> 21.1855273 </td>
    <td style="text-align:right;"> 421 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najluksuzniji </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najmoprimcem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najnapredniji </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najnovija </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.2750191 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najnovijem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najnoviju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najprodavanije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najrazornijih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najterenskiji </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> najuspješnijim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> namjerama </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> namjerava </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> namjestiti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> namješten </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> namučiti </td>
    <td style="text-align:right;"> 113 </td>
-   <td style="text-align:right;"> 7.08 </td>
+   <td style="text-align:right;"> 7.0772579 </td>
    <td style="text-align:right;"> 1430 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> napa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> naplatke </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> napominje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> napora </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:right;"> 0.5811138 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> napravljen </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> napravljena </td>
    <td style="text-align:right;"> 99 </td>
-   <td style="text-align:right;"> 10.88 </td>
+   <td style="text-align:right;"> 10.8820909 </td>
    <td style="text-align:right;"> 102 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> naprijed </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 48.58 </td>
+   <td style="text-align:right;"> 48.5783133 </td>
    <td style="text-align:right;"> 244 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> napunila </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 11.47 </td>
+   <td style="text-align:right;"> 11.4684231 </td>
    <td style="text-align:right;"> 151 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> naravi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> narudžbu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> naselje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nasilnim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> naslov </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nastaje </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> našem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> naši </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> našla </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 44.75 </td>
+   <td style="text-align:right;"> 44.7539016 </td>
    <td style="text-align:right;"> 215 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> navodno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> navođenjem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> naziv </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.33 </td>
+   <td style="text-align:right;"> 5.3333333 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nedugo </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 3.25 </td>
+   <td style="text-align:right;"> 3.2529484 </td>
    <td style="text-align:right;"> 70 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nehotice </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nehrđajućeg </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nekolicina </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 0.9248555 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> neoconu </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> neposredno </td>
    <td style="text-align:right;"> 37 </td>
-   <td style="text-align:right;"> 7.27 </td>
+   <td style="text-align:right;"> 7.2727273 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> neprestano </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nessa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nestala </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nestašicu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> netragom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> neumorna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> neven </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:right;"> 0.5403377 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> new </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nezavršene </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nijmegen </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> niskoj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> niz </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nizozemske </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 11.47 </td>
+   <td style="text-align:right;"> 11.4684231 </td>
    <td style="text-align:right;"> 151 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nizozemski </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nord </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> novih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> novija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> novim </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 48.58 </td>
+   <td style="text-align:right;"> 48.5783133 </td>
    <td style="text-align:right;"> 244 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> novine.hr </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> noviteta </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.93 </td>
+   <td style="text-align:right;"> 5.9259259 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> novoga </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> novopečenog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> novost </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nož </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> nude </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 0.9248555 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> njegove </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> njegovi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 16.88 </td>
+   <td style="text-align:right;"> 16.8776371 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> njihovog </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> obitelji </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 11.47 </td>
+   <td style="text-align:right;"> 11.4684231 </td>
    <td style="text-align:right;"> 151 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> obiteljski </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> objave </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> objekte </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> objekti </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 46.64 </td>
+   <td style="text-align:right;"> 46.6405229 </td>
    <td style="text-align:right;"> 210 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> objektu </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 46.64 </td>
+   <td style="text-align:right;"> 46.6405229 </td>
    <td style="text-align:right;"> 210 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> oblikovan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> obnova </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> obrade </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> obratila </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.93 </td>
+   <td style="text-align:right;"> 5.9259259 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> obuhvaća </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> obzirom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> očuvanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> odabrani </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> odabrano </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> odjel </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> odličnih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> odlično </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> odlučila </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> odnosi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> odobrila </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> održati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.33 </td>
+   <td style="text-align:right;"> 5.3333333 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> održavanje </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 1.95 </td>
+   <td style="text-align:right;"> 1.9506517 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> odvijača </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> oglasnik </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ograničeni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ogrlica </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> okove </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> okretaja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> okretnog </td>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 23.36 </td>
+   <td style="text-align:right;"> 23.3551198 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> okriljem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.59 </td>
+   <td style="text-align:right;"> 0.5853659 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> okupljaju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> okusa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.46 </td>
+   <td style="text-align:right;"> 1.4604462 </td>
    <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> okvir </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> older </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> omogućavaš </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> omogućuje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> onoga </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> onyx </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> operativnih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> oprema </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> opremio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.40 </td>
+   <td style="text-align:right;"> 1.4035088 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> opremljena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> opremom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> opremu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> optimalna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> organizirati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osigurala </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 45.71 </td>
+   <td style="text-align:right;"> 45.7142857 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osiguralo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osjetljivim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osjetljivo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osjetljivom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.20 </td>
+   <td style="text-align:right;"> 0.2018503 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> oslanjamo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osnivaju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osnovano </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osoba </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.20 </td>
+   <td style="text-align:right;"> 0.2018503 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ostati </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 21.19 </td>
+   <td style="text-align:right;"> 21.1855273 </td>
    <td style="text-align:right;"> 421 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ostavio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ostaviti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ostoić </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ostvarivanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ostvarujete </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 46.64 </td>
+   <td style="text-align:right;"> 46.6405229 </td>
    <td style="text-align:right;"> 210 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osumnjičeniku </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osvajača </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osvojio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> osvrnula </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.93 </td>
+   <td style="text-align:right;"> 5.9259259 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> otisnuti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> otkad </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> otkriću </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> otkriju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> otpornosti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> otvaranja </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 3.25 </td>
+   <td style="text-align:right;"> 3.2529484 </td>
    <td style="text-align:right;"> 70 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> outcome </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ovjes </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 10.97 </td>
+   <td style="text-align:right;"> 10.9730700 </td>
    <td style="text-align:right;"> 138 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ovog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ovom </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 12.37 </td>
+   <td style="text-align:right;"> 12.3663602 </td>
    <td style="text-align:right;"> 206 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> oznake </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 17.49 </td>
+   <td style="text-align:right;"> 17.4863388 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pad </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> palača </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 11.47 </td>
+   <td style="text-align:right;"> 11.4684231 </td>
    <td style="text-align:right;"> 151 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> paljenjem </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 48.58 </td>
+   <td style="text-align:right;"> 48.5783133 </td>
    <td style="text-align:right;"> 244 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pametno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> panel </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> paneli </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.93 </td>
+   <td style="text-align:right;"> 5.9259259 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> panoramskim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.40 </td>
+   <td style="text-align:right;"> 1.4035088 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> parametara </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pariz </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> parket </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> partida </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> partido </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> patient </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> patrick </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pazim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pbd </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pc </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pekara </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> peking </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> performansi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> perilici </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> perilicom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> perspektivu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> petra </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> petrinjčica </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.2750191 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> petrinji </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.2750191 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> phoenix </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pierce </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pieter </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pila </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pirelli </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 10.97 </td>
+   <td style="text-align:right;"> 10.9730700 </td>
    <td style="text-align:right;"> 138 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> piše </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> plaćanja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> plan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> planetarymixing </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> planovi </td>
    <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 2.87 </td>
+   <td style="text-align:right;"> 2.8744750 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> platnene </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.71 </td>
+   <td style="text-align:right;"> 3.7121432 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> platnenu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> plinski </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> plinsko </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> plo </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 1.25 </td>
+   <td style="text-align:right;"> 1.2528842 </td>
    <td style="text-align:right;"> 13 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pločasti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> plus </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pobjegne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poboljšanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poboljšati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pobrinuo </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 10.97 </td>
+   <td style="text-align:right;"> 10.9730700 </td>
    <td style="text-align:right;"> 138 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> počnete </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> podatke </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> podijeliti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> podizače </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> podiže </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 8.00 </td>
+   <td style="text-align:right;"> 8.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> podmazivanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> podnaslove </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 0.9248555 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> podnim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> podnog </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 46.64 </td>
+   <td style="text-align:right;"> 46.6405229 </td>
    <td style="text-align:right;"> 210 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> podova </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> podovi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> podravske </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 41.68 </td>
+   <td style="text-align:right;"> 41.6777042 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> područje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> području </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> podružnice </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.59 </td>
+   <td style="text-align:right;"> 0.5853659 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> podržala </td>
    <td style="text-align:right;"> 37 </td>
-   <td style="text-align:right;"> 7.27 </td>
+   <td style="text-align:right;"> 7.2727273 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> podržale </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poduhvat </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poduprle </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.57 </td>
+   <td style="text-align:right;"> 4.5714286 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pogledaj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pogledom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pogodio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pogođeni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pogone </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 3.25 </td>
+   <td style="text-align:right;"> 3.2529484 </td>
    <td style="text-align:right;"> 70 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pogonom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pogonski </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pohađanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pohvaliti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.20 </td>
+   <td style="text-align:right;"> 0.2018503 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poirot </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pojašnjavaju </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pojavljuje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pojedine </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pokazuje </td>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 23.36 </td>
+   <td style="text-align:right;"> 23.3551198 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poklanjaš </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 21.19 </td>
+   <td style="text-align:right;"> 21.1855273 </td>
    <td style="text-align:right;"> 421 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pokloniti </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 21.19 </td>
+   <td style="text-align:right;"> 21.1855273 </td>
    <td style="text-align:right;"> 421 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poklopca </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> političari </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> polovice </td>
    <td style="text-align:right;"> 213 </td>
-   <td style="text-align:right;"> 18.43 </td>
+   <td style="text-align:right;"> 18.4284177 </td>
    <td style="text-align:right;"> 321 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> polovine </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> položaj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poluvodiči </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 4.57 </td>
+   <td style="text-align:right;"> 4.5714286 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poljoprivredne </td>
    <td style="text-align:right;"> 37 </td>
-   <td style="text-align:right;"> 7.27 </td>
+   <td style="text-align:right;"> 7.2727273 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poljoprivredni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> polju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pomagača </td>
    <td style="text-align:right;"> 113 </td>
-   <td style="text-align:right;"> 7.08 </td>
+   <td style="text-align:right;"> 7.0772579 </td>
    <td style="text-align:right;"> 1430 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pomaka </td>
    <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 2.87 </td>
+   <td style="text-align:right;"> 2.8744750 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pomoću </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ponatim </td>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 23.36 </td>
+   <td style="text-align:right;"> 23.3551198 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ponešto </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 0.9248555 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ponosi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pontiac </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ponudili </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 0.9248555 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> popisa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> popisu </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 44.75 </td>
+   <td style="text-align:right;"> 44.7539016 </td>
    <td style="text-align:right;"> 215 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> porcelanosa </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> portafon </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> posebne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 2.31 </td>
+   <td style="text-align:right;"> 2.3076923 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> posjetitelju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poslana </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poslovanja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poslove </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poslovnim </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 44.75 </td>
+   <td style="text-align:right;"> 44.7539016 </td>
    <td style="text-align:right;"> 215 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> posložili </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> posljedica </td>
    <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 2.87 </td>
+   <td style="text-align:right;"> 2.8744750 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> posljednji </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> post </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> postavljanja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> postigla </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> postigli </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> postizanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> posto </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> posuđe </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> posvećeno </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poštovani </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> potapanju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> potiče </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> potjera </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> potkraj </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 48.58 </td>
+   <td style="text-align:right;"> 48.5783133 </td>
    <td style="text-align:right;"> 244 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> potrazi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> potrebna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> potrošiti </td>
    <td style="text-align:right;"> 113 </td>
-   <td style="text-align:right;"> 7.08 </td>
+   <td style="text-align:right;"> 7.0772579 </td>
    <td style="text-align:right;"> 1430 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> potrošne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 2.31 </td>
+   <td style="text-align:right;"> 2.3076923 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> potrošnja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> potrošnju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> potvrde </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> povezati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.94 </td>
+   <td style="text-align:right;"> 1.9433198 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> povezivanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> povezivati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> povijesno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> povijesti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> povoljnim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> power </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poznat </td>
    <td style="text-align:right;"> 213 </td>
-   <td style="text-align:right;"> 18.43 </td>
+   <td style="text-align:right;"> 18.4284177 </td>
    <td style="text-align:right;"> 321 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> poznavati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pozornik </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pozvan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pps </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> praksu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> praktičnu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prašinu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pratio </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prava </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> praznu </td>
    <td style="text-align:right;"> 99 </td>
-   <td style="text-align:right;"> 10.88 </td>
+   <td style="text-align:right;"> 10.8820909 </td>
    <td style="text-align:right;"> 102 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> preciznost </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> preciznosti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pred </td>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 23.36 </td>
+   <td style="text-align:right;"> 23.3551198 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> predana </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> predicting </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prednostima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prednjači </td>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 23.36 </td>
+   <td style="text-align:right;"> 23.3551198 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> predstavljamo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> predstavljena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.13 </td>
+   <td style="text-align:right;"> 11.1270983 </td>
    <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> predstavnici </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> predviđaju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pregledati </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> preinake </td>
    <td style="text-align:right;"> 113 </td>
-   <td style="text-align:right;"> 7.08 </td>
+   <td style="text-align:right;"> 7.0772579 </td>
    <td style="text-align:right;"> 1430 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prekrasna </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> premiere </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prepoznajemo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prepoznao </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.94 </td>
+   <td style="text-align:right;"> 1.9433198 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prepoznati </td>
    <td style="text-align:right;"> 213 </td>
-   <td style="text-align:right;"> 18.43 </td>
+   <td style="text-align:right;"> 18.4284177 </td>
    <td style="text-align:right;"> 321 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prepoznavanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> presta </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prestižne </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pretinac </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pretinaca </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pretpostavku </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> previse </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> previše </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 48.58 </td>
+   <td style="text-align:right;"> 48.5783133 </td>
    <td style="text-align:right;"> 244 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prevost </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prezentacijom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pribor </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> priča </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 17.30 </td>
+   <td style="text-align:right;"> 17.2972973 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> priču </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prihod </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 11.47 </td>
+   <td style="text-align:right;"> 11.4684231 </td>
    <td style="text-align:right;"> 151 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prijateljice </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prijaviti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prijavom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prijeđenim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prijenos </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prijenosa </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 5.98 </td>
+   <td style="text-align:right;"> 5.9768141 </td>
    <td style="text-align:right;"> 54 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prikazuje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prikaži </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prikladan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> priključili </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prilagoditi </td>
    <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 2.87 </td>
+   <td style="text-align:right;"> 2.8744750 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prilagođena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.20 </td>
+   <td style="text-align:right;"> 0.2018503 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prilaz </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prilika </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> primjene </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> primjeni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> primjenu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> primjenjuje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> primjereni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> primjeri </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pripremaju </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 12.37 </td>
+   <td style="text-align:right;"> 12.3663602 </td>
    <td style="text-align:right;"> 206 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pripreme </td>
    <td style="text-align:right;"> 113 </td>
-   <td style="text-align:right;"> 7.08 </td>
+   <td style="text-align:right;"> 7.0772579 </td>
    <td style="text-align:right;"> 1430 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pritiska </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> priznaje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> priznanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prizora.ovogodišnji </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 11.19 </td>
+   <td style="text-align:right;"> 11.1905325 </td>
    <td style="text-align:right;"> 167 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prlić </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proanimal </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> problema </td>
    <td style="text-align:right;"> 213 </td>
-   <td style="text-align:right;"> 18.43 </td>
+   <td style="text-align:right;"> 18.4284177 </td>
    <td style="text-align:right;"> 321 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> procesa </td>
    <td style="text-align:right;"> 37 </td>
-   <td style="text-align:right;"> 7.27 </td>
+   <td style="text-align:right;"> 7.2727273 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> procese </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pročitajte </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prodaje </td>
    <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 37.53 </td>
+   <td style="text-align:right;"> 37.5308642 </td>
    <td style="text-align:right;"> 77 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prodajem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prodajne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 2.31 </td>
+   <td style="text-align:right;"> 2.3076923 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prodajnim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.59 </td>
+   <td style="text-align:right;"> 3.5874439 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prodaju </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> produktivnosti </td>
    <td style="text-align:right;"> 37 </td>
-   <td style="text-align:right;"> 7.27 </td>
+   <td style="text-align:right;"> 7.2727273 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> profesionalna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proglašava </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> programa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> programi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> programom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proizvedenog </td>
    <td style="text-align:right;"> 37 </td>
-   <td style="text-align:right;"> 7.27 </td>
+   <td style="text-align:right;"> 7.2727273 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proizvela </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proizvelo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proizveo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proizvesti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proizvode </td>
    <td style="text-align:right;"> 37 </td>
-   <td style="text-align:right;"> 7.27 </td>
+   <td style="text-align:right;"> 7.2727273 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proizvodne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proizvodnja </td>
    <td style="text-align:right;"> 37 </td>
-   <td style="text-align:right;"> 7.27 </td>
+   <td style="text-align:right;"> 7.2727273 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proizvodnji </td>
    <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 2.87 </td>
+   <td style="text-align:right;"> 2.8744750 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proizvođač </td>
    <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 37.53 </td>
+   <td style="text-align:right;"> 37.5308642 </td>
    <td style="text-align:right;"> 77 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proizvođači </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proizvođačima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> projektu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proklizavanja </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 6.79 </td>
+   <td style="text-align:right;"> 6.7861828 </td>
    <td style="text-align:right;"> 76 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prologom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prometnim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> promijeniti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 0.9248555 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> promjena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> promjenjivim </td>
    <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 2.87 </td>
+   <td style="text-align:right;"> 2.8744750 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> promocija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pronađite </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.71 </td>
+   <td style="text-align:right;"> 3.7121432 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> property </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> propinjanja </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 6.79 </td>
+   <td style="text-align:right;"> 6.7861828 </td>
    <td style="text-align:right;"> 76 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prosinca </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prostorija </td>
    <td style="text-align:right;"> 99 </td>
-   <td style="text-align:right;"> 10.88 </td>
+   <td style="text-align:right;"> 10.8820909 </td>
    <td style="text-align:right;"> 102 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prostorije </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prostoriju </td>
    <td style="text-align:right;"> 99 </td>
-   <td style="text-align:right;"> 10.88 </td>
+   <td style="text-align:right;"> 10.8820909 </td>
    <td style="text-align:right;"> 102 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> proširenje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> provedene </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> provociramo </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prozore </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prunerorezivanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pružite </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prvim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prvog </td>
    <td style="text-align:right;"> 37 </td>
-   <td style="text-align:right;"> 7.27 </td>
+   <td style="text-align:right;"> 7.2727273 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> prvoloptaški </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> puhanja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pula </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pump </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> punjenja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> punjivih </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> put </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> putnica </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> pxc </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> quality </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> radijatori </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> radije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> radijus </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.08 </td>
+   <td style="text-align:right;"> 1.0773202 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> radna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> radne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> radni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> radnička </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> radom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rahmen </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rail </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rally </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 6.79 </td>
+   <td style="text-align:right;"> 6.7861828 </td>
    <td style="text-align:right;"> 76 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> raspodjela </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> raspolagao </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 48.58 </td>
+   <td style="text-align:right;"> 48.5783133 </td>
    <td style="text-align:right;"> 244 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rasprave </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.93 </td>
+   <td style="text-align:right;"> 5.9259259 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rast </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rasti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ravnomjerno </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 46.64 </td>
+   <td style="text-align:right;"> 46.6405229 </td>
    <td style="text-align:right;"> 210 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> razer </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> razgovoru </td>
    <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 2.87 </td>
+   <td style="text-align:right;"> 2.8744750 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> razinu </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> različite </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 12.37 </td>
+   <td style="text-align:right;"> 12.3663602 </td>
    <td style="text-align:right;"> 206 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> različitih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> razlika </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 11.47 </td>
+   <td style="text-align:right;"> 11.4684231 </td>
    <td style="text-align:right;"> 151 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> razlike </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> razlikovao </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 48.58 </td>
+   <td style="text-align:right;"> 48.5783133 </td>
    <td style="text-align:right;"> 244 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> razlog </td>
    <td style="text-align:right;"> 213 </td>
-   <td style="text-align:right;"> 18.43 </td>
+   <td style="text-align:right;"> 18.4284177 </td>
    <td style="text-align:right;"> 321 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> razlogom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> raznih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> razredom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> razumim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> razvoja </td>
    <td style="text-align:right;"> 37 </td>
-   <td style="text-align:right;"> 7.27 </td>
+   <td style="text-align:right;"> 7.2727273 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> realnim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> recenzija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.46 </td>
+   <td style="text-align:right;"> 1.4604462 </td>
    <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> recenziju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> recimo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> redakciji </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.46 </td>
+   <td style="text-align:right;"> 1.4604462 </td>
    <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> redragon </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> regulator </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> reguliraju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rehaka </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rekli </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rekon </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 2.79 </td>
+   <td style="text-align:right;"> 2.7866452 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> remek </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> renesansne </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> reparirana </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> replika </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> restoran </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rexroth.poslovanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rez </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rezidba </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rezidbu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rezna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> režu </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rider </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rješava </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rješenjem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rješenjima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.40 </td>
+   <td style="text-align:right;"> 1.4035088 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rm </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> roadster </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> robota </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rodada </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rodnost </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rogier </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rubrike </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> rujnu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ruku </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sačuvanim </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 21.19 </td>
+   <td style="text-align:right;"> 21.1855273 </td>
    <td style="text-align:right;"> 421 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sadržaje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> saeco </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> safety </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.33 </td>
+   <td style="text-align:right;"> 5.3333333 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sajta </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> salone </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> salonima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.59 </td>
+   <td style="text-align:right;"> 3.5874439 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> saltam </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> same </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> samobor </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> samog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> samostalno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> samostojeća </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> samostojeće </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.12 </td>
+   <td style="text-align:right;"> 1.1218583 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> san </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sanitarije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sar </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.94 </td>
+   <td style="text-align:right;"> 1.9433198 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sasvim </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 6.79 </td>
+   <td style="text-align:right;"> 6.7861828 </td>
    <td style="text-align:right;"> 76 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> saša </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> satove </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> satovi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sav </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> savici </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> savršen </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 30.55 </td>
+   <td style="text-align:right;"> 30.5484089 </td>
    <td style="text-align:right;"> 202 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> savršeno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> saznao </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> scavolini </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> scenu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> scheibenbremse </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> schwope </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> scirocca </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sean </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sektor </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> selekcije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> senka </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> serena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:right;"> 0.5403377 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> serijske </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 48.58 </td>
+   <td style="text-align:right;"> 48.5783133 </td>
    <td style="text-align:right;"> 244 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> serijski </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 6.79 </td>
+   <td style="text-align:right;"> 6.7861828 </td>
    <td style="text-align:right;"> 76 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> seriju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> services </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sesvete </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 41.68 </td>
+   <td style="text-align:right;"> 41.6777042 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> setom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sezone </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> shopu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.59 </td>
+   <td style="text-align:right;"> 3.5874439 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> shvatiti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sigranit </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sigurnije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sigurno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sigurnosni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sikstinskoj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> silence </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> silvija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> simoni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> singapuru </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sinkronim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.94 </td>
+   <td style="text-align:right;"> 1.9433198 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sinovi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sinjane </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sistema </td>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 23.36 </td>
+   <td style="text-align:right;"> 23.3551198 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sistemom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sitne </td>
    <td style="text-align:right;"> 113 </td>
-   <td style="text-align:right;"> 7.08 </td>
+   <td style="text-align:right;"> 7.0772579 </td>
    <td style="text-align:right;"> 1430 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> situacija </td>
    <td style="text-align:right;"> 213 </td>
-   <td style="text-align:right;"> 18.43 </td>
+   <td style="text-align:right;"> 18.4284177 </td>
    <td style="text-align:right;"> 321 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sjedala </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> skejterski </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> skinuti </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sklopili </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sklopovi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> skužio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sl </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sla </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> slabije </td>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 23.36 </td>
+   <td style="text-align:right;"> 23.3551198 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> slabiji </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> slavina </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sličio </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> slijed </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> slobodu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> slučaja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> slušalice </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sluškinju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> službi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> služi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> slx </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 2.79 </td>
+   <td style="text-align:right;"> 2.7866452 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sljedeće </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.04 </td>
+   <td style="text-align:right;"> 1.0389610 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> smanjenja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> smanjuje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> smayoo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> smjestio </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 48.58 </td>
+   <td style="text-align:right;"> 48.5783133 </td>
    <td style="text-align:right;"> 244 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> smještena </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 11.47 </td>
+   <td style="text-align:right;"> 11.4684231 </td>
    <td style="text-align:right;"> 151 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> snazi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> snažan </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> snažnije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> snažnim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> snova </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> softverski </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> solidna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 0.9248555 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> spada </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> spašava </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> speedtouch </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> spletna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> spoj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> spojili </td>
    <td style="text-align:right;"> 113 </td>
-   <td style="text-align:right;"> 7.08 </td>
+   <td style="text-align:right;"> 7.0772579 </td>
    <td style="text-align:right;"> 1430 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> spojler </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 48.58 </td>
+   <td style="text-align:right;"> 48.5783133 </td>
    <td style="text-align:right;"> 244 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> spojne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sponzorirani </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sporta </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sportske </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sportski </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sprava </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 1.95 </td>
+   <td style="text-align:right;"> 1.9506517 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> spremnik </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> spremnika </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> spremnikom </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sprijecite </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> spušten </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sravnio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> srce </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sredi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> središnjoj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sretnih </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 41.68 </td>
+   <td style="text-align:right;"> 41.6777042 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> srs </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stadnyk </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stakala </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stakleno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> staklenog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> staklo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stali </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> standard </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> standardna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stanovnika </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stanu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> startnoj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> statuario </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> steckachse </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stefanjos </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stevanov </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stiftung </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stipendije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stiže </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 10.97 </td>
+   <td style="text-align:right;"> 10.9730700 </td>
    <td style="text-align:right;"> 138 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sto </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stoja </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stojaković </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:right;"> 0.5403377 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stojanova </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stojanovska </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stotinjak </td>
    <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 37.53 </td>
+   <td style="text-align:right;"> 37.5308642 </td>
    <td style="text-align:right;"> 77 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> strane </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 46.49 </td>
+   <td style="text-align:right;"> 46.4864865 </td>
    <td style="text-align:right;"> 41 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stražnji </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 6.79 </td>
+   <td style="text-align:right;"> 6.7861828 </td>
    <td style="text-align:right;"> 76 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stroj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> strojeva </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> strop </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stručnog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.33 </td>
+   <td style="text-align:right;"> 5.3333333 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stručnjaci </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> strukovni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> studenoga </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stupite </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stupnjeva </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 5.98 </td>
+   <td style="text-align:right;"> 5.9768141 </td>
    <td style="text-align:right;"> 54 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stvara </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stvarno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> stvarnom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> subaru </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 5.98 </td>
+   <td style="text-align:right;"> 5.9768141 </td>
    <td style="text-align:right;"> 54 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> subjekte </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> subotu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 45.71 </td>
+   <td style="text-align:right;"> 45.7142857 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sud </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sudionicima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.93 </td>
+   <td style="text-align:right;"> 5.9259259 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sudjelovanjem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.71 </td>
+   <td style="text-align:right;"> 3.7121432 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sudjeluju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sudoper </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> suđe </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.12 </td>
+   <td style="text-align:right;"> 1.1218583 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> suhog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> suočen </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 3.25 </td>
+   <td style="text-align:right;"> 3.2529484 </td>
    <td style="text-align:right;"> 70 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> supermarket </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> suprotstavljene </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> surađivali </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 44.75 </td>
+   <td style="text-align:right;"> 44.7539016 </td>
    <td style="text-align:right;"> 215 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> sušilicom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> svaka </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 46.64 </td>
+   <td style="text-align:right;"> 46.6405229 </td>
    <td style="text-align:right;"> 210 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> svakim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> svakog </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 12.37 </td>
+   <td style="text-align:right;"> 12.3663602 </td>
    <td style="text-align:right;"> 206 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> svjetla </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> svjetske </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> svjetski </td>
    <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 37.53 </td>
+   <td style="text-align:right;"> 37.5308642 </td>
    <td style="text-align:right;"> 77 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> svježa </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 21.19 </td>
+   <td style="text-align:right;"> 21.1855273 </td>
    <td style="text-align:right;"> 421 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> svježe </td>
    <td style="text-align:right;"> 113 </td>
-   <td style="text-align:right;"> 7.08 </td>
+   <td style="text-align:right;"> 7.0772579 </td>
    <td style="text-align:right;"> 1430 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> svojih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> symptoms </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> system </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> szőkeov </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> šalje </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 5.98 </td>
+   <td style="text-align:right;"> 5.9768141 </td>
    <td style="text-align:right;"> 54 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> šancima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> šefa </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> šest </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 6.79 </td>
+   <td style="text-align:right;"> 6.7861828 </td>
    <td style="text-align:right;"> 76 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> šestu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:right;"> 0.5403377 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> šetnji </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> šibenik </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> šipke </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> škara </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> šoljica </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> štap </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> štapnih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> štede </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> štefec </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 41.68 </td>
+   <td style="text-align:right;"> 41.6777042 </td>
    <td style="text-align:right;"> 105 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> štoperice </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> švedski </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tablete </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tagovi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> takozvane </td>
    <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 37.53 </td>
+   <td style="text-align:right;"> 37.5308642 </td>
    <td style="text-align:right;"> 77 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> takvi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tamo </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tanzanija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tehnike </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tehnologijom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tehnologiju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tehnološki </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.94 </td>
+   <td style="text-align:right;"> 1.9433198 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tehnoloških </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.93 </td>
+   <td style="text-align:right;"> 5.9259259 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tehnomag </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.59 </td>
+   <td style="text-align:right;"> 3.5874439 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> telloli </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:right;"> 0.5403377 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> temperature </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> temu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ten </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 11.47 </td>
+   <td style="text-align:right;"> 11.4684231 </td>
    <td style="text-align:right;"> 151 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> terasu </td>
    <td style="text-align:right;"> 99 </td>
-   <td style="text-align:right;"> 10.88 </td>
+   <td style="text-align:right;"> 10.8820909 </td>
    <td style="text-align:right;"> 102 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> terencima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tereta </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> termostat </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> termovoj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> testiranja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> teške </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tetra </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> texo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> težinu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 0.7430341 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> th </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> therapy </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tianfu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.40 </td>
+   <td style="text-align:right;"> 1.4035088 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tiel </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tiha </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.20 </td>
+   <td style="text-align:right;"> 0.2018503 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tihim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> timu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tip </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tipkom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tisuće </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> titana </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> titanium </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> titus </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tizenegyedik </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tjedna </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 1.95 </td>
+   <td style="text-align:right;"> 1.9506517 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tlačna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tlx </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> todorović </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tokio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tonyja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> touluse </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> touring </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 6.79 </td>
+   <td style="text-align:right;"> 6.7861828 </td>
    <td style="text-align:right;"> 76 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> toyotinim </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 5.98 </td>
+   <td style="text-align:right;"> 5.9768141 </td>
    <td style="text-align:right;"> 54 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tpi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tportal.hr </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tract </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> trajno </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> trans </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> trash </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> trattoriji </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> treatment </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> trebali </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> trekking </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> trenutak </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 30.55 </td>
+   <td style="text-align:right;"> 30.5484089 </td>
    <td style="text-align:right;"> 202 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> trgovina </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> trgovinama </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> trgovine </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> trice </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> troškova </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> troznamenkasti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> trud </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 44.75 </td>
+   <td style="text-align:right;"> 44.7539016 </td>
    <td style="text-align:right;"> 215 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> trx </td>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 10.97 </td>
+   <td style="text-align:right;"> 10.9730700 </td>
    <td style="text-align:right;"> 138 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> turismo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tušem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tvrtki </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 44.75 </td>
+   <td style="text-align:right;"> 44.7539016 </td>
    <td style="text-align:right;"> 215 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> tvrtku </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ubojstvo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ubrizgavanja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ubrizgavanjem </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 48.58 </td>
+   <td style="text-align:right;"> 48.5783133 </td>
    <td style="text-align:right;"> 244 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ubrzava </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 3.25 </td>
+   <td style="text-align:right;"> 3.2529484 </td>
    <td style="text-align:right;"> 70 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> učinio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> učinkovite </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> učinkovitije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> učinkovito </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> udaraca </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> udovice </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> udrugom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> udruženje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ugleda </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ugodno </td>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 23.36 </td>
+   <td style="text-align:right;"> 23.3551198 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ugraditi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ugrađena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ugrađene </td>
    <td style="text-align:right;"> 99 </td>
-   <td style="text-align:right;"> 10.88 </td>
+   <td style="text-align:right;"> 10.8820909 </td>
    <td style="text-align:right;"> 102 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ugrađeni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ugrađuju </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 6.79 </td>
+   <td style="text-align:right;"> 6.7861828 </td>
    <td style="text-align:right;"> 76 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uključuje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ukoliko </td>
    <td style="text-align:right;"> 213 </td>
-   <td style="text-align:right;"> 18.43 </td>
+   <td style="text-align:right;"> 18.4284177 </td>
    <td style="text-align:right;"> 321 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ulica </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ulicama </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 2.65 </td>
+   <td style="text-align:right;"> 2.6528497 </td>
    <td style="text-align:right;"> 19 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ultraallergy </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.08 </td>
+   <td style="text-align:right;"> 1.0773202 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ulja </td>
    <td style="text-align:right;"> 213 </td>
-   <td style="text-align:right;"> 18.43 </td>
+   <td style="text-align:right;"> 18.4284177 </td>
    <td style="text-align:right;"> 321 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> umjetna </td>
    <td style="text-align:right;"> 37 </td>
-   <td style="text-align:right;"> 7.27 </td>
+   <td style="text-align:right;"> 7.2727273 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> umjetničkih </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> umjetnike </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> umjetnoj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> umjetnosti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> umora </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> universal </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> unosi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> unsure </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uobičajenim </td>
    <td style="text-align:right;"> 113 </td>
-   <td style="text-align:right;"> 7.08 </td>
+   <td style="text-align:right;"> 7.0772579 </td>
    <td style="text-align:right;"> 1430 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uprava </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> upravljačka </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> upravo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uradi </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> urban </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 6.79 </td>
+   <td style="text-align:right;"> 6.7861828 </td>
    <td style="text-align:right;"> 76 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ured </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.46 </td>
+   <td style="text-align:right;"> 1.4604462 </td>
    <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uredu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.46 </td>
+   <td style="text-align:right;"> 1.4604462 </td>
    <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uređaja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uređivanje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> urinary </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> urological </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> usavršava </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uskih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> usmjereni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uspjeh </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uspješnicama </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 44.75 </td>
+   <td style="text-align:right;"> 44.7539016 </td>
    <td style="text-align:right;"> 215 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uspješnih </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 44.75 </td>
+   <td style="text-align:right;"> 44.7539016 </td>
    <td style="text-align:right;"> 215 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> usporedbi </td>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 23.36 </td>
+   <td style="text-align:right;"> 23.3551198 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> usprkos </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.0697168 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> usredotočio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uvedena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uvi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uvjetima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uvodnom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.93 </td>
+   <td style="text-align:right;"> 5.9259259 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uvoznik </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uzgajivači </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uzrokuje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> uživam </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.71 </td>
+   <td style="text-align:right;"> 3.7121432 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vakuumskim </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 21.19 </td>
+   <td style="text-align:right;"> 21.1855273 </td>
    <td style="text-align:right;"> 421 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> valeo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> valter </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:right;"> 0.5403377 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> valve </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vanja </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 14.87 </td>
+   <td style="text-align:right;"> 14.8732394 </td>
    <td style="text-align:right;"> 325 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> varijabilni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vaši </td>
    <td style="text-align:right;"> 58 </td>
-   <td style="text-align:right;"> 30.55 </td>
+   <td style="text-align:right;"> 30.5484089 </td>
    <td style="text-align:right;"> 202 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vatrodojavni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.33 </td>
+   <td style="text-align:right;"> 5.3333333 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> važnu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vc </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vci </td>
    <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 37.53 </td>
+   <td style="text-align:right;"> 37.5308642 </td>
    <td style="text-align:right;"> 77 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> veća </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:right;"> 0.5811138 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> većeslava </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vega </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> veličina </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 45.71 </td>
+   <td style="text-align:right;"> 45.7142857 </td>
    <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> velika </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> veliko </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 3.25 </td>
+   <td style="text-align:right;"> 3.2529484 </td>
    <td style="text-align:right;"> 70 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> velikog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> veoma </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 44.75 </td>
+   <td style="text-align:right;"> 44.7539016 </td>
    <td style="text-align:right;"> 215 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> verocup </td>
    <td style="text-align:right;"> 113 </td>
-   <td style="text-align:right;"> 7.08 </td>
+   <td style="text-align:right;"> 7.0772579 </td>
    <td style="text-align:right;"> 1430 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> verzija </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vida </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> videoanalitiku </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> videokamere </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> videonadzorni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vidim </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vidnom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vidu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vijest </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 12.37 </td>
+   <td style="text-align:right;"> 12.3663602 </td>
    <td style="text-align:right;"> 206 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vino </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vise </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> visinama </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> visine </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.15 </td>
+   <td style="text-align:right;"> 1.1498973 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> visoka </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> visokog </td>
    <td style="text-align:right;"> 49 </td>
-   <td style="text-align:right;"> 26.73 </td>
+   <td style="text-align:right;"> 26.7303932 </td>
    <td style="text-align:right;"> 699 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vitaminima </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 21.19 </td>
+   <td style="text-align:right;"> 21.1855273 </td>
    <td style="text-align:right;"> 421 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vlado </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vlasnik </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vlasnike </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 12.37 </td>
+   <td style="text-align:right;"> 12.3663602 </td>
    <td style="text-align:right;"> 206 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vlastitih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> voćari </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> voda </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vodio </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vodootporni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vojnović </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> volkswagenu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> voltima </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vozilo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> voziti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vožnja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.7218045 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vožnje </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrata </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrečice </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrećicu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vremenu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrhunac </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrhuncu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrhunski </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.59 </td>
+   <td style="text-align:right;"> 3.5874439 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrhunskom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrijedi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrijediti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrijedna </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrijednih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.71 </td>
+   <td style="text-align:right;"> 3.7121432 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrijednog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 0.9248555 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrsta </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vrtlarski </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vučić </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vuletić </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vw </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> vxšxd </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.12 </td>
+   <td style="text-align:right;"> 1.1218583 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> wall </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> webinara </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.33 </td>
+   <td style="text-align:right;"> 5.3333333 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> welliver </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> wet </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 6.79 </td>
+   <td style="text-align:right;"> 6.7861828 </td>
    <td style="text-align:right;"> 76 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> weyden </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.32 </td>
+   <td style="text-align:right;"> 10.3225806 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> wf </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> wh </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> what </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> width </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> will </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> wrx </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 5.98 </td>
+   <td style="text-align:right;"> 5.9768141 </td>
    <td style="text-align:right;"> 54 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> www.bosch </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> www.nacional.hr </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> www.poslovni.hr </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> xiaomi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> xmkuz </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> xtome </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ya </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> yamaha </td>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 23.36 </td>
+   <td style="text-align:right;"> 23.3551198 </td>
    <td style="text-align:right;"> 34 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ygple </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> york </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> you </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zaba </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zabavu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zabilježena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zadar </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zadnja </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 11.48 </td>
+   <td style="text-align:right;"> 11.4807567 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zadnjoj </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zadovoljna.hr </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zadužena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zahtjeve </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zahtjevima </td>
    <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 2.87 </td>
+   <td style="text-align:right;"> 2.8744750 </td>
    <td style="text-align:right;"> 51 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zahtjevne </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zahtjevnije </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zajc </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:right;"> 0.5403377 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zajednički </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zaklade </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zamjena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zanima </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zanussi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zapanjujućem </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> započeo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> započinjete </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 20.69 </td>
+   <td style="text-align:right;"> 20.6896552 </td>
    <td style="text-align:right;"> 14 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zapremina </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.08 </td>
+   <td style="text-align:right;"> 1.0773202 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zaražena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zaslona </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zaslonom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.20 </td>
+   <td style="text-align:right;"> 0.2018503 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zaštitnih </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5.33 </td>
+   <td style="text-align:right;"> 5.3333333 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zaštitu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zatvaranju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zatvorenog </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zatvorili </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zauzeti </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> završni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zbirke </td>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 38.79 </td>
+   <td style="text-align:right;"> 38.7878788 </td>
    <td style="text-align:right;"> 72 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zdrave </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zeleniju </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zelenom </td>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 11.47 </td>
+   <td style="text-align:right;"> 11.4684231 </td>
    <td style="text-align:right;"> 151 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zemalja </td>
    <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 37.53 </td>
+   <td style="text-align:right;"> 37.5308642 </td>
    <td style="text-align:right;"> 77 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zemljama </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zemlji </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zemljom </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zgode </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zidovi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zimo.hr </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zločinačkoga </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> značajki </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> značajno </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> znanstvenu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zona </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 10.67 </td>
+   <td style="text-align:right;"> 10.6666667 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zoom </td>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 2.3032255 </td>
    <td style="text-align:right;"> 11 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zoran </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zračnu </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.40 </td>
+   <td style="text-align:right;"> 1.4035088 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zrak </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zraka </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> zvučnici </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> žbice </td>
    <td style="text-align:right;"> 173 </td>
-   <td style="text-align:right;"> 2.79 </td>
+   <td style="text-align:right;"> 2.7866452 </td>
    <td style="text-align:right;"> 1564 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> želi </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.04 </td>
+   <td style="text-align:right;"> 1.0389610 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> želji </td>
    <td style="text-align:right;"> 99 </td>
-   <td style="text-align:right;"> 10.88 </td>
+   <td style="text-align:right;"> 10.8820909 </td>
    <td style="text-align:right;"> 102 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> željni </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> žena </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 30.27 </td>
+   <td style="text-align:right;"> 30.2702703 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ženski </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> živimo </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> živojinović </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> života </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> žuljeva </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
    <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
@@ -21623,8 +21626,13 @@ U ovom dijelu je dan pregled najvažnijih medija, odnosno web-a u youtube-a. va�
 </table></div>
 
 
+<br>
 
 ### **Phillips**
+
+***
+
+<br>
 
 
 

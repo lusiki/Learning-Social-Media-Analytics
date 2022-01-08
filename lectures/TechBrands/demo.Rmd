@@ -390,15 +390,15 @@ ggplotly(g3)
 
 <br>
 
-# **Pregled po izabranim medijima**
+# **Izabrani mediji**
 
 ***
 
-U ovom dijelu je dan pregled najvažnijih medija, odnosno web-a u youtube-a. važnost web-a proizlazi iz obujma objava, a youtube-a zbog visokog fokusa (attention span) koji korisnici posvećuju sadržaju na ovoj platformi.
+U ovom dijelu je dan pregled najvažnijih medija, odnosno web-a u youtube-a. Važnost web-a proizlazi iz obujma objava, a youtube-a zbog visokog fokusa (attention span) koji korisnici posvećuju sadržaju na ovoj platformi.
 
 <br>
 
-#### **Web**
+### **Web**
 
 ***
 
@@ -611,7 +611,7 @@ phillips %>%
 
 <br>
 
-### Izabrani brand
+# **Izabrani brandovi**
 
 ***
 
@@ -719,10 +719,13 @@ stop_corpus <- my_stop_words %>%
   bind_rows(stopwords_cro)
 ```
 
-
+<br>
 
 ### **Bosch** 
 
+***
+
+<br>
 
 ```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
 
@@ -761,11 +764,18 @@ freqOFmention %>%
     kable_paper(bootstrap_options = "striped",full_width = F, position = "left")  %>%
      scroll_box(width = "550px", height = "700px") 
 
+
+
 ```
 
 
+<br>
 
 ### **Phillips**
+
+***
+
+<br>
 
 
 ```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
