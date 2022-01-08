@@ -110,7 +110,7 @@ Izvještaj sadržava pregled hrvatskog medijskog prostora za četiri konkurenta 
 
 
 
-# **Cjeli medijski prostor**
+# **Općenito**
 
 ***
 
@@ -124,20 +124,20 @@ phillips %>%
   summarize(mean_X1 = n()) %>%
   summarise(avg = mean(mean_X1)) -> avg
 
-phillips %>%
-  mutate(time = as_datetime(time),
-         time = as.Date(time, format="%Y-%m-%d" )) %>%
-  mutate(week = week (time)) %>%
-  group_by(week) %>%
-  summarize(mean_X1 = n()) %>%
-  summarise(avg = mean(mean_X1)) -> avg
+# phillips %>%
+#   mutate(time = as_datetime(time),
+#          time = as.Date(time, format="%Y-%m-%d" )) %>%
+#   mutate(week = week (time)) %>%
+#   group_by(week) %>%
+#   summarize(mean_X1 = n()) %>%
+#   summarise(avg = mean(mean_X1)) -> avg
 ```
 
 <br>
 <br>
 
 
- U cjelokupnom  medijskom prostoru je u analiziranom periodu bilo ukupno 2677 objava o četiri konkurenta, odnosno `r avg` objava dnevno. Pri tome najveću prisutnost ima brand Bosch, nakon čega slijede Braun i Phillips, a na kraju Dyson. 
+ U cjelokupnom  medijskom prostoru je u analiziranom periodu bilo ukupno 2677 objava o četiri konkurenta, odnosno `r avg` objava dnevno. Pri tome najveću prisutnost ima Bosch, nakon čega slijede Braun i Phillips, a na kraju Dyson. 
 
 
 <br>
