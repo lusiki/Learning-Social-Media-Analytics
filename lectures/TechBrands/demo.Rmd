@@ -97,6 +97,28 @@ phillips <- dta %>%
          view = response.view_count)
 ```
 
+
+```{r echo = FALSE, message=FALSE,warning=FALSE}
+
+options(digits = 2)
+phillips %>%
+  mutate(time = as_datetime(time),
+         time = as.Date(time, format="%Y-%m-%d" )) %>%
+  mutate(day = day(time)) %>%
+  group_by(time) %>%
+  summarize(mean_X1 = n()) %>%
+  summarise(avg = mean(mean_X1)) -> avg
+
+# phillips %>%
+#   mutate(time = as_datetime(time),
+#          time = as.Date(time, format="%Y-%m-%d" )) %>%
+#   mutate(week = week (time)) %>%
+#   group_by(week) %>%
+#   summarize(mean_X1 = n()) %>%
+#   summarise(avg = mean(mean_X1)) -> avg
+```
+
+<br>
 <br>
 <br>
 <br>
@@ -106,11 +128,40 @@ phillips <- dta %>%
 
 
 
-Izvještaj sadržava pregled hrvatskog medijskog prostora za četiri konkurenta **Bosch, Braun, Phillips, Dyson**. Pregled se odnosi na sve medijske objave koje sadrže naziv branda (konkurenta) u **razdoblju od tri mjeseca** (2021/10/06 do 2022/01/06). Objave uključuju sve hrvatske društvene medije: *web, facebook, youtube, twitter, instagram, forum, reddit i komentare*. U prvom dijelu izvještaja je skupno prikazan cjeli medijski prostor. Nakon toga su opisani najrelevantniji mediji, a potom sadržaj objava za odabrane brandove. Na kraju su istaknuti najvažniji zaključci.
+# **Što je unutra?**
+
+***
 
 
+- cijeli hrvatski medijski prostor za četiri konkurenta **Bosch, Braun, Phillips, Dyson** 
+<br><br>
+- objave uključuju sve hrvatske društvene medije: *web, facebook, youtube, twitter, instagram, forum, reddit i komentare*
+<br><br>
+- sve medijske objave koje sadrže naziv branda u **razdoblju od tri mjeseca** (2021/10/06 do 2022/01/06)
+<br><br>
+- ukupno 2677 objava, odnosno `r avg` objava dnevno
+<br><br>
+- ukupno XXX riječi u svim tekstovima
 
-# **Općenito**
+<br>
+
+# **Sadržaj**
+
+***
+
+<br>
+
+- na početku izvještaja **skupni prikaz** medijskog prostora
+<br><br>
+- nakon toga opisani **izabrani mediji**
+<br><br>
+- potom analiziran sadržaj objava za **izabrane brandove**
+<br><br>
+- na kraju **najvažniji zaključci**
+
+<br>
+
+# **Skupni prikaz**
 
 ***
 
@@ -134,19 +185,22 @@ phillips %>%
 ```
 
 <br>
+
+
+- najveću medijsku prisutnost ima Bosch, nakon toga slijede Braun i Phillips, a na kraju Dyson
+<br><br>
+- tržišni lideri dominiraju na svakom pojedinačnom mediju i konzistentno kroz cijelo promatrano razdoblje
+
+
 <br>
 
-
- U cjelokupnom  medijskom prostoru je u analiziranom periodu bilo ukupno 2677 objava o četiri konkurenta, odnosno `r avg` objava dnevno. Pri tome najveću prisutnost ima Bosch, nakon čega slijede Braun i Phillips, a na kraju Dyson. 
-
-
-<br>
-
-### **Brand**
-
-<br>
+### **Brandovi**
 
 ***
+
+<br>
+
+
 
 ```{r echo = FALSE, message=FALSE,warning=FALSE}
 
@@ -173,13 +227,13 @@ brandTitle <- phillips %>%
 
 <div class = "row">
 
-<div class = "col-sm-3">
+<div class = "col-sm-4">
 <br><br>Bosch i Braun zajedno imaju više od 60% svih objava i znatno su zastupljeniji u medijskom prostoru od  Phillipsa i Dysona na koje odlazi manje od 15% svih objava. Pri tome je oko 25% svih objava nesvrstano jer je tekst objave anonimiziran.
 
 </div>
 
   
-<div class = "col-sm-3">
+<div class = "col-sm-2">
 ```{r echo = FALSE, message=FALSE,warning=FALSE}
 options(digits = 2)
 brandTitle %>% 
@@ -263,7 +317,7 @@ Vremenska dinamika objava potvrđuje Bosch kao tržišnog lidera koji je postoja
 <br>
 
 
-### **Medij**
+### **Mediji**
 
 ***
 
