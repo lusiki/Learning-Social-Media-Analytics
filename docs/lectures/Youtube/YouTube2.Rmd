@@ -1,0 +1,177 @@
+---
+title: "Analiza YouTube kanala u Hrvatskoj"
+author: "Lux"
+date: '28 06 2021 '
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE,message=FALSE,warning=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(ggthemes)
+library(cowplot)
+library(magick)
+library(png)
+library(RCurl)
+library(patchwork) 
+library(grid)
+library(ggpubr)
+library(scales)
+library(kableExtra)
+
+
+
+
+
+```
+
+<br>
+<br>
+
+
+```{r channels, echo=FALSE,message=FALSE,warning=FALSE}
+yt <- read.csv2("../data/YouTube/YT.csv") 
+```
+
+
+```{r scraper, eval = TRUE, include=FALSE}
+
+yt %>%
+  mutate(id = str_sub(link,-24)) %>%
+  select(id) -> id
+
+
+idNO <- id %>% slice(250:350) # %>% slice(-19)
+
+ids <- paste(idNO$id,collapse = ",") 
+
+write.table(ids, "C:/Users/Lukas/OneDrive/Desktop/ytid.txt")
+
+
+
+```
+
+
+
+
+
+```{r IMPORTvideos, echo=FALSE,message=FALSE,warning=FALSE}
+
+
+filelist = list.files(path = "C:/Users/Lukas/OneDrive/Desktop/YouTube",
+                      pattern = "*.txt",
+                      full.names = TRUE)
+
+
+library(vroom)
+
+# Read all the files and create a FileName column to store filenames
+df <- vroom(filelist) 
+
+
+yt <- yt %>%
+  mutate(id = str_sub(link,-24))
+
+
+#length(setdiff(yt$id,df$channelId))
+
+razlika1 = setdiff(df$channelId,yt$id)
+razlika2 = setdiff(yt$id,df$channelId)
+
+
+razlika3 = setdiff(full$channelTitle,yt$name)
+razlika4 = setdiff(yt$name,videoYT$channelTitle)
+
+
+#razlika <- yt[yt$id %in% razlika2,]  %>% 
+#  mutate(id = str_sub(link,-24)) %>%
+#  select(id)
+#ids <- paste(razlika$id,collapse = ",") 
+#write.table(ids, "C:/Users/Lukas/OneDrive/Desktop/ytid.txt")
+
+
+
+razlika = read_delim("C:/Users/Lukas/OneDrive/Desktop/YouTube/razlika.txt",
+                quote = "")
+
+razlikaFull <- left_join(razlika,yt, by = c("channelId"="id"))
+
+
+full <- left_join(df, yt, by = c("channelId"="id")) %>% arrange(desc(subscribers))
+
+
+
+
+require(plyr)
+full$rn <- rownames(full)
+razlikaFull$rn <- rownames(razlikaFull)
+
+
+videoYT <- join_all(list(full, razlikaFull), by = 'rn', type = 'full')
+
+
+razlikaFull %>% ungroup() %>%
+  group_by(channelId) %>%
+  count()  %>% 
+  View()
+
+
+videoYT %>%
+  select(channelTitle, channelId, subscribers, link) %>%
+  group_by(channelTitle) %>%
+  count() %>% View()
+
+
+
+full %>% group_by(channelTitle, subscribers) %>%
+  dplyr::summarise(n=n()) %>%
+  arrange(desc(subscribers))
+
+
+
+full %>% filter(channelTitle=="ADRI")
+
+
+```
+
+
+```{r MISSINGvideos, echo=FALSE,message=FALSE,warning=FALSE}
+
+library(httr)
+library(rvest)
+
+
+
+htmlpage <- html_session(
+  "https://socialblade.com/youtube/top/country/hr/mostsubscribed",
+  httr::user_agent("Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US)
+                   AppleWebKit/534.20 (KHTML, like Gecko) Chrome/11.0.672.2
+                   Safari/534.20"))
+
+webpage <- htmlpage %>%
+  read_html() 
+
+
+url <- "https://socialblade.com/youtube/top/country/hr/mostsubscribed"
+kept_columns <- c("Record high °F (°C)","Record low °F (°C)")
+webpage <- read_html(url)
+tbls <- html_nodes(webpage, "table")
+# Shows all tables
+tbls
+
+
+```
+
+
+
+
+
+
+
+
+
+

@@ -12,6 +12,8 @@ title: " "
 <br>
 <br>
 
+**08/01/2022** - CroTech competititon [report](https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/TechBrands/demo.html) 
+
 **07/07/2021** - YouTube blog [post](https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/YouTube.html)  
 
 **30/06/2021** - YouTube data and web scrap `code` added 
