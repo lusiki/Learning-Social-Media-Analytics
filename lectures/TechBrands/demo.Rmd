@@ -1,8 +1,8 @@
 ---
 title: "<center><div class='mytitle'>Konkurenti u medijskom prostoru</div></center>"
 subtitle: "<center><div class='mysubtitle'>Bosch, Braun, Phillips, Dyson</div></center>"
-author: ""
-date: ''
+author: "<center><div class='mysubtitle'>Bosch, Braun, Phillips, Dyson</div></center>"
+date: "<center><div class='mysubtitle'>Bosch, Braun, Phillips, Dyson</div></center>"
 output:
   html_document:
     theme: yeti
@@ -18,10 +18,9 @@ output:
   pdf_document:
     toc: yes
     toc_depth: '4'
-
 ---
 
-
+<div class="mycontent">
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, cache=TRUE)
@@ -897,7 +896,7 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 </div>
 
 
-
+</div>
 
 
 
