@@ -1,8 +1,7 @@
 ---
 title: "<center><div class='mytitle'>Konkurenti u medijskom prostoru</div></center>"
-subtitle: "<center><div class='mysubtitle'>Bosch, Braun, Phillips, Dyson</div></center>"
-author: "<center><div class='mysubtitle'>Bosch, Braun, Phillips, Dyson</div></center>"
-date: "<center><div class='mysubtitle'>Bosch, Braun, Phillips, Dyson</div></center>"
+author: "<center><div class='mysubtitle'>(Bosch, Braun, Phillips, Dyson)</div></center>"
+date: ""
 output:
   html_document:
     theme: yeti
@@ -15,9 +14,6 @@ output:
     includes:
       before_body: header.html
       after_body: footer.html
-  pdf_document:
-    toc: yes
-    toc_depth: '4'
 ---
 
 <div class="mycontent">
@@ -37,10 +33,6 @@ output:
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-
 
 
 # **Što je unutra?**
