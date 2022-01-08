@@ -54,7 +54,7 @@ Izvještaj sadržava pregled hrvatskog medijskog prostora za četiri konkurenta 
 <br>
 
 
- U cjelokupnom  medijskom prostoru je u analiziranom periodu bilo ukupno 2677 objava o četiri konkurenta, odnosno 29.1 objava dnevno. Pri tome najveću prisutnost ima brand Bosch, nakon čega slijede Braun i Phillips, a na kraju Dyson. 
+ U cjelokupnom  medijskom prostoru je u analiziranom periodu bilo ukupno 2677 objava o četiri konkurenta, odnosno 29.0978261 objava dnevno. Pri tome najveću prisutnost ima Bosch, nakon čega slijede Braun i Phillips, a na kraju Dyson. 
 
 
 <br>
@@ -25887,12 +25887,10 @@ U ovom dijelu je dan pregled najvažnijih medija, odnosno web-a u youtube-a. va�
 
 
 
-### **Dyson**
-
 
 <br>
 
-# Glavni zaključci
+# **Glavni zaključci**
 
 ***
 
@@ -25908,7 +25906,7 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 - Braun slijedi nakon toga, a Phillips zaostaje
 - U prosjeku ima oko 30 objava dnevno 
 - Najviše se objavljuje na forumima i Web-u
-- 
+- Najrelevantniji mediji su web i youtube
 
 </div>
 

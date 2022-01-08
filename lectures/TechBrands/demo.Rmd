@@ -809,12 +809,10 @@ freqOFmention %>%
 
 
 
-### **Dyson**
-
 
 <br>
 
-# Glavni zaključci
+# **Glavni zaključci**
 
 ***
 
@@ -830,7 +828,7 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 - Braun slijedi nakon toga, a Phillips zaostaje
 - U prosjeku ima oko 30 objava dnevno 
 - Najviše se objavljuje na forumima i Web-u
-- 
+- Najrelevantniji mediji su web i youtube
 
 </div>
 
