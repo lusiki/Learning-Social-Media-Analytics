@@ -44,7 +44,10 @@ library(plotly)
 
 
 ```{r echo = FALSE, message=FALSE,warning=FALSE}
-source("../Creds/api.R")
+
+source(here::here('Creds', 'api.R'))
+
+#source("./Creds/api.R")
 groups <- "185076"
 keywords <- "6528081"
 from_time <- as.character(as.numeric(as.POSIXlt("2021-10-06", format="%Y-%m-%d")))
