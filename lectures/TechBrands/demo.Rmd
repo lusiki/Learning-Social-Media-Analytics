@@ -19,7 +19,7 @@ output:
 <div class="mycontent">
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, cache = F)
 ```
 
 
@@ -219,38 +219,12 @@ brandTitle <- phillips %>%
 <div class = "row">
 
 <div class = "col-sm-4">
-<br><br>Bosch i Braun zajedno imaju više od 60% svih objava i znatno su zastupljeniji u medijskom prostoru od  Phillipsa i Dysona na koje odlazi manje od 15% svih objava. Pri tome je oko 25% svih objava nesvrstano jer je tekst objave anonimiziran.
+<br><br>Bosch i Braun zajedno imaju više od 60% svih objava i znatno su zastupljeniji u medijskom prostoru od  Phillipsa i Dysona na koje odlazi manje od 15% svih objava. Pri tome je oko 25% svih objava ne sadrži riječ u tekstu.
 
 </div>
 
   
 <div class = "col-sm-2">
-```{r echo = FALSE, message=FALSE,warning=FALSE}
-options(digits = 2)
-brandTitle %>% 
-  group_by(kword) %>%
-  summarise(N = n()) %>%
-  ungroup() %>%
-  mutate(Tot = sum(N), 
-         'Udio %' = (N / Tot)*100) %>%
-  select(-Tot) %>%
-  arrange(desc(N)) %>%
-  rename (Brand = kword,
-          'Broj objava' = N) %>%
-  kbl() %>%
-    kable_paper(bootstrap_options = "striped",full_width = F, position = "float_right") %>%
-footnote(general = "*Broj objava u naslovu:")
-```
-
-
-</div>
-  
-<div class = "col-sm-3">
-<br><br>Zanimljivo je primijetiti da je Phillips na zadnjem mjestu po broju objava u kojima se riječ *Phillips* u naslovu objave te da je *Dyson* puno bliži *Braunu* prema ovom kriteriju.
-</div>
-  
-<div class = "col-sm-3">
-
 ```{r, message=FALSE, echo=FALSE}
 options(digits = 2)
 brandTxT %>%
@@ -259,13 +233,41 @@ brandTxT %>%
   ungroup() %>%
   mutate(Tot = sum(N), 
          'Udio %' = (N / Tot)*100) %>%
+  mutate(kword=replace_na(kword, "no brand"))  %>%
   select(-Tot) %>%
   arrange(desc(N)) %>%
   rename (Brand = kword,
           'Broj objava' = N) %>%
-  kbl() %>%
+  kbl(caption = " ") %>%
     kable_paper(bootstrap_options = "striped",full_width = F,position = "float_left") %>%
 footnote(general = "*Broj objava u tekstu:")
+```
+
+
+</div>
+  
+<div class = "col-sm-4">
+<br><br>Zanimljivo je primijetiti da je Phillips na zadnjem mjestu po broju objava u kojima se riječ *Phillips* u naslovu objave te da je *Dyson* puno bliži *Braunu* prema ovom kriteriju. Pri tome oko 91% svih objava ne sadrži riječ u tekstu.
+</div>
+  
+<div class = "col-sm-2">
+
+```{r echo = FALSE, message=FALSE,warning=FALSE}
+options(digits = 2)
+brandTitle %>% 
+  group_by(kword) %>%
+  summarise(N = n()) %>%
+  ungroup() %>%
+  mutate(Tot = sum(N), 
+         'Udio %' = (N / Tot)*100) %>%
+  mutate(kword=replace_na(kword, "no brand"))  %>%
+  select(-Tot) %>%
+  arrange(desc(N)) %>%
+  rename (Brand = kword,
+          'Broj objava' = N) %>%
+  kbl(caption = " ") %>%
+    kable_paper(bootstrap_options = "striped",full_width = F, position = "float_right") %>%
+footnote(general = "*Broj objava u naslovu:")
 ```
 
 </div>
@@ -281,7 +283,7 @@ footnote(general = "*Broj objava u tekstu:")
 
 
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width = 15, fig.align="center", fig.cap="Grafikon: Udio (%) u ukupnom broju dnevnih objava o brandu kroz vrijeme."}
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.height = 6, fig.width = 9, fig.align="center", fig.cap="Grafikon: Udio (%) u ukupnom broju tjednih objava o brandu kroz vrijeme."}
 
 brands <- c("phillips", "bosch", "braun", "dyson")
 
@@ -301,7 +303,7 @@ brandTxT %>%
   geom_bar(stat = "identity") +
   geom_line(size = 0.9) + 
   ggtitle("") +
-  ylab("") +
+  ylab("Ukupnih objava") +
   xlab("") +
   facet_wrap(~ kword) + 
   scale_fill_manual(values = cbp1) +
@@ -312,7 +314,7 @@ brandTxT %>%
     theme(
       legend.position="none",
       panel.spacing = unit(0, "lines"),
-      strip.text.x = element_text(size = 8),
+      strip.text.x = element_text(size = 5),
       plot.title = element_text(size=13)) -> g1
 
 
@@ -325,7 +327,7 @@ ggplotly(g1)
 ```
 <br>
 
-Vremenska dinamika objava potvrđuje Bosch kao tržišnog lidera koji je postojano u rasponu od 50% do 80% svih objava na dnevnoj razini. Znatno veća volatilnost je karakteristična za Braun koji je najčešće ispod 25% dnevnih objava sa povremenim povećanjima medijske aktivnosti preko 50% na (otprilike) tjednoj razini. Phillips je je postojano ispod 20% dnevnih objava sa rijetkim epizodama povećane medijske aktivnosti od 50% i 25% ukupnih objava.
+Pregled objava kroz vrijeme potvrđuje Bosch kao tržišnog lidera koji je postojano u rasponu od 50% do 80% svih objava na tjednoj razini. Znatno veća volatilnost objava je vidljiva za Braun koji je oko ili ispod 25% tjednih objava sa povremenim povećanjima medijske aktivnosti preko 50% na (otprilike) tjednoj razini. Phillips je postojano ispod 20% dnevnih objava sa rijetkim epizodama povećane medijske aktivnosti od 50% i 25% ukupnih objava.
 
 <br>
 
@@ -339,7 +341,7 @@ Vremenska dinamika objava potvrđuje Bosch kao tržišnog lidera koji je postoja
 <div class = "row">
 
 <div class = "col-sm-10">
-<br><br>Najviše medijske aktivnosti (1041 objava) vezano uz četiri konkurenta je u na forumima. Nakon toga slijedi web sa 785 objava što ga čini najvažnijim medijskim prostorom. Nakon toga slijede instagram i facebook sa podjednakim brojem objava pri čemu ni youtube ne zaostaje mnogo. Uzevši u obzir da [se na youtube-u provodi više vremena (pažnje) po objavi nego na drugim medijima](https://datareportal.com/reports/digital-2021-croatia), ovo čini youtube izrazto važnim medijskim prostorom. Iako twitter nije jako popularan medij u Hrvatskoj, 144 objave su i dalje relevantan broj, pogotovo zbog kvalitetnije publike na ovoj mreži (koja je sklonija promovirati proizvod na osnovi kvalitete). Reddit i komentari nisu relevantan medij za analizirane konkurente jer na oba medija odlazi manje od 30 objava u cjelokupnom analiziranom razdoblju. Detaljan pregled se nalazi u tablici na desnoj strani.
+<br><br>Najviše medijske aktivnosti (1041 objava) o četiri konkurenta je u na forumima. Nakon toga slijedi web sa 785 objava što ga čini najvažnijim medijskim prostorom. Nakon toga slijede instagram i facebook sa podjednakim brojem objava pri čemu ni youtube ne zaostaje mnogo. Uzevši u obzir da [se na youtube-u provodi više vremena (pažnje) po objavi nego na drugim medijima](https://datareportal.com/reports/digital-2021-croatia), radi se o izrazito važnom medijskom prostorom. Iako twitter nije jako popularan medij u Hrvatskoj, 144 objave ga i dalje čine značajnim, pogotovo zbog kvalitetnije publike na ovoj mreži (koja je sklonija promovirati proizvod na osnovi kvalitete). Reddit i komentari nisu relevantan medij za analizirane konkurente jer na oba medija odlazi manje od 30 objava u cjelokupnom analiziranom razdoblju. Detaljan pregled se nalazi u tablici na desnoj strani.
 
 </div>
 
@@ -375,9 +377,9 @@ phillips %>%
 
 ```
 
+<br>
 
-
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.height = 8, fig.width = 12, fig.cap = "Grafikon: Udio (%) u ukupnom broju dnevnih objava po mediju kroz vrijeme."}
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.height = 6, fig.width = 9, fig.cap = "Grafikon: Udio (%) u ukupnom broju tjednih objava po mediju kroz vrijeme."}
 
 brandTxT %>%
   mutate(time = as_datetime(time),
@@ -393,7 +395,7 @@ brandTxT %>%
   geom_bar(stat = "identity") +
   geom_line() + 
   ggtitle("") +
-  ylab("") +
+  ylab("Ukupnih objava") +
   xlab("") +
   facet_wrap(~ type) +
   scale_y_continuous(labels = scales::percent_format()) +
@@ -406,7 +408,7 @@ brandTxT %>%
     theme(
       legend.position="none",
       panel.spacing = unit(0, "lines"),
-      strip.text.x = element_text(size = 8),
+      strip.text.x = element_text(size = 4),
       plot.title = element_text(size=13)) -> g2
 
 
@@ -418,7 +420,7 @@ ggplotly(g2)
 
 <br>
 
-Vremenska dinamika objava po medijima jasno ukazuje na znatan i postojan intenzitet objava na forumima na prosječnoj razini od 25% ukupne dnevne aktivnosti sa čestim povećanjima aktivnosti u valovima. Također je vidljiva postojana dinamika aktivnosti na facebook-u na razini od oko 10% dnevnih objava uz vrlo rijetka povećanja aktivnosti. Posebno je zanimljiva dinamika objava na web-u gdje se raspoznaje kostantna dnevna aktivnost na razini od oko 20% ukupnih dnavenih objava uz jedan period znatnog povećanja aktivnosti svakog mjseseca pred kraj/početak mjeseca. Slična dinamika je primjetna i na youtbe platformi uz znatno manji udio dnevnih objava. Usporedivi trendovi se raspoznaju i na twitter-u. 
+Vremenska dinamika objava po medijima jasno ukazuje na znatan i postojan intenzitet objava na forumima na prosječnoj razini od 25% ukupne tjedne aktivnosti sa čestim povećanjima aktivnosti u valovima. Također je vidljiva postojana dinamika aktivnosti na facebook-u na razini od oko 10% dnevnih objava uz vrlo rijetka povećanja aktivnosti. Posebno je zanimljiva dinamika objava na web-u gdje se raspoznaje kostantna tjedna aktivnost na razini od oko 20% ukupnih dnavenih objava uz jedan period znatnog povećanja aktivnosti svakog mjseseca pred kraj/početak mjeseca. Slična dinamika je primjetna i na youtbe platformi uz znatno manji udio tjednih objava. Usporedivi trendovi se raspoznaju i na twitteru. 
 
 <br>
  
@@ -429,11 +431,11 @@ Vremenska dinamika objava po medijima jasno ukazuje na znatan i postojan intenzi
 <br>
 
 
-Zastupljenost brand-ova po medijima je jednaka kao u cjelokupnom medijskom prostoru pa su općeniti lideri ujedno i lideri u svakom pojedinačnom mediju. I pak je zanimljivo prmijetiti da je prednopst koju ima Bosch naveća na forumima i youtube-u dok ja na web-u prednost Bosch-a i Braun-a u odnosu na Phillips znatno manja. Također, Dyson koji zauzima zadnju poziciju u ukupnom medijskom prostoru ima bolju poziciju na youtube-u.
+Zastupljenost brandova u pojedinačnim medijima je jednaka kao u cjelokupnom medijskom prostoru pa su opći lideri ujedno i lideri u svakom pojedinačnom mediju. Ipak je zanimljivo primijetiti da je prednopst koju ima Bosch naveća na forumima i youtube-u dok ja na web-u prednost Bosch-a i Braun-a u odnosu na Phillips znatno manja. Također, Dyson koji zauzima zadnju poziciju u ukupnom medijskom prostoru ima bolju poziciju na youtubeu.
 
 <br>
 
-```{r echo = FALSE, message=FALSE,warning=FALSE, fig.height = 12, fig.width = 15,fig.cap="Grafikon: Broj objava za medij i brand u cjelom razdoblju."}
+```{r echo = FALSE, message=FALSE,warning=FALSE, fig.height = 6, fig.width = 9,fig.cap="Grafikon: Broj objava za medij i brand u cjelom razdoblju."}
 
 
 
@@ -479,7 +481,7 @@ ggplotly(g3)
 
 <br>
 
-Za detaljniji prikazsu izabrani web i youtube. Važnost web-a proizlazi iz obujma objava, a youtube zbog visokog fokusa (attention span) koji korisnici posvećuju sadržaju na ovoj platformi.
+Za detaljniji prikaz medija su izabrani web i youtube. Važnost web-a proizlazi iz obujma objava, a youtube zbog visokog fokusa (attention span) koji korisnici posvećuju sadržaju na ovoj platformi.
 
 <br>
 
@@ -494,7 +496,7 @@ Pregled objava po domenama je izrazito informativan. Prvi grafikon prikazuje uku
 
 <br>
 
-```{r landscapeFreqBrand, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 15, fig.width=12}
+```{r landscapeFreqBrand, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9}
 
 phillips %>%
    mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
@@ -525,11 +527,11 @@ landscapeFreqBrand %>%
       plot.title = element_text(size=8)) +
   coord_flip() -> g4
 
-print(ggplotly(g4))
+ggplotly(g4)
 
 ```
 
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=12}
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9}
 
 phillips %>%
    mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
@@ -563,7 +565,7 @@ landscapeFreqBrand %>%
 ggplotly(g5)
 ```
 
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=12}
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9}
 
 phillips %>%
    mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
@@ -597,7 +599,7 @@ landscapeFreqBrand %>%
 ggplotly(g6)
 ```
 
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=12}
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9}
 
 phillips %>%
    mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
@@ -631,7 +633,7 @@ landscapeFreqBrand %>%
 ggplotly(g7)
 ```
 
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=12}
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9}
 
 phillips %>%
    mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
