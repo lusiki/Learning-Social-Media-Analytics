@@ -19,7 +19,7 @@ output:
 <div class="mycontent">
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, cache=TRUE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
@@ -275,26 +275,45 @@ footnote(general = "*Broj objava u tekstu:")
 <br>
 <br>
 
+
+
+
+
+
+
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width = 15, fig.align="center", fig.cap="Grafikon: Udio (%) u ukupnom broju dnevnih objava o brandu kroz vrijeme."}
 
 brands <- c("phillips", "bosch", "braun", "dyson")
-library(ggtech)
+
+cbp1 <- c("#999999", "#E69F00", "#56B4E9", "#009E73",
+          "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+
+
 brandTxT %>%
   mutate(time = as_datetime(time),
-         time = as.Date(time, format="%Y-%m-%d" )) %>% 
-  group_by(time) %>%
+         time = as.Date(time, format="%Y-%m-%d"),
+         week = floor_date(time, "week")) %>% 
+  group_by(week) %>%
   count(kword) %>% 
   filter(!is.na(kword)) %>%
   mutate(gn = sum(n)) %>% 
-  ggplot(., aes(time, n / gn)) + 
+  ggplot(., aes(week, n / gn, fill=kword)) + 
   geom_bar(stat = "identity") +
-  geom_line() + 
+  geom_line(size = 0.9) + 
   ggtitle("") +
   ylab("") +
   xlab("") +
-  facet_wrap(~ kword) +
+  facet_wrap(~ kword) + 
+  scale_fill_manual(values = cbp1) +
+  scale_colour_manual(values=cbp1) +
   scale_y_continuous(labels = scales::percent_format()) +
-  scale_x_date(labels = date_format("%d-%m")) + theme_wsj()+ scale_colour_wsj("colors6")-> g1
+  scale_x_date(labels = date_format("%d-%m")) +
+  theme_economist(base_family="Verdana") +
+    theme(
+      legend.position="none",
+      panel.spacing = unit(0, "lines"),
+      strip.text.x = element_text(size = 8),
+      plot.title = element_text(size=13)) -> g1
 
 
 
@@ -362,14 +381,15 @@ phillips %>%
 
 brandTxT %>%
   mutate(time = as_datetime(time),
-         time = as.Date(time, format="%Y-%m-%d" )) %>% 
-  group_by(time,type) %>%
+         time = as.Date(time, format="%Y-%m-%d" ),
+         week = floor_date(time,"week")) %>% 
+  group_by(week,type) %>%
   count() %>% 
 #  filter(!is.na(kword)) %>%
   ungroup() %>%
-  group_by(time) %>%
+  group_by(week) %>%
   mutate(gn = sum(n)) %>% 
-  ggplot(., aes(time, n / gn)) + 
+  ggplot(., aes(week, n / gn, fill = type)) + 
   geom_bar(stat = "identity") +
   geom_line() + 
   ggtitle("") +
@@ -380,7 +400,15 @@ brandTxT %>%
   scale_x_date(labels = date_format("%d-%m")) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
   panel.background = element_blank(), axis.line = element_line(colour = "black")) + 
-  theme_economist() -> g2
+  scale_fill_manual(values = cbp1) +
+  scale_colour_manual(values=cbp1) +
+  theme_economist(base_family="Verdana") +
+    theme(
+      legend.position="none",
+      panel.spacing = unit(0, "lines"),
+      strip.text.x = element_text(size = 8),
+      plot.title = element_text(size=13)) -> g2
+
 
 
 ggplotly(g2)
@@ -405,7 +433,7 @@ Zastupljenost brand-ova po medijima je jednaka kao u cjelokupnom medijskom prost
 
 <br>
 
-```{r echo = FALSE, message=FALSE,warning=FALSE, fig.height = 8, fig.width = 13,fig.cap="Grafikon: Broj objava za medij i brand u cjelom razdoblju."}
+```{r echo = FALSE, message=FALSE,warning=FALSE, fig.height = 12, fig.width = 15,fig.cap="Grafikon: Broj objava za medij i brand u cjelom razdoblju."}
 
 
 
@@ -418,7 +446,7 @@ phillips %>%
   summarise(N = n()) %>%
   arrange(desc(N)) %>%
   filter(!is.na(kword) ) %>%
-  ggplot(., aes(kword, N)) + 
+  ggplot(., aes(kword, N, fill=kword)) + 
   geom_bar(stat = "identity") +
   geom_line() + 
   ggtitle("") +
@@ -427,9 +455,16 @@ phillips %>%
   facet_wrap(~ type, scales = "free") + 
 #  scale_y_continuous(labels = scales::percent_format()) +
 #  scale_x_date(labels = date_format("%d-%m")) +
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-  panel.background = element_blank(), axis.line = element_line(colour = "black")) + 
-  theme_economist() -> g3
+#  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+#  panel.background = element_blank(), axis.line = element_line(colour = "black")) + 
+  scale_fill_manual(values = cbp1) +
+  scale_colour_manual(values=cbp1) +
+  theme_economist(base_family="Verdana") +
+    theme(
+      legend.position="none",
+      panel.spacing = unit(0, "lines"),
+      strip.text.x = element_text(size = 8),
+      plot.title = element_text(size=13)) -> g3
 
 ggplotly(g3)
 
@@ -459,7 +494,7 @@ Pregled objava po domenama je izrazito informativan. Prvi grafikon prikazuje uku
 
 <br>
 
-```{r landscapeFreqBrand, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=12}
+```{r landscapeFreqBrand, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 15, fig.width=12}
 
 phillips %>%
    mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
@@ -474,17 +509,23 @@ phillips %>%
   filter(domain != "forum.hr")-> landscapeFreqBrand
   
 landscapeFreqBrand %>%
-  ggplot(., aes(x = reorder(domain,N), y = N)) +
+  ggplot(., aes(x = reorder(domain,N), y = N, fill = kword)) +
   geom_bar(stat = "identity", alpha = 1) +
   facet_wrap(~kword, scales = "free") +
   ylab("Broj objava") +
-  xlab("Izvor") +
-  ggtitle("Pregled po domenama") +
-#  theme_bw() 
-  theme_economist()+
+  xlab("") +
+  ggtitle("Pregled po domenama") + 
+  scale_fill_manual(values = cbp1) +
+  scale_colour_manual(values=cbp1) +
+  theme_economist(base_family="Verdana") +
+    theme(
+      legend.position="none",
+      panel.spacing = unit(0, "lines"),
+      strip.text.x = element_text(size = 5),
+      plot.title = element_text(size=8)) +
   coord_flip() -> g4
 
-ggplotly(g4)
+print(ggplotly(g4))
 
 ```
 
@@ -503,14 +544,20 @@ phillips %>%
   filter(domain != "forum.hr")-> landscapeFreqBrand
   
 landscapeFreqBrand %>%
-  ggplot(., aes(x = reorder(domain,N), y = N)) +
+  ggplot(., aes(x = reorder(domain,N), y = N, fill = kword)) +
   geom_bar(stat = "identity", alpha = 1) +
   facet_wrap(~kword, scales = "free") +
   ylab("Broj objava") +
   xlab("Izvor") +
-  ggtitle("Pregled po domenama (reach)") +
-#  theme_bw() 
-  theme_economist() +
+  ggtitle("Pregled po domenama (reach)") + 
+  scale_fill_manual(values = cbp1) +
+  scale_colour_manual(values=cbp1) +
+  theme_economist(base_family="Verdana") +
+    theme(
+      legend.position="none",
+      panel.spacing = unit(0, "lines"),
+      strip.text.x = element_text(size = 5),
+      plot.title = element_text(size=8))  +
   coord_flip() -> g5
 
 ggplotly(g5)
@@ -531,14 +578,20 @@ phillips %>%
   filter(domain != "forum.hr")-> landscapeFreqBrand
   
 landscapeFreqBrand %>%
-  ggplot(., aes(x = reorder(domain,N), y = N)) +
+  ggplot(., aes(x = reorder(domain,N), y = N, fill = kword)) +
   geom_bar(stat = "identity", alpha = 1) +
   facet_wrap(~kword, scales = "free") +
   ylab("Broj objava") +
   xlab("Izvor") +
-  ggtitle("Pregled po domenama (engagement)") +
-#  theme_bw() 
-  theme_economist() +
+  ggtitle("Pregled po domenama (engagement)") + 
+  scale_fill_manual(values = cbp1) +
+  scale_colour_manual(values=cbp1) +
+  theme_economist(base_family="Verdana") +
+    theme(
+      legend.position="none",
+      panel.spacing = unit(0, "lines"),
+      strip.text.x = element_text(size = 5),
+      plot.title = element_text(size=8)) +
   coord_flip() -> g6
 
 ggplotly(g6)
@@ -559,14 +612,20 @@ phillips %>%
   filter(domain != "forum.hr")-> landscapeFreqBrand
   
 landscapeFreqBrand %>%
-  ggplot(., aes(x = reorder(domain,N), y = N)) +
+  ggplot(., aes(x = reorder(domain,N), y = N, fill = kword)) +
   geom_bar(stat = "identity", alpha = 1) +
   facet_wrap(~kword, scales = "free") +
   ylab("Broj objava") +
   xlab("Izvor") +
-  ggtitle("Pregled po domenama (prValue)") +
-#  theme_bw() 
-  theme_economist() +
+  ggtitle("Pregled po domenama (prValue)") + 
+  scale_fill_manual(values = cbp1) +
+  scale_colour_manual(values=cbp1) +
+  theme_economist(base_family="Verdana") +
+    theme(
+      legend.position="none",
+      panel.spacing = unit(0, "lines"),
+      strip.text.x = element_text(size = 5),
+      plot.title = element_text(size=8)) +
   coord_flip() -> g7
 
 ggplotly(g7)
@@ -587,15 +646,23 @@ phillips %>%
   filter(domain != "forum.hr") -> landscapeFreqBrand
   
 landscapeFreqBrand %>%
-  ggplot(., aes(x = reorder(domain,N), y = N)) +
+  ggplot(., aes(x = reorder(domain,N), y = N, fill = kword)) +
   geom_bar(stat = "identity", alpha = 1) +
   facet_wrap(~kword, scales = "free") +
   ylab("Broj objava") +
   xlab("Izvor") +
-  ggtitle("Pregled po domenama (virality)") +
-#  theme_bw() 
-  theme_economist() +
-  coord_flip() 
+  ggtitle("Pregled po domenama (virality)") + 
+  scale_fill_manual(values = cbp1) +
+  scale_colour_manual(values=cbp1) +
+  theme_economist(base_family="Verdana") +
+    theme(
+      legend.position="none",
+      panel.spacing = unit(0, "lines"),
+      strip.text.x = element_text(size = 5),
+      plot.title = element_text(size=8)) +
+  coord_flip()-> g8
+
+ggplotly(g8) 
 ```
 
 
@@ -626,13 +693,19 @@ phillips %>%
           #  Virality =  sum(virality, na.rm = TRUE),
             prValue =  sum(prValue, na.rm = TRUE)) %>%
   gather(Var, Val,-kword) %>%
-  ggplot(., aes(x = kword, y = Val)) +
+  ggplot(., aes(x = kword, y = Val, fill = Var)) +
   geom_bar(stat = "identity", alpha = 1) +
   facet_wrap(~ Var, scales = "free") +
   ylab("Broj objava") +
-  xlab("") +
-#  theme_bw() 
-  theme_economist() -> g8
+  xlab("") + 
+  scale_fill_manual(values = cbp1) +
+  scale_colour_manual(values=cbp1) +
+  theme_economist(base_family="Verdana") +
+    theme(
+      legend.position="none",
+      panel.spacing = unit(0, "lines"),
+      strip.text.x = element_text(size = 5),
+      plot.title = element_text(size=8)) -> g8
 
 ggplotly(g8)
   
