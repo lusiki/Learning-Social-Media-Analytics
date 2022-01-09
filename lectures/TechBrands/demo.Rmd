@@ -598,7 +598,7 @@ ggplotly(g5)
 
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block6"> Grafikon: Broj objava po domenama prema kriteriju angažiranosti (engagement). </button>  
-<div id="Block7" class="collapse">
+<div id="Block6" class="collapse">
 
 
 ```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9, fig.cap="Grafikon: Broj objava po domenama prema kriteriju angažiranosti (engagement)."}
@@ -640,8 +640,8 @@ ggplotly(g6)
 <br>
 
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block8"> Grafikon: Broj objava po domenama prema kriteriju PR vrijednosti. </button>  
-<div id="Block8" class="collapse">
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block7"> Grafikon: Broj objava po domenama prema kriteriju PR vrijednosti. </button>  
+<div id="Block7" class="collapse">
 
 
 ```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9, fig.cap="Grafikon: Broj objava po domenama prema kriteriju PR vrijednosti."}
@@ -682,8 +682,8 @@ ggplotly(g7)
 
 <br>
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block9"> Grafikon: Broj objava po domenama prema kriteriju viralnosti. </button>  
-<div id="Block9" class="collapse">  
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block8"> Grafikon: Broj objava po domenama prema kriteriju viralnosti. </button>  
+<div id="Block8" class="collapse">  
 
 ```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9, fig.cap="Grafikon: Broj objava po domenama prema kriteriju viralnosti."}
 
@@ -735,8 +735,8 @@ Tržišni lider Bosch je najzastupljeniji brand na platformi YouTube prema svim 
 <br>
 
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block10"> Grafikon: Pregled prema vrsti aktivnosti na YouTube platformi. </button>  
-<div id="Block10," class="collapse"> 
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block9"> Grafikon: Pregled prema vrsti aktivnosti na YouTube platformi. </button>  
+<div id="Block9" class="collapse"> 
 
 ```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9,fig.cap="Grafikon: Pregled prema vrsti aktivnosti na YouTube platformi."}
 phillips %>%
@@ -772,7 +772,6 @@ ggplotly(g8)
  
 ```
 
-
 </div>
 
 <br>
@@ -781,10 +780,8 @@ Detalnjiji pregled aktivnosti na platformi YouTube daje uvid u najvažnije stran
 
 <br>
 
-
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block11"> Tablica: Najvažniji autori na YouTube platformi. </button>  
-<div id="Block11," class="collapse"> 
-
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block10"> Tablica: Najvažniji autori na YouTube platformi. </button>  
+<div id="Block10" class="collapse">
 
 ```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 8, fig.width=5}
 phillips %>%
@@ -950,10 +947,8 @@ phillips %>%
   filter(!is.na(word)) -> rijeci_clean
 ```
 
-
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block12"> Tablica: Najčešće riječi na YouTubee o brandu Bosch. </button>  
-<div id="Block12," class="collapse"> 
-
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block11"> Tablica: Najčešće riječi na YouTubee o brandu Bosch. </button>  
+<div id="Block11" class="collapse">
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=5}
 
@@ -1008,10 +1003,8 @@ phillips %>%
   filter(!is.na(word)) -> rijeci_clean
 ```
 
-
-
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block13"> Tablica: Najčešće riječi na forumima o brandu Phillips. </button>  
-<div id="Block13," class="collapse"> 
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block12"> Tablica: Najčešće riječi na forumima o brandu Phillips. </button>  
+<div id="Block12" class="collapse">
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=5}
 
@@ -1036,7 +1029,6 @@ freqOFmention %>%
      scroll_box(width = "450px", height = "400px") 
 
 ```
-
 
 </div>
 
