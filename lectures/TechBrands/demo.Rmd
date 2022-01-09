@@ -680,7 +680,7 @@ Tržišni lider Bosch je najzastupljeniji brand na platformi YouTube prema svim 
 
 <br>
 
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15,,fig.cap="Grafikon: Pregled prema vrsti aktivnosti"}
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9,fig.cap="Grafikon: Pregled prema vrsti aktivnosti na YouTube platformi"}
 phillips %>%
    mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
                             grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
@@ -706,7 +706,7 @@ phillips %>%
     theme(
       legend.position="none",
       panel.spacing = unit(0, "lines"),
-      strip.text.x = element_text(size = 5),
+      strip.text.x = element_text(size = 10),
       plot.title = element_text(size=8)) -> g8
 
 ggplotly(g8)
@@ -716,7 +716,7 @@ ggplotly(g8)
 
 <br>
 
-Detalnjiji pregled aktivnosti na platformi YouTube omogućuje uvid u najvažnije stranice i *influencere* prema vrsti aktivnosti. Primjeric, za Bosch je vidljivo da najviše pregleda privlači njihova službena YouTube stranica te da su prema broju komentara i like-ova najvažniji influenceri AutoMarket.hr, Hanuma kocht  i Slavica de Jong.
+Detalnjiji pregled aktivnosti na platformi YouTube daje uvid u najvažnije stranice i *influencere* prema vrsti aktivnosti. Za Bosch je vidljivo da najviše pregleda privlači njihova službena YouTube stranica te da su prema broju komentara i like-ova najvažniji influenceri AutoMarket.hr, Hanuma kocht i Slavica de Jong.
 
 <br>
 
@@ -740,7 +740,7 @@ phillips %>%
           'Autor' = author) %>%
   kbl() %>%
     kable_paper(bootstrap_options = "striped",full_width = F, position = "left")  %>%
-     scroll_box(width = "450px", height = "700px") %>%
+     scroll_box(width = "450px", height = "400px") %>%
 footnote(general = "*Broj objava u tekstu:") 
   
 ```
@@ -864,6 +864,10 @@ stop_corpus <- my_stop_words %>%
 
 <br>
 
+
+
+<br>
+
 ```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
 
 phillips %>%
@@ -897,9 +901,9 @@ rijeci_clean %>%
 freqOFmention %>%
   rename (Brand = word,
           'Number of mentions' = n) %>%
-  kbl(caption = "Najčešće riječi na YouTubee o brandu Phillips") %>%
+  kbl(caption = "Najčešće riječi na YouTubee o brandu Bosch") %>%
     kable_paper(bootstrap_options = "striped",full_width = F, position = "left")  %>%
-     scroll_box(width = "550px", height = "700px") 
+     scroll_box(width = "450px", height = "400px") 
 
 
 
@@ -951,7 +955,7 @@ freqOFmention %>%
           'Number of mentions' = n) %>%
   kbl(caption = "Najčešće riječi na forumima o brandu Phillips") %>%
     kable_paper(bootstrap_options = "striped",full_width = F, position = "left")  %>%
-     scroll_box(width = "550px", height = "700px") 
+     scroll_box(width = "450px", height = "400px") 
 
 ```
 
