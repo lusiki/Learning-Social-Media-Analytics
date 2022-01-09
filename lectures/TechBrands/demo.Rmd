@@ -113,8 +113,8 @@ phillips %>%
 #   summarise(avg = mean(mean_X1)) -> avg
 ```
 
-<br>
-<br>
+
+
 <br>
 <br>
 
@@ -513,11 +513,11 @@ Pregled objava po domenama je izrazito informativan. Prvi grafikon prikazuje uku
 <br>
 
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block4"> Reach </button>  
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block4"> Grafikon: Broj objava po domenama. </button>  
 <div id="Block4" class="collapse">
 
 
-```{r landscapeFreqBrand, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9}
+```{r landscapeFreqBrand, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9 , fig.cap="Grafikon: Broj objava po domenama."}
 
 phillips %>%
    mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
@@ -554,11 +554,12 @@ ggplotly(g4)
 
 </div>
 
+<br>
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block5"> Reach </button>  
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block5"> Grafikon: Broj objava po domenama prema kriteriju dosega (reach). </button>  
 <div id="Block5" class="collapse">
 
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9}
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9, fig.cap="Grafikon: Broj objava po domenama prema kriteriju dosega (reach)."}
 
 phillips %>%
    mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
@@ -578,7 +579,7 @@ landscapeFreqBrand %>%
   facet_wrap(~kword, scales = "free") +
   ylab("Broj objava") +
   xlab("Izvor") +
-  ggtitle("Pregled po domenama (reach)") + 
+  ggtitle("") + 
   scale_fill_manual(values = cbp1) +
   scale_colour_manual(values=cbp1) +
   theme_economist(base_family="Verdana") +
@@ -591,17 +592,16 @@ landscapeFreqBrand %>%
 
 ggplotly(g5)
 ```
-
 </div>
 
 <br>
 
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block6"> Engagement </button>  
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block6"> Grafikon: Broj objava po domenama prema kriteriju angažiranosti (engagement). </button>  
 <div id="Block7" class="collapse">
 
 
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9}
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9, fig.cap="Grafikon: Broj objava po domenama prema kriteriju angažiranosti (engagement)."}
 
 phillips %>%
    mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
@@ -621,7 +621,7 @@ landscapeFreqBrand %>%
   facet_wrap(~kword, scales = "free") +
   ylab("Broj objava") +
   xlab("Izvor") +
-  ggtitle("Pregled po domenama (engagement)") + 
+  ggtitle("") + 
   scale_fill_manual(values = cbp1) +
   scale_colour_manual(values=cbp1) +
   theme_economist(base_family="Verdana") +
@@ -640,11 +640,11 @@ ggplotly(g6)
 <br>
 
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block8"> PRVrijednost </button>  
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block8"> Grafikon: Broj objava po domenama prema kriteriju PR vrijednosti. </button>  
 <div id="Block8" class="collapse">
 
 
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9}
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9, fig.cap="Grafikon: Broj objava po domenama prema kriteriju PR vrijednosti."}
 
 phillips %>%
    mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
@@ -664,7 +664,7 @@ landscapeFreqBrand %>%
   facet_wrap(~kword, scales = "free") +
   ylab("Broj objava") +
   xlab("Izvor") +
-  ggtitle("Pregled po domenama (prValue)") + 
+  ggtitle("") + 
   scale_fill_manual(values = cbp1) +
   scale_colour_manual(values=cbp1) +
   theme_economist(base_family="Verdana") +
@@ -682,10 +682,10 @@ ggplotly(g7)
 
 <br>
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block9"> Viralnost </button>  
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block9"> Grafikon: Broj objava po domenama prema kriteriju viralnosti. </button>  
 <div id="Block9" class="collapse">  
 
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9}
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9, fig.cap="Grafikon: Broj objava po domenama prema kriteriju viralnosti."}
 
 phillips %>%
    mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
@@ -705,7 +705,7 @@ landscapeFreqBrand %>%
   facet_wrap(~kword, scales = "free") +
   ylab("Broj objava") +
   xlab("Izvor") +
-  ggtitle("Pregled po domenama (virality)") + 
+  ggtitle("") + 
   scale_fill_manual(values = cbp1) +
   scale_colour_manual(values=cbp1) +
   theme_economist(base_family="Verdana") +
@@ -735,10 +735,10 @@ Tržišni lider Bosch je najzastupljeniji brand na platformi YouTube prema svim 
 <br>
 
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block10"> Grafikon: Pregled prema vrsti aktivnosti na YouTube platformi </button>  
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block10"> Grafikon: Pregled prema vrsti aktivnosti na YouTube platformi. </button>  
 <div id="Block10," class="collapse"> 
 
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9,fig.cap="Grafikon: Pregled prema vrsti aktivnosti na YouTube platformi"}
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9,fig.cap="Grafikon: Pregled prema vrsti aktivnosti na YouTube platformi."}
 phillips %>%
    mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
                             grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
@@ -774,11 +774,17 @@ ggplotly(g8)
 
 
 </div>
+
 <br>
 
 Detalnjiji pregled aktivnosti na platformi YouTube daje uvid u najvažnije stranice i *influencere* prema vrsti aktivnosti. Za Bosch je vidljivo da najviše pregleda privlači njihova službena YouTube stranica te da su prema broju komentara i like-ova najvažniji influenceri AutoMarket.hr, Hanuma kocht i Slavica de Jong.
 
 <br>
+
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block11"> Tablica: Najvažniji autori na YouTube platformi. </button>  
+<div id="Block11," class="collapse"> 
+
 
 ```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 8, fig.width=5}
 phillips %>%
@@ -805,6 +811,7 @@ footnote(general = "*Broj objava u tekstu:")
   
 ```
 
+</div>
 
 <br>
 
@@ -943,6 +950,11 @@ phillips %>%
   filter(!is.na(word)) -> rijeci_clean
 ```
 
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block12"> Tablica: Najčešće riječi na YouTubee o brandu Bosch. </button>  
+<div id="Block12," class="collapse"> 
+
+
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=5}
 
 rijeci_clean %>%
@@ -969,6 +981,7 @@ freqOFmention %>%
 
 ```
 
+</div>
 
 <br>
 
@@ -995,6 +1008,11 @@ phillips %>%
   filter(!is.na(word)) -> rijeci_clean
 ```
 
+
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block13"> Tablica: Najčešće riječi na forumima o brandu Phillips. </button>  
+<div id="Block13," class="collapse"> 
+
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=5}
 
 rijeci_clean %>%
@@ -1020,7 +1038,7 @@ freqOFmention %>%
 ```
 
 
-
+</div>
 
 <br>
 
