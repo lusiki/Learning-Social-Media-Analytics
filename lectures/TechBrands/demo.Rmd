@@ -340,7 +340,7 @@ ggplotly(g1)
 <br>
 
 - Vremenski također pregled potvrđuje Bosch kao tržišnog lidera
-<br><br>
+<br>
 - *Bosch* je postojano u rasponu od 50% do 80% svih objava na tjednoj razini
 <br>
 - Znatno veća volatilnost objava za Braun 
@@ -361,7 +361,7 @@ ggplotly(g1)
 <div class = "row">
 
 <div class = "col-sm-10">
-<br>
+
 - Najviše aktivnosti na forumima
 <br>
 - Nakon toga web 
