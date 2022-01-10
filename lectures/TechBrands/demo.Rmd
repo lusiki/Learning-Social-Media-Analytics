@@ -362,25 +362,17 @@ ggplotly(g1)
 
 <div class = "col-sm-10">
 <br>
-<br>
-<br>
 - Najviše aktivnosti na forumima
 <br>
 - Nakon toga web 
 <br>
 - Manji udjeli na društvenim medijima i YouTube-u ostavljaju velik prostor za napredak
 <br>
-<br>
-<br>
-Najviše medijske aktivnosti (1041 objava) vezano uz četiri konkurenta je u na forumima. Nakon toga slijedi web sa 785 objava što ga čini najvažnijim medijskim prostorom. Nakon toga slijede instagram i facebook sa podjednakim brojem objava pri čemu ni youtube ne zaostaje mnogo. Uzevši u obzir da [se na youtube-u provodi više vremena (pažnje) po objavi nego na drugim medijima](https://datareportal.com/reports/digital-2021-croatia), ovo čini youtube izrazto važnim medijskim prostorom. Iako twitter nije jako popularan medij u Hrvatskoj, 144 objave su i dalje relevantan broj, pogotovo zbog kvalitetnije publike na ovoj mreži (koja je sklonija promovirati proizvod na osnovi kvalitete). Reddit i komentari nisu relevantan medij za analizirane konkurente jer na oba medija odlazi manje od 30 objava u cjelokupnom analiziranom razdoblju. Detaljan pregled se nalazi u tablici na desnoj strani.
-
-
-
 
 </div>
 
 <div class = "col-sm-2">
-<br>
+
 ```{r echo = FALSE, message=FALSE,warning=FALSE}
 phillips %>%
   group_by(type) %>%
@@ -400,7 +392,6 @@ phillips %>%
 </div>
 </div>
 
-
 ```{r echo = FALSE, eval=FALSE, include=FALSE, message=FALSE,warning=FALSE}
 
 ##### Pregled po brand-u (toolkit)
@@ -414,6 +405,8 @@ phillips %>%
 ```
 
 <br>
+
+
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block2"> Grafikon: Udio (%) u ukupnom broju tjednih objava po mediju kroz vrijeme. </button>  
 <div id="Block2" class="collapse">
@@ -468,7 +461,7 @@ ggplotly(g2)
 <br>
 - Tjedne objave na web-u na razini od oko 20% ukupnih objava uz povećanja aktivnosti pred kraj/početak mjeseca
 <br>
-- Slična dinamika je primjetna i na youtbe uz znatno manji udio tjednih objava.
+- Slična dinamika je primjetna i na YouTube-u uz znatno manji udio tjednih objava
 <br>
 - Usporedivi trendovi i na twitteru. 
 
@@ -482,7 +475,7 @@ ggplotly(g2)
 
 - Zastupljenost brandova u pojedinačnim medijima je jednaka kao u cjelokupnom medijskom prostoru
 <br>
-- Bosch ima najveću prednost na forumima i youtube
+- Bosch ima najveću prednost na forumima i YouTube-u
 <br>
 - Na web-u je prednost Bosch-a i Braun-a u odnosu na Phillips znatno manja
 <br>
