@@ -131,9 +131,9 @@ phillips %>%
 <br><br>
 - sve medijske objave koje sadrže naziv branda u **razdoblju od tri mjeseca** (2021/10/06 do 2022/01/06)
 <br><br>
-- ukupno 2677 objava, odnosno `r avg` objava dnevno
+- ukupno 2,677 objava, odnosno `r avg` objava dnevno
 <br><br>
-- ukupno XXX riječi u svim tekstovima
+- ukupno 61,505 riječi u svim tekstovima
 
 <br>
 
@@ -989,7 +989,7 @@ phillipstxt %>%
                             grepl("bosch", MENTION_SNIPPET, ignore.case = TRUE) ~ "bosch",
                             grepl("braun", MENTION_SNIPPET, ignore.case = TRUE) ~ "braun",
                             grepl("dyson", MENTION_SNIPPET, ignore.case = TRUE) ~ "dyson")) %>%
-  filter(SOURCE_TYPE == "web" & kword == "bosch") %>%
+#  filter(SOURCE_TYPE == "web" & kword == "bosch") %>%
   unnest_tokens(word, MENTION_SNIPPET) %>%
   anti_join(stop_corpus, by = "word") %>%
   mutate(word = gsub("\\d+", NA, word)) %>%
@@ -1036,7 +1036,7 @@ freqOFmention %>%
 
 <br>
 
-- Najrelevantnije riječi su: slušalice,brijač, brada, kamenac, kosa i dr.
+- Najrelevantnije riječi na Facebooku su: slušalice,brijač, brada, kamenac, kosa i dr.
 
 ```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
 
@@ -1050,7 +1050,7 @@ phillipstxt %>%
   anti_join(stop_corpus, by = "word") %>%
   mutate(word = gsub("\\d+", NA, word)) %>%
   mutate(word = gsub("^[a-zA-Z]$", NA, word)) %>%
-  filter(!is.na(word)) -> rijeci_clean
+  filter(!is.na(word)) -> philFB
 ```
 
 <br>
@@ -1060,7 +1060,7 @@ phillipstxt %>%
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=5}
 
-rijeci_clean %>%
+philFB %>%
 #  filter(word %in% c("xiaomi","samsung","vivo","huawei")) %>%
   group_by(word) %>%
   summarise(Reach =  sum(REACH, na.rm = TRUE),
@@ -1081,6 +1081,93 @@ freqOFmention %>%
      scroll_box(width = "550px", height = "400px") 
 
 ```
+
+</div>
+
+<br>
+
+
+- Sonicare četkica postiže najveći doseg na Instagramu
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block13"> "Tablica: Riječi koje postižu najveći doseg na Instagramu. </button>  
+<div id="Block13" class="collapse">
+
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
+phillipstxt %>%
+   mutate(kword = case_when(grepl("phill", MENTION_SNIPPET, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", MENTION_SNIPPET, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", MENTION_SNIPPET, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", MENTION_SNIPPET, ignore.case = TRUE) ~ "dyson")) %>%
+  filter(SOURCE_TYPE == "instagram" & kword == "phillips") %>%
+  unnest_tokens(word, MENTION_SNIPPET) %>%
+  anti_join(stop_corpus, by = "word") %>%
+  mutate(word = gsub("\\d+", NA, word)) %>%
+  mutate(word = gsub("^[a-zA-Z]$", NA, word)) %>%
+  filter(!is.na(word)) -> philINSTA
+
+
+philINSTA %>%
+#  filter(word %in% c("xiaomi","samsung","vivo","huawei")) %>%
+  group_by(word) %>%
+  summarise(Reach =  sum(REACH, na.rm = TRUE),
+         #    FollowerCount =  sum(FOLLOWERS_COUNT, na.rm = TRUE),
+         #   Engagement =  sum(engagement, na.rm = TRUE),
+            Like =  sum(LIKE_COUNT, na.rm = TRUE),
+            Comment =  sum(COMMENT_COUNT, na.rm = TRUE),
+          #  ShareCount =  sum(SHARE_COUNT, na.rm = TRUE),
+            n = n()) %>%
+  arrange(desc(Like))-> freqOFmention
+
+
+freqOFmention %>%
+  rename (Brand = word,
+          'Number of mentions' = n) %>%
+  kbl(caption = "Riječi koje postižu najveći doseg na Instagramu") %>%
+    kable_paper(bootstrap_options = "striped",full_width = F, position = "left")  %>%
+     scroll_box(width = "550px", height = "400px") 
+
+
+```
+
+
+</div>
+
+<br>
+
+
+- Juraj Šebalj je najvažniji Phillipsov influencer na Facebook-u. Druge influncere pogledaj u tablici.
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block14"> "Tablica: Najvažniji influenceri na Facebook-u. </button>  
+<div id="Block14" class="collapse">
+
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
+phillipstxt %>%
+   mutate(kword = case_when(grepl("phill", MENTION_SNIPPET, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", MENTION_SNIPPET, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", MENTION_SNIPPET, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", MENTION_SNIPPET, ignore.case = TRUE) ~ "dyson")) %>%
+  filter(SOURCE_TYPE == "facebook" & kword == "phillips") %>%
+  group_by(AUTHOR) %>%
+  summarise(Like =  sum(LIKE_COUNT, na.rm = TRUE),
+         #    FollowerCount =  sum(FOLLOWERS_COUNT, na.rm = TRUE),
+         #   Engagement =  sum(engagement, na.rm = TRUE),
+            Reach =  sum(REACH, na.rm = TRUE),
+         #   Comment =  sum(COMMENT_COUNT, na.rm = TRUE),
+          #  ShareCount =  sum(SHARE_COUNT, na.rm = TRUE),
+            n = n()) %>%
+  arrange(desc(Like))-> freqOFmention
+
+
+freqOFmention %>%
+ # rename (Brand = word,
+ #         'Number of mentions' = n) %>%
+  kbl(caption = "Najvažniji influenceri na Facebook-u") %>%
+    kable_paper(bootstrap_options = "striped",full_width = F, position = "left")  %>%
+     scroll_box(width = "350px", height = "400px") 
+
+
+```
+
 
 </div>
 
