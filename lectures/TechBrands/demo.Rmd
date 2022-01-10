@@ -997,7 +997,7 @@ phillipstxt %>%
   filter(!is.na(word)) -> rijeci_clean
 ```
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block11"> Tablica: Najčešće riječi na Web-u o brandu Bosch. </button>  
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block11"> Tablica: Najčešće riječi na Web-u. </button>  
 <div id="Block11" class="collapse">
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=5}
@@ -1055,7 +1055,7 @@ phillipstxt %>%
 
 <br>
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block12"> Tablica: Najčešće riječi na Facebook-u o brandu Phillips. </button>  
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block12"> Tablica: Najvažnije riječi na Facebook-u. </button>  
 <div id="Block12" class="collapse">
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=5}
