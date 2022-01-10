@@ -99,7 +99,8 @@ options(digits = 2)
 phillips %>%
   mutate(time = as_datetime(time),
          time = as.Date(time, format="%Y-%m-%d" )) %>%
-  mutate(day = day(time)) %>%
+  mutate(day = day(time),
+        (week = week(time))) %>%
   group_by(time) %>%
   summarize(mean_X1 = n()) %>%
   summarise(avg = mean(mean_X1)) -> avg
@@ -178,10 +179,11 @@ phillips %>%
 <br>
 
 
-- najveću medijsku prisutnost ima Bosch, nakon toga slijede Braun i Phillips, a na kraju Dyson
+- najveću medijsku prisutnost ima *Bosch*, nakon toga slijede *Braun* i *Phillips*, a na kraju *Dyson*
 <br><br>
 - tržišni lideri dominiraju na svakom pojedinačnom mediju i konzistentno kroz cijelo promatrano razdoblje
-
+<br><br>
+- najvažniji medij je Web, najviše aktivnosti na forumima, a najveći prostor za rast YouTube
 
 <br>
 
@@ -219,12 +221,17 @@ brandTitle <- phillips %>%
 <div class = "row">
 
 <div class = "col-sm-4">
-<br><br>Bosch i Braun zajedno imaju više od 60% svih objava i znatno su zastupljeniji u medijskom prostoru od  Phillipsa i Dysona na koje odlazi manje od 15% svih objava. Pri tome je oko 25% svih objava ne sadrži riječ u tekstu.
+- 60% svih objava imaju Bosch i Braun 
+<br>
+- manje od 15% odlazi na Phillips i Dyson 
+<br>
+- 25% svih objava ne sadrži riječ u tekstu (umanjena vrijednost objave)
 
 </div>
 
   
 <div class = "col-sm-2">
+<br>
 ```{r, message=FALSE, echo=FALSE}
 options(digits = 2)
 brandTxT %>%
@@ -238,20 +245,23 @@ brandTxT %>%
   arrange(desc(N)) %>%
   rename (Brand = kword,
           'Broj objava' = N) %>%
-  kbl(caption = " ") %>%
+  kbl(caption = "Broj objava u tekstu") %>%
     kable_paper(bootstrap_options = "striped",full_width = F,position = "float_left") %>%
-footnote(general = "*Broj objava u tekstu:")
+footnote(general = "")
 ```
-
 
 </div>
   
 <div class = "col-sm-4">
-<br><br>Zanimljivo je primijetiti da je Phillips na zadnjem mjestu po broju objava u kojima se riječ *Phillips* u naslovu objave te da je *Dyson* puno bliži *Braunu* prema ovom kriteriju. Pri tome oko 91% svih objava ne sadrži riječ u tekstu.
+- *Phillips* je na zadnjem mjestu po broju objava u naslovu (niska vidljivost branda) 
+<br>
+- *Dyson* puno bliži *Braunu* prema broju objava u naslovu (bolja pozicioniranost od Phillips-a)
+<br>
+- 91% svih objava ne sadrži riječ u naslovu (potencijal za rast prisutnosti)
 </div>
   
 <div class = "col-sm-2">
-
+<br>
 ```{r echo = FALSE, message=FALSE,warning=FALSE}
 options(digits = 2)
 brandTitle %>% 
@@ -265,9 +275,9 @@ brandTitle %>%
   arrange(desc(N)) %>%
   rename (Brand = kword,
           'Broj objava' = N) %>%
-  kbl(caption = " ") %>%
+  kbl(caption = "Broj objava u naslovu: ") %>%
     kable_paper(bootstrap_options = "striped",full_width = F, position = "float_right") %>%
-footnote(general = "*Broj objava u naslovu:")
+footnote()
 ```
 
 </div>
@@ -276,8 +286,6 @@ footnote(general = "*Broj objava u naslovu:")
 
 <br>
 <br>
-
-
 
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block1"> Grafikon: Udio (%) u ukupnom broju tjednih objava o brandu kroz vrijeme. </button>  
@@ -331,7 +339,15 @@ ggplotly(g1)
 
 <br>
 
-Pregled objava kroz vrijeme potvrđuje Bosch kao tržišnog lidera koji je postojano u rasponu od 50% do 80% svih objava na tjednoj razini. Znatno veća volatilnost objava je vidljiva za Braun koji je oko ili ispod 25% tjednih objava sa povremenim povećanjima medijske aktivnosti preko 50% na (otprilike) tjednoj razini. Phillips je postojano ispod 20% dnevnih objava sa rijetkim epizodama povećane medijske aktivnosti od 50% i 25% ukupnih objava.
+- Vremenski također pregled potvrđuje Bosch kao tržišnog lidera
+<br><br>
+- *Bosch* je postojano u rasponu od 50% do 80% svih objava na tjednoj razini
+<br>
+- Znatno veća volatilnost objava za Braun 
+<br>
+- *Braun* oko ili ispod 25% tjednih objava sa povremenim povećanjima medijske aktivnosti preko 50% 
+<br>
+- *Phillips* postojano ispod 20% dnevnih objava sa rijetkim epizodama povećane medijske aktivnosti od 50% i 25%
 
 <br>
 
@@ -345,11 +361,26 @@ Pregled objava kroz vrijeme potvrđuje Bosch kao tržišnog lidera koji je posto
 <div class = "row">
 
 <div class = "col-sm-10">
-<br><br>Najviše medijske aktivnosti (1041 objava) o četiri konkurenta je u na forumima. Nakon toga slijedi web sa 785 objava što ga čini najvažnijim medijskim prostorom. Nakon toga slijede instagram i facebook sa podjednakim brojem objava pri čemu ni youtube ne zaostaje mnogo. Uzevši u obzir da [se na youtube-u provodi više vremena (pažnje) po objavi nego na drugim medijima](https://datareportal.com/reports/digital-2021-croatia), radi se o izrazito važnom medijskom prostorom. Iako twitter nije jako popularan medij u Hrvatskoj, 144 objave ga i dalje čine značajnim, pogotovo zbog kvalitetnije publike na ovoj mreži (koja je sklonija promovirati proizvod na osnovi kvalitete). Reddit i komentari nisu relevantan medij za analizirane konkurente jer na oba medija odlazi manje od 30 objava u cjelokupnom analiziranom razdoblju. Detaljan pregled se nalazi u tablici na desnoj strani.
+<br>
+<br>
+<br>
+- Najviše aktivnosti na forumima
+<br>
+- Nakon toga web 
+<br>
+- Manji udjeli na društvenim medijima i YouTube-u ostavljaju velik prostor za napredak
+<br>
+<br>
+<br>
+Najviše medijske aktivnosti (1041 objava) vezano uz četiri konkurenta je u na forumima. Nakon toga slijedi web sa 785 objava što ga čini najvažnijim medijskim prostorom. Nakon toga slijede instagram i facebook sa podjednakim brojem objava pri čemu ni youtube ne zaostaje mnogo. Uzevši u obzir da [se na youtube-u provodi više vremena (pažnje) po objavi nego na drugim medijima](https://datareportal.com/reports/digital-2021-croatia), ovo čini youtube izrazto važnim medijskim prostorom. Iako twitter nije jako popularan medij u Hrvatskoj, 144 objave su i dalje relevantan broj, pogotovo zbog kvalitetnije publike na ovoj mreži (koja je sklonija promovirati proizvod na osnovi kvalitete). Reddit i komentari nisu relevantan medij za analizirane konkurente jer na oba medija odlazi manje od 30 objava u cjelokupnom analiziranom razdoblju. Detaljan pregled se nalazi u tablici na desnoj strani.
+
+
+
 
 </div>
 
 <div class = "col-sm-2">
+<br>
 ```{r echo = FALSE, message=FALSE,warning=FALSE}
 phillips %>%
   group_by(type) %>%
@@ -359,6 +390,7 @@ phillips %>%
          'Udio %' = (N / Tot)*100) %>%
   select(-Tot) %>%
   arrange(desc(N)) %>%
+  filter(type != "comment") %>%
   rename(Medij = type,
           'Broj objava' = N) %>%
   kbl(caption = "Broj objava po medijima") %>%
@@ -430,7 +462,15 @@ ggplotly(g2)
 
 <br>
 
-Vremenska dinamika objava po medijima jasno ukazuje na znatan i postojan intenzitet objava na forumima na prosječnoj razini od 25% ukupne tjedne aktivnosti sa čestim povećanjima aktivnosti u valovima. Također je vidljiva postojana dinamika aktivnosti na facebook-u na razini od oko 10% dnevnih objava uz vrlo rijetka povećanja aktivnosti. Posebno je zanimljiva dinamika objava na web-u gdje se raspoznaje kostantna tjedna aktivnost na razini od oko 20% ukupnih dnavenih objava uz jedan period znatnog povećanja aktivnosti svakog mjseseca pred kraj/početak mjeseca. Slična dinamika je primjetna i na youtbe platformi uz znatno manji udio tjednih objava. Usporedivi trendovi se raspoznaju i na twitteru. 
+- Znatan i postojan intenzitet objava na forumima sa čestim povećanjima aktivnosti u valovima
+<br> 
+- Postojana dinamika aktivnosti na Facebook-u uz vrlo rijetka povećanja aktivnosti
+<br>
+- Tjedne objave na web-u na razini od oko 20% ukupnih objava uz povećanja aktivnosti pred kraj/početak mjeseca
+<br>
+- Slična dinamika je primjetna i na youtbe uz znatno manji udio tjednih objava.
+<br>
+- Usporedivi trendovi i na twitteru. 
 
 <br>
  
@@ -440,8 +480,13 @@ Vremenska dinamika objava po medijima jasno ukazuje na znatan i postojan intenzi
 
 <br>
 
-
-Zastupljenost brandova u pojedinačnim medijima je jednaka kao u cjelokupnom medijskom prostoru pa su opći lideri ujedno i lideri u svakom pojedinačnom mediju. Ipak je zanimljivo primijetiti da je prednopst koju ima Bosch naveća na forumima i youtube-u dok ja na web-u prednost Bosch-a i Braun-a u odnosu na Phillips znatno manja. Također, Dyson koji zauzima zadnju poziciju u ukupnom medijskom prostoru ima bolju poziciju na youtubeu.
+- Zastupljenost brandova u pojedinačnim medijima je jednaka kao u cjelokupnom medijskom prostoru
+<br>
+- Bosch ima najveću prednost na forumima i youtube
+<br>
+- Na web-u je prednost Bosch-a i Braun-a u odnosu na Phillips znatno manja
+<br>
+- Dyson zauzima zadnju poziciju u ukupnom medijskom prostoru, ali ima bolju poziciju na YouTube od Phillipsa
 
 <br>
 
@@ -497,7 +542,7 @@ ggplotly(g3)
 
 <br>
 
-Za detaljniji prikaz medija su izabrani web i youtube. Važnost web-a proizlazi iz obujma objava, a youtube zbog visokog fokusa (attention span) koji korisnici posvećuju sadržaju na ovoj platformi.
+- Web i YouTube zbog visokog fokusa (attention span) korisnika
 
 <br>
 
@@ -507,13 +552,18 @@ Za detaljniji prikaz medija su izabrani web i youtube. Važnost web-a proizlazi 
 
 <br>
 
+- Bosch i Braun jako prisutni na e-commmerce stranicama 
+<br>
+- Philips najviše prisutan na portalima, detaljnije u tekstu 
 
-Pregled objava po domenama je izrazito informativan. Prvi grafikon prikazuje ukupan broj objava prema web izvorima za sve brandove. Za tržišne lidere Bosch i Braun ali i Dyson je vidljiva važnost e-commmerce stranica i preprodavača tehnike različite vrste poput mall.hr, rog-joma.hr, elipso.hr i dr. Sa druge strane, za Philips najveću važnost imaju popularni portali za informiranje puput index.hr, 24sata.hr, jutarnji.hr, a slika ostaje ista kada se promatraju drugi kriteriji važnosti poput dosega objava (reach), PR  važnosti, angažiranosti.Kod tržišnih lidera je situacija nešto drugačija i oni koriste različite medije za postizanje specifičnih ciljeva prepoznatljivosti na web-u.
+<br>
+<br>
+Pregled objava po domenama je izrazito informativan. Prvi grafikon prikazuje ukupan broj objava prema web izvorima za sve brandove. Za tržišne lidere Bosch i Braun ali i Dyson je vidljiva važnost e-commmerce stranica i preprodavača tehnike različite vrste poput mall.hr, rog-joma.hr, elipso.hr i dr. Sa druge strane, za Philips najveću važnost imaju popularni portali za informiranje poput index.hr, 24sata.hr, jutarnji.hr, a slika ostaje ista kada se promatraju drugi kriteriji važnosti poput dosega objava (reach), PR  važnosti, angažiranosti. Kod tržišnih lidera je situacija nešto drugačija i oni koriste različite medije za postizanje specifičnih ciljeva prepoznatljivosti na web-u.
 
 <br>
 
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block4"> Grafikon: Broj objava po domenama. </button>  
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block4"> Grafikon:  Broj objava prema web izvorima za sve brandove. </button>  
 <div id="Block4" class="collapse">
 
 
@@ -556,7 +606,7 @@ ggplotly(g4)
 
 <br>
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block5"> Grafikon: Broj objava po domenama prema kriteriju dosega (reach). </button>  
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block5"> Grafikon: Broj objava prema web izvorima po kriteriju dosega (reach). </button>  
 <div id="Block5" class="collapse">
 
 ```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9, fig.cap="Grafikon: Broj objava po domenama prema kriteriju dosega (reach)."}
@@ -597,7 +647,7 @@ ggplotly(g5)
 <br>
 
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block6"> Grafikon: Broj objava po domenama prema kriteriju angažiranosti (engagement). </button>  
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block6"> Grafikon: Broj objava prema web izvorima po kriteriju angažiranosti (engagement). </button>  
 <div id="Block6" class="collapse">
 
 
@@ -640,7 +690,7 @@ ggplotly(g6)
 <br>
 
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block7"> Grafikon: Broj objava po domenama prema kriteriju PR vrijednosti. </button>  
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block7"> Grafikon: Broj objava prema web izvorima po kriteriju PR vrijednosti. </button>  
 <div id="Block7" class="collapse">
 
 
@@ -682,7 +732,7 @@ ggplotly(g7)
 
 <br>
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block8"> Grafikon: Broj objava po domenama prema kriteriju viralnosti. </button>  
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block8"> Grafikon: Broj objava prema web izvorima po kriteriju viralnosti. </button>  
 <div id="Block8" class="collapse">  
 
 ```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9, fig.cap="Grafikon: Broj objava po domenama prema kriteriju viralnosti."}
@@ -730,7 +780,9 @@ ggplotly(g8)
 
 <br>
 
-Tržišni lider Bosch je najzastupljeniji brand na platformi YouTube prema svim pokazateljima i znatno nadmašuje konkurente. Važno je primijetiti da Dyson ima znatno bolju poziciju od Phillipsa na ovoj platformi prema svim pokazateljima osim broju komentara.
+- Bosch je najzastupljeniji brand na YouTube prema svim pokazateljima i znatno nadmašuje konkurente
+<br>
+Važno je primijetiti da Dyson ima znatno bolju poziciju od Phillipsa na ovoj platformi prema svim pokazateljima osim broju komentara.
 
 <br>
 
@@ -776,7 +828,9 @@ ggplotly(g8)
 
 <br>
 
-Detalnjiji pregled aktivnosti na platformi YouTube daje uvid u najvažnije stranice i *influencere* prema vrsti aktivnosti. Za Bosch je vidljivo da najviše pregleda privlači njihova službena YouTube stranica te da su prema broju komentara i like-ova najvažniji influenceri AutoMarket.hr, Hanuma kocht i Slavica de Jong.
+- Bosch privlači najviše pregleda na njihovoj službenoj YouTube stranici
+<br>
+- Prema broju komentara i like-ova najvažniji influenceri su AutoMarket.hr, Hanuma kocht i Slavica de Jong.
 
 <br>
 
@@ -818,7 +872,7 @@ footnote(general = "*Broj objava u tekstu:")
 
 <br>
 
-U ovom dijelu je prikazan pregled sadržaja (teksta) za Bosch na platformi YouTube i Phillips na web-u.
+U ovom dijelu je pregled sadržaja za Bosch na platformi YouTube i Phillips na web-u.
 
 ```{r lexicon, echo=FALSE, message=FALSE, warning=FALSE}
 ## M-Files ----
@@ -928,7 +982,7 @@ stop_corpus <- my_stop_words %>%
 
 <br>
 
-Najvažnije riječi u YouTube objavama u kojima se spominje Bosch su akcija, čipovi, prezentacija, cijena, *powered by Bosch*, končar, aparati, prilika, servis, bicikli i dr.
+- najvažnije riječi su: akcija, čipovi, prezentacija, cijena, *powered by Bosch*, končar, aparati, prilika, servis, bicikli i dr.
 
 <br>
 
@@ -986,7 +1040,7 @@ freqOFmention %>%
 
 <br>
 
-Najrelevantnije riječi u objavama o Phillips-u na web-u su lg, tv, kava i usporedbe.
+- Najrelevantnije riječi su: lg, tv, kava i usporedbe
 
 ```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
 
