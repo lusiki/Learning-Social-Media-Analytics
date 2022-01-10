@@ -529,6 +529,53 @@ ggplotly(g3)
 
 <br>
 
+```{r ,eval = FALSE, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
+
+library("readxl")
+phillipstxt <- read_excel("./toolkitapp.xlsx")
+
+phillipstxt %>%
+   mutate(kword = case_when(grepl("phill", MENTION_SNIPPET, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", MENTION_SNIPPET, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", MENTION_SNIPPET, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", MENTION_SNIPPET, ignore.case = TRUE) ~ "dyson")) %>%
+#  filter(SOURCE_TYPE == "web" & kword == "bosch") %>%
+  unnest_tokens(word, MENTION_SNIPPET) %>%
+  anti_join(stop_corpus, by = "word") %>%
+  mutate(word = gsub("\\d+", NA, word)) %>%
+  mutate(word = gsub("^[a-zA-Z]$", NA, word)) %>%
+  filter(!is.na(word)) -> rijeci_clean
+
+
+rijeci_clean %>%
+#  filter(word %in% c("xiaomi","samsung","vivo","huawei")) %>%
+  group_by(word) %>%
+  summarise(#View =  sum(view, na.rm = TRUE),
+            Virality =  sum(VIRALITY, na.rm = TRUE),
+            Reach =  sum(REACH, na.rm = TRUE),
+            Share =  sum(SHARE_COUNT, na.rm = TRUE),
+          #  Virality =  sum(virality, na.rm = TRUE),
+          #  prValue =  sum(prValue, na.rm = TRUE),
+            n = n()) %>%
+  arrange(desc(n))-> freqOFmention
+
+
+freqOFmention %>%
+  rename (Brand = word,
+          'Number of mentions' = n) %>%
+  kbl(caption = "Najčešće riječi") %>%
+    kable_paper(bootstrap_options = "striped",full_width = F, position = "left")  %>%
+     scroll_box(width = "750px", height = "400px") 
+
+
+
+
+```
+
+
+
+
+
 # **Izabrani mediji**
 
 ***
@@ -1089,7 +1136,9 @@ freqOFmention %>%
 
 - Sonicare četkica postiže najveći doseg na Instagramu
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block13"> "Tablica: Riječi koje postižu najveći doseg na Instagramu. </button>  
+<br>
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block13">Tablica: Riječi koje postižu najveći doseg na Instagramu. </button>  
 <div id="Block13" class="collapse">
 
 ```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
@@ -1137,7 +1186,9 @@ freqOFmention %>%
 
 - Juraj Šebalj je najvažniji Phillipsov influencer na Facebook-u. Druge influncere pogledaj u tablici.
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block14"> "Tablica: Najvažniji influenceri na Facebook-u. </button>  
+<br>
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block14">Tablica: Najvažniji influenceri na Facebook-u. </button>  
 <div id="Block14" class="collapse">
 
 ```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
@@ -1172,6 +1223,57 @@ freqOFmention %>%
 </div>
 
 <br>
+
+
+
+
+
+
+
+
+
+
+```{r eval=FALSE, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
+
+
+
+phillipstxt %>%
+   mutate(kword = case_when(grepl("phill", MENTION_SNIPPET, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", MENTION_SNIPPET, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", MENTION_SNIPPET, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", MENTION_SNIPPET, ignore.case = TRUE) ~ "dyson")) %>%
+  filter(SOURCE_TYPE == "facebook" & kword == "phillips") %>%
+  unnest_tokens(word, MENTION_SNIPPET) %>%
+  anti_join(stop_corpus, by = "word") %>%
+  inner_join(CroSentilex_Gold, by = "word") %>%
+  count(word, sentiment, sort = TRUE) -> sg
+
+
+sg %>%
+  group_by(sentiment) %>%
+  top_n(20) %>%
+  ungroup() %>%
+  mutate(sentiment = case_when(sentiment == 0 ~ "NEUTRALNO",
+                               sentiment == 1 ~ "NEGATIVNO",
+                               sentiment == 2 ~ "POZITIVNO")) %>%
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(word, n, fill = sentiment)) +
+  geom_col(show.legend = FALSE) +
+  ggtitle( "Doprinos sentimentu") +
+  labs( x = "Rijec", y = "Broj rijeci") +
+  facet_wrap(~ sentiment, scales = "free_y") +
+  coord_flip() +
+  theme_economist()-> gg_doprinos_sentimentu
+
+
+gg_doprinos_sentimentu
+
+
+
+
+
+```
+
 
 # **Glavni zaključci**
 
