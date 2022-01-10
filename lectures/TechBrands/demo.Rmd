@@ -865,7 +865,7 @@ footnote(general = "*Broj objava u tekstu:")
 
 <br>
 
-U ovom dijelu je pregled sadržaja za Bosch na platformi YouTube i Phillips na Facebook-u.
+U ovom dijelu je pregled sadržaja za Bosch na Web-u i Phillips na Facebook-u.
 
 ```{r lexicon, echo=FALSE, message=FALSE, warning=FALSE}
 ## M-Files ----
