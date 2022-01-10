@@ -1055,7 +1055,7 @@ phillipstxt %>%
 
 <br>
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block12"> Tablica: Najčešće riječi na forumima o brandu Phillips. </button>  
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block12"> Tablica: Najčešće riječi na Facebook-u o brandu Phillips. </button>  
 <div id="Block12" class="collapse">
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=5}
