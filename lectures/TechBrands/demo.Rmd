@@ -865,7 +865,7 @@ footnote(general = "*Broj objava u tekstu:")
 
 <br>
 
-U ovom dijelu je pregled sadržaja za Bosch na platformi YouTube i Phillips na web-u.
+U ovom dijelu je pregled sadržaja za Bosch na platformi YouTube i Phillips na Facebook-u.
 
 ```{r lexicon, echo=FALSE, message=FALSE, warning=FALSE}
 ## M-Files ----
@@ -975,26 +975,29 @@ stop_corpus <- my_stop_words %>%
 
 <br>
 
-- najvažnije riječi su: akcija, čipovi, prezentacija, cijena, *powered by Bosch*, končar, aparati, prilika, servis, bicikli i dr.
+- Najvažnije riječi su: akcija, čipovi, cijena, *powered by Bosch*, končar, aparati,  bicikli i dr.
 
 <br>
 
 ```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
 
-phillips %>%
-   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
-                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
-                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
-                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) %>%
-  filter(type == "web" & kword == "bosch") %>%
-  unnest_tokens(word, mention) %>%
+library("readxl")
+phillipstxt <- read_excel("./toolkitapp.xlsx")
+
+phillipstxt %>%
+   mutate(kword = case_when(grepl("phill", MENTION_SNIPPET, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", MENTION_SNIPPET, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", MENTION_SNIPPET, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", MENTION_SNIPPET, ignore.case = TRUE) ~ "dyson")) %>%
+  filter(SOURCE_TYPE == "web" & kword == "bosch") %>%
+  unnest_tokens(word, MENTION_SNIPPET) %>%
   anti_join(stop_corpus, by = "word") %>%
   mutate(word = gsub("\\d+", NA, word)) %>%
   mutate(word = gsub("^[a-zA-Z]$", NA, word)) %>%
   filter(!is.na(word)) -> rijeci_clean
 ```
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block11"> Tablica: Najčešće riječi na YouTubee o brandu Bosch. </button>  
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block11"> Tablica: Najčešće riječi na Web-u o brandu Bosch. </button>  
 <div id="Block11" class="collapse">
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=5}
@@ -1003,9 +1006,9 @@ rijeci_clean %>%
 #  filter(word %in% c("xiaomi","samsung","vivo","huawei")) %>%
   group_by(word) %>%
   summarise(#View =  sum(view, na.rm = TRUE),
-            Comment =  sum(comment, na.rm = TRUE),
-            Engagement =  sum(engagement, na.rm = TRUE),
-            Like =  sum(like, na.rm = TRUE),
+            Virality =  sum(VIRALITY, na.rm = TRUE),
+            Reach =  sum(REACH, na.rm = TRUE),
+            Share =  sum(SHARE_COUNT, na.rm = TRUE),
           #  Virality =  sum(virality, na.rm = TRUE),
           #  prValue =  sum(prValue, na.rm = TRUE),
             n = n()) %>%
@@ -1033,22 +1036,24 @@ freqOFmention %>%
 
 <br>
 
-- Najrelevantnije riječi su: lg, tv, kava i usporedbe
+- Najrelevantnije riječi su: slušalice,brijač, brada, kamenac, kosa i dr.
 
 ```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
 
-phillips %>%
-   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
-                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
-                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
-                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) %>%
-  filter(type == "web" & kword == "phillips") %>%
-  unnest_tokens(word, mention) %>%
+phillipstxt %>%
+   mutate(kword = case_when(grepl("phill", MENTION_SNIPPET, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", MENTION_SNIPPET, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", MENTION_SNIPPET, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", MENTION_SNIPPET, ignore.case = TRUE) ~ "dyson")) %>%
+  filter(SOURCE_TYPE == "facebook" & kword == "phillips") %>%
+  unnest_tokens(word, MENTION_SNIPPET) %>%
   anti_join(stop_corpus, by = "word") %>%
   mutate(word = gsub("\\d+", NA, word)) %>%
   mutate(word = gsub("^[a-zA-Z]$", NA, word)) %>%
   filter(!is.na(word)) -> rijeci_clean
 ```
+
+<br>
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block12"> Tablica: Najčešće riječi na forumima o brandu Phillips. </button>  
 <div id="Block12" class="collapse">
@@ -1058,12 +1063,12 @@ phillips %>%
 rijeci_clean %>%
 #  filter(word %in% c("xiaomi","samsung","vivo","huawei")) %>%
   group_by(word) %>%
-  summarise(View =  sum(view, na.rm = TRUE),
-            Comment =  sum(comment, na.rm = TRUE),
-            Engagement =  sum(engagement, na.rm = TRUE),
-            Like =  sum(like, na.rm = TRUE),
-          #  Virality =  sum(virality, na.rm = TRUE),
-          #  prValue =  sum(prValue, na.rm = TRUE),
+  summarise(Reach =  sum(REACH, na.rm = TRUE),
+            FollowerCount =  sum(FOLLOWERS_COUNT, na.rm = TRUE),
+         #   Engagement =  sum(engagement, na.rm = TRUE),
+            Like =  sum(LIKE_COUNT, na.rm = TRUE),
+            Comment =  sum(COMMENT_COUNT, na.rm = TRUE),
+            ShareCount =  sum(SHARE_COUNT, na.rm = TRUE),
             n = n()) %>%
   arrange(desc(n))-> freqOFmention
 
@@ -1071,9 +1076,9 @@ rijeci_clean %>%
 freqOFmention %>%
   rename (Brand = word,
           'Number of mentions' = n) %>%
-  kbl(caption = "Najčešće riječi na forumima o brandu Phillips") %>%
+  kbl(caption = "Najčešće riječi na Facebook-u o brandu Phillips") %>%
     kable_paper(bootstrap_options = "striped",full_width = F, position = "left")  %>%
-     scroll_box(width = "450px", height = "400px") 
+     scroll_box(width = "550px", height = "400px") 
 
 ```
 
@@ -1094,10 +1099,10 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 <div class = "blue">
 
 - Tržišni lider u medijskom prostoru je Bosch
-- Braun slijedi nakon toga, a Phillips zaostaje
+- Braun nakon toga, a Phillips zaostaje
 - U prosjeku ima oko 30 objava dnevno 
 - Najviše se objavljuje na forumima i Web-u
-- Najrelevantniji mediji su web i youtube
+- Prostor za rast na e-commerce stranicama i YouTube-u
 
 </div>
 
