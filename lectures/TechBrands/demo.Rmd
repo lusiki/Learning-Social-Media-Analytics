@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = TRUE, cache = F)
 ```
 
 
-```{r echo = FALSE, message=FALSE,warning=FALSE}
+```{r library, echo = FALSE, message=FALSE,warning=FALSE}
 library(kableExtra)
 library(ggplot2)
 library(ggthemes)
@@ -38,7 +38,7 @@ library(plotly)
 ```
 
 
-```{r echo = FALSE, message=FALSE,warning=FALSE}
+```{r toolkit, echo = FALSE, message=FALSE,warning=FALSE}
 
 source(here::here('Creds', 'api.R'))
 
@@ -114,7 +114,123 @@ phillips %>%
 #   summarise(avg = mean(mean_X1)) -> avg
 ```
 
+```{r lexicon, echo=FALSE, message=FALSE, warning=FALSE}
+## M-Files ----
+# function to parse JSON from http conenctiion
+parseJSON <- function(x) {
+  xCon <- content(x, as = "text", type = "aplication/json", encoding = "UTF-8")
+  xCon <- jsonlite::fromJSON(xCon, flatten = TRUE)
+  xCon
+}
+# GET REST API function M-Files
+mfiles_get <- function(token, resource){
+  req <- GET(url = paste0('http://server.contentio.biz/REST', resource),
+             add_headers('X-Authentication' = token, 'content-type' = "application/json"))
+  result <- parseJSON(req)
+  return(result)
+}
+# GET token M-Files
+req <- POST(url = 'http://server.contentio.biz/REST/server/authenticationtokens.aspx', 
+            config = add_headers('content-type' = "application/json"),
+            body = list(Username = "msagovac", Password = "Wc8O10TaHz40",
+                        VaultGuid = "{7145BCEB-8FE2-4278-AD3B-7AE70374FF8A}",
+                        ComputerName  = "CT-VM-01"),
+            encode = "json", verbose())
+token <- parseJSON(req)[[1]]
+# M-FILES DOWNLOAD FILES
+mfiles_downlaod <- function(objType, objId, fileId) {
+  req <- GET(url = paste0('http://server.contentio.biz/REST/objects/', objType, '/', 
+                          objId, '/latest/files/',fileId , '/content'),
+             add_headers('X-Authentication' = token))
+  reqCon <- content(req, as = "text", encoding = "UTF-8")
+  if (is.na(reqCon)) {
+    reqCon <- content(req, as = "raw", encoding = "UTF-8")
+    reqCon <- rawToChar(reqCon, multiple = FALSE)
+    reqCon <- iconv(reqCon, "", "UTF-8")
+  }
+  reqCon
+}
+mfiles_downlaod_txt <- function(objType, objId, fileId, ext = ".csv") {
+  req <- GET(url = paste0('http://server.contentio.biz/REST/objects/', objType, '/', 
+                          objId, '/latest/files/',fileId , '/content'),
+             add_headers('X-Authentication' = token))
+  reqCon <- httr::content(req)
+  tempFileSave <- paste0(tempfile(), ext)
+  writeBin(reqCon, tempFileSave)
+  return(tempFileSave)
+}
+# GET classess, props and others
+prop <- mfiles_get(token, "/structure/properties")
+prop <- prop %>% 
+  select(DataType, ID, Name, ObjectType) %>% 
+  dplyr::arrange(Name)
+objs <- mfiles_get(token, "/structure/objecttypes")
+mfilesClass <- mfiles_get(token, "/structure/classes")
+CroSentilex_n <- read.delim(mfiles_downlaod_txt("0", 136679, 136711, ext = ".txt"),
+                            header = FALSE,
+                            sep = " ",
+                            stringsAsFactors = FALSE) %>% 
+  rename(word = "V1", sentiment = "V2" ) %>%
+  mutate(brija = "NEG")
+CroSentilex_p <- read.delim(mfiles_downlaod_txt("0", 136681, 136713, ext = ".txt"),
+                            header = FALSE,
+                            sep = " ",
+                            stringsAsFactors = FALSE) %>% 
+  rename(word = "V1", sentiment = "V2" ) %>%
+  mutate(brija = "POZ")
+Crosentilex_sve <- rbind(setDT(CroSentilex_n), setDT(CroSentilex_p))
+#head(Crosentilex_sve)
+CroSentilex_Gold  <- read.delim2(mfiles_downlaod_txt("0", 136680, 136712, ext = ".txt"),
+                                 header = FALSE,
+                                 sep = " ",
+                                 stringsAsFactors = FALSE) %>%
+  rename(word = "V1", sentiment = "V2" ) 
+CroSentilex_Gold[1,1] <- "dati"
+CroSentilex_Gold$sentiment <- str_replace(CroSentilex_Gold$sentiment , "-", "1")
+CroSentilex_Gold$sentiment <- str_replace(CroSentilex_Gold$sentiment , "\\+", "2")
+CroSentilex_Gold$sentiment <- as.numeric(unlist(CroSentilex_Gold$sentiment))
+#head(CroSentilex_Gold)
+# leksikoni
+stopwords_cro <- get_stopwords(language = "hr", source = "stopwords-iso")
+my_stop_words <- tibble(
+  word = c(
+    "jedan",
+    "e","prvi", "dva","dvije","drugi",
+    "tri","tre?i","pet","kod",
+    "ove","ova",  "ovo","bez",
+    "evo","oko",  "om", "ek",
+    "mil","tko","?est", "sedam",
+    "osam",   "?im", "zbog",
+    "prema", "dok","zato", "koji", 
+    "im", "?ak","me?u", "tek",
+    "koliko", "tko","kod","poput", 
+    "ba?", "dakle", "osim", "svih", 
+    "svoju", "odnosno", "gdje",
+    "kojoj", "ovi", "toga","ima","treba","sad","to","kad", "?e","ovaj","?ta","onda","ce","ko"
+  ),
+  lexicon = "lux"
+)
+stop_corpus <- my_stop_words %>%
+  bind_rows(stopwords_cro)
 
+library("readxl")
+phillipstxt <- read_excel("./toolkitapp.xlsx")
+
+phillipstxt %>%
+   mutate(kword = case_when(grepl("phill", MENTION_SNIPPET, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", MENTION_SNIPPET, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", MENTION_SNIPPET, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", MENTION_SNIPPET, ignore.case = TRUE) ~ "dyson")) %>%
+#  filter(SOURCE_TYPE == "web" & kword == "bosch") %>%
+  unnest_tokens(word, MENTION_SNIPPET) %>%
+  anti_join(stop_corpus, by = "word") %>%
+  mutate(word = gsub("\\d+", NA, word)) %>%
+  mutate(word = gsub("^[a-zA-Z]$", NA, word)) %>%
+  filter(!is.na(word)) -> rijeci_clean
+
+
+
+```
 
 <br>
 <br>
@@ -529,7 +645,7 @@ ggplotly(g3)
 
 <br>
 
-```{r ,eval = FALSE, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
+```{r eval = FALSE, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
 
 library("readxl")
 phillipstxt <- read_excel("./toolkitapp.xlsx")
@@ -870,7 +986,7 @@ ggplotly(g8)
 
 - Bosch privlači najviše pregleda na njihovoj službenoj YouTube stranici
 <br>
-- Prema broju komentara i like-ova najvažniji influenceri su AutoMarket.hr, Hanuma kocht i Slavica de Jong.
+- Najvažniji influenceri su AutoMarket.hr, Hanuma kocht i Slavica de Jong
 
 <br>
 
@@ -906,6 +1022,80 @@ footnote(general = "*Broj objava u tekstu:")
 
 <br>
 
+
+### **Facebook**
+
+***
+
+<br>
+
+- Riječi snaga, prilika, obitelj, dom, kvaliteta, ekološki najviše doprinose pozitivnom sentimentu na Facebooku
+<br>
+- Vidi grafikon za riječi koje doprinose negativnom i neutralnom sentimentu
+
+<br>
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Blockinsert"> Grafikon: Riječi prema sentimentu na Facebook-u. </button>  
+<div id="Blockinsert" class="collapse">
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15,fig.cap="Grafikon: Riječi prema sentimentu na Facebook-u."}
+
+
+
+phillipstxt %>%
+   mutate(kword = case_when(grepl("phill", MENTION_SNIPPET, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", MENTION_SNIPPET, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", MENTION_SNIPPET, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", MENTION_SNIPPET, ignore.case = TRUE) ~ "dyson")) %>%
+  filter(SOURCE_TYPE == "facebook" ) %>%
+  unnest_tokens(word, TITLE) %>%
+  anti_join(stop_corpus, by = "word") %>%
+  inner_join(CroSentilex_Gold, by = "word") %>%
+  count(word, sentiment, sort = TRUE) -> sg
+
+
+sg %>%
+  group_by(sentiment) %>%
+  top_n(20) %>%
+  ungroup() %>%
+  mutate(sentiment = case_when(sentiment == 0 ~ "NEUTRALNO",
+                               sentiment == 1 ~ "NEGATIVNO",
+                               sentiment == 2 ~ "POZITIVNO")) %>%
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(word, n, fill = sentiment)) +
+  geom_col(show.legend = FALSE) +
+  ggtitle( "Doprinos sentimentu") +
+  labs( x = "Rijec", y = "Broj rijeci") +
+  facet_wrap(~ sentiment, scales = "free_y") +
+  coord_flip() +
+  theme_economist()-> gg_doprinos_sentimentu
+
+
+gg_doprinos_sentimentu
+
+
+
+
+
+```
+
+
+</div>
+
+
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
 # **Izabrani brandovi**
 
 ***
@@ -914,105 +1104,6 @@ footnote(general = "*Broj objava u tekstu:")
 
 U ovom dijelu je pregled sadržaja za Bosch na Web-u i Phillips na Facebook-u.
 
-```{r lexicon, echo=FALSE, message=FALSE, warning=FALSE}
-## M-Files ----
-# function to parse JSON from http conenctiion
-parseJSON <- function(x) {
-  xCon <- content(x, as = "text", type = "aplication/json", encoding = "UTF-8")
-  xCon <- jsonlite::fromJSON(xCon, flatten = TRUE)
-  xCon
-}
-# GET REST API function M-Files
-mfiles_get <- function(token, resource){
-  req <- GET(url = paste0('http://server.contentio.biz/REST', resource),
-             add_headers('X-Authentication' = token, 'content-type' = "application/json"))
-  result <- parseJSON(req)
-  return(result)
-}
-# GET token M-Files
-req <- POST(url = 'http://server.contentio.biz/REST/server/authenticationtokens.aspx', 
-            config = add_headers('content-type' = "application/json"),
-            body = list(Username = "msagovac", Password = "Wc8O10TaHz40",
-                        VaultGuid = "{7145BCEB-8FE2-4278-AD3B-7AE70374FF8A}",
-                        ComputerName  = "CT-VM-01"),
-            encode = "json", verbose())
-token <- parseJSON(req)[[1]]
-# M-FILES DOWNLOAD FILES
-mfiles_downlaod <- function(objType, objId, fileId) {
-  req <- GET(url = paste0('http://server.contentio.biz/REST/objects/', objType, '/', 
-                          objId, '/latest/files/',fileId , '/content'),
-             add_headers('X-Authentication' = token))
-  reqCon <- content(req, as = "text", encoding = "UTF-8")
-  if (is.na(reqCon)) {
-    reqCon <- content(req, as = "raw", encoding = "UTF-8")
-    reqCon <- rawToChar(reqCon, multiple = FALSE)
-    reqCon <- iconv(reqCon, "", "UTF-8")
-  }
-  reqCon
-}
-mfiles_downlaod_txt <- function(objType, objId, fileId, ext = ".csv") {
-  req <- GET(url = paste0('http://server.contentio.biz/REST/objects/', objType, '/', 
-                          objId, '/latest/files/',fileId , '/content'),
-             add_headers('X-Authentication' = token))
-  reqCon <- httr::content(req)
-  tempFileSave <- paste0(tempfile(), ext)
-  writeBin(reqCon, tempFileSave)
-  return(tempFileSave)
-}
-# GET classess, props and others
-prop <- mfiles_get(token, "/structure/properties")
-prop <- prop %>% 
-  select(DataType, ID, Name, ObjectType) %>% 
-  dplyr::arrange(Name)
-objs <- mfiles_get(token, "/structure/objecttypes")
-mfilesClass <- mfiles_get(token, "/structure/classes")
-CroSentilex_n <- read.delim(mfiles_downlaod_txt("0", 136679, 136711, ext = ".txt"),
-                            header = FALSE,
-                            sep = " ",
-                            stringsAsFactors = FALSE) %>% 
-  rename(word = "V1", sentiment = "V2" ) %>%
-  mutate(brija = "NEG")
-CroSentilex_p <- read.delim(mfiles_downlaod_txt("0", 136681, 136713, ext = ".txt"),
-                            header = FALSE,
-                            sep = " ",
-                            stringsAsFactors = FALSE) %>% 
-  rename(word = "V1", sentiment = "V2" ) %>%
-  mutate(brija = "POZ")
-Crosentilex_sve <- rbind(setDT(CroSentilex_n), setDT(CroSentilex_p))
-#head(Crosentilex_sve)
-CroSentilex_Gold  <- read.delim2(mfiles_downlaod_txt("0", 136680, 136712, ext = ".txt"),
-                                 header = FALSE,
-                                 sep = " ",
-                                 stringsAsFactors = FALSE) %>%
-  rename(word = "V1", sentiment = "V2" ) 
-CroSentilex_Gold[1,1] <- "dati"
-CroSentilex_Gold$sentiment <- str_replace(CroSentilex_Gold$sentiment , "-", "1")
-CroSentilex_Gold$sentiment <- str_replace(CroSentilex_Gold$sentiment , "\\+", "2")
-CroSentilex_Gold$sentiment <- as.numeric(unlist(CroSentilex_Gold$sentiment))
-#head(CroSentilex_Gold)
-# leksikoni
-stopwords_cro <- get_stopwords(language = "hr", source = "stopwords-iso")
-my_stop_words <- tibble(
-  word = c(
-    "jedan",
-    "e","prvi", "dva","dvije","drugi",
-    "tri","tre?i","pet","kod",
-    "ove","ova",  "ovo","bez",
-    "evo","oko",  "om", "ek",
-    "mil","tko","?est", "sedam",
-    "osam",   "?im", "zbog",
-    "prema", "dok","zato", "koji", 
-    "im", "?ak","me?u", "tek",
-    "koliko", "tko","kod","poput", 
-    "ba?", "dakle", "osim", "svih", 
-    "svoju", "odnosno", "gdje",
-    "kojoj", "ovi", "toga","ima","treba","sad","to","kad", "?e","ovaj","?ta","onda","ce","ko"
-  ),
-  lexicon = "lux"
-)
-stop_corpus <- my_stop_words %>%
-  bind_rows(stopwords_cro)
-```
 
 <br>
 
@@ -1025,24 +1116,6 @@ stop_corpus <- my_stop_words %>%
 - Najvažnije riječi su: akcija, čipovi, cijena, *powered by Bosch*, končar, aparati,  bicikli i dr.
 
 <br>
-
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
-
-library("readxl")
-phillipstxt <- read_excel("./toolkitapp.xlsx")
-
-phillipstxt %>%
-   mutate(kword = case_when(grepl("phill", MENTION_SNIPPET, ignore.case = TRUE) ~ "phillips",
-                            grepl("bosch", MENTION_SNIPPET, ignore.case = TRUE) ~ "bosch",
-                            grepl("braun", MENTION_SNIPPET, ignore.case = TRUE) ~ "braun",
-                            grepl("dyson", MENTION_SNIPPET, ignore.case = TRUE) ~ "dyson")) %>%
-#  filter(SOURCE_TYPE == "web" & kword == "bosch") %>%
-  unnest_tokens(word, MENTION_SNIPPET) %>%
-  anti_join(stop_corpus, by = "word") %>%
-  mutate(word = gsub("\\d+", NA, word)) %>%
-  mutate(word = gsub("^[a-zA-Z]$", NA, word)) %>%
-  filter(!is.na(word)) -> rijeci_clean
-```
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block11"> Tablica: Najčešće riječi na Web-u. </button>  
 <div id="Block11" class="collapse">
@@ -1242,8 +1315,8 @@ phillipstxt %>%
                             grepl("bosch", MENTION_SNIPPET, ignore.case = TRUE) ~ "bosch",
                             grepl("braun", MENTION_SNIPPET, ignore.case = TRUE) ~ "braun",
                             grepl("dyson", MENTION_SNIPPET, ignore.case = TRUE) ~ "dyson")) %>%
-  filter(SOURCE_TYPE == "facebook" & kword == "phillips") %>%
-  unnest_tokens(word, MENTION_SNIPPET) %>%
+  filter(SOURCE_TYPE == "facebook" ) %>%
+  unnest_tokens(word, TITLE) %>%
   anti_join(stop_corpus, by = "word") %>%
   inner_join(CroSentilex_Gold, by = "word") %>%
   count(word, sentiment, sort = TRUE) -> sg
