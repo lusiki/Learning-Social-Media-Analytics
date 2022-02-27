@@ -1,0 +1,118 @@
+---
+title: "LSMA: Learning Social Media Analytics"
+author: "Luka Sikic, PhD"
+date: "Spring 2021"
+email: "lsikic@hrstud.hr"
+web: "https://lusiki.github.io/Learning-Social-Media-Analytics/index.html"
+officehours: "W 09:00-11:30 a.m."
+office: "Borongajska cesta 83d"
+classroom: "*online*"
+classhours: "W 02:00-03:45 p.m."
+output: pdf_document
+---
+```{r setup, include=FALSE, cache=F, message=F, warning=F, results="hide"}
+knitr::opts_chunk$set(cache=TRUE)
+knitr::opts_chunk$set(warning=F, message=F)
+# knitr::opts_knit$get(kable.force.latex = TRUE)
+```
+
+
+# Course Description
+
+The aim of the course is to introduce students to the important social media concepts and to demonstrate state of the art methods for the analysis of social media data. The course is made for graduate level students with humanistic, interdisciplinary and social science background that have been introduced to the basic statistics (101) concepts and desirably have some practical experience with empirical analysis.The course doesn`t assume prior knowledge of programming language syntax (R, Python) and all necessary data science (IT) concepts will be explained along the way. However, to make a practical use of the course content, participants should be open to learn new technical skills and concepts en route. This course aims to promote computational approach to social sciences and inclusive learning through *Open Source* principles.
+
+# Course Objectives
+
+1. Catching up with the current state and trends in the social media space.
+
+2. Understanding IT infrastructure (Big Data) of social media platforms.
+
+3. Identification of relevant topics in social media research and business.
+
+4. Understanding tools, methodology and results in social media analytics.
+
+5. Application of key pricniples, tools and methods for independent social media research.
+
+# Required Readings
+
+Everyting is avaliable online one way or the other.
+
+- [Mining the Social Web](https://www.webpages.uidaho.edu/~stevel/504/mining-the-social-web-2nd-edition.pdf) 
+
+- [Learning Social Media Analytics with R](https://www.packtpub.com/product/learning-social-media-analytics-with-r/9781787127524)
+
+- [Mastering Social Media Mining with Python](https://www.packtpub.com/product/mastering-social-media-mining-with-python/9781783552016) 
+
+- [Social Media Data Mining and Analytics](https://www.wiley.com/en-us/Social+Media+Data+Mining+and+Analytics-p-9781118824856) 
+
+- [Social Media Analytics Strategy](https://www.apress.com/us/book/9781484231012)
+
+
+# Course Policy
+
+I will detail the policy for this course below. Basically, don't cheat and try to learn stuff. Don't be that guy.
+
+## Grading Policy
+
+- **20%** of your grade will be determined by short 10min presentation.
+
+- **30%** of your grade will be determined by your attendance and participation in class. Generally, ask questions and answer them.
+
+- **40%** of your grade will be determined by a 15-page term paper on the chosen topic.
+
+- **10%** of your grade will be determined by your general attitude. Have a good attitude!
+
+## Attendance Policy
+
+> *Showing up is 80 percent of life* -- Woody Allen, [via Marshall Brickman](http://quoteinvestigator.com/2013/06/10/showing-up/#note-6553-1)
+
+Students should not skip classes. After three unexcused absences this will have strong implications for a student's overall grade in the class. There is already a strong positive correlation between the percentage of classes a student has attended in the course and the student's final grade for the semester for all students I have taught ever since. *Attend class*.
+
+## Late Arrival of the Professor Policy
+
+I will inform students via e-mail or official course website in advance of class if class is cancelled for the day.
+
+## E-mail Policy
+
+I am usually quick to respond to student e-mails. However, student e-mails tend to do several things that try my patience. These points outline why I will not respond to certain e-mails students send. Multiple rationales follow.
+
+1. The student could answer his/her own inquiry by reading the syllabus.
+2. The student is missing classes without any serious excuse.
+3. The student wants to know what topics s/he missed during a class s/he skipped. 
+4. The student is requesting an extension on an assignment for which the deadline was established. The answer is "no".
+5. The student is ["grade grubbing"](https://www.math.uh.edu/~tomforde/GradeGrubbing.html) or asking to round up a grade. The answer is "no".
+
+
+## Academic Dishonesty Policy
+
+Don’t cheat. Don’t be that guy. Yes, you. You know exactly what I’m talking about too.
+
+
+\newpage
+
+# Class Schedule
+
+Students should read the following before every class session. *Important*: class readings are subject to change, contingent on mitigating circumstances and the progress we make as a class. Students are encouraged to attend lectures and check the course website for updates. 
+
+    
+##  Week 01, 04/03: Syllabus Day 
+
+Read *all* associated documents on [course website]()https://lusiki.github.io/Learning-Social-Media-Analytics/index.html. Especially check the LSMA currated list of related [resources](https://lusiki.github.io/Learning-Social-Media-Analytics/resources.html).
+
+##  Week 02, 11/03: Current state and latest trends in the social media space
+##  Week 03, 18/03: IT prerequisites and programming language syntax 
+##  Week 04, 25/03: Big Data infrastructure and data acquisition procedures 
+##  Week 05, 01/04: Methods for social media analysis I
+##  Week 06, 01/04: Methods for social media analysis II 
+##  Week 07, 08/04: Methods for social media analysis III 
+##  Week 08, 15/04: General principles of digital marketing 
+##  Week 09, 22/04: Twitter - trend formation and event detection
+##  Week 10, 29/04: Facebook - analysis of the institutional, political and brand reach
+##  Week 11, 06/05: Instagram - influencer market space and image recognition
+##  Week 12, 13/05: LinkedIn - business network and geolocation analysis
+##  Week 13, 20/05: Online portals and forums - text analysis and application od NLP methods
+##  Week 14, 27/05: Traditional media - public sentiment analysis and opinion polarity
+##  Week 15, 03/06: Future trends in social media
+
+
+
