@@ -1,8 +1,8 @@
 ---
-title: "LSMA: Learning Social Media Analytics"
-author: "Luka Sikic, PhD"
+title: "LSMA: Learning Social Media Analytics" 
+author: "Luka Sikic, PhD" 
 date: "Spring 2021"
-email: "lsikic@hrstud.hr"
+subtitle: "lsikic@hrstud.hr"
 web: "https://lusiki.github.io/Learning-Social-Media-Analytics/index.html"
 officehours: "W 09:00-11:30 a.m."
 office: "Borongajska cesta 83d"
