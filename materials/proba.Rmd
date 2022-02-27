@@ -1,0 +1,156 @@
+---
+title: "LSMA: Learning Social Media Analytics"
+author: Luka Sikic
+date: "Spring 202021"
+
+email: "lsikic@hrstud.hr"
+web: "svmiller.com/teaching"
+officehours: "W 09:00-11:30 a.m."
+office: "Borongajska cesta 83d"
+classroom: "*online*"
+classhours: "W 02:00-03:45 p.m."
+output: pdf_document
+---
+```{r setup, include=FALSE, cache=F, message=F, warning=F, results="hide"}
+knitr::opts_chunk$set(cache=TRUE)
+knitr::opts_chunk$set(warning=F, message=F)
+# knitr::opts_knit$get(kable.force.latex = TRUE)
+```
+
+
+# Course Description
+
+The aim of the course is to introduce students to the important social media concepts and to demonstrate state of the art methods for the analysis of social media data. The course is made for graduate level students with humanistic, interdisciplinary and social science background that have been introduced to the basic statistics (101) concepts and desirably have some practical experience with empirical analysis. 
+
+
+After the course, students will be able to: 1) understand data generation and infrastructure behind (different) social media, 2) identify, interpret and follow frontier research and business trends in social media, 3) independently analyze social media data for research and business purposes. The course doesn`t assume prior knowledge of programming language syntax (R, Python) and all necessary data science (IT) concepts will be explained along the way. However, to make a practical use of the course content, participants should be open to learn new technical skills and concepts en route. This course aims to promote computational approach to social sciences and inclusive learning through Open Source principles
+
+# Course Objectives
+
+1. Catching up with the current state and trends in the social media space.
+
+2. Understanding IT infrastructure (Big Data) of social media platforms.
+
+3. Identification of relevant topics in social media research and business.
+
+4. Understanding tools, methodology and results in social media analytics.
+
+5. Application of key pricniples, tools and methods for independent social media research.
+
+# Required Readings
+
+```{r, echo = FALSE, results="asis"} 
+
+``` 
+
+
+# Course Policy
+
+I will detail the policy for this course below. Basically, don't cheat and try to learn stuff. Don't be that guy.
+
+## Grading Policy
+
+- **20%** of your grade will be determined by short 10min presentation.
+
+- **30%** of your grade will be determined by your attendance and participation in class. Generally, ask questions and answer them.
+
+- **40%** of your grade will be determined by a 15-page term paper on the chosen topic.
+
+- **10%** of your grade will be determined by your general attitude. Have a good attitude!
+
+## Attendance Policy
+
+> *Showing up is 80 percent of life* -- Woody Allen, [via Marshall Brickman](http://quoteinvestigator.com/2013/06/10/showing-up/#note-6553-1)
+
+Students should not skip classes. After three unexcused absences this will have strong implications for a student's overall grade in the class. There is already a strong positive correlation between the percentage of classes a student has attended in the course and the student's final grade for the semester for all students I have taught ever since. *Attend class*.
+
+## Late Arrival of the Professor Policy
+
+I will inform students via e-mail or official course website in advance of class if class is cancelled for the day.
+
+## E-mail Policy
+
+I am usually quick to respond to student e-mails. However, student e-mails tend to do several things that try my patience. These points outline why I will not respond to certain e-mails students send. Multiple rationales follow.
+
+1. The student could answer his/her own inquiry by reading the syllabus.
+2. The student is missing classes without any serious excuse.
+3. The student wants to know what topics s/he missed during a class s/he skipped. 
+4. The student is requesting an extension on an assignment for which the deadline was established. The answer is always "no".
+5. The student is ["grade grubbing"](https://www.math.uh.edu/~tomforde/GradeGrubbing.html) or asking to round up a grade. The answer is always "no".
+
+
+## Academic Dishonesty Policy
+
+Don’t cheat. Don’t be that guy. Yes, you. You know exactly what I’m talking about too.
+
+
+\newpage
+
+# Class Schedule
+
+Students must read the following before Tuesday's class session.  Important: class readings are subject to change, contingent on mitigating circumstances and the progress we make as a class.Students are encouraged to attend lectures and check the course website for updates. 
+
+## : Syllabus Day
+
+*No class Thursday (Political scientists usually have a conference to start the semester).*
+
+Read *all* associated documents on course website.
+  
+  - [Taking Good Notes](http://svmiller.com/blog/2014/09/taking-good-notes/)
+  - [Dos and Dont's of Writing for Students](http://svmiller.com/blog/2015/06/dos-and-donts-of-writing-for-students/)
+  - [Assorted Tips for Students on Writing Research Papers](http://svmiller.com/blog/2015/12/assorted-tips-students-research-papers/)
+  - [Exam Grading Policy](https://www.dropbox.com/s/apihjs7di81aqcv/svm-exam-grading-policy.pdf?dl=0)
+  - [Fun with Attendance and Grades (i.e. Students Should Attend Class)](http://svmiller.com/blog/2016/05/fun-with-attendance-grades/)
+    
+
+## : The First Topic Where We Read John Vasquez
+
+```{r, echo = FALSE, results="asis"} 
+
+``` 
+
+##  
+
+```{r, echo = FALSE, results="asis", eval=F} 
+
+``` 
+
+
+##  : Read Bib Item No. 120
+
+```{r, echo = FALSE, results="asis", eval=F} 
+
+``` 
+
+
+
+##  : The Fourth Topic with Bib Item No. 510
+
+```{r, echo = FALSE, results="asis", eval=F} 
+
+``` 
+
+##  : Keep
+##  : Going
+##  : Down
+
+##  : the
+
+##  : Line
+
+##  : Until
+
+##  : You
+
+##  : Are
+
+##  : Done
+
+##  : with
+
+
+##  : your
+
+
+##  : Syllabus 
+

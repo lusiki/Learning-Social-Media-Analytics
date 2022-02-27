@@ -1,8 +1,7 @@
 ---
-title: "<center><div class='mytitle'>Konkurenti u medijskom prostoru</div></center>"
-subtitle: "<center><div class='mysubtitle'>Bosch, Braun, Phillips, Dyson</div></center>"
-author: ""
-date: ''
+title: "<center><div class='mytitle'>Analiza konkurencije u medijskom prostoru</div></center>"
+author: "<center><div class='mysubtitle'>Subjekt: PHILLIPS SDA, Q4 2021</div></center>"
+date: "<center><div class='mysubtitle'>Konkurenti: Bosch, Braun, Dyson</div></center>"
 output:
   html_document:
     theme: yeti
@@ -15,20 +14,16 @@ output:
     includes:
       before_body: header.html
       after_body: footer.html
-  pdf_document:
-    toc: yes
-    toc_depth: '4'
-
 ---
 
-
+<div class="mycontent">
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, cache=TRUE)
+knitr::opts_chunk$set(echo = TRUE, cache = F)
 ```
 
 
-```{r echo = FALSE, message=FALSE,warning=FALSE}
+```{r library, echo = FALSE, message=FALSE,warning=FALSE}
 library(kableExtra)
 library(ggplot2)
 library(ggthemes)
@@ -43,7 +38,7 @@ library(plotly)
 ```
 
 
-```{r echo = FALSE, message=FALSE,warning=FALSE}
+```{r toolkit, echo = FALSE, message=FALSE,warning=FALSE}
 
 source(here::here('Creds', 'api.R'))
 
@@ -97,527 +92,27 @@ phillips <- dta %>%
          view = response.view_count)
 ```
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-Izvještaj sadržava pregled hrvatskog medijskog prostora za četiri konkurenta **Bosch, Braun, Phillips, Dyson**. Pregled se odnosi na sve medijske objave koje sadrže naziv branda (konkurenta) u **razdoblju od tri mjeseca** (2021/10/06 do 2022/01/06). Objave uključuju sve hrvatske društvene medije: *web, facebook, youtube, twitter, instagram, forum, reddit i komentare*. U prvom dijelu izvještaja je skupno prikazan cjeli medijski prostor. Nakon toga su opisani najrelevantniji mediji, a potom sadržaj objava za odabrane brandove. Na kraju su istaknuti najvažniji zaključci.
-
-
-
-# **Cjeli medijski prostor**
-
-***
 
 ```{r echo = FALSE, message=FALSE,warning=FALSE}
+
 options(digits = 2)
 phillips %>%
   mutate(time = as_datetime(time),
          time = as.Date(time, format="%Y-%m-%d" )) %>%
-  mutate(day = day(time)) %>%
+  mutate(day = day(time),
+        (week = week(time))) %>%
   group_by(time) %>%
   summarize(mean_X1 = n()) %>%
   summarise(avg = mean(mean_X1)) -> avg
 
-phillips %>%
-  mutate(time = as_datetime(time),
-         time = as.Date(time, format="%Y-%m-%d" )) %>%
-  mutate(week = week (time)) %>%
-  group_by(week) %>%
-  summarize(mean_X1 = n()) %>%
-  summarise(avg = mean(mean_X1)) -> avg
+# phillips %>%
+#   mutate(time = as_datetime(time),
+#          time = as.Date(time, format="%Y-%m-%d" )) %>%
+#   mutate(week = week (time)) %>%
+#   group_by(week) %>%
+#   summarize(mean_X1 = n()) %>%
+#   summarise(avg = mean(mean_X1)) -> avg
 ```
-
-<br>
-<br>
-
-
- U cjelokupnom  medijskom prostoru je u analiziranom periodu bilo ukupno 2677 objava o četiri konkurenta, odnosno `r avg` objava dnevno. Pri tome najveću prisutnost ima brand Bosch, nakon čega slijede Braun i Phillips, a na kraju Dyson. 
-
-
-<br>
-
-### **Brand**
-
-<br>
-
-***
-
-```{r echo = FALSE, message=FALSE,warning=FALSE}
-
-brandTxT <- phillips %>%
-   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
-                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
-                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
-                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) 
-
-
-
-
- 
-brandTitle <- phillips %>%
-   mutate(kword = case_when(grepl("phill", title, ignore.case = TRUE) ~ "phillips",
-                            grepl("bosch", title, ignore.case = TRUE) ~ "bosch",
-                            grepl("braun", title, ignore.case = TRUE) ~ "braun",
-                            grepl("dyson", title, ignore.case = TRUE) ~ "dyson"))
-
-
-```
-
-
-
-<div class = "row">
-
-<div class = "col-sm-3">
-<br><br>Bosch i Braun zajedno imaju više od 60% svih objava i znatno su zastupljeniji u medijskom prostoru od  Phillipsa i Dysona na koje odlazi manje od 15% svih objava. Pri tome je oko 25% svih objava nesvrstano jer je tekst objave anonimiziran.
-
-</div>
-
-  
-<div class = "col-sm-3">
-```{r echo = FALSE, message=FALSE,warning=FALSE}
-options(digits = 2)
-brandTitle %>% 
-  group_by(kword) %>%
-  summarise(N = n()) %>%
-  ungroup() %>%
-  mutate(Tot = sum(N), 
-         'Udio %' = (N / Tot)*100) %>%
-  select(-Tot) %>%
-  arrange(desc(N)) %>%
-  rename (Brand = kword,
-          'Broj objava' = N) %>%
-  kbl(caption = "Broj objava u naslovu:") %>%
-    kable_paper(bootstrap_options = "striped",full_width = F, position = "float_right")
-```
-
-</div>
-  
-<div class = "col-sm-3">
-<br><br>Zanimljivo je primijetiti da je Phillips na zadnjem mjestu po broju objava u kojima se riječ *Phillips* u naslovu objave te da je *Dyson* puno bliži *Braunu* prema ovom kriteriju.
-</div>
-  
-<div class = "col-sm-3">
-```{r, message=FALSE, echo=FALSE}
-options(digits = 2)
-brandTxT %>%
-  group_by(kword) %>%
-  summarise(N = n()) %>%
-  ungroup() %>%
-  mutate(Tot = sum(N), 
-         'Udio %' = (N / Tot)*100) %>%
-  select(-Tot) %>%
-  arrange(desc(N)) %>%
-  rename (Brand = kword,
-          'Broj objava' = N) %>%
-  kbl(caption = "Broj objava u tekstu:") %>%
-    kable_paper(bootstrap_options = "striped",full_width = F,position = "float_left")
-```
-</div>
-</div>
-
-
-<br>
-<br>
-
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width = 15, fig.align="center", fig.cap="Grafikon: Udio (%) u ukupnom broju dnevnih objava o brandu kroz vrijeme."}
-
-brands <- c("phillips", "bosch", "braun", "dyson")
-
-brandTxT %>%
-  mutate(time = as_datetime(time),
-         time = as.Date(time, format="%Y-%m-%d" )) %>% 
-  group_by(time) %>%
-  count(kword) %>% 
-  filter(!is.na(kword)) %>%
-  mutate(gn = sum(n)) %>% 
-  ggplot(., aes(time, n / gn)) + 
-  geom_bar(stat = "identity") +
-  geom_line() + 
-  ggtitle("") +
-  ylab("") +
-  xlab("") +
-  facet_wrap(~ kword) +
-  scale_y_continuous(labels = scales::percent_format()) +
-  scale_x_date(labels = date_format("%d-%m")) +
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-  panel.background = element_blank(), axis.line = element_line(colour = "black")) + 
-  theme_economist() -> g1
-
-
-
-ggplotly(g1)
-
-
-```
-
-<br>
-
-Vremenska dinamika objava potvrđuje Bosch kao tržišnog lidera koji je postojano u rasponu od 50% do 80% svih objava na dnevnoj razini. Znatno veća volatilnost je karakteristična za Braun koji je najčešće ispod 25% dnevnih objava sa povremenim povećanjima medijske aktivnosti preko 50% na (otprilike) tjednoj razini. Phillips je je postojano ispod 20% dnevnih objava sa rijetkim epizodama povećane medijske aktivnosti od 50% i 25% ukupnih objava.
-
-<br>
-
-
-### **Medij**
-
-***
-
-<br>
-
-<div class = "row">
-
-<div class = "col-sm-10">
-<br><br>Najviše medijske aktivnosti (1041 objava) vezano uz četiri konkurenta je u na forumima. Nakon toga slijedi web sa 785 objava što ga čini najvažnijim medijskim prostorom. Nakon toga slijede instagram i facebook sa podjednakim brojem objava pri čemu ni youtube ne zaostaje mnogo. Uzevši u obzir da [se na youtube-u provodi više vremena (pažnje) po objavi nego na drugim medijima](https://datareportal.com/reports/digital-2021-croatia), ovo čini youtube izrazto važnim medijskim prostorom. Iako twitter nije jako popularan medij u Hrvatskoj, 144 objave su i dalje relevantan broj, pogotovo zbog kvalitetnije publike na ovoj mreži (koja je sklonija promovirati proizvod na osnovi kvalitete). Reddit i komentari nisu relevantan medij za analizirane konkurente jer na oba medija odlazi manje od 30 objava u cjelokupnom analiziranom razdoblju. Detaljan pregled se nalazi u tablici na desnoj strani.
-
-</div>
-
-<div class = "col-sm-2">
-```{r echo = FALSE, message=FALSE,warning=FALSE}
-phillips %>%
-  group_by(type) %>%
-  summarise(N = n()) %>%
-  ungroup() %>%
-  mutate(Tot = sum(N), 
-         'Udio %' = (N / Tot)*100) %>%
-  select(-Tot) %>%
-  arrange(desc(N)) %>%
-  rename(Medij = type,
-          'Broj objava' = N) %>%
-  kbl(caption = "Broj objava po medijima") %>%
-    kable_paper(bootstrap_options = "striped",full_width = F, position = "right")
-
-```
-</div>
-</div>
-
-
-```{r echo = FALSE, eval=FALSE, include=FALSE, message=FALSE,warning=FALSE}
-
-##### Pregled po brand-u (toolkit)
-phillips %>%
-  mutate(keyword = tolower(keyword)) %>%
-  group_by(keyword) %>%
-  summarise(N = n()) %>%
-  arrange(desc(N)) %>%
-  kable()
-
-```
-
-
-
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.height = 8, fig.width = 12, fig.cap = "Grafikon: Udio (%) u ukupnom broju dnevnih objava po mediju kroz vrijeme."}
-
-brandTxT %>%
-  mutate(time = as_datetime(time),
-         time = as.Date(time, format="%Y-%m-%d" )) %>% 
-  group_by(time,type) %>%
-  count() %>% 
-#  filter(!is.na(kword)) %>%
-  ungroup() %>%
-  group_by(time) %>%
-  mutate(gn = sum(n)) %>% 
-  ggplot(., aes(time, n / gn)) + 
-  geom_bar(stat = "identity") +
-  geom_line() + 
-  ggtitle("") +
-  ylab("") +
-  xlab("") +
-  facet_wrap(~ type) +
-  scale_y_continuous(labels = scales::percent_format()) +
-  scale_x_date(labels = date_format("%d-%m")) +
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-  panel.background = element_blank(), axis.line = element_line(colour = "black")) + 
-  theme_economist() -> g2
-
-
-ggplotly(g2)
-
-
-```
-
-<br>
-
-Vremenska dinamika objava po medijima jasno ukazuje na znatan i postojan intenzitet objava na forumima na prosječnoj razini od 25% ukupne dnevne aktivnosti sa čestim povećanjima aktivnosti u valovima. Također je vidljiva postojana dinamika aktivnosti na facebook-u na razini od oko 10% dnevnih objava uz vrlo rijetka povećanja aktivnosti. Posebno je zanimljiva dinamika objava na web-u gdje se raspoznaje kostantna dnevna aktivnost na razini od oko 20% ukupnih dnavenih objava uz jedan period znatnog povećanja aktivnosti svakog mjseseca pred kraj/početak mjeseca. Slična dinamika je primjetna i na youtbe platformi uz znatno manji udio dnevnih objava. Usporedivi trendovi se raspoznaju i na twitter-u. 
-
-<br>
- 
-### **Brand & medij**
-
-***
-
-<br>
-
-
-Zastupljenost brand-ova po medijima je jednaka kao u cjelokupnom medijskom prostoru pa su općeniti lideri ujedno i lideri u svakom pojedinačnom mediju. I pak je zanimljivo prmijetiti da je prednopst koju ima Bosch naveća na forumima i youtube-u dok ja na web-u prednost Bosch-a i Braun-a u odnosu na Phillips znatno manja. Također, Dyson koji zauzima zadnju poziciju u ukupnom medijskom prostoru ima bolju poziciju na youtube-u.
-
-<br>
-
-```{r echo = FALSE, message=FALSE,warning=FALSE, fig.height = 8, fig.width = 13,fig.cap="Grafikon: Broj objava za medij i brand u cjelom razdoblju."}
-
-
-
-phillips %>%
-   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
-                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
-                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
-                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) %>%
-  group_by(type,kword) %>%
-  summarise(N = n()) %>%
-  arrange(desc(N)) %>%
-  filter(!is.na(kword) ) %>%
-  ggplot(., aes(kword, N)) + 
-  geom_bar(stat = "identity") +
-  geom_line() + 
-  ggtitle("") +
-  ylab("") +
-  xlab("") +
-  facet_wrap(~ type, scales = "free") + 
-#  scale_y_continuous(labels = scales::percent_format()) +
-#  scale_x_date(labels = date_format("%d-%m")) +
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-  panel.background = element_blank(), axis.line = element_line(colour = "black")) + 
-  theme_economist() -> g3
-
-ggplotly(g3)
-
-
-```
-
-<br>
-
-# **Pregled po izabranim medijima**
-
-***
-
-U ovom dijelu je dan pregled najvažnijih medija, odnosno web-a u youtube-a. važnost web-a proizlazi iz obujma objava, a youtube-a zbog visokog fokusa (attention span) koji korisnici posvećuju sadržaju na ovoj platformi.
-
-<br>
-
-#### **Web**
-
-***
-
-<br>
-
-
-
-```{r landscapeFreqBrand, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=12}
-
-phillips %>%
-   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
-                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
-                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
-                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) %>%
-  group_by(domain,kword) %>%
-  summarise(N = n()) %>%
-  arrange(desc(N))  %>%
-  filter(!is.na(domain)) %>%
-  filter(N > 2) %>%
-  filter(domain != "forum.hr")-> landscapeFreqBrand
-  
-landscapeFreqBrand %>%
-  ggplot(., aes(x = reorder(domain,N), y = N)) +
-  geom_bar(stat = "identity", alpha = 1) +
-  facet_wrap(~kword, scales = "free") +
-  ylab("Broj objava") +
-  xlab("Izvor") +
-  ggtitle("Pregled po domenama") +
-#  theme_bw() 
-  theme_economist()+
-  coord_flip() -> g4
-
-ggplotly(g4)
-
-```
-
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=12}
-
-phillips %>%
-   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
-                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
-                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
-                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) %>%
-  group_by(domain,kword) %>%
-  summarise(N =  sum(reach, na.rm = TRUE)) %>%
-  arrange(desc(N))  %>%
-  filter(!is.na(domain)) %>%
-  filter(N > 2000) %>%
-  filter(domain != "forum.hr")-> landscapeFreqBrand
-  
-landscapeFreqBrand %>%
-  ggplot(., aes(x = reorder(domain,N), y = N)) +
-  geom_bar(stat = "identity", alpha = 1) +
-  facet_wrap(~kword, scales = "free") +
-  ylab("Broj objava") +
-  xlab("Izvor") +
-  ggtitle("Pregled po domenama (reach)") +
-#  theme_bw() 
-  theme_economist() +
-  coord_flip() -> g5
-
-ggplotly(g5)
-```
-
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=12}
-
-phillips %>%
-   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
-                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
-                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
-                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) %>%
-  group_by(domain,kword) %>%
-  summarise(N =  sum(engagement, na.rm = TRUE)) %>%
-  arrange(desc(N))  %>%
-  filter(!is.na(domain)) %>%
-  filter(N > 20) %>%
-  filter(domain != "forum.hr")-> landscapeFreqBrand
-  
-landscapeFreqBrand %>%
-  ggplot(., aes(x = reorder(domain,N), y = N)) +
-  geom_bar(stat = "identity", alpha = 1) +
-  facet_wrap(~kword, scales = "free") +
-  ylab("Broj objava") +
-  xlab("Izvor") +
-  ggtitle("Pregled po domenama (engagement)") +
-#  theme_bw() 
-  theme_economist() +
-  coord_flip() -> g6
-
-ggplotly(g6)
-```
-
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=12}
-
-phillips %>%
-   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
-                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
-                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
-                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) %>%
-  group_by(domain,kword) %>%
-  summarise(N =  sum(prValue, na.rm = TRUE)) %>%
-  arrange(desc(N))  %>%
-  filter(!is.na(domain)) %>%
-  filter(N > 20) %>%
-  filter(domain != "forum.hr")-> landscapeFreqBrand
-  
-landscapeFreqBrand %>%
-  ggplot(., aes(x = reorder(domain,N), y = N)) +
-  geom_bar(stat = "identity", alpha = 1) +
-  facet_wrap(~kword, scales = "free") +
-  ylab("Broj objava") +
-  xlab("Izvor") +
-  ggtitle("Pregled po domenama (prValue)") +
-#  theme_bw() 
-  theme_economist() +
-  coord_flip() -> g7
-
-ggplotly(g7)
-```
-
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=12}
-
-phillips %>%
-   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
-                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
-                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
-                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) %>%
-  group_by(domain,kword) %>%
-  summarise(N =  sum(virality, na.rm = TRUE)) %>%
-  arrange(desc(N))  %>%
-  filter(!is.na(domain)) %>%
-  filter(N > 2) %>%
-  filter(domain != "forum.hr") -> landscapeFreqBrand
-  
-landscapeFreqBrand %>%
-  ggplot(., aes(x = reorder(domain,N), y = N)) +
-  geom_bar(stat = "identity", alpha = 1) +
-  facet_wrap(~kword, scales = "free") +
-  ylab("Broj objava") +
-  xlab("Izvor") +
-  ggtitle("Pregled po domenama (virality)") +
-#  theme_bw() 
-  theme_economist() +
-  coord_flip() 
-```
-
-
-<br>
-
-### **Youtube**
-
-***
-
-<br>
-
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
-phillips %>%
-   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
-                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
-                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
-                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) %>%
-  filter(type == "youtube") %>%
-  group_by(kword) %>%
-  summarise(View =  sum(view, na.rm = TRUE),
-            Comment =  sum(comment, na.rm = TRUE),
-            Engagement =  sum(engagement, na.rm = TRUE),
-            Like =  sum(like, na.rm = TRUE),
-          #  Virality =  sum(virality, na.rm = TRUE),
-            prValue =  sum(prValue, na.rm = TRUE)) %>%
-  gather(Var, Val,-kword) %>%
-  ggplot(., aes(x = kword, y = Val)) +
-  geom_bar(stat = "identity", alpha = 1) +
-  facet_wrap(~ Var, scales = "free") +
-  ylab("Broj objava") +
-  xlab("Izvor") +
-  ggtitle("Pregled po domenama (virality)") +
-#  theme_bw() 
-  theme_economist() -> g8
-
-ggplotly(g8)
-  
- 
-```
-
-
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 8, fig.width=5}
-phillips %>%
-   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
-                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
-                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
-                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) %>%
-  filter(type == "youtube") %>%
-  group_by(kword,author) %>%
-  summarise(View =  sum(view, na.rm = TRUE),
-            Comment =  sum(comment, na.rm = TRUE),
-        #    Engagement =  sum(engagement, na.rm = TRUE),
-            Like =  sum(like, na.rm = TRUE),
-        #    Virality =  sum(virality, na.rm = TRUE),
-        #    prValue =  sum(prValue, na.rm = TRUE)
-        ) %>%
-  arrange(desc(View)) %>%
-  rename (Brand = kword,
-          'Autor' = author) %>%
-  kbl(caption = "Pokazatellji aktivnosti na YouTube") %>%
-    kable_paper(bootstrap_options = "striped",full_width = F, position = "left")  %>%
-     scroll_box(width = "450px", height = "700px") 
-  
-```
-
-
-<br>
-
-### Izabrani brand
-
-***
-
-<br>
-
-
 
 ```{r lexicon, echo=FALSE, message=FALSE, warning=FALSE}
 ## M-Files ----
@@ -717,27 +212,913 @@ my_stop_words <- tibble(
 )
 stop_corpus <- my_stop_words %>%
   bind_rows(stopwords_cro)
+
+library("readxl")
+phillipstxt <- read_excel("./toolkitapp.xlsx")
+
+phillipstxt %>%
+   mutate(kword = case_when(grepl("phill", MENTION_SNIPPET, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", MENTION_SNIPPET, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", MENTION_SNIPPET, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", MENTION_SNIPPET, ignore.case = TRUE) ~ "dyson")) %>%
+#  filter(SOURCE_TYPE == "web" & kword == "bosch") %>%
+  unnest_tokens(word, MENTION_SNIPPET) %>%
+  anti_join(stop_corpus, by = "word") %>%
+  mutate(word = gsub("\\d+", NA, word)) %>%
+  mutate(word = gsub("^[a-zA-Z]$", NA, word)) %>%
+  filter(!is.na(word)) -> rijeci_clean
+
+
+
+```
+
+<br>
+<br>
+
+
+# **Što je unutra?**
+
+***
+
+
+- cijeli hrvatski medijski prostor za četiri konkurenta **Bosch, Braun, Phillips, Dyson** 
+<br><br>
+- objave uključuju sve hrvatske društvene medije: *web, facebook, youtube, twitter, instagram, forum, reddit i komentare*
+<br><br>
+- sve medijske objave koje sadrže naziv branda u **razdoblju od tri mjeseca** (2021/10/06 do 2022/01/06)
+<br><br>
+- ukupno 2,677 objava, odnosno `r avg` objava dnevno
+<br><br>
+- ukupno 61,505 riječi u svim tekstovima
+
+<br>
+
+# **Sadržaj**
+
+***
+
+<br>
+
+- na početku izvještaja **skupni prikaz** medijskog prostora
+<br><br>
+- nakon toga opisani **izabrani mediji**
+<br><br>
+- potom analiziran sadržaj objava za **izabrane brandove**
+<br><br>
+- na kraju **najvažniji zaključci**
+
+<br>
+
+# **Skupni prikaz**
+
+***
+
+```{r echo = FALSE, message=FALSE,warning=FALSE}
+options(digits = 2)
+phillips %>%
+  mutate(time = as_datetime(time),
+         time = as.Date(time, format="%Y-%m-%d" )) %>%
+  mutate(day = day(time)) %>%
+  group_by(time) %>%
+  summarize(mean_X1 = n()) %>%
+  summarise(avg = mean(mean_X1)) -> avg
+
+# phillips %>%
+#   mutate(time = as_datetime(time),
+#          time = as.Date(time, format="%Y-%m-%d" )) %>%
+#   mutate(week = week (time)) %>%
+#   group_by(week) %>%
+#   summarize(mean_X1 = n()) %>%
+#   summarise(avg = mean(mean_X1)) -> avg
+```
+
+<br>
+
+
+- najveću medijsku prisutnost ima *Bosch*, nakon toga slijede *Braun* i *Phillips*, a na kraju *Dyson*
+<br><br>
+- tržišni lideri dominiraju na svakom pojedinačnom mediju i konzistentno kroz cijelo promatrano razdoblje
+<br><br>
+- najvažniji medij je Web, najviše aktivnosti na forumima, a najveći prostor za rast YouTube
+
+<br>
+
+### **Brandovi**
+
+***
+
+<br>
+
+
+
+```{r echo = FALSE, message=FALSE,warning=FALSE}
+
+brandTxT <- phillips %>%
+   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) 
+
+
+
+
+ 
+brandTitle <- phillips %>%
+   mutate(kword = case_when(grepl("phill", title, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", title, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", title, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", title, ignore.case = TRUE) ~ "dyson"))
+
+
 ```
 
 
 
-### **Bosch** 
+<div class = "row">
+
+<div class = "col-sm-4">
+- 60% svih objava imaju Bosch i Braun 
+<br>
+- manje od 15% odlazi na Phillips i Dyson 
+<br>
+- 25% svih objava ne sadrži riječ u tekstu (umanjena vrijednost objave)
+
+</div>
+
+  
+<div class = "col-sm-2">
+<br>
+```{r, message=FALSE, echo=FALSE}
+options(digits = 2)
+brandTxT %>%
+  group_by(kword) %>%
+  summarise(N = n()) %>%
+  ungroup() %>%
+  mutate(Tot = sum(N), 
+         'Udio %' = (N / Tot)*100) %>%
+  mutate(kword=replace_na(kword, "no brand"))  %>%
+  select(-Tot) %>%
+  arrange(desc(N)) %>%
+  rename (Brand = kword,
+          'Broj objava' = N) %>%
+  kbl(caption = "Broj objava u tekstu") %>%
+    kable_paper(bootstrap_options = "striped",full_width = F,position = "float_left") %>%
+footnote(general = "")
+```
+
+</div>
+  
+<div class = "col-sm-4">
+- *Phillips* je na zadnjem mjestu po broju objava u naslovu (niska vidljivost branda) 
+<br>
+- *Dyson* puno bliži *Braunu* prema broju objava u naslovu (bolja pozicioniranost od Phillips-a)
+<br>
+- 91% svih objava ne sadrži riječ u naslovu (potencijal za rast prisutnosti)
+</div>
+  
+<div class = "col-sm-2">
+<br>
+```{r echo = FALSE, message=FALSE,warning=FALSE}
+options(digits = 2)
+brandTitle %>% 
+  group_by(kword) %>%
+  summarise(N = n()) %>%
+  ungroup() %>%
+  mutate(Tot = sum(N), 
+         'Udio %' = (N / Tot)*100) %>%
+  mutate(kword=replace_na(kword, "no brand"))  %>%
+  select(-Tot) %>%
+  arrange(desc(N)) %>%
+  rename (Brand = kword,
+          'Broj objava' = N) %>%
+  kbl(caption = "Broj objava u naslovu: ") %>%
+    kable_paper(bootstrap_options = "striped",full_width = F, position = "float_right") %>%
+footnote()
+```
+
+</div>
+</div>
 
 
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
+<br>
+<br>
+
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block1"> Grafikon: Udio (%) u ukupnom broju tjednih objava o brandu kroz vrijeme. </button>  
+<div id="Block1" class="collapse">
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.height = 6, fig.width = 9, fig.align="center", fig.cap="Grafikon: Udio (%) u ukupnom broju tjednih objava o brandu kroz vrijeme."}
+
+brands <- c("phillips", "bosch", "braun", "dyson")
+
+cbp1 <- c("#999999", "#E69F00", "#56B4E9", "#009E73",
+          "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+
+
+brandTxT %>%
+  mutate(time = as_datetime(time),
+         time = as.Date(time, format="%Y-%m-%d"),
+         week = floor_date(time, "week")) %>% 
+  group_by(week) %>%
+  count(kword) %>% 
+  filter(!is.na(kword)) %>%
+  mutate(gn = sum(n)) %>% 
+  ggplot(., aes(week, n / gn, fill=kword)) + 
+  geom_bar(stat = "identity") +
+  geom_line(size = 0.9) + 
+  ggtitle("") +
+  ylab("Ukupnih objava") +
+  xlab("") +
+  facet_wrap(~ kword) + 
+  scale_fill_manual(values = cbp1) +
+  scale_colour_manual(values=cbp1) +
+  scale_y_continuous(labels = scales::percent_format()) +
+  scale_x_date(labels = date_format("%d-%m")) +
+  theme_economist(base_family="Verdana") +
+    theme(
+      legend.position="none",
+      panel.spacing = unit(0, "lines"),
+      strip.text.x = element_text(size = 5),
+      plot.title = element_text(size=13)) -> g1
+
+
+
+
+
+ggplotly(g1)
+
+
+```
+
+</div>
+
+<br>
+
+- Vremenski također pregled potvrđuje Bosch kao tržišnog lidera
+<br>
+- *Bosch* je postojano u rasponu od 50% do 80% svih objava na tjednoj razini
+<br>
+- Znatno veća volatilnost objava za Braun 
+<br>
+- *Braun* oko ili ispod 25% tjednih objava sa povremenim povećanjima medijske aktivnosti preko 50% 
+<br>
+- *Phillips* postojano ispod 20% dnevnih objava sa rijetkim epizodama povećane medijske aktivnosti od 50% i 25%
+
+<br>
+
+
+### **Mediji**
+
+***
+
+<br>
+
+<div class = "row">
+
+<div class = "col-sm-10">
+
+- Najviše aktivnosti na forumima
+<br>
+- Nakon toga web 
+<br>
+- Manji udjeli na društvenim medijima i YouTube-u ostavljaju velik prostor za napredak
+<br>
+
+</div>
+
+<div class = "col-sm-2">
+
+```{r echo = FALSE, message=FALSE,warning=FALSE}
+phillips %>%
+  group_by(type) %>%
+  summarise(N = n()) %>%
+  ungroup() %>%
+  mutate(Tot = sum(N), 
+         'Udio %' = (N / Tot)*100) %>%
+  select(-Tot) %>%
+  arrange(desc(N)) %>%
+  filter(type != "comment") %>%
+  rename(Medij = type,
+          'Broj objava' = N) %>%
+  kbl(caption = "Broj objava po medijima") %>%
+    kable_paper(bootstrap_options = "striped",full_width = F, position = "right")
+
+```
+</div>
+</div>
+
+```{r echo = FALSE, eval=FALSE, include=FALSE, message=FALSE,warning=FALSE}
+
+##### Pregled po brand-u (toolkit)
+phillips %>%
+  mutate(keyword = tolower(keyword)) %>%
+  group_by(keyword) %>%
+  summarise(N = n()) %>%
+  arrange(desc(N)) %>%
+  kable()
+
+```
+
+<br>
+
+
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block2"> Grafikon: Udio (%) u ukupnom broju tjednih objava po mediju kroz vrijeme. </button>  
+<div id="Block2" class="collapse">
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.height = 6, fig.width = 9, fig.cap = "Grafikon: Udio (%) u ukupnom broju tjednih objava po mediju kroz vrijeme."}
+
+brandTxT %>%
+  mutate(time = as_datetime(time),
+         time = as.Date(time, format="%Y-%m-%d" ),
+         week = floor_date(time,"week")) %>% 
+  group_by(week,type) %>%
+  count() %>% 
+#  filter(!is.na(kword)) %>%
+  ungroup() %>%
+  group_by(week) %>%
+  mutate(gn = sum(n)) %>% 
+  ggplot(., aes(week, n / gn, fill = type)) + 
+  geom_bar(stat = "identity") +
+  geom_line() + 
+  ggtitle("") +
+  ylab("Ukupnih objava") +
+  xlab("") +
+  facet_wrap(~ type) +
+  scale_y_continuous(labels = scales::percent_format()) +
+  scale_x_date(labels = date_format("%d-%m")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+  panel.background = element_blank(), axis.line = element_line(colour = "black")) + 
+  scale_fill_manual(values = cbp1) +
+  scale_colour_manual(values=cbp1) +
+  theme_economist(base_family="Verdana") +
+    theme(
+      legend.position="none",
+      panel.spacing = unit(0, "lines"),
+      strip.text.x = element_text(size = 4),
+      plot.title = element_text(size=13)) -> g2
+
+
+
+ggplotly(g2)
+
+
+```
+
+</div>
+
+<br>
+
+- Znatan i postojan intenzitet objava na forumima sa čestim povećanjima aktivnosti u valovima
+<br> 
+- Postojana dinamika aktivnosti na Facebook-u uz vrlo rijetka povećanja aktivnosti
+<br>
+- Tjedne objave na web-u na razini od oko 20% ukupnih objava uz povećanja aktivnosti pred kraj/početak mjeseca
+<br>
+- Slična dinamika je primjetna i na YouTube-u uz znatno manji udio tjednih objava
+<br>
+- Usporedivi trendovi i na twitteru. 
+
+<br>
+ 
+### **Brand & medij**
+
+***
+
+<br>
+
+- Zastupljenost brandova u pojedinačnim medijima je jednaka kao u cjelokupnom medijskom prostoru
+<br>
+- Bosch ima najveću prednost na forumima i YouTube-u
+<br>
+- Na web-u je prednost Bosch-a i Braun-a u odnosu na Phillips znatno manja
+<br>
+- Dyson zauzima zadnju poziciju u ukupnom medijskom prostoru, ali ima bolju poziciju na YouTube od Phillipsa
+
+<br>
+
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block3"> Grafikon: Broj objava za medij i brand u cjelom razdoblju. </button>  
+<div id="Block3" class="collapse">
+
+```{r echo = FALSE, message=FALSE,warning=FALSE, fig.height = 6, fig.width = 9,fig.cap="Grafikon: Broj objava za medij i brand u cjelom razdoblju."}
+
+
 
 phillips %>%
    mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
                             grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
                             grepl("braun", mention, ignore.case = TRUE) ~ "braun",
                             grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) %>%
-  filter(type == "web" & kword == "bosch") %>%
-  unnest_tokens(word, mention) %>%
+  group_by(type,kword) %>%
+  summarise(N = n()) %>%
+  arrange(desc(N)) %>%
+  filter(!is.na(kword) ) %>%
+  ggplot(., aes(kword, N, fill=kword)) + 
+  geom_bar(stat = "identity") +
+  geom_line() + 
+  ggtitle("") +
+  ylab("") +
+  xlab("") +
+  facet_wrap(~ type, scales = "free") + 
+#  scale_y_continuous(labels = scales::percent_format()) +
+#  scale_x_date(labels = date_format("%d-%m")) +
+#  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+#  panel.background = element_blank(), axis.line = element_line(colour = "black")) + 
+  scale_fill_manual(values = cbp1) +
+  scale_colour_manual(values=cbp1) +
+  theme_economist(base_family="Verdana") +
+    theme(
+      legend.position="none",
+      panel.spacing = unit(0, "lines"),
+      strip.text.x = element_text(size = 8),
+      plot.title = element_text(size=13)) -> g3
+
+ggplotly(g3)
+
+
+```
+
+</div>
+
+<br>
+
+```{r eval = FALSE, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
+
+library("readxl")
+phillipstxt <- read_excel("./toolkitapp.xlsx")
+
+phillipstxt %>%
+   mutate(kword = case_when(grepl("phill", MENTION_SNIPPET, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", MENTION_SNIPPET, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", MENTION_SNIPPET, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", MENTION_SNIPPET, ignore.case = TRUE) ~ "dyson")) %>%
+#  filter(SOURCE_TYPE == "web" & kword == "bosch") %>%
+  unnest_tokens(word, MENTION_SNIPPET) %>%
   anti_join(stop_corpus, by = "word") %>%
   mutate(word = gsub("\\d+", NA, word)) %>%
   mutate(word = gsub("^[a-zA-Z]$", NA, word)) %>%
   filter(!is.na(word)) -> rijeci_clean
+
+
+rijeci_clean %>%
+#  filter(word %in% c("xiaomi","samsung","vivo","huawei")) %>%
+  group_by(word) %>%
+  summarise(#View =  sum(view, na.rm = TRUE),
+            Virality =  sum(VIRALITY, na.rm = TRUE),
+            Reach =  sum(REACH, na.rm = TRUE),
+            Share =  sum(SHARE_COUNT, na.rm = TRUE),
+          #  Virality =  sum(virality, na.rm = TRUE),
+          #  prValue =  sum(prValue, na.rm = TRUE),
+            n = n()) %>%
+  arrange(desc(n))-> freqOFmention
+
+
+freqOFmention %>%
+  rename (Brand = word,
+          'Number of mentions' = n) %>%
+  kbl(caption = "Najčešće riječi") %>%
+    kable_paper(bootstrap_options = "striped",full_width = F, position = "left")  %>%
+     scroll_box(width = "750px", height = "400px") 
+
+
+
+
 ```
+
+
+
+
+
+# **Izabrani mediji**
+
+***
+
+<br>
+
+- Web i YouTube zbog visokog fokusa (attention span) korisnika
+
+<br>
+
+### **Web**
+
+***
+
+<br>
+
+- Bosch i Braun jako prisutni na e-commmerce stranicama 
+<br>
+- Philips najviše prisutan na portalima, detaljnije u tekstu 
+
+<br>
+<br>
+Pregled objava po domenama je izrazito informativan. Prvi grafikon prikazuje ukupan broj objava prema web izvorima za sve brandove. Za tržišne lidere Bosch i Braun ali i Dyson je vidljiva važnost e-commmerce stranica i preprodavača tehnike različite vrste poput mall.hr, rog-joma.hr, elipso.hr i dr. Sa druge strane, za Philips najveću važnost imaju popularni portali za informiranje poput index.hr, 24sata.hr, jutarnji.hr, a slika ostaje ista kada se promatraju drugi kriteriji važnosti poput dosega objava (reach), PR  važnosti, angažiranosti. Kod tržišnih lidera je situacija nešto drugačija i oni koriste različite medije za postizanje specifičnih ciljeva prepoznatljivosti na web-u.
+
+<br>
+
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block4"> Grafikon:  Broj objava prema web izvorima za sve brandove. </button>  
+<div id="Block4" class="collapse">
+
+
+```{r landscapeFreqBrand, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9 , fig.cap="Grafikon: Broj objava po domenama."}
+
+phillips %>%
+   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) %>%
+  group_by(domain,kword) %>%
+  summarise(N = n()) %>%
+  arrange(desc(N))  %>%
+  filter(!is.na(domain)) %>%
+  filter(N > 2) %>%
+  filter(domain != "forum.hr")-> landscapeFreqBrand
+  
+landscapeFreqBrand %>%
+  ggplot(., aes(x = reorder(domain,N), y = N, fill = kword)) +
+  geom_bar(stat = "identity", alpha = 1) +
+  facet_wrap(~kword, scales = "free") +
+  ylab("Broj objava") +
+  xlab("") +
+  ggtitle("Pregled po domenama") + 
+  scale_fill_manual(values = cbp1) +
+  scale_colour_manual(values=cbp1) +
+  theme_economist(base_family="Verdana") +
+    theme(
+      legend.position="none",
+      panel.spacing = unit(0, "lines"),
+      strip.text.x = element_text(size = 5),
+      plot.title = element_text(size=8)) +
+  coord_flip() -> g4
+
+ggplotly(g4)
+
+```
+
+</div>
+
+<br>
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block5"> Grafikon: Broj objava prema web izvorima po kriteriju dosega (reach). </button>  
+<div id="Block5" class="collapse">
+
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9, fig.cap="Grafikon: Broj objava po domenama prema kriteriju dosega (reach)."}
+
+phillips %>%
+   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) %>%
+  group_by(domain,kword) %>%
+  summarise(N =  sum(reach, na.rm = TRUE)) %>%
+  arrange(desc(N))  %>%
+  filter(!is.na(domain)) %>%
+  filter(N > 2000) %>%
+  filter(domain != "forum.hr")-> landscapeFreqBrand
+  
+landscapeFreqBrand %>%
+  ggplot(., aes(x = reorder(domain,N), y = N, fill = kword)) +
+  geom_bar(stat = "identity", alpha = 1) +
+  facet_wrap(~kword, scales = "free") +
+  ylab("Broj objava") +
+  xlab("Izvor") +
+  ggtitle("") + 
+  scale_fill_manual(values = cbp1) +
+  scale_colour_manual(values=cbp1) +
+  theme_economist(base_family="Verdana") +
+    theme(
+      legend.position="none",
+      panel.spacing = unit(0, "lines"),
+      strip.text.x = element_text(size = 5),
+      plot.title = element_text(size=8))  +
+  coord_flip() -> g5
+
+ggplotly(g5)
+```
+</div>
+
+<br>
+
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block6"> Grafikon: Broj objava prema web izvorima po kriteriju angažiranosti (engagement). </button>  
+<div id="Block6" class="collapse">
+
+
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9, fig.cap="Grafikon: Broj objava po domenama prema kriteriju angažiranosti (engagement)."}
+
+phillips %>%
+   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) %>%
+  group_by(domain,kword) %>%
+  summarise(N =  sum(engagement, na.rm = TRUE)) %>%
+  arrange(desc(N))  %>%
+  filter(!is.na(domain)) %>%
+  filter(N > 20) %>%
+  filter(domain != "forum.hr")-> landscapeFreqBrand
+  
+landscapeFreqBrand %>%
+  ggplot(., aes(x = reorder(domain,N), y = N, fill = kword)) +
+  geom_bar(stat = "identity", alpha = 1) +
+  facet_wrap(~kword, scales = "free") +
+  ylab("Broj objava") +
+  xlab("Izvor") +
+  ggtitle("") + 
+  scale_fill_manual(values = cbp1) +
+  scale_colour_manual(values=cbp1) +
+  theme_economist(base_family="Verdana") +
+    theme(
+      legend.position="none",
+      panel.spacing = unit(0, "lines"),
+      strip.text.x = element_text(size = 5),
+      plot.title = element_text(size=8)) +
+  coord_flip() -> g6
+
+ggplotly(g6)
+```
+
+</div>
+
+<br>
+
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block7"> Grafikon: Broj objava prema web izvorima po kriteriju PR vrijednosti. </button>  
+<div id="Block7" class="collapse">
+
+
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9, fig.cap="Grafikon: Broj objava po domenama prema kriteriju PR vrijednosti."}
+
+phillips %>%
+   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) %>%
+  group_by(domain,kword) %>%
+  summarise(N =  sum(prValue, na.rm = TRUE)) %>%
+  arrange(desc(N))  %>%
+  filter(!is.na(domain)) %>%
+  filter(N > 20) %>%
+  filter(domain != "forum.hr")-> landscapeFreqBrand
+  
+landscapeFreqBrand %>%
+  ggplot(., aes(x = reorder(domain,N), y = N, fill = kword)) +
+  geom_bar(stat = "identity", alpha = 1) +
+  facet_wrap(~kword, scales = "free") +
+  ylab("Broj objava") +
+  xlab("Izvor") +
+  ggtitle("") + 
+  scale_fill_manual(values = cbp1) +
+  scale_colour_manual(values=cbp1) +
+  theme_economist(base_family="Verdana") +
+    theme(
+      legend.position="none",
+      panel.spacing = unit(0, "lines"),
+      strip.text.x = element_text(size = 5),
+      plot.title = element_text(size=8)) +
+  coord_flip() -> g7
+
+ggplotly(g7)
+```
+
+</div>
+
+<br>
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block8"> Grafikon: Broj objava prema web izvorima po kriteriju viralnosti. </button>  
+<div id="Block8" class="collapse">  
+
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9, fig.cap="Grafikon: Broj objava po domenama prema kriteriju viralnosti."}
+
+phillips %>%
+   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) %>%
+  group_by(domain,kword) %>%
+  summarise(N =  sum(virality, na.rm = TRUE)) %>%
+  arrange(desc(N))  %>%
+  filter(!is.na(domain)) %>%
+  filter(N > 2) %>%
+  filter(domain != "forum.hr") -> landscapeFreqBrand
+  
+landscapeFreqBrand %>%
+  ggplot(., aes(x = reorder(domain,N), y = N, fill = kword)) +
+  geom_bar(stat = "identity", alpha = 1) +
+  facet_wrap(~kword, scales = "free") +
+  ylab("Broj objava") +
+  xlab("Izvor") +
+  ggtitle("") + 
+  scale_fill_manual(values = cbp1) +
+  scale_colour_manual(values=cbp1) +
+  theme_economist(base_family="Verdana") +
+    theme(
+      legend.position="none",
+      panel.spacing = unit(0, "lines"),
+      strip.text.x = element_text(size = 5),
+      plot.title = element_text(size=8)) +
+  coord_flip()-> g8
+
+ggplotly(g8) 
+```
+
+</div>
+
+
+<br>
+
+### **Youtube**
+
+***
+
+<br>
+
+- Bosch je najzastupljeniji brand na YouTube prema svim pokazateljima i znatno nadmašuje konkurente
+<br>
+Važno je primijetiti da Dyson ima znatno bolju poziciju od Phillipsa na ovoj platformi prema svim pokazateljima osim broju komentara.
+
+<br>
+
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block9"> Grafikon: Pregled prema vrsti aktivnosti na YouTube platformi. </button>  
+<div id="Block9" class="collapse"> 
+
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 9, fig.width=9,fig.cap="Grafikon: Pregled prema vrsti aktivnosti na YouTube platformi."}
+phillips %>%
+   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) %>%
+  filter(type == "youtube") %>%
+  group_by(kword) %>%
+  summarise(View =  sum(view, na.rm = TRUE),
+            Comment =  sum(comment, na.rm = TRUE),
+            Engagement =  sum(engagement, na.rm = TRUE),
+            Like =  sum(like, na.rm = TRUE),
+          #  Virality =  sum(virality, na.rm = TRUE),
+            prValue =  sum(prValue, na.rm = TRUE)) %>%
+  gather(Var, Val,-kword) %>%
+  ggplot(., aes(x = kword, y = Val, fill = Var)) +
+  geom_bar(stat = "identity", alpha = 1) +
+  facet_wrap(~ Var, scales = "free") +
+  ylab("Broj objava") +
+  xlab("") + 
+  scale_fill_manual(values = cbp1) +
+  scale_colour_manual(values=cbp1) +
+  theme_economist(base_family="Verdana") +
+    theme(
+      legend.position="none",
+      panel.spacing = unit(0, "lines"),
+      strip.text.x = element_text(size = 10),
+      plot.title = element_text(size=8)) -> g8
+
+ggplotly(g8)
+  
+ 
+```
+
+</div>
+
+<br>
+
+- Bosch privlači najviše pregleda na njihovoj službenoj YouTube stranici
+<br>
+- Najvažniji influenceri su AutoMarket.hr, Hanuma kocht i Slavica de Jong
+
+<br>
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block10"> Tablica: Najvažniji autori na YouTube platformi. </button>  
+<div id="Block10" class="collapse">
+
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 8, fig.width=5}
+phillips %>%
+   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) %>%
+  filter(type == "youtube") %>%
+  group_by(kword,author) %>%
+  summarise(View =  sum(view, na.rm = TRUE),
+            Comment =  sum(comment, na.rm = TRUE),
+        #    Engagement =  sum(engagement, na.rm = TRUE),
+            Like =  sum(like, na.rm = TRUE),
+        #    Virality =  sum(virality, na.rm = TRUE),
+        #    prValue =  sum(prValue, na.rm = TRUE)
+        ) %>%
+  arrange(desc(View)) %>%
+  rename (Brand = kword,
+          'Autor' = author) %>%
+  kbl() %>%
+    kable_paper(bootstrap_options = "striped",full_width = F, position = "left")  %>%
+     scroll_box(width = "450px", height = "400px") %>%
+footnote(general = "*Broj objava u tekstu:") 
+  
+```
+
+</div>
+
+<br>
+
+
+### **Facebook**
+
+***
+
+<br>
+
+- Riječi snaga, prilika, obitelj, dom, kvaliteta, ekološki najviše doprinose pozitivnom sentimentu na Facebooku
+<br>
+- Vidi grafikon za riječi koje doprinose negativnom i neutralnom sentimentu
+
+<br>
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Blockinsert"> Grafikon: Riječi prema sentimentu na Facebook-u. </button>  
+<div id="Blockinsert" class="collapse">
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15,fig.cap="Grafikon: Riječi prema sentimentu na Facebook-u."}
+
+
+
+phillipstxt %>%
+   mutate(kword = case_when(grepl("phill", MENTION_SNIPPET, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", MENTION_SNIPPET, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", MENTION_SNIPPET, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", MENTION_SNIPPET, ignore.case = TRUE) ~ "dyson")) %>%
+  filter(SOURCE_TYPE == "facebook" ) %>%
+  unnest_tokens(word, TITLE) %>%
+  anti_join(stop_corpus, by = "word") %>%
+  inner_join(CroSentilex_Gold, by = "word") %>%
+  count(word, sentiment, sort = TRUE) -> sg
+
+
+sg %>%
+  group_by(sentiment) %>%
+  top_n(20) %>%
+  ungroup() %>%
+  mutate(sentiment = case_when(sentiment == 0 ~ "NEUTRALNO",
+                               sentiment == 1 ~ "NEGATIVNO",
+                               sentiment == 2 ~ "POZITIVNO")) %>%
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(word, n, fill = sentiment)) +
+  geom_col(show.legend = FALSE) +
+  ggtitle( "Doprinos sentimentu") +
+  labs( x = "Rijec", y = "Broj rijeci") +
+  facet_wrap(~ sentiment, scales = "free_y") +
+  coord_flip() +
+  theme_economist()-> gg_doprinos_sentimentu
+
+
+gg_doprinos_sentimentu
+
+
+
+
+
+```
+
+
+</div>
+
+
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+# **Izabrani brandovi**
+
+***
+
+<br>
+
+U ovom dijelu je pregled sadržaja za Bosch na Web-u i Phillips na Facebook-u.
+
+
+<br>
+
+### **Bosch** 
+
+***
+
+<br>
+
+- Najvažnije riječi su: akcija, čipovi, cijena, *powered by Bosch*, končar, aparati,  bicikli i dr.
+
+<br>
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block11"> Tablica: Najčešće riječi na Web-u. </button>  
+<div id="Block11" class="collapse">
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=5}
 
@@ -745,9 +1126,9 @@ rijeci_clean %>%
 #  filter(word %in% c("xiaomi","samsung","vivo","huawei")) %>%
   group_by(word) %>%
   summarise(#View =  sum(view, na.rm = TRUE),
-            Comment =  sum(comment, na.rm = TRUE),
-            Engagement =  sum(engagement, na.rm = TRUE),
-            Like =  sum(like, na.rm = TRUE),
+            Virality =  sum(VIRALITY, na.rm = TRUE),
+            Reach =  sum(REACH, na.rm = TRUE),
+            Share =  sum(SHARE_COUNT, na.rm = TRUE),
           #  Virality =  sum(virality, na.rm = TRUE),
           #  prValue =  sum(prValue, na.rm = TRUE),
             n = n()) %>%
@@ -757,64 +1138,217 @@ rijeci_clean %>%
 freqOFmention %>%
   rename (Brand = word,
           'Number of mentions' = n) %>%
-  kbl(caption = "Najčešće riječi na YouTubee o brandu Phillips") %>%
+  kbl(caption = "Najčešće riječi na YouTubee o brandu Bosch") %>%
     kable_paper(bootstrap_options = "striped",full_width = F, position = "left")  %>%
-     scroll_box(width = "550px", height = "700px") 
+     scroll_box(width = "450px", height = "400px") 
+
+
 
 ```
 
-
-
-### **Phillips**
-
-
-```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
-
-phillips %>%
-   mutate(kword = case_when(grepl("phill", mention, ignore.case = TRUE) ~ "phillips",
-                            grepl("bosch", mention, ignore.case = TRUE) ~ "bosch",
-                            grepl("braun", mention, ignore.case = TRUE) ~ "braun",
-                            grepl("dyson", mention, ignore.case = TRUE) ~ "dyson")) %>%
-  filter(type == "forum" & kword == "phillips") %>%
-  unnest_tokens(word, mention) %>%
-  anti_join(stop_corpus, by = "word") %>%
-  mutate(word = gsub("\\d+", NA, word)) %>%
-  mutate(word = gsub("^[a-zA-Z]$", NA, word)) %>%
-  filter(!is.na(word)) -> rijeci_clean
-```
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=5}
-
-rijeci_clean %>%
-#  filter(word %in% c("xiaomi","samsung","vivo","huawei")) %>%
-  group_by(word) %>%
-  summarise(View =  sum(view, na.rm = TRUE),
-            Comment =  sum(comment, na.rm = TRUE),
-            Engagement =  sum(engagement, na.rm = TRUE),
-            Like =  sum(like, na.rm = TRUE),
-          #  Virality =  sum(virality, na.rm = TRUE),
-          #  prValue =  sum(prValue, na.rm = TRUE),
-            n = n()) %>%
-  arrange(desc(n))-> freqOFmention
-
-
-freqOFmention %>%
-  rename (Brand = word,
-          'Number of mentions' = n) %>%
-  kbl(caption = "Najčešće riječi na forumima o brandu Phillips") %>%
-    kable_paper(bootstrap_options = "striped",full_width = F, position = "left")  %>%
-     scroll_box(width = "550px", height = "700px") 
-
-```
-
-
-
-### **Dyson**
-
+</div>
 
 <br>
 
-# Glavni zaključci
+### **Phillips**
+
+***
+
+<br>
+
+- Najrelevantnije riječi na Facebooku su: slušalice,brijač, brada, kamenac, kosa i dr.
+
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
+
+phillipstxt %>%
+   mutate(kword = case_when(grepl("phill", MENTION_SNIPPET, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", MENTION_SNIPPET, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", MENTION_SNIPPET, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", MENTION_SNIPPET, ignore.case = TRUE) ~ "dyson")) %>%
+  filter(SOURCE_TYPE == "facebook" & kword == "phillips") %>%
+  unnest_tokens(word, MENTION_SNIPPET) %>%
+  anti_join(stop_corpus, by = "word") %>%
+  mutate(word = gsub("\\d+", NA, word)) %>%
+  mutate(word = gsub("^[a-zA-Z]$", NA, word)) %>%
+  filter(!is.na(word)) -> philFB
+```
+
+<br>
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block12"> Tablica: Najvažnije riječi na Facebook-u. </button>  
+<div id="Block12" class="collapse">
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=5}
+
+philFB %>%
+#  filter(word %in% c("xiaomi","samsung","vivo","huawei")) %>%
+  group_by(word) %>%
+  summarise(Reach =  sum(REACH, na.rm = TRUE),
+            FollowerCount =  sum(FOLLOWERS_COUNT, na.rm = TRUE),
+         #   Engagement =  sum(engagement, na.rm = TRUE),
+            Like =  sum(LIKE_COUNT, na.rm = TRUE),
+            Comment =  sum(COMMENT_COUNT, na.rm = TRUE),
+            ShareCount =  sum(SHARE_COUNT, na.rm = TRUE),
+            n = n()) %>%
+  arrange(desc(n))-> freqOFmention
+
+
+freqOFmention %>%
+  rename (Brand = word,
+          'Number of mentions' = n) %>%
+  kbl(caption = "Najčešće riječi na Facebook-u o brandu Phillips") %>%
+    kable_paper(bootstrap_options = "striped",full_width = F, position = "left")  %>%
+     scroll_box(width = "550px", height = "400px") 
+
+```
+
+</div>
+
+<br>
+
+
+- Sonicare četkica postiže najveći doseg na Instagramu
+
+<br>
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block13">Tablica: Riječi koje postižu najveći doseg na Instagramu. </button>  
+<div id="Block13" class="collapse">
+
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
+phillipstxt %>%
+   mutate(kword = case_when(grepl("phill", MENTION_SNIPPET, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", MENTION_SNIPPET, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", MENTION_SNIPPET, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", MENTION_SNIPPET, ignore.case = TRUE) ~ "dyson")) %>%
+  filter(SOURCE_TYPE == "instagram" & kword == "phillips") %>%
+  unnest_tokens(word, MENTION_SNIPPET) %>%
+  anti_join(stop_corpus, by = "word") %>%
+  mutate(word = gsub("\\d+", NA, word)) %>%
+  mutate(word = gsub("^[a-zA-Z]$", NA, word)) %>%
+  filter(!is.na(word)) -> philINSTA
+
+
+philINSTA %>%
+#  filter(word %in% c("xiaomi","samsung","vivo","huawei")) %>%
+  group_by(word) %>%
+  summarise(Reach =  sum(REACH, na.rm = TRUE),
+         #    FollowerCount =  sum(FOLLOWERS_COUNT, na.rm = TRUE),
+         #   Engagement =  sum(engagement, na.rm = TRUE),
+            Like =  sum(LIKE_COUNT, na.rm = TRUE),
+            Comment =  sum(COMMENT_COUNT, na.rm = TRUE),
+          #  ShareCount =  sum(SHARE_COUNT, na.rm = TRUE),
+            n = n()) %>%
+  arrange(desc(Like))-> freqOFmention
+
+
+freqOFmention %>%
+  rename (Brand = word,
+          'Number of mentions' = n) %>%
+  kbl(caption = "Riječi koje postižu najveći doseg na Instagramu") %>%
+    kable_paper(bootstrap_options = "striped",full_width = F, position = "left")  %>%
+     scroll_box(width = "550px", height = "400px") 
+
+
+```
+
+
+</div>
+
+<br>
+
+
+- Juraj Šebalj je najvažniji Phillipsov influencer na Facebook-u. Druge influncere pogledaj u tablici.
+
+<br>
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block14">Tablica: Najvažniji influenceri na Facebook-u. </button>  
+<div id="Block14" class="collapse">
+
+```{r , echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
+phillipstxt %>%
+   mutate(kword = case_when(grepl("phill", MENTION_SNIPPET, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", MENTION_SNIPPET, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", MENTION_SNIPPET, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", MENTION_SNIPPET, ignore.case = TRUE) ~ "dyson")) %>%
+  filter(SOURCE_TYPE == "facebook" & kword == "phillips") %>%
+  group_by(AUTHOR) %>%
+  summarise(Like =  sum(LIKE_COUNT, na.rm = TRUE),
+         #    FollowerCount =  sum(FOLLOWERS_COUNT, na.rm = TRUE),
+         #   Engagement =  sum(engagement, na.rm = TRUE),
+            Reach =  sum(REACH, na.rm = TRUE),
+         #   Comment =  sum(COMMENT_COUNT, na.rm = TRUE),
+          #  ShareCount =  sum(SHARE_COUNT, na.rm = TRUE),
+            n = n()) %>%
+  arrange(desc(Like))-> freqOFmention
+
+
+freqOFmention %>%
+ # rename (Brand = word,
+ #         'Number of mentions' = n) %>%
+  kbl(caption = "Najvažniji influenceri na Facebook-u") %>%
+    kable_paper(bootstrap_options = "striped",full_width = F, position = "left")  %>%
+     scroll_box(width = "350px", height = "400px") 
+
+
+```
+
+
+</div>
+
+<br>
+
+
+
+
+
+
+
+
+
+
+```{r eval=FALSE, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 10, fig.width=15}
+
+
+
+phillipstxt %>%
+   mutate(kword = case_when(grepl("phill", MENTION_SNIPPET, ignore.case = TRUE) ~ "phillips",
+                            grepl("bosch", MENTION_SNIPPET, ignore.case = TRUE) ~ "bosch",
+                            grepl("braun", MENTION_SNIPPET, ignore.case = TRUE) ~ "braun",
+                            grepl("dyson", MENTION_SNIPPET, ignore.case = TRUE) ~ "dyson")) %>%
+  filter(SOURCE_TYPE == "facebook" ) %>%
+  unnest_tokens(word, TITLE) %>%
+  anti_join(stop_corpus, by = "word") %>%
+  inner_join(CroSentilex_Gold, by = "word") %>%
+  count(word, sentiment, sort = TRUE) -> sg
+
+
+sg %>%
+  group_by(sentiment) %>%
+  top_n(20) %>%
+  ungroup() %>%
+  mutate(sentiment = case_when(sentiment == 0 ~ "NEUTRALNO",
+                               sentiment == 1 ~ "NEGATIVNO",
+                               sentiment == 2 ~ "POZITIVNO")) %>%
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(word, n, fill = sentiment)) +
+  geom_col(show.legend = FALSE) +
+  ggtitle( "Doprinos sentimentu") +
+  labs( x = "Rijec", y = "Broj rijeci") +
+  facet_wrap(~ sentiment, scales = "free_y") +
+  coord_flip() +
+  theme_economist()-> gg_doprinos_sentimentu
+
+
+gg_doprinos_sentimentu
+
+
+
+
+
+```
+
+
+# **Glavni zaključci**
 
 ***
 
@@ -827,15 +1361,15 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 <div class = "blue">
 
 - Tržišni lider u medijskom prostoru je Bosch
-- Braun slijedi nakon toga, a Phillips zaostaje
+- Braun nakon toga, a Phillips zaostaje
 - U prosjeku ima oko 30 objava dnevno 
 - Najviše se objavljuje na forumima i Web-u
-- 
+- Prostor za rast na e-commerce stranicama i YouTube-u
 
 </div>
 
 
-
+</div>
 
 
 
