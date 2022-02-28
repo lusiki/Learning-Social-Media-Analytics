@@ -14,7 +14,7 @@ title: " "
 
 The social media has become a powerful tool to create knowledge and propagate opinions. Simultaneously, social media has created an unprecedented opportunity for companies to engage real-time interactions with consumers. The size and richness of social media data therefore provides a deep reservoir of insights to understand the society and transform business and marketing operations.
 
-The *Learning social media analytics* course will enable students to understand social media and the analytic tools to leverage social media data. The course will describe the current state and trends in the social media space, clarify the technology infrastructure for social media platforms and show how AI, linguistic and statistical methods can be used to study relevant social media topics. The course will introduce state of the art tools for social media analysis such as: data visualization, sentiment analysis, topic modelling, social network analysis, machine learning, natural language processing, neural networks. This toolkit will equip students with the ability to independently interpret, analyse and develop social media strategy.  
+The *Learning social media analytics* course will enable students to understand social media and the analytic tools to leverage social media data. The course will describe the current state and trends! in the social media space, clarify the technology infrastructure for social media platforms and show how AI, linguistic and statistical methods can be used to study relevant social media topics. The course will introduce state of the art tools for social media analysis such as: data visualization, sentiment analysis, topic modelling, social network analysis, machine learning, natural language processing, neural networks. This toolkit will equip students with the ability to independently interpret, analyse and develop social media strategy.  
 
 R and Python will be be used for the purposes of demonstrating methods. Prior knowledge od the programming language syntax is not necessery for the understanding of key concepts. However, to utilize the course content in the standalone analysis, learning some of the basic syntax is warmly recommended.
 
@@ -27,8 +27,8 @@ Main aims of the course are:
 2) Understanding IT infrastructure (Big Data) of social media platforms  
 3) Identification of relevant topics in social media research and business 
 4) Understanding tools, methodology and results in social media analytics
-5) Application of key pricniples, tools and methods for independent social media research
-
+5) Application of key priniples, tools and methods for independent social media research
+c
 
 <br>
 
@@ -43,7 +43,7 @@ The course will enable students to understand and implement advanced statistical
 
 Official course syllabus is available on [English](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/syllab/Learning%20social%20media%20analytics.docx) and [Croatian](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/syllab/Analitika%20dru%C5%A1tvenih%20medija.docx) language.
 <br>
-
+Unofficial course syllabus can be downloaded here(check for updates).
 
 
 
