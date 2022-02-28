@@ -12,7 +12,7 @@ navbar:
     - text: "Courses"
       menu:
         - text: "1. Course introduction"
-          href: ""
+          href: "https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-1-Course-introduction.html"
         - text: "2. Current state and latest trends in the social media space"
           href: "" 
         - text: "3. Big Data infrastructure and data acquisition procedures"

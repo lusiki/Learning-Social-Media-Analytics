@@ -20,12 +20,13 @@ title: " "
 ### Lecture 01: Course introduction
 
 
-- 
-- 
-- 
+- General course information
+- Objectives of the course
+- Course Literature
+- Data and resources
 
 <br>
-**Format:** [.html]() | [.rmd]()
+**Format:** [.html](https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-1-Course-introduction.html) | [.rmd](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/lectures/Regular%20Classes/Lecture%201%20Course%20introduction.Rmd)
 <br>
 **Readings:**  []()
 <br>
