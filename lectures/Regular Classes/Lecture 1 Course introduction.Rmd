@@ -32,26 +32,22 @@ knitr::opts_chunk$set(echo = F)
 <br>
 <br>
 <br>
-- Strukturirani i ne-strukturirani podatci
+- General course information
 <br>
 <br>
-- Kvantitativni i kvalitativni podatci
+- Objectives of the course
 <br>
 <br>
-- Diskretni i kontinuirani podatci
+- Course Literature
 <br>
 <br>
-- Razine podataka
+- Data and resources
 <br>
 <br>
-- Podatci u "praksi"
-<br>
-<br>
-- Big Data u društvenim znanostima
 
 ---
 
 layout: true
-# STRUKTURIRANI I NESTRUKTURIRANI PODATCI
+# GENERAL COURSE INFORMATION
 
 ---
