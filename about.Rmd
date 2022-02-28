@@ -43,7 +43,7 @@ The course will enable students to understand and implement advanced statistical
 
 Official course syllabus is available on [English](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/syllab/Learning%20social%20media%20analytics.docx) and [Croatian](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/syllab/Analitika%20dru%C5%A1tvenih%20medija.docx) language.
 <br>
-Unofficial course syllabus can be downloaded here(check for updates).
+Unofficial course syllabus can be downloaded here (check for updates).
 
 
 
