@@ -1,0 +1,57 @@
+---
+title: "Learning Social Media Analytics"
+# subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
+subtitle: "Lecture 1: Course introduction"
+author: "Luka Sikic, PhD"
+date: "Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)" #"`r format(Sys.time(), '%d %B %Y')`"
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts] 
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+```
+
+```{r libs, include=TRUE, echo=FALSE,message=FALSE, warning=FALSE}
+
+
+```
+
+
+
+# STRUCTURE
+<br>
+<br>
+<br>
+- Strukturirani i ne-strukturirani podatci
+<br>
+<br>
+- Kvantitativni i kvalitativni podatci
+<br>
+<br>
+- Diskretni i kontinuirani podatci
+<br>
+<br>
+- Razine podataka
+<br>
+<br>
+- Podatci u "praksi"
+<br>
+<br>
+- Big Data u društvenim znanostima
+
+---
+
+layout: true
+# STRUKTURIRANI I NESTRUKTURIRANI PODATCI
+
+---
