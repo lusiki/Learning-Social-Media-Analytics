@@ -1,15 +1,18 @@
 ---
-title: "LSMA: Learning Social Media Analytics" 
-author: "Luka Sikic, PhD" 
-date: "Spring 2021"
-subtitle: "lsikic@hrstud.hr"
-web: "https://lusiki.github.io/Learning-Social-Media-Analytics/index.html"
-officehours: "W 09:00-11:30 a.m."
-office: "Borongajska cesta 83d"
-classroom: "*online*"
-classhours: "W 02:00-03:45 p.m."
-output: pdf_document
+title: |
+  [**LSMA**](https://lusiki.github.io/Learning-Social-Media-Analytics/): Learning Social Media Analytics 
+subtitle: |
+  Course on important social media concepts and state of the art methods with real time data.
+author:
+- name: Luka Sikic, PhD
+  affiliation: Faculty of Croatian Studies, Zagreb, Department of Sociology
+  email: lsikic@hrstud.hr
+
+
+toc: false
 ---
+
+
 ```{r setup, include=FALSE, cache=F, message=F, warning=F, results="hide"}
 knitr::opts_chunk$set(cache=TRUE)
 knitr::opts_chunk$set(warning=F, message=F)
@@ -91,13 +94,14 @@ Don’t cheat. Don’t be that guy. Yes, you. You know exactly what I’m talkin
 \newpage
 
 # Class Schedule
+##### (*Note: This will be constantly updated.)
 
-Students should read the following before every class session. *Important*: class readings are subject to change, contingent on mitigating circumstances and the progress we make as a class. Students are encouraged to attend lectures and check the course website for updates. 
+Students should read the following before every class session. *Important*: class readings are subject to change, contingent on mitigating circumstances and the progress we make as a class. Students are encouraged to attend lectures and check the course website for updates. *Note: This will be updated after every lecture.
 
     
 ##  Week 01, 04/03: Syllabus Day 
 
-Read *all* associated documents on [course website]()https://lusiki.github.io/Learning-Social-Media-Analytics/index.html. Especially check the LSMA currated list of related [resources](https://lusiki.github.io/Learning-Social-Media-Analytics/resources.html).
+Read *all* associated documents on [course website](https://lusiki.github.io/Learning-Social-Media-Analytics/index.html). Especially check the LSMA currated list of related [resources](https://lusiki.github.io/Learning-Social-Media-Analytics/resources.html).
 
 ##  Week 02, 11/03: Current state and latest trends in the social media space
 ##  Week 03, 18/03: IT prerequisites and programming language syntax 
