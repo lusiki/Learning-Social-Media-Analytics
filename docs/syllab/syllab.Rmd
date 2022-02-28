@@ -1,15 +1,13 @@
 ---
-title: |
-  [**LSMA**](https://lusiki.github.io/Learning-Social-Media-Analytics/): Learning Social Media Analytics 
-subtitle: |
-  Course on important social media concepts and state of the art methods with real time data.
+title: "[**LSMA**](https://lusiki.github.io/Learning-Social-Media-Analytics/): Learning
+  Social Media Analytics \n"
 author:
 - name: Luka Sikic, PhD
   affiliation: Faculty of Croatian Studies, Zagreb, Department of Sociology
   email: lsikic@hrstud.hr
-
-
-toc: false
+subtitle: |
+  Course on important social media concepts and state of the art methods with real time data.
+output: pdf_document
 ---
 
 
