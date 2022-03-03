@@ -1,7 +1,7 @@
 ---
 title: "<center><div class='mytitle'>Analiza konkurencije u medijskom prostoru</div></center>"
 author: "<center><div class='mysubtitle'>Subjekt: PHILLIPS SDA, Q4 2021</div></center>"
-date: "<center><div class='mysubtitle'>Konkurenti: Bosch, Braun, Dyson</div></center>"
+subtitle: "<center><div class='mysubtitle'>Konkurenti: Bosch, Braun, Dyson</div></center>"
 output:
   html_document:
     theme: yeti
