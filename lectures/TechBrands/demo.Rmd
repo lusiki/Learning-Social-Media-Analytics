@@ -38,7 +38,7 @@ library(plotly)
 ```
 
 
-```{r toolkit, echo = FALSE, message=FALSE,warning=FALSE}
+```{r toolkit, echo = FALSE, message=FALSE,warning=FALSE, eval=T}
 
 source(here::here('Creds', 'api.R'))
 
