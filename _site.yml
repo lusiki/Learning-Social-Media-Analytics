@@ -54,7 +54,7 @@ navbar:
     - text: "Site-info"
       href: site-info.html
     - icon: ion-social-github
-      href: https://lusiki.github.io/Learning-Social-Media-Analytics/index.html
+      href: https://github.com/lusiki/Learning-Social-Media-Analytics
 output_dir: "docs"
 output:
   html_document:
