@@ -32,6 +32,7 @@ knitr::opts_chunk$set(echo = F)
 <br>
 <br>
 <br>
+<br>
 - General course information
 <br>
 <br>
@@ -53,6 +54,7 @@ layout: true
 #### What is this all about?
 <br>
 <br>
+<br>
 - understand social media landscape and trends
 <br>
 <br>
@@ -67,6 +69,7 @@ layout: true
 ---
 <br>
 #### How do we do that?
+<br>
 <br>
 <br>
 - R and Python will be be used for the purposes of demonstrating methods
@@ -107,6 +110,7 @@ layout: true
 #### Syllabus
 <br>
 <br>
+<br>
 - unofficial [syllab](https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/syllab/syllab.html) (please follow up for updates); also as [.pdf](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/syllab/syllab.pdf).
 <br>
 <br>
@@ -116,29 +120,23 @@ layout: true
 layout: true
 # OBJECTIVES OF THE COURSE
 ---
-
 <br>
-#### Catching up with the current state and trends in the social media space 
-
----
-
 <br>
-#### IT infrastructure (Big Data) of social media platforms  
-
----
-
 <br>
-#### Relevant topics in social media research and business 
 
---- 
-
+- Catching up with the current state and trends in the social media space 
 <br>
-#### Tools, methodology and results in social media analytics
-
----
-
 <br>
-#### Independent social media research
+- IT infrastructure (Big Data) of social media platforms  
+<br>
+<br>
+- Relevant topics in social media research and business 
+<br>
+<br>
+- Tools, methodology and results in social media analytics
+<br>
+<br>
+- Independent social media research
 
 ---
 layout: true
@@ -175,7 +173,7 @@ layout: true
 - [Information, Communication & Society](https://www.tandfonline.com/journals/rics20)
 <br>
 <br>
-- optionally you can pick another journal  to follow :-)
+- Optionally you can pick another journal to follow, check the [list](https://lusiki.github.io/Learning-Social-Media-Analytics/resources.html) 
 ---
 layout: true
 # DATA AND RESOURCES
@@ -184,19 +182,19 @@ layout: true
 #### Data
 <br>
 <br>
-- there are numerous social media data sources
+- There are numerous social media data sources
 <br>
 <br>
-- we will be working with Croatian data so please thoughly check [Mediatoolkit](https://www.mediatoolkit.com/) (alternatives are [presscut](https://www1.presscut.hr/en/), [pressclipping](https://www.pressclipping.hr/))
+- We will be working with Croatian data so please thoughly check [Mediatoolkit](https://www.mediatoolkit.com/) (alternatives are [presscut](https://www1.presscut.hr/en/), [pressclipping](https://www.pressclipping.hr/))
 <br>
 <br>
-- data samples are provided in the repo
+- Data samples are provided in the repo
 <br>
 <br>
-- these data sources are equally inconvenient (expensive and partitial)
+- These data sources are equally inconvenient (expensive and partitial)
 <br>
 <br>
-- serious solution requires your own database complilation 
+- Serious solution requires your own database complilation 
 
 
 ---
@@ -204,13 +202,13 @@ layout: true
 #### Resources
 <br>
 <br>
-- there are countless social media resources
+- There are countless social media resources
 <br>
 <br>
-- please check my [curated list](https://lusiki.github.io/Learning-Social-Media-Analytics/resources.html)
+- Please check my [curated list](https://lusiki.github.io/Learning-Social-Media-Analytics/resources.html)
 <br>
 <br>
-- consider adding to it (maybe as a student project)
+- Consider adding to it (maybe as a student project)
 
 ---
 class: inverse, middle
