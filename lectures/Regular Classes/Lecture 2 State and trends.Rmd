@@ -1,0 +1,89 @@
+---
+title: "Learning Social Media Analytics"
+# subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
+subtitle: "Lecture 2: Current state and latest trends"
+author: "Luka Sikic, PhD"
+date: "Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)" #"`r format(Sys.time(), '%d %B %Y')`"
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts] 
+    lib_dir: libs
+    nature:
+      highlightStyle: googlecode
+      highlightLines: true
+      countIncrementalSlides: false
+
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+```
+
+
+```{r libs, include=TRUE, echo=FALSE,message=FALSE, warning=FALSE}
+
+
+```
+
+
+# STRUCTURE
+<br>
+<br>
+<br>
+<br>
+- 
+<br>
+<br>
+- 
+<br>
+<br>
+- 
+<br>
+<br>
+- 
+<br>
+<br>
+
+---
+layout: true
+# FETCH THE DATA
+---
+
+- check the sample file
+
+```{r}
+library(tidyverse)
+library(readxl)
+
+path <- "D:/LUKA/Freelance/Mediatoolkit/FULLDATA"
+
+raw <- list.files(path = path , pattern="xlsx")
+
+raw_path <- paste0(path, "/", raw)
+
+all_raw <- map_df(raw_path[1:5], read_excel)
+```
+
+
+
+
+---
+<br>
+#### 
+<br>
+<br>
+<br>
+-
+<br>
+<br>
+- 
+<br>
+<br>
+- l
+<br>
+<br>
+-
+
+---
