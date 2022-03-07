@@ -18,13 +18,14 @@ output:
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = F)
+knitr::opts_chunk$set(echo = F, message = F, warning = F)
 ```
 
 
 ```{r libs, include=TRUE, echo=FALSE,message=FALSE, warning=FALSE}
-
-
+library(tidyverse)
+library(readxl)
+library(here)
 ```
 
 
@@ -33,7 +34,7 @@ knitr::opts_chunk$set(echo = F)
 <br>
 <br>
 <br>
-- 
+- DATA EXPLORATION
 <br>
 <br>
 - 
@@ -48,14 +49,70 @@ knitr::opts_chunk$set(echo = F)
 
 ---
 layout: true
-# FETCH THE DATA
+# DATA EXPLORATION
 ---
 
-- check the sample file
+- check the raw [data](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/data/Mediatoolkit/sample.xlsx); sourced from [Mediatoolkit](https://www.mediatoolkit.com/)
 
+
+
+```{r, echo=T}
+# read into environment
+one_day_sample <- read_excel(here::here("data/Mediatoolkit/sample.xlsx"))
+# size of the data
+dim(one_day_sample)
+# sneek peak
+glimpse(one_day_sample[sample(nrow(one_day_sample)),1:8])
+
+```
+
+---
+<br>
+<br>
+<br>
 ```{r}
-library(tidyverse)
-library(readxl)
+# other variables
+names(one_day_sample)
+```
+
+---
+
+```{r, echo=T}
+# dates
+unique(one_day_sample$DATE)
+# time
+length(unique(one_day_sample$TIME))
+# observations/ activity
+nrow(one_day_sample)
+# social media networks
+unique(one_day_sample$SOURCE_TYPE)
+
+
+```
+
+---
+
+
+```{r, echo=T}
+# unique authors
+length(unique(one_day_sample$AUTHOR))
+# unique titles
+length(unique(one_day_sample$TITLE))
+# unique sources
+length(unique(one_day_sample$FROM))
+# unique urls
+length(unique(one_day_sample$URL))
+```
+
+
+
+
+
+
+
+
+
+```{r, eval = F}
 
 path <- "D:/LUKA/Freelance/Mediatoolkit/FULLDATA"
 
