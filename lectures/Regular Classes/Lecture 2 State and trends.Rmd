@@ -26,6 +26,8 @@ knitr::opts_chunk$set(echo = F, message = F, warning = F)
 library(tidyverse)
 library(readxl)
 library(here)
+library(kableExtra)
+library(DT)
 ```
 
 
@@ -104,6 +106,46 @@ length(unique(one_day_sample$FROM))
 length(unique(one_day_sample$URL))
 ```
 
+---
+
+```{r, echo=T}
+# GENERAL OVERVIEW
+one_day_sample %>%
+  group_by(SOURCE_TYPE) %>%
+  count() %>%
+  arrange(desc(n)) %>%
+  mutate_if(is.numeric, format, big.mark = ".") %>%
+  kbl() %>%
+  kable_styling(font_size = 11)
+```
+
+---
+
+```{r, echo=T}
+# SAMPLE SOME TXT
+one_day_sample %>%
+     select(SOURCE_TYPE, MENTION_SNIPPET) %>%
+     unique(.) %>%  
+     sample_n(9) %>%
+  kbl() %>%
+  kable_styling(font_size = 11)
+```
+
+
+---
+
+```{r, echo=T}
+# SAMPLE SOME TITLES
+one_day_sample %>%
+     select(SOURCE_TYPE, TITLE) %>%
+     unique(.) %>%  
+     sample_n(9) %>%
+  kbl() %>%
+  kable_styling(font_size = 11)
+```
+
+
+---
 
 
 

@@ -8,6 +8,8 @@
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+    <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   </head>
   <body>
     <textarea id="source">
@@ -76,14 +78,14 @@ glimpse(one_day_sample[sample(nrow(one_day_sample)),1:8])
 ```
 ## Rows: 27,604
 ## Columns: 8
-## $ DATE        &lt;chr&gt; "2022-01-01", "2022-01-02", "2022-01-01", "2022-01-02", "2~
-## $ TIME        &lt;chr&gt; "23:52:15", "21:42:52", "20:16:00", "11:01:04", "09:09:24"~
-## $ TITLE       &lt;chr&gt; "dildo u guzicu. ili ne pridavat znacaj krscanskim blagdan~
-## $ FROM        &lt;chr&gt; "croatia", "croatia", "bacvice.com", "forum.hr", "Krešimir~
-## $ AUTHOR      &lt;chr&gt; "jahjahsatan", "zdravko_0", "https://www.bacvice.com/autho~
-## $ URL         &lt;chr&gt; "https://www.reddit.com/r/croatia/comments/rttwpi/_/hqv1cv~
+## $ DATE        &lt;chr&gt; "2022-01-02", "2022-01-02", "2022-01-02", "2022-01-02", "2~
+## $ TIME        &lt;chr&gt; "19:33:07", "17:25:25", "19:30:09", "14:22:53", "10:52:00"~
+## $ TITLE       &lt;chr&gt; "Frendovi starci ne znaju sloziti dobro eliminacijska pita~
+## $ FROM        &lt;chr&gt; "croatia", "Johanca #CepimoSe", "akademija-art.hr", "n1inf~
+## $ AUTHOR      &lt;chr&gt; "Annoying_DMT_guy", "Johanca #CepimoSe", NA, NA, NA, "Kost~
+## $ URL         &lt;chr&gt; "https://www.reddit.com/r/croatia/comments/ru8yza/_/hqypq4~
 ## $ URL_PHOTO   &lt;chr&gt; "https://mediatoolkit.com/img/50x50,sc,sxshotwJyc_8Cc25LSO~
-## $ SOURCE_TYPE &lt;chr&gt; "reddit", "reddit", "web", "forum", "twitter", "youtube", ~
+## $ SOURCE_TYPE &lt;chr&gt; "reddit", "twitter", "web", "web", "web", "twitter", "web"~
 ```
 
 ---
@@ -189,6 +191,189 @@ length(unique(one_day_sample$URL))
 ## [1] 26814
 ```
 
+---
+
+
+```r
+# GENERAL OVERVIEW
+one_day_sample %&gt;%
+  group_by(SOURCE_TYPE) %&gt;%
+  count() %&gt;%
+  arrange(desc(n)) %&gt;%
+  mutate_if(is.numeric, format, big.mark = ".") %&gt;%
+  kbl() %&gt;%
+  kable_styling(font_size = 11)
+```
+
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; SOURCE_TYPE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; n &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 9.572 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6.147 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.903 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.488 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.139 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.391 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; comment &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 610 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; instagram &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 354 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+
+```r
+# SAMPLE SOME TXT
+one_day_sample %&gt;%
+     select(SOURCE_TYPE, MENTION_SNIPPET) %&gt;%
+     unique(.) %&gt;%  
+     sample_n(9) %&gt;%
+  kbl() %&gt;%
+  kable_styling(font_size = 11)
+```
+
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; SOURCE_TYPE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; MENTION_SNIPPET &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; U glazbi i ljubavništvu. Izvan ta dva konteksta 'analitički um' najčešće ne mogu 'ugasiti'. da, pusti ga na pasu malo znam da imas unutarnji otpor ali daj mu malo da se prolufta &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; I da se zove mala žena od velike slađa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Nedjeljko Marković: Siromašni građani Hrvatske u koronakrizi još su TEŽE DOLAZILI DO PRISTOJNOG STANA I ZDRAVSTVENIH ... omogućavaju socijalnu mobilnost, prelazak iz "siromaštva" u srednji sloj, a najbolje su mjere u području odgoja i &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Quote: Lunor kaže: Ma da...ali meni su ti dostojanstveni "Isus tipovi" materijal za produhvljene razgovore i platonska prijateljstva. Ne mogu ih romantično doživjeti kao neke niske dlakave seksi beštije, a nije da nisam probala. Hm, nikad nisam bila &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Zadruga 5 - Neviđeni skandal Cara i Maje, Filip Opet izgreban vidno krvari i trazi diskvalifikaciju Zadruga 5 - Neviđeni skandal Cara i Maje, Filip Opet izgreban vidno krvari i trazi diskvalifikaciju #Zadruga5 #Filipcar #Majamrinkovic Zadruga 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; I tako počela 2022god. Svi problemi od lanjske su nažalost ostali,a sve lijepe želje za novu još nisu stigle. Nisam skeptik( sumnjičav,nepovjerljiv) ali ni nerealni optimist. Hrvatski građani uz Bugare najskeptični su- prema zadnjem istraživanju-za &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NAJPOZNATIJA njemačka staza je jedno od mjesta na kojima si smijete dati oduška, stisnuti gas, ite doživjeti što sve vaš automobil može.  Iako takva vožnja donosi dragocjeno iskustvo u stjecanju vještina vožnje automobila, ali i upoznavanja samog &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Da li biste mi preporučili ovaj robot usisavač i perač ili ima i što bolje u domaćim šopovima a da je po nekoj prihvatljivoj cijeni? Svaki prijedlog, preporuka i sugestija dobro su došli! Unaprijed puno hvala! &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Zbrka u Mostaru, gradonačelnik obišao prvu bebu rođenu u ovoj godini, a onda se dogodio preokret Mostarski gradonačelnik Mario Kordić obišao je jutros rodilišta, a posjetio je i kantonalnu bolnicu dr. Safet Mujić gdje je posjetio i prve bebe rođene u &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+---
+
+
+```r
+# SAMPLE SOME TITLES
+one_day_sample %&gt;%
+     select(SOURCE_TYPE, TITLE) %&gt;%
+     unique(.) %&gt;%  
+     sample_n(9) %&gt;%
+  kbl() %&gt;%
+  kable_styling(font_size = 11)
+```
+
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; SOURCE_TYPE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; TITLE &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Gradonačelnik je posjetio Zavod za hitnu medicinu, Županijski centar 112, vatrogasce i policiju... &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; "ova izuzetno potresna, čarobno maštovita verzija trojanskog rata priča bolnu priču o ljubavi, ali i o silnoj bici između bogova i kraljeva, spokoja i časti, besmrtne slave i ljudskog srca." &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; #karlovac #graduparku https://t.co/HwNqCz7oCV RT @VisitKarlovac Želimo vam sretnu novu 2022. godinu! &amp;lt;U+0001F973&amp;gt;&amp;lt;U+0001F37B&amp;gt;
+Neka Vam nova godina bude prilika za istraživanje i putovanja, nove doživljaje i priče, a Karlovac destinacija u kojoj ćete ih doživjeti. &amp;lt;U+0001F60A&amp;gt;
+
+#VisitKarlovac #sretnanovagodina https://t.co/FG3tNPiIW0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; adventsko darivanje: K18 Hair set maski za kosu &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; RT @LidijaKralj #BeInternetAwesome povezuje kontinentalne i otočke škole u Hrvatskoj &amp;lt;U+0001F917&amp;gt; #BudiInternetGenijalac @GoogleForEdu  @Googleorg  &amp;amp; @ucitelji_hr https://t.co/uNPD8dtNQL https://twitter.com/ucitelji_hr/status/1471517281708511237 RT @ucitelji_hr #BudiInternetGenijalac poučava djecu osnovama digitalnog građanstva kako bi mogli pouzdano istraživati internetski svijet.Pronađite mnoštvo zanimljivih aktivnosti koje možete primijeniti u razredu ili kod kuće https://t.co/LYg3hwne3b #UciteljiHR  #GoogleForeducation @GoogleForEdu https://t.co/dNKZ86vEp5 http://ucitelji.hr/budi-internet-genijalac/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Energetski stručnjak otkrio kolike nas cijene goriva očekuju u sljedećim tjednima &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; @Branislav1978 @Miki86211791 @dr_antic Ade, sama vojska skupljala ljude tovarila ih u kanione i streljala ih. Mladić nije znao? Priča za đecu. &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Spin Fighters &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bila danas u Maksimiru i prođem kraj dvije žene, i čujem u prolazu kako jedna govori drugoj "ne možeš svako govno koje nađeš zamotat u papir" i sad me zanima... &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+---
 
 
 
