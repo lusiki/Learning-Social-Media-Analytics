@@ -147,6 +147,65 @@ one_day_sample %>%
 
 ---
 
+#### FACEBOOK
+
+```{r , echo=T}
+
+one_day_sample %>%
+  filter(SOURCE_TYPE == "facebook") %>%
+  select(AUTHOR,
+         REACH,
+         FOLLOWERS_COUNT,
+         LIKE_COUNT,
+         COMMENT_COUNT,
+         TOTAL_REACTIONS_COUNT,
+         INFLUENCE_SCORE,
+         TITLE,
+         MENTION_SNIPPET,
+         DATE, 
+         TIME) -> fb
+
+```
+
+
+---
+
+#### FACEBOOK
+
+```{r, echo=T}
+
+fb %>% 
+  group_by( AUTHOR,FOLLOWERS_COUNT) %>%
+  summarise(N = n()) %>%
+  arrange(desc(N))  %>%
+  mutate_if(is.numeric, format, big.mark = ".") %>%
+  head(10) %>%   kbl() %>%  kable_styling(font_size = 11)
+```
+
+
+---
+
+#### FACEBOOK
+
+```{r, echo=T}
+
+fb %>% 
+  group_by(TITLE) %>%
+  summarise(LIKES = sum(LIKE_COUNT),
+            COMMENT = sum(COMMENT_COUNT),
+            REACH = sum(REACH),
+            REACTIONS = sum(TOTAL_REACTIONS_COUNT)) %>%
+  arrange(desc(LIKES)) %>%
+  mutate_if(is.numeric, format, big.mark = ".") %>%
+  head(10) %>% kbl() %>% kable_styling(font_size = 11)
+```
+
+
+
+
+
+
+
 
 
 
