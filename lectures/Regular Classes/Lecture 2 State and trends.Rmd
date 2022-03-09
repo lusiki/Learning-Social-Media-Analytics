@@ -59,6 +59,7 @@ layout: true
 
 
 ```{r, echo=T}
+# ONE DAY
 # read into environment
 one_day_sample <- read_excel(here::here("data/Mediatoolkit/sample.xlsx"))
 # size of the data
@@ -68,40 +69,20 @@ glimpse(one_day_sample[sample(nrow(one_day_sample)),1:8])
 
 ```
 
+---
 
-```{r, eval = F}
-
+```{r, echo=T , eval = T}
+# FULL SAMPLE
 path <- "D:/LUKA/Freelance/Mediatoolkit/FULLDATA"
-
 raw <- list.files(path = path , pattern="xlsx")
-
 raw_path <- paste0(path, "/", raw)
-
 all_raw <- map_df(raw_path, read_excel)
+all_raw <- all_raw  %>%  mutate(DATE = as.Date(DATE,"%Y-%m-%d" ))
 
-all_raw <- all_raw  %>%
-  mutate(DATE = as.Date(DATE,"%Y-%m-%d" ))
-
+dim(all_raw)
 range(all_raw$DATE)
 
-proba <- all_raw %>% slice(1:100000)
-
-p <- data.table(all_raw)
-
-
 ```
-
-
-
-
-
-
-
-
-
-
-
-
 
 ---
 <br>
@@ -115,45 +96,24 @@ names(one_day_sample)
 ---
 
 ```{r, echo=T}
-# dates
-unique(one_day_sample$DATE)
-# time
-length(unique(one_day_sample$TIME))
 # observations/ activity
-nrow(one_day_sample)
+nrow(all_raw)
 # social media networks
-unique(one_day_sample$SOURCE_TYPE)
-
-
+unique(all_raw$SOURCE_TYPE)
 ```
 
 ---
 
 ```{r, echo=T}
 # unique authors
-length(unique(one_day_sample$AUTHOR))
+length(unique(all_raw$AUTHOR))
 # unique titles
-length(unique(one_day_sample$TITLE))
+length(unique(all_raw$TITLE))
 # unique sources
-length(unique(one_day_sample$FROM))
+length(unique(all_raw$FROM))
 # unique urls
-length(unique(one_day_sample$URL))
+length(unique(all_raw$URL))
 ```
-
----
-
-```{r, echo=T}
-# GENERAL OVERVIEW
-one_day_sample %>%
-  group_by(SOURCE_TYPE) %>%
-  count() %>%
-  arrange(desc(n)) %>%
-  mutate_if(is.numeric, format, big.mark = ".") %>%
-  kbl() %>%
-  kable_styling(font_size = 11)
-
-```
-
 
 ---
 
@@ -186,21 +146,20 @@ one_day_sample %>%
 
 ```{r, echo=T}
 # SAMPLE SOME TITLES
-one_day_sample %>%
+all_raw %>%
      select(SOURCE_TYPE, TITLE) %>%
-     unique(.) %>%  
      sample_n(9) %>%
   kbl() %>%
   kable_styling(font_size = 11)
 ```
 
----
 
 #### FACEBOOK
-
+<br>
+<br>
 ```{r , echo=T}
 # choose variables to investigate
-one_day_sample %>%
+all_raw %>%
   filter(SOURCE_TYPE == "facebook") %>%
   select(AUTHOR,
          REACH,
@@ -213,33 +172,7 @@ one_day_sample %>%
          MENTION_SNIPPET,
          DATE, 
          TIME) -> fb
-
 ```
-
-
----
-
-#### FACEBOOK
-
-```{r , echo=T}
-# choose variables to investigate
-one_day_sample %>%
-  filter(SOURCE_TYPE == "facebook") %>%
-  select(AUTHOR,
-         REACH,
-         FOLLOWERS_COUNT,
-         LIKE_COUNT,
-         COMMENT_COUNT,
-         TOTAL_REACTIONS_COUNT,
-         INFLUENCE_SCORE,
-         TITLE,
-         MENTION_SNIPPET,
-         DATE, 
-         TIME) -> fb
-
-```
-
-
 
 ---
 
@@ -289,11 +222,8 @@ fb %>%
   head(7) %>% kbl() %>% kable_styling(font_size = 11)
 ```
 
----
 
-#### FACEBOOK
-
-```{r, echo=T}
+```{r, echo=F, eval=F, include=F}
 # important activity and author
 fb %>% 
   group_by(TITLE) %>%
@@ -313,7 +243,7 @@ fb %>%
 
 ```{r , echo=T}
 # choose variables to investigate
-one_day_sample %>%
+all_raw %>%
   filter(SOURCE_TYPE == "web") %>%
   select(FROM,
          AUTHOR,
@@ -326,7 +256,6 @@ one_day_sample %>%
          MENTION_SNIPPET,
          DATE, 
          TIME) -> web
-
 ```
 
 ---
@@ -337,20 +266,6 @@ one_day_sample %>%
 # most active authors
 web %>% 
   group_by(FROM) %>%
-  summarise(N = n()) %>%
-  arrange(desc(N))  %>%
-  mutate_if(is.numeric, format, big.mark = ".") %>%
-  head(10) %>% kbl() %>%  kable_styling(font_size = 11)
-```
-  
----
-
-#### WEB
-
-```{r, echo=T}
-# most active authors
-web %>% 
-  group_by(AUTHOR) %>%
   summarise(N = n()) %>%
   arrange(desc(N))  %>%
   mutate_if(is.numeric, format, big.mark = ".") %>%
@@ -371,9 +286,9 @@ web %>%
   head(8) %>% kbl() %>% kable_styling(font_size = 11)
 ```
   
----
 
-```{r, echo=T}
+```{r, echo=F, eval=F,include=F}
+# slow
 web %>% 
   group_by(TITLE) %>%
   summarise(LIKES = sum(LIKE_COUNT),
@@ -392,7 +307,7 @@ web %>%
 
 ```{r, echo=T}
 # choose variables to investigate
-one_day_sample %>%
+all_raw %>%
   filter(SOURCE_TYPE == "twitter") %>%
   select(AUTHOR,
          REACH,
@@ -440,9 +355,10 @@ twitter %>%
 #### TWITTER
 
 ```{r, echo=T}
+# slow
 # most active authors
 twitter %>% 
-  group_by(MENTION_SNIPPET, AUTHOR) %>%
+  group_by(AUTHOR) %>%
   summarise(FAVORITE = sum(FAVORITE_COUNT),
             RETWEET = sum(RETWEET_COUNT)) %>%
   arrange(desc(RETWEET))  %>%
@@ -482,7 +398,7 @@ twitter %>%
 
 ```{r, echo=T}
 # choose variables to investigate
-one_day_sample %>%
+all_raw %>%
   filter(SOURCE_TYPE == "youtube") %>%
   select(AUTHOR,
          REACH,
@@ -502,7 +418,6 @@ one_day_sample %>%
 
 
 ```{r, echo=T}
-
 youtube %>%
   group_by(AUTHOR) %>%
   count() %>%
@@ -517,9 +432,7 @@ youtube %>%
 
 #### YOUTUBE
 
-
 ```{r, echo=T}
-
 youtube %>%
   group_by(AUTHOR) %>%
   summarise(REACH = sum(REACH),
@@ -528,8 +441,7 @@ youtube %>%
             COMMENTS= sum(COMMENTS_COUNT)) %>%
   arrange(desc(VIEW)) %>%
   mutate_if(is.numeric, format, big.mark = ".") %>%
-  head(12) %>% kbl() %>% kable_styling(font_size = 11)
-
+  head(10) %>% kbl() %>% kable_styling(font_size = 11)
 ``` 
   
   
@@ -538,13 +450,13 @@ youtube %>%
 #### YOUTUBE
 
 
-```{r, echo=T}
-
+```{r, echo=F, eval=F, include=F}
+# breaks down
 youtube %>%
   group_by(AUTHOR, URL,REACH,LIKE_COUNT, VIEW_COUNT, COMMENTS_COUNT) %>%
   arrange(desc(VIEW_COUNT)) %>%
-  datatable(., rownames = FALSE, filter="top", options = list(pageLength = 5, scrollX=T))
-#  head(12) %>% kbl() %>% kable_styling(font_size = 11)
+#  datatable(., rownames = FALSE, filter="top", options = list(pageLength = 5, scrollX=T))
+  head(12) %>% kbl() %>% kable_styling(font_size = 11)
 
 ```   
   
@@ -552,17 +464,17 @@ youtube %>%
 ---
 
 #### FORUM
-
+<br>
+<br>
 ```{r, echo=T}
 # choose variables to investigate
-one_day_sample %>%
+all_raw %>%
   filter(SOURCE_TYPE == "forum") %>%
   select(FROM,
          TITLE,
          MENTION_SNIPPET,
          DATE, 
          TIME) -> forum
-
 ``` 
   
 ---
@@ -570,21 +482,23 @@ one_day_sample %>%
 #### FORUM
 
 ```{r, echo=T}
-
 # not a very good coverage
 forum %>%
   group_by(FROM) %>%
-  count()
-
+  count() %>%
+  arrange(desc(n)) %>%
+  mutate_if(is.numeric, format, big.mark = ".") %>%
+  head(8) %>% kbl() %>% kable_styling(font_size = 11)
 ``` 
   
 ---
 
 #### INSTAGRAM
-
+<br>
+<br>
 ```{r, echo=T}
 # choose variables to investigate
-one_day_sample %>%
+all_raw %>%
   filter(SOURCE_TYPE == "instagram") %>%
   select(FROM,
          TITLE,
@@ -604,18 +518,16 @@ one_day_sample %>%
 #### INSTAGRAM
 
 ```{r, echo=T}
-
 # not a very good coverage
 instagram %>%
   group_by(FROM) %>%
   summarise(REACH = sum(REACH),
             COMMENT = sum(COMMENT_COUNT),
             LIKE = sum(LIKE_COUNT),
-            VIEW = sum(VIEW_COUNT))%>%
+            VIEW = sum(VIEW_COUNT)) %>%
   mutate_if(is.numeric, format, big.mark = ".") %>%
   arrange(desc(LIKE)) %>%
   head(12) %>% kbl() %>% kable_styling(font_size = 11)
-
 ```   
   
 ---
@@ -629,56 +541,26 @@ instagram %>%
   group_by(FROM) %>%
   count() %>%
   arrange(desc(n)) %>%
+  mutate_if(is.numeric, format, big.mark = ".") %>%
   head(12) %>% kbl() %>% kable_styling(font_size = 11)
-
 ```    
   
   
   
-  
----
-  
-  
-  
-
-
-
-```{r, eval = F}
-
-path <- "D:/LUKA/Freelance/Mediatoolkit/FULLDATA"
-
-raw <- list.files(path = path , pattern="xlsx")
-
-raw_path <- paste0(path, "/", raw)
-
-all_raw <- map_df(raw_path, read_excel) %>%
-  mutate(DATE = as.Date(DATE,"%Y-%m-%d" ))
-
-proba <- all_raw %>% slice(1:100000)
-
-
-
-proba %>% mutate(DATE = as.Date(DATE,"%Y-%m-%d" ))
-```
-
-
-
-
 ---
 <br>
-#### 
+#### Resources
 <br>
 <br>
-<br>
--
-<br>
-<br>
-- 
+- Check the data sample in GHub repo
 <br>
 <br>
-- l
+- Check other clipping agencies
 <br>
 <br>
--
+- Check other data vendors
 
 ---
+class: inverse, middle
+layout:false
+# Thank you for your attention!
