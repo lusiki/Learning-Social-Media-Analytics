@@ -199,7 +199,7 @@ layout: true
 
 ---
 <br>
-#### Resources
+#### Resources 
 <br>
 <br>
 - There are countless social media resources
