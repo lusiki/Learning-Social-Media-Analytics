@@ -34,15 +34,15 @@ library(DT)
 # STRUCTURE
 <br>
 <br>
+<br> 
+<br>
+- DATA OVERVIEW
 <br>
 <br>
-- DATA EXPLORATION
+- FACEBOOK
 <br>
 <br>
-- 
-<br>
-<br>
-- 
+- WEB
 <br>
 <br>
 - 
@@ -51,7 +51,7 @@ library(DT)
 
 ---
 layout: true
-# DATA EXPLORATION
+# DATA OVERVIEW
 ---
 
 - check the raw [data](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/data/Mediatoolkit/sample.xlsx); sourced from [Mediatoolkit](https://www.mediatoolkit.com/)
@@ -70,14 +70,15 @@ glimpse(one_day_sample[sample(nrow(one_day_sample)),1:8])
 ```
 
 ---
-
-```{r, echo=T , eval = T}
+<br>
+<br>
+```{r, echo=T, eval = T}
 # FULL SAMPLE
 path <- "D:/LUKA/Freelance/Mediatoolkit/FULLDATA"
 raw <- list.files(path = path , pattern="xlsx")
 raw_path <- paste0(path, "/", raw)
 all_raw <- map_df(raw_path, read_excel)
-all_raw <- all_raw  %>%  mutate(DATE = as.Date(DATE,"%Y-%m-%d" ))
+#all_raw <- all_raw  %>%  mutate(DATE = as.Date(DATE,"%Y-%m-%d" ))
 
 dim(all_raw)
 range(all_raw$DATE)
@@ -88,15 +89,16 @@ range(all_raw$DATE)
 <br>
 <br>
 <br>
-```{r}
+```{r, echo=T}
 # other variables
 names(one_day_sample)
 ```
 
 ---
-
+<br>
+<br>
 ```{r, echo=T}
-# observations/ activity
+# observations/activity
 nrow(all_raw)
 # social media networks
 unique(all_raw$SOURCE_TYPE)
@@ -119,7 +121,7 @@ length(unique(all_raw$URL))
 
 ```{r, echo=T}
 
-# GENERAL OVERVIEW (full sample)
+# GENERAL OVERVIEW 
 all_raw %>%
   group_by(SOURCE_TYPE) %>%
   count() %>%
@@ -137,7 +139,7 @@ all_raw %>%
 one_day_sample %>%
      select(SOURCE_TYPE, MENTION_SNIPPET) %>%
      unique(.) %>%  
-     sample_n(9) %>%
+     sample_n(8) %>%
   kbl() %>%
   kable_styling(font_size = 11)
 ```
@@ -153,8 +155,10 @@ all_raw %>%
   kable_styling(font_size = 11)
 ```
 
-
-#### FACEBOOK
+---
+layout: true
+# FACEBOOK
+---
 <br>
 <br>
 ```{r , echo=T}
@@ -176,12 +180,10 @@ all_raw %>%
 
 ---
 
-#### FACEBOOK
-
 ```{r, echo=T}
 # most active authors
 fb %>% 
-  group_by( AUTHOR,FOLLOWERS_COUNT) %>%
+  group_by(AUTHOR,FOLLOWERS_COUNT) %>%
   summarise(N = n()) %>%
   arrange(desc(N))  %>%
   mutate_if(is.numeric, format, big.mark = ".") %>%
@@ -189,8 +191,6 @@ fb %>%
 ```
 
 ---
-
-#### FACEBOOK
 
 ```{r, echo=T}
 # authors with impact
@@ -206,8 +206,6 @@ fb %>%
 ```
 
 ---
-
-#### FACEBOOK
 
 ```{r, echo=T}
 # important activity
@@ -238,8 +236,9 @@ fb %>%
 ```
 
 ---
-
-#### WEB
+layout: true
+# WEB
+---
 
 ```{r , echo=T}
 # choose variables to investigate
@@ -259,8 +258,6 @@ all_raw %>%
 ```
 
 ---
-
-#### WEB
 
 ```{r, echo=T}
 # most active authors
@@ -302,8 +299,9 @@ web %>%
 ```
 
 ---
-
-#### TWITTER
+layout: true
+# TWITTER
+---
 
 ```{r, echo=T}
 # choose variables to investigate

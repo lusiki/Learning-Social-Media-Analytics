@@ -34,15 +34,15 @@ class: center, middle, inverse, title-slide
 # STRUCTURE
 &lt;br&gt;
 &lt;br&gt;
+&lt;br&gt; 
+&lt;br&gt;
+- DATA OVERVIEW
 &lt;br&gt;
 &lt;br&gt;
-- DATA EXPLORATION
+- FACEBOOK
 &lt;br&gt;
 &lt;br&gt;
-- 
-&lt;br&gt;
-&lt;br&gt;
-- 
+- WEB
 &lt;br&gt;
 &lt;br&gt;
 - 
@@ -51,7 +51,7 @@ class: center, middle, inverse, title-slide
 
 ---
 layout: true
-# DATA EXPLORATION
+# DATA OVERVIEW
 ---
 
 - check the raw [data](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/data/Mediatoolkit/sample.xlsx); sourced from [Mediatoolkit](https://www.mediatoolkit.com/)
@@ -79,18 +79,19 @@ glimpse(one_day_sample[sample(nrow(one_day_sample)),1:8])
 ```
 ## Rows: 27,604
 ## Columns: 8
-## $ DATE        &lt;chr&gt; "2022-01-02", "2022-01-02", "2022-01-01", "2022-01-02", "2~
-## $ TIME        &lt;chr&gt; "21:42:09", "21:55:37", "18:57:18", "06:56:57", "22:09:00"~
-## $ TITLE       &lt;chr&gt; "Brutalistička arhitektura je baš cool pošto smo sagradili~
-## $ FROM        &lt;chr&gt; "croatia", "forum.hr", "hrvatska-danas.com", "glasistre.hr~
-## $ AUTHOR      &lt;chr&gt; "Drug_Egorov", NA, NA, "https://www.facebook.com/Glasistre~
-## $ URL         &lt;chr&gt; "https://www.reddit.com/r/croatia/comments/ru5l0t/_/hqzb26~
-## $ URL_PHOTO   &lt;chr&gt; "https://mediatoolkit.com/img/50x50,sc,sxshotwJyc_8Cc25LSO~
-## $ SOURCE_TYPE &lt;chr&gt; "reddit", "forum", "web", "web", "twitter", "web", "twitte~
+## $ DATE        &lt;chr&gt; "2022-01-02", "2022-01-02", "2022-01-02", "2022-01-02", "2~
+## $ TIME        &lt;chr&gt; "19:47:39", "09:00:05", "11:45:00", "18:41:03", "06:18:47"~
+## $ TITLE       &lt;chr&gt; "RT @dolci_diversi Našli smo je ovako na cesti na Krku. Sa~
+## $ FROM        &lt;chr&gt; "Geraldina", "Budicool", "Klasik TV", "AskReddit", "mnovin~
+## $ AUTHOR      &lt;chr&gt; "Geraldina", "Budicool", "Klasik TV", "dinowithissues", NA~
+## $ URL         &lt;chr&gt; "https://twitter.com/GeraldinaHir/status/14777132142930411~
+## $ URL_PHOTO   &lt;chr&gt; "https://mediatoolkit.com/img/50x50,sc,s5-_VDvPqCGEL_jMC6H~
+## $ SOURCE_TYPE &lt;chr&gt; "twitter", "facebook", "facebook", "reddit", "web", "twitt~
 ```
 
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # FULL SAMPLE
@@ -98,7 +99,7 @@ path &lt;- "D:/LUKA/Freelance/Mediatoolkit/FULLDATA"
 raw &lt;- list.files(path = path , pattern="xlsx")
 raw_path &lt;- paste0(path, "/", raw)
 all_raw &lt;- map_df(raw_path, read_excel)
-all_raw &lt;- all_raw  %&gt;%  mutate(DATE = as.Date(DATE,"%Y-%m-%d" ))
+#all_raw &lt;- all_raw  %&gt;%  mutate(DATE = as.Date(DATE,"%Y-%m-%d" ))
 
 dim(all_raw)
 ```
@@ -120,6 +121,11 @@ range(all_raw$DATE)
 &lt;br&gt;
 &lt;br&gt;
 
+```r
+# other variables
+names(one_day_sample)
+```
+
 ```
 ##  [1] "DATE"                  "TIME"                  "TITLE"                
 ##  [4] "FROM"                  "AUTHOR"                "URL"                  
@@ -139,10 +145,11 @@ range(all_raw$DATE)
 ```
 
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
-# observations/ activity
+# observations/activity
 nrow(all_raw)
 ```
 
@@ -203,7 +210,7 @@ length(unique(all_raw$URL))
 
 
 ```r
-# GENERAL OVERVIEW (full sample)
+# GENERAL OVERVIEW 
 all_raw %&gt;%
   group_by(SOURCE_TYPE) %&gt;%
   count() %&gt;%
@@ -264,7 +271,7 @@ all_raw %&gt;%
 one_day_sample %&gt;%
      select(SOURCE_TYPE, MENTION_SNIPPET) %&gt;%
      unique(.) %&gt;%  
-     sample_n(9) %&gt;%
+     sample_n(8) %&gt;%
   kbl() %&gt;%
   kable_styling(font_size = 11)
 ```
@@ -278,40 +285,36 @@ one_day_sample %&gt;%
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Baka Prase otišao u Amsterdam i prestaje da snima za youtube &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jednostavko, odlično. I uz to sviđa mi se nadovezivanje na onaj rub spomenut u mom Prostoru. &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Quote: Peppa Pig kaže: na gospodju je pola stana u buzanovoj (120m2, druga polovica je na sogorici), vikendica u samoboru i imanje u hercegovini sve ono sto je sluzbeno bilo na pokojnika kcerkica ima stancic na petreticevom trgu Kolko se sjecam, &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Novooboljelih je 175 u Zadru, 11 u Bibinjama, 10 u Benkovcu, po devetero u Pakoštanima, Poličniku i Sukošanu, po osmero u Biogradu i Starigradu, sedmero u Sv. Filipu i Jakovu, po četiri osobe pozitivne su na koronavirus u Jasenicama, Kalima, Ninu, &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Na teren je upućeno 25 spasilaca HGSS-a iz Gospića i Zadra. &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Nema veze s tobom to što te nitko i ništa ne zove. To se zove "ljudi". Period je takav da smo se odučili od toga (a neki ... I sjeti se da za privući nove poznanike/prijatelje trebaš "1 jedinicu napora", a za vratiti izgubljene &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Popović, Ljutić i Komšić u lovu na prve bodove na Sljemenu U utorak, 4. siječnja, najbolje svjetske slalomašice će se po ... I snijeg je uvijek drugačiji. Na Sljemenu je najvažniji fokus od starta do cilja, jer se u donjem dijelu može puno &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; no i mean snsd&amp;lt;U+0001F62D&amp;gt; &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Faber: ‘Radimo na tome da Donji grad bolje prilagodimo pješacima i biciklistima’ Robert Faber, predsjednik Vijeća GČ-a Donji grad, govori o aktualnim problemima te gradske četvrti, a to su iseljavanje stanovništva, obnova, prometne gužve, poplave…   &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Provalit mu google password i naći zadnju lokaciju mobitela. Murja je deffo nesposobna, da imam resurse i ovlasti, locirao bih i njega i okrivljenike za pola sata. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; RT @IvanaAsprijan @zicko_04 To je pak tvoj problem, ja mu poznam i tatu i mamu i sestru i sestrinog muža i djecu, i tetku i njenog pok. muža i njihovu kćer.. i svi oni žive u Daruvaru &amp;lt;U+0001F60A&amp;gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; @parazitiram Moze u Pluzine i bez gaca. &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Županije moraju biti funkcionalne. Ne možeš spojiti Rijeku i Banovinu da bi dobio jednako gospodarstvo kao Dalmacija + zaleđe. Nije nikakav problem da županija bude siromašna, problem je ako se ne radi na tome da se to promijeni. &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Foto: Pero Grošeta „Udrite like” na stranicu ako već niste, „udrite like” na fotografiju i podijelite je ako vam se sviđa i želite pomoći autoru da pobjedi u foto natječaju „20/21 na jugu &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Dobri stari običaj: Znate li zašto Britanci piju čaj između 15 i 16 sati? U čaju se tradicionalno uživa između 15 i 16 sati i osim crnog čaja, običaj uključuje konzumaciju sendviča i kolačića. Danas kada više nije popularan samo među visokim &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Jer Grad Zagreb onda može samostalno donositi projekte bez da ovisi o županiji. Trebalo bi po meni slično urediti i za Split. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; @strayselling Aku ada i.n appmus noiji 60k, shopee vc noiji 120k Dom jatim &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -342,43 +345,43 @@ all_raw %&gt;%
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Zagrebački holding raspisuje javno savjetovanje za najam novih vozila &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Umjetnička instalacija uz rijeku Kupu - Grad &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Anonimno. Pozdrav.Jucer je beba od 8,5 mjeseci jela borovnice prvi put i jutros je kakica bila crne boje.Sada poslije 30 sati je isto crna.Da li je to normalno? &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; POKLONI DIO SEBE &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; DVIJE HRVATICE SOLIDNE NA ZOI: Slovakinja osvojila olimpijsko zlato u slalomu &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; i wanna puke &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; juče videh tiktok žena skenjana priča kako su joj oteli sina pre 4 godine i kako ga još nisu našli i sve vreme onako izvodi neku koreografiju polumrtvo wtf??? https://t.co/hNcaQMwLq2 RT @mjaumjau33 people on tiktok be saying the most traumatic, outrageous experiences of their lives and then start dancing melancholically to some weird music like wtf u got me traumatized now &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; "Ministar Malenica dužan je zaštititi građane od samovolje zagrebačkog šerifa Tomaševića" &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; @exossunshine Ja ih skoro i upoznala &amp;lt;U+0001F62D&amp;gt; 
-Bili su u budimpesti isti dan kad i ja i slikali se na svim mjestima ko i ja! Jos dan danas placam vjv smo se i mimoisli &amp;lt;U+0001F62D&amp;gt; 
-Na jednoj slici je cak bus koji je taman stigao kad smo mi kupovalw razglednice tako da smo bili na istom mjestu u isto vrijeme &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Odjeci teme: Moć &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; ZagrebNet - portal zbirki fotografija MGZ -a &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Nikola Horvat - “Why do I hyke?” &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Nagrada u Poslijepodnevu na Otvorenom je narasla na 5000 kuna! &amp;lt;U+0001F911&amp;gt; Trebaš li još razloga za igrati? &amp;lt;U+0001F9D0&amp;gt;&amp;lt;U+0001F385&amp;gt; Pogodi što je u Poklonu i uzmi nam lovu. Danas, od... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-
-#### FACEBOOK
+---
+layout: true
+# FACEBOOK
+---
 &lt;br&gt;
 &lt;br&gt;
 
@@ -401,13 +404,11 @@ all_raw %&gt;%
 
 ---
 
-#### FACEBOOK
-
 
 ```r
 # most active authors
 fb %&gt;% 
-  group_by( AUTHOR,FOLLOWERS_COUNT) %&gt;%
+  group_by(AUTHOR,FOLLOWERS_COUNT) %&gt;%
   summarise(N = n()) %&gt;%
   arrange(desc(N))  %&gt;%
   mutate_if(is.numeric, format, big.mark = ".") %&gt;%
@@ -477,8 +478,6 @@ fb %&gt;%
 &lt;/table&gt;
 
 ---
-
-#### FACEBOOK
 
 
 ```r
@@ -566,8 +565,6 @@ fb %&gt;%
 
 ---
 
-#### FACEBOOK
-
 
 ```r
 # important activity
@@ -649,8 +646,9 @@ fb %&gt;%
 
 
 ---
-
-#### WEB
+layout: true
+# WEB
+---
 
 
 ```r
@@ -671,8 +669,6 @@ all_raw %&gt;%
 ```
 
 ---
-
-#### WEB
 
 
 ```r
@@ -825,8 +821,9 @@ web %&gt;%
 
 
 ---
-
-#### TWITTER
+layout: true
+# TWITTER
+---
 
 
 ```r
