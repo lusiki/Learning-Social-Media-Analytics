@@ -468,6 +468,8 @@ all_raw %>%
   
 ---
 
+#### FORUM
+
 ```{r, echo=T}
 # not a very good coverage
 forum %>%
@@ -479,9 +481,8 @@ forum %>%
 ``` 
   
 ---
-layout: true
-# INSTAGRAM
----
+
+#### INSTAGRAM
 <br>
 <br>
 ```{r, echo=T}
@@ -503,7 +504,10 @@ all_raw %>%
   
 ---
 
+#### INSTAGRAM
+
 ```{r, echo=T}
+# not a very good coverage
 instagram %>%
   group_by(FROM) %>%
   summarise(REACH = sum(REACH),
@@ -517,7 +521,11 @@ instagram %>%
   
 ---
 
+#### INSTAGRAM
+
 ```{r, echo=T}
+
+# not a very good coverage
 instagram %>%
   group_by(FROM) %>%
   count() %>%
