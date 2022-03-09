@@ -34,8 +34,6 @@ class: center, middle, inverse, title-slide
 # STRUCTURE
 &lt;br&gt;
 &lt;br&gt;
-&lt;br&gt; 
-&lt;br&gt;
 - DATA OVERVIEW
 &lt;br&gt;
 &lt;br&gt;
@@ -45,7 +43,16 @@ class: center, middle, inverse, title-slide
 - WEB
 &lt;br&gt;
 &lt;br&gt;
-- 
+- TWITTER
+&lt;br&gt;
+&lt;br&gt;
+- YOUTUBE
+&lt;br&gt;
+&lt;br&gt;
+- FORUM
+&lt;br&gt;
+&lt;br&gt;
+- INSTAGRAM
 &lt;br&gt;
 &lt;br&gt;
 
@@ -79,14 +86,14 @@ glimpse(one_day_sample[sample(nrow(one_day_sample)),1:8])
 ```
 ## Rows: 27,604
 ## Columns: 8
-## $ DATE        &lt;chr&gt; "2022-01-02", "2022-01-02", "2022-01-02", "2022-01-02", "2~
-## $ TIME        &lt;chr&gt; "19:47:39", "09:00:05", "11:45:00", "18:41:03", "06:18:47"~
-## $ TITLE       &lt;chr&gt; "RT @dolci_diversi Našli smo je ovako na cesti na Krku. Sa~
-## $ FROM        &lt;chr&gt; "Geraldina", "Budicool", "Klasik TV", "AskReddit", "mnovin~
-## $ AUTHOR      &lt;chr&gt; "Geraldina", "Budicool", "Klasik TV", "dinowithissues", NA~
-## $ URL         &lt;chr&gt; "https://twitter.com/GeraldinaHir/status/14777132142930411~
-## $ URL_PHOTO   &lt;chr&gt; "https://mediatoolkit.com/img/50x50,sc,s5-_VDvPqCGEL_jMC6H~
-## $ SOURCE_TYPE &lt;chr&gt; "twitter", "facebook", "facebook", "reddit", "web", "twitt~
+## $ DATE        &lt;chr&gt; "2022-01-01", "2022-01-01", "2022-01-02", "2022-01-01", "2~
+## $ TIME        &lt;chr&gt; "15:44:49", "23:06:56", "10:59:52", "08:01:00", "00:11:24"~
+## $ TITLE       &lt;chr&gt; "Vlč. Tomislav Šagud: Ugledajmo se na Mariju i hodajmo s n~
+## $ FROM        &lt;chr&gt; "hkm.hr", "croatia", "novilist.hr", "jutarnji.hr", "centar~
+## $ AUTHOR      &lt;chr&gt; "@hkr_radio", "Lesteriuse", NA, NA, "CentarZdravlja", "LH"~
+## $ URL         &lt;chr&gt; "https://hkm.hr/duhovnost/vlc-tomislav-sagud-ugledajmo-se-~
+## $ URL_PHOTO   &lt;chr&gt; "https://mediatoolkit.com/img/50x50,sc,sNaOCfTxcgKjYN8mS9E~
+## $ SOURCE_TYPE &lt;chr&gt; "web", "reddit", "web", "web", "web", "twitter", "reddit",~
 ```
 
 ---
@@ -285,36 +292,36 @@ one_day_sample %&gt;%
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Baka Prase otišao u Amsterdam i prestaje da snima za youtube &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Jednostavko, odlično. I uz to sviđa mi se nadovezivanje na onaj rub spomenut u mom Prostoru. &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Quote: Peppa Pig kaže: na gospodju je pola stana u buzanovoj (120m2, druga polovica je na sogorici), vikendica u samoboru i imanje u hercegovini sve ono sto je sluzbeno bilo na pokojnika kcerkica ima stancic na petreticevom trgu Kolko se sjecam, &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Na teren je upućeno 25 spasilaca HGSS-a iz Gospića i Zadra. &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Nema veze s tobom to što te nitko i ništa ne zove. To se zove "ljudi". Period je takav da smo se odučili od toga (a neki ... I sjeti se da za privući nove poznanike/prijatelje trebaš "1 jedinicu napora", a za vratiti izgubljene &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ako se reklamira kao novogradnja a starije je od 10 godina preskoci. Tima je i renovacija iz 80tih - nedavno renovirano &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Fino ti piše, zbog prebrze vožnje je izletio s ceste i udario u stablo. Da mu nije možda prijatelj papučicu pritiskao, a da vozač nije znao? Smiješno. U Hr je 99% nesreca zbog neprilagodene brzine. Budi malo realan. Po automatizmu pisu tu kaznu. Znas &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Popović, Ljutić i Komšić u lovu na prve bodove na Sljemenu U utorak, 4. siječnja, najbolje svjetske slalomašice će se po ... I snijeg je uvijek drugačiji. Na Sljemenu je najvažniji fokus od starta do cilja, jer se u donjem dijelu može puno &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Osim novih pjesama, na ‘Spletu’ se mogu čuti i stari hitovi Azre, poput ‘Nemoj po glavi druže plavi’ i ‘Obrati pažnju […] Objavljeno: 1. siječnja 2022. 05:30 Branimir Johnny Štulić, nekadašnji frontmen ‘Azre’, zadnji dan prosinca 2021. objavio je &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ovako izgledaju arhitektonske senzacije koje bi mogle preporoditi Banovinu i Posavinu Svih sedam adresa projekta moglo bi se obići u dva dana, maksimalna udaljenost o prvog do sedmog je osamdeset kilometara Sedam projekata koji bi moslavački kraj, &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; RT @IvanaAsprijan @zicko_04 To je pak tvoj problem, ja mu poznam i tatu i mamu i sestru i sestrinog muža i djecu, i tetku i njenog pok. muža i njihovu kćer.. i svi oni žive u Daruvaru &amp;lt;U+0001F60A&amp;gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; @sa_Viline_reke @pogrebniork Ne sprdam se ja s njima, nego mi je čudno zašto zapraćuju i nas koji nismo ni iz Beograda ni iz Srbije. *vjerujem da lijepo sviraju, postoji i imotska glazba koja svira i na pogrebima, a kad bi to bilo moguće, želio bih &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; U Pregledu dana pogledajte: Sveta misa na Svetkovinu svete Marije Bogorodice koju je u vatikanskoj bazilici predslavio papa Franjo i nagovor Svetog Oca prije molitve Anđeoskog pozdravljenja na Trgu svetog Petra u Vatikanu. Pratite nas i na: &amp;lt;U+0001F449&amp;gt;&amp;lt;U+0001F3FC&amp;gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; @strayselling Aku ada i.n appmus noiji 60k, shopee vc noiji 120k Dom jatim &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; i got goosebumps &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Da li žene koje održavaju silikone, filere i ostalu plastiku primaju i testosteron neki??? &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -340,40 +347,40 @@ all_raw %&gt;%
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ISPOVIJEST BIVŠE REDOVNICE I MINISTRICE BERNARDICE: 'Profesori ritualno konzumiraju kokain, piju, ovisni su o po*nogra*iji, kockaju' &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Umjetnička instalacija uz rijeku Kupu - Grad &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Lampe i lusteri u koje se isplati uložiti, ovih 12 bit će hit i u ovoj godini &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Anonimno. Pozdrav.Jucer je beba od 8,5 mjeseci jela borovnice prvi put i jutros je kakica bila crne boje.Sada poslije 30 sati je isto crna.Da li je to normalno? &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Preminuo osuđenik koji je prije tri godine preživio pokušaj egzekucije: bio je privezan za stol, dva i pol sata liječnici su pokušavali pogoditi venu,... &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Zbog niske procijepljenosti zasad nema ukidanja mjera &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Influencerice vol 13.: Onaj mali reve kao da će umrit isti čas &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; POKLONI DIO SEBE &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jala Brat I Buba Coreli"Klinka"(my music) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BADNJAK NA TRGU VLADIMIRA NAZORA Pozivamo Vas na zajedničko druženje na Trgu Vladimira Nazora u petak 24.12.2021. od 10,00 do 12,00 sati uz grupu... &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; "Ministar Malenica dužan je zaštititi građane od samovolje zagrebačkog šerifa Tomaševića" &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Upozorenje za vlasnike Androida: Malware preuzima kontrolu nad uređajem &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Odjeci teme: Moć &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Nikola Horvat - “Why do I hyke?” &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Preporuke - koju seriju pogledati? &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -844,8 +851,6 @@ all_raw %&gt;%
 ```
   
 --- 
-  
-#### TWITTER
 
 
 ```r
@@ -910,8 +915,6 @@ twitter %&gt;%
 &lt;/table&gt;
 
 --- 
-  
-#### TWITTER
 
 
 ```r
@@ -976,12 +979,9 @@ twitter %&gt;%
 &lt;/table&gt;
 
 --- 
-  
-#### TWITTER
 
 
 ```r
-# slow
 # most active authors
 twitter %&gt;% 
   group_by(AUTHOR) %&gt;%
@@ -1056,10 +1056,9 @@ twitter %&gt;%
   
 ---
 
-#### TWITTER
-
 
 ```r
+# originality
 twitter %&gt;% 
   group_by(TWEET_TYPE) %&gt;% # interesting to check per author
   summarise(N = n()) %&gt;%
@@ -1097,6 +1096,7 @@ twitter %&gt;%
 
 
 ```r
+# technology
 twitter %&gt;% 
   group_by(TWEET_SOURCE_NAME) %&gt;%
   summarise(N = n()) %&gt;%
@@ -1149,9 +1149,11 @@ twitter %&gt;%
 &lt;/table&gt;
   
 ---
-
-#### YOUTUBE
-
+layout: true
+# YOUTUBE
+---
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # choose variables to investigate
@@ -1170,9 +1172,6 @@ all_raw %&gt;%
 ```
   
 ---
-
-#### YOUTUBE
-
 
 
 ```r
@@ -1235,10 +1234,7 @@ youtube %&gt;%
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-  
 ---
-
-#### YOUTUBE
 
 
 ```r
@@ -1337,18 +1333,13 @@ youtube %&gt;%
 &lt;/tbody&gt;
 &lt;/table&gt;
   
-  
----
-
-#### YOUTUBE
-
 
 
   
-
 ---
-
-#### FORUM
+layout: true
+# FORUM
+---
 &lt;br&gt;
 &lt;br&gt;
 
