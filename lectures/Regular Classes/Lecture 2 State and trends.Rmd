@@ -12,7 +12,6 @@ output:
       highlightStyle: googlecode
       highlightLines: true
       countIncrementalSlides: false
-
 ---
 
 
