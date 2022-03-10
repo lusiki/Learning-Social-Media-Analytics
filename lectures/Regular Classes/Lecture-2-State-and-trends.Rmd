@@ -422,7 +422,7 @@ youtube %>%
             COMMENTS= sum(COMMENTS_COUNT)) %>%
   arrange(desc(VIEW)) %>%
   mutate_if(is.numeric, format, big.mark = ".") %>%
-  head(10) %>% kbl() %>% kable_styling(font_size = 11)
+  head(9) %>% kbl() %>% kable_styling(font_size = 11)
 ``` 
   
 
@@ -501,7 +501,7 @@ instagram %>%
             VIEW = sum(VIEW_COUNT)) %>%
   mutate_if(is.numeric, format, big.mark = ".") %>%
   arrange(desc(LIKE)) %>%
-  head(10) %>% kbl() %>% kable_styling(font_size = 11)
+  head(9) %>% kbl() %>% kable_styling(font_size = 11)
 ```   
   
 ---
