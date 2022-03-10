@@ -87,13 +87,13 @@ glimpse(one_day_sample[sample(nrow(one_day_sample)),1:8])
 ## Rows: 27,604
 ## Columns: 8
 ## $ DATE        &lt;chr&gt; "2022-01-01", "2022-01-01", "2022-01-02", "2022-01-01", "2~
-## $ TIME        &lt;chr&gt; "15:44:49", "23:06:56", "10:59:52", "08:01:00", "00:11:24"~
-## $ TITLE       &lt;chr&gt; "Vlč. Tomislav Šagud: Ugledajmo se na Mariju i hodajmo s n~
-## $ FROM        &lt;chr&gt; "hkm.hr", "croatia", "novilist.hr", "jutarnji.hr", "centar~
-## $ AUTHOR      &lt;chr&gt; "@hkr_radio", "Lesteriuse", NA, NA, "CentarZdravlja", "LH"~
-## $ URL         &lt;chr&gt; "https://hkm.hr/duhovnost/vlc-tomislav-sagud-ugledajmo-se-~
-## $ URL_PHOTO   &lt;chr&gt; "https://mediatoolkit.com/img/50x50,sc,sNaOCfTxcgKjYN8mS9E~
-## $ SOURCE_TYPE &lt;chr&gt; "web", "reddit", "web", "web", "web", "twitter", "reddit",~
+## $ TIME        &lt;chr&gt; "13:59:47", "09:05:00", "09:50:12", "01:11:25", "12:13:30"~
+## $ TITLE       &lt;chr&gt; "Skinite ga do gaća, nabijte mu crvenu kapicu i nek' pjeva~
+## $ FROM        &lt;chr&gt; "Movie83", "tvprofil.com", "Dario Zurovec - gradonačelnik ~
+## $ AUTHOR      &lt;chr&gt; "Movie83", NA, "Dario Zurovec - gradonačelnik Grada Svete ~
+## $ URL         &lt;chr&gt; "https://twitter.com/Movie832/status/1477263280955707392",~
+## $ URL_PHOTO   &lt;chr&gt; "https://mediatoolkit.com/img/50x50,sc,sEs3PCtCbiFTDLzwqlr~
+## $ SOURCE_TYPE &lt;chr&gt; "twitter", "web", "facebook", "web", "forum", "forum", "fa~
 ```
 
 ---
@@ -126,7 +126,7 @@ range(all_raw$DATE)
 ---
 &lt;br&gt;
 &lt;br&gt;
-&lt;br&gt;
+
 
 ```r
 # other variables
@@ -172,6 +172,15 @@ unique(all_raw$SOURCE_TYPE)
 ```
 ## [1] "forum"     "web"       "twitter"   "reddit"    "youtube"   "comment"  
 ## [7] "facebook"  "instagram"
+```
+
+```r
+# unique authors
+length(unique(all_raw$AUTHOR))
+```
+
+```
+## [1] 103373
 ```
 
 ---
@@ -292,36 +301,36 @@ one_day_sample %&gt;%
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Ako se reklamira kao novogradnja a starije je od 10 godina preskoci. Tima je i renovacija iz 80tih - nedavno renovirano &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Veseli, šareni&amp;lt;U+0001F642&amp;gt; Klikni na link, preuzmi bojanku, isprintaj i razveseli nekog tko ti je drag&amp;lt;U+2764&amp;gt;&amp;lt;U+FE0F&amp;gt; A onda razveseli i nas prijavom na Leteće vijesti i svaka 2 tjedna doznaj sve novosti o zaštiti ptica, prirode i događanjima koja organiziramo za djecu i &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Potraga i dalje traje &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Zadrani su u zadnjih devet utakmica upisali čak osam pobjeda, a jedini poraz doživjeli protiv ekipe Mornara.  Utakmicu AdmiralBet ABA Lige s ekipom koja i ove sezone traži Euroligu, a u Eurokupu igra sjajno najavili su kapetan Dominik Mavra i trener &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Fino ti piše, zbog prebrze vožnje je izletio s ceste i udario u stablo. Da mu nije možda prijatelj papučicu pritiskao, a da vozač nije znao? Smiješno. U Hr je 99% nesreca zbog neprilagodene brzine. Budi malo realan. Po automatizmu pisu tu kaznu. Znas &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Quote: Silver Scull kaže: No pravilo da se ne smije komentirati moderatura je čista diktatura i idiotizam. To je skoro svugdje pravilo Quote: Zodiac kaže: [*]Komentiranje moderatorovih odluka na bilo kojoj temi koja nije predviđena za to Komentirati &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Osim novih pjesama, na ‘Spletu’ se mogu čuti i stari hitovi Azre, poput ‘Nemoj po glavi druže plavi’ i ‘Obrati pažnju […] Objavljeno: 1. siječnja 2022. 05:30 Branimir Johnny Štulić, nekadašnji frontmen ‘Azre’, zadnji dan prosinca 2021. objavio je &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Gradonačelnik i zamjenik obišli dežurne službe te uručili donaciju OB Varaždin i nove ugovore za stanove liječnicima Gradonačelnik Grada Varaždina dr. sc. Neven Bosilj i njegov zamjenik Miroslav Marković na novogodišnje su jutro zajedno s županom &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Ovako izgledaju arhitektonske senzacije koje bi mogle preporoditi Banovinu i Posavinu Svih sedam adresa projekta moglo bi se obići u dva dana, maksimalna udaljenost o prvog do sedmog je osamdeset kilometara Sedam projekata koji bi moslavački kraj, &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; I neki se onda cude sto sam prestao gledat tekme. Tko ima zivaca ovo gledat svakih par dana? &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; @sa_Viline_reke @pogrebniork Ne sprdam se ja s njima, nego mi je čudno zašto zapraćuju i nas koji nismo ni iz Beograda ni iz Srbije. *vjerujem da lijepo sviraju, postoji i imotska glazba koja svira i na pogrebima, a kad bi to bilo moguće, želio bih &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Zvižduci u Ulici otvorenog srca - jasan znak urušavanja vlasti, nestajanja straha i - signal za start! &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; U Pregledu dana pogledajte: Sveta misa na Svetkovinu svete Marije Bogorodice koju je u vatikanskoj bazilici predslavio papa Franjo i nagovor Svetog Oca prije molitve Anđeoskog pozdravljenja na Trgu svetog Petra u Vatikanu. Pratite nas i na: &amp;lt;U+0001F449&amp;gt;&amp;lt;U+0001F3FC&amp;gt; &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; i got goosebumps &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Da li žene koje održavaju silikone, filere i ostalu plastiku primaju i testosteron neki??? &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ryko i koko huj ci w oko &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -347,40 +356,40 @@ all_raw %&gt;%
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; ISPOVIJEST BIVŠE REDOVNICE I MINISTRICE BERNARDICE: 'Profesori ritualno konzumiraju kokain, piju, ovisni su o po*nogra*iji, kockaju' &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Lampe i lusteri u koje se isplati uložiti, ovih 12 bit će hit i u ovoj godini &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Preminuo osuđenik koji je prije tri godine preživio pokušaj egzekucije: bio je privezan za stol, dva i pol sata liječnici su pokušavali pogoditi venu,... &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Zbog niske procijepljenosti zasad nema ukidanja mjera &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Nova serija cvarko i bubbly je stigla (&amp;lt;U+FFFC&amp;gt;comedia) (ep1) &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Influencerice vol 13.: Onaj mali reve kao da će umrit isti čas &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Era klasicnih limuzina je zavrsila! &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Jala Brat I Buba Coreli"Klinka"(my music) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Iskustva s gostima vol.2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Brzinski recept za Havana tortu koju će voljeti i ljubitelji cheesecakea &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ovdje ne smiješ samo biti desnicar a ako staviš nešto lijepo podjebavat će te ljudi koji su zapravo pahuljice i svrse na to da im je djed bio partizan. &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; BADNJAK NA TRGU VLADIMIRA NAZORA Pozivamo Vas na zajedničko druženje na Trgu Vladimira Nazora u petak 24.12.2021. od 10,00 do 12,00 sati uz grupu... &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Upozorenje za vlasnike Androida: Malware preuzima kontrolu nad uređajem &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [LAST MINUTE] &amp;lt;U+0001F389&amp;gt;&amp;lt;U+0001F4A5&amp;gt;DOČEK NOVE u SLAVONIJI u Hotel Villa Valpovo!&amp;lt;U+0001F31F&amp;gt;&amp;lt;U+0001F4A5&amp;gt; 1, 2 ili 3 noćenja s POLUPANSIONOM + novogodišnja &amp;lt;U+2728&amp;gt;večera &amp;amp; &amp;lt;U+0001F942&amp;gt;paket pića, novogodišnji... &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Preporuke - koju seriju pogledati? &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Gdje u centru Zagreba kupiti običan hot-dog? &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Neven Elezović i Nikola Banić s FER-a tvrde da su dokazali da je popis žrtava ustaškog logora Jasenovac fabriciran. To nije točno &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; LMS 437-GOSPODAR ZVEZDA ( -4) (#19174620) - Aukcije - www.stripovi.com - Prozor u svijet stripa &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -656,7 +665,8 @@ fb %&gt;%
 layout: true
 # WEB
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # choose variables to investigate
@@ -826,7 +836,6 @@ web %&gt;%
   
 
 
-
 ---
 layout: true
 # TWITTER
@@ -914,7 +923,7 @@ twitter %&gt;%
 &lt;/tbody&gt;
 &lt;/table&gt;
 
---- 
+---
 
 
 ```r
@@ -1092,8 +1101,6 @@ twitter %&gt;%
 
 ---
 
-#### TWITTER
-
 
 ```r
 # technology
@@ -1175,6 +1182,7 @@ all_raw %&gt;%
 
 
 ```r
+# most active authors
 youtube %&gt;%
   group_by(AUTHOR) %&gt;%
   count() %&gt;%
@@ -1238,6 +1246,7 @@ youtube %&gt;%
 
 
 ```r
+# activity per author
 youtube %&gt;%
   group_by(AUTHOR) %&gt;%
   summarise(REACH = sum(REACH),
@@ -1342,6 +1351,7 @@ layout: true
 ---
 &lt;br&gt;
 &lt;br&gt;
+&lt;br&gt;
 
 ```r
 # choose variables to investigate
@@ -1355,8 +1365,6 @@ all_raw %&gt;%
 ```
   
 ---
-
-#### FORUM
 
 
 ```r
@@ -1413,8 +1421,9 @@ forum %&gt;%
 &lt;/table&gt;
   
 ---
-
-#### INSTAGRAM
+layout: true
+# INSTAGRAM
+---
 &lt;br&gt;
 &lt;br&gt;
 
@@ -1437,11 +1446,9 @@ all_raw %&gt;%
   
 ---
 
-#### INSTAGRAM
-
 
 ```r
-# not a very good coverage
+# influencer impact
 instagram %&gt;%
   group_by(FROM) %&gt;%
   summarise(REACH = sum(REACH),
@@ -1450,7 +1457,7 @@ instagram %&gt;%
             VIEW = sum(VIEW_COUNT)) %&gt;%
   mutate_if(is.numeric, format, big.mark = ".") %&gt;%
   arrange(desc(LIKE)) %&gt;%
-  head(12) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)
+  head(10) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)
 ```
 
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
@@ -1534,30 +1541,14 @@ instagram %&gt;%
    &lt;td style="text-align:left;"&gt; 226.187 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
   &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; malajskitapir &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 2.064.110 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 3.047 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 203.364 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; dnevnikhr &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 2.109.090 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 8.983 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 201.936 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
-  &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
   
 ---
 
-#### INSTAGRAM
-
 
 ```r
-# not a very good coverage
+# influencer activity
 instagram %&gt;%
   group_by(FROM) %&gt;%
   count() %&gt;%

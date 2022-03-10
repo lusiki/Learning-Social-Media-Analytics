@@ -278,8 +278,8 @@ web %>%
   head(10) %>% kbl() %>%  kable_styling(font_size = 11)
 ```
   
----
-
+--- 
+  
 ```{r, echo=T}
 web %>% 
   group_by(FROM) %>%
@@ -314,7 +314,7 @@ all_raw %>%
          TIME) -> twitter
 ```
   
----
+--- 
 
 ```{r, echo=T}
 # most important authors
@@ -338,7 +338,7 @@ twitter %>%
   head(10) %>% kbl() %>%  kable_styling(font_size = 11)
 ```
 
----
+--- 
 
 ```{r, echo=T}
 # most active authors
