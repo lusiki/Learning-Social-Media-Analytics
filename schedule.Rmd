@@ -49,7 +49,7 @@ title: " "
 <br>
 <br>
 
-### Lecture 03: IT prerequisites and programming language syntax (R, Python)
+### Lecture 03: Data Science Prerequisites
 
 - Fetching data
 - Storing data

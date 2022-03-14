@@ -17,7 +17,7 @@ navbar:
           href: "https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-2-State-and-trends.html" 
         - text: "3. Big Data infrastructure and data acquisition procedures"
           href: "https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-3-Data-Science-Prerequisites.html"
-        - text: "4. IT prerequisites and programming language syntax"
+        - text: "4. Data Science Prerequisites"
           href: ""
         - text: "5. Methods for social media analysis I"
           href: ""  
