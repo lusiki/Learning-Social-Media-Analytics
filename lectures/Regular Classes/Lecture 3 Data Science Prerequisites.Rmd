@@ -228,6 +228,37 @@ data <- data.frame(dataList$data)
 dim(data)
 # variables and variable types
 glimpse(data)
+# check if there are articles from Večernji list
+data %>% 
+  group_by(response.from) %>%
+  count %>%
+  arrange(desc(n)) %>%
+  head()
+
+data %>%
+  filter(response.from == "vecernji.hr") %>%
+  select(title = response.title,
+         time = response.insert_time,
+         author = response.author,
+         url = response.url,
+         comment = response.comment_count,
+         text = response.mention) %>%
+  arrange(desc(comment)) %>%
+  head
+
+data %>% 
+  slice(1) %>% 
+  select(title = response.title)
+
+data %>% 
+  slice(1) %>%
+  select(text = response.mention)
+
+data %>% 
+  slice(1) %>%
+  select(url = response.url)
+        
+
 ```
 
 
