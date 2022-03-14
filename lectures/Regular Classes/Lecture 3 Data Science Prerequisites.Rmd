@@ -1,0 +1,239 @@
+---
+title: "Learning Social Media Analytics"
+# subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
+subtitle: "Lecture 3: Data Science Prerequisites"
+author: "Luka Sikic, PhD"
+date: "Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)" #"`r format(Sys.time(), '%d %B %Y')`"
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts] 
+    lib_dir: libs
+    nature:
+      highlightStyle: googlecode
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, message = F, warning = F)
+```
+
+
+```{r libs, include=TRUE, echo=FALSE,message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readxl)
+library(here)
+library(kableExtra)
+library(DT)
+```
+
+
+# STRUCTURE
+<br>
+<br>
+- FETCHING DATA
+<br>
+<br>
+- STORING DATA
+<br>
+<br>
+- MANIPULATING DATA
+<br>
+<br>
+- ANALYTICS
+<br>
+<br>
+-  REPORTING
+
+
+---
+layout: true
+# FETCHING DATA
+---
+
+
+
+```{r, echo=T}
+
+
+```
+
+
+---
+<br>
+<br>
+
+```{r, echo=T}
+
+```
+
+---
+<br>
+<br>
+```{r, echo=T}
+
+```
+
+---
+
+```{r, echo=T}
+
+```
+
+---
+
+```{r, echo=T}
+
+```
+
+---
+
+```{r, echo=T}
+
+```
+
+---
+
+```{r, echo=T}
+
+```
+
+---
+layout: true
+# STORING DATA
+---
+<br>
+<br>
+```{r , echo=T}
+
+```
+
+---
+
+```{r, echo=T}
+
+```
+
+---
+
+```{r, echo=T}
+
+```
+
+---
+
+```{r, echo=T}
+
+```
+
+
+```{r, echo=F, eval=F, include=F}
+
+```
+
+---
+layout: true
+# MANIPULATING DATA
+---
+<br>
+<br>
+
+```{r , echo=T}
+
+```
+
+---
+
+```{r, echo=T}
+
+```
+  
+---
+
+```{r, echo=T}
+
+```
+
+---
+layout: true
+# ANALYTICS
+---
+
+```{r, echo=T}
+
+```
+  
+---
+
+```{r, echo=T}
+
+
+```
+
+---
+
+```{r, echo=T}
+
+```
+
+---
+
+```{r, echo=T}
+
+```
+  
+---
+
+```{r, echo=T}
+
+```
+
+---
+
+```{r, echo=T}
+
+```
+  
+---
+layout: true
+# REPORTING
+---
+<br>
+<br>
+```{r, echo=T}
+
+```
+  
+---
+
+```{r, echo=T}
+
+
+```
+
+---
+
+```{r, echo=T}
+
+``` 
+  
+  
+---
+<br>
+#### Resources
+<br>
+<br>
+- Check the data sample in GHub repo
+<br>
+<br>
+- Check other clipping agencies
+<br>
+<br>
+- Check other data vendors
+
+---
+class: inverse, middle
+layout:false
+# Thank you for your attention!
