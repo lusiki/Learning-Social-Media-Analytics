@@ -45,153 +45,145 @@ class: center, middle, inverse, title-slide
 &lt;br&gt;
 &lt;br&gt;
 -  REPORTING
-&lt;br&gt;
-&lt;br&gt;
-- 
-&lt;br&gt;
-&lt;br&gt;
--
-&lt;br&gt;
-&lt;br&gt;
 
 ---
 layout: true
 # FETCHING DATA
 ---
 
+### Two main approaches:
 
+##### guerrila = webscraping
 
-
-
-
----
+- takes some skills
 &lt;br&gt;
+- everything can be scraped (tailor made solutions)
 &lt;br&gt;
-
-
-
----
-&lt;br&gt;
+- takes more time and effort
 &lt;br&gt;
 
 
----
+##### gentelman`s way = API
 
-
-
----
-
-
-
----
-
-
-
----
-
-
-
----
-layout: true
-# STORING DATA
----
+- often not avaliable 
 &lt;br&gt;
+- usually not for free
 &lt;br&gt;
-
-
----
-
-
+- easier to implement in production
 
 ---
 
-
-
----
-
-
-
-
-
-
----
-layout: true
-# MANIPULATING DATA
----
-&lt;br&gt;
-&lt;br&gt;
-
-
-
----
-
-
+#### webscraping
   
+- lets scrape [this](https://www.vecernji.hr/vijesti/umro-bivsi-austrijski-potkancelar-i-prijatelja-hrvatske-dr-erhard-busek-1570780) article and [this](https://www.vecernji.hr/vijesti/u-kijevu-pogodena-stambena-zgrada-objavljena-snimka-raketiranja-nebodera-u-mariupolju-1570614) from [Večernji list](https://www.vecernji.hr/)
+
+
+```r
+# 1. copy urls
+url1 &lt;- "https://www.vecernji.hr/vijesti/umro-bivsi-austrijski-potkancelar-i-prijatelja-hrvatske-dr-erhard-busek-1570780"
+
+url2 &lt;- "https://www.vecernji.hr/vijesti/u-kijevu-pogodena-stambena-zgrada-objavljena-snimka-raketiranja-nebodera-u-mariupolju-1570614"
+# 2. request page 
+page1 &lt;- html_session(url1)
+page2 &lt;- html_session(url2)
+```
+
 ---
 
+#### webscraping
 
 
----
-layout: true
-# ANALYTICS
----
-
-
+```r
+# 3. write a function to take parts of the article
+parseArticle &lt;- function(webpage) {
   
----
-
-
-
----
-
-
-
----
-
-
+  title &lt;- html_nodes(webpage, xpath = '//h1[@class="article__title"]') %&gt;%
+    html_text() %&gt;% 
+    trimws() %&gt;% 
+    ifelse(length(.) == 0, NA, .)
+ 
+  article &lt;- html_nodes(webpage, xpath = '//*[@class="article__body--main_content"]/p') %&gt;%
+    html_text() %&gt;% 
+    str_flatten(., "\n") %&gt;% 
+    ifelse(length(.) == 0, NA, .)
   
----
-
-
-
----
-
-
+  numberOfComments &lt;- html_nodes(webpage, xpath = '//*[@class="article__comments_number"]') %&gt;%
+    html_text() %&gt;% 
+    trimws() %&gt;% 
+    str_extract("\\d+") %&gt;% 
+    as.numeric(.) %&gt;% 
+    ifelse(length(.) == 0, NA, .)
   
----
-layout: true
-# REPORTING
----
-&lt;br&gt;
-&lt;br&gt;
-
-  
----
-
-
+  articles &lt;- cbind.data.frame(title, article, numberOfComments, stringsAsFactors = FALSE)
+  return(articles)
+}
+```
 
 ---
 
+#### webscraping
 
-  
-  
----
-&lt;br&gt;
-#### Resources
-&lt;br&gt;
-&lt;br&gt;
-- Check the data sample in GHub repo
-&lt;br&gt;
-&lt;br&gt;
-- Check other clipping agencies
-&lt;br&gt;
-&lt;br&gt;
-- Check other data vendors
+
+```r
+# 4. apply the function
+data &lt;- parseArticle(page1)
+# 5. check the data
+str(data)
+```
+
+```
+## 'data.frame':	1 obs. of  3 variables:
+##  $ title           : chr "Umro bivši austrijski potkancelar i prijatelja Hrvatske dr. Erhard Busek"
+##  $ article         : chr "Bivši austrijski potkancelar i ministar znanosti i obrazovanja, dogradonačelnik Beča i čelnik Narodne stranke ("| __truncated__
+##  $ numberOfComments: num 0
+```
+
+```r
+data$title
+```
+
+```
+## [1] "Umro bivši austrijski potkancelar i prijatelja Hrvatske dr. Erhard Busek"
+```
+
+```r
+data$numberOfComments
+```
+
+```
+## [1] 0
+```
+
+```r
+nchar(data$article)
+```
+
+```
+## [1] 5148
+```
 
 ---
-class: inverse, middle
-layout:false
-# Thank you for your attention!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

@@ -17,7 +17,7 @@ output:
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = F, message = F, warning = F)
+knitr::opts_chunk$set(echo = T, message = F, warning = F)
 ```
 
 
@@ -27,6 +27,9 @@ library(readxl)
 library(here)
 library(kableExtra)
 library(DT)
+library(rvest)
+library(tidyverse)
+library(httr)
 ```
 
 
@@ -52,187 +55,105 @@ layout: true
 # FETCHING DATA
 ---
 
+### Two main approaches:
 
+##### guerrila = webscraping
 
-```{r, echo=T}
-
-
-```
-
-
----
+- takes some skills
 <br>
+- everything can be scraped (tailor made solutions)
 <br>
-
-```{r, echo=T}
-
-```
-
----
-<br>
-<br>
-```{r, echo=T}
-
-```
-
----
-
-```{r, echo=T}
-
-```
-
----
-
-```{r, echo=T}
-
-```
-
----
-
-```{r, echo=T}
-
-```
-
----
-
-```{r, echo=T}
-
-```
-
----
-layout: true
-# STORING DATA
----
-<br>
-<br>
-```{r , echo=T}
-
-```
-
----
-
-```{r, echo=T}
-
-```
-
----
-
-```{r, echo=T}
-
-```
-
----
-
-```{r, echo=T}
-
-```
-
-
-```{r, echo=F, eval=F, include=F}
-
-```
-
----
-layout: true
-# MANIPULATING DATA
----
-<br>
+- takes more time and effort
 <br>
 
-```{r , echo=T}
 
-```
+##### gentelman`s way = API
+
+- often not avaliable 
+<br>
+- usually not for free
+<br>
+- easier to implement in production
 
 ---
 
-```{r, echo=T}
-
-```
+#### webscraping
   
----
+- lets scrape [this](https://www.vecernji.hr/vijesti/umro-bivsi-austrijski-potkancelar-i-prijatelja-hrvatske-dr-erhard-busek-1570780) article and [this](https://www.vecernji.hr/vijesti/u-kijevu-pogodena-stambena-zgrada-objavljena-snimka-raketiranja-nebodera-u-mariupolju-1570614) from [Večernji list](https://www.vecernji.hr/)
 
-```{r, echo=T}
+```{r}
+# 1. copy urls
+url1 <- "https://www.vecernji.hr/vijesti/umro-bivsi-austrijski-potkancelar-i-prijatelja-hrvatske-dr-erhard-busek-1570780"
 
+url2 <- "https://www.vecernji.hr/vijesti/u-kijevu-pogodena-stambena-zgrada-objavljena-snimka-raketiranja-nebodera-u-mariupolju-1570614"
+# 2. request page 
+page1 <- html_session(url1)
+page2 <- html_session(url2)
 ```
 
 ---
-layout: true
-# ANALYTICS
----
 
-```{r, echo=T}
+#### webscraping
 
-```
+```{r}
+# 3. write a function to take parts of the article
+parseArticle <- function(webpage) {
   
----
-
-```{r, echo=T}
-
-
-```
-
----
-
-```{r, echo=T}
-
-```
-
----
-
-```{r, echo=T}
-
-```
+  title <- html_nodes(webpage, xpath = '//h1[@class="article__title"]') %>%
+    html_text() %>% 
+    trimws() %>% 
+    ifelse(length(.) == 0, NA, .)
+ 
+  article <- html_nodes(webpage, xpath = '//*[@class="article__body--main_content"]/p') %>%
+    html_text() %>% 
+    str_flatten(., "\n") %>% 
+    ifelse(length(.) == 0, NA, .)
   
----
-
-```{r, echo=T}
-
+  numberOfComments <- html_nodes(webpage, xpath = '//*[@class="article__comments_number"]') %>%
+    html_text() %>% 
+    trimws() %>% 
+    str_extract("\\d+") %>% 
+    as.numeric(.) %>% 
+    ifelse(length(.) == 0, NA, .)
+  
+  articles <- cbind.data.frame(title, article, numberOfComments, stringsAsFactors = FALSE)
+  return(articles)
+}
 ```
 
 ---
 
-```{r, echo=T}
+#### webscraping
 
-```
-  
----
-layout: true
-# REPORTING
----
-<br>
-<br>
-```{r, echo=T}
-
-```
-  
----
-
-```{r, echo=T}
-
-
+```{r}
+# 4. apply the function
+data <- parseArticle(page1)
+# 5. check the data
+str(data)
+data$title
+data$numberOfComments
+nchar(data$article)
 ```
 
 ---
 
-```{r, echo=T}
 
-``` 
-  
-  
----
-<br>
-#### Resources
-<br>
-<br>
-- Check the data sample in GHub repo
-<br>
-<br>
-- Check other clipping agencies
-<br>
-<br>
-- Check other data vendors
 
----
-class: inverse, middle
-layout:false
-# Thank you for your attention!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
