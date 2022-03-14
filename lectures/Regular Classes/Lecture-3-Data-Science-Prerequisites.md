@@ -3,7 +3,7 @@ title: "Learning Social Media Analytics"
 # subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
 subtitle: "Lecture 3: Data Science Prerequisites"
 author: "Luka Sikic, PhD"
-date: "Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)" #"`r format(Sys.time(), '%d %B %Y')`"
+date: "Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)" #"14 ožujak 2022"
 output:
   html_document:
     code_folding: show
@@ -20,21 +20,10 @@ output:
 
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = T, message = F, warning = F)
-```
 
 
-```{r libs, include=TRUE, echo=FALSE,message=FALSE, warning=FALSE}
-library(tidyverse)
-library(readxl)
-library(here)
-library(kableExtra)
-library(DT)
-library(rvest)
-library(tidyverse)
-library(httr)
-```
+
+
 
 
 # FETCHING DATA
@@ -67,7 +56,8 @@ library(httr)
 - lets scrape [this](https://www.vecernji.hr/vijesti/umro-bivsi-austrijski-potkancelar-i-prijatelja-hrvatske-dr-erhard-busek-1570780) article and [this](https://www.vecernji.hr/vijesti/u-kijevu-pogodena-stambena-zgrada-objavljena-snimka-raketiranja-nebodera-u-mariupolju-1570614) from [Večernji list](https://www.vecernji.hr/)
 
 
-```{r}
+
+```r
 # 1. copy urls
 url1 <- "https://www.vecernji.hr/vijesti/umro-bivsi-austrijski-potkancelar-i-prijatelja-hrvatske-dr-erhard-busek-1570780"
 
@@ -79,7 +69,8 @@ page1 <- html_session(url1)
 - we need to write a function to *grab* parts of the article
 - this part takes some routine skill and revolves around `rvest` package
   
-```{r}
+
+```r
 # 3. write a function to take parts of the article
 parseArticle <- function(webpage) {
   
@@ -138,14 +129,49 @@ parseArticle <- function(webpage) {
 
 - finally, lets apply the function and check the results
   
-```{r}
+
+```r
 # 4. apply the function
 data <- parseArticle(page1)
 # 5. check the data
 str(data)
+```
+
+```
+## 'data.frame':	1 obs. of  9 variables:
+##  $ title       : chr "Umro bivši austrijski potkancelar i prijatelja Hrvatske dr. Erhard Busek"
+##  $ date        : chr "14. ožujka 2022. 16:48"
+##  $ noComment   : num 0
+##  $ views       : num 685
+##  $ articleLabel: logi NA
+##  $ articleLabel: logi NA
+##  $ author      : chr "Snježana Herek"
+##  $ articletext : chr "Bivši austrijski potkancelar i ministar znanosti i obrazovanja, dogradonačelnik Beča i čelnik Narodne stranke ("| __truncated__
+##  $ keywords    : chr "Austrija;Erhard Busek"
+```
+
+```r
 data$title
+```
+
+```
+## [1] "Umro bivši austrijski potkancelar i prijatelja Hrvatske dr. Erhard Busek"
+```
+
+```r
 data$views
+```
+
+```
+## [1] 685
+```
+
+```r
 nchar(data$articletext)
+```
+
+```
+## [1] 5148
 ```
 
 - we would want to automati this approach and apply it to multiple articles 
@@ -153,7 +179,8 @@ nchar(data$articletext)
 [II](https://www.vecernji.hr/vijesti/sto-je-clanak-5-nato-a-aktiviran-je-samo-jednom-a-ne-moze-se-primijeniti-na-ukrajinu-1570810), [III](https://www.vecernji.hr/vijesti/kotromanovic-ako-je-bila-rijec-o-naoruzanom-dronu-napad-je-to-na-clanicu-nato-a-1570731)
 
 
-```{r}
+
+```r
 # assign urls of the articles
 url3 <- "https://www.vecernji.hr/vijesti/glavni-tajnik-un-a-nuklearni-sukob-ponovno-izgleda-moguc-1570823"
 url4 <- "https://www.vecernji.hr/vijesti/sto-je-clanak-5-nato-a-aktiviran-je-samo-jednom-a-ne-moze-se-primijeniti-na-ukrajinu-1570810"
@@ -164,9 +191,18 @@ urls <- c(url1,url2,url3,url4,url5)
 urls
 ```
 
-- lets automate this procedure for multiple articles now and check the data
+```
+## [1] "https://www.vecernji.hr/vijesti/umro-bivsi-austrijski-potkancelar-i-prijatelja-hrvatske-dr-erhard-busek-1570780"              
+## [2] "https://www.vecernji.hr/vijesti/u-kijevu-pogodena-stambena-zgrada-objavljena-snimka-raketiranja-nebodera-u-mariupolju-1570614"
+## [3] "https://www.vecernji.hr/vijesti/glavni-tajnik-un-a-nuklearni-sukob-ponovno-izgleda-moguc-1570823"                             
+## [4] "https://www.vecernji.hr/vijesti/sto-je-clanak-5-nato-a-aktiviran-je-samo-jednom-a-ne-moze-se-primijeniti-na-ukrajinu-1570810" 
+## [5] "https://www.vecernji.hr/vijesti/kotromanovic-ako-je-bila-rijec-o-naoruzanom-dronu-napad-je-to-na-clanicu-nato-a-1570731"
+```
 
-```{r}
+
+
+
+```r
 # read in urls
 pages <- lapply(urls,html_session)
 # grab all article parts
@@ -175,60 +211,61 @@ multipleArticles <- lapply(pages, parseArticle)
 dataArticles <- do.call(rbind, multipleArticles)
 # check the data
 dim(dataArticles)
+```
+
+```
+## [1] 7 9
+```
+
+```r
 glimpse(dataArticles)
+```
+
+```
+## Rows: 7
+## Columns: 9
+## $ title        <chr> "Umro bivši austrijski potkancelar i prijatelja Hrvatske ~
+## $ date         <chr> "14. ožujka 2022. 16:48", "14. ožujka 2022. 20:31", "14. ~
+## $ noComment    <dbl> 0, 98, 98, 0, 0, 131, 131
+## $ views        <dbl> 685, 62967, 62967, 235, 243, 53953, 53953
+## $ articleLabel <lgl> NA, NA, NA, NA, NA, NA, NA
+## $ articleLabel <lgl> NA, NA, NA, NA, NA, NA, NA
+## $ author       <chr> "Snježana Herek", "Vecernji.hr", "Hina", "Hina", "Vecernj~
+## $ articletext  <chr> "Bivši austrijski potkancelar i ministar znanosti i obraz~
+## $ keywords     <chr> "Austrija;Erhard Busek", "invazija;napad;Rusija;rat;Ukraj~
+```
+
+```r
 dataArticles$title
+```
+
+```
+## [1] "Umro bivši austrijski potkancelar i prijatelja Hrvatske dr. Erhard Busek"                                        
+## [2] "Rusi raznijeli streljivo ispred nuklearne elektrane Zaporižja? Moskva najavila opasnu namjeru"                   
+## [3] "Rusi raznijeli streljivo ispred nuklearne elektrane Zaporižja? Moskva najavila opasnu namjeru"                   
+## [4] "Glavni tajnik UN-a: Nuklearni sukob ponovno izgleda moguć"                                                       
+## [5] "Što je članak 5. NATO-a? Aktiviran je samo jednom, a ne može se primijeniti na Ukrajinu"                         
+## [6] "Kotromanović: Ako je dron bio naoružan, onda NATO mora aktivirati članak 5 bez obzira je li ruski ili ukrajinski"
+## [7] "Kotromanović: Ako je dron bio naoružan, onda NATO mora aktivirati članak 5 bez obzira je li ruski ili ukrajinski"
+```
+
+```r
 dataArticles$views
+```
+
+```
+## [1]   685 62967 62967   235   243 53953 53953
+```
+
+```r
 nchar(dataArticles$articletext)
-
 ```
 
-### **API**
-
-- lets quickly inspect the [API documentation](https://documenter.getpostman.com/view/7210955/S1EMUebv?version=latest) 
-- then we need to compile the full API request and retrieve the data
-
-```{r}
-# this is a private infor
-source(here::here("Creds/api.R"))
-# identify from your Mediatoolkit App
-groups <- "182718"
-keywords <- "6521533"
-# select time period
-from_time <- as.character(as.numeric(as.POSIXlt("2022-03-3", format="%Y-%m-%d")))
-to_time <- as.character(as.numeric(as.POSIXlt("2022-03-14", format="%Y-%m-%d")))
-# number of articles to retrieve
-count <- 3000
-# connect all parts into request string
-requestString <- paste0("https://api.mediatoolkit.com/organizations/126686/groups/",groups,
-              "/keywords/",keywords,
-              "/mentions?access_token=",token,
-              "&from_time=",from_time,
-              "&to_time=",to_time,
-              "&count=",count,
-              "&sort=time&type=all&offset=0&ids_only=false")
-# check the request string
-requestString
-# make GET request to Mediatoolkit server API
-API_request <- httr::GET(requestString)
-# check the API request object
-API_request
-# parse the request into JSON object
-jS_text <- httr::content(API_request, as = "text", type = "aplication/json", encoding = "UTF-8")
-# make a list from JSON object
-dataList <- jsonlite::fromJSON(jS_text, flatten = TRUE)
-# make a data.frame from list
-data <- data.frame(dataList$data)
+```
+## [1]  5148 22405 22405  1558  3970  5675  5675
 ```
 
-- now we have the retrieved data in a data.frame object
-- let`s check what is inside
 
-```{r}
-# size of the data
-dim(data)
-# variables and variable types
-glimpse(data)
-```
 
 
 
