@@ -34,24 +34,31 @@ class: center, middle, inverse, title-slide
 # STRUCTURE
 &lt;br&gt;
 &lt;br&gt;
+- DATA OVERVIEW
 &lt;br&gt;
 &lt;br&gt;
-- DATA EXPLORATION
+- FACEBOOK
 &lt;br&gt;
 &lt;br&gt;
-- 
+- WEB
 &lt;br&gt;
 &lt;br&gt;
-- 
+- TWITTER
 &lt;br&gt;
 &lt;br&gt;
-- 
+- YOUTUBE
+&lt;br&gt;
+&lt;br&gt;
+- FORUM
+&lt;br&gt;
+&lt;br&gt;
+- INSTAGRAM
 &lt;br&gt;
 &lt;br&gt;
 
 ---
 layout: true
-# DATA EXPLORATION
+# DATA OVERVIEW
 ---
 
 - check the raw [data](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/data/Mediatoolkit/sample.xlsx); sourced from [Mediatoolkit](https://www.mediatoolkit.com/)
@@ -79,18 +86,19 @@ glimpse(one_day_sample[sample(nrow(one_day_sample)),1:8])
 ```
 ## Rows: 27,604
 ## Columns: 8
-## $ DATE        &lt;chr&gt; "2022-01-02", "2022-01-02", "2022-01-01", "2022-01-02", "2~
-## $ TIME        &lt;chr&gt; "21:42:09", "21:55:37", "18:57:18", "06:56:57", "22:09:00"~
-## $ TITLE       &lt;chr&gt; "Brutalistička arhitektura je baš cool pošto smo sagradili~
-## $ FROM        &lt;chr&gt; "croatia", "forum.hr", "hrvatska-danas.com", "glasistre.hr~
-## $ AUTHOR      &lt;chr&gt; "Drug_Egorov", NA, NA, "https://www.facebook.com/Glasistre~
-## $ URL         &lt;chr&gt; "https://www.reddit.com/r/croatia/comments/ru5l0t/_/hqzb26~
-## $ URL_PHOTO   &lt;chr&gt; "https://mediatoolkit.com/img/50x50,sc,sxshotwJyc_8Cc25LSO~
-## $ SOURCE_TYPE &lt;chr&gt; "reddit", "forum", "web", "web", "twitter", "web", "twitte~
+## $ DATE        &lt;chr&gt; "2022-01-01", "2022-01-01", "2022-01-01", "2022-01-02", "2~
+## $ TIME        &lt;chr&gt; "01:10:13", "12:25:40", "17:08:05", "00:47:42", "23:07:29"~
+## $ TITLE       &lt;chr&gt; "i love gucci manebakejwjwshhsnasbshwhsnsns s s sbs s snsn~
+## $ FROM        &lt;chr&gt; "meh", "narod.hr", "anonymous_user", "croatia", "GRANAPP A~
+## $ AUTHOR      &lt;chr&gt; "meh", "@narodhr", "anonymous_user", "punio4", "GRANAPP Au~
+## $ URL         &lt;chr&gt; "https://twitter.com/antimuzan/status/1477069616623099905"~
+## $ URL_PHOTO   &lt;chr&gt; "https://mediatoolkit.com/img/50x50,sc,ssdgUjrGPOfDDuYA_fi~
+## $ SOURCE_TYPE &lt;chr&gt; "twitter", "web", "instagram", "reddit", "youtube", "forum~
 ```
 
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # FULL SAMPLE
@@ -98,7 +106,7 @@ path &lt;- "D:/LUKA/Freelance/Mediatoolkit/FULLDATA"
 raw &lt;- list.files(path = path , pattern="xlsx")
 raw_path &lt;- paste0(path, "/", raw)
 all_raw &lt;- map_df(raw_path, read_excel)
-all_raw &lt;- all_raw  %&gt;%  mutate(DATE = as.Date(DATE,"%Y-%m-%d" ))
+#all_raw &lt;- all_raw  %&gt;%  mutate(DATE = as.Date(DATE,"%Y-%m-%d" ))
 
 dim(all_raw)
 ```
@@ -118,7 +126,12 @@ range(all_raw$DATE)
 ---
 &lt;br&gt;
 &lt;br&gt;
-&lt;br&gt;
+
+
+```r
+# other variables
+names(one_day_sample)
+```
 
 ```
 ##  [1] "DATE"                  "TIME"                  "TITLE"                
@@ -139,10 +152,11 @@ range(all_raw$DATE)
 ```
 
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
-# observations/ activity
+# observations/activity
 nrow(all_raw)
 ```
 
@@ -158,6 +172,15 @@ unique(all_raw$SOURCE_TYPE)
 ```
 ## [1] "forum"     "web"       "twitter"   "reddit"    "youtube"   "comment"  
 ## [7] "facebook"  "instagram"
+```
+
+```r
+# unique authors
+length(unique(all_raw$AUTHOR))
+```
+
+```
+## [1] 103373
 ```
 
 ---
@@ -203,7 +226,7 @@ length(unique(all_raw$URL))
 
 
 ```r
-# GENERAL OVERVIEW (full sample)
+# GENERAL OVERVIEW 
 all_raw %&gt;%
   group_by(SOURCE_TYPE) %&gt;%
   count() %&gt;%
@@ -264,7 +287,7 @@ all_raw %&gt;%
 one_day_sample %&gt;%
      select(SOURCE_TYPE, MENTION_SNIPPET) %&gt;%
      unique(.) %&gt;%  
-     sample_n(9) %&gt;%
+     sample_n(8) %&gt;%
   kbl() %&gt;%
   kable_styling(font_size = 11)
 ```
@@ -278,40 +301,36 @@ one_day_sample %&gt;%
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Novooboljelih je 175 u Zadru, 11 u Bibinjama, 10 u Benkovcu, po devetero u Pakoštanima, Poličniku i Sukošanu, po osmero u Biogradu i Starigradu, sedmero u Sv. Filipu i Jakovu, po četiri osobe pozitivne su na koronavirus u Jasenicama, Kalima, Ninu, &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; no i mean snsd&amp;lt;U+0001F62D&amp;gt; &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Faber: ‘Radimo na tome da Donji grad bolje prilagodimo pješacima i biciklistima’ Robert Faber, predsjednik Vijeća GČ-a Donji grad, govori o aktualnim problemima te gradske četvrti, a to su iseljavanje stanovništva, obnova, prometne gužve, poplave…   &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jedno je biti kukavica i bojati se vlastite sjene, ovo je nešto drugo..ovo je navodni antifašista a ustvari pravi fašista. aha, znaci drustvo šipa, gans i judolina &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Provalit mu google password i naći zadnju lokaciju mobitela. Murja je deffo nesposobna, da imam resurse i ovlasti, locirao bih i njega i okrivljenike za pola sata. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bivši trener boksa je morao čuvati ženu jednog vlasnika jer ovaj nije htio placati reket. Pištolj i sve. &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; @parazitiram Moze u Pluzine i bez gaca. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; zagonetku (VIDEO) By WhatsApp Gavran Korpi postao je hit na TikToku, a snimke kako bez problema rješava zagonetke i ... @korppi.the.raven Her happy "tap" when she gets the star &amp;lt;U+0001F923&amp;gt; I think it is time to retire this one for good and move on to &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Županije moraju biti funkcionalne. Ne možeš spojiti Rijeku i Banovinu da bi dobio jednako gospodarstvo kao Dalmacija + zaleđe. Nije nikakav problem da županija bude siromašna, problem je ako se ne radi na tome da se to promijeni. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; s novom nadom i svatko sa svojim željama. Kako bi ispraćaj stare i doček nove godine bio što ljepši i veseliji pobrinuo se Grad Vinkovci u čijoj je organizaciji Vinkovčane […] Raspoloženi Vinkovčani u 2022. zakoračili uz Aurelius Band Play &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Živjeti da bi se pripovijedalo Živjeti da bi se pripovijedalo Prevele Dražebka Milovanović i Tanja Tarbuk. Knjižarska cijena je bila 150,00 Kn. U košarici: 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; I kakve to veze ima s naslovnom temom? Hoćeš reći, Filipović bi bio bolji gradonačelnik? lli onaj Herman? Evo odgovoriti ... sve strane.Kakav pametan racun je dosao za prrolazne prociscavanje vode.Ista stvar je za osnovne skole-dobar dio ih je i &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Foto: Pero Grošeta „Udrite like” na stranicu ako već niste, „udrite like” na fotografiju i podijelite je ako vam se sviđa i želite pomoći autoru da pobjedi u foto natječaju „20/21 na jugu &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [SAT PURGERSKOG] Kakav ste si to sviter oblekli? &amp;lt;U+0001F603&amp;gt; Značenje ove i svih purgerskih riječi koje smo dosad objavili otkrijte klikom na &amp;lt;U+0001F517&amp;gt; https://bit.ly/zgf-purgerski-rjecnik &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Dobri stari običaj: Znate li zašto Britanci piju čaj između 15 i 16 sati? U čaju se tradicionalno uživa između 15 i 16 sati i osim crnog čaja, običaj uključuje konzumaciju sendviča i kolačića. Danas kada više nije popularan samo među visokim &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Jer Grad Zagreb onda može samostalno donositi projekte bez da ovisi o županiji. Trebalo bi po meni slično urediti i za Split. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Golgeter, bivši član brojnih županijskih klubova s kojima je osvajao prvenstva i županijske kupove, a nekoć je bio i na probi Slavena […] PU koprivničko-križevačka izvijestila je da je jučer oko 22.15 sati u Hlebinama u kući 38-godišnjakinja je &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -338,47 +357,47 @@ all_raw %&gt;%
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Better Call Saul / Nazovi Saula (2015-) &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Zagrebački holding raspisuje javno savjetovanje za najam novih vozila &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; DVIJE HRVATICE SOLIDNE NA ZOI: Slovakinja osvojila olimpijsko zlato u slalomu &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; i wanna puke &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; juče videh tiktok žena skenjana priča kako su joj oteli sina pre 4 godine i kako ga još nisu našli i sve vreme onako izvodi neku koreografiju polumrtvo wtf??? https://t.co/hNcaQMwLq2 RT @mjaumjau33 people on tiktok be saying the most traumatic, outrageous experiences of their lives and then start dancing melancholically to some weird music like wtf u got me traumatized now &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dnevnik.hr: U dva tjedna stopa zaraze koronom u ovoj se europskoj zemlji udvostručila, sada je na razini "vrlo visokog riz &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; @exossunshine Ja ih skoro i upoznala &amp;lt;U+0001F62D&amp;gt; 
-Bili su u budimpesti isti dan kad i ja i slikali se na svim mjestima ko i ja! Jos dan danas placam vjv smo se i mimoisli &amp;lt;U+0001F62D&amp;gt; 
-Na jednoj slici je cak bus koji je taman stigao kad smo mi kupovalw razglednice tako da smo bili na istom mjestu u isto vrijeme &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Rapala Team Esko vobler - 7cm &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; instagram &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tvoja kosa + naš Auto Curler s tehnologijom SenseIQ = recept za najljepše valove ovih blagdana. &amp;lt;U+0001F90E&amp;gt; Samo nekoliko sekundi je potrebno da tvoja ravna kosa... &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; ZagrebNet - portal zbirki fotografija MGZ -a &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Naučite što je preupravljanje odnosno zanošenje stražnjeg dijela automobila &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Nagrada u Poslijepodnevu na Otvorenom je narasla na 5000 kuna! &amp;lt;U+0001F911&amp;gt; Trebaš li još razloga za igrati? &amp;lt;U+0001F9D0&amp;gt;&amp;lt;U+0001F385&amp;gt; Pogodi što je u Poklonu i uzmi nam lovu. Danas, od... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; RT @Sunkissbeach12 Samo motka i ulica &amp;lt;U+0001F4AA&amp;gt;&amp;lt;U+0001F44A&amp;gt; https://t.co/MsqeDvUagI &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Kako preživjeti blagdane? &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-
-#### FACEBOOK
+---
+layout: true
+# FACEBOOK
+---
 &lt;br&gt;
 &lt;br&gt;
 
@@ -401,13 +420,11 @@ all_raw %&gt;%
 
 ---
 
-#### FACEBOOK
-
 
 ```r
 # most active authors
 fb %&gt;% 
-  group_by( AUTHOR,FOLLOWERS_COUNT) %&gt;%
+  group_by(AUTHOR,FOLLOWERS_COUNT) %&gt;%
   summarise(N = n()) %&gt;%
   arrange(desc(N))  %&gt;%
   mutate_if(is.numeric, format, big.mark = ".") %&gt;%
@@ -477,8 +494,6 @@ fb %&gt;%
 &lt;/table&gt;
 
 ---
-
-#### FACEBOOK
 
 
 ```r
@@ -566,8 +581,6 @@ fb %&gt;%
 
 ---
 
-#### FACEBOOK
-
 
 ```r
 # important activity
@@ -649,8 +662,11 @@ fb %&gt;%
 
 
 ---
-
-#### WEB
+layout: true
+# WEB
+---
+&lt;br&gt;
+&lt;br&gt;
 
 
 ```r
@@ -671,8 +687,6 @@ all_raw %&gt;%
 ```
 
 ---
-
-#### WEB
 
 
 ```r
@@ -736,8 +750,8 @@ web %&gt;%
 &lt;/tbody&gt;
 &lt;/table&gt;
   
---- 
-  
+---
+
 
 ```r
 web %&gt;% 
@@ -820,14 +834,13 @@ web %&gt;%
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-  
-
-
 
 ---
-
-#### TWITTER
-
+layout: true
+# TWITTER
+---
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # choose variables to investigate
@@ -846,9 +859,7 @@ all_raw %&gt;%
          TIME) -&gt; twitter
 ```
   
---- 
-  
-#### TWITTER
+---
 
 
 ```r
@@ -912,9 +923,7 @@ twitter %&gt;%
 &lt;/tbody&gt;
 &lt;/table&gt;
 
---- 
-  
-#### TWITTER
+---
 
 
 ```r
@@ -978,13 +987,10 @@ twitter %&gt;%
 &lt;/tbody&gt;
 &lt;/table&gt;
 
---- 
-  
-#### TWITTER
+---
 
 
 ```r
-# slow
 # most active authors
 twitter %&gt;% 
   group_by(AUTHOR) %&gt;%
@@ -1059,10 +1065,9 @@ twitter %&gt;%
   
 ---
 
-#### TWITTER
-
 
 ```r
+# originality
 twitter %&gt;% 
   group_by(TWEET_TYPE) %&gt;% # interesting to check per author
   summarise(N = n()) %&gt;%
@@ -1096,10 +1101,9 @@ twitter %&gt;%
 
 ---
 
-#### TWITTER
-
 
 ```r
+# technology
 twitter %&gt;% 
   group_by(TWEET_SOURCE_NAME) %&gt;%
   summarise(N = n()) %&gt;%
@@ -1152,9 +1156,11 @@ twitter %&gt;%
 &lt;/table&gt;
   
 ---
-
-#### YOUTUBE
-
+layout: true
+# YOUTUBE
+---
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # choose variables to investigate
@@ -1174,11 +1180,9 @@ all_raw %&gt;%
   
 ---
 
-#### YOUTUBE
-
-
 
 ```r
+# most active authors
 youtube %&gt;%
   group_by(AUTHOR) %&gt;%
   count() %&gt;%
@@ -1238,13 +1242,11 @@ youtube %&gt;%
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-  
 ---
-
-#### YOUTUBE
 
 
 ```r
+# activity per author
 youtube %&gt;%
   group_by(AUTHOR) %&gt;%
   summarise(REACH = sum(REACH),
@@ -1253,7 +1255,7 @@ youtube %&gt;%
             COMMENTS= sum(COMMENTS_COUNT)) %&gt;%
   arrange(desc(VIEW)) %&gt;%
   mutate_if(is.numeric, format, big.mark = ".") %&gt;%
-  head(10) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)
+  head(9) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)
 ```
 
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
@@ -1330,28 +1332,17 @@ youtube %&gt;%
    &lt;td style="text-align:left;"&gt; 7.662.476 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
   &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Hrvatska radiotelevizija &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 7.043.027 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 78.271 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 7.043.027 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 18.720 &lt;/td&gt;
-  &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
   
-  
----
-
-#### YOUTUBE
-
 
 
   
-
 ---
-
-#### FORUM
+layout: true
+# FORUM
+---
+&lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
 
@@ -1367,8 +1358,6 @@ all_raw %&gt;%
 ```
   
 ---
-
-#### FORUM
 
 
 ```r
@@ -1425,8 +1414,9 @@ forum %&gt;%
 &lt;/table&gt;
   
 ---
-
-#### INSTAGRAM
+layout: true
+# INSTAGRAM
+---
 &lt;br&gt;
 &lt;br&gt;
 
@@ -1449,11 +1439,9 @@ all_raw %&gt;%
   
 ---
 
-#### INSTAGRAM
-
 
 ```r
-# not a very good coverage
+# influencer impact
 instagram %&gt;%
   group_by(FROM) %&gt;%
   summarise(REACH = sum(REACH),
@@ -1462,7 +1450,7 @@ instagram %&gt;%
             VIEW = sum(VIEW_COUNT)) %&gt;%
   mutate_if(is.numeric, format, big.mark = ".") %&gt;%
   arrange(desc(LIKE)) %&gt;%
-  head(12) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)
+  head(9) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)
 ```
 
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
@@ -1539,37 +1527,14 @@ instagram %&gt;%
    &lt;td style="text-align:left;"&gt; 260.060 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
   &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; 24sata.hr &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 2.309.160 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 4.730 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 226.187 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; malajskitapir &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 2.064.110 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 3.047 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 203.364 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; dnevnikhr &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 2.109.090 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 8.983 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 201.936 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
-  &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
   
 ---
 
-#### INSTAGRAM
-
 
 ```r
-# not a very good coverage
+# influencer activity
 instagram %&gt;%
   group_by(FROM) %&gt;%
   count() %&gt;%

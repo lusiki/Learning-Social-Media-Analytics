@@ -34,24 +34,30 @@ title: " "
 
 ### Lecture 02: Current state and latest trends in the social media space
 
-- 
-- 
-- 
+- Data overview
+- Facebook
+- Web
+- Twitter
+- Youtube
+- Forum
+- Instagram
 
 <br>
 **Format:** [.html](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/lectures/Regular%20Classes/Lecture-2-State-and-trends.html) | [.Rmd](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/lectures/Regular%20Classes/Lecture%202%20State%20and%20trends.Rmd) 
 <br>
-**Readings:** []() + []()
+**Readings:** [try out mediatoolkit data sample](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/data/Mediatoolkit/sample.xlsx)
 <br>
 <br>
 
 ### Lecture 03: IT prerequisites and programming language syntax (R, Python)
 
-- 
-- 
-- 
+- Fetching data
+- Storing data
+- Manipulating
+- Analytics
+- Reporting
 
-**Format:** [.html]() | [.Rmd]() 
+**Format:** [.html](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/lectures/Regular%20Classes/Lecture-3-Data-Science-Prerequisites.html) | [.Rmd](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/lectures/Regular%20Classes/Lecture%203%20Data%20Science%20Prerequisites.Rmd) 
 <br>
 **Readings:** []() + []()
 <br>
