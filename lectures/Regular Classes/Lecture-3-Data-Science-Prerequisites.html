@@ -70,27 +70,11 @@ layout: true
 - usually not for free
 &lt;br&gt;
 - easier to implement in production
-
 ---
 
 #### webscraping
   
 - lets scrape [this](https://www.vecernji.hr/vijesti/umro-bivsi-austrijski-potkancelar-i-prijatelja-hrvatske-dr-erhard-busek-1570780) article and [this](https://www.vecernji.hr/vijesti/u-kijevu-pogodena-stambena-zgrada-objavljena-snimka-raketiranja-nebodera-u-mariupolju-1570614) from [Večernji list](https://www.vecernji.hr/)
-
-
-```r
-# 1. copy urls
-url1 &lt;- "https://www.vecernji.hr/vijesti/umro-bivsi-austrijski-potkancelar-i-prijatelja-hrvatske-dr-erhard-busek-1570780"
-
-url2 &lt;- "https://www.vecernji.hr/vijesti/u-kijevu-pogodena-stambena-zgrada-objavljena-snimka-raketiranja-nebodera-u-mariupolju-1570614"
-# 2. request page 
-page1 &lt;- html_session(url1)
-page2 &lt;- html_session(url2)
-```
-
----
-
-#### webscraping
 
 
 ```r
@@ -101,7 +85,7 @@ parseArticle &lt;- function(webpage) {
     html_text() %&gt;% 
     trimws() %&gt;% 
     ifelse(length(.) == 0, NA, .)
- 
+  
   article &lt;- html_nodes(webpage, xpath = '//*[@class="article__body--main_content"]/p') %&gt;%
     html_text() %&gt;% 
     str_flatten(., "\n") %&gt;% 
@@ -119,59 +103,8 @@ parseArticle &lt;- function(webpage) {
 }
 ```
 
----
-
-#### webscraping
-
-
-```r
-# 4. apply the function
-data &lt;- parseArticle(page1)
-# 5. check the data
-str(data)
-```
-
-```
-## 'data.frame':	1 obs. of  3 variables:
-##  $ title           : chr "Umro bivši austrijski potkancelar i prijatelja Hrvatske dr. Erhard Busek"
-##  $ article         : chr "Bivši austrijski potkancelar i ministar znanosti i obrazovanja, dogradonačelnik Beča i čelnik Narodne stranke ("| __truncated__
-##  $ numberOfComments: num 0
-```
-
-```r
-data$title
-```
-
-```
-## [1] "Umro bivši austrijski potkancelar i prijatelja Hrvatske dr. Erhard Busek"
-```
-
-```r
-data$numberOfComments
-```
-
-```
-## [1] 0
-```
-
-```r
-nchar(data$article)
-```
-
-```
-## [1] 5148
-```
 
 ---
-
-
-
-
-
-
-
-
-
 
 
 

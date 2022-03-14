@@ -74,7 +74,6 @@ layout: true
 - usually not for free
 <br>
 - easier to implement in production
-
 ---
 
 #### webscraping
@@ -90,11 +89,10 @@ url2 <- "https://www.vecernji.hr/vijesti/u-kijevu-pogodena-stambena-zgrada-objav
 page1 <- html_session(url1)
 page2 <- html_session(url2)
 ```
-
 ---
-
-#### webscraping
-
+  
+  #### webscraping
+  
 ```{r}
 # 3. write a function to take parts of the article
 parseArticle <- function(webpage) {
@@ -103,7 +101,7 @@ parseArticle <- function(webpage) {
     html_text() %>% 
     trimws() %>% 
     ifelse(length(.) == 0, NA, .)
- 
+  
   article <- html_nodes(webpage, xpath = '//*[@class="article__body--main_content"]/p') %>%
     html_text() %>% 
     str_flatten(., "\n") %>% 
@@ -120,11 +118,10 @@ parseArticle <- function(webpage) {
   return(articles)
 }
 ```
-
 ---
-
-#### webscraping
-
+  
+  #### webscraping
+  
 ```{r}
 # 4. apply the function
 data <- parseArticle(page1)
@@ -136,18 +133,8 @@ nchar(data$article)
 ```
 
 ---
-
-
-
-
-
-
-
-
-
-
-
-
+  
+  
 
 
 
