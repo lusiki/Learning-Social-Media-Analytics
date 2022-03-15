@@ -194,7 +194,7 @@ source(here::here("Creds/api.R"))
 groups <- "182718"
 keywords <- "6521533"
 # select time period
-from_time <- as.character(as.numeric(as.POSIXlt("2022-03-3", format="%Y-%m-%d")))
+from_time <- as.character(as.numeric(as.POSIXlt("2022-03-13", format="%Y-%m-%d")))
 to_time <- as.character(as.numeric(as.POSIXlt("2022-03-14", format="%Y-%m-%d")))
 # number of articles to retrieve
 count <- 3000

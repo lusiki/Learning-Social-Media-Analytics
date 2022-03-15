@@ -448,7 +448,7 @@ div.tocify {
 ##  $ title       : chr &quot;Umro bivši austrijski potkancelar i prijatelja Hrvatske dr. Erhard Busek&quot;
 ##  $ date        : chr &quot;14. ožujka 2022. 16:48&quot;
 ##  $ noComment   : num 0
-##  $ views       : num 685
+##  $ views       : num 907
 ##  $ articleLabel: logi NA
 ##  $ articleLabel: logi NA
 ##  $ author      : chr &quot;Snježana Herek&quot;
@@ -457,7 +457,7 @@ div.tocify {
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>title</span></code></pre></div>
 <pre><code>## [1] &quot;Umro bivši austrijski potkancelar i prijatelja Hrvatske dr. Erhard Busek&quot;</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>views</span></code></pre></div>
-<pre><code>## [1] 685</code></pre>
+<pre><code>## [1] 907</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(data<span class="sc">$</span>articletext)</span></code></pre></div>
 <pre><code>## [1] 5148</code></pre>
 <ul>
@@ -477,6 +477,9 @@ div.tocify {
 ## [3] &quot;https://www.vecernji.hr/vijesti/glavni-tajnik-un-a-nuklearni-sukob-ponovno-izgleda-moguc-1570823&quot;                             
 ## [4] &quot;https://www.vecernji.hr/vijesti/sto-je-clanak-5-nato-a-aktiviran-je-samo-jednom-a-ne-moze-se-primijeniti-na-ukrajinu-1570810&quot; 
 ## [5] &quot;https://www.vecernji.hr/vijesti/kotromanovic-ako-je-bila-rijec-o-naoruzanom-dronu-napad-je-to-na-clanicu-nato-a-1570731&quot;</code></pre>
+<ul>
+<li>lets automate this procedure for multiple articles now and check the data</li>
+</ul>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read in urls</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>pages <span class="ot">&lt;-</span> <span class="fu">lapply</span>(urls,html_session)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># grab all article parts</span></span>
@@ -490,9 +493,9 @@ div.tocify {
 <pre><code>## Rows: 7
 ## Columns: 9
 ## $ title        &lt;chr&gt; &quot;Umro bivši austrijski potkancelar i prijatelja Hrvatske ~
-## $ date         &lt;chr&gt; &quot;14. ožujka 2022. 16:48&quot;, &quot;14. ožujka 2022. 20:31&quot;, &quot;14. ~
-## $ noComment    &lt;dbl&gt; 0, 98, 98, 0, 0, 131, 131
-## $ views        &lt;dbl&gt; 685, 62967, 62967, 235, 243, 53953, 53953
+## $ date         &lt;chr&gt; &quot;14. ožujka 2022. 16:48&quot;, &quot;14. ožujka 2022. 23:03&quot;, &quot;14. ~
+## $ noComment    &lt;dbl&gt; 0, 106, 106, 7, 19, 133, 133
+## $ views        &lt;dbl&gt; 907, 85384, 85384, 2755, 7019, 72696, 72696
 ## $ articleLabel &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA
 ## $ articleLabel &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA
 ## $ author       &lt;chr&gt; &quot;Snježana Herek&quot;, &quot;Vecernji.hr&quot;, &quot;Hina&quot;, &quot;Hina&quot;, &quot;Vecernj~
@@ -500,16 +503,197 @@ div.tocify {
 ## $ keywords     &lt;chr&gt; &quot;Austrija;Erhard Busek&quot;, &quot;invazija;napad;Rusija;rat;Ukraj~</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>dataArticles<span class="sc">$</span>title</span></code></pre></div>
 <pre><code>## [1] &quot;Umro bivši austrijski potkancelar i prijatelja Hrvatske dr. Erhard Busek&quot;                                        
-## [2] &quot;Rusi raznijeli streljivo ispred nuklearne elektrane Zaporižja? Moskva najavila opasnu namjeru&quot;                   
-## [3] &quot;Rusi raznijeli streljivo ispred nuklearne elektrane Zaporižja? Moskva najavila opasnu namjeru&quot;                   
+## [2] &quot;Teške borbe u Donbasu, američki dužnosnik tvrdi: Rusko napredovanje gotovo potpuno zaustavljeno&quot;                 
+## [3] &quot;Teške borbe u Donbasu, američki dužnosnik tvrdi: Rusko napredovanje gotovo potpuno zaustavljeno&quot;                 
 ## [4] &quot;Glavni tajnik UN-a: Nuklearni sukob ponovno izgleda moguć&quot;                                                       
 ## [5] &quot;Što je članak 5. NATO-a? Aktiviran je samo jednom, a ne može se primijeniti na Ukrajinu&quot;                         
 ## [6] &quot;Kotromanović: Ako je dron bio naoružan, onda NATO mora aktivirati članak 5 bez obzira je li ruski ili ukrajinski&quot;
 ## [7] &quot;Kotromanović: Ako je dron bio naoružan, onda NATO mora aktivirati članak 5 bez obzira je li ruski ili ukrajinski&quot;</code></pre>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>dataArticles<span class="sc">$</span>views</span></code></pre></div>
-<pre><code>## [1]   685 62967 62967   235   243 53953 53953</code></pre>
+<pre><code>## [1]   907 85384 85384  2755  7019 72696 72696</code></pre>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(dataArticles<span class="sc">$</span>articletext)</span></code></pre></div>
-<pre><code>## [1]  5148 22405 22405  1558  3970  5675  5675</code></pre>
+<pre><code>## [1]  5148 27867 27867  1558  3970  5675  5675</code></pre>
+</div>
+<div id="api" class="section level3">
+<h3><strong>API</strong></h3>
+<ul>
+<li>lets quickly inspect the <a href="https://documenter.getpostman.com/view/7210955/S1EMUebv?version=latest">API documentation</a></li>
+<li>then we need to compile the full API request and retrieve the data</li>
+</ul>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this is a private infor</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;Creds/api.R&quot;</span>))</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># identify from your Mediatoolkit App</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>groups <span class="ot">&lt;-</span> <span class="st">&quot;182718&quot;</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>keywords <span class="ot">&lt;-</span> <span class="st">&quot;6521533&quot;</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co"># select time period</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>from_time <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">as.numeric</span>(<span class="fu">as.POSIXlt</span>(<span class="st">&quot;2022-03-13&quot;</span>, <span class="at">format=</span><span class="st">&quot;%Y-%m-%d&quot;</span>)))</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>to_time <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">as.numeric</span>(<span class="fu">as.POSIXlt</span>(<span class="st">&quot;2022-03-14&quot;</span>, <span class="at">format=</span><span class="st">&quot;%Y-%m-%d&quot;</span>)))</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="co"># number of articles to retrieve</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>count <span class="ot">&lt;-</span> <span class="dv">3000</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co"># connect all parts into request string</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>requestString <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;https://api.mediatoolkit.com/organizations/126686/groups/&quot;</span>,groups,</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>              <span class="st">&quot;/keywords/&quot;</span>,keywords,</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>              <span class="st">&quot;/mentions?access_token=&quot;</span>,token,</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>              <span class="st">&quot;&amp;from_time=&quot;</span>,from_time,</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>              <span class="st">&quot;&amp;to_time=&quot;</span>,to_time,</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>              <span class="st">&quot;&amp;count=&quot;</span>,count,</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>              <span class="st">&quot;&amp;sort=time&amp;type=all&amp;offset=0&amp;ids_only=false&quot;</span>)</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="co"># check the request string</span></span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>requestString</span></code></pre></div>
+<pre><code>## [1] &quot;https://api.mediatoolkit.com/organizations/126686/groups/182718/keywords/6521533/mentions?access_token=ddms5s0l3gejlz2z42ydt0bnwmf6ssqd62bdxteu7t8sumv5ii&amp;from_time=1647126000&amp;to_time=1647212400&amp;count=3000&amp;sort=time&amp;type=all&amp;offset=0&amp;ids_only=false&quot;</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make GET request to Mediatoolkit server API</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>API_request <span class="ot">&lt;-</span> httr<span class="sc">::</span><span class="fu">GET</span>(requestString)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># check the API request object</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>API_request</span></code></pre></div>
+<pre><code>## Response [https://api.mediatoolkit.com/organizations/126686/groups/182718/keywords/6521533/mentions?access_token=ddms5s0l3gejlz2z42ydt0bnwmf6ssqd62bdxteu7t8sumv5ii&amp;from_time=1647126000&amp;to_time=1647212400&amp;count=3000&amp;sort=time&amp;type=all&amp;offset=0&amp;ids_only=false]
+##   Date: 2022-03-15 15:24
+##   Status: 200
+##   Content-Type: application/json;charset=utf-8
+##   Size: 3.78 MB</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># parse the request into JSON object</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>jS_text <span class="ot">&lt;-</span> httr<span class="sc">::</span><span class="fu">content</span>(API_request, <span class="at">as =</span> <span class="st">&quot;text&quot;</span>, <span class="at">type =</span> <span class="st">&quot;aplication/json&quot;</span>, <span class="at">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># make a list from JSON object</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>dataList <span class="ot">&lt;-</span> jsonlite<span class="sc">::</span><span class="fu">fromJSON</span>(jS_text, <span class="at">flatten =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co"># make a data.frame from list</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(dataList<span class="sc">$</span>data)</span></code></pre></div>
+<ul>
+<li>now we have the retrieved data in a data.frame object</li>
+<li>let`s check what is inside</li>
+</ul>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># size of the data</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(data)</span></code></pre></div>
+<pre><code>## [1] 3000   51</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># variables and variable types</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(data)</span></code></pre></div>
+<pre><code>## Rows: 3,000
+## Columns: 51
+## $ response.comment_count              &lt;int&gt; 2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ response.keywords                   &lt;list&gt; &quot;i&quot;, &quot;i&quot;, &lt;&quot;i&quot;, &quot;I&quot;&gt;, &quot;i&quot;, &quot;i&quot;, &quot;~
+## $ response.pinterest_count            &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ response.reach                      &lt;int&gt; 697, 15, 1576, 1167, 257, 1734, 14~
+## $ response.insert_time                &lt;int&gt; 1647212400, 1647212400, 1647212400~
+## $ response.description                &lt;chr&gt; &quot;Mediji u Srbiji pišu kako je novi~
+## $ response.engagement_rate            &lt;dbl&gt; 4.5919283, 0.0000000, 1.2692537, 0~
+## $ response.type                       &lt;chr&gt; &quot;web&quot;, &quot;web&quot;, &quot;web&quot;, &quot;web&quot;, &quot;web&quot;,~
+## $ response.title                      &lt;chr&gt; &quot;PREDSJEDNIČKI IZBORI Škoro se zbo~
+## $ response.original_photos            &lt;list&gt; &quot;https://direktno.hr/upload/publi~
+## $ response.photos                     &lt;list&gt; &quot;https://mediatoolkit.com/img/0x5~
+## $ response.mention                    &lt;chr&gt; &quot;Ja sam čovek s biroa za nezaposle~
+## $ response.original_photo             &lt;chr&gt; &quot;https://direktno.hr/upload/publis~
+## $ response.score                      &lt;dbl&gt; 1647212400, 1647212400, 1647212400~
+## $ response.all_keyword_feed_locations &lt;list&gt; [&lt;data.frame[1 x 2]&gt;], [&lt;data.fra~
+## $ response.mozrank                    &lt;dbl&gt; 5.864264, 0.000000, 1.400000, 6.20~
+## $ response.from                       &lt;chr&gt; &quot;direktno.hr&quot;, &quot;cazma.hr&quot;, &quot;najbol~
+## $ response.id                         &lt;dbl&gt; 9143912283, 9145111616, 9145128040~
+## $ response.auto_sentiment             &lt;chr&gt; &quot;negative&quot;, &quot;positive&quot;, &quot;positive&quot;~
+## $ response.database_insert_time       &lt;int&gt; 1647212792, 1647251035, 1647251371~
+## $ response.keyword_name               &lt;chr&gt; &quot;opće&quot;, &quot;opće&quot;, &quot;opće&quot;, &quot;opće&quot;, &quot;o~
+## $ response.image                      &lt;chr&gt; &quot;https://mediatoolkit.com/img/50x5~
+## $ response.like_count                 &lt;int&gt; 24, 0, 6, 0, 0, 0, 1, 0, 0, 0, 0, ~
+## $ response.languages                  &lt;list&gt; &quot;hr&quot;, &quot;hr&quot;, &quot;hr&quot;, &quot;hr&quot;, &quot;hr&quot;, &quot;hr~
+## $ response.group_name                 &lt;chr&gt; &quot;Luka&quot;, &quot;Luka&quot;, &quot;Luka&quot;, &quot;Luka&quot;, &quot;L~
+## $ response.pr_value                   &lt;int&gt; 10, 0, 8, 58, 1, 17, 1, 142, 58, 1~
+## $ response.photo                      &lt;chr&gt; &quot;https://mediatoolkit.com/img/0x50~
+## $ response.influence_score            &lt;int&gt; 3, 1, 1, 7, 1, 2, 1, 7, 7, 3, 7, 2~
+## $ response.url                        &lt;chr&gt; &quot;https://direktno.hr/eu-i-svijet/p~
+## $ response.virality                   &lt;dbl&gt; 0.65606254, 0.00000000, 0.70409712~
+## $ response.share_count                &lt;int&gt; 6, 0, 12, 0, 2, 13, 2, 0, 0, 0, 0,~
+## $ response.linkedin_count             &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ response.source_reach               &lt;int&gt; 4300, 200, 10, 80000, 10, 800, 90,~
+## $ response.domain                     &lt;chr&gt; &quot;direktno.hr&quot;, &quot;cazma.hr&quot;, &quot;najbol~
+## $ response.tag_feed_locations         &lt;list&gt; [], [], [], [], [], [], [], [], [~
+## $ response.interaction                &lt;int&gt; 32, 0, 20, 0, 2, 13, 3, 0, 0, 0, 0~
+## $ response.locations                  &lt;list&gt; &quot;HR&quot;, &quot;HR&quot;, &quot;HR&quot;, &quot;HR&quot;, &quot;HR&quot;, &quot;HR~
+## $ response.author                     &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA~
+## $ response.youtube_channel_id         &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA~
+## $ response.full_mention               &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA~
+## $ response.view_count                 &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA~
+## $ response.twid                       &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA~
+## $ response.reddit_comment_id          &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA~
+## $ response.reddit_parent_link_id      &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA~
+## $ response.subreddit                  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA~
+## $ response.reddit_type                &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA~
+## $ response.reddit_score               &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA~
+## $ response.reddit_fullname            &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA~
+## $ response.is_placeholder             &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA~
+## $ response.reddit_comment_count       &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA~
+## $ response.reddit_link_id             &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA~</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check if there are articles from Večernji list</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(response.from) <span class="sc">%&gt;%</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  count <span class="sc">%&gt;%</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 2
+## # Groups:   response.from [6]
+##   response.from     n
+##   &lt;chr&gt;         &lt;int&gt;
+## 1 &lt;NA&gt;           1140
+## 2 croatia         170
+## 3 vecernji.hr     151
+## 4 novine.hr        53
+## 5 index.hr         45
+## 6 dnevnik.hr       41</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(response.from <span class="sc">==</span> <span class="st">&quot;vecernji.hr&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">title =</span> response.title,</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">time =</span> response.insert_time,</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">author =</span> response.author,</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">url =</span> response.url,</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">comment =</span> response.comment_count,</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">text =</span> response.mention) <span class="sc">%&gt;%</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(comment)) <span class="sc">%&gt;%</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>  head</span></code></pre></div>
+<pre><code>##                                                                                                                 title
+## 1                        Vučić o padu drona u Zagrebu: &#39;To se Srbiji ne bi dogodilo, mi bi to oborili za pet minuta!&#39;
+## 2                               Visoki izvor iz MORH-a: Bomba u letjelici težine do 120 kg, eksplodirala ispod zemlje
+## 3  Putinovi specijalci upadaju u rat, kreće totalni napad na Kijev. Naš general: Moguće je da Rusi ovo neće izdržati!
+## 4 Ljudi u strahu od rata dižu štednju i kupuju stanove. Može li se ponoviti katastrofa iz 2008. i kako spasiti novac?
+## 5          Vojni stručnjak: Da je eksplodiralo 120 kg eksploziva, sumnjam da bismo imali bilo kakve ostatke bilo čega
+## 6        Nastavljaju se žestoke borbe, najteža situacija je u Mariupolju gdje se ljudi tuku za komad kruha i kap vode
+##         time author
+## 1 1647199162   &lt;NA&gt;
+## 2 1647196367   &lt;NA&gt;
+## 3 1647209120   &lt;NA&gt;
+## 4 1647201866   &lt;NA&gt;
+## 5 1647202093   &lt;NA&gt;
+## 6 1647206736   &lt;NA&gt;
+##                                                                                                                                                        url
+## 1                          https://www.vecernji.hr/vijesti/vucic-o-padu-drona-u-zagrebu-to-se-srbiji-ne-bi-dogodilo-mi-bi-to-oborili-za-pet-minuta-1570574
+## 2                               https://www.vecernji.hr/vijesti/slijedi-istraga-avio-bomba-koja-je-pronadena-u-letjelici-teska-je-do-120-kilograma-1570559
+## 3   https://www.vecernji.hr/vijesti/putinovi-specijalci-upadaju-u-rat-krece-totalni-napad-na-kijev-nas-general-moguce-je-da-rusi-ovo-nece-izdrzati-1570576
+## 4 https://www.vecernji.hr/vijesti/ljudi-u-strahu-od-rata-dizu-stednju-i-kupuju-stanove-moze-li-se-ponoviti-katastrofa-iz-2008-i-kako-spasiti-novac-1570555
+## 5         https://www.vecernji.hr/vijesti/vojni-strucnjak-da-je-eksplodiralo-120-kg-eksploziva-sumnjam-da-bismo-imali-bilo-kakve-ostatke-bilo-cega-1570584
+## 6      https://www.vecernji.hr/vijesti/nastavljaju-se-zestoke-borbe-najteza-situacija-je-u-mariupolju-gdje-se-ljudi-tuku-za-komad-kruha-i-kap-vode-1570572
+##   comment
+## 1     820
+## 2     409
+## 3     230
+## 4     181
+## 5     122
+## 6      37
+##                                                                                                                                                                                                                                                        text
+## 1    Vučić o padu drona u Zagrebu: &#39;To se Srbiji ne bi dogodilo, mi bi to oborili za pet minuta!&#39; Na predizbornom skupu dotaknuo se i tema poput Ukrajine, NATO-a, pada drona u centru Zagreba, ali i spremnosti i opremljenosti vojske. Srpski predsjednik
+## 2   Visoki izvor iz MORH-a: Bomba u letjelici težine do 120 kg, eksplodirala ispod zemlje Nakon što je izvučena postavljena je uz sami krater, pregledali su je policijski i vojni službenici. Jutros je izvučena olupina letjelice koja je pala u četvrtak
+## 3  Rusi će pojačavati pritisak putem raketa srednjeg dometa, a avijacijom uništavati ceste Ruske su se snage obrušile su se tijekom vikenda na gradove i naselja na zapadu Ukrajine, gdje se do sada nisu vodile tako žestoke borbe. Projektili su pogodili
+## 4 Ljudi u strahu od rata dižu štednju i kupuju stanove. Može li se ponoviti katastrofa iz 2008. i kako spasiti novac? Na tržištu nekretnina nije uočen strah od rata i krize. Štoviše, cijene kvadrata rastu, u dvije godine u Zagrebu su poskupjeli za oko
+## 5  Vojni stručnjak Robert Barić gostovao je u Dnevniku HTV-a i komentirao pad letjelice na Zagreb. Naime, iz visokih izvora u MORH-u doznaje se da je bomba pronađena u letjelici koja je pala na Zagreb bila težine do 120 kilograma. Srećom, letjelica je
+## 6   Nastavljaju se žestoke borbe, najteža situacija je u Mariupolju gdje se ljudi tuku za komad kruha i kap vode Baza Javoriv, 10 kilometara od poljske granice, obično se koristi za obuku i vježbe ukrajinske vojske i njezinih NATO partnera, uglavnom u</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">title =</span> response.title)</span></code></pre></div>
+<pre><code>##                                                                  title
+## 1 PREDSJEDNIČKI IZBORI Škoro se zbog nedostatka novca neće kandidirati</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">text =</span> response.mention)</span></code></pre></div>
+<pre><code>##                                                                                                                                                                                                                                               text
+## 1 Ja sam čovek s biroa za nezaposlene gdje ću i ostati i posijle ovih izbora. Na žalost, nisam uspio da sakupim dovoljno novca da bih imao kakvu takvu skromnu kampanju, a istovrsremeno nisam želio da pristanem da budem dio nekih kombinacija i</code></pre>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">url =</span> response.url)</span></code></pre></div>
+<pre><code>##                                                                                                            url
+## 1 https://direktno.hr/eu-i-svijet/predsjednicki-izbori-skoro-se-zbog-nedostatka-novca-nece-kandidirati-263796/</code></pre>
 </div>
 <div id="storing-data" class="section level2">
 <h2>STORING DATA</h2>
