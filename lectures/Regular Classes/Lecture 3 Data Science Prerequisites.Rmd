@@ -267,6 +267,121 @@ data %>%
 
 ## MANIPULATING DATA
 
+- in R there are three ways to manipulate data: [base](https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf), [tidyverse](https://www.tidyverse.org/), [data.table](https://www.machinelearningplus.com/data-manipulation/datatable-in-r-complete-guide/)
+- we are going to explore and use tidywerse and data.table syntax in this course
+- let`s check some important syntax
+- check this famous [paper](https://vita.had.co.nz/papers/tidy-data.pdf) (Hadley Wickham, 2014 JSS) to motivate the tidyverse way and check [tidyverse](https://www.tidyverse.org/) ecosystem
+- basic dplyr (tidyverse) syntax includes the following:
+
+1. `filter`: filter (i.e. *subset*) rows by value.
+
+```{r}
+# get the number of web articles/activity: FILTER
+data %>% 
+  filter(response.type == "web") %>%
+  summarise(NumberOfArticles = n())
+```
+
+2. `arrange`: order (i.e. *reorder*) rows by value.
+
+```{r}
+# arrange by share
+data %>% 
+  filter(response.type == "web") %>%
+  group_by(response.from) %>% 
+  summarise(Share = mean(response.share_count),
+            Reach = mean(response.reach),
+            Virality = mean(response.virality),
+            LikeCount = mean(response.like_count),
+            Comment = mean(response.comment_count)) %>%
+  arrange(desc(Share))
+# arrange by reach  
+data %>% 
+  filter(response.type == "web") %>%
+  group_by(response.from) %>% 
+  summarise(Reach = mean(response.reach),
+            Share = mean(response.share_count),
+            Virality = mean(response.virality),
+            LikeCount = mean(response.like_count),
+            Comment = mean(response.comment_count)) %>%
+  arrange(desc(Reach))
+# arrange by comment 
+data %>% 
+  filter(response.type == "web") %>%
+  group_by(response.from) %>% 
+  summarise(Comment = mean(response.comment_count)) %>%
+  arrange(desc(Comment))
+
+```
+
+3. `select`: Choose (i.e. *subset*) columns by name. 
+
+
+```{r}
+# get to know your data I
+data %>% 
+  select(response.from, response.title, response.url) %>%
+  filter(response.from == "geopolitika.news") 
+# get to know your data II
+data %>% 
+  select(response.from, response.title, response.url) %>%
+  filter(response.from == "priznajem.hr") 
+# get to know your data III
+data %>% 
+  select(response.from, response.title, response.url) %>%
+  filter(response.from == "sloboda.hr")   
+  
+```
+
+4. `mutate`: Create new columns.
+
+
+```{r}
+# select biggest portals
+data %>% 
+  filter(response.type == "web") %>%
+  group_by(response.from) %>% 
+  count() %>%
+  arrange(desc(n)) %>%
+  head(10) %>%
+  select(response.from) %>%
+  pull -> largePortals
+# check biggest portals
+largePortals
+# create negation operator
+`%!in%` <- Negate(`%in%`)
+# Create new column and check some descriptives
+data %>% 
+  filter(response.type == "web") %>%
+  mutate(PortalSize = case_when(response.from %in% largePortals ~ "Large",
+                                response.from %!in% largePortals ~ "Small")) %>% 
+  group_by(PortalSize) %>%
+  count
+  
+```
+
+
+```{r}
+data %>% 
+  filter(response.type == "web") %>%
+  summarise(NumberOfArticles = n())
+
+data %>%
+  filter(response.type = "web") %>% 
+  select()
+
+
+```
+
+
+5. `summarise`: Make a descriptive summary.
+
+- we already saw this function in action :-)
+
+
+
+
+
 ## ANALYTICS
 
 ## REPORTING
