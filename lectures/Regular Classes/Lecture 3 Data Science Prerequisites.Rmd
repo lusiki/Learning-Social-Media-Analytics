@@ -230,7 +230,7 @@ dim(data)
 glimpse(data)
 # check if there are articles from Večernji list
 data %>% 
-  group_by(response.from) %>%
+  group_by(response.type) %>%
   count %>%
   arrange(desc(n)) %>%
   head()
@@ -379,7 +379,7 @@ data %>%
   summarise(Average = n())
 
 data %>%
-  filter(response.type = "web") %>% 
+  filter(response.type == "web") %>% 
   select()
 
 
@@ -485,23 +485,82 @@ tools::package_dependencies("dplyr", recursive = TRUE)[[1]]
 
 
 
-```{r dependencies_dt}
+```{r dependencies_dt, eval=F}
 tools::package_dependencies("data.table", recursive = TRUE)[[1]]
 ```
 ```
 ## [1] "methods"
 ```
 
+- data.table has typical syntax:
+
+.center[
+.large2[DT[<span style='color: #66C2A5;'>i</span>, <span style='color: #FC8D62;'>j</span>, <span style='color: #8DA0CB;'>by</span>]]
+]
+
+![:col_row <span style='color: #66C2A5;'>What rows?</span>, <span style='color: #FC8D62;'>What to do?</span>, <span style='color: #8DA0CB;'>Group by...</span>]
 
 
 
+.center[dplyr "equivalents":]
+![:col_list <span style='color: #66C2A5;'>filter(); slice(); arrange()</span>, <span style='color: #FC8D62;'>select(); mutate()</span>, <span style='color: #8DA0CB;'>group_by()</span>]
+
+
+- tidyverse works step by step and data.table does it in one step
+- one operation is one flid thought
+- chaining in DT is also possible
+- let`check some of these possibilities
+
+```{r}
+# check 10 articles d+from vecernji.hr
+allDT[SOURCE_TYPE == "web" & FROM == "vecernji.hr",
+      .(TITLE,URL,COMMENT_COUNT)] 
+```
+
+- let`s see how changing columns looks look like
+
+```{r}
+# check the date column
+str(allDT$DATE)
+# change the date column into date format
+allDT[, DateColumn := as.Date(DATE,"%Y-%m-%d" )] # modify by reference
+# checNoViewk the new date column 
+str(allDT$DateColumn)
+# show the results
+allDT[1:5,.(DateColumn,TITLE,SOURCE_TYPE)][]
+```
+
+- combinations of tidy and and DT syntax is also posssible
+
+```{r}
+allDT[SOURCE_TYPE == "facebook",.(AUTHOR,COMMENT_COUNT)] %>%
+  filter(COMMENT_COUNT  > 0) %>%
+  distinct(.) %>%
+  arrange(desc(COMMENT_COUNT)) %>%
+  head(15)
+  
+```
+
+- grouping in data table
+
+
+```{r}
+allDT[,.(AwerageNoArticles = .N), by = SOURCE_TYPE][order(-AwerageNoArticles)]
+```
 
 
 ## ANALYTICS
 
+- we will cover that in three following lectures
+- methods used are statistical analysis, machine learning and textutal analysis
+
 ## REPORTING
 
+- the [example](https://raw.githack.com/lusiki/WebObradaPodataka/main/XtraPredavanja/AparatiZaKavu/Prez.html) of (almost) production ready .Rmd report
+
 # CONNCLUDING POINTS
+
+- 
 
 
 

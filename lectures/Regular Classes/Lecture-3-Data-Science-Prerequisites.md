@@ -3,7 +3,7 @@ title: "Learning Social Media Analytics"
 # subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
 subtitle: "Lecture 3: Data Science Prerequisites"
 author: "Luka Sikic, PhD"
-date: "Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)" #"15 ožujak 2022"
+date: "Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)" #"16 ožujak 2022"
 output:
   html_document:
     code_folding: show
@@ -142,7 +142,7 @@ str(data)
 ##  $ title       : chr "Umro bivši austrijski potkancelar i prijatelja Hrvatske dr. Erhard Busek"
 ##  $ date        : chr "14. ožujka 2022. 16:48"
 ##  $ noComment   : num 0
-##  $ views       : num 907
+##  $ views       : num 950
 ##  $ articleLabel: logi NA
 ##  $ articleLabel: logi NA
 ##  $ author      : chr "Snježana Herek"
@@ -163,7 +163,7 @@ data$views
 ```
 
 ```
-## [1] 907
+## [1] 950
 ```
 
 ```r
@@ -226,8 +226,8 @@ glimpse(dataArticles)
 ## Columns: 9
 ## $ title        <chr> "Umro bivši austrijski potkancelar i prijatelja Hrvatske ~
 ## $ date         <chr> "14. ožujka 2022. 16:48", "14. ožujka 2022. 23:03", "14. ~
-## $ noComment    <dbl> 0, 106, 106, 7, 19, 133, 133
-## $ views        <dbl> 907, 85384, 85384, 2755, 7019, 72696, 72696
+## $ noComment    <dbl> 0, 107, 107, 8, 19, 133, 133
+## $ views        <dbl> 950, 89930, 89930, 2987, 7498, 74319, 74319
 ## $ articleLabel <lgl> NA, NA, NA, NA, NA, NA, NA
 ## $ articleLabel <lgl> NA, NA, NA, NA, NA, NA, NA
 ## $ author       <chr> "Snježana Herek", "Vecernji.hr", "Hina", "Hina", "Vecernj~
@@ -254,7 +254,7 @@ dataArticles$views
 ```
 
 ```
-## [1]   907 85384 85384  2755  7019 72696 72696
+## [1]   950 89930 89930  2987  7498 74319 74319
 ```
 
 ```r
@@ -307,10 +307,10 @@ API_request
 
 ```
 ## Response [https://api.mediatoolkit.com/organizations/126686/groups/182718/keywords/6521533/mentions?access_token=ddms5s0l3gejlz2z42ydt0bnwmf6ssqd62bdxteu7t8sumv5ii&from_time=1647126000&to_time=1647212400&count=3000&sort=time&type=all&offset=0&ids_only=false]
-##   Date: 2022-03-15 15:24
+##   Date: 2022-03-16 14:16
 ##   Status: 200
 ##   Content-Type: application/json;charset=utf-8
-##   Size: 3.78 MB
+##   Size: 3.8 MB
 ```
 
 ```r
@@ -343,10 +343,10 @@ glimpse(data)
 ```
 ## Rows: 3,000
 ## Columns: 51
-## $ response.comment_count              <int> 2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ response.comment_count              <int> 2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 4~
 ## $ response.keywords                   <list> "i", "i", <"i", "I">, "i", "i", "~
 ## $ response.pinterest_count            <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
-## $ response.reach                      <int> 697, 15, 1576, 1167, 257, 1734, 14~
+## $ response.reach                      <int> 697, 15, 1576, 1167, 411, 1734, 64~
 ## $ response.insert_time                <int> 1647212400, 1647212400, 1647212400~
 ## $ response.description                <chr> "Mediji u Srbiji pišu kako je novi~
 ## $ response.engagement_rate            <dbl> 4.5919283, 0.0000000, 1.2692537, 0~
@@ -365,20 +365,20 @@ glimpse(data)
 ## $ response.database_insert_time       <int> 1647212792, 1647251035, 1647251371~
 ## $ response.keyword_name               <chr> "opće", "opće", "opće", "opće", "o~
 ## $ response.image                      <chr> "https://mediatoolkit.com/img/50x5~
-## $ response.like_count                 <int> 24, 0, 6, 0, 0, 0, 1, 0, 0, 0, 0, ~
+## $ response.like_count                 <int> 24, 0, 6, 0, 6, 0, 34, 0, 0, 0, 0,~
 ## $ response.languages                  <list> "hr", "hr", "hr", "hr", "hr", "hr~
 ## $ response.group_name                 <chr> "Luka", "Luka", "Luka", "Luka", "L~
-## $ response.pr_value                   <int> 10, 0, 8, 58, 1, 17, 1, 142, 58, 1~
+## $ response.pr_value                   <int> 10, 0, 8, 58, 2, 17, 3, 142, 58, 1~
 ## $ response.photo                      <chr> "https://mediatoolkit.com/img/0x50~
 ## $ response.influence_score            <int> 3, 1, 1, 7, 1, 2, 1, 7, 7, 3, 7, 2~
 ## $ response.url                        <chr> "https://direktno.hr/eu-i-svijet/p~
 ## $ response.virality                   <dbl> 0.65606254, 0.00000000, 0.70409712~
-## $ response.share_count                <int> 6, 0, 12, 0, 2, 13, 2, 0, 0, 0, 0,~
+## $ response.share_count                <int> 6, 0, 12, 0, 2, 13, 3, 0, 0, 0, 0,~
 ## $ response.linkedin_count             <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
 ## $ response.source_reach               <int> 4300, 200, 10, 80000, 10, 800, 90,~
 ## $ response.domain                     <chr> "direktno.hr", "cazma.hr", "najbol~
 ## $ response.tag_feed_locations         <list> [], [], [], [], [], [], [], [], [~
-## $ response.interaction                <int> 32, 0, 20, 0, 2, 13, 3, 0, 0, 0, 0~
+## $ response.interaction                <int> 32, 0, 20, 0, 8, 13, 37, 0, 0, 0, ~
 ## $ response.locations                  <list> "HR", "HR", "HR", "HR", "HR", "HR~
 ## $ response.author                     <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA~
 ## $ response.youtube_channel_id         <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA~
@@ -399,7 +399,7 @@ glimpse(data)
 ```r
 # check if there are articles from Večernji list
 data %>% 
-  group_by(response.from) %>%
+  group_by(response.type) %>%
   count %>%
   arrange(desc(n)) %>%
   head()
@@ -407,15 +407,15 @@ data %>%
 
 ```
 ## # A tibble: 6 x 2
-## # Groups:   response.from [6]
-##   response.from     n
+## # Groups:   response.type [6]
+##   response.type     n
 ##   <chr>         <int>
-## 1 <NA>           1140
-## 2 croatia         170
-## 3 vecernji.hr     151
-## 4 novine.hr        53
-## 5 index.hr         45
-## 6 dnevnik.hr       41
+## 1 web            1309
+## 2 twitter         819
+## 3 facebook        267
+## 4 reddit          248
+## 5 youtube         194
+## 6 comment         115
 ```
 
 ```r
@@ -455,7 +455,7 @@ data %>%
 ## 6      https://www.vecernji.hr/vijesti/nastavljaju-se-zestoke-borbe-najteza-situacija-je-u-mariupolju-gdje-se-ljudi-tuku-za-komad-kruha-i-kap-vode-1570572
 ##   comment
 ## 1     820
-## 2     409
+## 2     421
 ## 3     230
 ## 4     181
 ## 5     122
@@ -508,11 +508,642 @@ data %>%
 
 ## MANIPULATING DATA
 
+#### TIDY WAY
+
+- in R there are three major ways to manipulate data: [base](https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf), [tidyverse](https://www.tidyverse.org/), [data.table](https://www.machinelearningplus.com/data-manipulation/datatable-in-r-complete-guide/)
+- you can also combine them together
+- we are going to explore and use tidywerse and data.table syntax in this course
+- let`s check some important syntax
+- check this famous [paper](https://vita.had.co.nz/papers/tidy-data.pdf) (Hadley Wickham, 2014 JSS) to motivate the tidyverse way and check [tidyverse](https://www.tidyverse.org/) ecosystem
+- basic dplyr (tidyverse) syntax includes the following:
+
+1. `filter`: filter (i.e. *subset*) rows by value.
+
+
+```r
+# get the number of web articles/activity: FILTER
+data %>% 
+  filter(response.type == "web") %>% # FILTER!
+  summarise(NumberOfArticles = n())
+```
+
+```
+##   NumberOfArticles
+## 1             1309
+```
+
+2. `arrange`: order (i.e. *reorder*) rows by value.
+
+
+```r
+# arrange by share
+data %>% 
+  filter(response.type == "web") %>%
+  group_by(response.from) %>% 
+  summarise(Share = mean(response.share_count),
+            Reach = mean(response.reach),
+            Virality = mean(response.virality),
+            LikeCount = mean(response.like_count),
+            Comment = mean(response.comment_count)) %>%
+  arrange(desc(Share)) # ARRANGE!
+```
+
+```
+## # A tibble: 268 x 6
+##    response.from             Share   Reach Virality LikeCount Comment
+##    <chr>                     <dbl>   <dbl>    <dbl>     <dbl>   <dbl>
+##  1 kgz.hr                   1750   129456    240.        844     88  
+##  2 platak.hr                 563    10601      1          11      0  
+##  3 logicno.com               117    15919      2.10      191     19  
+##  4 geopolitika.news           99     7283      1.86      304    163  
+##  5 hkig.hr                    61     5141      5.96       21      1  
+##  6 lisinski.hr                42     6895      2.40       44      5  
+##  7 zagorje-international.hr   41     4515      1.11       26      6  
+##  8 sloboda.hr                 39    69720      2.78      497    544  
+##  9 maxportal.hr               34.2   4521.     1.02      131.    72.8
+## 10 priznajem.hr               34.2  24550      1.64      422.   153. 
+## # ... with 258 more rows
+```
+
+```r
+# arrange by reach  
+data %>% 
+  filter(response.type == "web") %>%
+  group_by(response.from) %>% 
+  summarise(Reach = mean(response.reach),
+            Share = mean(response.share_count),
+            Virality = mean(response.virality),
+            LikeCount = mean(response.like_count),
+            Comment = mean(response.comment_count)) %>%
+  arrange(desc(Reach)) # ARRANGE!
+```
+
+```
+## # A tibble: 268 x 6
+##    response.from   Reach  Share Virality LikeCount Comment
+##    <chr>           <dbl>  <dbl>    <dbl>     <dbl>   <dbl>
+##  1 kgz.hr        129456  1750   240.          844     88  
+##  2 sloboda.hr     69720    39     2.78        497    544  
+##  3 dw.com         41956    17     0.0438        2      1  
+##  4 bongacams.com  40517     0     0             0      0  
+##  5 priznajem.hr   24550    34.2   1.64        422.   153. 
+##  6 index.hr       17231.   14.9   2.98        324.   139. 
+##  7 logicno.com    15919   117     2.10        191     19  
+##  8 jutarnji.hr    15493.   14.8   1.24        152.    53.5
+##  9 24sata.hr      15168.   10.9   1.37        209.    79.4
+## 10 zara.com       14313     0     0             0      0  
+## # ... with 258 more rows
+```
+
+```r
+# arrange by comment 
+data %>% 
+  filter(response.type == "web") %>%
+  group_by(response.from) %>% 
+  summarise(Comment = mean(response.comment_count)) %>%
+  arrange(desc(Comment)) # ARRANGE!
+```
+
+```
+## # A tibble: 268 x 2
+##    response.from           Comment
+##    <chr>                     <dbl>
+##  1 sloboda.hr                544  
+##  2 geopolitika.news          163  
+##  3 priznajem.hr              153. 
+##  4 index.hr                  139. 
+##  5 morski.hr                 132. 
+##  6 teleskop.hr               108  
+##  7 novidani.com              105  
+##  8 zagreb.info               103. 
+##  9 kgz.hr                     88  
+## 10 braniteljski-portal.com    83.3
+## # ... with 258 more rows
+```
+
+3. `select`: Choose (i.e. *subset*) columns by name. 
+
+
+
+```r
+# get to know your data I
+data %>% 
+  select(response.from, response.title, response.url) %>% # SELECT!
+  filter(response.from == "geopolitika.news") 
+```
+
+```
+##      response.from
+## 1 geopolitika.news
+##                                                         response.title
+## 1 MMF više ne smatra nemogućim da Rusija prestane plaćati svoje dugove
+##                                                                                                 response.url
+## 1 https://www.geopolitika.news/vijesti/mmf-vise-ne-smatra-nemogucim-da-rusija-prestane-placati-svoje-dugove/
+```
+
+```r
+# get to know your data II
+data %>% 
+  select(response.from, response.title, response.url) %>% # SELECT!
+  filter(response.from == "priznajem.hr") 
+```
+
+```
+##   response.from
+## 1  priznajem.hr
+## 2  priznajem.hr
+## 3  priznajem.hr
+## 4  priznajem.hr
+## 5  priznajem.hr
+## 6  priznajem.hr
+## 7  priznajem.hr
+## 8  priznajem.hr
+##                                                                                                   response.title
+## 1                          Vučić: Neću nikoga plašiti, ali situacija je sve teža. Pogledajte sad ruske medije...
+## 2                             Kalinić: Od Banožićevih bisera je ostalo samo još da kaže da je Zemlja ravna ploča
+## 3                                  Vučić: Da se nama dogodilo ono u Zagrebu, mi bismo dron oborili za pet minuta
+## 4                  Rusi kroz ‘srpsku rupu‘ ulaze u Europu ‘sazad‘: Razgrabljene karte na letovima Moskva-Beograd
+## 5              Specijalac koji je ubio Osamu bin Ladena o Putinu: 'Ne možete poraziti luđaka pokazujući slabost'
+## 6 Ukrajina objavila nove podatke o ruskim vojnim gubicima, evo što su im Ukrajinci uništili od početka invazije!
+## 7            Anonymousi objavili videoporuku specijalno namijenjenu građanima Rusije: "Uklonite Putina s vlasti"
+## 8               POSTOJI ŠANSA ZA MIR: Veliki preokret, postignut veliki napredak u pregovorima Ukrajine i Rusije
+##                                                                                                                                        response.url
+## 1                                                                                                                    https://priznajem.hr/?p=179023
+## 2                            https://priznajem.hr/novosti/kalinic-od-banozicevih-bisera-je-ostalo-samo-jos-da-kaze-da-je-zemlja-ravna-ploca/179020/
+## 3                                  https://priznajem.hr/novosti/vucic-da-se-nama-dogodilo-ono-u-zagrebu-mi-bismo-dron-oborili-za-pet-minuta/179018/
+## 4                     https://priznajem.hr/novosti/rusi-kroz-srpsku-rupu-ulaze-u-europu-sazad-razgrabljene-karte-na-letovima-moskva-beograd/179015/
+## 5               https://priznajem.hr/novosti/specijalac-koji-je-ubio-osamu-bin-ladena-o-putinu-ne-mozete-poraziti-ludaka-pokazujuci-slabost/179012/
+## 6 https://priznajem.hr/novosti/ukrajina-objavila-nove-podatke-o-ruskim-vojnim-gubicima-evo-sto-su-im-ukrajinci-unistili-od-pocetka-invazije/179009/
+## 7             https://priznajem.hr/novosti/anonymousi-objavili-videoporuku-specijalno-namijenjenu-gradanima-rusije-uklonite-putina-s-vlasti/179006/
+## 8                                                                                                                    https://priznajem.hr/?p=179004
+```
+
+```r
+# get to know your data III
+data %>% 
+  select(response.from, response.title, response.url) %>% # SELECT!
+  filter(response.from == "sloboda.hr")   
+```
+
+```
+##   response.from
+## 1    sloboda.hr
+##                                                                                                           response.title
+## 1 LOŠ(O) ANALITIČAR: "Ako bi izbio rat, a neće, 60% ukrajinske vojske prelazi Rusima i sve se rješava u 48 sati" (VIDEO)
+##                                                                                                                           response.url
+## 1 https://www.sloboda.hr/loso-analiticar-ako-bi-izbio-rat-a-nece-60-ukrajinske-vojske-prelazi-rusima-i-sve-se-rjesava-u-48-sati-video/
+```
+
+4. `mutate`: Create new columns.
+
+
+
+```r
+# select biggest portals
+data %>% 
+  filter(response.type == "web") %>%
+  group_by(response.from) %>% 
+  count() %>%
+  arrange(desc(n)) %>%
+  head(10) %>%
+  select(response.from) %>%
+  pull -> largePortals
+# check biggest portals
+largePortals
+```
+
+```
+##  [1] "novine.hr"            "index.hr"             "dnevnik.hr"          
+##  [4] "360hr.news"           "vecernji.hr"          "ljekarnaonline.hr"   
+##  [7] "slobodnadalmacija.hr" "24sata.hr"            "jutarnji.hr"         
+## [10] "glas-slavonije.hr"
+```
+
+```r
+# create negation operator
+`%!in%` <- Negate(`%in%`)
+# Create new column and check some descriptives
+data %>% 
+  filter(response.type == "web") %>%
+  mutate(PortalSize = case_when(response.from %in% largePortals ~ "Large", # MUTATE!
+                                response.from %!in% largePortals ~ "Small")) %>% 
+  group_by(PortalSize) %>%
+  count
+```
+
+```
+## # A tibble: 2 x 2
+## # Groups:   PortalSize [2]
+##   PortalSize     n
+##   <chr>      <int>
+## 1 Large        375
+## 2 Small        934
+```
+
+
+
+
+5. `summarise`: Make a descriptive summary.
+
+- we already saw this function in action :-)
+- let`s see another one
+
+
+
+```r
+data %>% 
+  filter(response.type == "web") %>%
+  summarise(Average = n())
+```
+
+```
+##   Average
+## 1    1309
+```
+
+```r
+data %>%
+  filter(response.type == "web") %>% 
+  select()
+```
+
+```
+## data frame with 0 columns and 1309 rows
+```
+
+#### DATA.TABLE WAY
+
+-advantages of data.table include:
+
+1. Concise syntax
+
+
+```r
+# read in library
+library(data.table)
+# check class
+class(data)
+```
+
+```
+## [1] "data.frame"
+```
+
+```r
+# set the data.table object
+dataDT = as.data.table(data) 
+# check class again
+class(dataDT)
+```
+
+```
+## [1] "data.table" "data.frame"
+```
+
+```r
+# do some descriptive statistics
+dataDT[response.type == "web",
+       .(minShare = min(response.share_count),
+         maxShare = max(response.share_count),
+         avgShare = mean(response.share_count),
+         stdShare = sd(response.share_count))][]
+```
+
+```
+##    minShare maxShare avgShare stdShare
+## 1:       NA       NA       NA       NA
+```
+
+```r
+# how many letters in a title
+dataDT[response.type == "web",
+       .(Avg = mean(nchar(response.title)),
+         STD = sd(nchar(response.title)),
+         min = min(nchar(response.title)),
+         max = max(nchar(response.title)))][]
+```
+
+```
+##         Avg      STD min max
+## 1: 70.83422 33.58611   4 160
+```
+
+```r
+# how many letters in a text
+dataDT[response.type == "web",
+       .(Avg = mean(nchar(response.mention)),
+         STD = sd(nchar(response.mention)),
+         min = min(nchar(response.mention)),
+         max = max(nchar(response.mention)))][]
+```
+
+```
+##        Avg      STD min max
+## 1: 241.683 20.18775  54 250
+```
+
+2. Very fast
+
+
+```r
+library(tictoc)
+
+# how many letters in a text by DT
+tic()
+dataDT[response.type == "web",
+       .(Avg = mean(nchar(response.mention)),
+         min = min(nchar(response.mention)),
+         max = max(nchar(response.mention)))]
+```
+
+```
+##        Avg min max
+## 1: 241.683  54 250
+```
+
+```r
+toc()
+```
+
+```
+## 0 sec elapsed
+```
+
+```r
+tic()
+# how many letters in a text by tidy
+data %>% 
+  group_by(response.type) %>%
+  summarise(Avg = mean(nchar(response.mention)),
+         min = min(nchar(response.mention)),
+         max = max(nchar(response.mention)))
+```
+
+```
+## # A tibble: 7 x 4
+##   response.type   Avg   min   max
+##   <chr>         <dbl> <int> <int>
+## 1 comment        168.    34   250
+## 2 facebook        49     49    49
+## 3 instagram       50     50    50
+## 4 reddit         108.     5   250
+## 5 twitter         NA     NA    NA
+## 6 web            242.    54   250
+## 7 youtube        190.     9   250
+```
+
+```r
+toc()
+```
+
+```
+## 0.03 sec elapsed
+```
+
+```r
+# READ IN FULL SAMPLE
+path <- "D:/LUKA/Freelance/Mediatoolkit/FULLDATA"
+raw <- list.files(path = path , pattern="xlsx")
+raw_path <- paste0(path, "/", raw)
+all_raw <- map_df(raw_path, read_excel)
+# make data.table object
+allDT <- as.data.table(all_raw)
+
+
+# lets check average activity size across 
+allDT[,
+       .(Avg = mean(nchar(TITLE)),
+         STD = sd(nchar(TITLE)),
+         min = min(nchar(TITLE)),
+         max = max(nchar(TITLE))),
+       by = SOURCE_TYPE]
+```
+
+```
+##    SOURCE_TYPE       Avg         STD min  max
+## 1:       forum        NA          NA  NA   NA
+## 2:         web        NA          NA  NA   NA
+## 3:     twitter 178.27823 114.1908158   4 6030
+## 4:      reddit 110.32908  79.2360687   1  350
+## 5:     youtube  51.40096  23.5850392   1  100
+## 6:     comment  22.04194   0.7407619  22   53
+## 7:    facebook 127.80191  39.3007556   4  160
+## 8:   instagram 176.66035  72.6184769   5  350
+```
+
+```r
+allDT[SOURCE_TYPE == "twitter",.(Avg = mean(nchar(TITLE)),
+         STD = sd(nchar(TITLE)),
+         min = min(nchar(TITLE)),
+         max = max(nchar(TITLE)))]
+```
+
+```
+##         Avg      STD min  max
+## 1: 178.2782 114.1908   4 6030
+```
+
+3. Memory efficiency
+
+Measuring memory efficiency is relatively complicated [thing](https://stackoverflow.com/a/61376971). For details [check](https://jangorecki.gitlab.io/r-talks/2019-06-18_Poznan_why-data.table/why-data.table.pdf) (after 12th slide) check data.table functionality.
+
+4. Lots of possibilities, stability and 5. Low dependancy
+
+These elements are mutually related. Dependancy is related [to](http://www.tinyverse.org/):
+
+
+
+```r
+tools::package_dependencies("dplyr", recursive = TRUE)[[1]]
+```
+
+
+
+
+```r
+tools::package_dependencies("data.table", recursive = TRUE)[[1]]
+```
+```
+## [1] "methods"
+```
+
+- data.table has typical syntax:
+
+.center[
+.large2[DT[<span style='color: #66C2A5;'>i</span>, <span style='color: #FC8D62;'>j</span>, <span style='color: #8DA0CB;'>by</span>]]
+]
+
+![:col_row <span style='color: #66C2A5;'>What rows?</span>, <span style='color: #FC8D62;'>What to do?</span>, <span style='color: #8DA0CB;'>Group by...</span>]
+
+
+
+.center[dplyr "equivalents":]
+![:col_list <span style='color: #66C2A5;'>filter(); slice(); arrange()</span>, <span style='color: #FC8D62;'>select(); mutate()</span>, <span style='color: #8DA0CB;'>group_by()</span>]
+
+
+- tidyverse works step by step and data.table does it in one step
+- one operation is one flid thought
+- chaining in DT is also possible
+- let`check some of these possibilities
+
+
+```r
+# check 10 articles d+from vecernji.hr
+allDT[SOURCE_TYPE == "web" & FROM == "vecernji.hr",
+      .(TITLE,URL,COMMENT_COUNT)] 
+```
+
+```
+##                                                                                                                            TITLE
+##     1:         Pričali smo s Beograđanima: 'Nema šanse da ga je netko napao, mi volimo Splićane. Rijeka je na tom dijelu duboka'
+##     2:                                                                              Boga korak do rekordnog transfera u Atalantu
+##     3:                                                     Željka Kamenov: Neke nove navike iz doba korone vrijedilo bi zadržati
+##     4:                                                                   Monaco bez Kovača izborio osminu finala, kraj za Rennes
+##     5:                        Pirotehničar: Ove sam godine u Zagrebu za Novu čuo bombe i rafale automastkog oružja. Znam i zašto
+##    ---                                                                                                                          
+## 32402:                                              Svi radimo ovih 20 grešaka u kuhanju i tako uništavamo hranu - Ordinacija.hr
+## 32403: Ovo je najčešći želučani problem zbog kojeg idemo liječniku, a evo i kako lijekovi utječu na vašu probavu - Ordinacija.hr
+## 32404:                       Ne-Hodgkinov limfom - koji su simptomi i što sve morate znati o ovoj teškoj bolesti - Ordinacija.hr
+## 32405:                                                 VIDEO Šok za PSG! U posljednjih deset godina nije tako rano ispao iz Kupa
+## 32406:                           Čekamo novi "Oz" i pitamo se što je sljedeće - gay drvosječa? Možda Dorothy koja želi biti Don?
+##                                                                                                                                                                    URL
+##     1:            https://www.vecernji.hr/vijesti/pricali-smo-s-beogradanima-nema-sanse-da-ga-je-netko-napao-mi-volimo-splicane-rijeka-je-na-tom-dijelu-duboka-1552186
+##     2:                                                                              https://www.vecernji.hr/sport/boga-korak-do-rekordnog-transfera-u-atalantu-1552174
+##     3:                                                    https://www.vecernji.hr/vijesti/zeljka-kamenov-neke-nove-navike-iz-doba-korone-vrijedilo-bi-zadrzati-1551978
+##     4:                                                                    https://www.vecernji.hr/sport/monaco-bez-kovaca-izborio-osminu-finala-kraj-za-rennes-1552184
+##     5:                         https://www.vecernji.hr/zagreb/pirotehnicar-ove-sam-godine-u-zagrebu-za-novu-cuo-bombe-i-rafale-automastkog-oruzja-znam-i-zasto-1552183
+##    ---                                                                                                                                                                
+## 32402:                                          https://ordinacija.vecernji.hr/zdravi-tanjur/jedi-zdravo/svi-radimo-ovih-20-gresaka-u-kuhanju-i-tako-unistavamo-hranu/
+## 32403: https://ordinacija.vecernji.hr/zdravlje/ohr-savjetnik/ovo-je-najcesci-zelucani-problem-zbog-kojeg-idemo-lijecniku-a-evo-i-kako-lijekovi-utjecu-na-vasu-probavu/
+## 32404:                        https://ordinacija.vecernji.hr/zdravlje/ohr-savjetnik/ne-hodgkinov-limfom-koji-su-simptomi-i-sto-sve-morate-znati-o-ovoj-teskoj-bolesti/
+## 32405:                                                  https://www.vecernji.hr/sport/video-sok-za-psg-u-posljednjih-deset-godina-nije-tako-rano-ispao-iz-kupa-1559697
+## 32406:                               https://www.vecernji.hr/kultura/cekamo-novi-oz-i-pitamo-se-sto-je-sljedece-gay-drvosjeca-mozda-dorothy-koja-zeli-biti-don-1559483
+##        COMMENT_COUNT
+##     1:           573
+##     2:             0
+##     3:             0
+##     4:             0
+##     5:            59
+##    ---              
+## 32402:             0
+## 32403:             0
+## 32404:             0
+## 32405:             0
+## 32406:             0
+```
+
+- let`s see how changing columns looks look like
+
+
+```r
+# check the date column
+str(allDT$DATE)
+```
+
+```
+##  chr [1:3476130] "2022-01-02" "2022-01-02" "2022-01-02" "2022-01-02" ...
+```
+
+```r
+# change the date column into date format
+allDT[, DateColumn := as.Date(DATE,"%Y-%m-%d" )] # modify by reference
+# checNoViewk the new date column 
+str(allDT$DateColumn)
+```
+
+```
+##  Date[1:3476130], format: "2022-01-02" "2022-01-02" "2022-01-02" "2022-01-02" "2022-01-02" ...
+```
+
+```r
+# show the results
+allDT[1:5,.(DateColumn,TITLE,SOURCE_TYPE)][]
+```
+
+```
+##    DateColumn
+## 1: 2022-01-02
+## 2: 2022-01-02
+## 3: 2022-01-02
+## 4: 2022-01-02
+## 5: 2022-01-02
+##                                                                                                         TITLE
+## 1:                                                                                                       <NA>
+## 2:                                                                                                       <NA>
+## 3:                                                                                                       <NA>
+## 4:                                                               EU fit for 55 plan - smanjivanje emisije CO2
+## 5: LMS 993-Kit Teler: SMARAGDNA OGRLICA (5) (#19086776) - Aukcije - www.stripovi.com - Prozor u svijet stripa
+##    SOURCE_TYPE
+## 1:       forum
+## 2:       forum
+## 3:       forum
+## 4:       forum
+## 5:         web
+```
+
+- combinations of tidy and and DT syntax is also posssible
+
+
+```r
+allDT[SOURCE_TYPE == "facebook",.(AUTHOR,COMMENT_COUNT)] %>%
+  filter(COMMENT_COUNT  > 0) %>%
+  distinct(.) %>%
+  arrange(desc(COMMENT_COUNT)) %>%
+  head(15)
+```
+
+```
+##                    AUTHOR COMMENT_COUNT
+##  1:          Teta Violeta         33178
+##  2:                Net.hr         10905
+##  3:       Violeta We Care          9023
+##  4:       Andrea Andrassy          8948
+##  5:      Marijana Batinić          8724
+##  6:                 Karla          8437
+##  7:   Violeta Double Care          8216
+##  8:       Andrea Andrassy          8153
+##  9:        Violeta Srbija          7787
+## 10:                Mustra          7191
+## 11:       Andrea Andrassy          7136
+## 12:       Andrea Andrassy          6972
+## 13:             muzika.hr          6622
+## 14: Katarina Mamić Design          6294
+## 15:            Elegant.hr          6243
+```
+
+- grouping in data table
+
+
+
+```r
+allDT[,.(AwerageNoArticles = .N), by = SOURCE_TYPE][order(-AwerageNoArticles)]
+```
+
+```
+##    SOURCE_TYPE AwerageNoArticles
+## 1:         web           1443570
+## 2:       forum            816445
+## 3:    facebook            343927
+## 4:     twitter            330532
+## 5:      reddit            213029
+## 6:     youtube            165681
+## 7:     comment             92857
+## 8:   instagram             70089
+```
+
+
 ## ANALYTICS
+
+- we will cover that in three following lectures
+- methods used are statistical analysis, machine learning and textutal analysis
 
 ## REPORTING
 
+- the [example](https://raw.githack.com/lusiki/WebObradaPodataka/main/XtraPredavanja/AparatiZaKavu/Prez.html) of (almost) production ready .Rmd report
+
 # CONNCLUDING POINTS
+
+- 
 
 
 
