@@ -267,7 +267,10 @@ data %>%
 
 ## MANIPULATING DATA
 
-- in R there are three ways to manipulate data: [base](https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf), [tidyverse](https://www.tidyverse.org/), [data.table](https://www.machinelearningplus.com/data-manipulation/datatable-in-r-complete-guide/)
+#### TIDY WAY
+
+- in R there are three major ways to manipulate data: [base](https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf), [tidyverse](https://www.tidyverse.org/), [data.table](https://www.machinelearningplus.com/data-manipulation/datatable-in-r-complete-guide/)
+- you can also combine them together
 - we are going to explore and use tidywerse and data.table syntax in this course
 - let`s check some important syntax
 - check this famous [paper](https://vita.had.co.nz/papers/tidy-data.pdf) (Hadley Wickham, 2014 JSS) to motivate the tidyverse way and check [tidyverse](https://www.tidyverse.org/) ecosystem
@@ -278,7 +281,7 @@ data %>%
 ```{r}
 # get the number of web articles/activity: FILTER
 data %>% 
-  filter(response.type == "web") %>%
+  filter(response.type == "web") %>% # FILTER!
   summarise(NumberOfArticles = n())
 ```
 
@@ -294,7 +297,7 @@ data %>%
             Virality = mean(response.virality),
             LikeCount = mean(response.like_count),
             Comment = mean(response.comment_count)) %>%
-  arrange(desc(Share))
+  arrange(desc(Share)) # ARRANGE!
 # arrange by reach  
 data %>% 
   filter(response.type == "web") %>%
@@ -304,13 +307,13 @@ data %>%
             Virality = mean(response.virality),
             LikeCount = mean(response.like_count),
             Comment = mean(response.comment_count)) %>%
-  arrange(desc(Reach))
+  arrange(desc(Reach)) # ARRANGE!
 # arrange by comment 
 data %>% 
   filter(response.type == "web") %>%
   group_by(response.from) %>% 
   summarise(Comment = mean(response.comment_count)) %>%
-  arrange(desc(Comment))
+  arrange(desc(Comment)) # ARRANGE!
 
 ```
 
@@ -320,15 +323,15 @@ data %>%
 ```{r}
 # get to know your data I
 data %>% 
-  select(response.from, response.title, response.url) %>%
+  select(response.from, response.title, response.url) %>% # SELECT!
   filter(response.from == "geopolitika.news") 
 # get to know your data II
 data %>% 
-  select(response.from, response.title, response.url) %>%
+  select(response.from, response.title, response.url) %>% # SELECT!
   filter(response.from == "priznajem.hr") 
 # get to know your data III
 data %>% 
-  select(response.from, response.title, response.url) %>%
+  select(response.from, response.title, response.url) %>% # SELECT!
   filter(response.from == "sloboda.hr")   
   
 ```
@@ -353,7 +356,7 @@ largePortals
 # Create new column and check some descriptives
 data %>% 
   filter(response.type == "web") %>%
-  mutate(PortalSize = case_when(response.from %in% largePortals ~ "Large",
+  mutate(PortalSize = case_when(response.from %in% largePortals ~ "Large", # MUTATE!
                                 response.from %!in% largePortals ~ "Small")) %>% 
   group_by(PortalSize) %>%
   count
@@ -361,10 +364,19 @@ data %>%
 ```
 
 
+
+
+5. `summarise`: Make a descriptive summary.
+
+- we already saw this function in action :-)
+- let`s see another one
+
+
 ```{r}
+
 data %>% 
   filter(response.type == "web") %>%
-  summarise(NumberOfArticles = n())
+  summarise(Average = n())
 
 data %>%
   filter(response.type = "web") %>% 
@@ -373,10 +385,113 @@ data %>%
 
 ```
 
+#### DATA.TABLE WAY
 
-5. `summarise`: Make a descriptive summary.
+-advantages of data.table include:
 
-- we already saw this function in action :-)
+1. Concise syntax
+
+```{r}
+# read in library
+library(data.table)
+# check class
+class(data)
+# set the data.table object
+dataDT = as.data.table(data) 
+# check class again
+class(dataDT)
+# do some descriptive statistics
+dataDT[response.type == "web",
+       .(minShare = min(response.share_count),
+         maxShare = max(response.share_count),
+         avgShare = mean(response.share_count),
+         stdShare = sd(response.share_count))][]
+# how many letters in a title
+dataDT[response.type == "web",
+       .(Avg = mean(nchar(response.title)),
+         STD = sd(nchar(response.title)),
+         min = min(nchar(response.title)),
+         max = max(nchar(response.title)))][]
+# how many letters in a text
+dataDT[response.type == "web",
+       .(Avg = mean(nchar(response.mention)),
+         STD = sd(nchar(response.mention)),
+         min = min(nchar(response.mention)),
+         max = max(nchar(response.mention)))][]
+
+
+```
+
+2. Very fast
+
+```{r}
+library(tictoc)
+
+# how many letters in a text by DT
+tic()
+dataDT[response.type == "web",
+       .(Avg = mean(nchar(response.mention)),
+         min = min(nchar(response.mention)),
+         max = max(nchar(response.mention)))]
+toc()
+
+tic()
+# how many letters in a text by tidy
+data %>% 
+  group_by(response.type) %>%
+  summarise(Avg = mean(nchar(response.mention)),
+         min = min(nchar(response.mention)),
+         max = max(nchar(response.mention)))
+toc()
+
+
+# READ IN FULL SAMPLE
+path <- "D:/LUKA/Freelance/Mediatoolkit/FULLDATA"
+raw <- list.files(path = path , pattern="xlsx")
+raw_path <- paste0(path, "/", raw)
+all_raw <- map_df(raw_path, read_excel)
+# make data.table object
+allDT <- as.data.table(all_raw)
+
+
+# lets check average activity size across 
+allDT[,
+       .(Avg = mean(nchar(TITLE)),
+         STD = sd(nchar(TITLE)),
+         min = min(nchar(TITLE)),
+         max = max(nchar(TITLE))),
+       by = SOURCE_TYPE]
+
+
+allDT[SOURCE_TYPE == "twitter",.(Avg = mean(nchar(TITLE)),
+         STD = sd(nchar(TITLE)),
+         min = min(nchar(TITLE)),
+         max = max(nchar(TITLE)))]
+
+```
+
+3. Memory efficiency
+
+Measuring memory efficiency is relatively complicated [thing](https://stackoverflow.com/a/61376971). For details [check](https://jangorecki.gitlab.io/r-talks/2019-06-18_Poznan_why-data.table/why-data.table.pdf) (after 12th slide) check data.table functionality.
+
+4. Lots of possibilities, stability and 5. Low dependancy
+
+These elements are mutually related. Dependancy is related [to](http://www.tinyverse.org/):
+
+
+```{r dependencies_dplyr, eval=FALSE}
+tools::package_dependencies("dplyr", recursive = TRUE)[[1]]
+```
+
+
+
+```{r dependencies_dt}
+tools::package_dependencies("data.table", recursive = TRUE)[[1]]
+```
+```
+## [1] "methods"
+```
+
 
 
 
