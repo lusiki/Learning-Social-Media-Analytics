@@ -263,9 +263,9 @@ data %>%
 
 
 
-## STORING DATA
+# STORING DATA
 
-## MANIPULATING DATA
+# MANIPULATING DATA
 
 #### TIDY WAY
 
@@ -549,18 +549,15 @@ allDT[,.(AwerageNoArticles = .N), by = SOURCE_TYPE][order(-AwerageNoArticles)]
 ```
 
 
-## ANALYTICS
+# ANALYTICS
 
 - we will cover that in three following lectures
 - methods used are statistical analysis, machine learning and textutal analysis
 
-## REPORTING
+# REPORTING
 
 - the [example](https://raw.githack.com/lusiki/WebObradaPodataka/main/XtraPredavanja/AparatiZaKavu/Prez.html) of (almost) production ready .Rmd report
 
-# CONNCLUDING POINTS
-
-- 
 
 
 

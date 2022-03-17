@@ -227,7 +227,7 @@ glimpse(dataArticles)
 ## $ title        <chr> "Umro bivši austrijski potkancelar i prijatelja Hrvatske ~
 ## $ date         <chr> "14. ožujka 2022. 16:48", "14. ožujka 2022. 23:03", "14. ~
 ## $ noComment    <dbl> 0, 107, 107, 8, 19, 132, 132
-## $ views        <dbl> 959, 90294, 90294, 3039, 7624, 74506, 74506
+## $ views        <dbl> 959, 90295, 90295, 3039, 7626, 74506, 74506
 ## $ articleLabel <lgl> NA, NA, NA, NA, NA, NA, NA
 ## $ articleLabel <lgl> NA, NA, NA, NA, NA, NA, NA
 ## $ author       <chr> "Snježana Herek", "Vecernji.hr", "Hina", "Hina", "Vecernj~
@@ -254,7 +254,7 @@ dataArticles$views
 ```
 
 ```
-## [1]   959 90294 90294  3039  7624 74506 74506
+## [1]   959 90295 90295  3039  7626 74506 74506
 ```
 
 ```r
@@ -307,7 +307,7 @@ API_request
 
 ```
 ## Response [https://api.mediatoolkit.com/organizations/126686/groups/182718/keywords/6521533/mentions?access_token=ddms5s0l3gejlz2z42ydt0bnwmf6ssqd62bdxteu7t8sumv5ii&from_time=1647126000&to_time=1647212400&count=3000&sort=time&type=all&offset=0&ids_only=false]
-##   Date: 2022-03-17 07:14
+##   Date: 2022-03-17 07:25
 ##   Status: 200
 ##   Content-Type: application/json;charset=utf-8
 ##   Size: 3.8 MB
@@ -866,7 +866,7 @@ toc()
 ```
 
 ```
-## 0 sec elapsed
+## 0.01 sec elapsed
 ```
 
 ```r
