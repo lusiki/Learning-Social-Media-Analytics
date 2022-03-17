@@ -57,7 +57,7 @@ title: " "
 - Analytics
 - Reporting
 
-**Format:** [.html](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/lectures/Regular%20Classes/Lecture-3-Data-Science-Prerequisites.html) | [.Rmd](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/lectures/Regular%20Classes/Lecture%203%20Data%20Science%20Prerequisites.Rmd) 
+**Format:** [.html](https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-3-Data-Science-Prerequisites.html) | [.md](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/lectures/Regular%20Classes/Lecture-3-Data-Science-Prerequisites.md) 
 <br>
 **Readings:** []() + []()
 <br>
