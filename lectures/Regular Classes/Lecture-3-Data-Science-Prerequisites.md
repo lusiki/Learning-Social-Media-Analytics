@@ -3,7 +3,7 @@ title: "Learning Social Media Analytics"
 # subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
 subtitle: "Lecture 3: Data Science Prerequisites"
 author: "Luka Sikic, PhD"
-date: "Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)" #"16 ožujak 2022"
+date: "Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)" #"17 ožujak 2022"
 output:
   html_document:
     code_folding: show
@@ -142,7 +142,7 @@ str(data)
 ##  $ title       : chr "Umro bivši austrijski potkancelar i prijatelja Hrvatske dr. Erhard Busek"
 ##  $ date        : chr "14. ožujka 2022. 16:48"
 ##  $ noComment   : num 0
-##  $ views       : num 950
+##  $ views       : num 959
 ##  $ articleLabel: logi NA
 ##  $ articleLabel: logi NA
 ##  $ author      : chr "Snježana Herek"
@@ -163,7 +163,7 @@ data$views
 ```
 
 ```
-## [1] 950
+## [1] 959
 ```
 
 ```r
@@ -226,8 +226,8 @@ glimpse(dataArticles)
 ## Columns: 9
 ## $ title        <chr> "Umro bivši austrijski potkancelar i prijatelja Hrvatske ~
 ## $ date         <chr> "14. ožujka 2022. 16:48", "14. ožujka 2022. 23:03", "14. ~
-## $ noComment    <dbl> 0, 107, 107, 8, 19, 133, 133
-## $ views        <dbl> 950, 89930, 89930, 2987, 7498, 74319, 74319
+## $ noComment    <dbl> 0, 107, 107, 8, 19, 132, 132
+## $ views        <dbl> 959, 90294, 90294, 3039, 7624, 74506, 74506
 ## $ articleLabel <lgl> NA, NA, NA, NA, NA, NA, NA
 ## $ articleLabel <lgl> NA, NA, NA, NA, NA, NA, NA
 ## $ author       <chr> "Snježana Herek", "Vecernji.hr", "Hina", "Hina", "Vecernj~
@@ -254,7 +254,7 @@ dataArticles$views
 ```
 
 ```
-## [1]   950 89930 89930  2987  7498 74319 74319
+## [1]   959 90294 90294  3039  7624 74506 74506
 ```
 
 ```r
@@ -307,7 +307,7 @@ API_request
 
 ```
 ## Response [https://api.mediatoolkit.com/organizations/126686/groups/182718/keywords/6521533/mentions?access_token=ddms5s0l3gejlz2z42ydt0bnwmf6ssqd62bdxteu7t8sumv5ii&from_time=1647126000&to_time=1647212400&count=3000&sort=time&type=all&offset=0&ids_only=false]
-##   Date: 2022-03-16 14:16
+##   Date: 2022-03-17 07:14
 ##   Status: 200
 ##   Content-Type: application/json;charset=utf-8
 ##   Size: 3.8 MB
@@ -410,11 +410,11 @@ data %>%
 ## # Groups:   response.type [6]
 ##   response.type     n
 ##   <chr>         <int>
-## 1 web            1309
-## 2 twitter         819
-## 3 facebook        267
-## 4 reddit          248
-## 5 youtube         194
+## 1 web            1314
+## 2 twitter         818
+## 3 facebook        265
+## 4 reddit          247
+## 5 youtube         193
 ## 6 comment         115
 ```
 
@@ -529,7 +529,7 @@ data %>%
 
 ```
 ##   NumberOfArticles
-## 1             1309
+## 1             1314
 ```
 
 2. `arrange`: order (i.e. *reorder*) rows by value.
@@ -549,20 +549,20 @@ data %>%
 ```
 
 ```
-## # A tibble: 268 x 6
-##    response.from             Share   Reach Virality LikeCount Comment
-##    <chr>                     <dbl>   <dbl>    <dbl>     <dbl>   <dbl>
-##  1 kgz.hr                   1750   129456    240.        844     88  
-##  2 platak.hr                 563    10601      1          11      0  
-##  3 logicno.com               117    15919      2.10      191     19  
-##  4 geopolitika.news           99     7283      1.86      304    163  
-##  5 hkig.hr                    61     5141      5.96       21      1  
-##  6 lisinski.hr                42     6895      2.40       44      5  
-##  7 zagorje-international.hr   41     4515      1.11       26      6  
-##  8 sloboda.hr                 39    69720      2.78      497    544  
-##  9 maxportal.hr               34.2   4521.     1.02      131.    72.8
-## 10 priznajem.hr               34.2  24550      1.64      422.   153. 
-## # ... with 258 more rows
+## # A tibble: 273 x 6
+##    response.from             Share  Reach Virality LikeCount Comment
+##    <chr>                     <dbl>  <dbl>    <dbl>     <dbl>   <dbl>
+##  1 kgz.hr                   1750   129784  242.         869      88 
+##  2 platak.hr                 563    10601    1           11       0 
+##  3 logicno.com               117    15919    2.10       191      19 
+##  4 geopolitika.news           99     7283    1.86       304     163 
+##  5 ampeu.hr                   77     9297    0.800       40       0 
+##  6 hkig.hr                    61     5141    6.00        21       1 
+##  7 lisinski.hr                42     6895    2.40        44       5 
+##  8 zagorje-international.hr   41     4515    1.11        26       6 
+##  9 sloboda.hr                 39    69720    2.78       497     544 
+## 10 priznajem.hr               34.2  24550    1.64       422.    153.
+## # ... with 263 more rows
 ```
 
 ```r
@@ -579,10 +579,10 @@ data %>%
 ```
 
 ```
-## # A tibble: 268 x 6
+## # A tibble: 273 x 6
 ##    response.from   Reach  Share Virality LikeCount Comment
 ##    <chr>           <dbl>  <dbl>    <dbl>     <dbl>   <dbl>
-##  1 kgz.hr        129456  1750   240.          844     88  
+##  1 kgz.hr        129784  1750   242.          869     88  
 ##  2 sloboda.hr     69720    39     2.78        497    544  
 ##  3 dw.com         41956    17     0.0438        2      1  
 ##  4 bongacams.com  40517     0     0             0      0  
@@ -592,7 +592,7 @@ data %>%
 ##  8 jutarnji.hr    15493.   14.8   1.24        152.    53.5
 ##  9 24sata.hr      15168.   10.9   1.37        209.    79.4
 ## 10 zara.com       14313     0     0             0      0  
-## # ... with 258 more rows
+## # ... with 263 more rows
 ```
 
 ```r
@@ -605,7 +605,7 @@ data %>%
 ```
 
 ```
-## # A tibble: 268 x 2
+## # A tibble: 273 x 2
 ##    response.from           Comment
 ##    <chr>                     <dbl>
 ##  1 sloboda.hr                544  
@@ -618,7 +618,7 @@ data %>%
 ##  8 zagreb.info               103. 
 ##  9 kgz.hr                     88  
 ## 10 braniteljski-portal.com    83.3
-## # ... with 258 more rows
+## # ... with 263 more rows
 ```
 
 3. `select`: Choose (i.e. *subset*) columns by name. 
@@ -737,7 +737,7 @@ data %>%
 ##   PortalSize     n
 ##   <chr>      <int>
 ## 1 Large        375
-## 2 Small        934
+## 2 Small        939
 ```
 
 
@@ -758,7 +758,7 @@ data %>%
 
 ```
 ##   Average
-## 1    1309
+## 1    1314
 ```
 
 ```r
@@ -768,7 +768,7 @@ data %>%
 ```
 
 ```
-## data frame with 0 columns and 1309 rows
+## data frame with 0 columns and 1314 rows
 ```
 
 #### DATA.TABLE WAY
@@ -811,7 +811,7 @@ dataDT[response.type == "web",
 
 ```
 ##    minShare maxShare avgShare stdShare
-## 1:       NA       NA       NA       NA
+## 1:        0     1750 7.160578 52.26276
 ```
 
 ```r
@@ -825,7 +825,7 @@ dataDT[response.type == "web",
 
 ```
 ##         Avg      STD min max
-## 1: 70.83422 33.58611   4 160
+## 1: 70.76408 33.58205   4 160
 ```
 
 ```r
@@ -838,8 +838,8 @@ dataDT[response.type == "web",
 ```
 
 ```
-##        Avg      STD min max
-## 1: 241.683 20.18775  54 250
+##         Avg     STD min max
+## 1: 241.7017 20.1523  54 250
 ```
 
 2. Very fast
@@ -857,8 +857,8 @@ dataDT[response.type == "web",
 ```
 
 ```
-##        Avg min max
-## 1: 241.683  54 250
+##         Avg min max
+## 1: 241.7017  54 250
 ```
 
 ```r
@@ -889,7 +889,7 @@ data %>%
 ## 4 reddit         108.     5   250
 ## 5 twitter         NA     NA    NA
 ## 6 web            242.    54   250
-## 7 youtube        190.     9   250
+## 7 youtube        189.     9   250
 ```
 
 ```r

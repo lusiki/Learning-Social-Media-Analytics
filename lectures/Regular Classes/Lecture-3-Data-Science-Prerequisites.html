@@ -448,7 +448,7 @@ div.tocify {
 ##  $ title       : chr &quot;Umro bivši austrijski potkancelar i prijatelja Hrvatske dr. Erhard Busek&quot;
 ##  $ date        : chr &quot;14. ožujka 2022. 16:48&quot;
 ##  $ noComment   : num 0
-##  $ views       : num 950
+##  $ views       : num 959
 ##  $ articleLabel: logi NA
 ##  $ articleLabel: logi NA
 ##  $ author      : chr &quot;Snježana Herek&quot;
@@ -457,7 +457,7 @@ div.tocify {
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>title</span></code></pre></div>
 <pre><code>## [1] &quot;Umro bivši austrijski potkancelar i prijatelja Hrvatske dr. Erhard Busek&quot;</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>views</span></code></pre></div>
-<pre><code>## [1] 950</code></pre>
+<pre><code>## [1] 959</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(data<span class="sc">$</span>articletext)</span></code></pre></div>
 <pre><code>## [1] 5148</code></pre>
 <ul>
@@ -494,8 +494,8 @@ div.tocify {
 ## Columns: 9
 ## $ title        &lt;chr&gt; &quot;Umro bivši austrijski potkancelar i prijatelja Hrvatske ~
 ## $ date         &lt;chr&gt; &quot;14. ožujka 2022. 16:48&quot;, &quot;14. ožujka 2022. 23:03&quot;, &quot;14. ~
-## $ noComment    &lt;dbl&gt; 0, 107, 107, 8, 19, 133, 133
-## $ views        &lt;dbl&gt; 950, 89930, 89930, 2987, 7498, 74319, 74319
+## $ noComment    &lt;dbl&gt; 0, 107, 107, 8, 19, 132, 132
+## $ views        &lt;dbl&gt; 959, 90294, 90294, 3039, 7624, 74506, 74506
 ## $ articleLabel &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA
 ## $ articleLabel &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA
 ## $ author       &lt;chr&gt; &quot;Snježana Herek&quot;, &quot;Vecernji.hr&quot;, &quot;Hina&quot;, &quot;Hina&quot;, &quot;Vecernj~
@@ -510,7 +510,7 @@ div.tocify {
 ## [6] &quot;Kotromanović: Ako je dron bio naoružan, onda NATO mora aktivirati članak 5 bez obzira je li ruski ili ukrajinski&quot;
 ## [7] &quot;Kotromanović: Ako je dron bio naoružan, onda NATO mora aktivirati članak 5 bez obzira je li ruski ili ukrajinski&quot;</code></pre>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>dataArticles<span class="sc">$</span>views</span></code></pre></div>
-<pre><code>## [1]   950 89930 89930  2987  7498 74319 74319</code></pre>
+<pre><code>## [1]   959 90294 90294  3039  7624 74506 74506</code></pre>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(dataArticles<span class="sc">$</span>articletext)</span></code></pre></div>
 <pre><code>## [1]  5148 27867 27867  1558  3970  5675  5675</code></pre>
 </div>
@@ -546,7 +546,7 @@ div.tocify {
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># check the API request object</span></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>API_request</span></code></pre></div>
 <pre><code>## Response [https://api.mediatoolkit.com/organizations/126686/groups/182718/keywords/6521533/mentions?access_token=ddms5s0l3gejlz2z42ydt0bnwmf6ssqd62bdxteu7t8sumv5ii&amp;from_time=1647126000&amp;to_time=1647212400&amp;count=3000&amp;sort=time&amp;type=all&amp;offset=0&amp;ids_only=false]
-##   Date: 2022-03-16 14:16
+##   Date: 2022-03-17 07:14
 ##   Status: 200
 ##   Content-Type: application/json;charset=utf-8
 ##   Size: 3.8 MB</code></pre>
@@ -628,11 +628,11 @@ div.tocify {
 ## # Groups:   response.type [6]
 ##   response.type     n
 ##   &lt;chr&gt;         &lt;int&gt;
-## 1 web            1309
-## 2 twitter         819
-## 3 facebook        267
-## 4 reddit          248
-## 5 youtube         194
+## 1 web            1314
+## 2 twitter         818
+## 3 facebook        265
+## 4 reddit          247
+## 5 youtube         193
 ## 6 comment         115</code></pre>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(response.from <span class="sc">==</span> <span class="st">&quot;vecernji.hr&quot;</span>) <span class="sc">%&gt;%</span></span>
@@ -718,7 +718,7 @@ div.tocify {
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(response.type <span class="sc">==</span> <span class="st">&quot;web&quot;</span>) <span class="sc">%&gt;%</span> <span class="co"># FILTER!</span></span>
 <span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">NumberOfArticles =</span> <span class="fu">n</span>())</span></code></pre></div>
 <pre><code>##   NumberOfArticles
-## 1             1309</code></pre>
+## 1             1314</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li><code>arrange</code>: order (i.e. <em>reorder</em>) rows by value.</li>
 </ol>
@@ -732,20 +732,20 @@ div.tocify {
 <span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">LikeCount =</span> <span class="fu">mean</span>(response.like_count),</span>
 <span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">Comment =</span> <span class="fu">mean</span>(response.comment_count)) <span class="sc">%&gt;%</span></span>
 <span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Share)) <span class="co"># ARRANGE!</span></span></code></pre></div>
-<pre><code>## # A tibble: 268 x 6
-##    response.from             Share   Reach Virality LikeCount Comment
-##    &lt;chr&gt;                     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
-##  1 kgz.hr                   1750   129456    240.        844     88  
-##  2 platak.hr                 563    10601      1          11      0  
-##  3 logicno.com               117    15919      2.10      191     19  
-##  4 geopolitika.news           99     7283      1.86      304    163  
-##  5 hkig.hr                    61     5141      5.96       21      1  
-##  6 lisinski.hr                42     6895      2.40       44      5  
-##  7 zagorje-international.hr   41     4515      1.11       26      6  
-##  8 sloboda.hr                 39    69720      2.78      497    544  
-##  9 maxportal.hr               34.2   4521.     1.02      131.    72.8
-## 10 priznajem.hr               34.2  24550      1.64      422.   153. 
-## # ... with 258 more rows</code></pre>
+<pre><code>## # A tibble: 273 x 6
+##    response.from             Share  Reach Virality LikeCount Comment
+##    &lt;chr&gt;                     &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+##  1 kgz.hr                   1750   129784  242.         869      88 
+##  2 platak.hr                 563    10601    1           11       0 
+##  3 logicno.com               117    15919    2.10       191      19 
+##  4 geopolitika.news           99     7283    1.86       304     163 
+##  5 ampeu.hr                   77     9297    0.800       40       0 
+##  6 hkig.hr                    61     5141    6.00        21       1 
+##  7 lisinski.hr                42     6895    2.40        44       5 
+##  8 zagorje-international.hr   41     4515    1.11        26       6 
+##  9 sloboda.hr                 39    69720    2.78       497     544 
+## 10 priznajem.hr               34.2  24550    1.64       422.    153.
+## # ... with 263 more rows</code></pre>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># arrange by reach  </span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(response.type <span class="sc">==</span> <span class="st">&quot;web&quot;</span>) <span class="sc">%&gt;%</span></span>
@@ -756,10 +756,10 @@ div.tocify {
 <span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">LikeCount =</span> <span class="fu">mean</span>(response.like_count),</span>
 <span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">Comment =</span> <span class="fu">mean</span>(response.comment_count)) <span class="sc">%&gt;%</span></span>
 <span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Reach)) <span class="co"># ARRANGE!</span></span></code></pre></div>
-<pre><code>## # A tibble: 268 x 6
+<pre><code>## # A tibble: 273 x 6
 ##    response.from   Reach  Share Virality LikeCount Comment
 ##    &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
-##  1 kgz.hr        129456  1750   240.          844     88  
+##  1 kgz.hr        129784  1750   242.          869     88  
 ##  2 sloboda.hr     69720    39     2.78        497    544  
 ##  3 dw.com         41956    17     0.0438        2      1  
 ##  4 bongacams.com  40517     0     0             0      0  
@@ -769,14 +769,14 @@ div.tocify {
 ##  8 jutarnji.hr    15493.   14.8   1.24        152.    53.5
 ##  9 24sata.hr      15168.   10.9   1.37        209.    79.4
 ## 10 zara.com       14313     0     0             0      0  
-## # ... with 258 more rows</code></pre>
+## # ... with 263 more rows</code></pre>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># arrange by comment </span></span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(response.type <span class="sc">==</span> <span class="st">&quot;web&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(response.from) <span class="sc">%&gt;%</span> </span>
 <span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Comment =</span> <span class="fu">mean</span>(response.comment_count)) <span class="sc">%&gt;%</span></span>
 <span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Comment)) <span class="co"># ARRANGE!</span></span></code></pre></div>
-<pre><code>## # A tibble: 268 x 2
+<pre><code>## # A tibble: 273 x 2
 ##    response.from           Comment
 ##    &lt;chr&gt;                     &lt;dbl&gt;
 ##  1 sloboda.hr                544  
@@ -789,7 +789,7 @@ div.tocify {
 ##  8 zagreb.info               103. 
 ##  9 kgz.hr                     88  
 ## 10 braniteljski-portal.com    83.3
-## # ... with 258 more rows</code></pre>
+## # ... with 263 more rows</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li><code>select</code>: Choose (i.e. <em>subset</em>) columns by name.</li>
 </ol>
@@ -876,7 +876,7 @@ div.tocify {
 ##   PortalSize     n
 ##   &lt;chr&gt;      &lt;int&gt;
 ## 1 Large        375
-## 2 Small        934</code></pre>
+## 2 Small        939</code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li><code>summarise</code>: Make a descriptive summary.</li>
 </ol>
@@ -888,11 +888,11 @@ div.tocify {
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(response.type <span class="sc">==</span> <span class="st">&quot;web&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Average =</span> <span class="fu">n</span>())</span></code></pre></div>
 <pre><code>##   Average
-## 1    1309</code></pre>
+## 1    1314</code></pre>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(response.type <span class="sc">==</span> <span class="st">&quot;web&quot;</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>()</span></code></pre></div>
-<pre><code>## data frame with 0 columns and 1309 rows</code></pre>
+<pre><code>## data frame with 0 columns and 1314 rows</code></pre>
 </div>
 <div id="data.table-way" class="section level4">
 <h4>DATA.TABLE WAY</h4>
@@ -917,7 +917,7 @@ div.tocify {
 <span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">avgShare =</span> <span class="fu">mean</span>(response.share_count),</span>
 <span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">stdShare =</span> <span class="fu">sd</span>(response.share_count))][]</span></code></pre></div>
 <pre><code>##    minShare maxShare avgShare stdShare
-## 1:       NA       NA       NA       NA</code></pre>
+## 1:        0     1750 7.160578 52.26276</code></pre>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># how many letters in a title</span></span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>dataDT[response.type <span class="sc">==</span> <span class="st">&quot;web&quot;</span>,</span>
 <span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>       .(<span class="at">Avg =</span> <span class="fu">mean</span>(<span class="fu">nchar</span>(response.title)),</span>
@@ -925,15 +925,15 @@ div.tocify {
 <span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">min =</span> <span class="fu">min</span>(<span class="fu">nchar</span>(response.title)),</span>
 <span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">max =</span> <span class="fu">max</span>(<span class="fu">nchar</span>(response.title)))][]</span></code></pre></div>
 <pre><code>##         Avg      STD min max
-## 1: 70.83422 33.58611   4 160</code></pre>
+## 1: 70.76408 33.58205   4 160</code></pre>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># how many letters in a text</span></span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>dataDT[response.type <span class="sc">==</span> <span class="st">&quot;web&quot;</span>,</span>
 <span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>       .(<span class="at">Avg =</span> <span class="fu">mean</span>(<span class="fu">nchar</span>(response.mention)),</span>
 <span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">STD =</span> <span class="fu">sd</span>(<span class="fu">nchar</span>(response.mention)),</span>
 <span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">min =</span> <span class="fu">min</span>(<span class="fu">nchar</span>(response.mention)),</span>
 <span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">max =</span> <span class="fu">max</span>(<span class="fu">nchar</span>(response.mention)))][]</span></code></pre></div>
-<pre><code>##        Avg      STD min max
-## 1: 241.683 20.18775  54 250</code></pre>
+<pre><code>##         Avg     STD min max
+## 1: 241.7017 20.1523  54 250</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Very fast</li>
 </ol>
@@ -945,8 +945,8 @@ div.tocify {
 <span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a>       .(<span class="at">Avg =</span> <span class="fu">mean</span>(<span class="fu">nchar</span>(response.mention)),</span>
 <span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">min =</span> <span class="fu">min</span>(<span class="fu">nchar</span>(response.mention)),</span>
 <span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">max =</span> <span class="fu">max</span>(<span class="fu">nchar</span>(response.mention)))]</span></code></pre></div>
-<pre><code>##        Avg min max
-## 1: 241.683  54 250</code></pre>
+<pre><code>##         Avg min max
+## 1: 241.7017  54 250</code></pre>
 <div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code></pre></div>
 <pre><code>## 0 sec elapsed</code></pre>
 <div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>()</span>
@@ -965,7 +965,7 @@ div.tocify {
 ## 4 reddit         108.     5   250
 ## 5 twitter         NA     NA    NA
 ## 6 web            242.    54   250
-## 7 youtube        190.     9   250</code></pre>
+## 7 youtube        189.     9   250</code></pre>
 <div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code></pre></div>
 <pre><code>## 0.03 sec elapsed</code></pre>
 <div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co"># READ IN FULL SAMPLE</span></span>
