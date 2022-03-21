@@ -65,7 +65,7 @@ title: " "
 
 
 
-### Lecture 04: Big Data infrastructure and data acquisition procedures (API, Web/Screen Scraping) 
+### Lecture 04: R syntax refresher 
 
 -
 -  
