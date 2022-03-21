@@ -446,7 +446,752 @@ a = 2+2</code></pre>
 <code>&gt; b &lt;- -1^2</code> <strong><em>gives</em></strong> <code>-(1^2) = -1</code><br />
 <code>&gt; b &lt;- (-1)^2</code> <strong><em>gives</em></strong> <code>1</code></p>
 <p>In complicated expressions it’s best to <strong>use parentheses to specify explicitly what you want</strong>, such as <code>&gt; b &lt;- 12 - (4/(2^3))</code> or at least <code>&gt; b &lt;- 12 - 4/(2^3)</code>; a few extra sets of parentheses never hurt anything.</p>
-<p><strong>R</strong> also has many <strong>built-in mathematical functions</strong> that operate on variables (see below).</p>
+<p>Some of the built-in mathematical functions in <strong>R</strong>.</p>
+<table>
+<thead>
+<tr class="header">
+<th><strong>R</strong> command</th>
+<th>function</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>abs()</code></td>
+<td>absolute value, <span class="math inline">\(|x|\)</span></td>
+</tr>
+<tr class="even">
+<td><code>cos()</code>, <code>sin()</code>, <code>tan()</code></td>
+<td>cosine, sine, tangent</td>
+</tr>
+<tr class="odd">
+<td><code>acos()</code>, <code>asin()</code>, <code>atan()</code></td>
+<td>arc-cosine, arc-sine, arc-tangent</td>
+</tr>
+<tr class="even">
+<td><code>exp(x)</code></td>
+<td>exponential function, <span class="math inline">\(e^x\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>log(x)</code></td>
+<td>natural (base-<span class="math inline">\(e\)</span>) logarithm, <span class="math inline">\(\log{x}=\ln{x}\)</span></td>
+</tr>
+<tr class="even">
+<td><code>log10(x)</code></td>
+<td>base-10 logarithm, <span class="math inline">\(\log_{10}{x}\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>sqrt(x)</code></td>
+<td>square root, <span class="math inline">\(\sqrt{x}\)</span></td>
+</tr>
+<tr class="even">
+<td><code>atan2(y,x)</code></td>
+<td><span class="math inline">\(\arctan(y/x)\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>sum()</code></td>
+<td>sum of the entries in a vector</td>
+</tr>
+<tr class="even">
+<td><code>diff()</code></td>
+<td>first differences</td>
+</tr>
+<tr class="odd">
+<td><code>cumsum()</code></td>
+<td>cumulative sum</td>
+</tr>
+<tr class="even">
+<td><code>gamma(x)</code></td>
+<td>the Gamma function, <span class="math inline">\(\Gamma(x)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>You can get a more complete list of functions from the help system (check below): <code>?Arithmetic</code> for arithmetic operations, <code>?log</code> for logarithmic functions, <code>?sin</code> for trigonometric functions, and <code>?Special</code> for special functions.</p>
+</div>
+<div id="the-help-system" class="section level1">
+<h1>THE HELP SYSTEM</h1>
+<p><strong>R</strong> has a help system, although it is generally better for reminding you about syntax or details, and for giving cross-references, than for answering basic “how do I …?” questions.</p>
+<ul>
+<li>You can get help on an <strong>R</strong> function named <code>foo</code> by entering</li>
+</ul>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>?foo</span></code></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(foo)</span></code></pre></div>
+<p>into the console window (e.g., try <code>?sin</code>).</p>
+<p>By default, <strong>R</strong> ’s help system only provides information about functions that are in the base system and packages that you have already loaded (see below).</p>
+<ul>
+<li><code>??topic</code> or <code>help.search(&quot;topic&quot;)</code> will list information related to <code>topic</code> available in the base system or in any extra installed packages: then use <code>?topic</code> to see the information, perhaps using <code>library(pkg)</code> to load the appropriate package first.</li>
+<li><code>help.search</code> uses fuzzy matching—for example, <code>help.search(&quot;log&quot;)</code> finds more than 800 entries (on my particular system) including lots of functions with “plot”, which includes the letters “lot”, which are <em>almost</em> like “log”. If you can’t stand it, you can turn this behavior off with the incantation <code>help.search(&quot;log&quot;,agrep=FALSE)</code> (81 results which still include matches for “logistic”, “myelogenous”, “phylogeny”, ).</li>
+<li><code>help(package=&quot;pkg&quot;)</code> will list all the help pages for a loaded package.</li>
+<li><code>example(fun)</code> will run the examples (if any) given in the help for a particular function <code>fun</code>: e.g., <code>example(log)</code></li>
+<li><code>RSiteSearch(&quot;topic&quot;)</code> does a full-text search of all the <strong>R</strong> documentation and the mailing list archives for information on <code>topic</code> (you need an active internet connection).</li>
+<li>the <code>sos</code> package is a web-aware help function that searches all of the packages on CRAN; its <code>findFn</code> function tries to find and organize functions in any package on CRAN that match a search string (again, you need a network connection for this).</li>
+</ul>
+<p>Try out one or more of these aspects of the help system.</p>
+</div>
+<div id="interactive-session" class="section level1">
+<h1>INTERACTIVE SESSION</h1>
+<div id="descriptive-statistics" class="section level2">
+<h2>Descriptive statistics</h2>
+<p>Below are some data on the maximum growth rate <span class="math inline">\(r_{\text{max}}\)</span> of laboratory populations of the green alga <em>Chlorella vulgaris</em> as a function of light intensity (<span class="math inline">\(\mu\mathrm{E}~\mathrm{m}^{-2}~\mathrm{s}^{-1}\)</span>).</p>
+<table>
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Light:</td>
+<td>20, 20, 20, 20, 21, 24, 44, 60, 90, 94, 101</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(r_{\text{max}}\)</span>:</td>
+<td>1.73, 1.65, 2.02, 1.89, 2.61, 1.36, 2.37, 2.08, 2.69, 2.32, 3.67</td>
+</tr>
+</tbody>
+</table>
+<p>To analyze these data in <strong>R</strong> , first enter them as numerical <em>vectors</em>:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>Light <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">21</span>,<span class="dv">24</span>,<span class="dv">44</span>,<span class="dv">60</span>,<span class="dv">90</span>,<span class="dv">94</span>,<span class="dv">101</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>rmax <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.73</span>,<span class="fl">1.65</span>,<span class="fl">2.02</span>,<span class="fl">1.89</span>,<span class="fl">2.61</span>,<span class="fl">1.36</span>,<span class="fl">2.37</span>,<span class="fl">2.08</span>,<span class="fl">2.69</span>,<span class="fl">2.32</span>,<span class="fl">3.67</span>)</span></code></pre></div>
+<p>The function <code>c()</code> <em>combines</em> the individual numbers into a vector. Try recalling (with <span class="math inline">\(\uparrow\)</span>) and modifying the above command to</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>Light <span class="ot">&lt;-</span> <span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">21</span>,<span class="dv">24</span>,<span class="dv">44</span>,<span class="dv">60</span>,<span class="dv">90</span>,<span class="dv">94</span>,<span class="dv">101</span></span></code></pre></div>
+<p>and see the error message you get: in order to create a vector of specified numbers, you must use the <code>c()</code> function.</p>
+<p>To see a histogram of the growth rates enter <code>hist(rmax)</code>, which opens a graphics window and displays the histogram. There are <strong>many</strong> other built-in statistics functions in <strong>R</strong>. Some of the most commonly used are shown in the table below. Play around with these functions, and any others you can think of.</p>
+<hr />
+<table>
+<caption>Some simple descriptive statistics in <strong>R</strong></caption>
+<tbody>
+<tr class="odd">
+<td><code>mean(x)</code></td>
+<td>the arithmetic mean of the data in <code>x</code></td>
+</tr>
+<tr class="even">
+<td><code>exp(mean(log(x)))</code></td>
+<td>the geometric mean of <code>x</code></td>
+</tr>
+<tr class="odd">
+<td><code>1/mean(1/x)</code></td>
+<td>the harmonic mean of <code>x</code></td>
+</tr>
+<tr class="even">
+<td><code>median(x)</code></td>
+<td>the median of <code>x</code></td>
+</tr>
+<tr class="odd">
+<td><code>min(x)</code>, <code>max(x)</code></td>
+<td>the minimum and maximum, respectively, of <code>x</code></td>
+</tr>
+<tr class="even">
+<td><code>range(x)</code></td>
+<td>the range of <code>x</code></td>
+</tr>
+<tr class="odd">
+<td><code>sd(x)</code></td>
+<td>the standard deviation of <code>x</code></td>
+</tr>
+<tr class="even">
+<td><code>var(x)</code></td>
+<td>the variance of <code>x</code></td>
+</tr>
+<tr class="odd">
+<td><code>quantile(x, p)</code></td>
+<td>the <code>p</code>-th quantiles of <code>x</code></td>
+</tr>
+<tr class="even">
+<td><code>ecdf(x)</code></td>
+<td>the empirical cumulative distribution function of <code>x</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>To see how the algal rate of increase varies with light intensity, type</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(rmax<span class="sc">~</span>Light)</span></code></pre></div>
+<p>to plot <code>rmax</code> (<span class="math inline">\(y\)</span>) against <code>Light</code> (<span class="math inline">\(x\)</span>). You can also do <code>plot(Light,rmax)</code>. Based on what you see, does it seem reasonable to hypothesize a linear relationship between these variables?</p>
+</div>
+<div id="linear-regression" class="section level2">
+<h2>Linear regression</h2>
+<p>To perform linear regression we create a linear model using the <code>lm()</code> function:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(rmax<span class="sc">~</span>Light)</span></code></pre></div>
+<p>In the formula <code>rmax~Light</code>, <code>rmax</code> is the response variable and <code>Light</code> is the predictor.</p>
+<p>The <code>lm</code> command created an <em>object</em> we have named <code>fit</code>. In <strong>R</strong> , an <em>object</em> is a data structure consisting of multiple parts. In this case, <code>fit</code> holds the results of the linear regression analysis. Unlike other statistics packages, <strong>R</strong> rarely summarizes an analysis for you by default. Statistical analyses in <strong>R</strong> are done by fitting a model to data and then issuing additional commands to extract desired information about the model or display results graphically.</p>
+<p>To get a summary of the results, enter the command <code>summary(fit)</code>. <strong>R</strong> sets up model objects (more on this later) so that the function <code>summary()</code> “knows” that <code>fit</code> was created by <code>lm()</code>, and produces an appropriate summary of results for an <code>lm()</code> object:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = rmax ~ Light)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -0.5478 -0.2607 -0.1166  0.1783  0.7431 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 1.580952   0.244519   6.466 0.000116 ***
+## Light       0.013618   0.004317   3.154 0.011654 *  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.4583 on 9 degrees of freedom
+## Multiple R-squared:  0.5251, Adjusted R-squared:  0.4723 
+## F-statistic: 9.951 on 1 and 9 DF,  p-value: 0.01165</code></pre>
+<p>If you’ve had a statistics course, the output will make sense to you. The table of coefficients gives the estimated regression line as <span class="math display">\[\text{rmax}=1.58+0.0136\times\text{Light}.\]</span> Associated with each coefficient is the standard error of the estimate. In addition, for each coefficient, a <span class="math inline">\(t\)</span>-test is performed testing the hypothesis that the coefficient differs from zero: the <span class="math inline">\(t\)</span>-statistic and the corresponding <span class="math inline">\(p\)</span>-values are reported. Finally, the summary reports <span class="math inline">\(R^2\)</span> values and the results of an <span class="math inline">\(F\)</span>-test comparing the model to a simple normal null hypothesis.</p>
+<p>You can add the regression line to the plot of the data with a function taking <code>fit</code> as its input (if you closed the plot of the data, you will need to create it again in order to add the regression line):</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(fit)</span></code></pre></div>
+<p>[<code>abline</code> is a general-purpose function for adding lines to a plot. You can specify horizontal or vertical lines, a slope and an intercept, or a regression model: <code>?abline</code>.]</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqsAAAGQCAMAAAC+kNkwAAAAwFBMVEX9/v0AAAAAADkAAGUAOTkAOWUAOY8AZo8AZrU5AAA5ADk5AGU5OQA5OTk5OWU5Zo85ZrU5j7U5j9plAABlADllOQBlOTllOY9lj7Vlj9pltdpltf2POQCPOTmPOWWPZgCPZjmPj2WPtdqP27WP29qP2/21ZgC1Zjm1jzm1j2W1tdq1tf2129q12/21/rW1/v3ajznaj2XatWXatY/a24/a29ra2/3a/rXa/v39tWX924/927X929r9/rX9/tr9/v0AVGGUAAAAQHRSTlP///////////////////////////////////////////////////////////////////////////////////8AwnuxRAAAAAlwSFlzAAAPYQAAD2EBqD+naQAAESxJREFUeJztnY+bm7YZgIsv9c5tmqS+pduS69K1O7fd1oam7Xo4O/P//1dDEj8EGNtgCemz3/d5ljIw6LN4T3wILH2SA8jgk9ABAJwIroIUcBWkgKsgBVwFKeAqSAFXQQq4ClLAVZACroIUcBWkgKsgBVwFKeAqSAFXQQq4ClLAVZACroIUcBWkgKsgBVwFKeAqSAFXQQq4ClLAVZACroIUcBWkgKsgBVwFKeAqSAFXQQq4ClIQ4erHb54nSfLFXx9P+OwmWTyUi7v75Ob9/k8d2OSRj18lyeKt00M6+SLRVdR+JLiaJiWf/nT8wxG7WhSaNNE5OyauxkOtapIsj7esm5NsCHIKnu5O+QIBiEnIA8Tv6naVJC+LBnX3fSHr8QtoxK4W3+R27jJPAlcdUTSr63Lpxbe5lvG718nNQ/7r60LeFw9m1T+/KVMEtVxY/elDfQp2Pxa2P3ujjlDv0jo7vxTZ8OJlufND6VTRCK4/PE8Wf8s/rJLFm7y/Im9H8N3ruuXP6pDLDz1TqfZGXxoqW+uv8bGIfGFS8V2x+PIP3fru29zE2SxWX6QuRVdA8Y2ffZu3Qmhqqt7Yqo2f7+zYu8e3ig5H9K72/uY3ZTaQmbRAybVJ9i6Xu5ZrXunz0N5kHbD8qO2q4Qv979v+irwXwfKdadTttv37OnvpumpWq8tG6fiTtv3Zqvlwa3Mrzmqx/CJNKWrb8yosQzvOemOnNjZW7N3jW0UHJHpXe0leUW83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" /><!-- --></p>
+<p>You can extract the coefficients from the fitted model using <code>coef</code>:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(fit)</span></code></pre></div>
+<pre><code>## (Intercept)       Light 
+##  1.58095214  0.01361776</code></pre>
+<p>There are many other results stored inside <code>fit</code>. Try the following:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">residuals</span>(fit)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fitted</span>(fit)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">effects</span>(fit)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">vcov</span>(fit)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit)</span></code></pre></div>
+</div>
+</div>
+<div id="statistics-in-r" class="section level1">
+<h1>Statistics in <strong>R</strong></h1>
+<p>Some of the important functions and packages (collections of functions) for statistical modeling and data analysis are summarized in following table. Functions are named in <code>fixed-width font</code> and packages in <strong>bold face</strong>. The book <em>Modern Applied Statistics with S</em> gives a good practical overview, and a list of available packages and their contents can be found at the main <strong>R</strong> website (<a href="http://cran.r-project.org" class="uri">http://cran.r-project.org</a>, and click on <code>Packages</code>).</p>
+<p>A few of the functions and packages in <strong>R</strong> for statistical modeling and data analysis are listed below. There are <em>many</em> more, but you will have to learn about them somewhere else.</p>
+<hr />
+<table>
+<caption>Statistical modeling and data analysis functions and packages.</caption>
+<colgroup>
+<col width="52%" />
+<col width="48%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th> </th>
+<th> </th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>aov</code>, <code>anova</code></td>
+<td>Analysis of variance or deviance</td>
+</tr>
+<tr class="even">
+<td><code>lm</code></td>
+<td>Linear models (regression, ANOVA, ANCOVA)</td>
+</tr>
+<tr class="odd">
+<td><code>glm</code></td>
+<td>Generalized linear models (e.g. logistic, Poisson regression)</td>
+</tr>
+<tr class="even">
+<td><code>gam</code></td>
+<td>Generalized additive models (in package <strong>mgcv</strong>)</td>
+</tr>
+<tr class="odd">
+<td><code>nls</code></td>
+<td>Nonlinear models via least-squares</td>
+</tr>
+<tr class="even">
+<td><code>lme</code>, <code>nlme</code></td>
+<td>Linear and nonlinear mixed-effects models (repeated measures, block effects, spatial models): in package <strong>nlme</strong></td>
+</tr>
+<tr class="odd">
+<td><code>princomp</code>, <code>manova</code>, <code>lda</code>, <code>cancor</code></td>
+<td>Multivariate analysis (see also packages <strong>vegan</strong>, <strong>ade4</strong>)</td>
+</tr>
+<tr class="even">
+<td><strong>boot</strong></td>
+<td>Package: bootstrapping functions</td>
+</tr>
+<tr class="odd">
+<td><strong>splines</strong></td>
+<td>Package: nonparametric regression (more in packages <strong>fields</strong>, <strong>KernSmooth</strong>, <strong>logspline</strong>, <strong>sm</strong> and others)</td>
+</tr>
+<tr class="even">
+<td><strong>survival</strong></td>
+<td>Package: survival analysis</td>
+</tr>
+<tr class="odd">
+<td><strong>tree</strong>, <strong>rpart</strong></td>
+<td>Package: tree-based regression</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="the-r-package-system" class="section level1">
+<h1>THE <strong>R</strong> PACKAGE SYSTEM</h1>
+<p><strong>R</strong> has many extra packages that provide extra functions. You may be able to install new packages from a menu within <strong>R</strong>. You can always type, e.g.,</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span></code></pre></div>
+<p>This installs the <strong>ggplot2</strong> package. You can install more than one package at a time:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;plyr&quot;</span>,<span class="st">&quot;reshape2&quot;</span>))</span></code></pre></div>
+<p>If the machine on which you use <strong>R</strong> is not connected to the Internet, you can download the packages to some other medium (such as a flash drive or CD) and install them later, using <code>Install from local zip file</code> in the menu (Ⓦ) or</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>,<span class="at">repos=</span><span class="cn">NULL</span>)</span></code></pre></div>
+<p>If you do not have permission to install packages in <strong>R</strong> ’s central directory, <strong>R</strong> will may ask whether you want to install the packages in a user-specific directory. It is safe to answer “yes” here.</p>
+<p>You will frequently get a warning message like</p>
+<pre><code>Warning message: In file.create(f.tg) :
+cannot create file &#39;.../packages.html&#39;, reason &#39;Permission denied&#39;.</code></pre>
+<p>Don’t worry about this; it means the package has been installed successfully, but the main help system index files couldn’t be updated because of file permissions problems.</p>
+</div>
+<div id="data-structures-in-r" class="section level1">
+<h1>DATA STRUCTURES IN <strong>R</strong></h1>
+<div id="vectors" class="section level2">
+<h2>Vectors</h2>
+<p>The most basic data-type in <strong>R</strong> is the vector. A vector is just a 1-dimensional array of values. Several different kinds of vectors are available:</p>
+<ul>
+<li>numerical vectors,</li>
+<li>logical vectors,</li>
+<li>character-string vectors,</li>
+<li>factors,</li>
+<li>ordered factors, and</li>
+<li>lists.</li>
+</ul>
+<p>Lists are a bit different from the other kinds, so we’ll postpone talking about them until later.</p>
+<p>A vector’s defining attributes are its <em>mode</em>—which kind of vector it is— and its <strong>length</strong>. Vectors can also have a <code>names</code> attribute, which allows one to refer to elements by name.</p>
+<p>We’ve already seen how to create vectors in <strong>R</strong> using the <code>c</code> function, e.g.,</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">11</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">6.5</span>,<span class="fl">4.3</span>,<span class="fl">9.1</span>,<span class="sc">-</span><span class="fl">8.5</span>,<span class="dv">0</span>,<span class="fl">3.6</span>)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;dog&quot;</span>,<span class="st">&quot;cat&quot;</span>,<span class="st">&quot;dormouse&quot;</span>,<span class="st">&quot;chinchilla&quot;</span>)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">a=</span><span class="dv">4</span>,<span class="at">b=</span><span class="fl">5.5</span>,<span class="at">c=</span><span class="fl">8.8</span>)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x)</span></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mode</span>(y)</span></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mode</span>(z)</span></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(w)</span></code></pre></div>
+<pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
+<p>The nice thing about having vectors as a basic type is that many operations in <strong>R</strong> are efficiently <em>vectorized</em>. That is, the operation acts on the vector as a unit, saving you the trouble of treating each entry individually. For example:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>xx <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(x)</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>x; xx</span></code></pre></div>
+<pre><code>## [1]  2  4  6  8 10 12</code></pre>
+<pre><code>## [1] 1.414214 2.000000 2.449490 2.828427 3.162278 3.464102</code></pre>
+<p>Notice that the operations were applied to every entry in the vector. Similarly, commands like <code>x-5, 2*x, x/10</code>, and <code>x^2</code> apply subtraction, multiplication, division, and square to each element of the vector. The same is true for operations involving multiple vectors:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>x<span class="sc">+</span>y</span></code></pre></div>
+<pre><code>## [1]  8.5  8.3 15.1 -0.5 10.0 15.6</code></pre>
+<p>In <strong>R</strong> the default is to apply functions and operations to vectors in an <em>element by element</em> manner; anything else (e.g. matrix multiplication) is done using special notation (discussed below).</p>
+<div id="element-recycling" class="section level3">
+<h3>Element recycling</h3>
+<p><strong>R</strong> has a very useful, but unusual and perhaps unexpected, behavior when two vector operands in a vectorized operation are of unequal lengths. It will effectively extend the shorter vector using element “re-cycling”: re-using elements of the shorter vector. Thus</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">60</span>)</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>x<span class="sc">+</span>y</span></code></pre></div>
+<pre><code>## [1] 11 22 33 41 52 63</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>y<span class="sc">-</span>x</span></code></pre></div>
+<pre><code>## [1]  9 18 27 39 48 57</code></pre>
+</div>
+<div id="functions-for-creating-vectors" class="section level3">
+<h3>Functions for creating vectors</h3>
+<p>A set of regularly spaced values can be created with the <code>seq</code> function, whose syntax is <code>x &lt;- seq(from,to,by)</code> or <code>x &lt;- seq(from,to)</code> or <code>x &lt;- seq(from,to,length.out)</code>. The first form generates a vector <code>(from,from+by,from+2*by,...)</code> with the last entry not extending further than <code>to</code>; in the second form the value of <code>by</code> is assumed to be 1 or -1, depending on whether <code>from</code> or <code>to</code> is larger; and the third form creates a vector with the desired endpoints and length. There is also a shortcut for creating vectors with <code>by=1</code>:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">8</span></span></code></pre></div>
+<pre><code>## [1] 1 2 3 4 5 6 7 8</code></pre>
+<p>A constant vector such as <code>(1 1 1 1)</code> can be created with <code>rep</code> function, whose basic syntax is <code>rep(values,lengths)</code>.<br />
+For example,</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">3</span>,<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 3 3 3 3 3</code></pre>
+<p>creates a vector in which the value 3 is repeated 5 times. <code>rep()</code> will repeat a whole vector multiple times</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 1 2 3 1 2 3 1 2 3</code></pre>
+<p>or will repeat each of the elements in a vector a given number of times:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="at">each=</span><span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 1 1 1 2 2 2 3 3 3</code></pre>
+<p>Even more flexibly, you can repeat each element in the vector a different number of times:</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>),<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>))</span></code></pre></div>
+<pre><code>## [1] 3 3 4 4 4 4 4</code></pre>
+<p>The value 3 was repeated 2 times, followed by the value 4 repeated 5 times. <code>rep()</code> can be a little bit mind-blowing as you get started, but you’ll get used to it—and it will turn out to be useful.</p>
+<hr />
+<table>
+<caption>Some important <strong>R</strong> functions for creating and working with vectors.</caption>
+<colgroup>
+<col width="44%" />
+<col width="55%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><code>seq(from,to,by=1)</code></td>
+<td>Vector of evenly spaced values (default increment = 1)</td>
+</tr>
+<tr class="even">
+<td><code>seq(from,to,length.out)</code></td>
+<td>Vector of evenly spaced values, specified length</td>
+</tr>
+<tr class="odd">
+<td><code>c(u,v,...)</code></td>
+<td>Combine a set of numbers and/or vectors into a single vector</td>
+</tr>
+<tr class="even">
+<td><code>rep(a,b)</code></td>
+<td>Create vector by repeating elements of <code>a</code> <code>b</code> times each</td>
+</tr>
+<tr class="odd">
+<td><code>hist(v)</code></td>
+<td>Histogram plot of value in v</td>
+</tr>
+<tr class="even">
+<td><code>mean(v),var(v),sd(v)</code></td>
+<td>Estimate of population mean, variance, standard deviation based on data values in <code>v</code></td>
+</tr>
+<tr class="odd">
+<td><code>cov(v,w)</code></td>
+<td>Covariance between two vectors</td>
+</tr>
+<tr class="even">
+<td><code>cor(v,w)</code></td>
+<td>Correlation between two vectors</td>
+</tr>
+</tbody>
+</table>
+<p>Many of these have other optional arguments; use the help system (e.g. <code>?cor</code>) for more information. The statistical functions such as <code>var</code> regard the values as samples from a population and compute the unbiased estimate of the population statistic; for example <code>sd(1:3)=1</code>.</p>
+<hr />
+</div>
+<div id="vector-indexing" class="section level3">
+<h3>Vector indexing</h3>
+<p>It is often necessary to extract a specific entry or other part of a vector. This procedure is called <em>vector indexing</em>, and uses square brackets ([]):</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">11</span>); z[<span class="dv">3</span>]</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<p><code>z[3]</code> extracts the third element of the vector <code>z</code>. You can also access a block of elements by giving a vector of indices:</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> z[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)]</span></code></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> z[<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>]; v</span></code></pre></div>
+<pre><code>## [1] 3 5 7 9</code></pre>
+<p>This has extracted the 2nd through 5th elements in the vector.</p>
+<p>Extracted parts of a vector don’t have to be regularly spaced. For example</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> z[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>)]; v</span></code></pre></div>
+<pre><code>## [1] 1 3 9</code></pre>
+<p>Indexing is also used to <strong>set specific values within a vector</strong>. For example,</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>z[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">12</span></span></code></pre></div>
+<p>changes the value of the first entry in <code>z</code> while leaving all the rest alone, and</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>z[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>)] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">22</span>,<span class="dv">33</span>,<span class="dv">44</span>)</span></code></pre></div>
+<p>changes the 1st, 3rd, and 5th values.</p>
+<p>Elements in a named vector can be accessed and modified by name as well as by position. Thus</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>w</span></code></pre></div>
+<pre><code>##   a   b   c 
+## 4.0 5.5 8.8</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>w[<span class="st">&quot;a&quot;</span>]</span></code></pre></div>
+<pre><code>## a 
+## 4</code></pre>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>w[<span class="fu">c</span>(<span class="st">&quot;c&quot;</span>,<span class="st">&quot;b&quot;</span>)]</span></code></pre></div>
+<pre><code>##   c   b 
+## 8.8 5.5</code></pre>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>w[<span class="st">&quot;b&quot;</span>] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>w</span></code></pre></div>
+<pre><code>##   a   b   c 
+## 4.0 0.0 8.8</code></pre>
+<p>ou may be wondering if vectors in <strong>R</strong> are row vectors or column vectors (if you don’t know what those are, don’t worry). The answer is “both and neither”. Vectors are printed out as row vectors, but if you use a vector in an operation that succeeds or fails depending on the vector’s orientation, <strong>R</strong> will assume that you want the operation to succeed and will proceed as if the vector has the necessary orientation. For example, <strong>R</strong> will let you add a vector of length 5 to a <span class="math inline">\(5 \times 1\)</span> matrix or to a <span class="math inline">\(1 \times 5\)</span> matrix, in either case yielding a matrix of the same dimensions.</p>
+</div>
+<div id="logical-operations" class="section level3">
+<h3>Logical operations</h3>
+<p>Some operations return a logical value (i.e., <code>TRUE</code> or <code>FALSE</code>). For example, try:</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span>; b <span class="ot">&lt;-</span> <span class="dv">3</span>; </span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> a <span class="sc">&lt;</span> b</span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> (a <span class="sc">&gt;</span> b)</span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>c; d</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<p>The parentheses around <code>a &gt; b</code> above are optional but do make the code easier to read. Be careful when you make comparisons with negative values: <code>a&lt;-1</code> may surprise you by setting <code>a</code> to 1, because <code>&lt;-</code> is the assignment operator in <strong>R</strong>. Use <code>a&lt; -1</code> or <code>a&lt;(-1)</code> to make this comparison.</p>
+<hr />
+<table>
+<caption>Some comparison operators in <strong>R</strong>. Use <code>?Comparison</code> to learn more.</caption>
+<thead>
+<tr class="header">
+<th><strong>R</strong> code</th>
+<th>comparison</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>x &lt; y</code></td>
+<td><span class="math inline">\(x\)</span> strictly less than <span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="even">
+<td><code>x &gt; y</code></td>
+<td><span class="math inline">\(x\)</span> strictly greater than <span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>x &lt;= y</code></td>
+<td><span class="math inline">\(x\)</span> less than or equal to <span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="even">
+<td><code>x &gt;= y</code></td>
+<td><span class="math inline">\(x\)</span> greater than or equal to <span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>x == y</code></td>
+<td><span class="math inline">\(x\)</span> equal to <span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="even">
+<td><code>x != y</code></td>
+<td><span class="math inline">\(x\)</span> <em>not</em> equal to <span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>identical(x,y)</code></td>
+<td><span class="math inline">\(x\)</span> completely identical to <span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="even">
+<td><code>all.equal(x,y)</code></td>
+<td><span class="math inline">\(x\)</span> pretty much equal to <span class="math inline">\(y\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>When we compare two vectors or matrices, comparisons are done element-by-element (and the recycling rule applies). For example,</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>; b <span class="ot">&lt;-</span> (x<span class="sc">&lt;=</span><span class="dv">3</span>); b</span></code></pre></div>
+<pre><code>## [1]  TRUE  TRUE  TRUE FALSE FALSE</code></pre>
+<p>So if <code>x</code> and <code>y</code> are vectors, then <code>(x==y)</code> will return a vector of values giving the element-by-element comparisons. If you want to know whether <code>x</code> and <code>y</code> are identical vectors, use <code>identical(x,y)</code> or <code>all.equal(x,y)</code>. You can use <code>?Logical</code> to read more about logical operations. <strong>Note the difference between = and ==.</strong> <strong>Can you figure out what happened in the following cautionary tale?</strong></p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>a<span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>b<span class="ot">=</span><span class="dv">2</span><span class="sc">:</span><span class="dv">4</span></span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>a<span class="sc">==</span>b</span></code></pre></div>
+<pre><code>## [1] FALSE FALSE FALSE</code></pre>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>a<span class="ot">=</span>b</span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>a<span class="sc">==</span>b</span></code></pre></div>
+<pre><code>## [1] TRUE TRUE TRUE</code></pre>
+<p><strong>R</strong> can also do arithmetic on logical values, treating <code>TRUE</code> as 1 and <code>FALSE</code> as 0. So <code>sum(x&lt;3)</code> returns the value 2, telling us that two entries of <code>x</code> satisfied the condition (<code>x&lt;3</code>). This is useful for counting the number of elements of a vector that satisfy a given condition.</p>
+<p>More complicated conditions are built by using <strong>logical operators</strong> to combine comparisons. The most important of these are tabulated here.</p>
+<hr />
+<table>
+<caption>Logical operators.</caption>
+<thead>
+<tr class="header">
+<th>operator</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>!</code></td>
+<td>logical NOT</td>
+</tr>
+<tr class="even">
+<td><code>&amp;</code></td>
+<td>logical AND, elementwise</td>
+</tr>
+<tr class="odd">
+<td><code>&amp;&amp;</code></td>
+<td>logical AND, first element only</td>
+</tr>
+<tr class="even">
+<td><code>|</code></td>
+<td>logical OR, elementwise</td>
+</tr>
+<tr class="odd">
+<td><code>||</code></td>
+<td>logical OR, first element only</td>
+</tr>
+<tr class="even">
+<td><code>xor(x,y)</code></td>
+<td>exclusive OR, elementwise</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>For example, try</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">5</span>)</span>
+<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a>(a<span class="sc">&lt;</span>b) <span class="sc">|</span> (a<span class="sc">&gt;</span><span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] FALSE FALSE  TRUE  TRUE</code></pre>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>(a<span class="sc">&lt;</span>b) <span class="sc">||</span> (a<span class="sc">&gt;</span><span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<p>and make sure you understand what happened.</p>
+<p>The two forms of logical OR (<code>|</code>and <code>||</code>) are <em>inclusive</em>, meaning that <code>x|y</code> is true if either <code>x</code> or <code>y</code> or both are true. Use <code>xor</code> when exclusive OR is needed. The two forms of AND and OR differ in how they handle vectors. The shorter one (<code>|</code>, <code>&amp;</code>) does element-by-element comparisons; the longer one (<code>||</code>, <code>&amp;&amp;</code>) looks only at the first element in each vector.</p>
+</div>
+<div id="more-on-vector-indexing" class="section level3">
+<h3>More on vector indexing</h3>
+<p>We can also use <em>logical</em> vectors (lists of <code>TRUE</code> and <code>FALSE</code> values) to pick elements out of vectors. This is useful, for example, in subsetting data.</p>
+<p>As a simple example, we might want to focus on just the low-light values of <span class="math inline">\(r_{\text{max}}\)</span> in the <em>Chlorella</em> example:</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>lowLight <span class="ot">&lt;-</span> Light[Light<span class="sc">&lt;</span><span class="dv">50</span>]</span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a>lowLightrmax <span class="ot">&lt;-</span> rmax[Light<span class="sc">&lt;</span><span class="dv">50</span>]</span>
+<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a>lowLight</span></code></pre></div>
+<pre><code>## [1] 20 20 20 20 21 24 44</code></pre>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>lowLightrmax</span></code></pre></div>
+<pre><code>## [1] 1.73 1.65 2.02 1.89 2.61 1.36 2.37</code></pre>
+<p>What is really happening here (think about it for a minute) is that <code>Light&lt;50</code> generates a logical vector the same length as <code>Light</code> (<code>TRUE TRUE TRUE ...</code>) which is then used to select the appropriate values.</p>
+<p>If you want the positions at which <code>Light</code> is lower than 50, you can use <code>which</code>: <code>which(Light&lt;50)</code>. If you wanted the position at which the maximum value of <code>Light</code> occurs, you could say <code>which(Light==max(Light))</code> or <code>which.max(Light)</code>. Note that, if <code>Light</code> has several elements that are maximal, the first will return the positions of them all, while the second will return the position only of the <em>first</em> one.</p>
+</div>
+</div>
+<div id="matrices-and-arrays" class="section level2">
+<h2>Matrices and arrays</h2>
+<div id="creating-matrices" class="section level3">
+<h3>Creating matrices</h3>
+<p>A matrix is a two-dimensional array of items. Most straightforwardly, we can create a matrix by specifying the number of rows and columns, and specifying the entries. For example</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>),<span class="at">nrow=</span><span class="dv">2</span>,<span class="at">ncol=</span><span class="dv">3</span>); X</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6</code></pre>
+<p>takes the values 1 to 6 and reshapes them into a 2 by 3 matrix. Note that the values in the data vector are put into the matrix <em>column-wise</em>, by default. You can change this by using the optional parameter <code>byrow</code>:</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,<span class="at">nrow=</span><span class="dv">3</span>,<span class="at">ncol=</span><span class="dv">3</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>); A</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+## [3,]    7    8    9</code></pre>
+<p><strong>R</strong> will re-cycle through entries in the data vector, if need be, to fill a matrix of the specified size. So for example</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="dv">1</span>,<span class="at">nrow=</span><span class="dv">50</span>,<span class="at">ncol=</span><span class="dv">50</span>)</span></code></pre></div>
+<p>creates a <span class="math inline">\(50{\times}50\)</span> matrix, every entry of which is <span class="math inline">\(1\)</span>.</p>
+<p><strong>R</strong> will also cause a matrix to behave like a vector whenever it makes sense: for example <code>sum(X)</code> above is 21.</p>
+<p>Another useful function for creating matrices is <code>diag</code>. <code>diag(v,n)</code> creates an <span class="math inline">\(n{\times}n\)</span> matrix with data vector <span class="math inline">\(v\)</span> on its diagonal. So for example <code>diag(1,5)</code> creates the <span class="math inline">\(5{\times}5\)</span> <em>identity matrix</em>, which has 1s on the diagonal and 0 everywhere else.</p>
+<p>Finally, one can use the <code>data.entry</code> function. This function can only edit existing matrices, but for example (try this now!)</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
+<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data.entry</span>(A)</span></code></pre></div>
+<p>will create <code>A</code> as a <span class="math inline">\(3{\times}4\)</span> matrix, and then call up a spreadsheet-like interface in which the values can be edited directly. You can further modify <code>A</code> with the same primitive interface, using <code>fix</code>.</p>
+<hr />
+<table>
+<caption>Some important functions for creating and working with matrices.</caption>
+<colgroup>
+<col width="36%" />
+<col width="63%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>R</strong> code</th>
+<th>purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>matrix(v,nrow=m,ncol=n)</code></td>
+<td><span class="math inline">\(m \times n\)</span> matrix using the values in <code>v</code></td>
+</tr>
+<tr class="even">
+<td><code>t(A)</code></td>
+<td>transpose (exchange rows and columns) of matrix <code>A</code></td>
+</tr>
+<tr class="odd">
+<td><code>dim(X)</code></td>
+<td>dimensions of matrix X. <code>dim(X)[1]</code>=# rows, <code>dim(X)[2]</code>=# columns</td>
+</tr>
+<tr class="even">
+<td><code>data.entry(A)</code></td>
+<td>call up a spreadsheet-like interface to edit the values in <code>A</code></td>
+</tr>
+<tr class="odd">
+<td><code>diag(v,n)</code></td>
+<td>diagonal <span class="math inline">\(n \times n\)</span> matrix with <span class="math inline">\(v\)</span> on diagonal, 0 elsewhere (<code>v</code> is 1 by default, so <code>diag(n)</code> gives an <span class="math inline">\(n \times n\)</span> identity matrix)</td>
+</tr>
+<tr class="even">
+<td><code>cbind(a,b,c,...)</code></td>
+<td>combine compatible objects by attaching them along columns</td>
+</tr>
+<tr class="odd">
+<td><code>rbind(a,b,c,...)</code></td>
+<td>combine compatible objects by attaching them along rows</td>
+</tr>
+<tr class="even">
+<td><code>as.matrix(x)</code></td>
+<td>convert an object of some other type to a matrix, if possible</td>
+</tr>
+<tr class="odd">
+<td><code>outer(v,w)</code></td>
+<td>“outer product” of vectors <code>v</code>, <code>w</code>: the matrix whose <span class="math inline">\((i,j)\)</span>-th element is <code>v[i]*w[j]</code></td>
+</tr>
+</tbody>
+</table>
+<p>Many of these functions have additional optional arguments; use the help system for full details.</p>
+<hr />
+</div>
+<div id="cbind-and-rbind" class="section level3">
+<h3><code>cbind</code> and <code>rbind</code></h3>
+<p>If their sizes match, vectors can be combined to form matrices, and matrices can be combined with vectors or matrices to form other matrices. The functions that do this are <code>cbind</code> and <code>rbind</code>.</p>
+<p><code>cbind</code> binds together columns of two objects. One thing it can do is put vectors together to form a matrix:</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>C <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>,<span class="dv">5</span><span class="sc">:</span><span class="dv">7</span>); C</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    4    5
+## [2,]    2    5    6
+## [3,]    3    6    7</code></pre>
+<p>Remember that <strong>R</strong> interprets vectors as row or column vectors according to what you’re doing with them. Here it treats them as column vectors so that columns exist to be bound together. On the other hand,</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fu">rbind</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>); D</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6</code></pre>
+<p>treats them as rows. Now we have two matrices that can be combined.</p>
+<hr />
+</div>
+</div>
+<div id="matrix-indexing" class="section level2">
+<h2>Matrix indexing</h2>
+<p>Matrix indexing is like vector indexing except that you have to specify both the row and column, or range of rows and columns. For example <code>z &lt;- A[2,3]</code> sets <code>z</code> equal to 6, which is the (2<sup>nd</sup> row, 3<sup>rd</sup> column) entry of the matrix <strong>A</strong> that you recently created, and</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>A[<span class="dv">2</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>]; </span></code></pre></div>
+<pre><code>## [1] 5 6</code></pre>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> A[<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]; B</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    4    5
+## [2,]    7    8</code></pre>
+<p>There is an easy shortcut to extract entire rows or columns: leave out the limits, leaving a blank before or after the comma.</p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a>first.row <span class="ot">&lt;-</span> A[<span class="dv">1</span>,]; first.row</span></code></pre></div>
+<pre><code>## [1] 1 2 3</code></pre>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a>second.column <span class="ot">&lt;-</span> A[,<span class="dv">2</span>]; second.column;</span></code></pre></div>
+<pre><code>## [1] 2 5 8</code></pre>
+<p>(What does <code>A[,]</code> do?)</p>
+<p>As with vectors, indexing also works in reverse for assigning values to matrix entries. For example,</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a>A[<span class="dv">1</span>,<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">12</span>; A</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]   12    2    3
+## [2,]    4    5    6
+## [3,]    7    8    9</code></pre>
+<p>The same can be done with blocks, rows, or columns, for example</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a>A[<span class="dv">1</span>,] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>); A</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    2    4    5
+## [2,]    4    5    6
+## [3,]    7    8    9</code></pre>
+<p>If you use <code>which()</code> on a matrix, <strong>R</strong> will normally treat the matrix as a vector—so for example <code>which(A==8)</code> will give the answer 6 (can you see why?). However, <code>which()</code> does have an option that will treat its argument as a matrix:</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(A<span class="sc">&gt;=</span><span class="dv">8</span>,<span class="at">arr.ind=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>##      row col
+## [1,]   3   2
+## [2,]   3   3</code></pre>
+</div>
+<div id="arrays" class="section level2">
+<h2>Arrays</h2>
+<p>The generalization of the matrix to more (or less) than 2 dimensions is the array. In fact, in <strong>R</strong> , a matrix is nothing other than a 2-dimensional array. How does <strong>R</strong> store arrays? In the simplest possible way: an array is just a vector plus information on the dimensions of the array. Most straightforwardly, we can create an array from a vector:</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">24</span>,<span class="at">dim=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">2</span>)); X</span></code></pre></div>
+<pre><code>## , , 1
+## 
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    4    7   10
+## [2,]    2    5    8   11
+## [3,]    3    6    9   12
+## 
+## , , 2
+## 
+##      [,1] [,2] [,3] [,4]
+## [1,]   13   16   19   22
+## [2,]   14   17   20   23
+## [3,]   15   18   21   24</code></pre>
+<p>Note, again, that the arrays are filled in a particular order: the first dimension first, then the second, and so on. A one-dimensional array is subtly different from a vector:</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>; y</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,<span class="at">dim=</span><span class="dv">5</span>); z</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a>y<span class="sc">==</span>z</span></code></pre></div>
+<pre><code>## [1] TRUE TRUE TRUE TRUE TRUE</code></pre>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">identical</span>(y,z)</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(y); <span class="fu">dim</span>(z)</span></code></pre></div>
+<pre><code>## NULL</code></pre>
+<pre><code>## [1] 5</code></pre>
+</div>
+<div id="factors" class="section level2">
+<h2>Factors</h2>
+<p>For dealing with measurements on the nominal and ordinal scales <span class="citation">[@Stevens1946]</span>, <strong>R</strong> provides vectors of type <em>factor</em>. A factor is a variable that can take one of a finite number of distinct <em>levels</em>. To construct a factor, we can apply the <code>factor</code> function to a vector of any class:</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">each=</span><span class="dv">3</span>); <span class="fu">factor</span>(x)</span></code></pre></div>
+<pre><code>## [1] 1 1 1 2 2 2
+## Levels: 1 2</code></pre>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a>trochee <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;jetpack&quot;</span>,<span class="st">&quot;ferret&quot;</span>,<span class="st">&quot;pizza&quot;</span>,<span class="st">&quot;lawyer&quot;</span>)</span>
+<span id="cb135-2"><a href="#cb135-2" aria-hidden="true" tabindex="-1"></a>trochee <span class="ot">&lt;-</span> <span class="fu">factor</span>(trochee); trochee</span></code></pre></div>
+<pre><code>## [1] jetpack ferret  pizza   lawyer 
+## Levels: ferret jetpack lawyer pizza</code></pre>
+<p>By default, <code>factor</code> sets the levels to the unique set of values taken by the vector. To modify that behavior, there is the <code>levels</code> argument:</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fu">factor</span>(trochee,<span class="at">levels=</span><span class="fu">c</span>(<span class="st">&quot;ferret&quot;</span>,<span class="st">&quot;pizza&quot;</span>,<span class="st">&quot;cowboy&quot;</span>,<span class="st">&quot;scrapple&quot;</span>))</span></code></pre></div>
+<pre><code>## [1] &lt;NA&gt;   ferret pizza  &lt;NA&gt;  
+## Levels: ferret pizza cowboy scrapple</code></pre>
+<p>Note that the order of the levels is arbitrary, in keeping with the fact that the only operation permissible on the nominal scale is the test for equality. In particular, the factors created with the <code>factor</code> command are un-ordered: there is no sense in which we can ask whether, e.g., <code>ferret &lt; cowboy</code>.</p>
+<p>To represent variables measured on the ordinal scale, <strong>R</strong> provides <em>ordered factors</em>, constructed via the <code>ordered</code> function. An ordered factor is just like an un-ordered factor except that the order of the levels matters:</p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">ordered</span>(<span class="fu">sample</span>(<span class="at">x=</span>letters,<span class="at">size=</span><span class="dv">22</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)); x</span></code></pre></div>
+<pre><code>##  [1] z m u p a g c d b n x d g n w l c t z p b x
+## Levels: a &lt; b &lt; c &lt; d &lt; g &lt; l &lt; m &lt; n &lt; p &lt; t &lt; u &lt; w &lt; x &lt; z</code></pre>
+<p>Here, we’ve relied on <code>ordered</code>’s default behavior, which is to put the levels in alphabetical order. It’s typically safer to specify explicitly what order we want:</p>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">ordered</span>(x,<span class="at">levels=</span><span class="fu">rev</span>(letters))</span>
+<span id="cb141-2"><a href="#cb141-2" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>] <span class="sc">&lt;</span> x[<span class="dv">18</span><span class="sc">:</span><span class="dv">22</span>]</span></code></pre></div>
+<pre><code>## [1]  TRUE FALSE  TRUE  TRUE FALSE</code></pre>
+<hr />
+</div>
 </div>
 
 
