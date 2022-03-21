@@ -142,7 +142,7 @@ str(data)
 ##  $ title       : chr "Umro bivši austrijski potkancelar i prijatelja Hrvatske dr. Erhard Busek"
 ##  $ date        : chr "14. ožujka 2022. 16:48"
 ##  $ noComment   : num 0
-##  $ views       : num 959
+##  $ views       : num 961
 ##  $ articleLabel: logi NA
 ##  $ articleLabel: logi NA
 ##  $ author      : chr "Snježana Herek"
@@ -163,7 +163,15 @@ data$views
 ```
 
 ```
-## [1] 959
+## [1] 961
+```
+
+```r
+data$author
+```
+
+```
+## [1] "Snježana Herek"
 ```
 
 ```r
@@ -174,7 +182,7 @@ nchar(data$articletext)
 ## [1] 5148
 ```
 
-- we would want to automati this approach and apply it to multiple articles 
+- normally we want to automate this approach and apply it to multiple articles 
 - let`s first find a couple of more interesting articles: [I](https://www.vecernji.hr/vijesti/glavni-tajnik-un-a-nuklearni-sukob-ponovno-izgleda-moguc-1570823),
 [II](https://www.vecernji.hr/vijesti/sto-je-clanak-5-nato-a-aktiviran-je-samo-jednom-a-ne-moze-se-primijeniti-na-ukrajinu-1570810), [III](https://www.vecernji.hr/vijesti/kotromanovic-ako-je-bila-rijec-o-naoruzanom-dronu-napad-je-to-na-clanicu-nato-a-1570731)
 
@@ -199,7 +207,16 @@ urls
 ## [5] "https://www.vecernji.hr/vijesti/kotromanovic-ako-je-bila-rijec-o-naoruzanom-dronu-napad-je-to-na-clanicu-nato-a-1570731"
 ```
 
-- lets automate this procedure for multiple articles now and check the data
+```r
+# check
+str(urls)
+```
+
+```
+##  chr [1:5] "https://www.vecernji.hr/vijesti/umro-bivsi-austrijski-potkancelar-i-prijatelja-hrvatske-dr-erhard-busek-1570780" ...
+```
+
+- let`s automate this procedure for multiple articles now and check the data
 
 
 ```r
@@ -207,7 +224,7 @@ urls
 pages <- lapply(urls,html_session)
 # grab all article parts
 multipleArticles <- lapply(pages, parseArticle)
-#make data.frame
+# make data.frame
 dataArticles <- do.call(rbind, multipleArticles)
 # check the data
 dim(dataArticles)
@@ -227,7 +244,7 @@ glimpse(dataArticles)
 ## $ title        <chr> "Umro bivši austrijski potkancelar i prijatelja Hrvatske ~
 ## $ date         <chr> "14. ožujka 2022. 16:48", "14. ožujka 2022. 23:03", "14. ~
 ## $ noComment    <dbl> 0, 107, 107, 8, 19, 132, 132
-## $ views        <dbl> 959, 90294, 90294, 3039, 7624, 74506, 74506
+## $ views        <dbl> 961, 90309, 90309, 3039, 7627, 74508, 74508
 ## $ articleLabel <lgl> NA, NA, NA, NA, NA, NA, NA
 ## $ articleLabel <lgl> NA, NA, NA, NA, NA, NA, NA
 ## $ author       <chr> "Snježana Herek", "Vecernji.hr", "Hina", "Hina", "Vecernj~
@@ -254,7 +271,7 @@ dataArticles$views
 ```
 
 ```
-## [1]   959 90294 90294  3039  7624 74506 74506
+## [1]   961 90309 90309  3039  7627 74508 74508
 ```
 
 ```r
@@ -272,7 +289,7 @@ nchar(dataArticles$articletext)
 
 
 ```r
-# this is a private infor
+# this is a private info
 source(here::here("Creds/api.R"))
 # identify from your Mediatoolkit App
 groups <- "182718"
@@ -307,7 +324,7 @@ API_request
 
 ```
 ## Response [https://api.mediatoolkit.com/organizations/126686/groups/182718/keywords/6521533/mentions?access_token=ddms5s0l3gejlz2z42ydt0bnwmf6ssqd62bdxteu7t8sumv5ii&from_time=1647126000&to_time=1647212400&count=3000&sort=time&type=all&offset=0&ids_only=false]
-##   Date: 2022-03-17 07:14
+##   Date: 2022-03-17 08:04
 ##   Status: 200
 ##   Content-Type: application/json;charset=utf-8
 ##   Size: 3.8 MB
@@ -397,7 +414,7 @@ glimpse(data)
 ```
 
 ```r
-# check if there are articles from Večernji list
+# basic descriptives (again)
 data %>% 
   group_by(response.type) %>%
   count %>%
@@ -419,6 +436,7 @@ data %>%
 ```
 
 ```r
+# check if there are articles from Večernji list
 data %>%
   filter(response.from == "vecernji.hr") %>%
   select(title = response.title,
@@ -470,6 +488,7 @@ data %>%
 ```
 
 ```r
+# check title
 data %>% 
   slice(1) %>% 
   select(title = response.title)
@@ -481,6 +500,7 @@ data %>%
 ```
 
 ```r
+# check mention
 data %>% 
   slice(1) %>%
   select(text = response.mention)
@@ -492,6 +512,7 @@ data %>%
 ```
 
 ```r
+# check url
 data %>% 
   slice(1) %>%
   select(url = response.url)
@@ -504,16 +525,19 @@ data %>%
 
 
 
-## STORING DATA
+# STORING DATA
 
-## MANIPULATING DATA
+# MANIPULATING DATA
 
-#### TIDY WAY
+
 
 - in R there are three major ways to manipulate data: [base](https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf), [tidyverse](https://www.tidyverse.org/), [data.table](https://www.machinelearningplus.com/data-manipulation/datatable-in-r-complete-guide/)
 - you can also combine them together
 - we are going to explore and use tidywerse and data.table syntax in this course
-- let`s check some important syntax
+
+#### TIDY WAY
+
+- let`s check some important functions
 - check this famous [paper](https://vita.had.co.nz/papers/tidy-data.pdf) (Hadley Wickham, 2014 JSS) to motivate the tidyverse way and check [tidyverse](https://www.tidyverse.org/) ecosystem
 - basic dplyr (tidyverse) syntax includes the following:
 
@@ -773,7 +797,7 @@ data %>%
 
 #### DATA.TABLE WAY
 
--advantages of data.table include:
+- advantages of data.table include:
 
 1. Concise syntax
 
@@ -901,7 +925,7 @@ toc()
 ```
 
 ```r
-# READ IN FULL SAMPLE
+# READ IN FULL MEDIATOOLKIT DATA SAMPLE
 path <- "D:/LUKA/Freelance/Mediatoolkit/FULLDATA"
 raw <- list.files(path = path , pattern="xlsx")
 raw_path <- paste0(path, "/", raw)
@@ -949,42 +973,12 @@ Measuring memory efficiency is relatively complicated [thing](https://stackoverf
 
 4. Lots of possibilities, stability and 5. Low dependancy
 
-These elements are mutually related. Dependancy is related [to](http://www.tinyverse.org/):
-
-
-
-```r
-tools::package_dependencies("dplyr", recursive = TRUE)[[1]]
-```
-
-
-
-
-```r
-tools::package_dependencies("data.table", recursive = TRUE)[[1]]
-```
-```
-## [1] "methods"
-```
-
-- data.table has typical syntax:
-
-.center[
-.large2[DT[<span style='color: #66C2A5;'>i</span>, <span style='color: #FC8D62;'>j</span>, <span style='color: #8DA0CB;'>by</span>]]
-]
-
-![:col_row <span style='color: #66C2A5;'>What rows?</span>, <span style='color: #FC8D62;'>What to do?</span>, <span style='color: #8DA0CB;'>Group by...</span>]
-
-
-
-.center[dplyr "equivalents":]
-![:col_list <span style='color: #66C2A5;'>filter(); slice(); arrange()</span>, <span style='color: #FC8D62;'>select(); mutate()</span>, <span style='color: #8DA0CB;'>group_by()</span>]
 
 
 - tidyverse works step by step and data.table does it in one step
 - one operation is one flid thought
 - chaining in DT is also possible
-- let`check some of these possibilities
+- let`try some of these possibilities
 
 
 ```r
@@ -1032,7 +1026,7 @@ allDT[SOURCE_TYPE == "web" & FROM == "vecernji.hr",
 ## 32406:             0
 ```
 
-- let`s see how changing columns looks look like
+- changing columns looks like this
 
 
 ```r
@@ -1132,18 +1126,15 @@ allDT[,.(AwerageNoArticles = .N), by = SOURCE_TYPE][order(-AwerageNoArticles)]
 ```
 
 
-## ANALYTICS
+# ANALYTICS
 
 - we will cover that in three following lectures
 - methods used are statistical analysis, machine learning and textutal analysis
 
-## REPORTING
+# REPORTING
 
 - the [example](https://raw.githack.com/lusiki/WebObradaPodataka/main/XtraPredavanja/AparatiZaKavu/Prez.html) of (almost) production ready .Rmd report
 
-# CONNCLUDING POINTS
-
-- 
 
 
 
