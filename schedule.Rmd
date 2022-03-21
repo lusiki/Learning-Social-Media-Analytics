@@ -67,12 +67,26 @@ title: " "
 
 ### Lecture 04: R syntax refresher 
 
--
--  
-- 
+- What is R
+- Interactive calculations 
+- The help system
+- Interactive session
+- Statistics 
+- The package system
+- Data structures in R
+- Probability distributions
+- Scripts and data files
+- Looping
+- Functtions and environments
+- `apply` functions
+- Vectorized functions vs loops
 
 
-**Format predavanja:** [.html]()) | [.Rmd]() 
+
+
+
+
+**Format predavanja:** [.html](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/lectures/Regular%20Classes/Lecture-4-R-syntax--refresher-.html) | [.Rmd](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/lectures/Regular%20Classes/Lecture%204%20R%20syntax%20(refresher).Rmd) 
 <br>
 **Čitanje:** []() + []()
 <br>
