@@ -425,7 +425,7 @@ vcov(fit)
 anova(fit)
 ```
 
-# Statistics in **R** 
+# STATISTICS **R** 
 
 Some of the important functions and packages (collections of functions) for statistical modeling and data analysis are summarized in following table.
 Functions are named in `fixed-width font` and packages in **bold face**.
@@ -939,6 +939,7 @@ An ordered factor is just like an un-ordered factor except that the order of the
 ```{r echo=F}
 set.seed(349585885L)
 ``` 
+
 ```{r }
 x <- ordered(sample(x=letters,size=22,replace=TRUE)); x
 ``` 
@@ -950,5 +951,743 @@ x[1:5] < x[18:22]
 ``` 
 
 ----------------------------
+
+
+## Lists
+
+While vectors and matrices may seem familiar, lists may be new to you.
+Vectors and matrices have to contain elements that are all the same type: 
+lists in **R** can contain anything---vectors, matrices, other lists, arbitrary objects.
+Indexing is a little different too:
+use `[[ ]]` to extract an element of a list by number or name or `$` to extract an element by name (only).
+Given a list like this:
+```{r }
+L <- list(A=x,B=trochee,C=c("a","b","c"))
+``` 
+Then `L$A`, `L[["A"]]`, and `L[[1]]` will each return the first element of the list.
+To extract a sublist, use the ordinary single square brackets: `[]`:
+```{r }
+L[c("B","C")]
+``` 
+
+
+## Data frames
+
+Vectors, matrices, and lists of one sort or another are found in just about every programming language.
+The *data frame* structure is (or was last time I checked) unique to **R** , and is central to many of **R** 's useful data-analysis features.
+It's very natural to want to store data in vectors and matrices.
+Thus, in the example above, we stored measurements of two variables ($r_\text{max}$ and light level) in vectors.
+This was done in such a way that the observations of the first replicate were stored in the first element of each vector, the second in the second, and so on.
+To explicitly bind together observations corresponding to the same replicate, we might join the two vectors into a matrix using `cbind`.
+In the resulting data structure, each row would correspond to an observation, each column to a variable.
+This is possible, however, only because both variables are of the same type: they're both numerical.
+More commonly, a data set is made up of several different kinds of variables.
+The data frame is **R** 's solution to this problem.
+
+Data frames are a hybrid of lists and vectors.
+Internally, they are a list of vectors which can be of different types but must all be the same length.
+However, they behave somewhat like matrices, in that you can do most things to them that you can do with matrices.
+You can index them either the way you would index a list, using `[[ ]]` or `$`---where each variable is a different item in the list---or the way you would index a matrix.  
+You can turn a data frame into a matrix (using `as.matrix()`, but only if all variables are of the same class) and a matrix into a data frame (using `as.data.frame()`).
+
+When data are read into **R** from an external file using one of the `read.xxx` commands (`read.csv`, `read.table`, `read.xls`, etc.), the object that is created is a data frame.
+```{r }
+data.url <- "http://kingaa.github.io/R_Tutorial/ChlorellaGrowth.csv"
+dat <- read.csv(data.url,comment.char='#')
+dat
+``` 
+
+# PROBABILITY DISTRIBUTIONS
+
+**R** contains a great deal of distilled knowledge about probability distributions.
+In particular, for each of a large class of important distributions, methods to compute probability distribution functions (p.d.f., i.e., density or mass functions), cumulative distribution functions (c.d.f.), and quantile functions are available, as are methods for simulating these distributions (i.e., drawing random deviates with the desired distribution).
+Conveniently, these are all named using the same scheme, as shown in the following table.
+
+----------------------------
+
+&nbsp;   | &nbsp;
+-------------------|----------------------------------
+`dxxx(x, ...)` | probability distribution function
+`pxxx(q, ...)` | cumulative distribution function
+`qxxx(p, ...)` | quantile function (i.e., inverse of `pxxx`)
+`rxxx(n, ...)` | simulator
+
+Table: Functions for working with probability distributions.
+
+In the above `xxx` stands for the abbreviated name of the specific distribution (the "**R** name" as given in following table).
+In each case, the `...` indicates that additional, distribution-specific, parameters are to be supplied.
+The following table lists some of the more common distributions built in to **R**.
+A complete list of distributions provided by the base **stats** package can be viewed by executing `?Distributions`.
+
+----------------------------
+
+Distribution | **R** name | Parameters | Range
+-------------|------------|------------|---------
+Discrete distributions|||
+Binomial | `binom` | size, prob | $0,1,\dots,\mathrm{size}$
+Bernoulli | `binom` (`size=1`) | prob | $0,1$
+Poisson | `pois` | lambda | $0,1,\dots,\infty$
+Negative binomial | `nbinom` | size, (prob or mu) | $0,1,\dots,\infty$
+Geometric | `geom` | rate | $0,1,\dots,\infty$
+Hypergeometric | `hyper` | m, n, k | $0,1,\dots,m$
+Multinomial | `multinom` | size, prob | $\{(x_1,\dots,x_m): \sum\!x_i=\mathrm{size}\}$
+Continuous distributions | &nbsp; | &nbsp; | &nbsp;
+Uniform | `unif` | min, max | $[\mathrm{min},\mathrm{max}]$
+Normal | `norm` | mean, sd | $(-\infty,\infty)$
+Gamma | `gamma` | shape, (scale or rate) | $[0,\infty)$
+Exponential | `exp` | mu | $[0,\infty)$
+Beta | `beta` | shape1, shape2 | $[0,1]$
+Lognormal | `lnorm` | meanlog, sdlog | $[0,\infty)$
+Cauchy | `cauchy` | location, scale | $(\infty,\infty)$
+$\chi^2$ | `chisq` | df | $[0,\infty)$
+Student's T | `t` | df | $[0,\infty)$
+Weibull | `weibull` | shape, scale | $[0,\infty)$
+
+Table: The most commonly used built-in probability distributions.
+
+For complete documentation, execute e.g., `?dbinom` in an **R** session.
+
+
+# SCRIPTS AND DATA FILES
+
+Modeling and complicated data analysis are accomplished more efficiently using *scripts*, which are a series of  commands stored in a text file. 
+The Windows and MacOS versions of **R** both have basic script editors, but any text editor can be used, e.g. **emacs** (with ESS, "emacs speaks statistics").
+You **should never** use MS Word or other word processors!
+
+Most programs for working with models or analyzing data follow a simple pattern of program parts:
+
+1. Setup statements.
+2. Data input.
+3. Computations on the data.
+4. Output text and/or graphics.
+
+For example, a script file might
+
+1. Load some packages, or "source" another script file that creates some functions (more on functions later). 
+2. Read in data from a text file.
+3. Fit several statistical models to the data and compare them.
+4. Plot the results and save them to disk for inclusion in a paper. 
+
+Even for relatively simple tasks, script files are useful for building up a calculation step-by-step, making sure that each part works before adding on to it.
+They are also **essential** for making research reproducible.
+
+Tips for working with data and script files (sounding slightly scary but just trying to help you avoid common pitfalls):
+
+- To let **R** know where data and script files are located, you have a few choices:
+	(1) change your working directory to wherever the file(s) are located before running **R**.
+	(2) change your working directory within an **R** session to wherever the file(s) are located using the `setwd()` (**set** **w**orking **d**irectory) function, e.g. `setwd("c:/temp")`.
+	(3) spell out the path to the file explicitly.  
+
+The first option is far preferable, since it makes your codes portable:
+you can copy the whole directory wherever you like and **R** will always find what it needs.
+
+- Use a single forward slash to separate folders (e.g., `"c:/My~Documents/R/script.R"` or `"/home/kingaa/projects/hurricanes"`): this works on all platforms.
+
+- It's important that script files be preserved as *plain text* and data files also as plain text, using comma- or tab-separated format.
+
+There are several common situations that lead to files saved in bad formats:
+
+(1) if you use a web browser to download files, be careful that it doesn't automatically append some weird suffix to the files or translate them into something other than plain text.
+(2) if your web browser uses "file associations" (e.g., it thinks that all files ending in `.dat` are Excel files), make sure to save the file as plain text, and without any extra extensions; 
+(3) **never use Microsoft Word or other word-processors to edit your data and script files**; 
+MS Word will try very hard to get you to save them as Word (rather than text) files, which will screw them up!
+
+(4) If you send script files by e-mail, even if you are careful to send them as plain text, lines will occasionally get broken in different places, which can lead to confusion.
+Beware.
+
+As a first example, the file `Intro1.R` has the commands from the interactive regression analysis. 
+Download `Intro1.R` and save it to your computer:
+
+```{r }
+course.url <- "http://kingaa.github.io/R_Tutorial/"
+download.file(paste0(course.url,"Intro1.R"),destfile="Intro1.R",mode="w")
+``` 
+Open **your copy** of `Intro1.R`. 
+In your editor, select and Copy the entire text of the file, and then Paste the text into the **R** console window. 
+This has the same effect as entering the commands by hand into the console: they will be executed and so a graph is displayed with the results. 
+Cut-and-Paste allows you to execute script files one piece at a time (which is useful for finding and fixing errors). 
+The `source` function allows you to run an entire script file, e.g., 
+```{r eval=FALSE}
+source("Intro1.R")
+```
+
+Another important time-saver is loading data from a text file. 
+Grab copies of `Intro2.R` and `ChlorellaGrowth.csv` from the dropsite to see how this is done. 
+```{r}
+download.file(paste0(course.url,"Intro2.R"),destfile="Intro2.R",mode="w")
+download.file(paste0(course.url,"ChlorellaGrowth.csv"),destfile="ChlorellaGrowth.csv",mode="w")
+``` 
+In `ChlorellaGrowth.csv` the two variables are entered as columns of a data matrix. 
+Then instead of typing these in by hand, the command
+```{r}
+X <- read.csv("ChlorellaGrowth.csv",comment.char='#')
+```
+reads the file (from the current directory) and puts the data values into the variable `X`.
+**Note** that as specified above you need to make sure that **R** is looking for the data file in the right place:
+make sure to download the data file into your current working directory.
+Note also the `comment.char` option in the call to `read.csv`; 
+this tells **R** to ignore lines that begin with a `#` and allows us to use self-documenting data files (a very good practice).
+
+Extract the variables from `X` with the commands
+```{r}
+Light <- X[,1]
+rmax <- X[,2]
+``` 
+Think of these as shorthand for "`Light` = everything in column 1 of `X`", and "`rmax` = everything in column 2 of `X`" (we'll learn about working with data frames later).
+From there on out it's the same as before, with some additions that set the axis labels and add a title.
+
+-----------------------------
+
+# LOOPING IN **R** 
+
+Very frequently, a computation involves iterating some procedure across a range of cases, and every computer language I've ever come across has one or more facilities for producing such *loops*.
+**R** is no exception, though judging by their code, many **R** programmers look down their noses at loops.
+The fact remains that, at some point in life, one simply has to write a `for` loop.
+Here, we'll look at the looping constructs available in **R**.
+
+## `for` loops
+
+Execute the following code.
+```{r results='hide'}
+phi <- 1
+for (k in 1:100) {
+  phi <- 1+1/phi
+  print(c(k,phi))
+}
+``` 
+What does it do?
+Sequentially, for each value of `k` between 1 and 100, `phi` is modified.
+More specifically, at the beginning of the `for` loop, a vector containing all the integers from 1 to 100 in order is created.
+Then, `k` is set to the first element in that vector, i.e., 1.
+Then the **R** expression from the `{` to the `}` is evaluated.
+When that expression has been evaluated, `k` is set to the next value in the vector.
+The process is repeated until, at the last evaluation, `k` has value 100.
+
+As an aside, note that the final value of `phi` is the Golden Ratio, `r signif((sqrt(5)+1)/2,12)`.
+`r if (phi!=(sqrt(5)+1)/2) "LIE!!"`
+
+As an example of a situation where a loop of some sort is really needed, suppose we wish to iterate the Beverton-Holt map (one of the simplest discrete-time models of population growth),
+\begin{equation*}
+N_{t+1} = \frac{a\,N_t}{1+b\,N_t}.
+\end{equation*}
+We simply have no option but to do the calculation one step at a time.
+Here's an **R** code that does this
+```{r }
+a <- 1.1
+b <- 0.001
+T <- seq(from=1,to=200,by=1)
+N <- numeric(length(T))
+n <- 2
+for (t in T) {
+  n <- a*n/(1+b*n)
+  N[t] <- n
+}
+``` 
+Spend some time to make sure you understand what happens at each line of the above.
+We can plot the population sizes $N_t$ through time via
+```{r }
+plot(T,N)
+``` 
+
+##### Gotcha:
+An alternative way to do the above might be something like
+```{r }
+N <- numeric(length(T))
+for (t in 1:length(T)) {
+  n <- a*n/(1+b*n)
+  N[t] <- n
+}
+``` 
+
+-----------------------------
+
+
+## `while` loops
+
+A second looping construct is the `while` loop.
+Using `while`, we can compute the Golden Ratio as before:
+```{r results='hide'}
+phi <- 20
+k <- 1
+while (k <= 100) {
+  phi <- 1+1/phi
+  print(c(k,phi))
+  k <- k+1
+}
+``` 
+What's going on here?
+First, `phi` and `k` are initialized.
+Then the `while` loop is started.
+At each iteration of the loop, `phi` is modified, and intermediate results printed, as before.
+In addition, `k` is incremented.
+The `while` loop continues to iterate until the condition `k <= 100` is no longer `TRUE`, at which point, the `while` loop terminates.
+
+Note that here we've chosen a large number (100) of iterations.
+Perhaps we could get by with fewer.
+If we wanted to terminate the iterations as soon as the value of `phi` stopped changing, we could do:
+```{r results='hide'}
+phi <- 20
+conv <- FALSE
+while (!conv) {
+  phi.new <- 1+1/phi
+  conv <- phi==phi.new
+  phi <- phi.new
+}
+``` 
+
+
+Another way to accomplish this would be to use `break` to stop the iteration when a condition is met.
+For example
+```{r results='hide'}
+phi <- 20
+while (TRUE) {
+  phi.new <- 1+1/phi
+  if (phi==phi.new) break
+  phi <- phi.new
+}
+``` 
+While this `while` loop is equivalent to the one before, it does have the drawback that, if the `break` condition is never met, the loop will go on indefinitely.
+An alternative that avoids this is to use a `for` loop with a large (but finite) number of iterations, together with `break`:
+```{r results='hide'}
+phi <- 3
+for (k in seq_len(1000)) {
+  phi.new <- 1+1/phi
+  if (phi==phi.new) break
+  phi <- phi.new
+}
+``` 
+
+
+## `repeat` loops
+
+A third looping construct in **R** involves the `repeat` keyword.
+For example,
+```{r }
+phi <- 12
+repeat {
+  phi.new <- 1/(1+phi)
+  if (phi==phi.new) break
+  phi <- phi.new
+}
+``` 
+
+In addition, **R** provides the `next` keyword, which, like `break`, is used in the body of a looping construct.
+Rather than terminating the iteration, however, it aborts the current iteration and leads to the immediate execution of the next iteration.
+
+For more information on looping and other control-flow constructs, execute `?Control`.
+
+
+# FUNCTIONS AND ENVIRONMENTS
+
+## Definitions and examples
+
+An extremely useful feature in **R** is the ability to write arbitrary *functions*.
+A function, in this context, is an algorithm that performs a specific computation that depends on inputs (the function's *arguments*) and produces some output (the function's *value*) and/or has some *side effects*.
+Let's see how this is done.
+
+Here is a function that squares a number.
+```{r }
+sq <- function (x) x^2
+``` 
+The syntax is `function (arglist) expr`.
+The one argument in this case is `x`.
+When a particular value of `x` is supplied, **R** performs the squaring operation.
+The function then *returns* the value `x^2`:
+```{r }
+sq(3); sq(9); sq(-2);
+``` 
+
+Here is a function with two arguments and a more complex *body*, as we call the expression that is evaluated when the function is called.
+```{r }
+f <- function (x, y = 3) {
+  a <- sq(x)
+  a+y
+}
+```
+Here, the body is the **R** expression from `{` to `}`. 
+Unless the `return` codeword is used elsewhere in the function body, the value returned is always the last expression evaluated.
+Thus:
+```{r }
+f(3,0); f(2,2); f(3);
+``` 
+Note that in the last case, only one argument was supplied.
+In this case, `y` assumed its default value, 3.
+
+Note that functions need not be assigned to symbols; they can be *anonymous*:
+```{r }
+function (x) x^5
+(function (x) x^5)(2)
+``` 
+
+A function can also have side effects, e.g.,
+```{r }
+hat <- "hat"
+hattrick <- function (y) {
+  hat <<- "rabbit"
+  2*y
+}
+hat; hattrick(5); hat
+``` 
+However, the very idea of a function insists that we should never experience *unintentional* side effects.
+We'll see how **R** realizes this imperative below.
+
+##### An aside 
+
+If we want the function not to automatically print, we can wrap the return value in `invisible()`:
+```{r }
+hattrick <- function (y) {
+  hat <<- "rabbit"
+  invisible(2*y)
+}
+hattrick(5)
+print(hattrick(5))
+``` 
+
+A function in **R** is defined by three components:
+
+- its *formal parameters*, i.e., its argument list,
+- its body, and
+- its *environment*, i.e., the context in which the function was defined.
+
+**R** provides simple functions to interrogate these function components:
+```{r }
+formals(hattrick)
+body(hattrick)
+environment(hattrick)
+``` 
+
+## Function scope
+
+As noted above, a paramount consideration in the implementation of functions in any programming language is that unintentional side effects should never occur.
+In particular, I should be free to write a function that creates temporary variables as an aid to its computations, and be able to rest assured that no variables I create temporarily will interfere with any other variables I've defined anywhere else.
+To accomplish this, **R** has a specific set of *scoping rules*.
+
+Consider the function
+
+```{r }
+f <- function (x) {
+  y <- 2*x
+  print(x)
+  print(y)
+  print(z)
+}
+```
+
+In this function's body, `x` is a formal parameter, `y` is a local variable, and `z` is a free, or *unbound* variable.
+When `f` is evaluated, each of these variables must be *bound* to some value.
+In **R** , the free variable bindings are resolved---each time the function is evaluated---by first looking in the environment where the function was created.
+This is called *lexical scope*.
+Thus if we execute
+```{r echo=F,results='hide'}
+rm(z)
+```
+
+```{r eval=F}
+f(3)
+``` 
+we get an error, because no object named `z` can be found.
+If, however, we do
+```{r }
+z <- 10
+f(3)
+``` 
+we don't get an error, because `z` is defined in the environment, `<environment: R_GlobalEnv>`, of `f`.
+Similarly, when we do
+```{r }
+z <- 13
+g <- function (x) {
+  2*x+z
+}
+f <- function (x) {
+  z <- -100
+  g(x)
+}
+f(5)  
+``` 
+The relevant value of `z` is the one in the environment where `g` was *defined*, not the one in the environment wherein it is *called*.
+
+## Nested functions and environments
+
+In each of the following examples, make sure you understand exactly what has happened.
+
+Consider this:
+```{r }
+y <- 11
+f <- function (x) {
+  y <- 2*x
+  y+x
+}
+f(1); y
+``` 
+
+As mentioned above, each function is associated with an environment: the environment within which it was defined.
+When a function is evaluated, a new temporary environment is created, within which the function's calculations are performed.
+Every new environment has a parent, the environment wherein it was created.
+The parent of this new environment is the function's environment.
+To see this, try
+
+```{r results="hold"}
+f <- function () {
+  g <- function () {
+    h <- function () {
+      cat("inside function h:\n")
+      cat("current env: ")
+      print(environment())
+      cat("parent env: ")
+      print(parent.frame(1))
+      cat("grandparent env: ")
+      print(parent.frame(2))
+      cat("great-grandparent env: ")
+      print(parent.frame(3))
+      invisible(NULL)
+    }
+    cat("inside function g:\n")
+    cat("environment of h: ")
+    print(environment(h))
+    cat("current env: ")
+    print(environment())
+    cat("parent env: ")
+    print(parent.frame(1))
+    cat("grandparent env: ")
+    print(parent.frame(2))
+    h()
+  }
+  cat("inside function f:\n")
+  cat("environment of g: ")
+  print(environment(g))
+  cat("current env: ")
+  print(environment())
+  cat("parent env: ")
+  print(parent.frame(1))
+  g()
+}
+cat("environment of f: "); print(environment(f))
+cat("global env: "); print(environment())
+f()
+``` 
+
+Each variable referenced in the function's body is bound, first, to a formal argument if possible.
+If a local variable of that name has previously been created (via one of the assignment operators `<-`, `->`, or `=`, this is the variable that is affected by any subsequent assignments.
+If the variable is neither a formal parameter nor a local variable, then the parent environment of the function is searched for that variable.
+If the variable has not been found in the parent environment, then the grand-parent environment is searched, and so on.
+
+If the assignment operators `<<-` or `->>` are used, a more extensive search for the referenced assignee is made.
+If the variable does not exist in the local environment, the parent environment is searched.
+If it does not exist in the parent environment, then the grand-parent environment is searched, and so on.
+Finally, if the variable cannot be found anywhere along the lineage of environments, a new global variable is created, with the assigned value.
+
+
+# THE `apply` FAMILY OF FUNCTIONS
+
+As mentioned above, there are circumstances under which looping constructs are really necessary.
+Very often, however, we wish to perform some operation across all the elements of a vector, array, or dataset.
+In such cases, it is faster and more elegant (to the **R** afficiando's eye) to use the `apply` family of functions.
+
+## List apply: `lapply`
+
+`lapply` applies a function to each element of a list or vector, returning a list.
+```{r }
+x <- list("teenage","mutant","ninja","turtle",
+          "hamster","plumber","pickle","baby")
+lapply(x,nchar)
+y <- c("teenage","mutant","ninja","turtle",
+       "hamster","plumber","pickle","baby")
+lapply(y,nchar)
+``` 
+
+## Sloppy list apply: `sapply`
+
+`sapply` isn't content to always return a list:
+it attempts to simplify the results into a non-list vector if possible.
+```{r }
+x <- list("pizza","monster","jigsaw","puddle",
+          "hamster","plumber","pickle","baby")
+sapply(x,nchar)
+y <- c("pizza","monster","jigsaw","puddle",
+       "hamster","plumber","pickle","baby")
+sapply(y,nchar)
+``` 
+
+## Multiple-list apply: `mapply`
+
+`mapply` is a multiple-argument version of `sapply`:
+```{r }
+x <- c("pizza","monster","jigsaw","puddle")
+y <- c("cowboy","barbie","slumber","party")
+mapply(paste,x,y,sep="/")
+``` 
+As usual, the recycling rule applies:
+```{r }
+mapply(paste,x,y[2:3])
+mapply(paste,x[c(1,3)],y)
+``` 
+
+## Array apply: `apply`
+
+`apply` is very powerful and a bit more complex.
+It allows an arbitrary function to applied to each slice of an array, where the slices can be defined in all possible ways.
+Let's create a matrix:
+```{r }
+A <- array(data=seq_len(15),dim=c(3,5)); A
+``` 
+To apply an operation to each row, we *marginalize* over the first dimension (rows).
+For example, to sum the rows, we'd do
+```{r }
+apply(A,1,sum)
+``` 
+To sum the columns (the second dimension), we'd do
+```{r }
+apply(A,2,sum)
+``` 
+
+Now suppose we have a 3-dimensional array:
+```{r }
+A <- array(data=seq_len(30),dim=c(3,5,2)); A
+``` 
+To sum the rows within each slice, we'd do
+```{r }
+apply(A,c(1,3),sum)
+``` 
+while to sum the slices, we'd do
+```{r }
+apply(A,3,sum)
+``` 
+For each of the above, make sure you understand exactly what has happened.
+
+Of course, we can apply an anonymous function wherever we apply a named function:
+```{r }
+apply(A,c(2,3),function (x) sd(x)/sqrt(length(x)))
+``` 
+If any additional arguments are given to `apply`, these are passed to the function.
+For example, make sure you understand what is happening in the lines:
+```{r }
+apply(A,c(1,2),function (x, y) sum(x>y),y=8)
+apply(A,c(1,2),function (x, y) sum(x>y),y=-1)
+```
+
+## Table apply: `tapply`
+
+`tapply` is, in a way, an extension of `table`.
+The syntax is `tapply(X,INDEX,FUN,...)`,
+where `X` is a vector, `INDEX` is a list of one or more factors, each the same length as `X`, and `FUN` is a function.
+The vector `X` will be split into subvectors according to `INDEX`, and `FUN` will be applied to each of the subvectors.
+By default, the result is simplified into an array if possible.
+Some examples:
+```{r }
+x <- seq(1,30,by=1)
+b <- rep(letters[1:10],times=3)
+data.frame(x,b)
+tapply(x,b,sum)
+b <- rep(letters[1:10],each=3)
+data.frame(x,b)
+tapply(x,b,sum)
+``` 
+
+```{r }
+datafile <- "http://kingaa.github.io/R_Tutorial/seedpred.dat"
+seeds <- read.table(datafile,header=TRUE,
+                    colClasses=c(station='factor',dist='factor',date='Date'))
+x <- subset(seeds,available>0)
+with(x, tapply(tcum,list(dist,station),max,na.rm=TRUE))
+``` 
+
+## sapply with expected result: `vapply`
+
+When we could use `sapply` and we know exactly what the size and class of the value of the function will be, it is sometimes faster to use `vapply`.
+The syntax is like that of `sapply`: `vapply(X,FUN,FUN.VALUE,...)`, where `X` and `FUN` are as in `sapply`, but we specify the size and class of the value of `FUN` via the `FUN.VALUE` argument.
+For example, suppose we define a function that, given a number between 1 and 26 will return the corresponding letter of the alphabet:
+```{r }
+alph <- function (x) {
+  stopifnot(x >= 1 && x <= 26)
+  LETTERS[as.integer(x)]
+}
+``` 
+This function will return a vector of length 1 and class `character`.
+To apply it to a randomly sampled set of integers, we might do
+```{r echo=F,results='hide'}
+set.seed(1950064303L)
+```
+
+```{r }
+x <- sample(1:26,50,replace=TRUE)
+y <- vapply(x,alph,character(1))
+paste(y,collapse="")
+``` 
+
+# VECTORIZED FUNCTIONS vs LOOPS
+
+The idea that one should avoid loops wherever possible in **R**, using instead vectorized functions like those in the `apply` family, is quite widespread in some quarters.
+The belief, which probably dates back to infelicities in early versions of **S** and **Splus** but is remarkably persistent, is that loops are very slow in **R**.
+Let's have a critical look at this.
+
+Consider the following loop code that can be vectorized:
+```{r }
+x <- runif(n=1e6,min=0,max=2*pi)
+y <- numeric(length(x))
+for (k in seq_along(x)) {
+  y[k] <- sin(x[k])
+}
+``` 
+To time this, we can wrap the vectorizable parts in a call to `system.time`:
+```{r cache=F}
+x <- runif(n=1e6,min=0,max=2*pi)
+system.time({
+  y <- numeric(length(x))
+  for (k in seq_along(x)) {
+    y[k] <- sin(x[k])
+  }
+})
+``` 
+We can compare this with a simple call to `sin` (which is vectorized):
+```{r cache=F}
+system.time(z <- sin(x))
+``` 
+Clearly, calling `sin` directly is much faster.
+What about using `sapply`?
+
+
+```{r include=F}
+system.time(w <- sapply(x,sin))
+``` 
+
+
+The above example is very simple in that there is a builtin function (`sin` in this case) which is capable of the fully vectorized computation.
+In such a case, it is clearly preferable to use it.
+Frequently, however, no such builtin function exists, i.e., we have a custom function of our own we want to apply to a set of data.
+Let's compare the relative speeds of loops and `sapply` in this case.
+```{r cache=F}
+x <- seq.int(from=20,to=1e6,by=10)
+f <- function (x) {
+  (((x+1)*x+1)*x+1)*x+1
+}
+system.time({
+  res1 <- numeric(length(x))
+  for (k in seq_along(x)) {
+    res1[k] <- f(x[k])
+  }
+})
+system.time(res2 <- sapply(x,f))
+```
+[Actually, in this case, `f` is vectorized automatically.
+Why is this?]
+```{r cache=F}
+system.time(f(x))
+``` 
+
+Another example: in this case function `g` is not vectorized.
+```{r cache=F}
+g <- function (x) {
+  if ((x[1] > 30) && (x[1] < 5000)) 1 else 0
+}
+system.time({
+  res1 <- numeric(length(x))
+  for (k in seq_along(x)) {
+    res1[k] <- g(x[k])
+  }
+})
+system.time(res2 <- sapply(x,g))
+``` 
+
+Thank you for your attention!
 
 
