@@ -39,6 +39,15 @@ This particular version has similar coverage to the standard [*Introduction to* 
 
 # WHAT IS **R** ?
 
+
+The original development of R was undertaken by Robert Gentleman and Ross Ihaka at the University of Auckland during the early 1990’s and it is arguably the most popular statistical programming language.1 The continuing development of this open source programming language has since been taken over by an international team of academics, computer programmers, statisticians and mathematicians. One of the reasons for the popularity of R is that it is free of cost, which implies that users can contribute towards a world that values data literacy, irrespective of personal means (to a certain extent). In addition, users are also able to implement what is almost certainly the most extensive range of statistical models, using existing R code.
+
+One of the key features of this open-source language is that users can extend, enhance, and replace any part of it. In addition, such modifications may be made available to other users, in the form of various R packages. For example, there are several thousand packages on the Comprehensive R Archive Network (CRAN), which adhere to a coding standard and are subject to unit testing. In addition, there are also many more R packages that may be found on user repositories, which may be located on GitLab, GitHub, BitBucket, etc. Since one does not need to obtain a user licence to make use of this software, it is relatively painless to move a specific task onto the cloud, which provides users with impressive computing power and storage facilities that may be provided by vendors, such as Amazon Web Services (AWS), Google Cloud Platform (GCP), Microsoft Azure, DigitalOcean, etc.
+
+The R language can be run on almost any operating system and it facilitates object-oriented programming, functional programming, and more. It can be used to work with a wide variety of different types of datasets and there are a number of interfaces that have been developed which allow for R to work with other programs, source code, databases and application programming interfaces (APIs). The list of interfaces is too long to mention here, but would include Excel, Matlab, Stata, Python, Julia, C++, Octave, JavaScript, Fortran, Spark, Hadoop, SQL, Oracle, Bloomberg, Datastream, etc.
+
+Many research institutes, companies, and universities have also migrated to R, so there is a good chance that you will need to be able to work with this software at some point in the future. In my subjective opinion, the R language is particularly well suited for the following three tasks (a) data wrangling, (b) statistical modelling& machine learning, and (c) data visualisation.
+
 **R** is a computing environment that combines: 
 
 - a programming language called **S**, developed by John Chambers at Bell Labs, that implements the idea of *programming with data*,
@@ -2461,7 +2470,7 @@ system.time({
 
 ```
 ##    user  system elapsed 
-##    0.14    0.00    0.14
+##    0.13    0.00    0.15
 ```
 We can compare this with a simple call to `sin` (which is vectorized):
 
@@ -2471,7 +2480,7 @@ system.time(z <- sin(x))
 
 ```
 ##    user  system elapsed 
-##    0.04    0.00    0.05
+##    0.03    0.00    0.03
 ```
 Clearly, calling `sin` directly is much faster.
 What about using `sapply`?
@@ -2500,7 +2509,7 @@ system.time({
 
 ```
 ##    user  system elapsed 
-##    0.09    0.00    0.10
+##    0.06    0.01    0.08
 ```
 
 ```r
@@ -2509,7 +2518,7 @@ system.time(res2 <- sapply(x,f))
 
 ```
 ##    user  system elapsed 
-##    0.08    0.00    0.08
+##    0.06    0.02    0.08
 ```
 [Actually, in this case, `f` is vectorized automatically.
 Why is this?]
@@ -2539,7 +2548,7 @@ system.time({
 
 ```
 ##    user  system elapsed 
-##    0.07    0.00    0.06
+##    0.09    0.00    0.10
 ```
 
 ```r
@@ -2548,8 +2557,107 @@ system.time(res2 <- sapply(x,g))
 
 ```
 ##    user  system elapsed 
-##    0.08    0.00    0.07
+##    0.09    0.00    0.10
 ```
+
+
+
+# REPRODUCIBLE RESEARCH
+
+One of the major advantages of R is that there are a number of extensions that allow for it to interface with other languages. One of these extension involves the use of R Markdown files that weave together narrative text and code to produce elegantly formatted output. This would also facilitate reproducible research, where you can write your entire paper, book, dashboard or slides within the RStudio environment. Two of the important packages that allow you to do this are rmarkdown and knitr, where the knitr package may be used to knit the RMarkdown documents to create HTML, PDF, MS Word, LaTeX Beamer presentations, HTML5 slides, Tufte-style handouts, books, dashboards, shiny applications, scientific articles, websites, and many more. For more on the use of rmarkdown and knitr, see [Xie (2013)](https://bookdown.org/yihui/rmarkdown-cookbook/), and the [website](http://rmarkdown.rstudio.com/.)
+
+The original idea behind these forms of reproducible research programs is that the text for your report (or article) would be written in standard LaTeX format and the model would be included as a R chunk of code. This file could then be compiled within R to generate a .md (which is useful for web documents), .pdf or .tex file. An example of a basic R *Markdown** document is included under separate file and is named T1_Markdown_Paper.Rmd.
+
+Of course, these RMarkdown documents can also be used to generate HTML output and the growth of this part of the ecosystem allows for the creation of relatively complex documents and dashboards with the aid of various R extensions. For example, more complex documents, such as books, could be written with the bookdown package, which is what I’ve used for your notes. And with the aid of Shiny one is able to create impressive interactive dashboards. For more on this [see](https://shiny.rstudio.com/).
+
+Again, there is a useful cheatsheet that you should take a look at, which can be freely [downloaded](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf).
+
+# SPECIFIC SUBJECT AREAS
+
+Specific modelling aspects are usually covered within a dedicated package. For a list of the major [econometric](http://cran.r-project.org/web/views/Econometrics.html) type of packages, including those that have been developed for cross sectional analysis, panel models, [machine learning](https://cran.r-project.org/web/views/MachineLearning.html), [time series](https://cran.r-project.org/web/views/TimeSeries.html), etc.
+
+
+Remember also that the total number of packages on the CRAN repository represent only a small fraction of those that are available. So if you don’t find what you like on this particular repository then it may be available elsewhere, possibly on a GitHub or GitLab repository, you just need to search.
+4.2 Obtaining assistance
+
+A further useful resource is the Journal of Statistical Software, which contains journal articles that seek to explain how to use many of the popular R packages. These articles are usually similar to the vignettes that accompany most packages that describe the desired functionality.
+
+In addition, if you are struggling with a particular function in R, then you may want to check out the StackOverFlow website, which was originally developed for computer programmers (many of which make use of R for data science applications). The probability that your query has been previously answered is usually quite high and what is particularly nice about this website is that it has a number of methods that avoid the duplication of queries. You can check it [out](http://stackoverflow.com/).
+
+# CLOUD BASED APPLICATIONS R
+
+For those of you who are looking to make use of a cloud based platform to deploy an R application, then the [website](https://cloudyr.github.io/) provides a useful list of packages that make it easier to work with the various services that are provided by AWS, GCP, or Azure. In addition, there is also a particularly helpful Docker container called Rocker. Further information is also [available](https://www.rocker-project.org/).
+
+# DEVELOPING WITH  GitLab, BitBucket or GitHub
+
+GitLab, BitBucket and GitHub are web-based repositories that allow for the source code management (SCM) functionality of Git as well as many other features. It can be used to track all the changes to programming files by any permitted user, so that you can see who may have made a change to a particular file. In addition, if it turns out that a particular branch of code did not provide the intended result, then you can always go back to a previous version of the code base. Most R developers make use of either GitLab or GitHub for the development of their packages and it is particularly useful when you have many developers working on a single project.
+
+For your own personal work you should consider opening a GitLab account, which will allow you to store public and private repositories for free. As an alternative, you can make use of GitHub for a free public repository, or BitBucket, which provides users with free private repositories.
+
+After installing the Rtools software one is also able to download and install packages that are located on GitLab, BitBucket or GitHub accounts, directly from within R with the aid of the devtools package. For example, the following code would find the package on GitHub, provided you are connected to the internet:
+
+Then lastly, if you are developing an R package or want to create a your own repository then you will want to create a R-project in RStudio so that you can control the uploads and downloads to your Git repository from within RStudio. For a relatively comprehensive tutorial on how to set this up, [see.](https://happygitwithr.com/)
+
+# WORKING WITH DATABASES
+
+If you need to connect to a particular database, then the [website](https://db.rstudio.com/) is a wonderful resource, which describes how one is able to work with a large variety of different databases to import or export data into R.
+
+5 TIDYVERSE
+
+For those who would like to invest more time on programming in R, then you should take a look at the work of Hadley Wickham and the tidyverse suite of packages, which are used for various data science applications. His website may be found at http://hadley.nz/ and details about the tidyverse can be found at: https://www.tidyverse.org/. The books R for data science and Advanced R are quintessential aids for venturing into this area and may be found at https://r4ds.had.co.nz/ and http://adv-r.had.co.nz/, respectively. For a brief summary of the main features of the tidyverse, you may want to consider reading the booklet by Locke (2017a), which is available for download at: https://itsalocke.com/files/DataManipulationinR.pdf. During what remains of this semester we will make use of a few tidyverse functions, although the objective of this course is not to provide an exhaustive overview of these functions.
+
+Since we will be using a few dplyr and ggplot functions throughout the course, you may want to take a look at the following cheatsheets:
+
+    https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf
+    https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf
+
+In addition, to the suite of tidyverse packages, which assist with a number of basic data science tasks, there is a collection of packages that seek to apply tidyverse principles to modelling and machine learning tools. These form part of the tidymodels ecosystem, which offers a consistent, flexible framework for the storing of model output, etc. You can get more information about this ecosystem from the website https://www.tidymodels.org/. A pre-publication draft of a book that describes the use of this new ecosystem is available at https://www.tmwr.org/.
+
+The data.table package is also one that is growing in popularity and can be used in conjunction with tidyverse functions. In many respects it provides equivalent functionality to what is contained in the dplyr package, which is part of the tidyverse, but makes use of more efficient ways to manipulate data. When working with large data this is particularly important. I have not made use of this package in this course as we are not going to be dealing with particularly large datasets, and the data.table syntax takes a little longer to learn (in my opinion). For a useful cheatsheet that lists dplyr and data.table equivalent functions next to each other, take a look at: https://atrebas.github.io/post/2019-03-03-datatable-dplyr/. In addition, the vignettes that accompany the data.table are excellent.
+
+And if you start working with extreme big-data then you probably want to make use Spark, for which the sparklyr package provides an accessible interface that is simialr to dplyr. Details regarding this package is available at https://spark.rstudio.com/ and in the ebook https://therinspark.com/.
+Working with databases
+
+If you need to connect to a particular database, then the https://db.rstudio.com/ website is a wonderful resource, which describes how one is able to work with a large variety of different databases to import or export data into R.
+5 Tidyverse
+
+For those who would like to invest more time on programming in R, then you should take a look at the work of Hadley Wickham and the tidyverse suite of packages, which are used for various data science applications. His website may be found at http://hadley.nz/ and details about the tidyverse can be found at: https://www.tidyverse.org/. The books R for data science and Advanced R are quintessential aids for venturing into this area and may be found at https://r4ds.had.co.nz/ and http://adv-r.had.co.nz/, respectively. For a brief summary of the main features of the tidyverse, you may want to consider reading the booklet by Locke (2017a), which is available for download at: https://itsalocke.com/files/DataManipulationinR.pdf. During what remains of this semester we will make use of a few tidyverse functions, although the objective of this course is not to provide an exhaustive overview of these functions.
+
+Since we will be using a few dplyr and ggplot functions throughout the course, you may want to take a look at the following cheatsheets:
+
+    https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf
+    https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf
+
+In addition, to the suite of tidyverse packages, which assist with a number of basic data science tasks, there is a collection of packages that seek to apply tidyverse principles to modelling and machine learning tools. These form part of the tidymodels ecosystem, which offers a consistent, flexible framework for the storing of model output, etc. You can get more information about this ecosystem from the website https://www.tidymodels.org/. A pre-publication draft of a book that describes the use of this new ecosystem is available at https://www.tmwr.org/.
+
+The data.table package is also one that is growing in popularity and can be used in conjunction with tidyverse functions. In many respects it provides equivalent functionality to what is contained in the dplyr package, which is part of the tidyverse, but makes use of more efficient ways to manipulate data. When working with large data this is particularly important. I have not made use of this package in this course as we are not going to be dealing with particularly large datasets, and the data.table syntax takes a little longer to learn (in my opinion). For a useful cheatsheet that lists dplyr and data.table equivalent functions next to each other, take a look at: https://atrebas.github.io/post/2019-03-03-datatable-dplyr/. In addition, the vignettes that accompany the data.table are excellent.
+
+And if you start working with extreme big-data then you probably want to make use Spark, for which the sparklyr package provides an accessible interface that is simialr to dplyr. Details regarding this package is available at https://spark.rstudio.com/ and in the ebook https://therinspark.com/.
+
+# RESOURCES
+
+There are potentially more resources about learning various features of R than one could read in a lifetime. Therefore, what follows is a subjective view of selected resources that I have found helpful.
+
+If you are new to R and would like a comprehensive introduction, then I would suggest that you may want to go through Grolemund (2020), which may be read in the form of an [ebook](https://rstudio-education.github.io/hopr/).
+
+Alternatively, you may find that Locke (2017b) provides a reassuring introduction to the modern R environment. A PDF version of the book can be downloaded from the authors [website](https://itsalocke.com/files/workingwithr.pdf).
+
+If you find that neither of these are helpful then you can look at CRAN’s [link](https://cran.r-project.org/other-docs.html) to Contributed Documentation.
+
+Or alternatively, you may find an alternative ebook that has been written from within R at the sites [I](https://bookdown.org/) and [II](https://bookdown.org/home/archive/).
+
+If you prefer to learn through online lectures, then there are also a number of [online courses](https://www.datacamp.com/courses/free-introduction-to-r) that provide a great introduction.
+
+Other options include learning by doing, where you can get to grips with the functionality of R from within R, with the aid of the [swirl package](http://swirlstats.com/). 
+
+For those students who would like to implement the models from Wooldridge (2020), which is titled “Introductory Econometrics: A Modern Approach,” with R code then you can make use of the free [ebook](http://www.urfie.net/).
+
+The academic publisher Springer has released a relatively inexpensive and focused series of books, titled [Use R!](http://www.springer.com/series/6991?detailsPage=titles), which discuss the use of R in a various subject areas. The series now includes over seventy titles and they all contain source code. 
+
+The publisher CRC Press (which is part of the Taylor & Francis Group) have a [similar series of books](https://www.crcpress.com/Chapman--HallCRC-The-R-Series/book-series/CRCTHERSER). 
+Both of these series include introductory texts.
+
+https://kevin-kotze.gitlab.io/tsm/ts-1-tut/
 
 Thank you for your attention!
 
