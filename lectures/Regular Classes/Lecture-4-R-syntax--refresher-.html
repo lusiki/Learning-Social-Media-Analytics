@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Luka Sikic, PhD" />
+<meta name="author" content="Luka Sikic, PhD   Faculty of Croatian Studies | LSMA" />
 
 
 <title>Learning Social Media Analytics</title>
@@ -341,8 +341,8 @@ div.tocify {
 
 <h1 class="title toc-ignore">Learning Social Media Analytics</h1>
 <h3 class="subtitle">Lecture 4: R syntax (refresher)</h3>
-<h4 class="author">Luka Sikic, PhD</h4>
-<h4 class="date">Faculty of Croatian Studies | <a href="https://lusiki.github.io/Learning-Social-Media-Analytics/">LSMA</a></h4>
+<h4 class="author">Luka Sikic, PhD <br> Faculty of Croatian Studies | <a href="https://lusiki.github.io/Learning-Social-Media-Analytics/">LSMA</a></h4>
+<h4 class="date">22 ožujak 2022</h4>
 
 </div>
 
@@ -1995,11 +1995,11 @@ N_{t+1} = \frac{a\,N_t}{1+b\,N_t}.
 <span id="cb245-6"><a href="#cb245-6" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb245-7"><a href="#cb245-7" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
 <pre><code>##    user  system elapsed 
-##    0.13    0.00    0.15</code></pre>
+##    0.13    0.00    0.12</code></pre>
 <p>We can compare this with a simple call to <code>sin</code> (which is vectorized):</p>
 <div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>(z <span class="ot">&lt;-</span> <span class="fu">sin</span>(x))</span></code></pre></div>
 <pre><code>##    user  system elapsed 
-##    0.03    0.00    0.03</code></pre>
+##    0.04    0.00    0.03</code></pre>
 <p>Clearly, calling <code>sin</code> directly is much faster. What about using <code>sapply</code>?</p>
 <p>The above example is very simple in that there is a builtin function (<code>sin</code> in this case) which is capable of the fully vectorized computation. In such a case, it is clearly preferable to use it. Frequently, however, no such builtin function exists, i.e., we have a custom function of our own we want to apply to a set of data. Let’s compare the relative speeds of loops and <code>sapply</code> in this case.</p>
 <div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="#cb249-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq.int</span>(<span class="at">from=</span><span class="dv">20</span>,<span class="at">to=</span><span class="fl">1e6</span>,<span class="at">by=</span><span class="dv">10</span>)</span>
@@ -2013,10 +2013,10 @@ N_{t+1} = \frac{a\,N_t}{1+b\,N_t}.
 <span id="cb249-9"><a href="#cb249-9" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb249-10"><a href="#cb249-10" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
 <pre><code>##    user  system elapsed 
-##    0.06    0.01    0.08</code></pre>
+##    0.08    0.00    0.08</code></pre>
 <div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>(res2 <span class="ot">&lt;-</span> <span class="fu">sapply</span>(x,f))</span></code></pre></div>
 <pre><code>##    user  system elapsed 
-##    0.06    0.02    0.08</code></pre>
+##    0.08    0.00    0.08</code></pre>
 <p>[Actually, in this case, <code>f</code> is vectorized automatically. Why is this?]</p>
 <div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>(<span class="fu">f</span>(x))</span></code></pre></div>
 <pre><code>##    user  system elapsed 
@@ -2032,10 +2032,10 @@ N_{t+1} = \frac{a\,N_t}{1+b\,N_t}.
 <span id="cb255-8"><a href="#cb255-8" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb255-9"><a href="#cb255-9" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
 <pre><code>##    user  system elapsed 
-##    0.09    0.00    0.10</code></pre>
+##    0.07    0.00    0.06</code></pre>
 <div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>(res2 <span class="ot">&lt;-</span> <span class="fu">sapply</span>(x,g))</span></code></pre></div>
 <pre><code>##    user  system elapsed 
-##    0.09    0.00    0.10</code></pre>
+##    0.08    0.00    0.08</code></pre>
 </div>
 <div id="reproducible-research" class="section level1">
 <h1>REPRODUCIBLE RESEARCH</h1>
