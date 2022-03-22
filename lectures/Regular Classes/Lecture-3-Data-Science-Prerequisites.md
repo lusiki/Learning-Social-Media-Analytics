@@ -3,7 +3,6 @@ title: "Learning Social Media Analytics"
 # subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
 subtitle: "Lecture 3: Data Science Prerequisites"
 author: "Luka Sikic, PhD <br> Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)"
-date: "22 ožujak 2022"
 output:
   html_document:
     code_folding: show
@@ -244,7 +243,7 @@ glimpse(dataArticles)
 ## $ title        <chr> "Umro bivši austrijski potkancelar i prijatelja Hrvatske ~
 ## $ date         <chr> "14. ožujka 2022. 16:48", "14. ožujka 2022. 23:03", "14. ~
 ## $ noComment    <dbl> 0, 106, 106, 8, 18, 129, 129
-## $ views        <dbl> 966, 90712, 90712, 3111, 7753, 76571, 76571
+## $ views        <dbl> 966, 90714, 90714, 3111, 7753, 76573, 76573
 ## $ articleLabel <lgl> NA, NA, NA, NA, NA, NA, NA
 ## $ articleLabel <lgl> NA, NA, NA, NA, NA, NA, NA
 ## $ author       <chr> "Snježana Herek", "Vecernji.hr", "Hina", "Hina", "Vecernj~
@@ -271,7 +270,7 @@ dataArticles$views
 ```
 
 ```
-## [1]   966 90712 90712  3111  7753 76571 76571
+## [1]   966 90714 90714  3111  7753 76573 76573
 ```
 
 ```r
@@ -324,7 +323,7 @@ API_request
 
 ```
 ## Response [https://api.mediatoolkit.com/organizations/126686/groups/182718/keywords/6521533/mentions?access_token=ddms5s0l3gejlz2z42ydt0bnwmf6ssqd62bdxteu7t8sumv5ii&from_time=1647126000&to_time=1647212400&count=3000&sort=time&type=all&offset=0&ids_only=false]
-##   Date: 2022-03-22 08:15
+##   Date: 2022-03-22 09:01
 ##   Status: 200
 ##   Content-Type: application/json;charset=utf-8
 ##   Size: 3.81 MB
@@ -890,7 +889,7 @@ toc()
 ```
 
 ```
-## 0.02 sec elapsed
+## 0 sec elapsed
 ```
 
 ```r
@@ -921,7 +920,7 @@ toc()
 ```
 
 ```
-## 0.03 sec elapsed
+## 0.01 sec elapsed
 ```
 
 ```r

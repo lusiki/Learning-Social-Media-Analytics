@@ -3,7 +3,6 @@ title: "Learning Social Media Analytics"
 # subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
 subtitle: "Lecture 3: Data Science Prerequisites"
 author: "Luka Sikic, PhD <br> Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)"
-date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
   html_document:
     code_folding: show

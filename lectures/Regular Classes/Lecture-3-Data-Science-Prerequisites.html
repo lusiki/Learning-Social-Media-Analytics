@@ -342,7 +342,6 @@ div.tocify {
 <h1 class="title toc-ignore">Learning Social Media Analytics</h1>
 <h3 class="subtitle">Lecture 3: Data Science Prerequisites</h3>
 <h4 class="author">Luka Sikic, PhD <br> Faculty of Croatian Studies | <a href="https://lusiki.github.io/Learning-Social-Media-Analytics/">LSMA</a></h4>
-<h4 class="date">22 ožujak 2022</h4>
 
 </div>
 
@@ -500,7 +499,7 @@ div.tocify {
 ## $ title        &lt;chr&gt; &quot;Umro bivši austrijski potkancelar i prijatelja Hrvatske ~
 ## $ date         &lt;chr&gt; &quot;14. ožujka 2022. 16:48&quot;, &quot;14. ožujka 2022. 23:03&quot;, &quot;14. ~
 ## $ noComment    &lt;dbl&gt; 0, 106, 106, 8, 18, 129, 129
-## $ views        &lt;dbl&gt; 966, 90712, 90712, 3111, 7753, 76571, 76571
+## $ views        &lt;dbl&gt; 966, 90714, 90714, 3111, 7753, 76573, 76573
 ## $ articleLabel &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA
 ## $ articleLabel &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA
 ## $ author       &lt;chr&gt; &quot;Snježana Herek&quot;, &quot;Vecernji.hr&quot;, &quot;Hina&quot;, &quot;Hina&quot;, &quot;Vecernj~
@@ -515,7 +514,7 @@ div.tocify {
 ## [6] &quot;Kotromanović: Ako je dron bio naoružan, onda NATO mora aktivirati članak 5 bez obzira je li ruski ili ukrajinski&quot;
 ## [7] &quot;Kotromanović: Ako je dron bio naoružan, onda NATO mora aktivirati članak 5 bez obzira je li ruski ili ukrajinski&quot;</code></pre>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>dataArticles<span class="sc">$</span>views</span></code></pre></div>
-<pre><code>## [1]   966 90712 90712  3111  7753 76571 76571</code></pre>
+<pre><code>## [1]   966 90714 90714  3111  7753 76573 76573</code></pre>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(dataArticles<span class="sc">$</span>articletext)</span></code></pre></div>
 <pre><code>## [1]  5148 27867 27867  1558  3970  5675  5675</code></pre>
 </div>
@@ -551,7 +550,7 @@ div.tocify {
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># check the API request object</span></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>API_request</span></code></pre></div>
 <pre><code>## Response [https://api.mediatoolkit.com/organizations/126686/groups/182718/keywords/6521533/mentions?access_token=ddms5s0l3gejlz2z42ydt0bnwmf6ssqd62bdxteu7t8sumv5ii&amp;from_time=1647126000&amp;to_time=1647212400&amp;count=3000&amp;sort=time&amp;type=all&amp;offset=0&amp;ids_only=false]
-##   Date: 2022-03-22 08:15
+##   Date: 2022-03-22 09:01
 ##   Status: 200
 ##   Content-Type: application/json;charset=utf-8
 ##   Size: 3.81 MB</code></pre>
@@ -962,7 +961,7 @@ div.tocify {
 <pre><code>##         Avg min max
 ## 1: 241.7392  54 250</code></pre>
 <div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code></pre></div>
-<pre><code>## 0.02 sec elapsed</code></pre>
+<pre><code>## 0 sec elapsed</code></pre>
 <div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>()</span>
 <span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a><span class="co"># how many letters in a text by tidy</span></span>
 <span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
@@ -981,7 +980,7 @@ div.tocify {
 ## 6 web            242.    54   250
 ## 7 youtube        190.     9   250</code></pre>
 <div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code></pre></div>
-<pre><code>## 0.03 sec elapsed</code></pre>
+<pre><code>## 0.01 sec elapsed</code></pre>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># READ IN FULL MEDIATOOLKIT DATA SAMPLE</span></span>
 <span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">&quot;D:/LUKA/Freelance/Mediatoolkit/FULLDATA&quot;</span></span>
 <span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a>raw <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">path =</span> path , <span class="at">pattern=</span><span class="st">&quot;xlsx&quot;</span>)</span>
