@@ -2469,7 +2469,7 @@ system.time({
 
 ```
 ##    user  system elapsed 
-##    0.11    0.00    0.11
+##    0.13    0.00    0.13
 ```
 We can compare this with a simple call to `sin` (which is vectorized):
 
@@ -2479,7 +2479,7 @@ system.time(z <- sin(x))
 
 ```
 ##    user  system elapsed 
-##    0.04    0.00    0.05
+##    0.03    0.00    0.03
 ```
 Clearly, calling `sin` directly is much faster.
 What about using `sapply`?
@@ -2508,7 +2508,7 @@ system.time({
 
 ```
 ##    user  system elapsed 
-##    0.09    0.00    0.10
+##    0.07    0.00    0.08
 ```
 
 ```r
@@ -2517,7 +2517,7 @@ system.time(res2 <- sapply(x,f))
 
 ```
 ##    user  system elapsed 
-##    0.08    0.00    0.07
+##    0.09    0.00    0.10
 ```
 [Actually, in this case, `f` is vectorized automatically.
 Why is this?]
@@ -2547,7 +2547,7 @@ system.time({
 
 ```
 ##    user  system elapsed 
-##    0.06    0.00    0.07
+##    0.07    0.00    0.06
 ```
 
 ```r
@@ -2556,7 +2556,7 @@ system.time(res2 <- sapply(x,g))
 
 ```
 ##    user  system elapsed 
-##    0.06    0.00    0.07
+##    0.10    0.00    0.09
 ```
 
 
