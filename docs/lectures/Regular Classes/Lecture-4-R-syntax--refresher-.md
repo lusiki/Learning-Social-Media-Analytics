@@ -3,7 +3,6 @@ title: "Learning Social Media Analytics"
 # subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
 subtitle: "Lecture 4: R syntax (refresher)"
 author: "Luka Sikic, PhD <br> Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)"
-date: "22 ožujak 2022"
 output:
   html_document:
     code_folding: show
@@ -2470,7 +2469,7 @@ system.time({
 
 ```
 ##    user  system elapsed 
-##    0.13    0.00    0.12
+##    0.13    0.00    0.13
 ```
 We can compare this with a simple call to `sin` (which is vectorized):
 
@@ -2480,7 +2479,7 @@ system.time(z <- sin(x))
 
 ```
 ##    user  system elapsed 
-##    0.04    0.00    0.03
+##    0.03    0.00    0.03
 ```
 Clearly, calling `sin` directly is much faster.
 What about using `sapply`?
@@ -2509,7 +2508,7 @@ system.time({
 
 ```
 ##    user  system elapsed 
-##    0.08    0.00    0.08
+##    0.07    0.00    0.08
 ```
 
 ```r
@@ -2518,7 +2517,7 @@ system.time(res2 <- sapply(x,f))
 
 ```
 ##    user  system elapsed 
-##    0.08    0.00    0.08
+##    0.09    0.00    0.10
 ```
 [Actually, in this case, `f` is vectorized automatically.
 Why is this?]
@@ -2557,7 +2556,7 @@ system.time(res2 <- sapply(x,g))
 
 ```
 ##    user  system elapsed 
-##    0.08    0.00    0.08
+##    0.10    0.00    0.09
 ```
 
 
