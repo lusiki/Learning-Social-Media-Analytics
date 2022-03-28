@@ -157,30 +157,55 @@ gg1
 #### Dig deeper into web
 
 ```{r}
-# check overall descriptives
+# check overall descriptives (number of articles)
 all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),.N,FROM][,.(mean = mean(N),
                                                                               stdev = sd(N),
                                                                               total = sum(N))]
-# check overall descriptives
-all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),.N,FROM][N < 500][,.(mean = mean(N),
+# check overall descriptives (number of Views)
+all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),
+        .(.N,REACH = sum(REACH),
+          VIRALITY = sum(VIRALITY),
+          LIKE = sum(LIKE_COUNT),
+          COMMENT = sum(COMMENT_COUNT)),FROM][N > 10,][order(-REACH),][,.(mean = mean(N),
                                                                               stdev = sd(N),
                                                                               total = sum(N))]
-# check overall descriptives
-all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),.N,FROM][N < 1000][,.(mean = mean(N),
+
+all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),
+        .(.N,REACH = mean(REACH, na.rm = T),
+          VIRALITY = mean(VIRALITY, na.rm = T),
+          LIKE = mean(LIKE_COUNT, na.rm = T),
+          COMMENT = mean(COMMENT_COUNT, na.rm = T))]
+
+
+
+[N > 10,][order(-REACH),][,.(mean = mean(N),
                                                                               stdev = sd(N),
                                                                               total = sum(N))]
+
+
+
+
+
+
+
 # check overall descriptives
-all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),.N,FROM][N < 1500][,.(mean = mean(N),
+all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),.N,FROM][N > 50 & N < 150][,.(mean = mean(N),
                                                                               stdev = sd(N),
-                                                                              total = sum(N))]
+                                                                              total = sum(N),
+                                                                              count = .N)]
+# check overall descriptives
+all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),.N,FROM][N > 150 & N < 450][,.(mean = mean(N),
+                                                                              stdev = sd(N),
+                                                                              total = sum(N),
+                                                                              count = .N)]
+# check overall descriptives
+all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),.N,FROM][N > 1500][,.(mean = mean(N),
+                                                                              stdev = sd(N),
+                                                                              total = sum(N),
+                                                                              count = .N)]
 ```
 
 
-
-
-```{r}
-all_raw[SOURCE_TYPE == "web" & str_detect(unique(all_raw$FROM),"com"),.N,FROM]
-```
 
 
 
