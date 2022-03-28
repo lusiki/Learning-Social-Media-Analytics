@@ -1,0 +1,151 @@
+---
+title: "Learning Social Media Analytics"
+# subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
+subtitle: "Lecture 5: Statistics"
+author: "Luka Sikic, PhD <br> Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/"
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts] 
+    lib_dir: libs
+    nature:
+      highlightStyle: googlecode
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, message = F, warning = F)
+```
+
+
+```{r libs, include=TRUE, echo=TRUE,message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readxl)
+library(here)
+library(kableExtra)
+library(DT)
+library(data.table)
+```
+
+
+# STRUCTURE
+<br>
+<br>
+- DESCRIPTIVE STATISTICS
+<br>
+<br>
+- COMPARING MEANS
+<br>
+<br>
+- CATEGORICAL ANALYSIS
+<br>
+<br>
+- ANOVA
+<br>
+<br>
+- LINEAR REGRESSION
+<br>
+<br>
+
+---
+layout: true
+# DESCRIPTIVE STATISTICS
+---
+
+#### Check your data first
+
+```{r, echo=FALSE, eval = T}
+# FULL SAMPLE
+path <- "D:/LUKA/Freelance/Mediatoolkit/FULLDATA"
+raw <- list.files(path = path , pattern="xlsx")
+raw_path <- paste0(path, "/", raw)
+all_raw <- map_df(raw_path, read_excel) %>% data.table()
+#all_raw <- all_raw  %>%  mutate(DATE = as.Date(DATE,"%Y-%m-%d" ))
+```
+
+```{r}
+# sneek peak
+glimpse(all_raw[sample(nrow(all_raw)),1:8])
+# size of the data
+dim(all_raw)
+# time rage
+range(all_raw$DATE)
+```
+
+---
+
+#### Dig deeper into web
+
+```{r}
+# how much activity
+all_raw[SOURCE_TYPE == "web", .N]
+# how many authors
+all_raw[SOURCE_TYPE == "web", length(unique(all_raw$AUTHOR))]
+# how many domains?
+all_raw[SOURCE_TYPE == "web", length(unique(all_raw$FROM))]
+# how many domains?
+all_raw[SOURCE_TYPE == "web" & grepl(".", unique(all_raw$FROM)),
+        .(Number =length(unique(FROM)))]
+# how many CRO domains?
+all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),
+        .(Number =unique(FROM))]
+```
+
+---
+
+#### Dig deeper into web
+
+```{r}
+# how many domains?
+all_raw[SOURCE_TYPE == "web" & grepl(".", unique(all_raw$FROM)),
+        .(unique(FROM))]%>%sample_n(5)
+# how many CRO domains?
+all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),
+        .(Number =unique(FROM))]
+```
+
+
+
+
+
+  
+---
+<br>
+#### Resources
+<br>
+<br>
+- Check the data sample in GHub repo
+<br>
+<br>
+- Check other clipping agencies
+<br>
+<br>
+- Check other data vendors
+
+---
+class: inverse, middle
+layout:false
+# Thank you for your attention!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
