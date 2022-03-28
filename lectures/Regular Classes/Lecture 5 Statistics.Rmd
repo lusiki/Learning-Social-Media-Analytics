@@ -100,11 +100,97 @@ all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),
 ```{r}
 # how many domains?
 all_raw[SOURCE_TYPE == "web" & grepl(".", unique(all_raw$FROM)),
-        .(unique(FROM))]%>%sample_n(5)
+        .(unique(FROM))] %>% sample_n(5)
 # how many CRO domains?
 all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),
-        .(Number =unique(FROM))]
+        .(unique(FROM))] %>% sample_n(5)
 ```
+
+---
+
+#### Dig deeper into web
+
+```{r}
+# check all domains
+all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),
+        .N,
+        FROM][order(-N),] %>%
+  datatable(., rownames = FALSE, options = list(pageLength = 3, scrollX=T) )
+```
+
+---
+
+#### Dig deeper into web
+
+```{r}
+all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),.N,FROM][N >= 100,][order(-N),]%>%
+  ggplot(., aes(N)) +
+  geom_histogram(bins = 10, color = "#000000", fill = "#0099F8") + 
+  geom_vline(aes(xintercept = mean(N)), color = "#000000", size = 1.25) +
+  geom_vline(aes(xintercept = mean(N) + sd(N)), color = "#000000", size = 1, linetype = "dashed") +
+  geom_vline(aes(xintercept = mean(N) - sd(N)), color = "#000000", size = 1, linetype = "dashed") +
+  labs(
+    title = "Histogram of portal activity in Croatia",
+    subtitle = "Made by LSMA",
+    caption = "Source: Mediatoolkit dataset",
+    x = "Number of articles",
+    y = "Count"
+  ) +
+  theme_classic() +
+  theme(
+    plot.title = element_text(color = "#0099F8", size = 16, face = "bold"),
+    plot.subtitle = element_text(size = 10, face = "bold"),
+    plot.caption = element_text(face = "italic")
+  ) -> gg1
+```
+
+---
+
+#### Dig deeper into web
+
+```{r, echo= FALSE}
+gg1
+```
+
+---
+
+#### Dig deeper into web
+
+```{r}
+# check overall descriptives
+all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),.N,FROM][,.(mean = mean(N),
+                                                                              stdev = sd(N),
+                                                                              total = sum(N))]
+# check overall descriptives
+all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),.N,FROM][N < 500][,.(mean = mean(N),
+                                                                              stdev = sd(N),
+                                                                              total = sum(N))]
+# check overall descriptives
+all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),.N,FROM][N < 1000][,.(mean = mean(N),
+                                                                              stdev = sd(N),
+                                                                              total = sum(N))]
+# check overall descriptives
+all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),.N,FROM][N < 1500][,.(mean = mean(N),
+                                                                              stdev = sd(N),
+                                                                              total = sum(N))]
+```
+
+
+
+
+```{r}
+all_raw[SOURCE_TYPE == "web" & str_detect(unique(all_raw$FROM),"com"),.N,FROM]
+```
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -116,13 +202,13 @@ all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),
 #### Resources
 <br>
 <br>
-- Check the data sample in GHub repo
+- Check the data.table package and tutorial
 <br>
 <br>
-- Check other clipping agencies
+- Refresh your stats with this textbook
 <br>
 <br>
-- Check other data vendors
+- Try your own skills with MT datasample
 
 ---
 class: inverse, middle
