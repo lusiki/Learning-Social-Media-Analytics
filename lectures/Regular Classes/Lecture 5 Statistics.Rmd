@@ -2,21 +2,23 @@
 title: "Learning Social Media Analytics"
 # subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
 subtitle: "Lecture 5: Statistics"
-author: "Luka Sikic, PhD <br> Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/"
+author: "Luka Sikic, PhD <br> Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)"
 output:
-  xaringan::moon_reader:
-    css: [default, metropolis, metropolis-fonts] 
-    lib_dir: libs
-    nature:
-      highlightStyle: googlecode
-      highlightLines: true
-      countIncrementalSlides: false
+  html_document:
+    code_folding: show
+    theme: flatly
+    highlight: haddock
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+    keep_md: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '4'
 ---
 
-
-
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = F, message = F, warning = F)
+knitr::opts_chunk$set(echo = T, message = F, warning = F)
 ```
 
 
@@ -30,31 +32,24 @@ library(data.table)
 ```
 
 
-# STRUCTURE
-<br>
-<br>
-- DESCRIPTIVE STATISTICS
-<br>
-<br>
-- COMPARING MEANS
-<br>
-<br>
-- CATEGORICAL ANALYSIS
-<br>
-<br>
-- ANOVA
-<br>
-<br>
-- LINEAR REGRESSION
-<br>
-<br>
+# OUTLINE
 
----
-layout: true
+1. DESCRIPTIVE STATISTICS
+
+2. COMPARING MEANS
+
+3. CATEGORICAL ANALYSIS
+
+4. ANOVA
+
+5. LINEAR REGRESSION
+
+
+
 # DESCRIPTIVE STATISTICS
----
 
-#### Check your data first
+
+
 
 ```{r, echo=FALSE, eval = T}
 # FULL SAMPLE
@@ -74,9 +69,9 @@ dim(all_raw)
 range(all_raw$DATE)
 ```
 
----
 
-#### Dig deeper into web
+
+
 
 ```{r}
 # how much activity
@@ -86,44 +81,40 @@ all_raw[SOURCE_TYPE == "web", length(unique(all_raw$AUTHOR))]
 # how many domains?
 all_raw[SOURCE_TYPE == "web", length(unique(all_raw$FROM))]
 # how many domains?
-all_raw[SOURCE_TYPE == "web" & grepl(".", unique(all_raw$FROM)),
-        .(Number =length(unique(FROM)))]
+all_raw[SOURCE_TYPE == "web",
+        .(Number = length(unique(FROM)))]
 # how many CRO domains?
 all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),
-        .(Number =unique(FROM))]
+        .(Number = length(unique(FROM)))]
+
 ```
 
----
+```{r, echo = FALSE}
+web <- all_raw[SOURCE_TYPE == "web",]
+```
 
-#### Dig deeper into web
+
 
 ```{r}
-# how many domains?
-all_raw[SOURCE_TYPE == "web" & grepl(".", unique(all_raw$FROM)),
-        .(unique(FROM))] %>% sample_n(5)
-# how many CRO domains?
-all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),
-        .(unique(FROM))] %>% sample_n(5)
+# some domains?
+web[,.(UniqueDomains = unique(FROM))] %>% sample_n(5)
+# some CRO domains?
+web[str_detect(web$FROM, "hr"),.(UniqueDomains = unique(FROM))] %>% sample_n(5)
 ```
 
----
 
-#### Dig deeper into web
 
 ```{r}
 # check all domains
-all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),
-        .N,
+web[str_detect(web$FROM, ".hr"),.N,
         FROM][order(-N),] %>%
-  datatable(., rownames = FALSE, options = list(pageLength = 3, scrollX=T) )
+  datatable(., rownames = FALSE, options = list(pageLength = 5, scrollX=T))
 ```
 
----
 
-#### Dig deeper into web
 
 ```{r}
-all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),.N,FROM][N >= 100,][order(-N),]%>%
+web[str_detect(web$FROM, ".hr"),.N,FROM][N >= 50,][order(-N),] %>%
   ggplot(., aes(N)) +
   geom_histogram(bins = 10, color = "#000000", fill = "#0099F8") + 
   geom_vline(aes(xintercept = mean(N)), color = "#000000", size = 1.25) +
@@ -144,65 +135,69 @@ all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),.N,FROM][N >= 
   ) -> gg1
 ```
 
----
 
-#### Dig deeper into web
 
-```{r, echo= FALSE}
+
+```{r , echo=FALSE}
 gg1
 ```
 
----
 
-#### Dig deeper into web
+
+
+```{r, echo= FALSE}
+# just another view
+web[str_detect(web$FROM, ".hr"),.N,FROM][, All := sum(N)][, avg := (N / All)*100][order(-N),] 
+```
+
+
+
 
 ```{r}
+
 # check overall descriptives (number of articles)
-all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),.N,FROM][,.(mean = mean(N),
-                                                                              stdev = sd(N),
-                                                                              total = sum(N))]
-# check overall descriptives (number of Views)
-all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),
-        .(.N,REACH = sum(REACH),
-          VIRALITY = sum(VIRALITY),
-          LIKE = sum(LIKE_COUNT),
-          COMMENT = sum(COMMENT_COUNT)),FROM][N > 10,][order(-REACH),][,.(mean = mean(N),
-                                                                              stdev = sd(N),
-                                                                              total = sum(N))]
+web[str_detect(web$FROM, ".hr"),.N,FROM][,.(mean = mean(N),stdev = sd(N), total = sum(N))]
 
-all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),
-        .(.N,REACH = mean(REACH, na.rm = T),
-          VIRALITY = mean(VIRALITY, na.rm = T),
-          LIKE = mean(LIKE_COUNT, na.rm = T),
-          COMMENT = mean(COMMENT_COUNT, na.rm = T))]
+# check ranking by No. of articles
+web[str_detect(web$FROM, ".hr"),
+          .(.N,REACH = sum(REACH, na.rm = T),
+          VIRALITY = sum(VIRALITY, na.rm = T),
+          LIKE = sum(LIKE_COUNT, na.rm = T),
+          COMMENT = sum(COMMENT_COUNT, na.rm = T)), 
+          FROM][order(-N),] %>%
+  datatable(., rownames = FALSE, options = list(pageLength = 5, scrollX=T) )
 
 
+# check overall descriptives (number of comments)
+web[str_detect(web$FROM, ".hr"),
+    .(COMMENT = sum(COMMENT_COUNT, na.rm = T)),FROM][,.(mean = mean(COMMENT),
+                                                        stdev = sd(COMMENT),
+                                                        total = sum(COMMENT))]
 
-[N > 10,][order(-REACH),][,.(mean = mean(N),
-                                                                              stdev = sd(N),
-                                                                              total = sum(N))]
+# check ranking by No. of comments
+web[str_detect(web$FROM, ".hr"),
+          .(.N,REACH = sum(REACH, na.rm = T),
+          VIRALITY = sum(VIRALITY, na.rm = T),
+          LIKE = sum(LIKE_COUNT, na.rm = T),
+          COMMENT = sum(COMMENT_COUNT, na.rm = T)), 
+          FROM][order(-COMMENT),] %>%
+  datatable(., rownames = FALSE, options = list(pageLength = 5, scrollX=T) )
 
 
+# check overall descriptives (number of likes)
+web[str_detect(web$FROM, ".hr"),
+    .(LIKE = sum(LIKE_COUNT, na.rm = T)),FROM][,.(mean = mean(LIKE),
+                                                        stdev = sd(LIKE),
+                                                        total = sum(LIKE))]
+# check ranking by No. of likes
+web[str_detect(web$FROM, ".hr"),
+          .(.N,REACH = sum(REACH, na.rm = T),
+          VIRALITY = sum(VIRALITY, na.rm = T),
+          LIKE = sum(LIKE_COUNT, na.rm = T),
+          COMMENT = sum(COMMENT_COUNT, na.rm = T)), 
+          FROM][order(-LIKE),] %>%
+  datatable(., rownames = FALSE, options = list(pageLength = 5, scrollX=T) )
 
-
-
-
-
-# check overall descriptives
-all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),.N,FROM][N > 50 & N < 150][,.(mean = mean(N),
-                                                                              stdev = sd(N),
-                                                                              total = sum(N),
-                                                                              count = .N)]
-# check overall descriptives
-all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),.N,FROM][N > 150 & N < 450][,.(mean = mean(N),
-                                                                              stdev = sd(N),
-                                                                              total = sum(N),
-                                                                              count = .N)]
-# check overall descriptives
-all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),.N,FROM][N > 1500][,.(mean = mean(N),
-                                                                              stdev = sd(N),
-                                                                              total = sum(N),
-                                                                              count = .N)]
 ```
 
 
@@ -221,23 +216,7 @@ all_raw[SOURCE_TYPE == "web" & grepl(".hr", unique(all_raw$FROM)),.N,FROM][N > 1
 
 
 
-  
----
-<br>
-#### Resources
-<br>
-<br>
-- Check the data.table package and tutorial
-<br>
-<br>
-- Refresh your stats with this textbook
-<br>
-<br>
-- Try your own skills with MT datasample
 
----
-class: inverse, middle
-layout:false
 # Thank you for your attention!
 
 
