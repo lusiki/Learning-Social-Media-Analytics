@@ -145,7 +145,7 @@ gg1
 
 
 
-```{r, echo= FALSE}
+```{r}
 # just another view
 web[str_detect(web$FROM, ".hr"),.N,FROM][, All := sum(N)][, avg := (N / All)*100][order(-N),] 
 ```
@@ -181,7 +181,7 @@ web[str_detect(web$FROM, ".hr"),
           LIKE = sum(LIKE_COUNT, na.rm = T),
           COMMENT = sum(COMMENT_COUNT, na.rm = T)), 
           FROM][order(-COMMENT),] %>%
-  datatable(., rownames = FALSE, options = list(pageLength = 5, scrollX=T) )
+  datatable(., rownames = FALSE, options = list(pageLength = 5, scrollX=T))
 
 
 # check overall descriptives (number of likes)
@@ -196,9 +196,241 @@ web[str_detect(web$FROM, ".hr"),
           LIKE = sum(LIKE_COUNT, na.rm = T),
           COMMENT = sum(COMMENT_COUNT, na.rm = T)), 
           FROM][order(-LIKE),] %>%
-  datatable(., rownames = FALSE, options = list(pageLength = 5, scrollX=T) )
+  datatable(., rownames = FALSE, options = list(pageLength = 5, scrollX=T))
+
+
+# check overall descriptives (reach)
+web[str_detect(web$FROM, ".hr"),
+    .(REACH = sum(REACH, na.rm = T)),FROM][,.(mean = mean(REACH),
+                                                        stdev = sd(REACH),
+                                                        total = sum(REACH))]
+# check ranking by reach
+web[str_detect(web$FROM, ".hr"),
+          .(.N,REACH = sum(REACH, na.rm = T),
+          VIRALITY = sum(VIRALITY, na.rm = T),
+          LIKE = sum(LIKE_COUNT, na.rm = T),
+          COMMENT = sum(COMMENT_COUNT, na.rm = T)), 
+          FROM][order(-REACH),] %>%
+  datatable(., rownames = FALSE, options = list(pageLength = 5, scrollX=T))
+
+
+
+
 
 ```
+
+# COMPARING MEANS
+
+Lets compare everage activity of first 100th portals by different criteria(comments,likes,reach).
+
+We first have to subset these rankings:
+
+```{r}
+# select data to object
+webRanking <- web[str_detect(web$FROM, ".hr"),
+          .(.N,REACH = sum(REACH, na.rm = T),
+          VIRALITY = sum(VIRALITY, na.rm = T),
+          LIKE = sum(LIKE_COUNT, na.rm = T),
+          COMMENT = sum(COMMENT_COUNT, na.rm = T)), 
+          FROM]
+# filter 100 biggest by criteria
+portals100 <-  webRanking[head(order(-N),100),.(FROM,N)]
+reach100 <- webRanking[head(order(-REACH),100),.(FROM,N, REACH)]
+like100 <- webRanking[head(order(-LIKE),100),.(FROM,N, LIKE)]
+comment100 <- webRanking[head(order(-COMMENT),100),.(FROM,N, COMMENT)]
+
+```
+
+Now lets use one sided t-test to check if 100 biggest potals publish average number of articles (482;see before).
+
+```{r}
+# library from the lsr boook
+library(lsr)
+# do the test
+oneSampleTTest(portals100$N, mu=482 )
+
+```
+
+
+Our data is not intependent so we use paired test:
+
+```{r}
+# first check reach vs. like
+ t.test( 
+   x = reach100$N, # variable 1 is the number of articles for 100 biggest portals by reach
+   y = like100$N, # variable 2 is the number of articles for 100 biggest portals by like
+   paired = TRUE # paired test
+ )
+
+# second check reach vs. comment
+
+t.test( 
+   x = reach100$N, 
+   y = comment100$N, 
+   paired = TRUE 
+ )
+
+# third check comment vs. like
+
+t.test( 
+   x = comment100$N,
+   y = like100$N, 
+   paired = TRUE 
+ )
+
+# fourth check comment vs. reach
+
+t.test( 
+   x = comment100$N, 
+   y = reach100$N,
+   paired = TRUE # paired test
+ )
+
+
+```
+
+
+Runings  independent t tests requires some indexing:
+
+```{r}
+# filter 100 - 200 biggest by criteria
+portals200 <-  webRanking[order(-N),.(FROM,N)] %>% slice(101:201)
+reach200 <- webRanking[order(-REACH),.(FROM,N, REACH)] %>% slice(101:201)
+like200 <- webRanking[order(-LIKE),.(FROM,N, LIKE)] %>% slice(101:201)
+comment200 <- webRanking[order(-COMMENT),.(FROM,N, COMMENT)] %>% slice(101:201)
+```
+
+Now we can compare if the activity (mean published articles) of 1th and 2nd hundred biggest portals is the same:
+
+```{r}
+# first we need to check the date to chose the right test 
+mean(portals100$N)
+mean(portals200$N)
+sd(portals100$N)
+sd(portals200$N)
+
+# then run the test
+t.test( 
+   x = portals100$N, 
+   y = portals200$N,
+   var.equal = FALSE, # Welch test
+   paired = FALSE # independent test
+ )
+
+# second check for the reach
+mean(reach100$N)
+mean(reach200$N)
+sd(reach100$N)
+sd(reach200$N)
+
+# then run the test
+t.test( 
+   x = reach100$N, 
+   y = reach200$N,
+   var.equal = TRUE, # Student test
+   paired = FALSE # independent test
+ )
+```
+
+To see how good these tests are, one could also check the distributional properties (normality) with histogram, QQ plot and/or Shapiro-Wilk test.
+
+
+# CATEGORICAL ANALYSIS
+
+Here we have two (famous) tests: **Goodnes of Fit** and **Independence of association**.
+
+
+### GOODNES OF FIT (GOF)
+
+To run the GOF test we will use the full dataset (not just web) to see weather all of the networks are equally important. Lets explore the data once again:
+
+```{r}
+# check the activity per network
+table(all_raw$SOURCE_TYPE)
+# run the GOF test
+goodnessOfFitTest(as.factor(all_raw$SOURCE_TYPE))
+```
+
+Different kind of probability specification is possible. For example, we want to test if the probablility of the web activity in the whole social media space equals 40%. To complete the example lets first do some data tweaking:
+
+```{r}
+# create new column for web and everything else
+all_raw[, Network := if_else(SOURCE_TYPE != "web", "other", "web")][,Network := as.factor(Network)]
+# check the size of web vs. other media
+table(all_raw$Network)
+```
+
+
+Now, lets run the test:
+
+
+```{r}
+# specify the probablities
+probs = c(other = 0.60, web = 0.40)
+probs
+# run the test
+goodnessOfFitTest( all_raw$Network, p = probs )
+```
+
+### CHISQ TEST OF INDEPENDENCE
+
+For this test we need to have at least two factorial variables. Lets make some new variables:
+
+```{r}
+# package
+library(anytime)
+library(lubridate)
+# convert chr date to date format
+all_raw[,DTIME := anytime(paste(all_raw$DATE,all_raw$TIME))]
+# make lubridate
+all_raw[,DTIME := ymd_hms(paste(all_raw$DATE,all_raw$TIME))]
+# create breaks
+breaks <- hour(hm("00:00", "6:00", "12:00", "18:00", "23:59"))
+# labels for the breaks
+labels <- c("Night", "Morning", "Afternoon", "Evening")
+# make a new variable
+all_raw[, INTERDAYTIME := cut(x=hour(all_raw$DTIME),
+                         breaks = breaks,
+                         labels = labels,
+                         include.lowest=TRUE)][,INTERDAYTIME := as.factor()]
+```
+
+Now, we should check how these variables look like:
+
+```{r}
+
+# check the result
+table(all_raw$INTERDAYTIME)
+# also peak into activity again (&again)
+table(all_raw$SOURCE_TYPE)
+
+# we are interested in cross-tabulated View
+xtabs(~ INTERDAYTIME + SOURCE_TYPE, all_raw)
+
+```
+
+Finally, lets run the test:
+
+```{r}
+associationTest( formula = ~ INTERDAYTIME + SOURCE_TYPE, data = all_raw )
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
