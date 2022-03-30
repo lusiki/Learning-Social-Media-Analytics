@@ -370,7 +370,13 @@ probs = c(other = 0.60, web = 0.40)
 probs
 # run the test
 goodnessOfFitTest( all_raw$Network, p = probs )
+# another way to run the test
+chisq.test(all_raw$Network, p = c(other = 0.60, web = 0.40))
 ```
+
+
+
+
 
 ### CHISQ TEST OF INDEPENDENCE
 
@@ -392,7 +398,10 @@ labels <- c("Night", "Morning", "Afternoon", "Evening")
 all_raw[, INTERDAYTIME := cut(x=hour(all_raw$DTIME),
                          breaks = breaks,
                          labels = labels,
-                         include.lowest=TRUE)][,INTERDAYTIME := as.factor()]
+                         include.lowest=TRUE)][
+                           ,INTERDAYTIME := as.factor(INTERDAYTIME)][
+                             ,SOURCE_TYPE := as.factor(SOURCE_TYPE)
+                             ]
 ```
 
 Now, we should check how these variables look like:
@@ -417,25 +426,148 @@ associationTest( formula = ~ INTERDAYTIME + SOURCE_TYPE, data = all_raw )
 
 
 
+# ANOVA
+
+We are interested in differences of web activity response with respect to the intraday period. Lets first select the data of intrest and check relevant descriptives.
+
+```{r}
+# first take relevant data from web
+anova <- all_raw[SOURCE_TYPE == "web",.(INTERDAYTIME, LIKE_COUNT, COMMENT_COUNT, REACH)]
+# summarise data
+anova[,.(LIKE = mean(LIKE_COUNT, na.rm = TRUE),
+         COMMENT = mean(COMMENT_COUNT, na.rm = TRUE),
+         REACH = mean(REACH, na.rm = TRUE)),
+      INTERDAYTIME]
+```
+
+
+Now we can run the anova test(s):
+
+```{r}
+# test for likes
+summary(aov( formula = LIKE_COUNT ~ INTERDAYTIME, data = anova))
+# test for comments
+summary(aov( formula = COMMENT_COUNT ~ INTERDAYTIME, data = anova))
+# test for reach
+summary(aov( formula = REACH ~ INTERDAYTIME, data = anova))
+```
 
 
 
+### Checking assumptions
+
+# LINEAR REGRESSION
+
+The ususal pipeline consits of following elements:
+
+- explore data (looking at your data, vizualization, summary statistics)
+- fit the model
+- check quality
+
+
+```{r}
+# select relevant data
+reg <- all_raw[SOURCE_TYPE == "web",.(REACH,INTERDAYTIME, LIKE_COUNT, COMMENT_COUNT, TITLE, .N)]
+# check descriptives
+reg[,.(meanREACH = mean(REACH, na.rm = TRUE),
+       meanLIKE = mean(LIKE_COUNT, na.rm = TRUE),
+       meanCOMMENT = mean(COMMENT_COUNT, na.rm = TRUE),
+       No = mean(N),
+       meanTIT = mean(nchar(TITLE), na.rm = TRUE)
+       )]
+```
+Lets also make some vizual inspections
+
+```{r}
+ggplot(reg, aes(x = log(REACH))) +
+  geom_histogram(bins = 50, color = "#000000", fill = "#0099F8") +
+  labs(
+    title = "Distribution of REACH metric",
+    subtitle = "Made by LSMA",
+    caption = "Source: Mediatoolkit dataset",
+    x = "REACH (log scale)",
+    y = "Count"
+  ) +
+  theme_classic() +
+  theme(
+    plot.title = element_text(color = "#0099F8", size = 16, face = "bold"),
+    plot.subtitle = element_text(size = 10, face = "bold"),
+    plot.caption = element_text(face = "italic")
+  )
+
+```
+
+
+```{r}
+ggplot(reg, aes(x = log(LIKE_COUNT))) +
+  geom_histogram(bins = 50, color = "#000000", fill = "#0099F8") +
+  labs(
+    title = "Distribution of LIKE_COUNT metric",
+    subtitle = "Made by LSMA",
+    caption = "Source: Mediatoolkit dataset",
+    x = "LIKE (log scale)",
+    y = "Count"
+  ) +
+  theme_classic() +
+  theme(
+    plot.title = element_text(color = "#0099F8", size = 16, face = "bold"),
+    plot.subtitle = element_text(size = 10, face = "bold"),
+    plot.caption = element_text(face = "italic")
+  )
+```
+
+
+```{r}
+ggplot(reg, aes(x = log(COMMENT_COUNT))) +
+  geom_histogram(bins = 50, color = "#000000", fill = "#0099F8") +
+  labs(
+    title = "Distribution of COMMENT_COUNT metric",
+    subtitle = "Made by LSMA",
+    caption = "Source: Mediatoolkit dataset",
+    x = "COMMENT (log scale)",
+    y = "Count"
+  ) +
+  theme_classic() +
+  theme(
+    plot.title = element_text(color = "#0099F8", size = 16, face = "bold"),
+    plot.subtitle = element_text(size = 10, face = "bold"),
+    plot.caption = element_text(face = "italic")
+  )
+```
+
+
+Also, lets see how the relationship looks
+
+```{r}
+ggplot(reg, aes(x = REACH, y = LIKE_COUNT)) +
+  geom_point() +
+  labs(x = "REACH", y = "LIKE_COUNT") + 
+  geom_smooth(methot = "lm", se = FALSE)
+
+ggplot(reg, aes(x = REACH, y = COMMENT_COUNT)) +
+  geom_point() +
+  labs(x = "REACH", y = "COMMENT_COUNT") + 
+  geom_smooth(methot = "lm", se = FALSE)
+
+ggplot(reg, aes(x = REACH, y = LIKE_COUNT)) +
+  geom_point() +
+  labs(x = "REACH", y = "LIKE_COUNT") + 
+  geom_smooth(methot = "lm", se = FALSE)
+
+```
 
 
 
+Now we can fit a first regression model:
 
 
+```{r}
+# run the model
+model_score_2 <- lm(REACH ~ COMMENT_COUNT, data = reg)
+# output content
+summary(model_score_2)
 
-
-
-
-
-
-
-
-
-
-
+```
 
 
 
