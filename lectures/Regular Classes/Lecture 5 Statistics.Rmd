@@ -371,7 +371,7 @@ probs
 # run the test
 goodnessOfFitTest( all_raw$Network, p = probs )
 # another way to run the test
-chisq.test(all_raw$Network, p = c(other = 0.60, web = 0.40))
+#chisq.test(all_raw$Network, p = c(other = 0.60, web = 0.40))
 ```
 
 
@@ -467,13 +467,13 @@ The ususal pipeline consits of following elements:
 
 ```{r}
 # select relevant data
-reg <- all_raw[SOURCE_TYPE == "web",.(REACH,INTERDAYTIME, LIKE_COUNT, COMMENT_COUNT, TITLE, .N)]
+reg <- all_raw[SOURCE_TYPE == "web",.(REACH,INTERDAYTIME, LIKE_COUNT, COMMENT_COUNT, TITLE, .N)][,TITLE := nchar(TITLE)]
 # check descriptives
 reg[,.(meanREACH = mean(REACH, na.rm = TRUE),
        meanLIKE = mean(LIKE_COUNT, na.rm = TRUE),
        meanCOMMENT = mean(COMMENT_COUNT, na.rm = TRUE),
        No = mean(N),
-       meanTIT = mean(nchar(TITLE), na.rm = TRUE)
+       meanTIT = mean(TITLE, na.rm = TRUE)
        )]
 ```
 Lets also make some vizual inspections
@@ -536,6 +536,30 @@ ggplot(reg, aes(x = log(COMMENT_COUNT))) +
 ```
 
 
+
+
+```{r}
+ggplot(reg, aes(x = INTERDAYTIME, y = log(REACH))) +
+  geom_boxplot() +
+  labs(x = "INTERDAYTIME", y = "REACH") +
+  labs(
+    title = "Distribution of REACH by time of the day",
+    subtitle = "Made by LSMA",
+    caption = "Source: Mediatoolkit dataset",
+    x = "INTERDAY",
+    y = "Reach (log scale)"
+  ) +
+  theme_classic() +
+  theme(
+    plot.title = element_text(color = "#0099F8", size = 16, face = "bold"),
+    plot.subtitle = element_text(size = 10, face = "bold"),
+    plot.caption = element_text(face = "italic")
+  )
+```
+
+
+
+
 Also, lets see how the relationship looks
 
 ```{r}
@@ -562,14 +586,34 @@ Now we can fit a first regression model:
 
 
 ```{r}
-# run the model
-model_score_2 <- lm(REACH ~ COMMENT_COUNT, data = reg)
+# run the model1
+model1 <- lm(REACH ~ COMMENT_COUNT, data = reg)
 # output content
-summary(model_score_2)
-
+summary(model1)
+# run the model2
+model2 <- lm(REACH ~ LIKE_COUNT, data = reg)
+# output content
+summary(model2)
+# run the model3
+model3 <- lm(REACH ~ TITLE, data = reg)
+# output content
+summary(model3)
+# run the model4
+model4 <- lm(REACH ~ INTERDAYTIME, data = reg)
+# output content
+summary(model4)
 ```
 
 
+Combine all variables together in a multiple regression model:
+
+```{r}
+# run the model5
+model5 <- lm(log(REACH) ~ log(LIKE_COUNT) + log(COMMENT_COUNT) + TITLE + INTERDAYTIME, 
+                    data = reg)
+# output content
+summary(model5)
+```
 
 
 
