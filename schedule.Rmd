@@ -86,22 +86,24 @@ title: " "
 
 
 
-**Format predavanja:** [.html](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/lectures/Regular%20Classes/Lecture-4-R-syntax--refresher-.html) | [.Rmd](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/lectures/Regular%20Classes/Lecture%204%20R%20syntax%20(refresher).Rmd) 
+**Format:** [.html](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/lectures/Regular%20Classes/Lecture-4-R-syntax--refresher-.html) | [.Rmd](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/lectures/Regular%20Classes/Lecture%204%20R%20syntax%20(refresher).Rmd) 
 <br>
-**Čitanje:** []() + []()
+**Readings:** []() + []()
 <br>
 <br>
 
-### Lecture 05: Methods for social media analysis I (descriptive statistics, visualization)
+### Lecture 05: Methods for social media analysis I (statistics)
 
-- 
-- 
-- 
+- Descriptive statistics
+- Comparing means
+- Categorical analysis
+- ANOVA
+- Linear regression
 
 
-**Format predavanja:** [.html]() | [.Rmd]() 
+**Format:** [.html](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/lectures/Regular%20Classes/Lecture-5-Statistics.html) | [.Rmd](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/lectures/Regular%20Classes/Lecture-5-Statistics.md) 
 <br>
-**Čitanje:** []()
+**Readings:** []()
 <br>
 <br>
 
