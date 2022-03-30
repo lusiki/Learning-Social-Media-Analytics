@@ -20,7 +20,7 @@ navbar:
         - text: "4. R syntax (refresher)"
           href: "https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-4-R-syntax--refresher-.html"
         - text: "5. Methods for social media analysis I"
-          href: ""  
+          href: "https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-5-Statistics.html"  
         - text: "6. Methods for social media analysis II"
           href: ""
         - text: "7. Methods for social media analysis III"
