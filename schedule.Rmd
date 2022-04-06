@@ -107,17 +107,17 @@ title: " "
 <br>
 <br>
 
-### Lecture 06: Methods for social media analysis II (network analysis, Natural Language Processing)
+### Lecture 06: Methods for social media analysis II (Machine Learning)
 
-- 
-- 
-- 
+- General Machine Learning
+- Modeling process
+- Feature and target engeneering
 
 
 
-**Format predavanja:** [.html]() | [.Rmd]() 
+**Format predavanja:** [.html](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/lectures/Regular%20Classes/Lecture-6-Machine-Learning.html) | [.Rmd](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/lectures/Regular%20Classes/Lecture%206%20Machine%20Learning.Rmd) 
 <br>
-**Čitanje:** []]() + []() + []()
+**Čitanje:** I, II and III Chapter of the [book](https://bradleyboehmke.github.io/HOML/) 
 <br>
 <br>
 

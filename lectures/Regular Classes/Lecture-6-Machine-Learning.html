@@ -184,14 +184,14 @@ h2o.init()         # launch h2o
 ##  Connection successful!
 ## 
 ## R is connected to the H2O cluster: 
-##     H2O cluster uptime:         1 hours 39 minutes 
+##     H2O cluster uptime:         2 hours 4 minutes 
 ##     H2O cluster timezone:       Europe/Belgrade 
 ##     H2O data parsing timezone:  UTC 
 ##     H2O cluster version:        3.36.0.2 
 ##     H2O cluster version age:    2 months and 11 days  
 ##     H2O cluster name:           H2O_started_from_R_Lukas_hqu063 
 ##     H2O cluster total nodes:    1 
-##     H2O cluster total memory:   6.76 GB 
+##     H2O cluster total memory:   6.95 GB 
 ##     H2O cluster total cores:    8 
 ##     H2O cluster allowed cores:  8 
 ##     H2O cluster healthy:        TRUE 
@@ -535,15 +535,21 @@ ames_test   &lt;- testing(split)
 ---
 
 ### Putting it all together
-
+&lt;br&gt;
+&lt;br&gt;
 - Next, we’re going to apply a k-nearest neighbor regressor to our data. To do so, we’ll use caret, which is a meta-engine to simplify the resampling, grid search, and model application processes. 
 
 The following defines:
 
-**Resampling method**: we use 10-fold CV repeated 5 times.
-**Grid search**: we specify the hyperparameter values to assess (k=2,3,4,…,25).
-**Model training &amp; Validation**: we train a k-nearest neighbor (method = "knn") model using our pre-specified resampling procedure (trControl = cv), grid search (tuneGrid = hyper_grid), and preferred loss function (metric = "RMSE").
+- **Resampling method**: we use 10-fold CV repeated 5 times.
+- **Grid search**: we specify the hyperparameter values to assess (k=2,3,4,…,25).
+- **Model training &amp; Validation**: we train a k-nearest neighbor (method = "knn") model using our pre-specified resampling procedure (trControl = cv), grid search (tuneGrid = hyper_grid), and preferred loss function (metric = "RMSE").
 
+---
+
+### Putting it all together
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Specify resampling strategy
@@ -552,7 +558,6 @@ cv &lt;- trainControl(
   number = 10, 
   repeats = 5
 )
-
 # Create grid of hyperparameter values
 hyper_grid &lt;- expand.grid(k = seq(2, 25, by = 1))
 
@@ -577,56 +582,10 @@ Looking at our results we see that the best model coincided with k= 7, which res
 ```r
 # Print and plot the CV results
 knn_fit
-```
-
-```
-## k-Nearest Neighbors 
-## 
-## 2049 samples
-##   80 predictor
-## 
-## No pre-processing
-## Resampling: Cross-Validated (10 fold, repeated 5 times) 
-## Summary of sample sizes: 1844, 1844, 1843, 1844, 1844, 1845, ... 
-## Resampling results across tuning parameters:
-## 
-##   k   RMSE      Rsquared   MAE     
-##    2  47206.74  0.6596344  31133.25
-##    3  45684.91  0.6773635  30007.71
-##    4  44771.97  0.6901038  29276.09
-##    5  44064.54  0.7005790  28996.93
-##    6  43846.05  0.7045166  28895.48
-##    7  43858.13  0.7059401  28883.74
-##    8  44181.13  0.7033657  29055.05
-##    9  44352.03  0.7028597  29109.00
-##   10  44332.46  0.7053884  29129.62
-##   11  44282.81  0.7083442  29081.39
-##   12  44486.34  0.7075253  29155.41
-##   13  44647.15  0.7076206  29256.68
-##   14  44790.79  0.7077073  29307.11
-##   15  45041.02  0.7063767  29423.86
-##   16  45119.37  0.7073844  29484.00
-##   17  45264.01  0.7070891  29586.22
-##   18  45366.02  0.7072968  29641.92
-##   19  45537.84  0.7066304  29766.52
-##   20  45746.63  0.7052851  29907.89
-##   21  45983.35  0.7031524  30058.55
-##   22  46187.92  0.7017539  30192.39
-##   23  46406.95  0.7001361  30329.98
-##   24  46605.01  0.6986611  30483.94
-##   25  46824.70  0.6971044  30617.33
-## 
-## RMSE was used to select the optimal model using the smallest value.
-## The final value used for the model was k = 6.
-```
-
-```r
 ## RMSE was used to select the optimal model using the smallest value.
 ## The final value used for the model was k = 7.
 ggplot(knn_fit)
 ```
-
-![](Lecture-6-Machine-Learning_files/figure-html/unnamed-chunk-14-1.png)&lt;!-- --&gt;
 
 - Is this the best predictive model we can find? We may have identified the optimal k-nearest neighbor model for our given data set, but this doesn’t mean we’ve found the best possible overall model. Nor have we considered potential feature and target engineering options.
 
