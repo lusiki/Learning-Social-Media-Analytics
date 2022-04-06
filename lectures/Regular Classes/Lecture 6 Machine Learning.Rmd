@@ -672,7 +672,7 @@ gg1 <- AmesHousing::ames_raw %>%
 ### Dealing with missingness
 
 
-```{r, fig.width= 6 echo = FALSE}
+```{r, fig.width= 6, echo = FALSE}
 gg1
 ```
 
