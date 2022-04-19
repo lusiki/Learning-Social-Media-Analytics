@@ -1,0 +1,316 @@
+---
+title: "Learning Social Media Analytics"
+# subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
+subtitle: "Lecture 7: Text Analysis"
+author: "Luka Sikic, PhD <br> Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)"
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts] 
+    lib_dir: libs
+    nature:
+      highlightStyle: googlecode
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, message = F, warning = F)
+```
+
+
+```{r libs, include=TRUE, echo=FALSE,message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readxl)
+library(here)
+library(kableExtra)
+library(DT)
+library(data.table)
+library(lubridate)
+library(anytime)
+library(tidytext)
+library(grid)
+library(wordcloud)
+library(reshape2)
+library(ggraph)
+library(widyr)
+library(topicmodels)
+library(ggthemes)
+```
+
+
+# OUTLINE
+<br>
+<br>
+<br>
+- DATA IMPORT 
+<br>
+<br>
+- PREPARE TEXT DATA
+<br>
+<br>
+- 
+<br>
+<br>
+
+
+
+# DATA IMPORT
+
+#### ARTICLE DATA
+
+```{r, echo=T}
+# read in data
+
+path <- "D:/LUKA/Freelance/Mediatoolkit/FULLtxtDATA"
+raw <- list.files(path = path , pattern="xlsx")
+raw_path <- paste0(path, "/", raw)
+all_raw <- map_df(raw_path, read_excel)
+
+```
+
+
+```{r}
+# some basic data wrangle
+all <- as.data.table(all_raw)
+all <- all[,DATE := as.Date(DATE,"%Y-%m-%d")][,DATETIME := anytime(paste(DATE,TIME))]
+posts <- all[!duplicated(all),]
+rm(all,all_raw)
+```
+
+```{r}
+# some basic data overview
+options(digits = 2)
+# data size 
+dim(posts)
+# time span
+range(posts$DATETIME)
+# descriptives
+posts[,.N,SOURCE_TYPE][order(-N)]
+# how many letters in a title
+posts[,
+       .(Avg = mean(nchar(TITLE), na.rm = T),
+         STD = sd(nchar(TITLE), na.rm = T),
+         min = min(nchar(TITLE), na.rm = T),
+         max = max(nchar(TITLE), na.rm = T)),
+      SOURCE_TYPE][order(-Avg),]
+# how many letters in a text
+posts[,
+       .(Avg = mean(nchar(FULL_TEXT)),
+         STD = sd(nchar(FULL_TEXT)),
+         min = min(nchar(FULL_TEXT)),
+         max = max(nchar(FULL_TEXT))),
+      SOURCE_TYPE][order(-Avg),]
+```
+
+#### LEXICON DATA
+
+```{r leksikoni, message=F, warning=F}
+# read in lexicons
+CroSentilex_n <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-negatives.txt",
+                                   header = FALSE,
+                                   sep = " ",
+                                   stringsAsFactors = FALSE,
+                                   fileEncoding = "UTF-8")  %>%
+                   rename(word = "V1", sentiment = "V2" ) %>%
+                   mutate(brija = "NEG")
+ 
+CroSentilex_p  <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-positives.txt",
+                                   header = FALSE,
+                                   sep = " ",
+                                   stringsAsFactors = FALSE,
+                                   fileEncoding = "UTF-8") %>%
+                    rename(word = "V1", sentiment = "V2" ) %>%
+                    mutate(brija = "POZ")
+ 
+Crosentilex_sve <- rbind(setDT(CroSentilex_n), setDT(CroSentilex_p))
+# check lexicon data 
+head(sample_n(Crosentilex_sve,1000),15)
+
+ 
+CroSentilex_Gold  <- read.delim2("C:/Users/Lukas/Dropbox/Mislav@Luka/gs-sentiment-annotations.txt",
+                                 header = FALSE,
+                                 sep = " ",
+                                 stringsAsFactors = FALSE) %>%
+                    rename(word = "V1", sentiment = "V2" ) 
+ Encoding(CroSentilex_Gold$word) <- "UTF-8"
+ CroSentilex_Gold[1,1] <- "dati"
+ CroSentilex_Gold$sentiment <- str_replace(CroSentilex_Gold$sentiment , "-", "1")
+ CroSentilex_Gold$sentiment <- str_replace(CroSentilex_Gold$sentiment , "\\+", "2")
+ CroSentilex_Gold$sentiment <- as.numeric(unlist(CroSentilex_Gold$sentiment))
+# check lexicon data 
+head(sample_n(CroSentilex_Gold,100),15)
+ 
+# create stop words
+stopwords_cro <- get_stopwords(language = "hr", source = "stopwords-iso")
+# check stopwords data
+head(sample_n(stopwords_cro,100),15)
+# extend stop words
+my_stop_words <- tibble(
+  word = c(
+    "jedan","mjera", "može", "mogu", "kad", "sada", "treba", "ima", "osoba",
+    "e","prvi", "dva","dvije","drugi",
+    "tri","treći","pet","kod",
+    "ove","ova",  "ovo","bez", "kod",
+    "evo","oko",  "om", "ek",
+    "mil","tko","šest", "sedam",
+    "osam",   "čim", "zbog",
+    "prema", "dok","zato", "koji", 
+    "im", "čak","među", "tek",
+    "koliko", "tko","kod","poput", 
+    "baš", "dakle", "osim", "svih", 
+    "svoju", "odnosno", "gdje",
+    "kojoj", "ovi", "toga",
+     "ubera", "vozača", "hrvatskoj", "usluge", "godine", "više", "taksi", "taxi", "taksija", "taksija", "kaže", "rekao", "19"," aee", "ae"
+  ),
+  lexicon = "lux"
+)
+stop_corpus <- my_stop_words %>%
+  bind_rows(stopwords_cro)
+# check stopwords data
+head(sample_n(stop_corpus,100),15)
+```
+
+
+# PREPARE TEXT DATA
+
+### TOKENIZE 
+
+```{r tokeni}
+web <- posts[SOURCE_TYPE == "web",]
+# fb <- posts[SOURCE_TYPE == "facebook",]
+# youtube <- posts[SOURCE_TYPE == "youtube",]
+# insta <- posts[SOURCE_TYPE == "instagram",]
+# twitter <- posts[SOURCE_TYPE == "twitter",]
+# reddit <- posts[SOURCE_TYPE == "reddit",]
+# forum <-  posts[SOURCE_TYPE == "forum",]
+# comment <-  posts[SOURCE_TYPE == "comment",]
+
+# tokenize
+web %>% 
+  unnest_tokens(word, TITLE) -> web
+# check
+web %>% 
+  sample_n(.,10)
+```
+
+
+### CLEAN
+
+```{r}
+# remove stop words, numbers, single letters, NA
+web %>% 
+  anti_join(stop_corpus, by = "word") %>%
+  mutate(word = gsub("\\d+", NA, word)) %>%
+  mutate(word = gsub("^[a-zA-Z]$", NA, word)) -> web_tokenTidy
+
+web_tokenTidy %>% filter(!is.na(word)) -> web_tokenTidy
+
+
+# check
+web_tokenTidy %>%
+  sample_n(.,15)
+
+```
+
+
+# ANALYSE
+
+
+### BASIC FREQUENCIES
+```{r}
+## Most common words
+web_tokenTidy[,.N,by = word][order(-N),] 
+
+## Vizualize most common words
+web_tokenTidy[,.N,by = word][N>8000][order(-N),][,word := reorder(word,N)] %>%
+  ggplot(aes(word, N)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip() +
+  theme_economist()
+
+## Vizualize most common words over time
+web_tokenTidy[,DAY:=floor_date(DATE,"day")][,N:=.N,by=DAY][,gn:=sum(N)][
+  word %in% c("hrvatska", "covid", "ukrajini", "rat", "kriza"),] %>%
+  ggplot(., aes(DAY,  N / gn)) + 
+   geom_point() +
+   ggtitle("Učestalost korištenja riječi") +
+   ylab("% ukupnih riječi") +
+   geom_smooth() +
+   facet_wrap(~ word, scales = "free_y") +
+   scale_y_continuous(labels = scales::percent_format())+
+   theme_economist()
+
+```
+
+```{r dekriptivnoDom, warning=F,message=F, fig.height=6, fig.width=10}
+
+## Articles per domain
+
+web[ ,.N,FROM][N>1500][order(-N)]
+
+
+## Articles per domain over time
+
+web_tokenTidy %>% 
+   filter(word == "rat" & FROM %in% c("index.hr", "jutarnji.hr", "glasistre.hr", "hina.hr")) %>%
+   mutate(WEEK = floor_date(DATE, "week")) %>%
+   group_by(WEEK, FROM) %>%
+   summarise(n = n()) %>%
+   ungroup() %>%
+   arrange(desc(n)) %>%
+   ggplot(., aes(WEEK,  n)) + 
+   geom_line() +
+   ggtitle("Članci o ratu na najvažnijim RH portalima") +
+   ylab("Broj objavljenih COVID članaka") +
+   geom_smooth() +
+   facet_wrap(~ FROM, scales = "free_y") +
+   theme_economist()
+```
+
+
+### SENTIMENT
+
+```{r sentimentTempus, message=F, warning=F}
+## Sentiment over time
+vizualiziraj_sentiment <- function(dataset, frq = "week") {
+dataset %>%
+  inner_join( Crosentilex_sve, by = "word") %>%
+  filter(!is.na(word)) %>%
+  select(word, brija, datum, sentiment) %>% 
+  unique() %>%
+  spread(. , brija, sentiment) %>%
+  mutate(sentiment = POZ - NEG) %>%
+  select(word, datum, sentiment) %>% 
+  group_by(word) %>% 
+  mutate(count = n()) %>%
+  arrange(desc(count)) %>%
+  mutate( score = sentiment*count) %>%
+  ungroup() %>%
+  group_by(datum) %>%
+  arrange(desc(datum)) -> sm
+ 
+sm %>%
+  select(datum, score) %>%
+  group_by(Datum = floor_date(datum, frq)) %>%
+  summarise(Dnevni_sent = sum(score, na.rm = TRUE)) %>%
+  ggplot(., aes(Datum, Dnevni_sent)) +
+  geom_bar(stat = "identity") + 
+  ggtitle(paste0("Sentiment kroz vrijeme;frekvencija podataka:", frq)) +
+  ylab("SentimentScore") +
+  theme_economist()-> gg_sentiment_kroz_vrijeme_qv
+gg_sentiment_kroz_vrijeme_qv
+}
+vizualiziraj_sentiment(newsCOVID_tokenTidy,"week")
+```
+
+
+
+
+
+
+
+
+
