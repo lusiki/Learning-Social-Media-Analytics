@@ -49,16 +49,16 @@ library(reportMD)
 <br>
 <br>
 <br>
-- 
+- DATA IMPORT
 <br>
 <br>
--
+- DESCRIPTIVE EXPLORATION
 <br>
 <br>
-- 
+- TEXT TOKENIZATION AND CLEAN
 <br>
 <br>
-
+- ANALYSIS
 
 
 # DATA IMPORT
@@ -152,9 +152,7 @@ stop_corpus <- my_stop_words %>%
 head(sample_n(stop_corpus,100),15)
 ```
 
-
-
-# DESCRIPTIVE OVERVIEW
+# DESCRIPTIVE EXPLORATION
 
 ```{r tokeni}
 
@@ -239,7 +237,7 @@ fb[,
 ```
 
 
-# PREPARE TEXT DATA
+# TEXT TOKENIZATION AND CLEAN
 
 
 #### TOKENIZE
@@ -324,7 +322,6 @@ fb_tokenTidy %>%
   with(wordcloud(word, n, max.words = 80)) 
 ```
 
-
 #### SENTIMENT
 
 ```{r sentimentTempus, message=F, warning=F}
@@ -403,8 +400,6 @@ fb_tokenTidy %>%
 
 ```
 
-Negativity analysis of influencers:
-
 ```{r negDomen, warning=F, message=F}
 ## Negative profiles
 wCount <- fb_tokenTidy %>% 
@@ -422,8 +417,6 @@ fb_tokenTidy %>%
   select(FROM, negativnostIndex)
 ```
 
-
-
 ```{r pozDomen, warning=F, message=F}
 ## Najpozitivniji portali
 CroSentilex_Gold_poz <- CroSentilex_Gold %>% filter(sentiment == 2)
@@ -436,7 +429,6 @@ fb_tokenTidy %>%
   arrange(desc(pozitivnostIndex)) %>%
   select(FROM, pozitivnostIndex)
 ```
-
 
 
 # ANALYSIS OF MOST LIKED POSTS
@@ -457,7 +449,6 @@ fb_TopLike %>%
 
 # dim after tokenize
 dim(fb_token_TopLike)
-
 
 # remove stop words, numbers, single letters
 fb_token_TopLike %>% 
@@ -484,11 +475,7 @@ fb_tokenTidy_TopLike %>%
 ```
 
 
-
-
-
-TERM IMPORTANCE
-
+#### TERM IMPORTANCE
 
 
 ```{r frekvencija, message=F, warning=F, fig.height=10, fig.width=10}
@@ -528,6 +515,168 @@ idf %>%
   coord_flip() +
   theme_economist()
 ```
+
+
+#### PHRASES
+
+```{r nGRAMI, message=F, warning=F, fig.height=15, fig.width=10}
+fb_bigram <- fb_TopLike %>%
+  unnest_tokens(bigram, FULL_TEXT, token = "ngrams", n = 2)
+fb_bigram %>% head(10)
+fb_bigram %>%
+  count(bigram, sort = T) %>%
+  head(15) 
+fb_bigram_sep <- fb_bigram %>%
+  separate(bigram, c("word1","word2"), sep = " ")
+fb_bigram_tidy <- fb_bigram_sep %>%
+  filter(!word1 %in% stop_corpus$word) %>%
+  filter(!word2 %in% stop_corpus$word) %>%
+  mutate(word1 = gsub("\\d+", NA, word1)) %>%
+  mutate(word2 = gsub("\\d+", NA, word2)) %>%
+  mutate(word1 = gsub("^[a-zA-Z]$", NA, word1)) %>%
+  mutate(word2 = gsub("^[a-zA-Z]$", NA, word2)) 
+fb_bigram_tidy_bigram_counts <- fb_bigram_tidy %>% 
+  count(word1, word2, sort = TRUE)
+
+bigrams_united <- fb_bigram_tidy %>%
+  unite(bigram, word1, word2, sep = " ") %>%
+  filter(., !grepl("NA",bigram))
+#bigrams_united
+bigrams_united %>% 
+  count(FROM,bigram,sort = T) -> topicBigram
+
+bigrams_united %>%
+  count(bigram, sort = T) %>%
+  head(35) 
+
+
+# Najvažniji bigrami po domenama
+ bigram_tf_idf <- bigrams_united %>% 
+#  filter (!is.na(bigram)) %>%
+  count(FROM, bigram) %>%
+  bind_tf_idf(bigram, FROM, n) %>%
+  arrange(desc(tf_idf))
+bigram_tf_idf %>%
+  filter(FROM %in% c("Ivan Vilibor Sinčić", "Zoran Šprajc", "Velimir Bujanec", "Kristijan Iličić" )) %>%
+  arrange(desc(tf_idf)) %>%
+  mutate(bigram = factor(bigram, levels = rev(unique(bigram)))) %>% 
+  group_by(FROM) %>% 
+  top_n(10) %>% 
+  ungroup() %>%
+  ggplot(aes(bigram, tf_idf, fill = FROM)) +
+  geom_col(show.legend = FALSE) +
+  labs(x = NULL, y = "tf-idf") +
+  facet_wrap(~FROM, ncol = 2, scales = "free") +
+  coord_flip() + 
+  theme_economist()
+
+```
+
+
+```{r, message=F, warning=F, fig.height=15, fig.width=10}
+bigram_tf_idf %>%
+  filter(FROM %in% c("Nikola Grmoja", "Mirko CroCop Filipovic", "Andrej Plenković", "Marko Perković Thompson" )) %>%
+  arrange(desc(tf_idf)) %>%
+  mutate(bigram = factor(bigram, levels = rev(unique(bigram)))) %>% 
+  group_by(FROM) %>% 
+  top_n(5) %>% 
+  ungroup() %>%
+  ggplot(aes(bigram, tf_idf, fill = FROM)) +
+  geom_col(show.legend = FALSE) +
+  labs(x = NULL, y = "tf-idf") +
+  facet_wrap(~FROM, ncol = 2, scales = "free") +
+  coord_flip() + 
+  theme_economist()
+```
+
+
+#### PHRASES CORRELATION
+
+```{r eval = F,message=F, warning=F, fig.height=10, fig.width=10}
+
+fb_tokenTidy %>% 
+#  filter(datum > "2020-02-20") %>%
+  group_by(word) %>%
+  filter(n() > 20) %>%
+  filter(!is.na(word)) %>%
+  pairwise_cor(word,DATE, sort = T) -> corsWords
+#corsWords %>%
+#  filter(item1 == "oporavak")
+corsWords %>%
+  filter(item1 %in% c("kupnja", "akcija", "sex", "poklon")) %>%
+  group_by(item1) %>%
+  top_n(10) %>%
+  ungroup() %>%
+  mutate(item2 = reorder(item2, correlation)) %>%
+  ggplot(aes(item2, correlation)) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~ item1, scales = "free") +
+  coord_flip() + 
+  theme_economist()
+
+```
+
+
+### TEMATIC ANALYSIS
+
+
+```{r TEME, message=F, warning=F, fig.height=10, fig.width=10}
+fb_tokenTidy_TopLike %>%
+  count(FROM, word, sort = TRUE) %>%
+  cast_dtm(FROM, word,n) -> dtm
+fb_LDA <- LDA(dtm, k = 4,  control = list(seed = 1234))
+fb_LDA_tidy <- tidy(fb_LDA, matrix = "beta")
+#newsCOVID_LDA_tidy
+insta_terms <- insta_LDA_tidy %>%
+  drop_na(.) %>%
+  group_by(topic) %>%
+  top_n(15, beta) %>%
+  ungroup() %>%
+  arrange(topic, -beta)
+#newsCOVID_terms
+insta_terms %>%
+  mutate(term = reorder_within(term, beta, topic)) %>%
+  ggplot(aes(term, beta, fill = factor(topic))) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~ topic, scales = "free") +
+  coord_flip() +
+  scale_x_reordered() + 
+  theme_economist()
+```
+
+
+
+```{r TEMEbigram, eval=T, message=F, warning=F,fig.height=10, fig.width=10}
+# Bigrami 
+topicBigram %>%
+  cast_dtm(FROM, bigram,n) -> dtmB
+insta_LDA <- LDA(dtmB, k = 4,  control = list(seed = 1234))
+insta_LDA_tidy <- tidy(insta_LDA, matrix = "beta")
+#newsCOVID_LDA_tidy
+insta_terms <- insta_LDA_tidy %>%
+  drop_na(.) %>%
+  group_by(topic) %>%
+  top_n(10, beta) %>%
+  ungroup() %>%
+  arrange(topic, -beta)
+#newsCOVID_terms
+insta_terms %>%
+  mutate(term = reorder_within(term, beta, topic)) %>%
+  ggplot(aes(term, beta, fill = factor(topic))) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~ topic, scales = "free") +
+  coord_flip() +
+  scale_x_reordered() + 
+  theme_economist()
+```
+
+
+
+
+
+
+
+
 
 
 
