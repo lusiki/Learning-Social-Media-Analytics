@@ -1,0 +1,542 @@
+---
+title: "Learning Social Media Analytics"
+# subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
+subtitle: "Lecture 8: Facebook"
+author: "Luka Sikic, PhD <br> Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)"
+output:
+  html_document:
+    code_folding: show
+    theme: flatly
+    highlight: haddock
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+    keep_md: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '4'
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, message = F, warning = F)
+```
+
+
+```{r libs, include=TRUE, echo=FALSE,message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readxl)
+library(here)
+library(kableExtra)
+library(DT)
+library(data.table)
+library(lubridate)
+library(anytime)
+library(tidytext)
+library(grid)
+library(wordcloud)
+library(reshape2)
+library(ggraph)
+library(widyr)
+library(topicmodels)
+library(ggthemes)
+library(reportMD)
+```
+
+
+# OUTLINE
+<br>
+<br>
+<br>
+- 
+<br>
+<br>
+-
+<br>
+<br>
+- 
+<br>
+<br>
+
+
+
+# DATA IMPORT
+
+#### ARTICLES
+
+```{r, echo=T}
+# read in data
+path <- "D:/LUKA/Freelance/Mediatoolkit/FULLtxtDATA"
+raw <- list.files(path = path , pattern="xlsx")
+raw_path <- paste0(path, "/", raw)
+all_raw <- map_df(raw_path, read_excel)
+```
+
+
+```{r}
+# some basic data wrangle
+all <- as.data.table(all_raw)
+all <- all[,DATE := as.Date(DATE,"%Y-%m-%d")][,DATETIME := anytime(paste(DATE,TIME))]
+posts <- all[!duplicated(all),]
+rm(all,all_raw)
+# select facebook
+fb <- posts[SOURCE_TYPE == "facebook",]
+```
+
+#### LEXICON 
+
+```{r leksikoni, message=F, warning=F}
+# read in lexicons
+CroSentilex_n <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-negatives.txt",
+                                   header = FALSE,
+                                   sep = " ",
+                                   stringsAsFactors = FALSE,
+                                   fileEncoding = "UTF-8")  %>%
+                   rename(word = "V1", sentiment = "V2" ) %>%
+                   mutate(brija = "NEG")
+ 
+CroSentilex_p  <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-positives.txt",
+                                   header = FALSE,
+                                   sep = " ",
+                                   stringsAsFactors = FALSE,
+                                   fileEncoding = "UTF-8") %>%
+                    rename(word = "V1", sentiment = "V2" ) %>%
+                    mutate(brija = "POZ")
+ 
+Crosentilex_sve <- rbind(setDT(CroSentilex_n), setDT(CroSentilex_p))
+# check lexicon data 
+head(sample_n(Crosentilex_sve,1000),15)
+
+ 
+CroSentilex_Gold  <- read.delim2("C:/Users/Lukas/Dropbox/Mislav@Luka/gs-sentiment-annotations.txt",
+                                 header = FALSE,
+                                 sep = " ",
+                                 stringsAsFactors = FALSE) %>%
+                    rename(word = "V1", sentiment = "V2" ) 
+ Encoding(CroSentilex_Gold$word) <- "UTF-8"
+ CroSentilex_Gold[1,1] <- "dati"
+ CroSentilex_Gold$sentiment <- str_replace(CroSentilex_Gold$sentiment , "-", "1")
+ CroSentilex_Gold$sentiment <- str_replace(CroSentilex_Gold$sentiment , "\\+", "2")
+ CroSentilex_Gold$sentiment <- as.numeric(unlist(CroSentilex_Gold$sentiment))
+# check lexicon data 
+head(sample_n(CroSentilex_Gold,100),15)
+ 
+# create stop words
+stopwords_cro <- get_stopwords(language = "hr", source = "stopwords-iso")
+# check stopwords data
+head(sample_n(stopwords_cro,100),15)
+# extend stop words
+my_stop_words <- tibble(
+  word = c(
+    "jedan","mjera", "može", "možete", "mogu", "kad", "sada", "treba", "ima", "osoba",
+    "e","prvi", "dva","dvije","drugi",
+    "tri","treći","pet","kod",
+    "ove","ova",  "ovo","bez", "kod",
+    "evo","oko",  "om", "ek",
+    "mil","tko","šest", "sedam",
+    "osam",   "čim", "zbog",
+    "prema", "dok","zato", "koji", 
+    "im", "čak","među", "tek",
+    "koliko", "tko","kod","poput", 
+    "baš", "dakle", "osim", "svih", 
+    "svoju", "odnosno", "gdje",
+    "kojoj", "ovi", "toga",
+     "ubera", "vozača", "hrvatskoj", "usluge", "godine", "više", "taksi", "taxi", "taksija", "taksija", "kaže", "rekao", "19"," aee", "ae","bit.ly", "https", "one", "the"
+  ),
+  lexicon = "lux"
+)
+stop_corpus <- my_stop_words %>%
+  bind_rows(stopwords_cro)
+# check stopwords data
+head(sample_n(stop_corpus,100),15)
+```
+
+
+
+# DESCRIPTIVE OVERVIEW
+
+```{r tokeni}
+
+# influencers by ACTIVITY
+fb[,.N,FROM][order(-N)]
+
+# influencers by FOLLOWERS
+fb[,FOLLOWERS := max(FOLLOWERS_COUNT), FROM][,c("FOLLOWERS","FROM")][order(-FOLLOWERS)] %>% unique() 
+
+# influencers by REACH
+fb[,REACH := sum(REACH), FROM][,.(REACH,FROM)][order(-REACH)] %>% unique() 
+
+# influencers by REACH II
+fb[, `:=` (ACTIVITY = .N ,REACH = sum(REACH),EFFECT = REACH/ACTIVITY), FROM][,.(FROM,ACTIVITY,REACH, EFFECT)][ACTIVITY >= 100][order(-EFFECT)] %>% unique()
+
+# influencers by LIKE
+fb[,LIKE := sum(LIKE_COUNT), FROM][,.(LIKE,FROM)][order(-LIKE)] %>% unique() 
+
+# influencers by LIKE II
+fb[, `:=` (ACTIVITY = .N ,LIKE = sum(LIKE_COUNT),EFFICIENCY = LIKE/ACTIVITY), FROM][,.(FROM,ACTIVITY,LIKE, EFFICIENCY)][ACTIVITY >= 100][order(-EFFICIENCY)] %>% unique()
+
+# influencers by INTERACTIONS
+fb[,INTERACTIONS := sum(INTERACTIONS), FROM][,.(INTERACTIONS,FROM)][order(-INTERACTIONS)] %>% unique() 
+
+
+# influencers by COMMENT
+fb[,COMMENT := sum(COMMENT_COUNT), FROM][,.(COMMENT,FROM)][order(-COMMENT)] %>% unique() 
+
+
+# influencers by COMMENT II
+fb[, `:=` (ACTIVITY = .N , COMMENT = sum(COMMENT_COUNT),ENGAGE = COMMENT/ACTIVITY), FROM][,.(FROM,ACTIVITY,COMMENT, ENGAGE)][ACTIVITY >= 100][order(-COMMENT)] %>% unique()
+
+# influencers by SHARE
+fb[,SHARE := sum(SHARE_COUNT), FROM][,.(SHARE,FROM)][order(-SHARE)] %>% unique() 
+
+
+# influencers by SHARE II
+fb[, `:=` (ACTIVITY = .N , SHARE = sum(SHARE_COUNT), DISPERSION = SHARE/ACTIVITY), FROM][,.(FROM,ACTIVITY,SHARE,DISPERSION)][ACTIVITY >= 100][order(-DISPERSION)] %>% unique()
+
+# letters by influencer
+
+fb[, `:=` (ACTIVITY = .N ,LETTERS = sum(nchar(FULL_TEXT)),EFFORT = LETTERS/ACTIVITY), FROM][,.(FROM,ACTIVITY,LETTERS, EFFORT)][ACTIVITY >= 100][order(-EFFORT)] %>% unique()
+
+
+# posts by REACH
+
+fb[,.(SHARE_COUNT,FROM,FULL_TEXT, URL)][order(-SHARE_COUNT)] 
+
+# posts by LIKE
+
+fb[,.(LIKE_COUNT,FROM,FULL_TEXT, URL)][order(-LIKE_COUNT)] 
+
+# posts by INTERACTIONS
+
+fb[,.(INTERACTIONS,FROM,FULL_TEXT, URL)][order(-INTERACTIONS)]  
+
+# posts by COMMENT
+
+fb[,.(COMMENT_COUNT,FROM,FULL_TEXT, URL)][order(-COMMENT_COUNT)]  
+
+# posts by SHARE
+
+fb[,.(SHARE_COUNT,FROM,FULL_TEXT, URL)][order(-SHARE_COUNT)] 
+
+
+# how many letters in a title
+fb[,
+       .(Avg = mean(nchar(TITLE), na.rm = T),
+         STD = sd(nchar(TITLE), na.rm = T),
+         min = min(nchar(TITLE), na.rm = T),
+         max = max(nchar(TITLE), na.rm = T)),
+      SOURCE_TYPE][order(-Avg),]
+# how many letters in a text
+fb[,
+       .(Avg = mean(nchar(FULL_TEXT)),
+         STD = sd(nchar(FULL_TEXT)),
+         min = min(nchar(FULL_TEXT)),
+         max = max(nchar(FULL_TEXT))),
+      SOURCE_TYPE][order(-Avg),]
+
+
+```
+
+
+# PREPARE TEXT DATA
+
+
+#### TOKENIZE
+
+```{r}
+# dim before tokenize
+dim(fb)
+
+# tokenize
+fb %>% 
+  unnest_tokens(word, FULL_TEXT) -> fb_token
+
+# dim after tokenize
+dim(fb_token)
+
+# check
+fb_token %>% 
+  select(FROM, word, MENTION_SNIPPET ) %>%
+    sample_n(.,10)
+```
+
+#### CLEAN
+
+```{r}
+# remove stop words, numbers, single letters
+fb_token %>% 
+  anti_join(stop_corpus, by = "word") %>%
+  mutate(word = gsub("\\d+", NA, word)) %>%
+  mutate(word = gsub("^[a-zA-Z]$", NA, word)) -> fb_tokenTidy
+# remove NA
+fb_tokenTidy %>%
+  filter(!is.na(word)) -> fb_tokenTidy
+
+# check
+fb_tokenTidy  %>% 
+  select(FROM, word, MENTION_SNIPPET ) %>%
+  sample_n(.,15)
+
+```
+
+
+# ANALYSE
+
+
+#### BASIC FREQUENCIES
+
+```{r}
+## Most common words
+fb_tokenTidy[,.N,by = word][order(-N),]
+
+## Vizualize most common words
+fb_tokenTidy[,.N,by = word][N>7000][order(-N),][,word := reorder(word,N)] %>%
+  ggplot(aes(word, N)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip() +
+  theme_economist()
+
+## Vizualize most common words over time
+fb_tokenTidy[,DAY:=floor_date(DATE,"day")][,N:=.N,by=DAY][,gn:=sum(N)][
+  word %in% c("zagreb", "život", "poklon", "grad", "cijena"),] %>%
+  ggplot(., aes(DAY,  N / gn)) + 
+   geom_point() +
+   ggtitle("Učestalost korištenja riječi") +
+   ylab("% ukupnih riječi") +
+   geom_smooth() +
+   facet_wrap(~ word, scales = "free_y") +
+   scale_y_continuous(labels = scales::percent_format())+
+   theme_economist()
+
+```
+
+Simple WordCloud:
+
+```{r WCloud, message=F, warning=F}
+## WordCloud(vulgaris)
+fb_tokenTidy %>%
+  anti_join(CroSentilex_Gold,by="word") %>% 
+  count(word) %>% 
+  arrange(desc(n)) %>%
+  top_n(100) %>%
+  with(wordcloud(word, n, max.words = 80)) 
+```
+
+
+#### SENTIMENT
+
+```{r sentimentTempus, message=F, warning=F}
+## Sentiment over time
+vizualiziraj_sentiment <- function(dataset, frq = "week") {
+dataset %>%
+  inner_join( Crosentilex_sve, by = "word") %>%
+  filter(!is.na(word)) %>%
+  select(word, brija, DATE, sentiment) %>% 
+  unique() %>%
+  spread(. , brija, sentiment) %>%
+  mutate(sentiment = POZ - NEG) %>%
+  select(word, DATE, sentiment) %>% 
+  group_by(word) %>% 
+  mutate(count = n()) %>%
+  arrange(desc(count)) %>%
+  mutate( score = sentiment*count) %>%
+  ungroup() %>%
+  group_by(DATE) %>%
+  arrange(desc(DATE)) -> sm
+ 
+sm %>%
+  select(DATE, score) %>%
+  group_by(DATE = floor_date(DATE, frq)) %>%
+  summarise(Dnevni_sent = sum(score, na.rm = TRUE)) %>%
+  ggplot(., aes(DATE, Dnevni_sent)) +
+  geom_bar(stat = "identity") + 
+  ggtitle(paste0("Sentiment over time;freqency:", frq)) +
+  ylab("SentimentScore") +
+  theme_economist()-> gg_sentiment_kroz_vrijeme_qv
+gg_sentiment_kroz_vrijeme_qv
+}
+vizualiziraj_sentiment(fb_tokenTidy,"week")
+```
+
+
+```{r doprinoSentimentu, message=F, warning=F, fig.width=10}
+## Sentiment 
+doprinos_sentimentu <- function(dataset, no = n) {
+dataset %>%
+  inner_join(CroSentilex_Gold, by = "word") %>% 
+  count(word, sentiment,sort = TRUE) %>% 
+  group_by(sentiment) %>%
+  top_n(no) %>%
+  ungroup() %>%
+  mutate(sentiment = case_when(sentiment == 0 ~ "NEUTRAL",
+                                 sentiment == 1 ~ "NEGATIVE",
+                                 sentiment == 2 ~ "POSITIVE")) %>%
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(word, n, fill = sentiment)) +
+  geom_col(show.legend = FALSE) +
+  ggtitle( "Sentiment") +
+  labs( x = "Riječ", y = "Number of words") +
+  facet_wrap(~ sentiment, scales = "free_y") +
+  coord_flip() +
+  theme_economist() -> gg_doprinos_sentimentu
+  
+ gg_doprinos_sentimentu
+ 
+}
+doprinos_sentimentu(fb_tokenTidy,15)
+```
+
+```{r WCloutSent, warning=F, message=F}
+## ComparisonCloud
+fb_tokenTidy %>%
+  inner_join(CroSentilex_Gold,by="word") %>% 
+  count(word, sentiment) %>% 
+  top_n(200) %>%
+  mutate(sentiment = case_when(sentiment == 0 ~ "+/-",
+                                 sentiment == 1 ~ "-",
+                                 sentiment == 2 ~ "+")) %>%
+  acast(word ~ sentiment, value.var = "n", fill = 0) %>%
+  comparison.cloud(colors = c("firebrick3", "deepskyblue3","darkslategray"),
+                   max.words = 120)
+
+```
+
+Negativity analysis of influencers:
+
+```{r negDomen, warning=F, message=F}
+## Negative profiles
+wCount <- fb_tokenTidy %>% 
+  group_by(FROM) %>%
+  summarise(word = n())
+CroSentilex_Gold_neg <- CroSentilex_Gold %>% filter(sentiment == 1)
+CroSentilex_Gold_poz <- CroSentilex_Gold %>% filter(sentiment == 2)
+fb_tokenTidy %>% 
+  semi_join(CroSentilex_Gold_neg, by= "word") %>%
+  group_by(FROM) %>% 
+  summarise(negWords = n()) %>%
+  left_join(wCount, by = "FROM") %>%
+  mutate(negativnostIndex = (negWords/word)*100) %>%
+  arrange(desc(negativnostIndex)) %>%
+  select(FROM, negativnostIndex)
+```
+
+
+
+```{r pozDomen, warning=F, message=F}
+## Najpozitivniji portali
+CroSentilex_Gold_poz <- CroSentilex_Gold %>% filter(sentiment == 2)
+fb_tokenTidy %>% 
+  semi_join(CroSentilex_Gold_poz, by= "word") %>%
+  group_by(FROM) %>% 
+  summarise(pozWords = n()) %>%
+  left_join(wCount, by = "FROM") %>%
+  mutate(pozitivnostIndex = (pozWords/word)*100) %>%
+  arrange(desc(pozitivnostIndex)) %>%
+  select(FROM, pozitivnostIndex)
+```
+
+
+
+# ANALYSIS OF MOST LIKED POSTS
+
+```{r}
+# Select postes with +5k likes
+fb[order(-LIKE_COUNT)][LIKE_COUNT >= 1000] -> fb_TopLike
+# check
+dim(fb_TopLike)
+# influencer activity
+fb_TopLike[,.N,FROM][order(-N)]
+# influencer by like
+fb_TopLike[,.(FROM, LIKE_COUNT)][,LIKES := sum(LIKE_COUNT),FROM][,.(FROM,LIKES)][order(-LIKES)] %>% unique()
+
+# tokenize
+fb_TopLike %>% 
+  unnest_tokens(word, FULL_TEXT) -> fb_token_TopLike
+
+# dim after tokenize
+dim(fb_token_TopLike)
+
+
+# remove stop words, numbers, single letters
+fb_token_TopLike %>% 
+  anti_join(stop_corpus, by = "word") %>%
+  mutate(word = gsub("\\d+", NA, word)) %>%
+  mutate(word = gsub("^[a-zA-Z]$", NA, word)) -> fb_tokenTidy_TopLike
+# remove NA
+fb_tokenTidy_TopLike %>%
+  filter(!is.na(word)) -> fb_tokenTidy_TopLike
+
+```
+
+```{r}
+## most common words
+fb_tokenTidy_TopLike[,.N,by = word][order(-N),]
+## word cloud
+fb_tokenTidy_TopLike %>%
+  anti_join(CroSentilex_Gold,by="word") %>% 
+  count(word) %>% 
+  arrange(desc(n)) %>%
+  top_n(100) %>%
+  with(wordcloud(word, n, max.words = 80)) 
+
+```
+
+
+
+
+
+TERM IMPORTANCE
+
+
+
+```{r frekvencija, message=F, warning=F, fig.height=10, fig.width=10}
+## Udio riječi po domenama
+domenaWords <- fb_tokenTidy_TopLike %>%
+  filter(FROM %in% c("24sata", "Hajdučke vijesti", "Ivan Vilibor Sinčić", "Index.hr" )) %>% 
+  count(FROM, word, sort = T)
+  
+ukupnoWords <- domenaWords %>%
+  group_by(FROM) %>%
+  summarise(totWords = sum(n))
+domenaWords <- left_join(domenaWords, ukupnoWords)
+# domenaWords %>% head(15)
+# domenaWords %>% 
+# ggplot(., aes(n/totWords, fill = domena)) +
+#   geom_histogram(show.legend = FALSE) +
+#   xlim(NA, 0.0009) +
+#   facet_wrap(~domena, ncol = 2, scales = "free_y")
+## Najbitnije riječi po domenma
+idf <- domenaWords %>%
+  bind_tf_idf(word, FROM, n)
+idf %>% head(10)
+# idf %>% 
+#   select(-totWords) %>%
+#   arrange(desc(tf_idf))
+idf %>%
+  arrange(desc(tf_idf)) %>%
+  mutate(word = factor(word, levels = rev(unique(word)))) %>% 
+  mutate(FROM = factor(FROM)) %>%
+  group_by(FROM) %>% 
+  top_n(11) %>% 
+  ungroup() %>%
+  ggplot(aes(word, tf_idf, fill = FROM)) +
+  geom_col(show.legend = FALSE) +
+  labs(x = NULL, y = "tf-idf") +
+  facet_wrap(~FROM, ncol = 2, scales = "free") +
+  coord_flip() +
+  theme_economist()
+```
+
+
+
+
+
+
+
+
+
+
+
+
