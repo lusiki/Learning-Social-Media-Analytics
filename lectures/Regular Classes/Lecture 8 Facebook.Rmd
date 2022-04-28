@@ -82,6 +82,7 @@ posts <- all[!duplicated(all),]
 rm(all,all_raw)
 # select facebook
 fb <- posts[SOURCE_TYPE == "facebook",]
+fb <- as.data.table(fb)
 ```
 
 #### LEXICON 
@@ -154,7 +155,7 @@ head(sample_n(stop_corpus,100),15)
 
 # DESCRIPTIVE EXPLORATION
 
-```{r tokeni}
+```{r tokeni, eval = F}
 
 # influencers by ACTIVITY
 fb[,.N,FROM][order(-N)]
@@ -166,13 +167,37 @@ fb[,FOLLOWERS := max(FOLLOWERS_COUNT), FROM][,c("FOLLOWERS","FROM")][order(-FOLL
 fb[,REACH := sum(REACH), FROM][,.(REACH,FROM)][order(-REACH)] %>% unique() 
 
 # influencers by REACH II
-fb[, `:=` (ACTIVITY = .N ,REACH = sum(REACH),EFFECT = REACH/ACTIVITY), FROM][,.(FROM,ACTIVITY,REACH, EFFECT)][ACTIVITY >= 100][order(-EFFECT)] %>% unique()
 
+fb %>% 
+  group_by(FROM) %>%
+  mutate(ACTIVITY = n(),
+         REACH = sum(REACH),
+         EFFECT = REACH/ACTIVITY) %>%
+  filter(ACTIVITY>100) %>%
+  arrange(desc(EFFECT)) %>%
+  unique()
+         
+  fb %>% 
+  group_by(FROM) %>%
+  mutate(ACTIVITY = n(),
+         REACH = sum(REACH),
+         EFFECT = REACH/ACTIVITY) %>%
+  filter(ACTIVITY>100) %>%
+  arrange(desc(EFFECT)) %>%
+  unique() -> fb
+fb <- as.data.table(fb)
 # influencers by LIKE
 fb[,LIKE := sum(LIKE_COUNT), FROM][,.(LIKE,FROM)][order(-LIKE)] %>% unique() 
 
 # influencers by LIKE II
-fb[, `:=` (ACTIVITY = .N ,LIKE = sum(LIKE_COUNT),EFFICIENCY = LIKE/ACTIVITY), FROM][,.(FROM,ACTIVITY,LIKE, EFFICIENCY)][ACTIVITY >= 100][order(-EFFICIENCY)] %>% unique()
+
+fb %>% 
+  group_by(FROM) %>%
+  mutate(EFICIENCY = LIKE / ACTIVITY) %>%
+  filter(ACTIVITY>100) %>%
+  arrange(desc(EFICIENCY)) %>%
+  unique()
+
 
 # influencers by INTERACTIONS
 fb[,INTERACTIONS := sum(INTERACTIONS), FROM][,.(INTERACTIONS,FROM)][order(-INTERACTIONS)] %>% unique() 
@@ -194,7 +219,9 @@ fb[, `:=` (ACTIVITY = .N , SHARE = sum(SHARE_COUNT), DISPERSION = SHARE/ACTIVITY
 
 # letters by influencer
 
-fb[, `:=` (ACTIVITY = .N ,LETTERS = sum(nchar(FULL_TEXT)),EFFORT = LETTERS/ACTIVITY), FROM][,.(FROM,ACTIVITY,LETTERS, EFFORT)][ACTIVITY >= 100][order(-EFFORT)] %>% unique()
+fb[, `:=` (ACTIVITY = .N ,LETTERS = sum(nchar(FULL_TEXT))),FROM]
+
+fb[, `:=` (ACTIVITY = .N ,LETTERS = sum(nchar(FULL_TEXT)), EFFORT = LETTERS/ACTIVITY), FROM][,.(FROM,ACTIVITY,LETTERS, EFFORT)][ACTIVITY >= 100][order(-EFFORT)] %>% unique()
 
 
 # posts by REACH
@@ -627,7 +654,7 @@ fb_tokenTidy_TopLike %>%
 fb_LDA <- LDA(dtm, k = 4,  control = list(seed = 1234))
 fb_LDA_tidy <- tidy(fb_LDA, matrix = "beta")
 #newsCOVID_LDA_tidy
-insta_terms <- insta_LDA_tidy %>%
+insta_terms <- fb_LDA_tidy %>%
   drop_na(.) %>%
   group_by(topic) %>%
   top_n(15, beta) %>%
