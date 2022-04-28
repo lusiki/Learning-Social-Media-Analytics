@@ -155,7 +155,7 @@ head(sample_n(stop_corpus,100),15)
 
 # DESCRIPTIVE EXPLORATION
 
-```{r tokeni, eval = F}
+```{r tokeni, eval = T}
 
 # influencers by ACTIVITY
 fb[,.N,FROM][order(-N)]
@@ -173,19 +173,20 @@ fb %>%
   mutate(ACTIVITY = n(),
          REACH = sum(REACH),
          EFFECT = REACH/ACTIVITY) %>%
+  select(FROM,ACTIVITY,REACH,EFFECT) %>%
   filter(ACTIVITY>100) %>%
   arrange(desc(EFFECT)) %>%
   unique()
          
-  fb %>% 
-  group_by(FROM) %>%
-  mutate(ACTIVITY = n(),
-         REACH = sum(REACH),
-         EFFECT = REACH/ACTIVITY) %>%
-  filter(ACTIVITY>100) %>%
-  arrange(desc(EFFECT)) %>%
-  unique() -> fb
-fb <- as.data.table(fb)
+#  fb %>% 
+#  group_by(FROM) %>%
+#  mutate(ACTIVITY = n(),
+#         REACH = sum(REACH),
+#         EFFECT = REACH/ACTIVITY) %>%
+#  filter(ACTIVITY>100) %>%
+#  arrange(desc(EFFECT)) %>%
+#  unique() -> fb
+#fb <- as.data.table(fb)
 # influencers by LIKE
 fb[,LIKE := sum(LIKE_COUNT), FROM][,.(LIKE,FROM)][order(-LIKE)] %>% unique() 
 
@@ -193,10 +194,14 @@ fb[,LIKE := sum(LIKE_COUNT), FROM][,.(LIKE,FROM)][order(-LIKE)] %>% unique()
 
 fb %>% 
   group_by(FROM) %>%
-  mutate(EFICIENCY = LIKE / ACTIVITY) %>%
+  mutate(LIKE = sum(LIKE_COUNT),
+         ACTIVITY = n(),
+         EFFECT = LIKE/ACTIVITY) %>%
+  select(FROM,ACTIVITY,LIKE,EFFECT) %>%
   filter(ACTIVITY>100) %>%
-  arrange(desc(EFICIENCY)) %>%
+  arrange(desc(EFFECT)) %>%
   unique()
+
 
 
 # influencers by INTERACTIONS
@@ -208,20 +213,55 @@ fb[,COMMENT := sum(COMMENT_COUNT), FROM][,.(COMMENT,FROM)][order(-COMMENT)] %>% 
 
 
 # influencers by COMMENT II
-fb[, `:=` (ACTIVITY = .N , COMMENT = sum(COMMENT_COUNT),ENGAGE = COMMENT/ACTIVITY), FROM][,.(FROM,ACTIVITY,COMMENT, ENGAGE)][ACTIVITY >= 100][order(-COMMENT)] %>% unique()
+
+fb %>% 
+  group_by(FROM) %>%
+  mutate(COMMENT = sum(COMMENT_COUNT),
+         ACTIVITY = n(),
+         ENGAGE = COMMENT/ACTIVITY) %>%
+  select(FROM,ACTIVITY,COMMENT,ENGAGE) %>%
+  filter(ACTIVITY>100) %>%
+  arrange(desc(ENGAGE)) %>%
+  unique()
+
+#fb[, `:=` (ACTIVITY = .N , COMMENT = sum(COMMENT_COUNT),ENGAGE = COMMENT/ACTIVITY), FROM][,.(FROM,ACTIVITY,COMMENT, ENGAGE)][ACTIVITY >= 100][order(-COMMENT)] %>% unique()
 
 # influencers by SHARE
 fb[,SHARE := sum(SHARE_COUNT), FROM][,.(SHARE,FROM)][order(-SHARE)] %>% unique() 
 
 
 # influencers by SHARE II
-fb[, `:=` (ACTIVITY = .N , SHARE = sum(SHARE_COUNT), DISPERSION = SHARE/ACTIVITY), FROM][,.(FROM,ACTIVITY,SHARE,DISPERSION)][ACTIVITY >= 100][order(-DISPERSION)] %>% unique()
+
+fb %>% 
+  group_by(FROM) %>%
+  mutate(SHARE = sum(SHARE_COUNT),
+         ACTIVITY = n(),
+         DISPERSION = SHARE/ACTIVITY) %>%
+  select(FROM,ACTIVITY,SHARE,DISPERSION) %>%
+  filter(ACTIVITY>100) %>%
+  arrange(desc(DISPERSION)) %>%
+  unique()
+
+
+#fb[, `:=` (ACTIVITY = .N , SHARE = sum(SHARE_COUNT), DISPERSION = SHARE/ACTIVITY), FROM][,.(FROM,ACTIVITY,SHARE,DISPERSION)][ACTIVITY >= 100][order(-DISPERSION)] %>% unique()
 
 # letters by influencer
 
-fb[, `:=` (ACTIVITY = .N ,LETTERS = sum(nchar(FULL_TEXT))),FROM]
+fb %>% 
+  group_by(FROM) %>%
+  mutate(LETTERS = sum(SHARE_COUNT),
+         ACTIVITY = n(),
+         EFFORT = LETTERS/ACTIVITY) %>%
+  select(FROM,ACTIVITY,LETTERS,EFFORT) %>%
+  filter(ACTIVITY>100) %>%
+  arrange(desc(EFFORT)) %>%
+  unique()
 
-fb[, `:=` (ACTIVITY = .N ,LETTERS = sum(nchar(FULL_TEXT)), EFFORT = LETTERS/ACTIVITY), FROM][,.(FROM,ACTIVITY,LETTERS, EFFORT)][ACTIVITY >= 100][order(-EFFORT)] %>% unique()
+
+
+#fb[, `:=` (ACTIVITY = .N ,LETTERS = sum(nchar(FULL_TEXT))),FROM]
+
+#fb[, `:=` (ACTIVITY = .N ,LETTERS = sum(nchar(FULL_TEXT)), EFFORT = LETTERS/ACTIVITY), FROM][,.(FROM,ACTIVITY,LETTERS, EFFORT)][ACTIVITY >= 100][order(-EFFORT)] %>% unique()
 
 
 # posts by REACH

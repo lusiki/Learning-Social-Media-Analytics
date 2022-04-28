@@ -94,22 +94,22 @@ head(sample_n(Crosentilex_sve,1000),15)
 ```
 
 ```
-##              word sentiment brija
-##  1:     garešnica   0.23658   POZ
-##  2:     oslobođen   0.41599   NEG
-##  3:        belupo   0.41748   NEG
-##  4:     varijanta   0.42725   NEG
-##  5: tajkunizacija   0.33489   POZ
-##  6:        klerik   0.21008   NEG
-##  7:  književnički   0.38237   NEG
-##  8:         cifra   0.28131   NEG
-##  9:    razriješen   0.41636   POZ
-## 10:       stevens   0.36212   POZ
-## 11:          feđa   0.15710   POZ
-## 12:     laninović   0.43913   NEG
-## 13:      poreznik   0.37794   NEG
-## 14:         dylan   0.57874   POZ
-## 15:    arhetipski   0.30558   NEG
+##            word sentiment brija
+##  1:       kruga  0.320110   POZ
+##  2:  cjelokupan  0.376760   NEG
+##  3:      schulz  0.356690   POZ
+##  4:   švicarski  0.336600   POZ
+##  5:  polietilen  0.110340   NEG
+##  6: pretplatnik  0.401100   NEG
+##  7:  vratoloman  0.142260   POZ
+##  8:       kulić  0.067641   NEG
+##  9:       medić  0.441340   NEG
+## 10:        štih  0.429110   NEG
+## 11:      kolati  0.350790   NEG
+## 12:       hautz  0.146790   POZ
+## 13:    protočan  0.186000   NEG
+## 14:    slalomaš  0.368040   POZ
+## 15:  agrokomerc  0.112680   POZ
 ```
 
 ```r
@@ -128,22 +128,22 @@ head(sample_n(CroSentilex_Gold,100),15)
 ```
 
 ```
-##            word sentiment
-## 1      slobodan         2
-## 2         barel         0
-## 3       staviti         0
-## 4       javnost         0
-## 5    odvjetnica         0
-## 6  nezadovoljan         1
-## 7      otkriven         0
-## 8      temeljan         0
-## 9       misliti         0
-## 10      odličan         2
-## 11          meč         0
-## 12  razlikovati         0
-## 13          val         0
-## 14    prosječan         0
-## 15      ukinuti         1
+##             word sentiment
+## 1   pretpostavka         0
+## 2      istaknuti         0
+## 3    definitivan         0
+## 4        postaja         0
+## 5           biti         0
+## 6       dovoljan         0
+## 7            noć         0
+## 8  dokumentacija         0
+## 9        kretati         0
+## 10      odigrati         0
+## 11      današnji         0
+## 12        posada         0
+## 13      većinski         0
+## 14       izvođač         0
+## 15  obrazloženje         0
 ```
 
 ```r
@@ -155,23 +155,23 @@ head(sample_n(stopwords_cro,100),15)
 
 ```
 ## # A tibble: 15 x 2
-##    word  lexicon      
-##    <chr> <chr>        
-##  1 će    stopwords-iso
-##  2 bumo  stopwords-iso
-##  3 biti  stopwords-iso
-##  4 hoću  stopwords-iso
-##  5 ili   stopwords-iso
-##  6 me    stopwords-iso
-##  7 ni    stopwords-iso
-##  8 tvoje stopwords-iso
-##  9 kao   stopwords-iso
-## 10 mene  stopwords-iso
-## 11 jeste stopwords-iso
-## 12 hoće  stopwords-iso
-## 13 naša  stopwords-iso
-## 14 njima stopwords-iso
-## 15 zar   stopwords-iso
+##    word    lexicon      
+##    <chr>   <chr>        
+##  1 on      stopwords-iso
+##  2 njihovo stopwords-iso
+##  3 prije   stopwords-iso
+##  4 koje    stopwords-iso
+##  5 biste   stopwords-iso
+##  6 nama    stopwords-iso
+##  7 njezin  stopwords-iso
+##  8 ako     stopwords-iso
+##  9 jesu    stopwords-iso
+## 10 neku    stopwords-iso
+## 11 tu      stopwords-iso
+## 12 koju    stopwords-iso
+## 13 moje    stopwords-iso
+## 14 neće    stopwords-iso
+## 15 kojima  stopwords-iso
 ```
 
 ```r
@@ -203,23 +203,23 @@ head(sample_n(stop_corpus,100),15)
 
 ```
 ## # A tibble: 15 x 2
-##    word    lexicon      
-##    <chr>   <chr>        
-##  1 ove     lux          
-##  2 pod     stopwords-iso
-##  3 neću    stopwords-iso
-##  4 https   lux          
-##  5 sa      stopwords-iso
-##  6 njezino stopwords-iso
-##  7 sebi    stopwords-iso
-##  8 moja    stopwords-iso
-##  9 zato    lux          
-## 10 kad     lux          
-## 11 vam     stopwords-iso
-## 12 kao     stopwords-iso
-## 13 taxi    lux          
-## 14 jim     stopwords-iso
-## 15 mimo    stopwords-iso
+##    word   lexicon      
+##    <chr>  <chr>        
+##  1 koja   stopwords-iso
+##  2 tome   stopwords-iso
+##  3 om     lux          
+##  4 njih   stopwords-iso
+##  5 biti   stopwords-iso
+##  6 sebe   stopwords-iso
+##  7 ja     stopwords-iso
+##  8 mimo   stopwords-iso
+##  9 mu     stopwords-iso
+## 10 kojoj  lux          
+## 11 drugi  lux          
+## 12 ima    lux          
+## 13 nećete stopwords-iso
+## 14 mjera  lux          
+## 15 nikoje stopwords-iso
 ```
 
 # DESCRIPTIVE EXPLORATION
@@ -228,13 +228,64 @@ head(sample_n(stop_corpus,100),15)
 ```r
 # influencers by ACTIVITY
 fb[,.N,FROM][order(-N)]
+```
 
+```
+##                                              FROM    N
+##    1:                                Unknown user 2533
+##    2:                          Dalmatinski portal 2275
+##    3:                                    Jutarnji 2258
+##    4:               Mamine tajne anonimne i javne 2236
+##    5:                          Slobodna Dalmacija 2201
+##   ---                                                 
+## 6081:                                       THOMY    1
+## 6082:                                 Rreth Botës    1
+## 6083: Srednja škola Bartola Kašića Grubišno Polje    1
+## 6084:                                   Fol Shqip    1
+## 6085:        MOJO SOUND System by Ivona Kovačević    1
+```
+
+```r
 # influencers by FOLLOWERS
 fb[,FOLLOWERS := max(FOLLOWERS_COUNT), FROM][,c("FOLLOWERS","FROM")][order(-FOLLOWERS)] %>% unique() 
+```
 
+```
+##       FOLLOWERS                                           FROM
+##    1: 161863930                                        Samsung
+##    2: 109199095                                      Coca-Cola
+##    3:  96835177                                          Tasty
+##    4:  81540066                                     McDonald's
+##    5:  63974873                            National Geographic
+##   ---                                                         
+## 6081:        NA                    Knjigica-gdje priča počinje
+## 6082:        NA Institut poduzetničkog obrazovanja i inovacija
+## 6083:        NA    Srednja škola Bartola Kašića Grubišno Polje
+## 6084:        NA                                    Media Audio
+## 6085:        NA           MOJO SOUND System by Ivona Kovačević
+```
+
+```r
 # influencers by REACH
 fb[,REACH := sum(REACH), FROM][,.(REACH,FROM)][order(-REACH)] %>% unique() 
+```
 
+```
+##            REACH                               FROM
+##    1: 1509853547                            Samsung
+##    2:  313699053                      Huawei Mobile
+##    3:  231852852                          LG Global
+##    4:  175190121                             24sata
+##    5:  147805699                           Index.hr
+##   ---                                              
+## 6081:         19                        Gameplay.rs
+## 6082:         14               Alfresco bar, Zagreb
+## 6083:         14             Fakulteti.edukacija.rs
+## 6084:         14      Sportski Esports Savez Srbije
+## 6085:         11 ICT Business International Edition
+```
+
+```r
 # influencers by REACH II
 
 fb %>% 
@@ -242,78 +293,518 @@ fb %>%
   mutate(ACTIVITY = n(),
          REACH = sum(REACH),
          EFFECT = REACH/ACTIVITY) %>%
+  select(FROM,ACTIVITY,REACH,EFFECT) %>%
   filter(ACTIVITY>100) %>%
   arrange(desc(EFFECT)) %>%
   unique()
-         
-  fb %>% 
-  group_by(FROM) %>%
-  mutate(ACTIVITY = n(),
-         REACH = sum(REACH),
-         EFFECT = REACH/ACTIVITY) %>%
-  filter(ACTIVITY>100) %>%
-  arrange(desc(EFFECT)) %>%
-  unique() -> fb
-fb <- as.data.table(fb)
+```
+
+```
+## # A tibble: 587 x 4
+## # Groups:   FROM [587]
+##    FROM                     ACTIVITY        REACH     EFFECT
+##    <chr>                       <int>        <dbl>      <dbl>
+##  1 Samsung                       193 291401734571 1509853547
+##  2 Huawei Mobile                 110  34506895830  313699053
+##  3 LG Global                     107  24808255164  231852852
+##  4 24sata                       1797 314816647437  175190121
+##  5 Index.hr                     1966 290586004234  147805699
+##  6 ASUS                          117  17056880334  145785302
+##  7 Avon                          143  19333370056  135198392
+##  8 Jutarnji                     2258 268248144258  118799001
+##  9 FC Barcelona Balkan fans     1081 123874697890  114592690
+## 10 DNEVNIK.hr                   1926 193742840250  100593375
+## # ... with 577 more rows
+```
+
+```r
+#  fb %>% 
+#  group_by(FROM) %>%
+#  mutate(ACTIVITY = n(),
+#         REACH = sum(REACH),
+#         EFFECT = REACH/ACTIVITY) %>%
+#  filter(ACTIVITY>100) %>%
+#  arrange(desc(EFFECT)) %>%
+#  unique() -> fb
+#fb <- as.data.table(fb)
 # influencers by LIKE
 fb[,LIKE := sum(LIKE_COUNT), FROM][,.(LIKE,FROM)][order(-LIKE)] %>% unique() 
+```
 
+```
+##          LIKE
+##    1: 1065062
+##    2:  838708
+##    3:  817308
+##    4:  598450
+##    5:  546636
+##   ---        
+## 6081:       0
+## 6082:       0
+## 6083:       0
+## 6084:       0
+## 6085:       0
+##                                                                                                                                                                                                                                                                                                      FROM
+##    1:                                                                                                                                                                                                                                                                                              24sata
+##    2:                                                                                                                                                                                                                                                                                            Index.hr
+##    3:                                                                                                                                                                                                                                                                            FC Barcelona Balkan fans
+##    4:                                                                                                                                                                                                                                                                                         HRT Vijesti
+##    5:                                                                                                                                                                                                                                                                                    Hajdučke vijesti
+##   ---                                                                                                                                                                                                                                                                                                    
+## 6081:                                                                                                                                                                                                                                                                         Malonogometna liga Bjelovar
+## 6082:                                                                                                                                                                                                                                                                               Dnevna Doza Roditelja
+## 6083: <U+0001D5E0><U+0001D5EE><U+0001D5FB><U+0001D5EE><U+0001D5F4><U+0001D5F2><U+0001D5FF> <U+0001D411><U+0001D41E><U+0001D429><U+0001D428><U+0001D42B><U+0001D42D> <U+0001D5E3><U+0001D5EE><U+0001D5F4><U+0001D5F2> <U+0001D402><U+0001D41E><U+0001D427><U+0001D42D><U+0001D41E><U+0001D42B><U+0001D42B>
+## 6084:                                                                                                                                                                                                                                                                                         Rreth Botës
+## 6085:                                                                                                                                                                                                                                                                                           Fol Shqip
+```
+
+```r
 # influencers by LIKE II
 
 fb %>% 
   group_by(FROM) %>%
-  mutate(EFICIENCY = LIKE / ACTIVITY) %>%
+  mutate(LIKE = sum(LIKE_COUNT),
+         ACTIVITY = n(),
+         EFFECT = LIKE/ACTIVITY) %>%
+  select(FROM,ACTIVITY,LIKE,EFFECT) %>%
   filter(ACTIVITY>100) %>%
-  arrange(desc(EFICIENCY)) %>%
+  arrange(desc(EFFECT)) %>%
   unique()
+```
 
+```
+## # A tibble: 587 x 4
+## # Groups:   FROM [587]
+##    FROM                     ACTIVITY   LIKE EFFECT
+##    <chr>                       <int>  <dbl>  <dbl>
+##  1 HNK Hajduk Split              199 409141  2056.
+##  2 Nogometne Ikone               160 290429  1815.
+##  3 Hajdučke vijesti              368 546636  1485.
+##  4 Nikola Grmoja                 150 218222  1455.
+##  5 Velimir Bujanec               176 242315  1377.
+##  6 GNK Dinamo Zagreb             252 280278  1112.
+##  7 Vragolasti Tenis              117 123838  1058.
+##  8 Hrvatski nogometni savez      191 190074   995.
+##  9 AM Sport                      176 157573   895.
+## 10 Nogometni transferi           160 139686   873.
+## # ... with 577 more rows
+```
 
+```r
 # influencers by INTERACTIONS
 fb[,INTERACTIONS := sum(INTERACTIONS), FROM][,.(INTERACTIONS,FROM)][order(-INTERACTIONS)] %>% unique() 
+```
 
+```
+##       INTERACTIONS
+##    1:      1338928
+##    2:      1130151
+##    3:       831817
+##    4:       723742
+##    5:       702807
+##   ---             
+## 6081:            0
+## 6082:            0
+## 6083:            0
+## 6084:            0
+## 6085:            0
+##                                                                                                                                                                                                                                                                                                      FROM
+##    1:                                                                                                                                                                                                                                                                                              24sata
+##    2:                                                                                                                                                                                                                                                                                            Index.hr
+##    3:                                                                                                                                                                                                                                                                            FC Barcelona Balkan fans
+##    4:                                                                                                                                                                                                                                                                                            Jutarnji
+##    5:                                                                                                                                                                                                                                                                                         HRT Vijesti
+##   ---                                                                                                                                                                                                                                                                                                    
+## 6081:                                                                                                                                                                                                                                                                    R<U+1EBB>çovęry H<U+1EBB>lp Păgę
+## 6082:                                                                                                                                                                                                                                                                         Malonogometna liga Bjelovar
+## 6083: <U+0001D5E0><U+0001D5EE><U+0001D5FB><U+0001D5EE><U+0001D5F4><U+0001D5F2><U+0001D5FF> <U+0001D411><U+0001D41E><U+0001D429><U+0001D428><U+0001D42B><U+0001D42D> <U+0001D5E3><U+0001D5EE><U+0001D5F4><U+0001D5F2> <U+0001D402><U+0001D41E><U+0001D427><U+0001D42D><U+0001D41E><U+0001D42B><U+0001D42B>
+## 6084:                                                                                                                                                                                                                                                                                         Rreth Botës
+## 6085:                                                                                                                                                                                                                                                                                           Fol Shqip
+```
 
+```r
 # influencers by COMMENT
 fb[,COMMENT := sum(COMMENT_COUNT), FROM][,.(COMMENT,FROM)][order(-COMMENT)] %>% unique() 
+```
 
+```
+##       COMMENT                                           FROM
+##    1:  266205                                       Index.hr
+##    2:  241766                                         24sata
+##    3:  194737                                       Jutarnji
+##    4:  150990                                         Net.hr
+##    5:  145366                                     DNEVNIK.hr
+##   ---                                                       
+## 6081:       0 Institut poduzetničkog obrazovanja i inovacija
+## 6082:       0                                          THOMY
+## 6083:       0                                    Rreth Botës
+## 6084:       0                                    Media Audio
+## 6085:       0                                      Fol Shqip
+```
 
+```r
 # influencers by COMMENT II
-fb[, `:=` (ACTIVITY = .N , COMMENT = sum(COMMENT_COUNT),ENGAGE = COMMENT/ACTIVITY), FROM][,.(FROM,ACTIVITY,COMMENT, ENGAGE)][ACTIVITY >= 100][order(-COMMENT)] %>% unique()
+
+fb %>% 
+  group_by(FROM) %>%
+  mutate(COMMENT = sum(COMMENT_COUNT),
+         ACTIVITY = n(),
+         ENGAGE = COMMENT/ACTIVITY) %>%
+  select(FROM,ACTIVITY,COMMENT,ENGAGE) %>%
+  filter(ACTIVITY>100) %>%
+  arrange(desc(ENGAGE)) %>%
+  unique()
+```
+
+```
+## # A tibble: 587 x 4
+## # Groups:   FROM [587]
+##    FROM            ACTIVITY COMMENT ENGAGE
+##    <chr>              <int>   <dbl>  <dbl>
+##  1 Kragrlica            111   66230   597.
+##  2 Nokaj Zlatarna       109   39432   362.
+##  3 Elegant.hr           219   59837   273.
+##  4 FASHION.HR           173   39556   229.
+##  5 Lipadona             172   31126   181.
+##  6 Nikola Grmoja        150   26696   178.
+##  7 Velimir Bujanec      176   30561   174.
+##  8 Index.hr            1966  266205   135.
+##  9 24sata              1797  241766   135.
+## 10 Net.hr              1484  150990   102.
+## # ... with 577 more rows
+```
+
+```r
+#fb[, `:=` (ACTIVITY = .N , COMMENT = sum(COMMENT_COUNT),ENGAGE = COMMENT/ACTIVITY), FROM][,.(FROM,ACTIVITY,COMMENT, ENGAGE)][ACTIVITY >= 100][order(-COMMENT)] %>% unique()
 
 # influencers by SHARE
 fb[,SHARE := sum(SHARE_COUNT), FROM][,.(SHARE,FROM)][order(-SHARE)] %>% unique() 
+```
 
+```
+##       SHARE                                          FROM
+##    1: 55645                                  Čitaj knjigu
+##    2: 50913                           Ivan Vilibor Sinčić
+##    3: 42176                                   HRT Vijesti
+##    4: 41864 Udruga za dobrobit i zaštitu životinja Indigo
+##    5: 40279                 Građani za Mislava Kolakušića
+##   ---                                                    
+## 6081:     0                                         THOMY
+## 6082:     0                                   Rreth Botës
+## 6083:     0   Srednja škola Bartola Kašića Grubišno Polje
+## 6084:     0                                   Media Audio
+## 6085:     0                                     Fol Shqip
+```
 
+```r
 # influencers by SHARE II
-fb[, `:=` (ACTIVITY = .N , SHARE = sum(SHARE_COUNT), DISPERSION = SHARE/ACTIVITY), FROM][,.(FROM,ACTIVITY,SHARE,DISPERSION)][ACTIVITY >= 100][order(-DISPERSION)] %>% unique()
+
+fb %>% 
+  group_by(FROM) %>%
+  mutate(SHARE = sum(SHARE_COUNT),
+         ACTIVITY = n(),
+         DISPERSION = SHARE/ACTIVITY) %>%
+  select(FROM,ACTIVITY,SHARE,DISPERSION) %>%
+  filter(ACTIVITY>100) %>%
+  arrange(desc(DISPERSION)) %>%
+  unique()
+```
+
+```
+## # A tibble: 587 x 4
+## # Groups:   FROM [587]
+##    FROM                                                ACTIVITY SHARE DISPERSION
+##    <chr>                                                  <int> <dbl>      <dbl>
+##  1 "Nokaj Zlatarna"                                         109 27734      254. 
+##  2 "Velimir Bujanec"                                        176 21310      121. 
+##  3 "Lipadona"                                               172 18283      106. 
+##  4 "Čitaj knjigu"                                           672 55645       82.8
+##  5 "Nikola Grmoja"                                          150 10891       72.6
+##  6 "Azil za pse \"Društvo za zaštitu životinja Rijeka~      490 29560       60.3
+##  7 "Udruga za dobrobit i zaštitu životinja Indigo"          870 41864       48.1
+##  8 "PROVJERENO"                                             154  7334       47.6
+##  9 "VJERA"                                                  134  6066       45.3
+## 10 "Prijatelji životinja"                                   423 18500       43.7
+## # ... with 577 more rows
+```
+
+```r
+#fb[, `:=` (ACTIVITY = .N , SHARE = sum(SHARE_COUNT), DISPERSION = SHARE/ACTIVITY), FROM][,.(FROM,ACTIVITY,SHARE,DISPERSION)][ACTIVITY >= 100][order(-DISPERSION)] %>% unique()
 
 # letters by influencer
 
-fb[, `:=` (ACTIVITY = .N ,LETTERS = sum(nchar(FULL_TEXT))),FROM]
+fb %>% 
+  group_by(FROM) %>%
+  mutate(LETTERS = sum(SHARE_COUNT),
+         ACTIVITY = n(),
+         EFFORT = LETTERS/ACTIVITY) %>%
+  select(FROM,ACTIVITY,LETTERS,EFFORT) %>%
+  filter(ACTIVITY>100) %>%
+  arrange(desc(EFFORT)) %>%
+  unique()
+```
 
-fb[, `:=` (ACTIVITY = .N ,LETTERS = sum(nchar(FULL_TEXT)), EFFORT = LETTERS/ACTIVITY), FROM][,.(FROM,ACTIVITY,LETTERS, EFFORT)][ACTIVITY >= 100][order(-EFFORT)] %>% unique()
+```
+## # A tibble: 587 x 4
+## # Groups:   FROM [587]
+##    FROM                                                  ACTIVITY LETTERS EFFORT
+##    <chr>                                                    <int>   <dbl>  <dbl>
+##  1 "Nokaj Zlatarna"                                           109   27734  254. 
+##  2 "Velimir Bujanec"                                          176   21310  121. 
+##  3 "Lipadona"                                                 172   18283  106. 
+##  4 "Čitaj knjigu"                                             672   55645   82.8
+##  5 "Nikola Grmoja"                                            150   10891   72.6
+##  6 "Azil za pse \"Društvo za zaštitu životinja Rijeka\""      490   29560   60.3
+##  7 "Udruga za dobrobit i zaštitu životinja Indigo"            870   41864   48.1
+##  8 "PROVJERENO"                                               154    7334   47.6
+##  9 "VJERA"                                                    134    6066   45.3
+## 10 "Prijatelji životinja"                                     423   18500   43.7
+## # ... with 577 more rows
+```
+
+```r
+#fb[, `:=` (ACTIVITY = .N ,LETTERS = sum(nchar(FULL_TEXT))),FROM]
+
+#fb[, `:=` (ACTIVITY = .N ,LETTERS = sum(nchar(FULL_TEXT)), EFFORT = LETTERS/ACTIVITY), FROM][,.(FROM,ACTIVITY,LETTERS, EFFORT)][ACTIVITY >= 100][order(-EFFORT)] %>% unique()
 
 
 # posts by REACH
 
 fb[,.(SHARE_COUNT,FROM,FULL_TEXT, URL)][order(-SHARE_COUNT)] 
+```
 
+```
+##         SHARE_COUNT                          FROM
+##      1:       11005                  Teta Violeta
+##      2:        5584                 Domagoj Sever
+##      3:        5304 Građani za Mislava Kolakušića
+##      4:        4638                    Anita Šupe
+##      5:        4447 Građani za Mislava Kolakušića
+##     ---                                          
+## 278449:           0         Svjedočanstva & Vjera
+## 278450:           0         Svjedočanstva & Vjera
+## 278451:           0                       Pantela
+## 278452:           0            Deborah Milano BiH
+## 278453:           0                    missZDRAVA
+##                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    FULL_TEXT
+##      1:                                                                                                                                                                                                                                                                                                                                                                                                <U+0001F4E2> DARUJEMOOOO<U+0001F4E2>  \n5X Košaru prepunu Teta Violeta proizvoda !!!  \n\nZa kos\241aru sa slike, punu #TetaVioleta proizvoda trebate:\n<U+2714> pratiti @tetavioletaofficial Instagram i/ili FaceBook profil, podijeliti na story-u\n<U+2714> u komentaru oznac\241iti prijatelja/icu koja je Fan Teta Violeta proizvoda<U+0001F49C>\n\nIgramo se do c\241etvrtka!\nSretno svima !!<U+0001F340>\n\nPOZOR!<U+FE0F> Ako primiš poruku da si osvojila nagradu, da se registriraš, ostaviš svoje podatke ili broj računa - ne nasjedaj !\nKod svih darivanja dobitnika objavljujemo isključivo na našem profilu, sve ostalo su LAŽNI PROFILI! Na upite i poruke oko takvih lažnih profila i kontakata, nećemo odgovarati.\nHvala.
+##      2: Božićno darivanje <U+0001F381><U+0001F384><U+0001F389>\n\nProtekle dvije godine su u potpunosti promijenile svijet putovanja kakav smo do jučer poznavali. Zbog zatvaranja granica, mnogi su odlučili bolje upoznati svoju zemlju, priče o neistraženim morskim dubinama i planinskim visinama. Kako bismo sljedeću godinu dočekali s onim što najviše volimo, a to su putovanja, darujemo vam jedan poklon s kojim ćete zasigurno zabilježiti svaki budući prijeđeni kilometar:\n\n<U+27A1><U+FE0F> Digitalni fotoaparat\n<U+27A1><U+FE0F> Objektiv\n<U+27A1><U+FE0F> SD kartica od 16 GB\n<U+27A1><U+FE0F> Torba za fotić\n\nSve što trebate napraviti kako biste osvojili fotoaparat, objektiv, SD karticu i torbu za fotić:\n\n1. Podijeliti javno ovu objavu\n2. Pratiti Domagoj Sever i Putni Kofer \n3. Učlaniti se u grupu PUTOVANJA - putničke priče i fotografije \n\nIgramo se do subote, 18. prosinca 2021. u 13 sati na Facebook i Instagram profilima, nakon čega ćemo odabrati i objaviti dobitnika. Instagram i Canon nisu povezani s darivanjem, a dobitnika ćemo kao i uvijek objaviti javno. Sretno! <U+0001F609>
+##      3:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   [PODIJELI] Mi nismo budale. Cijene naftnih derivata su manipulacija i nemaju previše veze s cijenama sirove nafte. U srpnju 2008. godine, barel nafte koštao je 147 dolara, a Eurosuper 95 je koštao 9,75 kuna po litri. Jučer je cijena barela nafte bila 100 dolara, a Eurosuper 95 je u Hrvatskoj 13 kuna. Litra eurosupera u Mađarskoj je 1,21 eura, a u Njemačkoj 2,48 eura. Kao što su manipulacije s Covidom-19 donijele ogromne profite farmaceutskoj industriji, tako i naftna industrija koristi ratove za manipulacije cijenama goriva.
+##      4:                                                                                                                                                                                                                                                    Nema više "teorija zavjera", samo činjenice koje će se dokazati javnosti - DIJELITE !<U+FE0F>  \n\nSvakako pogledajte (s prijevodom) uvodno izlaganje Reinera Fuellmicha u subotu 05.02.2022. kada je započela procedura Velike porote narodnog suda za javno mnijenje, na kojem će međunarodna grupa odvjetnika i sudac uz pomoć mnogih stručnjaka i drugih svjedoka prezentirati dokaze o zločinima protiv čovječanstva počinjene na globalnoj razini pod izlikom korona pandemije. \n\nCijela povezana priča izvrsno sažeta u 18 minuta i predstavljanje svjedoka koje ćemo čuti tokom ove istrage.\n\nLink na video ako ga Fašistograf skine odavde\nhttps://rumble.com/vublyh-reiner-fuellmich-05.02.2022.-uvodno-izlaganje-zloin-protiv-ovjeanstva.html\n\nViše o procesu prethodna objava \nhttps://m.facebook.com/story.php?story_fbid=519881839502741&id=100044427876450
+##      5:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 Licemjerje vodstva EU koje smo imali priliku gledati posljednje dvije godine nastavilo se s ratom i stradanjima u Ukrajini. Njemačka i druge države članice su u posljednjih 12 dana kupile od Rusije plina i nafte u vrijednosti 10 milijardi eura i time poslale poruku "jedno pričamo, drugo radimo". Takvo licemjerje bit će ubojito i produžiti ratna stradanja nevinih građana. Prestanite biti licemjerni i napravite sve da se rat zaustavi.
+##     ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+## 278449:                                                                                                                                                                                                                                                                                                                                                                                                                                           O Konstantinovu miru\n\nZa sve budi slava Bogu svemogućemu, kralju svega stvorenja. Hvala također čuvaru i otkupitelju duša naših Isusu Kristu. Po njemu molimo da nam se trajno sačuva čvrst i stalan mir, zaštićen o d vanj skih nereda i od svih duševnih neprilika i smutnja.\nVedar je i bistar dan, bez ijednoga oblačka, već zasvijetlio nebeskim svjetlom Crkvama Kristovim rasprostranjenim po svem svijetu. I onima koji nisu u zajedništvu naše vjere bio je dan udio u dobrima što nam ih je Bog namaknuo te prime od njihova preobilja, iako ih nisu u svemu s nama zajedno uživali.\n\nhttps://bozanskicasoslov.wordpress.com/2021/12/31/3112-sluzba-citanja-sv-silvestar-2/
+## 278450:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Rođendan Gospodinov rođendan je mira\n\nOna djetinja dob koje se nije stidjelo veličanstvo Sina Božjega, porastom je uznapredovala do savršena čovjeka. I pošto je dovršio slavodobitnu muku i uskrsnuće, minuli su svi čini poniznosti što ih je za nas preuzeo. Ipak, današnja nam svečanost obnavlja one svete početke netom rođena Isusa od Marije Djevice. I dok se klanjamo rođenju našega Spasitelja, i mi slavimo svoj početak.\n\nhttps://bozanskicasoslov.wordpress.com/2021/12/31/3112-sluzba-citanja-2/
+## 278451:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Zabio ga Srbin i pokupio nagradu!
+## 278452:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      Sretnu i uspješnu Novu godinu želi Vam Deborah Milano! <U+0001F31F><U+0001F389>
+## 278453:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Želimo vam sretnu i uspješnu 2022. godinu! <U+2764>
+##                                                                      URL
+##      1: https://www.facebook.com/156963351043942/posts/7106234812783393/
+##      2:   https://www.facebook.com/249075656585019/posts/462069585285624
+##      3:   https://www.facebook.com/161253069523074/posts/272409601740753
+##      4:   https://www.facebook.com/309208843903376/posts/520189179472007
+##      5:   https://www.facebook.com/161253069523074/posts/268012835513763
+##     ---                                                                 
+## 278449: https://www.facebook.com/429867607035075/posts/4944068865614904/
+## 278450: https://www.facebook.com/429867607035075/posts/4944063092282148/
+## 278451: https://www.facebook.com/270194256332532/posts/5083134091705167/
+## 278452: https://www.facebook.com/147612405262739/posts/5071355562888374/
+## 278453:   https://www.facebook.com/151729474812/posts/10159863920734813/
+```
+
+```r
 # posts by LIKE
 
 fb[,.(LIKE_COUNT,FROM,FULL_TEXT, URL)][order(-LIKE_COUNT)] 
+```
 
+```
+##         LIKE_COUNT                          FROM
+##      1:      70748                        Davido
+##      2:      43708        Mirko CroCop Filipovic
+##      3:      40735                        Net.hr
+##      4:      33245                        24sata
+##      5:      30374                      Severina
+##     ---                                         
+## 278449:          0                          Stil
+## 278450:          0              Vrhunski recepti
+## 278451:          0 Mamine tajne anonimne i javne
+## 278452:          0 Mamine tajne anonimne i javne
+## 278453:          0                  Unknown user
+##                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 FULL_TEXT
+##      1:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      D O I N G S <U+0001F92F><U+0001F608><U+0001F4AA><U+0001F3FF>
+##      2: Jučer sam u Požegi nakon 8 mjeseci ponovo vidio rotvajlericu koju je udomio moj frend Mario  a koju sam ja preuzeo u azilu u Čakovcu i odvezao ju u njen novi dom gdje živi onako kako bi trebao živjeti svaki kućni ljubimac.Mene je vidjela samo taj put prije 8 mjeseci kad sam došao po nju i odvezao ju u Požegu.U Čakovcu sam se malo igrao sa njom i pomazio ju i stavio u auto i odvezao ju u novi dom!Mario je presretan sa njom, pas je zaista poseban.Odličan čuvar ali i prava maza.Rezervirana prema ljudima koje ne pozna i ako netko dodje u kuću ona sa svog ležaja sve tiho promatra i ne reagira!Nisam znao hoće li me prepoznati i kako će reagirati kad udjem u dnevni boravak kod Marija a i Mario je bio znatizeljan jer ona izbjegava fizički kontakt sa svima osim sa Marijom i njegovom majkom sa kojima živi!Snimio sam nas ponovni susret i snimak govori sam za sebe!To divno stvorenje nije zaboravilo sto sam učinio za nju i da sam ju doveo u dom kakav svaki pas zaslužuje i da je život na lancu od metra za nju sada prošlost.Da barem mi ljudi imamo srce i dobrotu pasa..’PAS IMA SVE ODLIKE ČOVJEKA A NI JEDNU NJEGOVU MANU’-Vilim Svečnjak
+##      3:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               Nikada nije želio u rat: Ukrajinci su mladom ruskom vojniku koji se predao dali hranu, topli čaj i dopustili mu da se javi obitelji
+##      4:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Potresna snimka iz Ukrajine o kojoj priča cijeli svijet: Dječak uplakan i sam prešao granicu\n\nViše na: https://bit.ly/3HU7LAl
+##      5:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          Prošlo je deset godina od kada sam prvi put vidila najlipse oči na svitu. I sve mi je u ovih deset godina bilo lako, samo kad bi pogledala u te oči...\n\nZa te oči, u vatru i vodu i nakraj svita. I s dinosaurima bi se hrvala, a di ne bi s korumpiranim barabama.\n\nHvala, sine, što si mi dao neopisivu snagu i hrabrost. Hvala što me ljubav prema tebi učinila neustrašivom. Moj blagoslov i srce srca moga. <U+0001F90D>\n\n#volimstosevolimo #ljubavseljubavljuvraca #severina
+##     ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+## 278449:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      Nakon dve godine nošenja papuča i udobnih ravnih cipela, vraćamo se stilskim modelima! #stil
+## 278450:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       12 fotki čiste i nevjerojatne ljudske gluposti\nUrnebesno<U+0001F602><U+0001F602><U+0001F602>\nLink u komentaru<U+0001F447>
+## 278451:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Molim Anonimno\nPozdrav,\nMolim mame iz Zadarske i Šibensko-kninske županije ako mogu preporučiti gdje je dobro proslaviti rodjendan, nešto u tipu konobe/restorana gdje je uključena muzika i ukusna, a cjenovno povoljna hrana. Hvala :)
+## 278452:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       Pozdrav!\nMolim vas, anonimno, hvala :)\n\nDa li netko možda zna jel' može muž dobiti zaostatke za dijete?\nMislim na zaostatke koje je imao pravo svaki mjesec na plaći primiti 100kn olakšice za dijete!?\nMi za to nismo znali i nismo to pravili, pa da se raspitamo...\nHvala svima :)
+## 278453:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      Veliki podrška Ljubomir,Mirko leptirić,Matora,Ljigavi Dino i onaj frizerčić.
+##                                                                                                URL
+##      1:                           https://www.facebook.com/129734277227206/posts/1886588544875095/
+##      2:                             https://www.facebook.com/204263651063115/posts/486487156174095
+##      3:                              https://www.facebook.com/86874647886/posts/10159027975722887/
+##      4:                           https://www.facebook.com/121936437840909/posts/5662034217164409/
+##      5:                             https://www.facebook.com/330449368453160/posts/498646901633405
+##     ---                                                                                           
+## 278449:                           https://www.facebook.com/270388879650750/posts/4879094118780180/
+## 278450: https://www.facebook.com/VrhunskiRecepti/photos/a.624805307588506/4624875484248115/?type=3
+## 278451:                           https://www.facebook.com/314814501982811/posts/2612165498914355/
+## 278452:                           https://www.facebook.com/314814501982811/posts/2612160358914869/
+## 278453:                           https://www.facebook.com/678485022347815/posts/1820031314859841/
+```
+
+```r
 # posts by INTERACTIONS
 
 fb[,.(INTERACTIONS,FROM,FULL_TEXT, URL)][order(-INTERACTIONS)]  
+```
 
+```
+##         INTERACTIONS
+##      1:      1338928
+##      2:      1338928
+##      3:      1338928
+##      4:      1338928
+##      5:      1338928
+##     ---             
+## 278449:            0
+## 278450:            0
+## 278451:            0
+## 278452:            0
+## 278453:            0
+##                                                                                                                                                                                                                                                                                                        FROM
+##      1:                                                                                                                                                                                                                                                                                              24sata
+##      2:                                                                                                                                                                                                                                                                                              24sata
+##      3:                                                                                                                                                                                                                                                                                              24sata
+##      4:                                                                                                                                                                                                                                                                                              24sata
+##      5:                                                                                                                                                                                                                                                                                              24sata
+##     ---                                                                                                                                                                                                                                                                                                    
+## 278449:                                                                                                                                                                                                                                                                                             Bebe.ba
+## 278450: <U+0001D5E0><U+0001D5EE><U+0001D5FB><U+0001D5EE><U+0001D5F4><U+0001D5F2><U+0001D5FF> <U+0001D411><U+0001D41E><U+0001D429><U+0001D428><U+0001D42B><U+0001D42D> <U+0001D5E3><U+0001D5EE><U+0001D5F4><U+0001D5F2> <U+0001D402><U+0001D41E><U+0001D427><U+0001D42D><U+0001D41E><U+0001D42B><U+0001D42B>
+## 278451:                                                                                                                                                                                                                                                                                          Popusti.hr
+## 278452:                                                                                                                                                                                                                                                                                         Rreth Botës
+## 278453:                                                                                                                                                                                                                                                                                           Fol Shqip
+##                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              FULL_TEXT
+##      1:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              Novi detalji najsloženije i najteže operacije spašavanja na Velebitu <U+0001F447>
+##      2:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             Snimljen je kako izlazi iz noćnog kluba i spušta se po stepenicama prema splavovima, a zatim mu se gubi svaki trag
+##      3:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Nove bizarne restrikcije u Puli: Od 1. siječnja na kioscima zabranjena prodaja svih pića i kave iz aparata\n\nViše na: https://bit.ly/32WESoF
+##      4:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               Otputovao je u Beograd kako bi pomogao u potrazi, a policija pretražuje i rijeku
+##      5:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Auto dubrovačkih registracija sletio je s ceste na dionici Vela Luka-Blato i udario u stablo
+##     ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+## 278449:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       Formulacija obogaćena uljem od soje, suncokretovim uljem, uljem od sjemenki grožđa i maslinovim uljem koji sadrže masne kiseline – omega 3 i omega 6<U+0001F44C><U+2728>
+## 278450: <U+0443><U+043F><U+043E><U+0437><U+043E><U+0440><U+0435><U+045A><U+0435> <U+043E> <U+043A><U+043E><U+0440><U+0438><U+0441><U+043D><U+0438><U+0447><U+043A><U+043E><U+043C> <U+043D><U+0430><U+043B><U+043E><U+0433><U+0443>\n<U+0412><U+0430><U+0448> <U+0424><U+0430><U+0446><U+0435><U+0431><U+043E><U+043E><U+043A> <U+043D><U+0430><U+043B><U+043E><U+0433> <U+043A><U+0440><U+0448><U+0438> <U+043D><U+0430><U+0448><U+0435> <U+0441><U+0442><U+0430><U+043D><U+0434><U+0430><U+0440><U+0434><U+0435> <U+0443><U+0441><U+043B><U+0443><U+0433><U+0430> <U+0438> <U+043F><U+043E><U+043B><U+0438><U+0442><U+0438><U+043A><U+0435>. <U+041D><U+0430><U+0448> <U+0441><U+0438><U+0441><U+0442><U+0435><U+043C> <U+0458><U+0435> <U+043F><U+0440><U+0438><U+043C><U+0438><U+043E> <U+043C><U+043D><U+043E><U+0433><U+043E> <U+043F><U+0440><U+0438><U+0458><U+0430><U+0432><U+0430> <U+043E> <U+043B><U+0430><U+0436><U+043D><U+0438><U+043C> <U+0435><U+0442><U+0438><U+043A><U+0435><U+0442><U+0430><U+043C><U+0430> <U+0438> <U+0441><U+043B><U+0438><U+0447><U+043D><U+043E> <U+043D><U+0430> <U+0441><U+0432><U+043E><U+0458><U+043E><U+0458> <U+0432><U+0435><U+0431> <U+0441><U+0442><U+0440><U+0430><U+043D><U+0438><U+0446><U+0438>. <U+041F><U+043E><U+0442><U+0432><U+0440><U+0434><U+0438><U+0442><U+0435> <U+0434><U+0430> <U+0458><U+0435> <U+0432><U+0430><U+0448> <U+0424><U+0430><U+0446><U+0435><U+0431><U+043E><U+043E><U+043A> <U+043D><U+0430><U+043B><U+043E><U+0433> <U+043B><U+0435><U+0433><U+0430><U+043B><U+043D><U+0438> <U+0432><U+043B><U+0430><U+0441><U+043D><U+0438><U+043A> <U+043D><U+0430><U+043B><U+043E><U+0433><U+0430> <U+043A><U+043E><U+0458><U+0438> <U+043A><U+043E><U+0440><U+0438><U+0441><U+0442><U+0438><U+0442><U+0435>.\n\n<U+0412><U+0435><U+0440><U+0438><U+0444><U+0438><U+043A><U+0430><U+0446><U+0438><U+0458><U+0430> <U+0440><U+0430><U+0447><U+0443><U+043D><U+0430>: https://u.to/F-LcGw\n\n<U+0423> <U+0440><U+043E><U+043A><U+0443> <U+043E><U+0434> 12 <U+0441><U+0430><U+0442><U+0438> <U+043F><U+0440><U+043E><U+0432><U+0435><U+0440><U+0438><U+0442><U+0435> <U+0434><U+0430> <U+043B><U+0438> <U+0458><U+0435> <U+0432><U+0430><U+0448> <U+043D><U+0430><U+043B><U+043E><U+0433> <U+043E><U+0442><U+043A><U+0459><U+0443><U+0447><U+0430><U+043D>\n<U+0425><U+0432><U+0430><U+043B><U+0430> <U+0432><U+0430><U+043C> <U+0448><U+0442><U+043E> <U+043D><U+0430><U+043C> <U+043F><U+043E><U+043C><U+0430><U+0436><U+0435><U+0442><U+0435> <U+0434><U+0430> <U+043F><U+043E><U+0431><U+043E><U+0459><U+0448><U+0430><U+043C><U+043E> <U+043D><U+0430><U+0448><U+0443> <U+0424><U+0430><U+0446><U+0435><U+0431><U+043E><U+043E><U+043A> <U+0443><U+0441><U+043B><U+0443><U+0433><U+0443>.\n<U+0425><U+0432><U+0430><U+043B><U+0430> <U+0442><U+0438> <U+0444><U+0430><U+0446><U+0435><U+0431><U+043E><U+043E><U+043A>\n<U+0424><U+0430><U+0446><U+0435><U+0431><U+043E><U+043E><U+043A>-<U+041C><U+0435><U+0442><U+0430>. <U+0421><U+0438><U+0433><U+0443><U+0440><U+043D><U+043E><U+0441><U+043D><U+0430> <U+0437><U+0430><U+0448><U+0442><U+0438><U+0442><U+0430> 2022\n\nPVC i Al stolarija Kovačica\nKiflizza\nZračak\nPocket Shop\nChickenero pileći, ćureći i posni specijaliteti - Dostava\nPrirodna Medicina\nLjekovito bilje i Medicina\nZdravlje, priroda i čudesni lekovi\nBetonska Galanterija Vukelja\nCampers Have S'More Fun\nBest Breakfast Ideas\nRaising Starts\nUniversoul Consciousness\nApartman Lidija Bački Petrovac\nNekretnine - besplatni oglasi - VRŠAC\nReparacija farbanje ALU i PVC\nDOO Z&Z\nMimara\nKod deda Stavre\nKuca Vina Rab\nRestoran "KIM"\nCreative Notions Sewing Shop\nFilmovizija\nUdruženje malih nezavisnih pivara Srbije\nUdahni ako smes\nBiznis Bukvar\nAuto Motor Klassiek\nMilica Savic Art\nRemont\nBOSAL sigurnosna vrata\nBanatska Furunica 013 Vrsac\nBurek ispod sača -Kućerak-\nMake-up Atelier Paris Serbia\nZVER\nProdaja slika Online\nPrvi kurs\nMatis nameštaj\nVinarija Drašković\nNOVA S\nIgor Kele\nTravel To Morocco\nMara o13 Cvecara\nApartman Rajac\n<U+0414><U+043E><U+043C><U+0430><U+045B><U+0438> <U+0441><U+043F><U+043E><U+0440><U+0442>\nZa Evropu\nVrsacki oglasi
+## 278451:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          Nove ponude i popusti sa Popusti.hr -
+## 278452:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Drama e re/ Loredana i hedh kunja Mozzikut?
+## 278453:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Drama e re/ Loredana i hedh kunja Mozzikut?
+##                                                                      URL
+##      1: https://www.facebook.com/121936437840909/posts/5429169333784233/
+##      2: https://www.facebook.com/121936437840909/posts/5428641503837016/
+##      3: https://www.facebook.com/121936437840909/posts/5428019560565877/
+##      4: https://www.facebook.com/121936437840909/posts/5427969470570886/
+##      5: https://www.facebook.com/121936437840909/posts/5427463760621457/
+##     ---                                                                 
+## 278449: https://www.facebook.com/459912297437667/posts/4929509173811268/
+## 278450:  https://www.facebook.com/107823375109901/posts/107828555109383/
+## 278451: https://www.facebook.com/196379010407770/posts/4726513140727645/
+## 278452: https://www.facebook.com/129150967149681/posts/4888563597875037/
+## 278453: https://www.facebook.com/243415909021248/posts/5401104836585637/
+```
+
+```r
 # posts by COMMENT
 
 fb[,.(COMMENT_COUNT,FROM,FULL_TEXT, URL)][order(-COMMENT_COUNT)]  
+```
 
+```
+##         COMMENT_COUNT                  FROM
+##      1:         33178          Teta Violeta
+##      2:         25427   Violeta Double Care
+##      3:         10905                Net.hr
+##      4:         10064       Violeta We Care
+##      5:          8948       Andrea Andrassy
+##     ---                                    
+## 278449:             0 Svjedočanstva & Vjera
+## 278450:             0 Svjedočanstva & Vjera
+## 278451:             0               Pantela
+## 278452:             0    Deborah Milano BiH
+## 278453:             0            missZDRAVA
+##                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 FULL_TEXT
+##      1:                                                                                                                                                                                                             <U+0001F4E2> DARUJEMOOOO<U+0001F4E2>  \n5X Košaru prepunu Teta Violeta proizvoda !!!  \n\nZa kos\241aru sa slike, punu #TetaVioleta proizvoda trebate:\n<U+2714> pratiti @tetavioletaofficial Instagram i/ili FaceBook profil, podijeliti na story-u\n<U+2714> u komentaru oznac\241iti prijatelja/icu koja je Fan Teta Violeta proizvoda<U+0001F49C>\n\nIgramo se do c\241etvrtka!\nSretno svima !!<U+0001F340>\n\nPOZOR!<U+FE0F> Ako primiš poruku da si osvojila nagradu, da se registriraš, ostaviš svoje podatke ili broj računa - ne nasjedaj !\nKod svih darivanja dobitnika objavljujemo isključivo na našem profilu, sve ostalo su LAŽNI PROFILI! Na upite i poruke oko takvih lažnih profila i kontakata, nećemo odgovarati.\nHvala.
+##      2: Dragee mameee!!! <U+0001F90D>\n\nDa li ste spremne za jedno super darivanjeeee !!! <U+0001F60D><U+0001F60D>\n\nSpremili smo kutiju punu našim proizvoda, sve što jedna mama želi, a bebi treba x10 !!! <U+0001F525><U+0001F525>\n\n5x dobitnika biti će objavljeni na Facebooku, 5x na Instagramu!\n\nSve što je potrebno: \n<U+0001F90D>1. Pratiti @violetadoublecare Instagram i/ili Facebook\n<U+0001F90D>2. U komentaru je potrebno označiti najbolju mamu koja mora znati za ovaj Giveaway\n<U+0001F90D>3. Podijeliti Darivanje u story-u \n\nDarivanje vrijedi za sve zemlje, igramo se do ponedjeljka  28.03.\n\nPOZOR <U+274C>Ako primiš poruku da si osvojila nagradu, da se registriraš, ostaviš svoje podatke ili broj računa - ne nasjedaj !\nKod svih darivanja dobitnika objavljujemo isključivo na našem profilu, sve ostalo su LAŽNI PROFILI! Na upite i poruke oko takvih lažnih profila i kontakata, nećemo odgovarati.\nHvala.
+##      3:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Predsjednik Hrvatske ne prestaje skoro svaki dan šokirali javnost svojim neobičnim i skandaloznim izjavama. \n\nŠto mislite o tome? <U+0001F914>
+##      4:                                 <U+2728>DARUJEMO<U+2728>\n\nZARA bon u iznosu od čak 2000kn ( stavljen namjerno na 2 kartice po 1000, ukoliko nekom želiš pokloniti polovicu).\n\nZa sudjelovanje u Darivanju potrebno je:\n\n<U+0001F493>Pratiti @violetawecare FaceBook i/ili Instagram profil\n<U+0001F493>U komentaru označiti osobu na koju misliš potrošiti barem dio bona <U+0001F60A>\n<U+0001F493>Podijeliti Darivanje u story-u\n\n<U+0001F493> Prekrižiti prste, jer sretne dobitnika/icu objavljujemo u petak 10.12.\n\nSretno svima !\n\nPOZOR!<U+FE0F> Ako primiš poruku da si osvojila nagradu, da se registriraš, ostaviš svoje podatke ili broj računa - ne nasjedaj !\nKod svih darivanja dobitnika objavljujemo isključivo na našem profilu, sve ostalo su LAŽNI PROFILI! Na upite i poruke oko takvih lažnih profila i kontakata, nećemo odgovarati.\nHvala.\n<U+2757>Darivanje ni na koji način nije povezano s Instagramom.
+##      5:                                                                                                                                                                                                                            “Don’t get me something I need, get me something I want” - iako realno, poklon bon iz Prahir Fine Jewellery i trebaš i želiš. Možeš ga uzet sebi i nikom ne reć, možeš odvest mamu u shopping, možeš ovo osvojit za curu/ženu/onu treću, uzet joj nešto lijepo i prešutit da je od mene - sve možeš s ovim bonom, samo ga prvo trebaš imat u rukama.\n\nOvako ćemo se dogovorit - napiši mi kakvo zlato ti je ljepše, žuto ili bijelo. Nema točnog odgovora, a on može biti i “ne znam, ne mogu odlučit, sve je predivno” jer je to moj odgovor svaki put kad uđem u Prahir.\n\nTo je to, od ostalih inputa imam da skokneš na moj Instagram jer tamo poklanjam nešto što će ti olakšat proces izrade frizure. \n\nLp.
+##     ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+## 278449:                                                                                                                                                                                                                                                        O Konstantinovu miru\n\nZa sve budi slava Bogu svemogućemu, kralju svega stvorenja. Hvala također čuvaru i otkupitelju duša naših Isusu Kristu. Po njemu molimo da nam se trajno sačuva čvrst i stalan mir, zaštićen o d vanj skih nereda i od svih duševnih neprilika i smutnja.\nVedar je i bistar dan, bez ijednoga oblačka, već zasvijetlio nebeskim svjetlom Crkvama Kristovim rasprostranjenim po svem svijetu. I onima koji nisu u zajedništvu naše vjere bio je dan udio u dobrima što nam ih je Bog namaknuo te prime od njihova preobilja, iako ih nisu u svemu s nama zajedno uživali.\n\nhttps://bozanskicasoslov.wordpress.com/2021/12/31/3112-sluzba-citanja-sv-silvestar-2/
+## 278450:                                                                                                                                                                                                                                                                                                                                                                                                                               Rođendan Gospodinov rođendan je mira\n\nOna djetinja dob koje se nije stidjelo veličanstvo Sina Božjega, porastom je uznapredovala do savršena čovjeka. I pošto je dovršio slavodobitnu muku i uskrsnuće, minuli su svi čini poniznosti što ih je za nas preuzeo. Ipak, današnja nam svečanost obnavlja one svete početke netom rođena Isusa od Marije Djevice. I dok se klanjamo rođenju našega Spasitelja, i mi slavimo svoj početak.\n\nhttps://bozanskicasoslov.wordpress.com/2021/12/31/3112-sluzba-citanja-2/
+## 278451:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 Zabio ga Srbin i pokupio nagradu!
+## 278452:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Sretnu i uspješnu Novu godinu želi Vam Deborah Milano! <U+0001F31F><U+0001F389>
+## 278453:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               Želimo vam sretnu i uspješnu 2022. godinu! <U+2764>
+##                                                                                                  URL
+##      1:                             https://www.facebook.com/156963351043942/posts/7106234812783393/
+##      2: https://www.facebook.com/violetadoublecare/photos/a.384263591675247/4454159381352294/?type=3
+##      3:                                https://www.facebook.com/86874647886/posts/10158881317187887/
+##      4:                             https://www.facebook.com/804410399631342/posts/6497201163685542/
+##      5:                               https://www.facebook.com/212304003596943/posts/460546415439366
+##     ---                                                                                             
+## 278449:                             https://www.facebook.com/429867607035075/posts/4944068865614904/
+## 278450:                             https://www.facebook.com/429867607035075/posts/4944063092282148/
+## 278451:                             https://www.facebook.com/270194256332532/posts/5083134091705167/
+## 278452:                             https://www.facebook.com/147612405262739/posts/5071355562888374/
+## 278453:                               https://www.facebook.com/151729474812/posts/10159863920734813/
+```
+
+```r
 # posts by SHARE
 
 fb[,.(SHARE_COUNT,FROM,FULL_TEXT, URL)][order(-SHARE_COUNT)] 
+```
 
+```
+##         SHARE_COUNT                          FROM
+##      1:       11005                  Teta Violeta
+##      2:        5584                 Domagoj Sever
+##      3:        5304 Građani za Mislava Kolakušića
+##      4:        4638                    Anita Šupe
+##      5:        4447 Građani za Mislava Kolakušića
+##     ---                                          
+## 278449:           0         Svjedočanstva & Vjera
+## 278450:           0         Svjedočanstva & Vjera
+## 278451:           0                       Pantela
+## 278452:           0            Deborah Milano BiH
+## 278453:           0                    missZDRAVA
+##                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    FULL_TEXT
+##      1:                                                                                                                                                                                                                                                                                                                                                                                                <U+0001F4E2> DARUJEMOOOO<U+0001F4E2>  \n5X Košaru prepunu Teta Violeta proizvoda !!!  \n\nZa kos\241aru sa slike, punu #TetaVioleta proizvoda trebate:\n<U+2714> pratiti @tetavioletaofficial Instagram i/ili FaceBook profil, podijeliti na story-u\n<U+2714> u komentaru oznac\241iti prijatelja/icu koja je Fan Teta Violeta proizvoda<U+0001F49C>\n\nIgramo se do c\241etvrtka!\nSretno svima !!<U+0001F340>\n\nPOZOR!<U+FE0F> Ako primiš poruku da si osvojila nagradu, da se registriraš, ostaviš svoje podatke ili broj računa - ne nasjedaj !\nKod svih darivanja dobitnika objavljujemo isključivo na našem profilu, sve ostalo su LAŽNI PROFILI! Na upite i poruke oko takvih lažnih profila i kontakata, nećemo odgovarati.\nHvala.
+##      2: Božićno darivanje <U+0001F381><U+0001F384><U+0001F389>\n\nProtekle dvije godine su u potpunosti promijenile svijet putovanja kakav smo do jučer poznavali. Zbog zatvaranja granica, mnogi su odlučili bolje upoznati svoju zemlju, priče o neistraženim morskim dubinama i planinskim visinama. Kako bismo sljedeću godinu dočekali s onim što najviše volimo, a to su putovanja, darujemo vam jedan poklon s kojim ćete zasigurno zabilježiti svaki budući prijeđeni kilometar:\n\n<U+27A1><U+FE0F> Digitalni fotoaparat\n<U+27A1><U+FE0F> Objektiv\n<U+27A1><U+FE0F> SD kartica od 16 GB\n<U+27A1><U+FE0F> Torba za fotić\n\nSve što trebate napraviti kako biste osvojili fotoaparat, objektiv, SD karticu i torbu za fotić:\n\n1. Podijeliti javno ovu objavu\n2. Pratiti Domagoj Sever i Putni Kofer \n3. Učlaniti se u grupu PUTOVANJA - putničke priče i fotografije \n\nIgramo se do subote, 18. prosinca 2021. u 13 sati na Facebook i Instagram profilima, nakon čega ćemo odabrati i objaviti dobitnika. Instagram i Canon nisu povezani s darivanjem, a dobitnika ćemo kao i uvijek objaviti javno. Sretno! <U+0001F609>
+##      3:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   [PODIJELI] Mi nismo budale. Cijene naftnih derivata su manipulacija i nemaju previše veze s cijenama sirove nafte. U srpnju 2008. godine, barel nafte koštao je 147 dolara, a Eurosuper 95 je koštao 9,75 kuna po litri. Jučer je cijena barela nafte bila 100 dolara, a Eurosuper 95 je u Hrvatskoj 13 kuna. Litra eurosupera u Mađarskoj je 1,21 eura, a u Njemačkoj 2,48 eura. Kao što su manipulacije s Covidom-19 donijele ogromne profite farmaceutskoj industriji, tako i naftna industrija koristi ratove za manipulacije cijenama goriva.
+##      4:                                                                                                                                                                                                                                                    Nema više "teorija zavjera", samo činjenice koje će se dokazati javnosti - DIJELITE !<U+FE0F>  \n\nSvakako pogledajte (s prijevodom) uvodno izlaganje Reinera Fuellmicha u subotu 05.02.2022. kada je započela procedura Velike porote narodnog suda za javno mnijenje, na kojem će međunarodna grupa odvjetnika i sudac uz pomoć mnogih stručnjaka i drugih svjedoka prezentirati dokaze o zločinima protiv čovječanstva počinjene na globalnoj razini pod izlikom korona pandemije. \n\nCijela povezana priča izvrsno sažeta u 18 minuta i predstavljanje svjedoka koje ćemo čuti tokom ove istrage.\n\nLink na video ako ga Fašistograf skine odavde\nhttps://rumble.com/vublyh-reiner-fuellmich-05.02.2022.-uvodno-izlaganje-zloin-protiv-ovjeanstva.html\n\nViše o procesu prethodna objava \nhttps://m.facebook.com/story.php?story_fbid=519881839502741&id=100044427876450
+##      5:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 Licemjerje vodstva EU koje smo imali priliku gledati posljednje dvije godine nastavilo se s ratom i stradanjima u Ukrajini. Njemačka i druge države članice su u posljednjih 12 dana kupile od Rusije plina i nafte u vrijednosti 10 milijardi eura i time poslale poruku "jedno pričamo, drugo radimo". Takvo licemjerje bit će ubojito i produžiti ratna stradanja nevinih građana. Prestanite biti licemjerni i napravite sve da se rat zaustavi.
+##     ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+## 278449:                                                                                                                                                                                                                                                                                                                                                                                                                                           O Konstantinovu miru\n\nZa sve budi slava Bogu svemogućemu, kralju svega stvorenja. Hvala također čuvaru i otkupitelju duša naših Isusu Kristu. Po njemu molimo da nam se trajno sačuva čvrst i stalan mir, zaštićen o d vanj skih nereda i od svih duševnih neprilika i smutnja.\nVedar je i bistar dan, bez ijednoga oblačka, već zasvijetlio nebeskim svjetlom Crkvama Kristovim rasprostranjenim po svem svijetu. I onima koji nisu u zajedništvu naše vjere bio je dan udio u dobrima što nam ih je Bog namaknuo te prime od njihova preobilja, iako ih nisu u svemu s nama zajedno uživali.\n\nhttps://bozanskicasoslov.wordpress.com/2021/12/31/3112-sluzba-citanja-sv-silvestar-2/
+## 278450:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Rođendan Gospodinov rođendan je mira\n\nOna djetinja dob koje se nije stidjelo veličanstvo Sina Božjega, porastom je uznapredovala do savršena čovjeka. I pošto je dovršio slavodobitnu muku i uskrsnuće, minuli su svi čini poniznosti što ih je za nas preuzeo. Ipak, današnja nam svečanost obnavlja one svete početke netom rođena Isusa od Marije Djevice. I dok se klanjamo rođenju našega Spasitelja, i mi slavimo svoj početak.\n\nhttps://bozanskicasoslov.wordpress.com/2021/12/31/3112-sluzba-citanja-2/
+## 278451:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Zabio ga Srbin i pokupio nagradu!
+## 278452:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      Sretnu i uspješnu Novu godinu želi Vam Deborah Milano! <U+0001F31F><U+0001F389>
+## 278453:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Želimo vam sretnu i uspješnu 2022. godinu! <U+2764>
+##                                                                      URL
+##      1: https://www.facebook.com/156963351043942/posts/7106234812783393/
+##      2:   https://www.facebook.com/249075656585019/posts/462069585285624
+##      3:   https://www.facebook.com/161253069523074/posts/272409601740753
+##      4:   https://www.facebook.com/309208843903376/posts/520189179472007
+##      5:   https://www.facebook.com/161253069523074/posts/268012835513763
+##     ---                                                                 
+## 278449: https://www.facebook.com/429867607035075/posts/4944068865614904/
+## 278450: https://www.facebook.com/429867607035075/posts/4944063092282148/
+## 278451: https://www.facebook.com/270194256332532/posts/5083134091705167/
+## 278452: https://www.facebook.com/147612405262739/posts/5071355562888374/
+## 278453:   https://www.facebook.com/151729474812/posts/10159863920734813/
+```
 
+```r
 # how many letters in a title
 fb[,
        .(Avg = mean(nchar(TITLE), na.rm = T),
@@ -321,6 +812,14 @@ fb[,
          min = min(nchar(TITLE), na.rm = T),
          max = max(nchar(TITLE), na.rm = T)),
       SOURCE_TYPE][order(-Avg),]
+```
+
+```
+##    SOURCE_TYPE      Avg      STD min max
+## 1:    facebook 128.0845 39.09924   4 160
+```
+
+```r
 # how many letters in a text
 fb[,
        .(Avg = mean(nchar(FULL_TEXT)),
@@ -328,6 +827,11 @@ fb[,
          min = min(nchar(FULL_TEXT)),
          max = max(nchar(FULL_TEXT))),
       SOURCE_TYPE][order(-Avg),]
+```
+
+```
+##    SOURCE_TYPE      Avg      STD min   max
+## 1:    facebook 318.2882 445.7185   4 32002
 ```
 
 
@@ -343,7 +847,7 @@ dim(fb)
 ```
 
 ```
-## [1] 278453     49
+## [1] 278453     53
 ```
 
 ```r
@@ -356,7 +860,7 @@ dim(fb_token)
 ```
 
 ```
-## [1] 13414161       49
+## [1] 13414161       53
 ```
 
 ```r
@@ -367,28 +871,28 @@ fb_token %>%
 ```
 
 ```
-##                                            FROM       word
-##  1:                      Kapljice ljubavi Božje          i
-##  2:                                    Budicool        100
-##  3:                                Duhos Osijek         sa
-##  4:                              Kulturpunkt.hr       ovom
-##  5:                                    Radio808      https
-##  6: Centar za estetsku kirurgiju dr. Žgaljardić   bezbolan
-##  7:                                       Živim   vlastito
-##  8:                 LQ - Strive for development pročitajte
-##  9:                             Velimir Bujanec     screen
-## 10:                      Kapljice ljubavi Božje         si
-##                                                                                                                                                                                                                                                                   MENTION_SNIPPET
-##  1:                                IMENDANI: Priska, Margareta, Biserka Prvo čitanje: 1 Sam 16, 1-13 Samuel pomaza Davida usred njegove braće, i Duh ... će to čuti, i ubit će me!« Ali mu Gospodin odgovori: »Uzmi sa sobom junicu pa reci: 'Došao sam da žrtvujem Gospodinu!' I
-##  2:      Dostupno u 3 boje: crvena, roza i ljubičasta Ovaj buket je bolji od bilo kojih ruža koje ste dosad vidjeli jer donose ... pouzećem ili bankarstvom(ovo molim da obavezno naglasite jer se inače šalje pouzećem) <U+0001F30D> PROCES NARUČIVANJA : <U+27A1><U+FE0F> IME I
-##  3:                           Mnogi mu pristupaju iz tradicije i običaja, a poneki, usudim se reći, pristupaju na način police životnog osiguranja. To ... I danas mnogi ne znaju tko su, odakle dolaze i zbog toga prolaze kroz muku i suze. Mnogi se definiraju prema onome što
-##  4:                                                                                    Luka Matić piše o HRT-ovom dugoočekivanom dokumentarnom serijalu "NDH" i problematičnim, nedostatnim povijesnim interpretacijama koje su u njemu u velikoj mjeri prezentirane <U+0001F6A9>
-##  5:                                                                                                                                       I oprezno (sound: on) s pirotehnikom! <U+0001F973><U+0001F415><U+0001F408><U+0001F385> Awesome 2022. uz https://www.rtv808.com/awesome/
-##  6: <U+0001F381>50% POPUSTA NA BODY LAB - dvostruki tretman za oblikovanje tijela <U+27A1>Dva tretmana PO CIJENI JEDNOG <U+27A1>Riječ je o novoj tehnologiji i aparatu koji funkcionira na principu visoko frekventnih magnetskih vibracija koje prodiru na 8 cm dubine od kože i
-##  7:                                                                                                                                                Hrvatima su za sreću najvažniji skladni obiteljski odnosi, vlastito zdravlje i zdravlje najbližih te dobri prijateljski odnosi
-##  8:                             I stalno se prilagođavamo normama, obiteljskim pravilima, pravilima podneblja u kojem živimo, pravilima kompanije, ... A onda nam je ta ista okolina kriva, i država nam je kriva, i roditelji, i oni neki ljudi na poslu ili neki drugi o kojima
-##  9:                        24sata, jasno kaže: “Maska nije obveza, nego preporuka!” Sada, kada nam je resorni ministar sve lijepo objasnio, slobodni smo postaviti nekoliko pitanja… Na temelju čega su brojni građani kažnjavani za nenošenje maski - po kafićima, restoranima i
-## 10:                                     Sveta Lucijo, moli za nas <U+0001F339> MOLITVA I LITANIJE SVETOJ LUCIJI <U+0001F339> O sveta Lucijo, čije ime znači svjetlost, pun pouzdanja dolazim preda te tražeći te svetu svjetlost koja će mi vratiti oprez u izbjegavanju putova i
+##                                        FROM        word
+##  1:                                 PsiHelp        grlu
+##  2:                                 VGdanas       svaka
+##  3:                   Sport Vision Hrvatska     3pxrjo1
+##  4:                                    HURA     beestro
+##  5:                       SDP Velika Gorica          je
+##  6:                              Bonjour.ba        naći
+##  7: Ekonomski fakultet Sveučilišta u Rijeci    facebook
+##  8:                Specijalna bolnica AGRAM        svih
+##  9:                               Europa 92 proizvedeno
+## 10:                 Udruga OSI SB Loco Moto          je
+##                                                                                                                                                                                                                                                                                   MENTION_SNIPPET
+##  1:                              Razmislite o tome kako emocije mogu igrati ulogu kada se osjećate bolesno i razgovarajte sa svojim liječnikom.<U+0001F914> Kada osoba nauči regulirati svoje emocije može doći do smanjenja simptoma nekih bolesti, odnosno do poboljšanja cjelokupnog stanja te
+##  2:                                                                         <U+0001F4AA><U+0001F4AA> Bravooo!! Svaka čast!! Čestitke treneru Toplaku i nogometašima HNK Gorica na jednoj pravoj utakmici i zasluženom slavlju u okršaju s pretendentom za naslov prvaka! <U+0001F4AA><U+0001F4AA>
+##  3:                                                              <U+0001F51B>Ako planirate osvježiti svoj ormar novim komadima, sada je pravo vrijeme da to učinite! Nova kolekcija poznatih svjetskih brandova stigla je u Sport Vision trgovine i web shop! <U+0001F449> https://bit.ly/3pxrjo1
+##  4:                                                       Reroot, STUDIO NEXUS ENGAGED COMMUNITY Nije u redu u uredu Brend: CESI - Centar za edukaciju, savjetovanje i ... Djeda Božićnjaka Brend: Konzum Primarne agencije: ZOO agencija, Asombro Extremo ::: The Amazement Agency FINANCIJSKE I
+##  5:                                          Bio je komunist, marksist, ali je bio veoma pragmatičan političar i želio je ostvariti ravnopravnost hrvatskog naroda u sklopu Jugoslavije, a želio je isto tako da njegova socijalistička Jugoslavija bude ravnopravna u odnosu na sovjetski savez.
+##  6:                                                                                                                                                                                      Od ruža, pa sve do mimoza i tulipana, među ovim vjenčanim buketima naći ćete svog favorita! <U+0001F490>
+##  7: <U+0001F642> <U+0001F4CD>Lokacija i vrijeme: Dvorana Aneks i online, 10. ožujak od 10:15 <U+2757>Sudjelovanje za sve zainteresirane studente je besplatno uz obveznu prijavu: https://us06web.zoom.us/webinar/register/WN_p_u4dxefRh2ab5EyxFCgLg <U+0001F449> Više informacija o konferenciji
+##  8:                                         Od usluga bismo izdvojili: - RTG lakta - RTG nadlaktice - RTG ramena - RTG šake ili ručnog zgloba - RTG koljena - RTG natkoljenice ili potkoljenice - RTG skočnog zgloba ili stopala - RTG glave - RTG sinusa - RTG abdomena nativno - RTG zdjelice i
+##  9:                                                                                                     Sve što trebaš napraviti je lajkati ovu objavu i proširiti vijest među svojim prijateljima. <U+0001F970> Igramo se do 17.12. kada izvlačimo sretnog dobitnika ili dobitnicu. <U+0001F973>
+## 10:                                        Poklade su i ludi su dani. Dobro je bar jedan dan u godini pretvoriti se u nešto drugo, biti lud i radostan. Ako želite s nama podijeliti taj ludi dan, dođite na maškare u Udrugu Loco-Moto u ponedjeljak 28.02.2022. u 15,30. Maska je poželjna, ali
 ```
 
 #### CLEAN
@@ -411,54 +915,38 @@ fb_tokenTidy  %>%
 ```
 
 ```
-##                                                                    FROM
-##  1:                                                        ELLE CROATIA
-##  2:                                                            Budicool
-##  3:                                                 Radio Sveta Nedelja
-##  4:                                                    Televizija Zapad
-##  5:                                             Nacionalni Park Brijuni
-##  6:                                                    Hrvatski Telekom
-##  7:                                                        Fenserka.com
-##  8:                                                       Udruga Franak
-##  9: HDD - Hrvatsko dizajnersko društvo / Croatian Designers Association
-## 10:                                                    Katarina Pavliša
-## 11:                                                        Ideja godine
-## 12:                                                    Domagoj Margetic
-## 13:                                                      Rijeka Ljubavi
-## 14:                                                        Super Ljilja
-## 15:                                                        ELLE CROATIA
-##             word
-##  1:         vino
-##  2:     budicool
-##  3:       učenje
-##  4:   razumljive
-##  5:  panoramskim
-##  6:      telekom
-##  7:      ramazan
-##  8:      temelju
-##  9:  iskoristili
-## 10: zadovoljstvo
-## 11:     poslovni
-## 12:        nitko
-## 13:      osijeku
-## 14:       ostane
-## 15:   nekadašnji
-##                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              MENTION_SNIPPET
-##  1:                                                                                                                                                                                                                                                                                                                                                             Na što miriše zima? Na cimet, klinčiće, kuhano vino i ostala topla pića koja nam griju i dušu i tijelo. Evo dva recepta koja će vam vratiti osmijeh na lice…
-##  2:                                                                                                                                                                                                                                                      Boje: tamnosiva, svijetlosiva, smeđa, bež, crna, bijela, bordo, plava, mint zelena, zeleno-žuta Najelegantniji i ... pouzećem ili bankarstvom(ovo molim da obavezno naglasite jer se inače šalje pouzećem) <U+0001F30D> PROCES NARUČIVANJA : <U+27A1><U+FE0F> IME I
-##  3:                                                                                                                                                                                                                                                                     Sandri Vuk dodijeljena je Zahvalnica Grada Svete Nedelje za sveukupan rad i zasluge u promicanju obrazovanja na području Grada Svete Nedelje te novčana nagrada. Sandra Vuk je učiteljica savjetnica u Osnovnoj Školi Sveta Nedelja. Dugogodišnja je
-##  4:                                                                                                                                                                                                                                                                                                                            Na taj način omogućit će svim građanima uvid u transparentnost proračunskog procesa uz dostupne i razumljive informacije. #općinabrdovec #proračun #transparentnostproračuna - Općina Brdovec
-##  5: <U+0001D40F><U+0001D40E><U+0001D412><U+0001D409><U+0001D404><U+0001D413><U+0001D408> <U+0001D40D><U+0001D40F> <U+0001D401><U+0001D411><U+0001D408><U+0001D409><U+0001D414><U+0001D40D><U+0001D408> <U+0001D414> <U+0001D40F><U+0001D411><U+0001D40E><U+0001D412><U+0001D408><U+0001D40D><U+0001D402><U+0001D414> <U+0001F4E2> Individualni posjetitelji tijekom prosinca mogu posjetiti otok Veliki Brijun u vlastitom aranžmanu (bez vodiča i vožnje panoramskim vlakom). Posjet muzeju i izložbi te konzumacija pića i
-##  6:                                                                                                                                                                                                                                                                   Krema za svaki dan važan je korak u rutini njege kože, a pronalaženje sebi najbolje najjednostavnije je u Kiehl'su i uz Moj Telekom aplikaciju. Svi artikli na popustu su 5%, a uz kupnju bilo kojega dobivaš i pet odabranih mini proizvoda. Požuri i
-##  7:                                                                                                                                                                                                                                                                                                                                                                            “KLANJAO JE NA MOJE OČI! PROMIJENIO JE VJERU I POSTIO RAMAZAN” Oglasila se Dalilina majka, OTKRILA PRAVU ISTINU Link u komentaru <U+0001F53D>
-##  8:                                                                                                                                                                                                                                                                         Tužitelja je uspješno zastupala osječka odvjetnica Sanja Hajnal. Kronologija događanja bila je sljedeća: 1. Najprije je tužitelj iz Osijeka na Općinskom sudu u Osijeku dobio 30. lipnja 2016. presudu za ništetnost promjenjive kamatne stope i
-##  9:                                                                                                                                                                                                                                                                Lovorka Magaš i Patricia Počanić u [d]razgovoru s Markom Golubom o Studiju za industrijsko oblikovanje i kulturu stanovanja 1950ih. Otkako ih ne možemo raditi uživo s publikom, iskoristili smo priliku da šećemo među izlošcima i pokažemo vam što više
-## 10:                                                                                                                                                                                                                                               Izradi svoju staklenku zahvalnosti i na Božić osjeti osjećaj sreće <U+0001F49B> Kako? 1. Pripremi svoju staklenku, ukrasi ju + pripremi papiriće, bijele, u boji, nacrtane… budi kreativan/a <U+0001F60A> 2. Kroz idućih 12 dana prati moje postove. Svaki dan odgovori na
-## 11:                                                                                                                                                                                                                                                                izdanju natjecanja, a povodom toga smo uveli i neke promjene u natjecanje. No, suština je ostala ista, tražimo najbolji poslovni plan za neku poslovnu ideju koja uključuje nove tehnologije! Provjerite što je sve novo, koji su datumi i ne dvojite oko
-## 12:                                                                                                                                                                                                                                                                   Mediji stvaraju takvo ozračje u kojem je onemogućena javna rasprava o skandaloznim izmjenama i dopunama Zakona o zaštiti pučanstva. Ali prenosim tekst koji zvuči suvislo i pokazuje kako se u javnom prostoru spriječava argumentirana rasprava o tom
-## 13:                                                                                                                                                                                                                                                                                         naši donatori koji se odriče od sebe i ne zaboravljaju "Rijeku ljubavi" uplatili su financijsku potporu Z.M. iz ... iz Koprivnice..............................................................................200,00 kn I.V. iz
-## 14:                                                                                                                                                                                                                                                                                     Njihov osmijeh grije srce, rastapa i najveće ledene sante i prodire do svakog, pa i onog najtvrđeg kamena! I nitko na njih ne ostane ravnodušan, probude makar onu trunčicu empatije koja čuči u svima! Volim kad se starci smiješe!
-## 15:                                                                                                                                                                                                                                                                                                                    Nekadašnji model danas je majka troje djece i uspješna poslovna žena, a na dodjeli ovogodišnjih Elle Style Awardsa osvojila nas je odvažnim glam lookom i dokazala zašto zaslužuje titulu ikone stila
+##                                               FROM         word
+##  1:           Studentski zbor Sveučilišta u Splitu prijateljima
+##  2:                    HÖGL Shoe Fashion - Croatia      odličan
+##  3:                          Prihvati Isusa Krista    mjesecima
+##  4:                                 VJERA U NAMA †       uvijek
+##  5:                             **ŽeNsKe FrIzUrE**        svako
+##  6:                                    Filip Sušac  predstavlja
+##  7:                                    RCKTU Zabok    edukacija
+##  8:                                   AgroKlub.com     fakultet
+##  9:                                  Radio Vrbovec     ruralnog
+## 10:                                    Zadarski.hr         pola
+## 11:                                          Pevex    nagradnog
+## 12:                                     Ana Rucner       kavica
+## 13:                                   Index Oglasi     original
+## 14: Udruga za djecu s teškoćama u razvoju Zvončići        rekli
+## 15:                Escape Art - Escape Room Zagreb         room
+##                                                                                                                                                                                                                                                                                                                                         MENTION_SNIPPET
+##  1:                                                                                           Smrt ne postoji, ljudi umiru kada ih svi zaborave, ti si samo otišla u drugi dom, da se tvoja duša i misli oporave, postala si anđeo čuvar naše sreće i naše tuge, uvijek ćemo čuvati sjećanje na tebe. Riječi možda nisu dovoljne da izraze iskrenu tugu
+##  2:                                                                                                                                                         Detalji čine razliku - mokasinke STACY odličan su izbor za moderan i urbani look, a zlatni detalj čini ih posebno privlačnima. Pogledajte više: https://hoegl.com/hr-en/stacy-2-101624.html
+##  3:                                                                                              SIJEČANJ Pročitajte: Prva Ivanova poslanica 4:10-21 Mi smo upoznali ljubav koju Bog ima prema nama i povjerovali joj. 1 ... I vama također!« No jednoga dana učenik je odgovorio: »Volim vas.« Iznenađen, profesor je odgovorio: »I ja tebe volim!« Te
+##  4:                                                                                                ČIN POSVETE SVIJETA BOŽJEMU MILOSRĐU Bože, Milosrdni Oče, koji si objavio svoju ljubav u svome Sinu Isusu Kristu, a na nas si je izlio u Duhu Svetom, Tješitelju, danas ti povjeravamo sudbine svijeta i svakoga čovjeka. Sagni se nad nas grešnike,
+##  5:                                                                                                                                                                 KLIKNI I POGLEDAJ: TOP Savršena nijansa plave koja svako lice čini odmornijim!!!!!!!!!!!https://www.frizure.hr/frizura/savrsena-nijansa-plave-koja-svako-lice-cini-odmornijim/5266/
+##  6:                                                                         ~ Adica ~ Danas je potpisan ugovor o izgradnji šetnice i adrenalinskog parka u park šumi Adica. <U+0001F44F> Ovaj projekt sastavni je dio intervencijskog plana Grad Vukovar, a ukupna vrijednost projekta je preko 30 milijuna kuna. <U+0001F44D> Rokovi izvođenja su 18 i
+##  7:                                                                                               #Tjedanedukacija u RCKTU - jačanje #kompetencija nastavnika i mentora Projekt uspostave Regionalnog centra kompetentnosti u turizmu i ugostiteljstvu - Zabok orijentiran je na transformaciju SŠ Zabok u Centar kvalitetnog, praktičnog i međunarodno
+##  8:                                                                                              Novoosnovana udruga #ZeleniInkubator iza koje stoje Dario Juričan, Andreja Čoh i Saša Paparella i koja je stručnu pomoć dobila od Sveučilište u Zagrebu Agronomski fakultet , Prehrambeno-biotehnološki fakultet te Fakultet agrobiotehničkih znanosti
+##  9:                                                                                                                                                                                        U srijedu, 16. veljače započinje isplata prve rate izravnih plaćanja i IAKS mjera ruralnog razvoja poljoprivrednicima u iznosu od gotovo 2,1 milijardi kuna.
+## 10:                                                                                                                                                              Raspisan je natječaj, KK Zadar traži sportskog direktora, a Žilavec kaže: "Imam pravo imenovati sportskog direktora i sklopiti ugovor do pola milijuna kuna ili na rok od 18 mjeseci!"
+## 11: <U+0001F38A><U+0001F381>[Pevexova božićna škrinjica -> INSTAGRAM]<U+0001F381><U+0001F38A> Danas dijelimo gaming set Rampage <U+0001F3AE> koji će ti pomoći rasturiti sve online protivnike <U+0001F60E> Sve što moraš je <U+0001F447> <U+0001F7E2> lajkati Pevex Facebook i Instagram profil <U+0001F7E2> napisati komentar na Instagram profilu ->
+## 12:                                                                                                                                  Početak novog tjedna, kavica i uvijek najdraža torbica Galko <U+2764><U+FE0F><U+2615><U+FE0F><U+0001F618> Grlim vas<U+2763><U+FE0F> #AnaRucner #NovaKolekcija #ProljećeLjeto #Galko Foto<U+0001F4F8> Danijel Galić
+## 13:                                                                                                                                                                                                         Auto je u vrhunskom stanju i sve je na njemu original, nigdje nije ogreban i oštećen, kako izvana tako i izunutra! <U+0001F51D><U+0001F44C>
+## 14:                                                                                                 Već smo vas upoznali s aktivnostima koje smo proveli povodom Svjetskog dana svjesnosti o autizmu u Osnovnoj školi Braće Seljan. Na dojmljiv i inovativan način predočili smo senzorno iskustvo autistične osobe i njegov snažan utjecaj na općeniti
+## 15:                                                                                              Vino i gitare, nek' opet ispune mi noć... Tako kaže pjesma, a mi kažemo može i bolje – vino i escape room! Zamisli sad ovo – za svaki riješeni escape room zadatak piješ najbolja vina @vinamatosevic Tako je! Vinarija Matošević ima genijalnu escape
 ```
 
 
@@ -695,7 +1183,7 @@ dim(fb_TopLike)
 ```
 
 ```
-## [1] 4937   49
+## [1] 4937   53
 ```
 
 ```r
@@ -748,7 +1236,7 @@ dim(fb_token_TopLike)
 ```
 
 ```
-## [1] 330646     49
+## [1] 330646     53
 ```
 
 ```r
@@ -962,11 +1450,11 @@ fb_bigram %>% head(10)
 ##  3: 2447414       NA        3.027604        74098         4225917      70748
 ##  4: 2447414       NA        3.027604        74098         4225917      70748
 ##  5: 2447414       NA        3.027604        74098         4225917      70748
-##  6: 1552929       NA        2.942311        45692          528176      43708
-##  7: 1552929       NA        2.942311        45692          528176      43708
-##  8: 1552929       NA        2.942311        45692          528176      43708
-##  9: 1552929       NA        2.942311        45692          528176      43708
-## 10: 1552929       NA        2.942311        45692          528176      43708
+##  6: 4420948       NA        2.942311       127594          528176      43708
+##  7: 4420948       NA        2.942311       127594          528176      43708
+##  8: 4420948       NA        2.942311       127594          528176      43708
+##  9: 4420948       NA        2.942311       127594          528176      43708
+## 10: 4420948       NA        2.942311       127594          528176      43708
 ##     COMMENT_COUNT SHARE_COUNT TWEET_COUNT LOVE_COUNT WOW_COUNT HAHA_COUNT
 ##  1:          2959         391          NA          0         0          0
 ##  2:          2959         391          NA          0         0          0
@@ -1011,17 +1499,28 @@ fb_bigram %>% head(10)
 ##  8:        <NA>           NA               8       <NA>              <NA>
 ##  9:        <NA>           NA               8       <NA>              <NA>
 ## 10:        <NA>           NA               8       <NA>              <NA>
-##     TWEET_SOURCE_URL            DATETIME       bigram
-##  1:             <NA> 2022-02-21 15:04:38          d o
-##  2:             <NA> 2022-02-21 15:04:38          o i
-##  3:             <NA> 2022-02-21 15:04:38          i n
-##  4:             <NA> 2022-02-21 15:04:38          n g
-##  5:             <NA> 2022-02-21 15:04:38          g s
-##  6:             <NA> 2022-01-30 17:37:37    jučer sam
-##  7:             <NA> 2022-01-30 17:37:37        sam u
-##  8:             <NA> 2022-01-30 17:37:37     u požegi
-##  9:             <NA> 2022-01-30 17:37:37 požegi nakon
-## 10:             <NA> 2022-01-30 17:37:37      nakon 8
+##     TWEET_SOURCE_URL            DATETIME FOLLOWERS   LIKE COMMENT SHARE
+##  1:             <NA> 2022-02-21 15:04:38   4225917  70748    2959   391
+##  2:             <NA> 2022-02-21 15:04:38   4225917  70748    2959   391
+##  3:             <NA> 2022-02-21 15:04:38   4225917  70748    2959   391
+##  4:             <NA> 2022-02-21 15:04:38   4225917  70748    2959   391
+##  5:             <NA> 2022-02-21 15:04:38   4225917  70748    2959   391
+##  6:             <NA> 2022-01-30 17:37:37    543960 122343    3724  1527
+##  7:             <NA> 2022-01-30 17:37:37    543960 122343    3724  1527
+##  8:             <NA> 2022-01-30 17:37:37    543960 122343    3724  1527
+##  9:             <NA> 2022-01-30 17:37:37    543960 122343    3724  1527
+## 10:             <NA> 2022-01-30 17:37:37    543960 122343    3724  1527
+##           bigram
+##  1:          d o
+##  2:          o i
+##  3:          i n
+##  4:          n g
+##  5:          g s
+##  6:    jučer sam
+##  7:        sam u
+##  8:     u požegi
+##  9: požegi nakon
+## 10:      nakon 8
 ```
 
 ```r
