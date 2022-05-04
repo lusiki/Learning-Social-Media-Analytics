@@ -1,7 +1,7 @@
 ---
 title: "Learning Social Media Analytics"
 # subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
-subtitle: "Lecture 8: "
+subtitle: "Lecture 9: "
 author: "Luka Sikic, PhD <br> Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)"
 output:
   html_document:
@@ -64,7 +64,7 @@ library(anytime)
 
 # DATA IMPORT
 
-```{r, echo=T}
+```{r, echo=F}
 # read in data
 path <- "D:/LUKA/Freelance/Mediatoolkit/FULLtxtDATA"
 raw <- list.files(path = path , pattern="xlsx")
@@ -73,17 +73,20 @@ all_raw <- map_df(raw_path, read_excel)
 ```
 
 
-```{r}
+```{r, echo=F}
 # some basic data wrangle
 all <- as.data.table(all_raw)
 all <- all[,DATE := as.Date(DATE,"%Y-%m-%d")][,DATETIME := anytime(paste(DATE,TIME))]
 posts <- all[!duplicated(all),]
 rm(all,all_raw)
-# select facebook
+
+```
+
+```{r}
+# select youtube
 yt <- posts[SOURCE_TYPE == "youtube",]
 yt <- as.data.table(yt)
 ```
-
 
 
 ```{r eval=FALSE, echo=F}
