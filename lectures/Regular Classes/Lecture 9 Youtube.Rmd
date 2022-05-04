@@ -129,7 +129,7 @@ yt[, .(COMMENT = sum(COMMENTS_COUNT)),FROM][order(-COMMENT)] %>% head(150)
 # Top activity
 yt[,.N, FROM][order(-N)] %>% head(150)
 # Top like
-yt[order(-LIKE),.(FROM,TITLE,LIKE,URL,FULL_TEXT)] %>% head(250)
+yt[order(-LIKE_COUNT),.(FROM,TITLE,LIKE_COUNT,URL,FULL_TEXT)] %>% head(250)
 # Top reach
 yt[order(-REACH),.(FROM,TITLE,REACH,URL,FULL_TEXT)] %>% head(150)
 # Top engagement
@@ -152,13 +152,13 @@ dim(yt)
 head(yt)
 names(yt)
 # prepare for YOUTUBE DATA TOOLS
-chanels <- yt %>% 
+channels <- yt %>% 
   select(name, link) %>%
   mutate(chanel = substring(link,32))
 # check data
 head(channels)
 # pull IDs
-channelNames <- channels %>% distinct(channel) %>% pull(channel) 
+channelNames <- channels %>% distinct(chanel) %>% pull(chanel) 
 # write IDs to .txt
 channelNames %>%
   write.table("./data/YouTube/channelNames.txt", quote=F, row.names = F,col.names = F, eol = ",")
