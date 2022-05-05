@@ -1,7 +1,7 @@
 ---
 title: "Learning Social Media Analytics"
 # subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
-subtitle: "Lecture 9: "
+subtitle: "Lecture 9: Youtube"
 author: "Luka Sikic, PhD <br> Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)"
 output:
   html_document:
@@ -50,21 +50,23 @@ library(anytime)
 <br>
 <br>
 <br>
-- DATA IMPORT
+- INFLUENCERS
 <br>
 <br>
-- DESCRIPTIVE EXPLORATION
+- ACTIVITY
 <br>
 <br>
-- TEXT TOKENIZATION AND CLEAN
+- CHANNEL ANALYSIS
 <br>
 <br>
-- ANALYSIS
+- VIDEO ANALYSIS
+<br>
+<br>
+- COMMENT ANALYSIS
 
 
-# DATA IMPORT
 
-```{r, echo=F}
+```{r, echo=F,eval = F}
 # read in data
 path <- "D:/LUKA/Freelance/Mediatoolkit/FULLtxtDATA"
 raw <- list.files(path = path , pattern="xlsx")
@@ -73,18 +75,18 @@ all_raw <- map_df(raw_path, read_excel)
 ```
 
 
-```{r, echo=F}
+```{r, echo=F, eval = F}
 # some basic data wrangle
 all <- as.data.table(all_raw)
 all <- all[,DATE := as.Date(DATE,"%Y-%m-%d")][,DATETIME := anytime(paste(DATE,TIME))]
 posts <- all[!duplicated(all),]
 rm(all,all_raw)
-
+yt <- posts[SOURCE_TYPE == "youtube",]
 ```
 
-```{r}
-# select youtube
-yt <- posts[SOURCE_TYPE == "youtube",]
+```{r,echo = F}
+
+yt <- read.csv2("C:/Users/Lukas/OneDrive/Desktop/yt.csv")
 yt <- as.data.table(yt)
 ```
 
@@ -104,48 +106,62 @@ posts[SOURCE_TYPE == "youtube",.N,FROM][order(-N)]
 
 ```
 
-#### INFLUENCERS
+# INFLUENCERS
 
 ```{r}
 # Top activity
-yt[,.N, FROM][order(-N)] %>% head(150)
+yt[,.N, FROM][order(-N)] %>%
+  head(.,35)
 # Top like
-yt[, .(LIKE = sum(LIKE_COUNT)),FROM][order(-LIKE)] %>% head(150)
+yt[, .(LIKE = sum(LIKE_COUNT)),FROM][order(-LIKE)] %>%
+  head(.,35)
 # Top reach
-yt[, .(REACH = sum(REACH)),FROM][order(-REACH)] %>% head(150)
+yt[, .(REACH = sum(REACH)),FROM][order(-REACH)] %>%
+  head(.,35)
 # Top engagement
-yt[, .(ENGAGEMENT = sum(ENGAGEMENT_RATE)),FROM][order(-ENGAGEMENT)] %>% head(150)
+yt[, .(ENGAGEMENT = sum(ENGAGEMENT_RATE)),FROM][order(-ENGAGEMENT)] %>%
+  head(.,35)
 # Top interactions
-yt[, .(INTERACTIONS_ = sum(INTERACTIONS)),FROM][order(-INTERACTIONS_)] %>% head(150)
+yt[, .(INTERACTIONS_ = sum(INTERACTIONS)),FROM][order(-INTERACTIONS_)] %>%
+  head(.,35)
 # Top view
-yt[, .(VIEW = sum(VIEW_COUNT)),FROM][order(-VIEW)] %>% head(150)
+yt[, .(VIEW = sum(VIEW_COUNT)),FROM][order(-VIEW)] %>%
+  head(.,35)
 # Top comment
-yt[, .(COMMENT = sum(COMMENTS_COUNT)),FROM][order(-COMMENT)] %>% head(150)
+yt[, .(COMMENT = sum(COMMENTS_COUNT)),FROM][order(-COMMENT)] %>%
+  head(.,35)
 
 ```
 
 
-#### ACTIVITY
+# ACTIVITY
 
 
 ```{r}
 # Top activity
-yt[,.N, FROM][order(-N)] %>% head(150)
+yt[,.N, FROM][order(-N)] %>%
+  head(.,35)
 # Top like
-yt[order(-LIKE_COUNT),.(FROM,TITLE,LIKE_COUNT,URL,FULL_TEXT)] %>% head(250)
+yt[order(-LIKE_COUNT),.(FROM,TITLE,LIKE_COUNT,URL,FULL_TEXT)] %>%
+  head(.,35)
 # Top reach
-yt[order(-REACH),.(FROM,TITLE,REACH,URL,FULL_TEXT)] %>% head(150)
+yt[order(-REACH),.(FROM,TITLE,REACH,URL,FULL_TEXT)] %>%
+  head(.,35)
 # Top engagement
-yt[order(-ENGAGEMENT_RATE),.(FROM,TITLE,ENGAGEMENT_RATE,URL,FULL_TEXT)] %>% head(150)
+yt[order(-ENGAGEMENT_RATE),.(FROM,TITLE,ENGAGEMENT_RATE,URL,FULL_TEXT)] %>%
+  head(.,35)
 # Top interactions
-yt[order(-INTERACTIONS),.(FROM,TITLE,INTERACTIONS,URL,FULL_TEXT)] %>% head(150)
+yt[order(-INTERACTIONS),.(FROM,TITLE,INTERACTIONS,URL,FULL_TEXT)] %>%
+  head(.,35)
 # Top view
-yt[order(-VIEW_COUNT),.(FROM,TITLE,VIEW_COUNT,URL,FULL_TEXT)] %>% head(150)
+yt[order(-VIEW_COUNT),.(FROM,TITLE,VIEW_COUNT,URL,FULL_TEXT)] %>%
+  head(.,35)
 # Top comment
-yt[order(-COMMENTS_COUNT),.(FROM,TITLE,COMMENTS_COUNT,URL,FULL_TEXT)] %>% head(150)
+yt[order(-COMMENTS_COUNT),.(FROM,TITLE,COMMENTS_COUNT,URL,FULL_TEXT)] %>%
+  head(.,35)
 ```
 
-#### OTHER METADTA
+# CHANNEL ANALYSIS
 
 ```{r message=F, warning=F}
 # import data from channel crawler
@@ -174,53 +190,48 @@ YDT <- rbindlist(lapply(raw_path, function(x)read_tsv(x))) %>% distinct(title,.k
 
 str(YDT)
 names(YDT)
-head(YDT)
-# clean data
-# YDT <- YDT %>% 
-#   mutate(viewCount = as.numeric(viewCount),
-#          subscriberCount = as.numeric(subscriberCount),
-#          videoCount = as.numeric(videoCount),
-#          publishedAt = anytime(publishedAt))
-# # check data
-# str(YDT)
-
-
+datatable(YDT, rownames = FALSE, options = list(pageLength = 5, scrollX=T) )
 
 ```
 
 
 
-#### DESCRIPTIVE STATS
+
 
 ```{r message=F, warning=F}
 YDT %>%
   select(title, subscriberCount) %>% 
-  arrange(desc(subscriberCount)) 
+  arrange(desc(subscriberCount)) %>%
+  head(.,35)
 
 YDT %>%
   select(title, viewCount) %>% 
-  arrange(desc(viewCount))
+  arrange(desc(viewCount)) %>%
+  head(.,35)
 
 YDT %>%
   select(title, videoCount) %>% 
-  arrange(desc(videoCount))
+  arrange(desc(videoCount)) %>%
+  head(.,35)
 
 YDT %>%
   select(title, publishedAt) %>% 
-  arrange(publishedAt)
+  arrange(publishedAt) %>%
+  head(.,35)
 
 ```
 
 
 
-#### ANALYSE VIDEOS
+# VIDEO ANALYSIS
 
 ```{r}
 # read in videos (Podcast incubator) from YOUTUBE DATA TOOLS
 PI <- read_tsv("./data/YouTube/podkastInkubator.tab") 
 str(PI)
 names(PI)
-head(PI)
+
+datatable(PI, rownames = FALSE, options = list(pageLength = 5, scrollX=T) )
 ```
 
 #### DESCRIPTIVE STATS
@@ -229,29 +240,34 @@ head(PI)
 
 PI %>%
   select(videoTitle, durationSec, viewCount) %>% 
-  arrange(desc(viewCount))
+  arrange(desc(viewCount)) %>%
+  head(.,35)
 
 
 PI %>%
   select(videoTitle, durationSec, likeCount) %>% 
-  arrange(desc(likeCount))
+  arrange(desc(likeCount)) %>%
+  head(.,35)
 
 PI %>%
   select(videoTitle, durationSec, dislikeCount) %>% 
-  arrange(desc(dislikeCount))
+  arrange(desc(dislikeCount)) %>%
+  head(.,35)
 
 PI %>%
   select(videoTitle, durationSec, commentCount) %>% 
-  arrange(desc(commentCount))
+  arrange(desc(commentCount)) %>%
+  head(.,35)
 
 PI %>%
   select(videoTitle, durationSec) %>% 
-  arrange(desc(durationSec))
+  arrange(desc(durationSec)) %>%
+  head(.,35)
 
 ```
 
 
-#### COMMENTS 
+# COMMENTS 
 
 ```{r}
 # check most commented videos
@@ -281,7 +297,8 @@ head(COMMENTS,20)
 
 COMMENTS %>%
   select(authorName,text,likeCount) %>%
-  arrange(desc(likeCount))
+  arrange(desc(likeCount)) %>%
+  head(.,35)
  
 ```
 
@@ -377,7 +394,8 @@ COMMENTS_tokenTidy %>%
 ```{r fig.height=12}
 COMMENTS_tokenTidy <- as.data.table(COMMENTS_tokenTidy)
 ## Most common words
-COMMENTS_tokenTidy[,.N,by = word][order(-N),]
+COMMENTS_tokenTidy[,.N,by = word][order(-N),] %>%
+  head(.,35)
 
 ## Vizualize most common words
 COMMENTS_tokenTidy[,.N,by = word][N>60][order(-N),][,word := reorder(word,N)] %>%
@@ -432,7 +450,7 @@ bigrams_united %>%
 
 bigrams_united %>%
   count(bigram, sort = T) %>%
-  head(35) 
+  head(.,35)
 
 
 # Najvažniji bigrami po domenama
