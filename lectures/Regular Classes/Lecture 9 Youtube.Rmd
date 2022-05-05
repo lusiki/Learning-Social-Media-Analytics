@@ -111,25 +111,25 @@ posts[SOURCE_TYPE == "youtube",.N,FROM][order(-N)]
 ```{r}
 # Top activity
 yt[,.N, FROM][order(-N)] %>%
-  head(.,35)
+  rmarkdown::paged_table()
 # Top like
 yt[, .(LIKE = sum(LIKE_COUNT)),FROM][order(-LIKE)] %>%
-  head(.,35)
+  rmarkdown::paged_table()
 # Top reach
 yt[, .(REACH = sum(REACH)),FROM][order(-REACH)] %>%
-  head(.,35)
+  rmarkdown::paged_table()
 # Top engagement
 yt[, .(ENGAGEMENT = sum(ENGAGEMENT_RATE)),FROM][order(-ENGAGEMENT)] %>%
-  head(.,35)
+  rmarkdown::paged_table()
 # Top interactions
 yt[, .(INTERACTIONS_ = sum(INTERACTIONS)),FROM][order(-INTERACTIONS_)] %>%
-  head(.,35)
+  rmarkdown::paged_table()
 # Top view
 yt[, .(VIEW = sum(VIEW_COUNT)),FROM][order(-VIEW)] %>%
-  head(.,35)
+  rmarkdown::paged_table()
 # Top comment
 yt[, .(COMMENT = sum(COMMENTS_COUNT)),FROM][order(-COMMENT)] %>%
-  head(.,35)
+  rmarkdown::paged_table()
 
 ```
 
@@ -140,25 +140,25 @@ yt[, .(COMMENT = sum(COMMENTS_COUNT)),FROM][order(-COMMENT)] %>%
 ```{r}
 # Top activity
 yt[,.N, FROM][order(-N)] %>%
-  head(.,35)
+  rmarkdown::paged_table()
 # Top like
 yt[order(-LIKE_COUNT),.(FROM,TITLE,LIKE_COUNT,URL,FULL_TEXT)] %>%
-  head(.,35)
+  rmarkdown::paged_table()
 # Top reach
 yt[order(-REACH),.(FROM,TITLE,REACH,URL,FULL_TEXT)] %>%
-  head(.,35)
+  rmarkdown::paged_table()
 # Top engagement
 yt[order(-ENGAGEMENT_RATE),.(FROM,TITLE,ENGAGEMENT_RATE,URL,FULL_TEXT)] %>%
-  head(.,35)
+  rmarkdown::paged_table()
 # Top interactions
 yt[order(-INTERACTIONS),.(FROM,TITLE,INTERACTIONS,URL,FULL_TEXT)] %>%
-  head(.,35)
+  rmarkdown::paged_table()
 # Top view
-yt[order(-VIEW_COUNT),.(FROM,TITLE,VIEW_COUNT,URL,FULL_TEXT)] %>%
-  head(.,35)
+yt[order(-VIEW_COUNT),.(FROM,TITLE,VIEW_COUNT,URL,FULL_TEXT)]%>%
+  rmarkdown::paged_table()
 # Top comment
 yt[order(-COMMENTS_COUNT),.(FROM,TITLE,COMMENTS_COUNT,URL,FULL_TEXT)] %>%
-  head(.,35)
+  rmarkdown::paged_table()
 ```
 
 # CHANNEL ANALYSIS
@@ -190,7 +190,8 @@ YDT <- rbindlist(lapply(raw_path, function(x)read_tsv(x))) %>% distinct(title,.k
 
 str(YDT)
 names(YDT)
-datatable(YDT, rownames = FALSE, options = list(pageLength = 5, scrollX=T) )
+
+rmarkdown::paged_table(YDT)
 
 ```
 
@@ -201,23 +202,23 @@ datatable(YDT, rownames = FALSE, options = list(pageLength = 5, scrollX=T) )
 ```{r message=F, warning=F}
 YDT %>%
   select(title, subscriberCount) %>% 
-  arrange(desc(subscriberCount)) %>%
-  head(.,35)
+  arrange(desc(subscriberCount))%>%
+  rmarkdown::paged_table()
 
 YDT %>%
   select(title, viewCount) %>% 
   arrange(desc(viewCount)) %>%
-  head(.,35)
+  rmarkdown::paged_table()
 
 YDT %>%
   select(title, videoCount) %>% 
   arrange(desc(videoCount)) %>%
-  head(.,35)
+  rmarkdown::paged_table()
 
 YDT %>%
   select(title, publishedAt) %>% 
   arrange(publishedAt) %>%
-  head(.,35)
+  rmarkdown::paged_table()
 
 ```
 
@@ -230,8 +231,8 @@ YDT %>%
 PI <- read_tsv("./data/YouTube/podkastInkubator.tab") 
 str(PI)
 names(PI)
+rmarkdown::paged_table(PI)
 
-datatable(PI, rownames = FALSE, options = list(pageLength = 5, scrollX=T) )
 ```
 
 #### DESCRIPTIVE STATS
@@ -241,28 +242,28 @@ datatable(PI, rownames = FALSE, options = list(pageLength = 5, scrollX=T) )
 PI %>%
   select(videoTitle, durationSec, viewCount) %>% 
   arrange(desc(viewCount)) %>%
-  head(.,35)
+  rmarkdown::paged_table()
 
 
 PI %>%
   select(videoTitle, durationSec, likeCount) %>% 
   arrange(desc(likeCount)) %>%
-  head(.,35)
+  rmarkdown::paged_table()
 
 PI %>%
   select(videoTitle, durationSec, dislikeCount) %>% 
   arrange(desc(dislikeCount)) %>%
-  head(.,35)
+  rmarkdown::paged_table()
 
 PI %>%
   select(videoTitle, durationSec, commentCount) %>% 
   arrange(desc(commentCount)) %>%
-  head(.,35)
+  rmarkdown::paged_table()
 
 PI %>%
   select(videoTitle, durationSec) %>% 
   arrange(desc(durationSec)) %>%
-  head(.,35)
+  rmarkdown::paged_table()
 
 ```
 
@@ -273,7 +274,8 @@ PI %>%
 # check most commented videos
 PI %>%
   select(videoTitle, videoId, durationSec, commentCount) %>% 
-  arrange(desc(commentCount))
+  arrange(desc(commentCount)) %>%
+  rmarkdown::paged_table()
 ```
 
 
@@ -298,7 +300,7 @@ head(COMMENTS,20)
 COMMENTS %>%
   select(authorName,text,likeCount) %>%
   arrange(desc(likeCount)) %>%
-  head(.,35)
+  rmarkdown::paged_table()
  
 ```
 
@@ -450,7 +452,7 @@ bigrams_united %>%
 
 bigrams_united %>%
   count(bigram, sort = T) %>%
-  head(.,35)
+  rmarkdown::paged_table()
 
 
 # Najvažniji bigrami po domenama
