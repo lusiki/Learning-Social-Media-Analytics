@@ -1,0 +1,297 @@
+---
+title: "Learning Social Media Analytics"
+# subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
+subtitle: "Lecture 10: Twitter"
+author: "Luka Sikic, PhD <br> Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)"
+output:
+  html_document:
+    code_folding: show
+    theme: flatly
+    highlight: haddock
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+    keep_md: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '4'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, message = F, warning = F)
+```
+
+
+```{r libs, include=TRUE, echo=FALSE,message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readxl)
+library(here)
+library(kableExtra)
+library(DT)
+library(data.table)
+library(lubridate)
+library(anytime)
+library(tidytext)
+library(grid)
+library(wordcloud)
+library(reshape2)
+library(ggraph)
+library(widyr)
+library(topicmodels)
+library(ggthemes)
+library(reportMD)
+library(anytime)
+library(scales)
+```
+
+
+```{r, eval=FALSE, echo=T}
+# read in data
+path <- "D:/LUKA/Freelance/Mediatoolkit/FULLtxtDATA"
+raw <- list.files(path = path , pattern="xlsx")
+raw_path <- paste0(path, "/", raw)
+all_raw <- map_df(raw_path, read_excel)
+```
+
+```{r , eval=F}
+# some basic data wrangle
+all <- as.data.table(all_raw)
+all <- all[,DATE := as.Date(DATE,"%Y-%m-%d")][,DATETIME := anytime(paste(DATE,TIME))]
+posts <- all[!duplicated(all),]
+rm(all,all_raw)
+# select media
+forum <- posts[SOURCE_TYPE == "forum",]
+forum <- as.data.table(forum)
+
+
+
+forum[,.N,TITLE][order(-N)]
+
+forum[TITLE == "Potraga za razlogom ili teorije zavjere vol. 9",][]
+
+```
+
+```{r}
+tw <- read.csv2("C:/Users/Lukas/OneDrive/Desktop/tw.csv")
+
+```
+
+
+
+
+# Basic descriptives of overall activity
+
+```{r}
+# PER INFLUENCER
+tw <- tw %>%
+  mutate(PROFILE = gsub("^.*\\.com/([^/]+).*", "\\1", URL))
+tw <- as.data.table(tw)
+
+# most active profiles
+unique(tw[,.N,PROFILE][order(-N)])
+# most popular
+tw %>% 
+  group_by(PROFILE) %>%
+  summarise(FOLLOW = mean(FOLLOWERS_COUNT)) %>%
+  arrange(desc(FOLLOW)) %>% 
+  head(40) 
+# most influential
+tw %>% 
+  group_by(PROFILE) %>%
+  summarise(REACH = sum(REACH)) %>%
+  arrange(desc(REACH))  %>% 
+  head(40)
+# most influential II
+tw %>% 
+  group_by(PROFILE) %>%
+  summarise(INTERACTIONS = sum(INTERACTIONS)) %>%
+  arrange(desc(INTERACTIONS)) %>% 
+  head(40)
+# most appreciated
+tw %>% 
+  group_by(PROFILE) %>%
+  summarise(FAVORITE = sum(FAVORITE_COUNT)) %>%
+  arrange(desc(FAVORITE)) %>% 
+  head(40)
+# most appreciated
+tw %>% 
+  group_by(PROFILE) %>%
+  summarise(RETWEET = sum(RETWEET_COUNT)) %>%
+  arrange(desc(RETWEET)) %>% 
+  head(40)
+
+```
+
+```{r}
+# PER TWEET
+
+# most popular
+tw %>% 
+  select(PROFILE, FULL_TEXT, FOLLOWERS_COUNT,URL) %>%
+  arrange(desc(FOLLOWERS_COUNT)) %>% 
+  head(40)
+# most influential
+tw %>% 
+  select(PROFILE, FULL_TEXT, REACH,URL) %>%
+  arrange(desc(REACH))  %>% 
+  head(40)
+# most influential II
+tw %>% 
+  select(PROFILE, FULL_TEXT, INTERACTIONS,URL) %>%
+  arrange(desc(INTERACTIONS))  %>% 
+  head(40)
+# most appreciated
+tw %>% 
+  select(PROFILE, FULL_TEXT, FAVORITE_COUNT,URL) %>%
+  arrange(desc(FAVORITE_COUNT)) %>% 
+  head(40)
+# most appreciated
+tw %>% 
+  select(PROFILE, FULL_TEXT, RETWEET_COUNT,URL) %>%
+  arrange(desc(RETWEET_COUNT))  %>% 
+  head(40)
+
+```
+
+
+# check twitter activity on CRO supply side 
+
+```{r}
+# select relevant CRO profiles
+unique(tw[,.N,FROM][order(-N)]) %>%
+  filter(N > 5) %>% 
+  pull(FROM) -> CRO_TW
+
+tw[FROM %in% CRO_TW,] -> CTW
+
+CTW %>%
+  mutate(PROFILE = gsub("^.*\\.com/([^/]+).*", "\\1", URL)) -> CTW
+
+# most popular
+CTW %>% 
+  group_by(PROFILE) %>%
+  summarise(FOLLOW = mean(FOLLOWERS_COUNT)) %>%
+  arrange(desc(FOLLOW))  %>% 
+  head(100)
+# most influential
+CTW %>% 
+  group_by(PROFILE) %>%
+  summarise(REACH = sum(REACH)) %>%
+  arrange(desc(REACH))  %>% 
+  head(40)
+# most influential II
+CTW %>% 
+  group_by(PROFILE) %>%
+  summarise(INTERACTIONS = sum(INTERACTIONS)) %>%
+  arrange(desc(INTERACTIONS))  %>% 
+  head(40)
+# most appreciated
+CTW %>% 
+  group_by(PROFILE) %>%
+  summarise(FAVORITE = sum(FAVORITE_COUNT)) %>%
+  arrange(desc(FAVORITE)) %>% 
+  head(40)
+# most appreciated
+CTW %>% 
+  group_by(PROFILE) %>%
+  summarise(RETWEET = sum(RETWEET_COUNT)) %>%
+  arrange(desc(RETWEET))  %>% 
+  head(40)
+  
+```
+
+
+```{r}
+# PER TWEET
+
+# most popular
+CTW %>% 
+  select(PROFILE, FULL_TEXT, FOLLOWERS_COUNT,URL) %>%
+  arrange(desc(FOLLOWERS_COUNT))  %>% 
+  head(40)
+# most influential
+CTW %>% 
+  select(PROFILE, FULL_TEXT, REACH,URL) %>%
+  arrange(desc(REACH))  %>% 
+  head(40)
+# most influential II
+CTW %>% 
+  select(PROFILE, FULL_TEXT, INTERACTIONS,URL) %>%
+  arrange(desc(INTERACTIONS))  %>% 
+  head(40)
+# most appreciated
+CTW %>% 
+  select(PROFILE, FULL_TEXT, FAVORITE_COUNT,URL) %>%
+  arrange(desc(FAVORITE_COUNT))  %>% 
+  head(40)
+# most appreciated
+CTW %>% 
+  select(PROFILE, FULL_TEXT, RETWEET_COUNT,URL) %>%
+  arrange(desc(RETWEET_COUNT))  %>% 
+  head(40)
+
+```
+
+```{r, eval=FALSE, fig.length = 12}
+posts[,.N,DATE][order(-DATE)]
+
+all <- posts[DATE > "2021-12-01",]
+
+
+# library(extrafont)
+# loadfonts()
+# library(xkcd)
+# font_import(pattern="[H/h]umor")
+# loadfonts()
+# windowsFonts(Times=windowsFont("Times New Roman"))
+# library(ggtext)
+# library(showtext)
+# showtext_auto()
+# 
+# font_add_google('Roboto')
+
+all[SOURCE_TYPE != "comment",.N,SOURCE_TYPE][,.(SOURCE_TYPE,N = round(N/1000,2))] %>% 
+  ggplot(., aes(reorder(SOURCE_TYPE,N), N ,fill=as.factor(SOURCE_TYPE))) + 
+  geom_bar(stat = "identity") + 
+  scale_fill_grey() +
+  theme(legend.position="none") +
+  coord_flip() +
+  theme(legend.position="none", panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+panel.background = element_blank(), axis.line = element_line(colour = "black"),
+text = element_text(family = "serif")) +
+  ylab("Tisuca medijskih objva") + 
+  xlab("") +
+  scale_y_continuous(labels = scales::comma, breaks = c(50,150,300,550,1200)) + 
+  labs(title = "Aktivnost na društvenim medijma u Hrvatskoj",
+              subtitle = "Cjelokupni medijski prostor u razdoblju 6 mjeseci",
+              caption = "Podatci: Mediatoolkit | Izradio: Lukos")
+
+  
+
+```
+
+# Check forum activity 
+
+```{r}
+# read in data
+forum <- read.csv2( "C:/Users/Lukas/OneDrive/Desktop/forum.csv")
+forum <- as.data.table(forum)
+
+
+forum[,.N, TITLE][order(-N)] %>% head(50)
+
+# forum[TITLE == "Zoran Milanović, predsjednik Republike Hrvatske vol. IV",] %>% View()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
