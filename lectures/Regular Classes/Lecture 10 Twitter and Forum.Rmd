@@ -61,11 +61,84 @@ posts <- all[!duplicated(all),]
 rm(all,all_raw)
 # select media
 forum <- posts[SOURCE_TYPE == "forum",]
-forum <- as.data.table(forum)
+posts <- as.data.table(posts)
 
 
-
+range(posts$DATE)
 forum[,.N,TITLE][order(-N)]
+
+
+posts %>% 
+  group_by(SOURCE_TYPE) %>%
+  mutate(UkBrojObjava = n()) %>%
+  group_by(DATE, INTERDAYTIME, SOURCE_TYPE) %>%
+  mutate(PerDay = n()) %>%
+  ungroup() %>%
+  group_by(INTERDAYTIME,SOURCE_TYPE) %>%
+  summarise(AVG = mean(PerDay)) %>%
+  filter(SOURCE_TYPE != "comment") %>%
+  arrange(desc(AVG)) -> activePerDay
+
+
+
+library(anytime)
+library(lubridate)
+# convert chr date to date format
+posts[,DTIME := anytime(paste(posts$DATE,posts$TIME))]
+# make lubridate
+posts[,DTIME := ymd_hms(paste(posts$DATE,posts$TIME))]
+# create breaks
+breaks <- hour(hm("00:00", "6:00", "12:00", "18:00", "23:59"))
+# labels for the breaks
+labels <- c("Vecer", "Jutro", "Popodne", "Prevecer")
+# make a new variable
+posts[, INTERDAYTIME := cut(x=hour(posts$DTIME),
+                         breaks = breaks,
+                         labels = labels,
+                         include.lowest=TRUE)][
+                           ,INTERDAYTIME := as.factor(INTERDAYTIME)][
+                             ,SOURCE_TYPE := as.factor(SOURCE_TYPE)
+                             ]
+
+# check the result
+table(posts$INTERDAYTIME)
+# also peak into activity again (&again)
+table(posts$SOURCE_TYPE)
+
+# we are interested in cross-tabulated View
+activePerDay <- xtabs(~ INTERDAYTIME + SOURCE_TYPE, posts)
+
+activePerDay <- as.data.frame(activePerDay) %>%
+  filter(SOURCE_TYPE != "comment")
+
+library(extrafont)
+loadfonts(device = "win")
+
+
+ggplot(activePerDay, aes(x = INTERDAYTIME, y = AVG, fill = INTERDAYTIME, width=0.75)) + 
+    labs(y = "Broj objava ", x = "", title = "Aktivnost na online društvenim medijima U RH",
+        subtitle = "Dnevni prosjek za cjelokupni medijski prostor u razdoblju 6 mj",
+        caption = "Izvor: Mediatoolkit | Izradio: Lukos") +
+    geom_bar(stat = "identity") +
+    facet_wrap(~SOURCE_TYPE, scales = "free") +
+    coord_flip() +
+    guides(fill=FALSE) +
+    theme_bw() + theme( strip.background  = element_blank(),
+                        panel.grid.major = element_blank(),
+                        panel.border = element_blank(),
+                        axis.ticks = element_blank(),
+                        panel.grid.minor.y = element_blank(),
+                        panel.grid.major.y = element_blank(),
+                        panel.grid.minor.x = element_blank(),
+                        panel.grid.major.x = element_blank(),
+                        text=element_text(size=9,  family="Roboto")) +
+    theme(legend.position="bottom") +
+    scale_fill_brewer(palette="Set2") + 
+    scale_fill_grey(start=0,end =0.8)
+
+
+
+
 
 forum[TITLE == "Potraga za razlogom ili teorije zavjere vol. 9",][]
 
@@ -272,6 +345,73 @@ text = element_text(family = "serif")) +
 
 # Check forum activity 
 
+```{r leksikoni, message=F, warning=F}
+# read in lexicons
+CroSentilex_n <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-negatives.txt",
+                                   header = FALSE,
+                                   sep = " ",
+                                   stringsAsFactors = FALSE,
+                                   fileEncoding = "UTF-8")  %>%
+                   rename(word = "V1", sentiment = "V2" ) %>%
+                   mutate(brija = "NEG")
+ 
+CroSentilex_p  <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-positives.txt",
+                                   header = FALSE,
+                                   sep = " ",
+                                   stringsAsFactors = FALSE,
+                                   fileEncoding = "UTF-8") %>%
+                    rename(word = "V1", sentiment = "V2" ) %>%
+                    mutate(brija = "POZ")
+ 
+Crosentilex_sve <- rbind(setDT(CroSentilex_n), setDT(CroSentilex_p))
+# check lexicon data 
+head(sample_n(Crosentilex_sve,1000),15)
+
+ 
+CroSentilex_Gold  <- read.delim2("C:/Users/Lukas/Dropbox/Mislav@Luka/gs-sentiment-annotations.txt",
+                                 header = FALSE,
+                                 sep = " ",
+                                 stringsAsFactors = FALSE) %>%
+                    rename(word = "V1", sentiment = "V2" ) 
+ Encoding(CroSentilex_Gold$word) <- "UTF-8"
+ CroSentilex_Gold[1,1] <- "dati"
+ CroSentilex_Gold$sentiment <- str_replace(CroSentilex_Gold$sentiment , "-", "1")
+ CroSentilex_Gold$sentiment <- str_replace(CroSentilex_Gold$sentiment , "\\+", "2")
+ CroSentilex_Gold$sentiment <- as.numeric(unlist(CroSentilex_Gold$sentiment))
+# check lexicon data 
+head(sample_n(CroSentilex_Gold,100),15)
+ 
+# create stop words
+stopwords_cro <- get_stopwords(language = "hr", source = "stopwords-iso")
+# check stopwords data
+head(sample_n(stopwords_cro,100),15)
+# extend stop words
+my_stop_words <- tibble(
+  word = c(
+    "jedan","mjera", "može", "možete", "mogu", "kad", "sada", "treba", "ima", "osoba",
+    "e","prvi", "dva","dvije","drugi",
+    "tri","treći","pet","kod",
+    "ove","ova",  "ovo","bez", "kod",
+    "evo","oko",  "om", "ek",
+    "mil","tko","šest", "sedam",
+    "osam",   "čim", "zbog",
+    "prema", "dok","zato", "koji", 
+    "im", "čak","među", "tek",
+    "koliko", "tko","kod","poput", 
+    "baš", "dakle", "osim", "svih", 
+    "svoju", "odnosno", "gdje",
+    "kojoj", "ovi", "toga",
+     "ubera", "vozača", "hrvatskoj", "usluge", "godine", "više", "taksi", "taxi", "taksija", "taksija", "kaže", "rekao", "19"," aee", "ae","bit.ly", "https", "one", "the"
+  ),
+  lexicon = "lux"
+)
+stop_corpus <- my_stop_words %>%
+  bind_rows(stopwords_cro)
+# check stopwords data
+head(sample_n(stop_corpus,100),15)
+```
+
+
 ```{r}
 # read in data
 forum <- read.csv2( "C:/Users/Lukas/OneDrive/Desktop/forum.csv")
@@ -280,7 +420,30 @@ forum <- as.data.table(forum)
 
 forum[,.N, TITLE][order(-N)] %>% head(50)
 
-# forum[TITLE == "Zoran Milanović, predsjednik Republike Hrvatske vol. IV",] %>% View()
+forum[TITLE == "Anksioznost - opća tema(Vol.V)",] %>% 
+  unnest_tokens(word,FULL_TEXT) -> ZM_token
+  
+  
+
+# remove stop words, numbers, single letters
+ZM_token %>% 
+  anti_join(stop_corpus, by = "word") %>%
+  mutate(word = gsub("\\d+", NA, word)) %>%
+  mutate(word = gsub("^[a-zA-Z]$", NA, word)) -> ZM_tokenTidy
+# remove NA
+ZM_tokenTidy %>%
+  filter(!is.na(word)) -> ZM_tokenTidy
+
+ZM_tokenTidy[,.N,by = word][order(-N),]
+
+## Vizualize most common words
+ZM_tokenTidy[,.N,by = word][N>500][order(-N),][,word := reorder(word,N)] %>%
+  ggplot(aes(word, N)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip() +
+  theme_economist()
+  
 ```
 
 
