@@ -304,6 +304,55 @@ fb[,
 ```
 
 
+```{r eval=FALSE}
+
+
+nog <- fb[,.N,FROM][order(-N)]
+nogomet <- c("Index Sport","FC Barcelona Balkan fans", "gol.hr", "Sportnet.hr","Sportske novosti","Nogometne novosti", "PSK - Sports & Casino", "Sportski.net", "Hajdučke vijesti", "Germania Sport Kladionica", "Fudbalske Gluposti - FG", "GNK Dinamo Zagreb", "NFL Balkan", "Uživo sa Poljuda", "nogometplus.net", "Zona Dinamo", "NK Istra 1961", "HNK Hajduk Split", "Hrvatski nogometni savez", "Nogometni transferi", "Nogometne Ikone","NK Rijeka","Sport atraktivno","NK Slaven Belupo","Svijet Sporta","HNK Gorica","NK Lokomotiva Zagreb", "Reprezentacija Bosne i Hercegovine")
+
+nog <- fb[FROM %in% nogomet,]
+
+write.csv2(nog, "D:/LUKA/Freelance/Mediatoolkit/nogometFB.csv")
+
+
+ap <- posts[SOURCE_TYPE %in% c("instagram", "youtube")]
+
+
+ap[SOURCE_TYPE == "youtube",.N,FROM][order(-N)] %>% 
+  filter(grepl("Doct",FROM))
+
+igyt <- c("elladvornik","hana","elaajerkovic", "ADRI", "Zakon Braće","Nugato", "Marko Vuletić","BloodMaster")
+
+igyt <- ap[FROM %in% igyt,]
+
+
+
+
+
+
+write.csv2(igyt, "D:/LUKA/Freelance/Mediatoolkit/influenceIGYT.csv")
+
+
+posts %>% 
+  filter(grepl("Marija Selak", FULL_TEXT))
+
+
+
+
+forum <- c("Zoran Milanović, predsjednik Republike Hrvatske vol. IV", "Andrej Plenković - predsjednik HDZ-a i predsjednik Vlade RH IV"
+
+ap <- forum[TITLE == "Andrej Plenković - predsjednik HDZ-a i predsjednik Vlade RH IV",]
+
+forumZM <- write_csv2(zm, "D:/LUKA/Freelance/Mediatoolkit/forumZM.csv")
+forumAP <- write_csv2(ap, "D:/LUKA/Freelance/Mediatoolkit/forumAP.csv")
+
+           
+```
+
+
+
+
+
 # TEXT TOKENIZATION AND CLEAN
 
 

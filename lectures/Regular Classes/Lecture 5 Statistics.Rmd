@@ -51,7 +51,7 @@ library(data.table)
 
 ```{r, echo=FALSE, eval = T}
 # FULL SAMPLE
-path <- "D:/LUKA/Freelance/Mediatoolkit/FULLDATA"
+path <- "D:/LUKA/Freelance/Mediatoolkit/FULLtxtDATA"
 raw <- list.files(path = path , pattern="xlsx")
 raw_path <- paste0(path, "/", raw)
 all_raw <- map_df(raw_path, read_excel) %>% data.table()
