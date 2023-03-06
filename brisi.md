@@ -1,8 +1,7 @@
 ---
 title: "Learning Social Media Analytics"
-subtitle: "Lecture 1: Course introduction"  
-author: "Luka Sikic, PhD"
-date: '2023-03-06'
+subtitle: "Lecture 2: Current state and latest trends"
+author: "Luka Sikic, PhD <br> Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)"
 output:
   html_document:
     code_folding: show
@@ -24,40 +23,37 @@ output:
 
 
 
-# STRUCTURE
+
+# CLASS OUTLINE
 <br>
 <br>
+- DATA OVERVIEW
 <br>
 <br>
-- General course information
+- FACEBOOK
 <br>
 <br>
-- Objectives of the course
+- WEB
 <br>
 <br>
-- Course Literature
+- TWITTER
 <br>
 <br>
-- Data and resources
+- YOUTUBE
+<br>
+<br>
+- FORUM
+<br>
+<br>
+- INSTAGRAM
 <br>
 <br>
 
 ---
 layout: true
-# GENERAL COURSE INFORMATION
+# DATA OVERVIEW
 ---
-<br>
-#### What is this all about?
-<br>
-<br>
-<br>
-- understand social media landscape and trends
-<br>
-<br>
-- focus is on methods and techniques for social media analysis
-<br>
-<br>
-- state of the art tools for social media analysis 
-<br>
-<br>
-- independently interpret, analyse or/and develop social media strategy
+
+- check the raw [data](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/data/Mediatoolkit/sample.xlsx)
+- sourced from [Mediatoolkit](https://www.mediatoolkit.com/)
+

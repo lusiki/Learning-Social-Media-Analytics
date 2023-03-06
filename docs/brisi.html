@@ -9,10 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Luka Sikic" />
+<meta name="author" content="Luka Sikic, PhD   Faculty of Croatian Studies | LSMA" />
 
 
-<title>MULTIVARIJATNE STATISTIČKE METODE</title>
+<title>Learning Social Media Analytics</title>
 
 <script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -33,6 +33,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
 
 <style type="text/css">
@@ -336,126 +338,2424 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">MULTIVARIJATNE STATISTIČKE METODE</h1>
-<h3 class="subtitle">Predavanje 1: Pregled kolegija</h3>
-<h4 class="author">Luka Sikic</h4>
-<h4 class="date">Fakultet hrvatskih studija | <a
-href="https://lusiki.github.io/WebMultiVar/">Github MV</a></h4>
+<h1 class="title toc-ignore">Learning Social Media Analytics</h1>
+<h3 class="subtitle">Lecture 2: Current state and latest trends</h3>
+<h4 class="author">Luka Sikic, PhD <br> Faculty of Croatian Studies | <a
+href="https://lusiki.github.io/Learning-Social-Media-Analytics/">LSMA</a></h4>
 
 </div>
 
 
-<p>class: inverse, middle</p>
-<div id="tehnički-detalji" class="section level2">
-<h2>TEHNIČKI DETALJI</h2>
-<p><br> <br> <br></p>
-<ul>
-<li>Nastava iz kolegija <strong>Multivarijatne statističke
-metode</strong> sastoji se od dva sata predavanja i tri sata vježbi
-tjedno (6 ECTS) <br><br></li>
-<li>Pohađanje nastave (predavanja i seminara) je obavezno i evidentira
-se <br><br></li>
-<li>Predavanja se održavaju ponedjeljkom (u dvorani Split) od 16:00 do
-17:30 <br><br></li>
-<li>Vježbe se održavaju četvrtkom (u dvorani Rijeka) od 16:00 do 17:30
-<br><br></li>
-<li>Službeni repozitorij kolegija se nalazi na GitHubu i dostupan je na
-<a href="https://lusiki.github.io/WebMultiVar/">linku</a> <br></li>
-</ul>
-<p>layout: true # CILJEVI KOLEGIJA — <br> <br> <br></p>
-<ul>
-<li><strong>Razumijevanje</strong> i <strong>primjena</strong>
-multivarijatnih statističkih metoda <br><br></li>
-<li>Operacionaliziranje multivarijatnih metoda u empirijskoj analizi i
-interpretacija rezultata <br><br></li>
-<li>Upoznavanje sa osnovama programske sintakse jezika <a
-href="https://rstudio.com/"><strong>R</strong></a> <br><br></li>
-<li>Važnost, korisnost i znanstvena relevantnost domaćih i stranih
-izvora podataka (npr. iz <a
-href="https://www.dzs.hr/"><strong>DZS</strong></a>, <a
-href="https://www.hgk.hr/"><strong>HGK</strong></a>, <a
-href="https://ec.europa.eu/eurostat/data/database"><strong>EUROSTAT</strong></a>
-i sl.).</li>
-</ul>
-<p>layout: true # SADRŽAJ KOLEGIJA — <br> <br> <br></p>
-<div id="tehnički-uvod" class="section level3">
-<h3>TEHNIČKI UVOD</h3>
-<ol style="list-style-type: decimal">
-<li>Osnove programskog jezika R: <strong>R</strong> osnove, dodatni
-koncepti u <strong>R</strong> <br><br></li>
-<li>Osnove statistike (ponavljanje): <br></li>
-</ol>
-<ul>
-<li>Pregled podataka: deskriptivna statistika, vizualizacija
-podataka.</li>
-<li>Statistička teorija: vjerojatnost, distribucije, procjena
-parametara, testiranje hipoteza.</li>
-<li>Statistički alati: kategorijalna analiza, usporedba dva prosjeka,
-usporedba više prosjeka, osnove regresijske analize.</li>
-</ul>
-<p><br> <br> <br></p>
+<div id="class-outline" class="section level1">
+<h1>CLASS OUTLINE</h1>
+<p><br> <br> - DATA OVERVIEW <br> <br> - FACEBOOK <br> <br> - WEB <br>
+<br> - TWITTER <br> <br> - YOUTUBE <br> <br> - FORUM <br> <br> -
+INSTAGRAM <br> <br></p>
 </div>
-<div id="eksplorativna-analiza" class="section level3">
-<h3>EKSPLORATIVNA ANALIZA</h3>
-<p><br> 3. Klaster analiza <br><br> 4. Analiza glavnih komponenti
-<br><br> 5. Multidimenzionalno skaliranje</p>
+<div id="data-overview" class="section level1">
+<h1>DATA OVERVIEW</h1>
+<ul>
+<li>check the raw <a
+href="https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/data/Mediatoolkit/sample.xlsx">data</a></li>
+<li>sourced from <a
+href="https://www.mediatoolkit.com/">Mediatoolkit</a></li>
+</ul>
+<pre><code>## [1] 27604    45</code></pre>
+<pre><code>## Rows: 27,604
+## Columns: 35
+## $ DATE                  &lt;chr&gt; &quot;2022-01-01&quot;, &quot;2022-01-01&quot;, &quot;2022-01-01&quot;, &quot;2022-…
+## $ TIME                  &lt;chr&gt; &quot;11:19:14&quot;, &quot;12:08:49&quot;, &quot;00:00:00&quot;, &quot;20:45:00&quot;, …
+## $ TITLE                 &lt;chr&gt; &quot;Epidemiološke prognoze: Stručnjaci otkrivaju ka…
+## $ FROM                  &lt;chr&gt; &quot;slobodnadalmacija.hr&quot;, &quot;nacional.hr&quot;, &quot;ikea.com…
+## $ AUTHOR                &lt;chr&gt; NA, &quot;Autor: J.B. / HINA&quot;, NA, &quot;Podcast Inkubator…
+## $ URL                   &lt;chr&gt; &quot;https://slobodnadalmacija.hr/dubrovnik/vijesti/…
+## $ URL_PHOTO             &lt;chr&gt; &quot;https://mediatoolkit.com/img/50x50,sc,st47A95Sm…
+## $ SOURCE_TYPE           &lt;chr&gt; &quot;web&quot;, &quot;web&quot;, &quot;web&quot;, &quot;youtube&quot;, &quot;forum&quot;, &quot;forum&quot;…
+## $ GROUP_NAME            &lt;chr&gt; &quot;Luka&quot;, &quot;Luka&quot;, &quot;Luka&quot;, &quot;Luka&quot;, &quot;Luka&quot;, &quot;Luka&quot;, …
+## $ KEYWORD_NAME          &lt;chr&gt; &quot;opće&quot;, &quot;opće&quot;, &quot;opće&quot;, &quot;opće&quot;, &quot;opće&quot;, &quot;opće&quot;, …
+## $ FOUND_KEYWORDS        &lt;chr&gt; &quot;i&quot;, &quot;i, I&quot;, &quot;i&quot;, &quot;i, I&quot;, &quot;i&quot;, &quot;i&quot;, &quot;i&quot;, &quot;i&quot;, &quot;i…
+## $ LANGUAGES             &lt;chr&gt; &quot;hr&quot;, &quot;hr&quot;, &quot;hr&quot;, &quot;hr, bs&quot;, &quot;hr&quot;, &quot;hr&quot;, &quot;hr&quot;, &quot;h…
+## $ LOCATIONS             &lt;chr&gt; &quot;HR&quot;, &quot;HR&quot;, &quot;HR&quot;, &quot;HR, BA&quot;, &quot;HR&quot;, &quot;HR&quot;, &quot;HR&quot;, &quot;H…
+## $ TAGS                  &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## $ MANUAL_SENTIMENT      &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## $ AUTO_SENTIMENT        &lt;chr&gt; &quot;negative&quot;, &quot;negative&quot;, &quot;positive&quot;, &quot;negative&quot;, …
+## $ MENTION_SNIPPET       &lt;chr&gt; &quot;Epidemiološke prognoze: Stručnjaci otkrivaju ka…
+## $ REACH                 &lt;dbl&gt; 5441, 70, 13063, 2264, NA, NA, 35, 6540, 859, 6,…
+## $ VIRALITY              &lt;dbl&gt; 0.30833368, 0.00000000, 0.00000000, NA, NA, NA, …
+## $ FOLLOWERS_COUNT       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, 12984, NA, NA, N…
+## $ LIKE_COUNT            &lt;dbl&gt; 0, 0, 0, 17, NA, NA, 0, 203, 2, 0, NA, NA, 0, 0,…
+## $ COMMENT_COUNT         &lt;dbl&gt; 23, 0, 0, NA, NA, NA, 0, 2, 0, NA, NA, NA, 0, 0,…
+## $ SHARE_COUNT           &lt;dbl&gt; 4, 0, 0, NA, NA, NA, 0, 0, 1, NA, NA, NA, 0, 14,…
+## $ TWEET_COUNT           &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## $ LOVE_COUNT            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, 0, 0, NA, NA, NA, NA…
+## $ WOW_COUNT             &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, 0, 0, NA, NA, NA, NA…
+## $ HAHA_COUNT            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, 0, 0, NA, NA, NA, NA…
+## $ SAD_COUNT             &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, 0, 0, NA, NA, NA, NA…
+## $ ANGRY_COUNT           &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, 0, 0, NA, NA, NA, NA…
+## $ TOTAL_REACTIONS_COUNT &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, 205, 3, NA, NA, NA, …
+## $ FAVORITE_COUNT        &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## $ RETWEET_COUNT         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## $ VIEW_COUNT            &lt;dbl&gt; NA, NA, NA, 2264, NA, NA, NA, NA, NA, 6, NA, NA,…
+## $ DISLIKE_COUNT         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## $ COMMENTS_COUNT        &lt;dbl&gt; NA, NA, NA, 0, NA, NA, NA, NA, NA, 0, NA, NA, NA…</code></pre>
 <p><br> <br></p>
-</div>
-<div id="konfirmatorna-analiza" class="section level3">
-<h3>KONFIRMATORNA ANALIZA</h3>
-<p><br> 6. Diskriminativna analiza <br> 7. Faktorska analiza <br> 8.
-Multivarijatna regresijska analiza <br> 9. Analiza panel podataka <br>
-10. “Survival” analiza <br> 11. Analiza vremenskih serija <br> 12.
-Strojno učenje <br> 13. Analiza teksta <br> 14. Network analiza</p>
-<p>layout: true # STUDENTSKE OBVEZE — <br> <br> <br></p>
-<ul>
-<li>U zimskom , ljetnom i jesenskom ispitnom roku studenti imaju završni
-pismeni i usmeni ispit iz tema obrađenih na predavanjima i prema
-priloženoj literaturi</li>
-<li>Ispit je položen ako student ostvari 60% od ukupno mogućih bodova:
-60-64% = (2); 65-74% = (3); 75-84% = (4); 85% = (5)</li>
-<li>Predavanja su sastavni dio ispita i obvezno je prisutvovanje</li>
-</ul>
-<p>layout: true # LITERATURA — <br> <br> <br> - <a
-href="http://www.alinea.hr/105.html">Udžbenik</a> iz multivarijatnih
-statističkih metoda na hrvatskom jeziku.</p>
-<ul>
-<li><p><a
-href="https://link.springer.com/book/10.1007/978-1-4419-9650-3">Uvodni
-udžbenik</a> za multivarijatne metode u R.</p></li>
-<li><p><a
-href="https://github.com/gabi493/ADEI/blob/master/Husson%20F.%20et%20al.%20-%20Exploratory%20Multivariate%20Analysis%20by%20Example%20-%20Using%20R%20-%202011.pdf">Udžbenik</a>
-iz eksplorativne multivarijatne analize u R.</p></li>
-<li><p><a href="https://www.springer.com/gp/book/9783642360046">Detaljni
-udžbenik</a> za multivarijatnu statistiku.</p></li>
-<li><p><a
-href="https://us.sagepub.com/en-us/nam/using-r-with-multivariate-statistics/book243861#contents">Sveobuhvatni
-udžbenik</a> za multivarijatnu statistiku u R.</p></li>
-<li><p><a
-href="https://web.uniroma1.it/memotef/sites/default/files/file%20lezioni/102b_textbook.pdf">Tehnički
-udžbenik</a> za multivarijatne metode u R.</p></li>
-<li><p>Za pregled modernog pristupa društvenim znanostima na osnovi
-podataka: <a href="https://www.bitbybitbook.com/en/1st-ed/preface/">Bit
-by Bit: Social Research in the Digital Age</a>.</p></li>
-<li><p>Ovo je klasična literatura za <a
-href="https://r4ds.had.co.nz/">R</a>.</p></li>
-</ul>
-<p>layout: true # KONZULTACIJE — <br> <br> <br></p>
-<ul>
-<li>od 17:30 do 18:30 u sobi 18 (I.kat)</li>
-<li>prema dogovoru na mail: <a href="mailto:luka.sikic@hrstud.hr"
-class="email">luka.sikic@hrstud.hr</a></li>
-</ul>
-<hr />
-layout:false class: middle, inverse # HVALA NA PAŽNJI!
-<html>
-<div style="float:left">
+<pre class="r"><code># read data in (full data sample)
+path &lt;- &quot;D:/LUKA/Freelance/Mediatoolkit/FULLDATA&quot;
+raw &lt;- list.files(path = path , pattern=&quot;xlsx&quot;)
+raw_path &lt;- paste0(path, &quot;/&quot;, raw)
+all_raw &lt;- map_df(raw_path, read_excel)
+#all_raw &lt;- all_raw  %&gt;%  mutate(DATE = as.Date(DATE,&quot;%Y-%m-%d&quot; ))
 
+dim(all_raw)</code></pre>
+<pre><code>## [1] 4310422      47</code></pre>
+<pre class="r"><code>range(all_raw$DATE)</code></pre>
+<pre><code>## [1] &quot;2021-11-07&quot; &quot;2022-03-27&quot;</code></pre>
+<p><br> <br></p>
+<pre class="r"><code># other variables
+names(one_day_sample)</code></pre>
+<pre><code>##  [1] &quot;DATE&quot;                  &quot;TIME&quot;                  &quot;TITLE&quot;                
+##  [4] &quot;FROM&quot;                  &quot;AUTHOR&quot;                &quot;URL&quot;                  
+##  [7] &quot;URL_PHOTO&quot;             &quot;SOURCE_TYPE&quot;           &quot;GROUP_NAME&quot;           
+## [10] &quot;KEYWORD_NAME&quot;          &quot;FOUND_KEYWORDS&quot;        &quot;LANGUAGES&quot;            
+## [13] &quot;LOCATIONS&quot;             &quot;TAGS&quot;                  &quot;MANUAL_SENTIMENT&quot;     
+## [16] &quot;AUTO_SENTIMENT&quot;        &quot;MENTION_SNIPPET&quot;       &quot;REACH&quot;                
+## [19] &quot;VIRALITY&quot;              &quot;FOLLOWERS_COUNT&quot;       &quot;LIKE_COUNT&quot;           
+## [22] &quot;COMMENT_COUNT&quot;         &quot;SHARE_COUNT&quot;           &quot;TWEET_COUNT&quot;          
+## [25] &quot;LOVE_COUNT&quot;            &quot;WOW_COUNT&quot;             &quot;HAHA_COUNT&quot;           
+## [28] &quot;SAD_COUNT&quot;             &quot;ANGRY_COUNT&quot;           &quot;TOTAL_REACTIONS_COUNT&quot;
+## [31] &quot;FAVORITE_COUNT&quot;        &quot;RETWEET_COUNT&quot;         &quot;VIEW_COUNT&quot;           
+## [34] &quot;DISLIKE_COUNT&quot;         &quot;COMMENTS_COUNT&quot;        &quot;LIKES&quot;                
+## [37] &quot;DISLIKES&quot;              &quot;COUNT&quot;                 &quot;REPOST_COUNT&quot;         
+## [40] &quot;REDDIT_TYPE&quot;           &quot;REDDIT_SCORE&quot;          &quot;INFLUENCE_SCORE&quot;      
+## [43] &quot;TWEET_TYPE&quot;            &quot;TWEET_SOURCE_NAME&quot;     &quot;TWEET_SOURCE_URL&quot;</code></pre>
+<p><br> <br></p>
+<pre class="r"><code># observations/activity
+nrow(all_raw)</code></pre>
+<pre><code>## [1] 4310422</code></pre>
+<pre class="r"><code># social media networks
+unique(all_raw$SOURCE_TYPE)</code></pre>
+<pre><code>## [1] &quot;forum&quot;     &quot;web&quot;       &quot;twitter&quot;   &quot;reddit&quot;    &quot;youtube&quot;   &quot;comment&quot;  
+## [7] &quot;facebook&quot;  &quot;instagram&quot;</code></pre>
+<pre class="r"><code># unique authors
+length(unique(all_raw$AUTHOR))</code></pre>
+<pre><code>## [1] 123952</code></pre>
+<pre class="r"><code># unique authors
+length(unique(all_raw$AUTHOR))</code></pre>
+<pre><code>## [1] 123952</code></pre>
+<pre class="r"><code># unique titles
+length(unique(all_raw$TITLE))</code></pre>
+<pre><code>## [1] 1482450</code></pre>
+<pre class="r"><code># unique sources
+length(unique(all_raw$FROM))</code></pre>
+<pre><code>## [1] 87001</code></pre>
+<pre class="r"><code># unique urls
+length(unique(all_raw$URL))</code></pre>
+<pre><code>## [1] 2185355</code></pre>
+<pre class="r"><code>all &lt;- unique(all_raw[1:10,])
+
+library(data.table)
+all_raw &lt;- as.data.table(all_raw)
+all_raw &lt;- unique(all_raw)</code></pre>
+<pre class="r"><code># GENERAL OVERVIEW 
+all_raw %&gt;%
+  group_by(SOURCE_TYPE) %&gt;%
+  count() %&gt;%
+  arrange(desc(n)) %&gt;%
+  mutate_if(is.numeric, format, big.mark = &quot;.&quot;) %&gt;%
+  kbl() %&gt;%
+  kable_styling(font_size = 11)</code></pre>
+<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+SOURCE_TYPE
+</th>
+<th style="text-align:left;">
+n
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+web
+</td>
+<td style="text-align:left;">
+971.611
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+forum
+</td>
+<td style="text-align:left;">
+493.377
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+twitter
+</td>
+<td style="text-align:left;">
+237.562
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+facebook
+</td>
+<td style="text-align:left;">
+234.390
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+reddit
+</td>
+<td style="text-align:left;">
+135.690
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+youtube
+</td>
+<td style="text-align:left;">
+112.289
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+comment
+</td>
+<td style="text-align:left;">
+58.468
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+instagram
+</td>
+<td style="text-align:left;">
+45.795
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code># SAMPLE SOME TXT
+one_day_sample %&gt;%
+  select(SOURCE_TYPE, MENTION_SNIPPET) %&gt;%
+  unique(.) %&gt;%  
+  sample_n(8) %&gt;%
+  kbl() %&gt;%
+  kable_styling(font_size = 11)</code></pre>
+<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+SOURCE_TYPE
+</th>
+<th style="text-align:left;">
+MENTION_SNIPPET
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+forum
+</td>
+<td style="text-align:left;">
+Samo tko je to prošao i prolazi zna kako nam je… Iskreno se nadam da Vam
+je sin pobijedio beštiju…
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+web
+</td>
+<td style="text-align:left;">
+Bacил Bacкo - 41 godine iz Sofia Bacил Bacкo - 41 godine iz Sofia I
+confirm, that I am aware of Terms and Personal data … * Slažem se da
+neki podaci koje popunjavam budu objavljeni na veb-sajtu i da budu
+vidljivi na Internetu kao lični profil.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+web
+</td>
+<td style="text-align:left;">
+Ruzek i Atwater odlaze na tajni zadatak kao zatvorenici nakon što je
+ubijena desetogodišnjakinja. Saznaj više Neophodni kolačići (uključeno)
+Kako bi se osigurao ispravan rad ovih web-stranica, ponekad na vaše
+uređaje pohranjujemo male podatkovne
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+twitter
+</td>
+<td style="text-align:left;">
+Mali Fran Sotona na glavi i klanja se Luciferu a kao Božić slavi, ide po
+Slavama? WTF MItrović im baš sve može prodati? Ne kontam 🤷🏻‍♂️
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+twitter
+</td>
+<td style="text-align:left;">
+i got goosebumps
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+web
+</td>
+<td style="text-align:left;">
+Daniel Radcliffe, Rupert Grint i Emma Watson pridružuju se filmašu
+Chrisu Columbusu i ostalim glumcima iz svih osam filmova o Harryju
+Potteru u prvom povratku u Hogwarts kako bi proslavili godišnjicu prvog
+filma iz franšize, „Harry Potter i Kamen
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+web
+</td>
+<td style="text-align:left;">
+EPA/Lucas Aguayo PhotoID: 20220101334319 HINA Hrvatska izvještajna
+novinska agencija (HINA) javni je medij i jedina nacionalna novinska
+agencija u Hrvatskoj čiji su korisnici gotovo svi važniji elektronički i
+tiskani mediji u zemlji. Osim hrvatskih
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+forum
+</td>
+<td style="text-align:left;">
+Ode mamacita Amparo Grisales. I izbacili ste već 2 telenovelu zaredom sa
+Anom Luciom Dominguez?Kaj imate protiv nje?
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code># SAMPLE SOME TITLES
+all_raw %&gt;%
+  select(SOURCE_TYPE, TITLE) %&gt;%
+  sample_n(9) %&gt;%
+  kbl() %&gt;%
+  kable_styling(font_size = 11)</code></pre>
+<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+SOURCE_TYPE
+</th>
+<th style="text-align:left;">
+TITLE
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+forum
+</td>
+<td style="text-align:left;">
+Kakav je vaš dom i kako bi izgledao vaš idealan dom? Volume II
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+forum
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+web
+</td>
+<td style="text-align:left;">
+Stožer objavio današnje brojke o zaraženima i preminulima od korone u
+Hrvatskoj
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+twitter
+</td>
+<td style="text-align:left;">
+RT <span class="citation">@JUmicevic</span> Jos jedna hrvatska priča:
+300 godisnja maslina u Hrvatskom paviljonu na Dubai EXPO,neki dan.
+Osušila se ! Bravo za arhitekta Vrbana i one koji su izabrali projekt
+koji ukljucuje postavljanje takvog rariteta u žardinjeru u klimatizirani
+prostor bez danjeg svjetla na 6 mjeseci. <a
+href="https://t.co/5RIj31wK2k" class="uri">https://t.co/5RIj31wK2k</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+forum
+</td>
+<td style="text-align:left;">
+ŠTENE DOLAZI - kratke upute za rukovanje
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+web
+</td>
+<td style="text-align:left;">
+Najava pojačanih aktivnosti policije tijekom predstojećeg vikenda
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+youtube
+</td>
+<td style="text-align:left;">
+I love skiing😍 IG📷<span class="citation">@skimanguy</span> #skiing
+#skifahren #ski #shorts
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+forum
+</td>
+<td style="text-align:left;">
+Rat u Ukrajini - pročitati prvi post
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+web
+</td>
+<td style="text-align:left;">
+Film ‘Murina’ nagrađen na Međunarodnom filmskom festivalu u Sofiji
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-<hr color='#EB811B' size=1px width=796px>
-</html>
-<p>(Sljedeće predavanje: Osnove programskog jezika R!)</p>
+<div id="facebook" class="section level1">
+<h1>FACEBOOK</h1>
+<p><br> <br></p>
+<pre class="r"><code># choose variables to investigate
+all_raw %&gt;%
+  filter(SOURCE_TYPE == &quot;facebook&quot;) %&gt;%
+  select(AUTHOR,
+         REACH,
+         FOLLOWERS_COUNT,
+         LIKE_COUNT,
+         COMMENT_COUNT,
+         TOTAL_REACTIONS_COUNT,
+         INFLUENCE_SCORE,
+         TITLE,
+         MENTION_SNIPPET,
+         DATE, 
+         TIME) -&gt; fb</code></pre>
+<pre class="r"><code># most active authors
+fb %&gt;% 
+  group_by(AUTHOR,FOLLOWERS_COUNT) %&gt;%
+  summarise(N = n()) %&gt;%
+  arrange(desc(N))  %&gt;%
+  mutate_if(is.numeric, format, big.mark = &quot;.&quot;) %&gt;%
+  head(10) %&gt;% kbl() %&gt;%  kable_styling(font_size = 11)</code></pre>
+<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+AUTHOR
+</th>
+<th style="text-align:left;">
+FOLLOWERS_COUNT
+</th>
+<th style="text-align:left;">
+N
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Unknown user
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+2.003
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jutarnji
+</td>
+<td style="text-align:left;">
+767.075
+</td>
+<td style="text-align:left;">
+1.612
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Slobodna Dalmacija
+</td>
+<td style="text-align:left;">
+205.092
+</td>
+<td style="text-align:left;">
+1.470
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dalmatinski portal
+</td>
+<td style="text-align:left;">
+121.002
+</td>
+<td style="text-align:left;">
+1.455
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mamine tajne anonimne i javne
+</td>
+<td style="text-align:left;">
+102.770
+</td>
+<td style="text-align:left;">
+1.390
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RTL Vijesti
+</td>
+<td style="text-align:left;">
+139.221
+</td>
+<td style="text-align:left;">
+1.376
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Udruga ATMA
+</td>
+<td style="text-align:left;">
+206.150
+</td>
+<td style="text-align:left;">
+1.340
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Index.hr
+</td>
+<td style="text-align:left;">
+1.005.983
+</td>
+<td style="text-align:left;">
+1.339
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DNEVNIK.hr
+</td>
+<td style="text-align:left;">
+762.897
+</td>
+<td style="text-align:left;">
+1.326
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+eMedjimurje
+</td>
+<td style="text-align:left;">
+74.446
+</td>
+<td style="text-align:left;">
+1.302
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code># authors with impact
+fb %&gt;% 
+  group_by(AUTHOR) %&gt;%
+  summarise(LIKES = sum(LIKE_COUNT),
+            COMMENT = sum(COMMENT_COUNT),
+            REACH = sum(REACH),
+            REACTIONS = sum(TOTAL_REACTIONS_COUNT)) %&gt;%
+  arrange(desc(LIKES)) %&gt;%
+  mutate_if(is.numeric, format, big.mark = &quot;.&quot;) %&gt;%
+  head(8) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)</code></pre>
+<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+AUTHOR
+</th>
+<th style="text-align:left;">
+LIKES
+</th>
+<th style="text-align:left;">
+COMMENT
+</th>
+<th style="text-align:left;">
+REACH
+</th>
+<th style="text-align:left;">
+REACTIONS
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+24sata
+</td>
+<td style="text-align:left;">
+914.561
+</td>
+<td style="text-align:left;">
+204.933
+</td>
+<td style="text-align:left;">
+148.611.070
+</td>
+<td style="text-align:left;">
+1.148.543
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Index.hr
+</td>
+<td style="text-align:left;">
+756.276
+</td>
+<td style="text-align:left;">
+238.583
+</td>
+<td style="text-align:left;">
+130.641.956
+</td>
+<td style="text-align:left;">
+1.017.835
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FC Barcelona Balkan fans
+</td>
+<td style="text-align:left;">
+701.900
+</td>
+<td style="text-align:left;">
+11.369
+</td>
+<td style="text-align:left;">
+99.240.042
+</td>
+<td style="text-align:left;">
+714.474
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HRT Vijesti
+</td>
+<td style="text-align:left;">
+523.943
+</td>
+<td style="text-align:left;">
+53.495
+</td>
+<td style="text-align:left;">
+34.404.216
+</td>
+<td style="text-align:left;">
+614.199
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hajdučke vijesti
+</td>
+<td style="text-align:left;">
+486.964
+</td>
+<td style="text-align:left;">
+7.676
+</td>
+<td style="text-align:left;">
+16.735.361
+</td>
+<td style="text-align:left;">
+497.407
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jutarnji
+</td>
+<td style="text-align:left;">
+451.969
+</td>
+<td style="text-align:left;">
+170.862
+</td>
+<td style="text-align:left;">
+103.612.383
+</td>
+<td style="text-align:left;">
+642.249
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DNEVNIK.hr
+</td>
+<td style="text-align:left;">
+410.717
+</td>
+<td style="text-align:left;">
+126.107
+</td>
+<td style="text-align:left;">
+88.994.295
+</td>
+<td style="text-align:left;">
+560.654
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Čitaj knjigu
+</td>
+<td style="text-align:left;">
+408.489
+</td>
+<td style="text-align:left;">
+16.464
+</td>
+<td style="text-align:left;">
+35.144.378
+</td>
+<td style="text-align:left;">
+473.915
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code># important activity
+fb %&gt;% 
+  group_by(TITLE) %&gt;%
+  summarise(LIKES = sum(LIKE_COUNT),
+            COMMENT = sum(COMMENT_COUNT),
+            REACH = sum(REACH),
+            REACTIONS = sum(TOTAL_REACTIONS_COUNT)) %&gt;%
+  arrange(desc(LIKES)) %&gt;%
+  mutate_if(is.numeric, format, big.mark = &quot;.&quot;) %&gt;%
+  head(7) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)</code></pre>
+<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+TITLE
+</th>
+<th style="text-align:left;">
+LIKES
+</th>
+<th style="text-align:left;">
+COMMENT
+</th>
+<th style="text-align:left;">
+REACH
+</th>
+<th style="text-align:left;">
+REACTIONS
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+D O I N G S 🤯😈💪🏿
+</td>
+<td style="text-align:left;">
+70.748
+</td>
+<td style="text-align:left;">
+2.959
+</td>
+<td style="text-align:left;">
+2.447.414
+</td>
+<td style="text-align:left;">
+74.098
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jučer sam u Požegi nakon 8 mjeseci ponovo vidio rotvajlericu koju je
+udomio moj frend Mario a koju sam ja preuzeo u azilu u Čakovcu i odvezao
+ju u njen novi…
+</td>
+<td style="text-align:left;">
+43.708
+</td>
+<td style="text-align:left;">
+1.372
+</td>
+<td style="text-align:left;">
+1.552.929
+</td>
+<td style="text-align:left;">
+45.692
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Créditos TW I Franjorodowski #cabronazi #cabroworld
+</td>
+<td style="text-align:left;">
+39.897
+</td>
+<td style="text-align:left;">
+3.085
+</td>
+<td style="text-align:left;">
+8.697.468
+</td>
+<td style="text-align:left;">
+54.789
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Nikada nije želio u rat: Ukrajinci su mladom ruskom vojniku koji se
+predao dali hranu, topli čaj i dopustili mu da se javi obitelji
+</td>
+<td style="text-align:left;">
+37.032
+</td>
+<td style="text-align:left;">
+3.088
+</td>
+<td style="text-align:left;">
+1.740.477
+</td>
+<td style="text-align:left;">
+42.240
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Potresna snimka iz Ukrajine o kojoj priča cijeli svijet: Dječak uplakan
+i sam prešao granicu Više na: <a href="https://bit.ly/3HU7LAl"
+class="uri">https://bit.ly/3HU7LAl</a>
+</td>
+<td style="text-align:left;">
+33.245
+</td>
+<td style="text-align:left;">
+5.714
+</td>
+<td style="text-align:left;">
+2.037.888
+</td>
+<td style="text-align:left;">
+41.990
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ispratili smo našeg Akija. Svima koji su u ovim teškim danima bili uz
+nas i uz Akijevu obitelj od srca zahvaljujemo na podršci. - fotografije:
+Matej Grgić /…
+</td>
+<td style="text-align:left;">
+32.434
+</td>
+<td style="text-align:left;">
+1.205
+</td>
+<td style="text-align:left;">
+1.150.082
+</td>
+<td style="text-align:left;">
+33.860
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Prošlo je deset godina od kada sam prvi put vidila najlipse oči na
+svitu. I sve mi je u ovih deset godina bilo lako, samo kad bi pogledala
+u te oči… Za te…
+</td>
+<td style="text-align:left;">
+30.374
+</td>
+<td style="text-align:left;">
+1.308
+</td>
+<td style="text-align:left;">
+1.088.544
+</td>
+<td style="text-align:left;">
+31.751
+</td>
+</tr>
+</tbody>
+</table>
 </div>
+<div id="web" class="section level1">
+<h1>WEB</h1>
+<p><br> <br></p>
+<pre class="r"><code># choose variables to investigate
+all_raw %&gt;%
+  filter(SOURCE_TYPE == &quot;web&quot;) %&gt;%
+  select(FROM,
+         AUTHOR,
+         REACH,
+         VIRALITY,
+         LIKE_COUNT,
+         COMMENT_COUNT,
+         INFLUENCE_SCORE,
+         TITLE,
+         MENTION_SNIPPET,
+         DATE, 
+         TIME) -&gt; web</code></pre>
+<pre class="r"><code># most active authors
+web %&gt;% 
+  group_by(FROM) %&gt;%
+  summarise(N = n()) %&gt;%
+  arrange(desc(N))  %&gt;%
+  mutate_if(is.numeric, format, big.mark = &quot;.&quot;) %&gt;%
+  head(10) %&gt;% kbl() %&gt;%  kable_styling(font_size = 11)</code></pre>
+<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+FROM
+</th>
+<th style="text-align:left;">
+N
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+index.hr
+</td>
+<td style="text-align:left;">
+34.597
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jutarnji.hr
+</td>
+<td style="text-align:left;">
+28.272
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+slobodnadalmacija.hr
+</td>
+<td style="text-align:left;">
+28.204
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+24sata.hr
+</td>
+<td style="text-align:left;">
+24.971
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+glasistre.hr
+</td>
+<td style="text-align:left;">
+24.074
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vecernji.hr
+</td>
+<td style="text-align:left;">
+21.727
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+novine.hr
+</td>
+<td style="text-align:left;">
+21.475
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+hina.hr
+</td>
+<td style="text-align:left;">
+19.884
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dnevnik.hr
+</td>
+<td style="text-align:left;">
+19.036
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tportal.hr
+</td>
+<td style="text-align:left;">
+18.814
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>web %&gt;% 
+  group_by(FROM) %&gt;%
+  summarise(LIKES = sum(LIKE_COUNT),
+            COMMENT = sum(COMMENT_COUNT),
+            REACH = sum(REACH),
+            VIRALITY = sum(VIRALITY)) %&gt;%
+  arrange(desc(LIKES)) %&gt;%
+  mutate_if(is.numeric, format, big.mark = &quot;.&quot;) %&gt;%
+  head(8) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)</code></pre>
+<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+FROM
+</th>
+<th style="text-align:left;">
+LIKES
+</th>
+<th style="text-align:left;">
+COMMENT
+</th>
+<th style="text-align:left;">
+REACH
+</th>
+<th style="text-align:left;">
+VIRALITY
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+jutarnji.hr
+</td>
+<td style="text-align:left;">
+3.492.298
+</td>
+<td style="text-align:left;">
+1.595.332
+</td>
+<td style="text-align:left;">
+422.845.759
+</td>
+<td style="text-align:left;">
+3.081805e+04
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+campaign-archive.com
+</td>
+<td style="text-align:left;">
+2.779.750
+</td>
+<td style="text-align:left;">
+770.345
+</td>
+<td style="text-align:left;">
+367.763.587
+</td>
+<td style="text-align:left;">
+7.009902e+02
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+priceless.com
+</td>
+<td style="text-align:left;">
+1.189.660
+</td>
+<td style="text-align:left;">
+68.841
+</td>
+<td style="text-align:left;">
+54.359.098
+</td>
+<td style="text-align:left;">
+2.363774e+02
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+novizivot.net
+</td>
+<td style="text-align:left;">
+1.095.809
+</td>
+<td style="text-align:left;">
+132.356
+</td>
+<td style="text-align:left;">
+26.931.135
+</td>
+<td style="text-align:left;">
+2.690548e+03
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+geopolitika.news
+</td>
+<td style="text-align:left;">
+502.112
+</td>
+<td style="text-align:left;">
+134.073
+</td>
+<td style="text-align:left;">
+18.788.037
+</td>
+<td style="text-align:left;">
+2.385309e+03
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+maxportal.hr
+</td>
+<td style="text-align:left;">
+358.279
+</td>
+<td style="text-align:left;">
+197.283
+</td>
+<td style="text-align:left;">
+15.979.841
+</td>
+<td style="text-align:left;">
+2.586158e+03
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+teleskop.hr
+</td>
+<td style="text-align:left;">
+350.047
+</td>
+<td style="text-align:left;">
+103.481
+</td>
+<td style="text-align:left;">
+19.056.470
+</td>
+<td style="text-align:left;">
+1.767277e+03
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+hkm.hr
+</td>
+<td style="text-align:left;">
+347.210
+</td>
+<td style="text-align:left;">
+30.517
+</td>
+<td style="text-align:left;">
+12.295.920
+</td>
+<td style="text-align:left;">
+5.148555e+03
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="twitter" class="section level1">
+<h1>TWITTER</h1>
+<pre class="r"><code># choose variables to investigate
+all_raw %&gt;%
+  filter(SOURCE_TYPE == &quot;twitter&quot;) %&gt;%
+  select(AUTHOR,
+         REACH,
+         FOLLOWERS_COUNT,
+         FAVORITE_COUNT,
+         RETWEET_COUNT,
+         TWEET_TYPE,
+         TWEET_SOURCE_NAME,
+         TITLE,
+         MENTION_SNIPPET,
+         DATE, 
+         TIME) -&gt; twitter</code></pre>
+<pre class="r"><code># most important authors
+twitter %&gt;% 
+  group_by(AUTHOR) %&gt;%
+  summarise(FOLLOWERS = max(FOLLOWERS_COUNT)) %&gt;%
+  arrange(desc(FOLLOWERS))  %&gt;%
+  mutate_if(is.numeric, format, big.mark = &quot;.&quot;) %&gt;%
+  head(10) %&gt;% kbl() %&gt;%  kable_styling(font_size = 11)</code></pre>
+<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+AUTHOR
+</th>
+<th style="text-align:left;">
+FOLLOWERS
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Khloé
+</td>
+<td style="text-align:left;">
+29.687.436
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+twelve carat toothache
+</td>
+<td style="text-align:left;">
+6.914.650
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pabllo Vittar
+</td>
+<td style="text-align:left;">
+3.072.344
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Niki
+</td>
+<td style="text-align:left;">
+2.266.627
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IVYSON
+</td>
+<td style="text-align:left;">
+2.010.115
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+City Girl.🦋
+</td>
+<td style="text-align:left;">
+1.879.982
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jack Posobiec 🇺🇸
+</td>
+<td style="text-align:left;">
+1.599.330
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pamela Swing
+</td>
+<td style="text-align:left;">
+1.559.883
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ja Morant
+</td>
+<td style="text-align:left;">
+1.494.872
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Heidi Montag
+</td>
+<td style="text-align:left;">
+1.290.289
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code># most active authors
+twitter %&gt;% 
+  group_by(AUTHOR) %&gt;%
+  summarise(N = n()) %&gt;%
+  arrange(desc(N))  %&gt;%
+  mutate_if(is.numeric, format, big.mark = &quot;.&quot;) %&gt;%
+  head(10) %&gt;% kbl() %&gt;%  kable_styling(font_size = 11)</code></pre>
+<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+AUTHOR
+</th>
+<th style="text-align:left;">
+N
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+HRT vijesti
+</td>
+<td style="text-align:left;">
+1.868
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ninoslav Šafarić
+</td>
+<td style="text-align:left;">
+1.418
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dalmacija Danas
+</td>
+<td style="text-align:left;">
+1.231
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Forboat.eu - Hrvatska
+</td>
+<td style="text-align:left;">
+1.100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DNEVNIK.hr
+</td>
+<td style="text-align:left;">
+1.089
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+kairos
+</td>
+<td style="text-align:left;">
+1.025
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+24sata
+</td>
+<td style="text-align:left;">
+1.002
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HRT Sport
+</td>
+<td style="text-align:left;">
+944
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zagrebinfo
+</td>
+<td style="text-align:left;">
+934
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Direktno.hr
+</td>
+<td style="text-align:left;">
+824
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code># most active authors
+twitter %&gt;% 
+  group_by(AUTHOR) %&gt;%
+  summarise(FAVORITE = sum(FAVORITE_COUNT),
+            RETWEET = sum(RETWEET_COUNT)) %&gt;%
+  arrange(desc(RETWEET))  %&gt;%
+  mutate_if(is.numeric, format, big.mark = &quot;.&quot;) %&gt;%
+  head(10) %&gt;% kbl() %&gt;%  kable_styling(font_size = 11)</code></pre>
+<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+AUTHOR
+</th>
+<th style="text-align:left;">
+FAVORITE
+</th>
+<th style="text-align:left;">
+RETWEET
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+♡
+</td>
+<td style="text-align:left;">
+151.481
+</td>
+<td style="text-align:left;">
+55.473
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.
+</td>
+<td style="text-align:left;">
+182
+</td>
+<td style="text-align:left;">
+27.666
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Z
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+22.276
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kee 💗
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+21.856
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+🦋
+</td>
+<td style="text-align:left;">
+70
+</td>
+<td style="text-align:left;">
+21.350
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+koo admirer
+</td>
+<td style="text-align:left;">
+106.071
+</td>
+<td style="text-align:left;">
+20.297
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lea
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+17.008
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ally
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+16.669
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Janjoon
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+16.113
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+444
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+16.036
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code># originality
+twitter %&gt;% 
+  group_by(TWEET_TYPE) %&gt;% # interesting to check per author
+  summarise(N = n()) %&gt;%
+  arrange(desc(N)) %&gt;%
+  mutate_if(is.numeric, format, big.mark = &quot;.&quot;) %&gt;%
+  head(8) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)</code></pre>
+<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+TWEET_TYPE
+</th>
+<th style="text-align:left;">
+N
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+ORIGINAL
+</td>
+<td style="text-align:left;">
+180.780
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RETWEET
+</td>
+<td style="text-align:left;">
+50.719
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+QUOTE
+</td>
+<td style="text-align:left;">
+6.063
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code># technology
+twitter %&gt;% 
+  group_by(TWEET_SOURCE_NAME) %&gt;%
+  summarise(N = n()) %&gt;%
+  arrange(desc(N)) %&gt;%
+  mutate_if(is.numeric, format, big.mark = &quot;.&quot;) %&gt;%
+  head(8) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)</code></pre>
+<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+TWEET_SOURCE_NAME
+</th>
+<th style="text-align:left;">
+N
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Twitter for Android
+</td>
+<td style="text-align:left;">
+106.510
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Twitter Web App
+</td>
+<td style="text-align:left;">
+66.256
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Twitter for iPhone
+</td>
+<td style="text-align:left;">
+43.524
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TweetDeck
+</td>
+<td style="text-align:left;">
+6.609
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WordPress.com
+</td>
+<td style="text-align:left;">
+3.329
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Twitter for iPad
+</td>
+<td style="text-align:left;">
+1.688
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dalmacija Danas
+</td>
+<td style="text-align:left;">
+1.231
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Nautička oprema za plovila
+</td>
+<td style="text-align:left;">
+1.100
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="youtube" class="section level1">
+<h1>YOUTUBE</h1>
+<p><br> <br></p>
+<pre class="r"><code># choose variables to investigate
+all_raw %&gt;%
+  filter(SOURCE_TYPE == &quot;youtube&quot;) %&gt;%
+  select(AUTHOR,
+         REACH,
+         LIKE_COUNT,
+         VIEW_COUNT,
+         COMMENTS_COUNT,
+         TITLE,
+         MENTION_SNIPPET,
+         URL,
+         DATE, 
+         TIME) -&gt; youtube</code></pre>
+<pre class="r"><code># most active authors
+youtube %&gt;%
+  group_by(AUTHOR) %&gt;%
+  count() %&gt;%
+  arrange(desc(n)) %&gt;%
+  mutate_if(is.numeric, format, big.mark = &quot;.&quot;) %&gt;%
+  head(10) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)</code></pre>
+<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+AUTHOR
+</th>
+<th style="text-align:left;">
+n
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Večernji list
+</td>
+<td style="text-align:left;">
+1.410
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Televizija Slavonije i Baranje
+</td>
+<td style="text-align:left;">
+1.129
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Arena Sport TV
+</td>
+<td style="text-align:left;">
+1.097
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dubrovačka televizija
+</td>
+<td style="text-align:left;">
+1.031
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SBTV - Slavonskobrodska televizija
+</td>
+<td style="text-align:left;">
+861
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LaudatoTV
+</td>
+<td style="text-align:left;">
+843
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+**
+</td>
+<td style="text-align:left;">
+696
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RTL
+</td>
+<td style="text-align:left;">
+625
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Podcast Inkubator
+</td>
+<td style="text-align:left;">
+565
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Informativni Servis Zapad
+</td>
+<td style="text-align:left;">
+554
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code># activity per author
+youtube %&gt;%
+  group_by(AUTHOR) %&gt;%
+  summarise(REACH = sum(REACH),
+            LIKE = sum(LIKE_COUNT),
+            VIEW = sum(VIEW_COUNT),
+            COMMENTS= sum(COMMENTS_COUNT)) %&gt;%
+  arrange(desc(VIEW)) %&gt;%
+  mutate_if(is.numeric, format, big.mark = &quot;.&quot;) %&gt;%
+  head(10) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)</code></pre>
+<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+AUTHOR
+</th>
+<th style="text-align:left;">
+REACH
+</th>
+<th style="text-align:left;">
+LIKE
+</th>
+<th style="text-align:left;">
+VIEW
+</th>
+<th style="text-align:left;">
+COMMENTS
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Arena Sport TV
+</td>
+<td style="text-align:left;">
+20.438.861
+</td>
+<td style="text-align:left;">
+275.334
+</td>
+<td style="text-align:left;">
+20.438.861
+</td>
+<td style="text-align:left;">
+36.169
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AmiG Show
+</td>
+<td style="text-align:left;">
+19.915.416
+</td>
+<td style="text-align:left;">
+187.571
+</td>
+<td style="text-align:left;">
+19.915.416
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MC STOJAN
+</td>
+<td style="text-align:left;">
+7.758.625
+</td>
+<td style="text-align:left;">
+124.112
+</td>
+<td style="text-align:left;">
+7.758.625
+</td>
+<td style="text-align:left;">
+4.378
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+24sata
+</td>
+<td style="text-align:left;">
+6.928.668
+</td>
+<td style="text-align:left;">
+66.443
+</td>
+<td style="text-align:left;">
+6.928.668
+</td>
+<td style="text-align:left;">
+9.910
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RTL
+</td>
+<td style="text-align:left;">
+6.611.582
+</td>
+<td style="text-align:left;">
+55.806
+</td>
+<td style="text-align:left;">
+6.611.582
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Podcast Inkubator
+</td>
+<td style="text-align:left;">
+5.255.556
+</td>
+<td style="text-align:left;">
+89.589
+</td>
+<td style="text-align:left;">
+5.255.556
+</td>
+<td style="text-align:left;">
+12.652
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JoomBoos
+</td>
+<td style="text-align:left;">
+4.992.216
+</td>
+<td style="text-align:left;">
+190.260
+</td>
+<td style="text-align:left;">
+4.992.216
+</td>
+<td style="text-align:left;">
+9.675
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Imperator FX
+</td>
+<td style="text-align:left;">
+4.855.910
+</td>
+<td style="text-align:left;">
+284.561
+</td>
+<td style="text-align:left;">
+4.855.910
+</td>
+<td style="text-align:left;">
+20.297
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pod Lupom
+</td>
+<td style="text-align:left;">
+4.832.196
+</td>
+<td style="text-align:left;">
+13.822
+</td>
+<td style="text-align:left;">
+4.832.196
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ADRI
+</td>
+<td style="text-align:left;">
+4.647.495
+</td>
+<td style="text-align:left;">
+372.165
+</td>
+<td style="text-align:left;">
+4.647.495
+</td>
+<td style="text-align:left;">
+17.304
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="forum" class="section level1">
+<h1>FORUM</h1>
+<p><br> <br> <br></p>
+<pre class="r"><code># choose variables to investigate
+all_raw %&gt;%
+  filter(SOURCE_TYPE == &quot;forum&quot;) %&gt;%
+  select(FROM,
+         TITLE,
+         MENTION_SNIPPET,
+         DATE, 
+         TIME) -&gt; forum</code></pre>
+<pre class="r"><code># not a very good coverage
+forum %&gt;%
+  group_by(FROM) %&gt;%
+  count() %&gt;%
+  arrange(desc(n)) %&gt;%
+  mutate_if(is.numeric, format, big.mark = &quot;.&quot;) %&gt;%
+  head(8) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)</code></pre>
+<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+FROM
+</th>
+<th style="text-align:left;">
+n
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+forum.hr
+</td>
+<td style="text-align:left;">
+489.761
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stripovi.com
+</td>
+<td style="text-align:left;">
+1.222
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pcekspert.com
+</td>
+<td style="text-align:left;">
+1.205
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+osijek031.com
+</td>
+<td style="text-align:left;">
+1.142
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+elitesecurity.org
+</td>
+<td style="text-align:left;">
+28
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+geekhack.org
+</td>
+<td style="text-align:left;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+finanzaonline.com
+</td>
+<td style="text-align:left;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+smokingmeatforums.com
+</td>
+<td style="text-align:left;">
+2
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="instagram" class="section level1">
+<h1>INSTAGRAM</h1>
+<p><br> <br></p>
+<pre class="r"><code># choose variables to investigate
+all_raw %&gt;%
+  filter(SOURCE_TYPE == &quot;instagram&quot;) %&gt;%
+  select(FROM,
+         TITLE,
+         AUTHOR,
+         MENTION_SNIPPET,
+         REACH,
+         LIKE_COUNT,
+         COMMENT_COUNT,
+         SHARE_COUNT,
+         VIEW_COUNT,
+         DATE, 
+         TIME) -&gt; instagram</code></pre>
+<pre class="r"><code># influencer impact
+instagram %&gt;%
+  group_by(FROM) %&gt;%
+  summarise(REACH = sum(REACH),
+            COMMENT = sum(COMMENT_COUNT),
+            LIKE = sum(LIKE_COUNT),
+            VIEW = sum(VIEW_COUNT)) %&gt;%
+  mutate_if(is.numeric, format, big.mark = &quot;.&quot;) %&gt;%
+  arrange(desc(LIKE)) %&gt;%
+  head(10) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)</code></pre>
+<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+FROM
+</th>
+<th style="text-align:left;">
+REACH
+</th>
+<th style="text-align:left;">
+COMMENT
+</th>
+<th style="text-align:left;">
+LIKE
+</th>
+<th style="text-align:left;">
+VIEW
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+anonymous_user
+</td>
+<td style="text-align:left;">
+10.851.783
+</td>
+<td style="text-align:left;">
+153.862
+</td>
+<td style="text-align:left;">
+1.517.668
+</td>
+<td style="text-align:left;">
+96.303
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+elladvornik
+</td>
+<td style="text-align:left;">
+6.013.020
+</td>
+<td style="text-align:left;">
+204.905
+</td>
+<td style="text-align:left;">
+396.400
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+majasuput
+</td>
+<td style="text-align:left;">
+2.876.660
+</td>
+<td style="text-align:left;">
+5.737
+</td>
+<td style="text-align:left;">
+281.944
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jutarnji.hr
+</td>
+<td style="text-align:left;">
+2.898.630
+</td>
+<td style="text-align:left;">
+12.670
+</td>
+<td style="text-align:left;">
+277.195
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+hana
+</td>
+<td style="text-align:left;">
+3.308.490
+</td>
+<td style="text-align:left;">
+65.500
+</td>
+<td style="text-align:left;">
+265.350
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+severina
+</td>
+<td style="text-align:left;">
+2.498.770
+</td>
+<td style="text-align:left;">
+2.855
+</td>
+<td style="text-align:left;">
+247.022
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nivescelsius
+</td>
+<td style="text-align:left;">
+1.633.260
+</td>
+<td style="text-align:left;">
+4.734
+</td>
+<td style="text-align:left;">
+158.594
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+24sata.hr
+</td>
+<td style="text-align:left;">
+1.603.720
+</td>
+<td style="text-align:left;">
+3.599
+</td>
+<td style="text-align:left;">
+156.774
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+marijanabatinic
+</td>
+<td style="text-align:left;">
+1.961.360
+</td>
+<td style="text-align:left;">
+42.269
+</td>
+<td style="text-align:left;">
+153.867
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jelenamarinovic
+</td>
+<td style="text-align:left;">
+2.016.720
+</td>
+<td style="text-align:left;">
+51.154
+</td>
+<td style="text-align:left;">
+150.530
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code># influencer activity
+instagram %&gt;%
+  group_by(FROM) %&gt;%
+  count() %&gt;%
+  arrange(desc(n)) %&gt;%
+  mutate_if(is.numeric, format, big.mark = &quot;.&quot;) %&gt;%
+  head(12) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)</code></pre>
+<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+FROM
+</th>
+<th style="text-align:left;">
+n
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+anonymous_user
+</td>
+<td style="text-align:left;">
+39.163
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+beautypharmacy_hr
+</td>
+<td style="text-align:left;">
+523
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jutarnji.hr
+</td>
+<td style="text-align:left;">
+505
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vecernji.list
+</td>
+<td style="text-align:left;">
+423
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dnevnikhr
+</td>
+<td style="text-align:left;">
+340
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+obuca.metro.montenegro
+</td>
+<td style="text-align:left;">
+180
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tvojaljekarna
+</td>
+<td style="text-align:left;">
+168
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+24sata.hr
+</td>
+<td style="text-align:left;">
+108
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rkzagreb
+</td>
+<td style="text-align:left;">
+105
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+obuca.metro_bih
+</td>
+<td style="text-align:left;">
+99
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+maxfactor_bih
+</td>
+<td style="text-align:left;">
+95
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rtl_hr
+</td>
+<td style="text-align:left;">
+75
+</td>
+</tr>
+</tbody>
+</table>
+<p><br> #### Resources <br> <br> - The data sample in the GiHub repo
+<br> <br> - Other clipping agencies <br> <br> - Other data vendors <br>
+<br> - DATAREPORTAL</p>
+</div>
+<div id="thank-you-for-your-attention" class="section level1">
+<h1>Thank you for your attention!</h1>
 </div>
 
 

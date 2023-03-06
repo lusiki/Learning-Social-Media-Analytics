@@ -4,18 +4,17 @@ subtitle: "Lecture 2: Current state and latest trends"
 author: "Luka Sikic, PhD <br> Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)"
 output:
   html_document:
-    code_folding: show
-    theme: flatly
-    highlight: haddock
-    toc: yes
-    toc_depth: 4
-    toc_float: yes
-    keep_md: yes
+     code_folding: show
+     theme: flatly
+     highlight: haddock
+     toc: yes
+     toc_depth: 4
+     toc_float: yes
+     keep_md: yes
   pdf_document:
     toc: yes
     toc_depth: '4'
 ---
-
 
 
 ```{r setup, include=FALSE}
@@ -78,8 +77,8 @@ glimpse(one_day_sample[sample(nrow(one_day_sample)),1:35])
 ```
 
 ---
-  <br>
-  <br>
+<br>
+<br>
 ```{r, echo=T, eval = T, warning=FALSE,message=FALSE}
 # read data in (full data sample)
 path <- "D:/LUKA/Freelance/Mediatoolkit/FULLDATA"
@@ -94,8 +93,8 @@ range(all_raw$DATE)
 ```
 
 ---
-  <br>
-  <br>
+<br>
+<br>
   
 ```{r, echo=T}
 # other variables
@@ -103,8 +102,8 @@ names(one_day_sample)
 ```
 
 ---
-  <br>
-  <br>
+<br>
+<br>
 ```{r, echo=T}
 # observations/activity
 nrow(all_raw)
@@ -170,11 +169,11 @@ all_raw %>%
 ```
 
 ---
-  layout: true
+layout: true
 # FACEBOOK
 ---
-  <br>
-  <br>
+<br>
+<br>
 ```{r , echo=T}
 # choose variables to investigate
 all_raw %>%
@@ -250,11 +249,11 @@ fb %>%
 ```
 
 ---
-  layout: true
+layout: true
 # WEB
 ---
-  <br>
-  <br>
+<br>
+<br>
   
 ```{r , echo=T}
 # choose variables to investigate
@@ -300,7 +299,7 @@ web %>%
 ```
 
 ---
-  layout: true
+layout: true
 # TWITTER
 ---
   
@@ -383,11 +382,11 @@ twitter %>%
 ```
 
 ---
-  layout: true
+layout: true
 # YOUTUBE
 ---
-  <br>
-  <br>
+ <br>
+<br>
 ```{r, echo=T}
 # choose variables to investigate
 all_raw %>%
@@ -444,7 +443,7 @@ youtube %>%
 ```   
 
 ---
-  layout: true
+layout: true
 # FORUM
 ---
   <br>
@@ -474,7 +473,7 @@ forum %>%
 ``` 
 
 ---
-  layout: true
+layout: true
 # INSTAGRAM
 ---
   <br>
