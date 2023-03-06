@@ -762,7 +762,7 @@ We can also use *logical* vectors (lists of `TRUE` and `FALSE` values) to pick e
 This is useful, for example, in subsetting data.
 
 As a simple example, we might want to focus on just the low-light values of $r_{\text{max}}$ in the *Chlorella* example:
-```{r fetch-chlorella-data,include=FALSE}
+```{r fetch-chlorella-data,eval = F, include=FALSE}
 course.url <- "http://kingaa.github.io/R_Tutorial/"
 X <- read.csv(paste0(course.url,"ChlorellaGrowth.csv"),comment.char='#')
 Light <- X[,1]
@@ -999,7 +999,7 @@ You can index them either the way you would index a list, using `[[ ]]` or `$`--
 You can turn a data frame into a matrix (using `as.matrix()`, but only if all variables are of the same class) and a matrix into a data frame (using `as.data.frame()`).
 
 When data are read into **R** from an external file using one of the `read.xxx` commands (`read.csv`, `read.table`, `read.xls`, etc.), the object that is created is a data frame.
-```{r }
+```{r eval = F}
 data.url <- "http://kingaa.github.io/R_Tutorial/ChlorellaGrowth.csv"
 dat <- read.csv(data.url,comment.char='#')
 dat

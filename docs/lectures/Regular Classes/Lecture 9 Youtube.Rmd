@@ -1,0 +1,514 @@
+---
+title: "Learning Social Media Analytics"
+# subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
+subtitle: "Lecture 9: Youtube"
+author: "Luka Sikic, PhD <br> Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)"
+output:
+  html_document:
+    code_folding: show
+    theme: flatly
+    highlight: haddock
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+    keep_md: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '4'
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, message = F, warning = F)
+```
+
+
+```{r libs, include=TRUE, echo=FALSE,message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readxl)
+library(here)
+library(kableExtra)
+library(DT)
+library(data.table)
+library(lubridate)
+library(anytime)
+library(tidytext)
+library(grid)
+library(wordcloud)
+library(reshape2)
+library(ggraph)
+library(widyr)
+library(topicmodels)
+library(ggthemes)
+library(reportMD)
+library(anytime)
+```
+
+
+# OUTLINE
+<br>
+<br>
+<br>
+- INFLUENCERS
+<br>
+<br>
+- ACTIVITY
+<br>
+<br>
+- CHANNEL ANALYSIS
+<br>
+<br>
+- VIDEO ANALYSIS
+<br>
+<br>
+- COMMENT ANALYSIS
+
+
+
+```{r, echo=F,eval = F}
+# read in data
+path <- "D:/LUKA/Freelance/Mediatoolkit/FULLtxtDATA"
+raw <- list.files(path = path , pattern="xlsx")
+raw_path <- paste0(path, "/", raw)
+all_raw <- map_df(raw_path, read_excel)
+```
+
+
+```{r, echo=F, eval = F}
+# some basic data wrangle
+all <- as.data.table(all_raw)
+all <- all[,DATE := as.Date(DATE,"%Y-%m-%d")][,DATETIME := anytime(paste(DATE,TIME))]
+posts <- all[!duplicated(all),]
+rm(all,all_raw)
+yt <- posts[SOURCE_TYPE == "youtube",]
+```
+
+```{r,echo = F}
+
+yt <- read.csv2("C:/Users/Lukas/OneDrive/Desktop/yt.csv")
+yt <- as.data.table(yt)
+```
+
+
+```{r eval=FALSE, echo=F}
+posts[SOURCE_TYPE == "web",][,unique(FROM)][]
+
+posts[SOURCE_TYPE == "web"][,.N,FROM][order(-N)] -> portali
+write.csv2(portali, "C:/Users/Lukas/OneDrive/Desktop/portali.csv")
+
+
+posts[,.N, SOURCE_TYPE]
+
+posts[SOURCE_TYPE == "youtube",][order(-LIKE_COUNT)] %>% View()
+
+posts[SOURCE_TYPE == "youtube",.N,FROM][order(-N)]
+
+```
+
+# INFLUENCERS
+
+```{r}
+# Top activity
+yt[,.N, FROM][order(-N)] %>%
+  rmarkdown::paged_table()
+# Top like
+yt[, .(LIKE = sum(LIKE_COUNT)),FROM][order(-LIKE)] %>%
+  rmarkdown::paged_table()
+# Top reach
+yt[, .(REACH = sum(REACH)),FROM][order(-REACH)] %>%
+  rmarkdown::paged_table()
+# Top engagement
+yt[, .(ENGAGEMENT = sum(ENGAGEMENT_RATE)),FROM][order(-ENGAGEMENT)] %>%
+  rmarkdown::paged_table()
+# Top interactions
+yt[, .(INTERACTIONS_ = sum(INTERACTIONS)),FROM][order(-INTERACTIONS_)] %>%
+  rmarkdown::paged_table()
+# Top view
+yt[, .(VIEW = sum(VIEW_COUNT)),FROM][order(-VIEW)] %>%
+  rmarkdown::paged_table()
+# Top comment
+yt[, .(COMMENT = sum(COMMENTS_COUNT)),FROM][order(-COMMENT)] %>%
+  rmarkdown::paged_table()
+
+```
+
+
+# ACTIVITY
+
+
+```{r}
+# Top activity
+yt[,.N, FROM][order(-N)] %>%
+  rmarkdown::paged_table()
+# Top like
+yt[order(-LIKE_COUNT),.(FROM,TITLE,LIKE_COUNT,URL,FULL_TEXT)] %>%
+  rmarkdown::paged_table()
+# Top reach
+yt[order(-REACH),.(FROM,TITLE,REACH,URL,FULL_TEXT)] %>%
+  rmarkdown::paged_table()
+# Top engagement
+yt[order(-ENGAGEMENT_RATE),.(FROM,TITLE,ENGAGEMENT_RATE,URL,FULL_TEXT)] %>%
+  rmarkdown::paged_table()
+# Top interactions
+yt[order(-INTERACTIONS),.(FROM,TITLE,INTERACTIONS,URL,FULL_TEXT)] %>%
+  rmarkdown::paged_table()
+# Top view
+yt[order(-VIEW_COUNT),.(FROM,TITLE,VIEW_COUNT,URL,FULL_TEXT)]%>%
+  rmarkdown::paged_table()
+# Top comment
+yt[order(-COMMENTS_COUNT),.(FROM,TITLE,COMMENTS_COUNT,URL,FULL_TEXT)] %>%
+  rmarkdown::paged_table()
+```
+
+# CHANNEL ANALYSIS
+
+```{r message=F, warning=F}
+# import data from channel crawler
+yt <- read.csv2("./data/YouTube/YT.csv")
+# check data
+dim(yt)
+head(yt)
+names(yt)
+# prepare for YOUTUBE DATA TOOLS
+channels <- yt %>% 
+  select(name, link) %>%
+  mutate(chanel = substring(link,32))
+# check data
+head(channels)
+# pull IDs
+channelNames <- channels %>% distinct(chanel) %>% pull(chanel) 
+# write IDs to .txt
+channelNames %>%
+  write.table("./data/YouTube/channelNames.txt", quote=F, row.names = F,col.names = F, eol = ",")
+# import updated data from YOUTUBE DATA TOOLS
+path <- "./data/YouTube/ChannelDta"
+raw <- list.files(path = path , pattern="tab")
+raw_path <- paste0(path, "/", raw)
+#YDT <- rbindlist(lapply(raw_path, function(x)read.table(x, header=T, fill = T))) 
+YDT <- rbindlist(lapply(raw_path, function(x)read_tsv(x))) %>% distinct(title,.keep_all = T)
+
+str(YDT)
+names(YDT)
+
+rmarkdown::paged_table(YDT)
+
+```
+
+
+
+
+
+```{r message=F, warning=F}
+YDT %>%
+  select(title, subscriberCount) %>% 
+  arrange(desc(subscriberCount))%>%
+  rmarkdown::paged_table()
+
+YDT %>%
+  select(title, viewCount) %>% 
+  arrange(desc(viewCount)) %>%
+  rmarkdown::paged_table()
+
+YDT %>%
+  select(title, videoCount) %>% 
+  arrange(desc(videoCount)) %>%
+  rmarkdown::paged_table()
+
+YDT %>%
+  select(title, publishedAt) %>% 
+  arrange(publishedAt) %>%
+  rmarkdown::paged_table()
+
+```
+
+
+
+# VIDEO ANALYSIS
+
+```{r}
+# read in videos (Podcast incubator) from YOUTUBE DATA TOOLS
+PI <- read_tsv("./data/YouTube/podkastInkubator.tab") 
+str(PI)
+names(PI)
+rmarkdown::paged_table(PI)
+
+```
+
+#### DESCRIPTIVE STATS
+
+```{r}
+
+PI %>%
+  select(videoTitle, durationSec, viewCount) %>% 
+  arrange(desc(viewCount)) %>%
+  rmarkdown::paged_table()
+
+
+PI %>%
+  select(videoTitle, durationSec, likeCount) %>% 
+  arrange(desc(likeCount)) %>%
+  rmarkdown::paged_table()
+
+PI %>%
+  select(videoTitle, durationSec, dislikeCount) %>% 
+  arrange(desc(dislikeCount)) %>%
+  rmarkdown::paged_table()
+
+PI %>%
+  select(videoTitle, durationSec, commentCount) %>% 
+  arrange(desc(commentCount)) %>%
+  rmarkdown::paged_table()
+
+PI %>%
+  select(videoTitle, durationSec) %>% 
+  arrange(desc(durationSec)) %>%
+  rmarkdown::paged_table()
+
+```
+
+
+# COMMENTS 
+
+```{r}
+# check most commented videos
+PI %>%
+  select(videoTitle, videoId, durationSec, commentCount) %>% 
+  arrange(desc(commentCount)) %>%
+  rmarkdown::paged_table()
+```
+
+
+```{r}
+# read in videos (Podcast incubator) from YOUTUBE DATA TOOLS
+# basic info
+COMMENTSbasic <- read_tsv("./data/YouTube/comments_basicinfo.tab") 
+str(COMMENTSbasic)
+names(COMMENTSbasic)
+head(COMMENTSbasic,20)
+# authors
+COMMENTSauthors <- read_tsv("./data/YouTube/comments_authors.tab") 
+str(COMMENTSauthors)
+names(COMMENTSauthors)
+head(COMMENTSauthors,20)
+# comments
+COMMENTS <- read_tsv("./data/YouTube/comments_comments.tab") 
+str(COMMENTS)
+names(COMMENTS)
+head(COMMENTS,20)
+
+COMMENTS %>%
+  select(authorName,text,likeCount) %>%
+  arrange(desc(likeCount)) %>%
+  rmarkdown::paged_table()
+ 
+```
+
+
+```{r}
+# tokenize
+COMMENTS %>% 
+  unnest_tokens(word, text) -> COMMENTS_token
+
+```
+
+
+```{r leksikoni, echo = F, message=F, warning=F}
+# read in lexicons
+CroSentilex_n <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-negatives.txt",
+                                   header = FALSE,
+                                   sep = " ",
+                                   stringsAsFactors = FALSE,
+                                   fileEncoding = "UTF-8")  %>%
+                   rename(word = "V1", sentiment = "V2" ) %>%
+                   mutate(brija = "NEG")
+ 
+CroSentilex_p  <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-positives.txt",
+                                   header = FALSE,
+                                   sep = " ",
+                                   stringsAsFactors = FALSE,
+                                   fileEncoding = "UTF-8") %>%
+                    rename(word = "V1", sentiment = "V2" ) %>%
+                    mutate(brija = "POZ")
+ 
+Crosentilex_sve <- rbind(setDT(CroSentilex_n), setDT(CroSentilex_p))
+# check lexicon data 
+#head(sample_n(Crosentilex_sve,1000),15)
+
+ 
+CroSentilex_Gold  <- read.delim2("C:/Users/Lukas/Dropbox/Mislav@Luka/gs-sentiment-annotations.txt",
+                                 header = FALSE,
+                                 sep = " ",
+                                 stringsAsFactors = FALSE) %>%
+                    rename(word = "V1", sentiment = "V2" ) 
+ Encoding(CroSentilex_Gold$word) <- "UTF-8"
+ CroSentilex_Gold[1,1] <- "dati"
+ CroSentilex_Gold$sentiment <- str_replace(CroSentilex_Gold$sentiment , "-", "1")
+ CroSentilex_Gold$sentiment <- str_replace(CroSentilex_Gold$sentiment , "\\+", "2")
+ CroSentilex_Gold$sentiment <- as.numeric(unlist(CroSentilex_Gold$sentiment))
+# check lexicon data 
+#head(sample_n(CroSentilex_Gold,100),15)
+ 
+# create stop words
+stopwords_cro <- get_stopwords(language = "hr", source = "stopwords-iso")
+# check stopwords data
+#head(sample_n(stopwords_cro,100),15)
+# extend stop words
+my_stop_words <- tibble(
+  word = c(
+    "jedan","mjera", "može", "možete", "mogu", "kad", "sada", "treba", "ima", "osoba",
+    "e","prvi", "dva","dvije","drugi",
+    "tri","treći","pet","kod",
+    "ove","ova",  "ovo","bez", "kod",
+    "evo","oko",  "om", "ek",
+    "mil","tko","šest", "sedam",
+    "osam",   "čim", "zbog",
+    "prema", "dok","zato", "koji", 
+    "im", "čak","među", "tek",
+    "koliko", "tko","kod","poput", 
+    "baš", "dakle", "osim", "svih", 
+    "svoju", "odnosno", "gdje",
+    "kojoj", "ovi", "toga",
+     "ubera", "vozača", "hrvatskoj", "usluge", "godine", "više", "taksi", "taxi", "taksija", "taksija", "kaže", "rekao", "19"," aee", "ae","bit.ly", "https", "one", "the"
+  ),
+  lexicon = "lux"
+)
+stop_corpus <- my_stop_words %>%
+  bind_rows(stopwords_cro)
+# check stopwords data
+#head(sample_n(stop_corpus,100),15)
+```
+
+
+
+```{r}
+# remove stop words, numbers, single letters
+COMMENTS_token %>% 
+  anti_join(stop_corpus, by = "word") %>%
+  mutate(word = gsub("\\d+", NA, word)) %>%
+  mutate(word = gsub("^[a-zA-Z]$", NA, word)) -> COMMENTS_tokenTidy
+# remove NA
+COMMENTS_tokenTidy %>%
+  filter(!is.na(word)) -> COMMENTS_tokenTidy
+```
+
+
+```{r fig.height=12}
+COMMENTS_tokenTidy <- as.data.table(COMMENTS_tokenTidy)
+## Most common words
+COMMENTS_tokenTidy[,.N,by = word][order(-N),] %>%
+  head(.,35)
+
+## Vizualize most common words
+COMMENTS_tokenTidy[,.N,by = word][N>60][order(-N),][,word := reorder(word,N)] %>%
+  ggplot(aes(word, N)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip() +
+  theme_economist()
+```
+
+
+```{r WCloutSent, warning=F, message=F}
+## ComparisonCloud
+COMMENTS_tokenTidy %>%
+  inner_join(CroSentilex_Gold,by="word") %>% 
+  count(word, sentiment) %>% 
+  top_n(200) %>%
+  mutate(sentiment = case_when(sentiment == 0 ~ "+/-",
+                                 sentiment == 1 ~ "-",
+                                 sentiment == 2 ~ "+")) %>%
+  acast(word ~ sentiment, value.var = "n", fill = 0) %>%
+  comparison.cloud(colors = c("firebrick3", "deepskyblue3","darkslategray"),
+                   max.words = 120)
+
+```
+
+
+#### PHRASES
+
+```{r nGRAMI, message=F, warning=F, fig.height=15, fig.width=15}
+COMMENTS_bigram <- COMMENTS %>%
+  unnest_tokens(bigram, text, token = "ngrams", n = 2)
+
+COMMENTS_bigram_sep <- COMMENTS_bigram %>%
+  separate(bigram, c("word1","word2"), sep = " ")
+COMMENTS_bigram_tidy <- COMMENTS_bigram_sep %>%
+  filter(!word1 %in% stop_corpus$word) %>%
+  filter(!word2 %in% stop_corpus$word) %>%
+  mutate(word1 = gsub("\\d+", NA, word1)) %>%
+  mutate(word2 = gsub("\\d+", NA, word2)) %>%
+  mutate(word1 = gsub("^[a-zA-Z]$", NA, word1)) %>%
+  mutate(word2 = gsub("^[a-zA-Z]$", NA, word2)) 
+COMMENTS_bigram_tidy_bigram_counts <- COMMENTS_bigram_tidy %>% 
+  count(word1, word2, sort = TRUE)
+
+bigrams_united <- COMMENTS_bigram_tidy %>%
+  unite(bigram, word1, word2, sep = " ") %>%
+  filter(., !grepl("NA",bigram))
+#bigrams_united
+bigrams_united %>% 
+  count(authorName,bigram,sort = T) -> topicBigram
+
+bigrams_united %>%
+  count(bigram, sort = T) %>%
+  rmarkdown::paged_table()
+
+
+# Najvažniji bigrami po domenama
+ bigram_tf_idf <- bigrams_united %>% 
+#  filter (!is.na(bigram)) %>%
+  count(authorName, bigram) %>%
+  bind_tf_idf(bigram, authorName, n) %>%
+  arrange(desc(tf_idf))
+bigram_tf_idf %>%
+  filter(authorName %in% c("Zeljko F", "Jasna X", "Post i molitva")) %>%
+  arrange(desc(tf_idf)) %>%
+  mutate(bigram = factor(bigram, levels = rev(unique(bigram)))) %>% 
+  group_by(authorName) %>% 
+  top_n(5) %>% 
+  ungroup() %>%
+  ggplot(aes(bigram, tf_idf, fill = authorName)) +
+  geom_col(show.legend = FALSE) +
+  labs(x = NULL, y = "tf-idf") +
+  facet_wrap(~authorName, ncol = 2, scales = "free") +
+  coord_flip() + 
+  theme_economist()
+
+```
+
+
+```{r}
+
+
+COMMENTS_tokenTidy %>%
+  count(authorName, word, sort = TRUE) %>%
+  cast_dtm(authorName, word,n) -> dtm
+LDA <- LDA(dtm, k = 2,  control = list(seed = 1234))
+LDA_tidy <- tidy(LDA, matrix = "beta")
+
+terms <- LDA_tidy %>%
+  drop_na(.) %>%
+  group_by(topic) %>%
+  top_n(15, beta) %>%
+  ungroup() %>%
+  arrange(topic, -beta)
+
+terms %>%
+  mutate(term = reorder_within(term, beta, topic)) %>%
+  ggplot(aes(term, beta, fill = factor(topic))) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~ topic, scales = "free") +
+  coord_flip() +
+  scale_x_reordered() + 
+  theme_economist()
+```
+
+
+
+
+
+
+
+
+
