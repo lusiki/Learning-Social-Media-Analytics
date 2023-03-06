@@ -1,19 +1,20 @@
 ---
 title: "Learning Social Media Analytics"
-# subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
-subtitle: "Lecture 1: Course introduction"
+subtitle: "Lecture 1: Course introduction"  
 author: "Luka Sikic, PhD"
-date: "Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)" #"`r format(Sys.time(), '%d %B %Y')`"
+date: '`r Sys.Date()`'
 output:
   xaringan::moon_reader:
-    css: [default, metropolis, metropolis-fonts] 
     lib_dir: libs
+    css: xaringan-themer.css
     nature:
-      highlightStyle: googlecode
+      highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-
 ---
+
+
+
 
 
 
