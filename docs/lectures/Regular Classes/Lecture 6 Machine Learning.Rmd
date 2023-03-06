@@ -1,0 +1,1009 @@
+---
+title: "Learning Social Media Analytics"
+# subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
+subtitle: "Lecture 6: Machine Learning"
+author: "Luka Sikic, PhD <br> Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)"
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts] 
+    lib_dir: libs
+    nature:
+      highlightStyle: googlecode
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, message = F, warning = F)
+```
+
+
+```{r libs, include=TRUE, echo=FALSE,message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readxl)
+library(here)
+library(kableExtra)
+library(DT)
+```
+
+
+# OUTLINE
+<br>
+<br>
+<br>
+- GENERAL MACHINE LEARNING
+<br>
+<br>
+- MODELING PROCESS
+<br>
+<br>
+- FEATURE & TARGET ENGENEERING
+<br>
+<br>
+
+
+---
+layout: true
+# GENERAL
+---
+
+
+- Goal of ML is to provide effective tools for uncovering relevant and useful patterns in your data. 
+
+- We give overview of the ML modeling process and discussing fundamental concepts. These include feature engineering, data splitting, model validation and tuning, and performance measurement. 
+
+- Extension of the class would include common supervised learners ranging from simpler linear regression models to the more complicated gradient boosting machines and deep neural networks. 
+
+- More advanced topics include maximizing effectiveness, efficiency, and interpretation of your ML models, creating a stacked model (aka super learner), extracting insights from ML “black box” models with various ML interpretation techniques.
+
+---
+<br>
+<br>
+
+**Some applications of machine learning in practice include**:
+<br>
+<br>
+- Predicting the likelihood of a patient returning to the hospital.
+<br>
+<br>
+- Segmenting customers based on attributes or purchasing behavior for marketing.
+<br>
+<br>
+- Predicting coupon redemption rates for a given marketing campaign.
+<br>
+<br>
+- Predicting customer churn so an organization can perform preventative intervention.
+<br>
+<br>
+- And many more!
+
+---
+<br>
+<br>
+
+- ML tasks seek to learn from data. 
+<br>
+<br>
+- To address each scenario, we can use a given set of features to train an algorithm and extract insights. 
+<br>
+<br>
+- ML algorithms (learners) are classified according to the amount and type of supervision needed during training. 
+<br>
+<br>
+- The two main groups this book focuses on are: **supervised learners** which construct predictive models, and **unsupervised learners** which build descriptive models. 
+<br>
+<br>
+- Type you will need to use depends on the learning task you hope to accomplish.
+
+---
+
+### Supervised learning
+<br>
+- Predictive model attempts to discover and model the relationships among the target variable (the variable being predicted) and the other features (aka predictor variables). 
+<br>
+<br>
+Examples include:
+
+- using customer attributes to predict the probability of the customer churning in the next 6 weeks;
+- using home attributes to predict the sales price;
+- using employee attributes to predict the likelihood of attrition;
+- using patient attributes and symptoms to predict the risk of readmission;
+- using production attributes to predict time to market.
+
+---
+
+### Supervised learning
+<br>
+- The goal of these tasks is to use attributes (X ,“predictor variable”, “independent variable”, “attribute”, “feature”, “predictor” ) to predict an outcome measurement (Y,“target variable”, “dependent variable”, “response”, “outcome measurement”). 
+
+- Most supervised learning problems can be bucketed into one of two categories: **regression** or **classification**. 
+
+- When the objective of our supervised learning is to predict a numeric outcome, we refer to this as a regression problem (not to be confused with linear regression modeling). 
+
+- When the objective of our supervised learning is to predict a categorical outcome, we refer to this as a classification problem. Classification problems most commonly revolve around predicting a binary or multinomial response measure. 
+
+---
+
+### Usupervised learning
+<br>
+<br>
+- Unsupervised learning includes a set tools to better understand and describe your data, but performs the analysis without a target variable. It is concerned with identifying groups in a data set. The groups may be defined by the rows (i.e., clustering) or the columns (i.e., dimension reduction); however, the motive in each case is quite different.
+
+- **Clustering** is used to segment observations into similar groups based on the observed variables; in **dimension reduction**, we are often concerned with reducing the number of variables in a data set (e.g., principal component regression).
+
+- Unsupervised learning is often performed as part of an exploratory data analysis (EDA). However, the exercise tends to be more subjective, and there is no simple goal for the analysis, such as prediction of a response. Furthermore, it can be hard to assess the quality of results obtained from unsupervised learning methods.
+
+---
+
+### Usupervised learning
+<br>
+<br>
+- The unsupervised learning is often used in organizations to:
+
+- Divide consumers into different homogeneous groups so that tailored marketing strategies can be developed and deployed for each segment.
+
+- Identify groups of online shoppers with similar browsing and purchase histories, as well as items that are of particular interest to the shoppers within each group. Then an individual shopper can be preferentially shown the items in which he or she is particularly likely to be interested, based on the purchase histories of similar shoppers.
+
+- Identify products that have similar purchasing behavior so that managers can manage them as product groups.
+
+
+---
+layout: true
+# MODELING
+---
+<br>
+<br>
+- The ML process is very iterative and heurstic-based. With minimal knowledge of the problem or data at hand, it is difficult to know which ML method will perform best. This is known as the no free lunch theorem for ML. 
+
+- Approaching ML modeling correctly means approaching it strategically by spending our data wisely on learning and validation procedures, properly pre-processing the feature and target variables, minimizing data leakage, tuning hyperparameters, and assessing model performance.
+
+- There are multiple platforms to do ML in R and some of the more popular are: tidymodels, caret, H20, mlr3.
+
+---
+
+- Before any ML procedure we need to (install) load the packages:
+
+
+```{r, message=FALSE, warning=FALSE}
+library(dplyr)     # for data manipulation
+library(ggplot2)   # for awesome graphics
+
+# Modeling process packages
+library(rsample)   # for resampling procedures
+library(caret)     # for resampling and model training
+library(h2o)       # for resampling and model training
+
+# h2o set-up 
+h2o.no_progress()  # turn off h2o progress bars
+h2o.init()         # launch h2o
+```
+
+- Also make the ML data object:
+
+```{r}
+ames <- AmesHousing::make_ames()
+ames.h2o <- as.h2o(ames)
+```
+
+---
+
+### Data Spliting
+
+- A major goal of the machine learning process is to find an algorithm f(X) that most accurately predicts future values (^Y) based on a set of features (X). In other words, we want an algorithm that not only fits well to our past data, but the one that predicts a future outcome accurately. This is called the generalizability of our algorithm. 
+
+- To provide an accurate understanding of the generalizability of our final optimal model, we can split our data into training and test data sets:
+
+- **Training set**: these data are used to develop feature sets, train our algorithms, tune hyperparameters, compare models, and all of the other activities required to choose a final model (e.g., the model we want to put into production).
+- **Test set**: having chosen a final model, these data are used to estimate an unbiased assessment of the model’s performance, which we refer to as the generalization error.
+
+Given a fixed amount of data, typical recommendations for splitting your data into training-test splits include 60% (training)–40% (testing), 70%–30%, or 80%–20%. The two most common ways of splitting data include simple random sampling and stratified sampling.
+
+---
+
+### Data Spliting
+
+- Several examples of data splitting: 
+
+```{r, eval=FALSE}
+# Using base R
+set.seed(123)  # for reproducibility
+index_1 <- sample(1:nrow(ames), round(nrow(ames) * 0.7))
+train_1 <- ames[index_1, ]
+test_1  <- ames[-index_1, ]
+
+# Using caret package
+set.seed(123)  # for reproducibility
+index_2 <- createDataPartition(ames$Sale_Price, p = 0.7, 
+                               list = FALSE)
+train_2 <- ames[index_2, ]
+test_2  <- ames[-index_2, ]
+
+# Using rsample package
+set.seed(123)  # for reproducibility
+split_1  <- initial_split(ames, prop = 0.7)
+train_3  <- training(split_1)
+test_3   <- testing(split_1)
+```
+
+---
+
+### Data Spliting
+
+- Several examples of data splitting (continued): 
+
+
+```{r}
+
+# Using h2o package
+split_2 <- h2o.splitFrame(ames.h2o, ratios = 0.7, 
+                          seed = 123)
+train_4 <- split_2[[1]]
+test_4  <- split_2[[2]]
+```
+
+---
+
+### Creating Models
+
+- The R ecosystem provides a wide variety of ML algorithm implementations. 
+
+- To fit a model to our data, the model terms must be specified. 
+
+The **formula interface** uses R’s formula rules to specify a symbolic representation of the terms:
+
+```{r, eval=FALSE}
+# Sale price as function of neighborhood and year sold
+model_fn(Sale_Price ~ Neighborhood + Year_Sold, 
+         data = ames)
+
+# Variables + interactions
+model_fn(Sale_Price ~ Neighborhood + Year_Sold + 
+           Neighborhood:Year_Sold, data = ames)
+
+# Shorthand for all predictors
+model_fn(Sale_Price ~ ., data = ames)
+
+# Inline functions / transformations
+model_fn(log10(Sale_Price) ~ ns(Longitude, df = 3) + 
+           ns(Latitude, df = 3), data = ames)
+```
+
+---
+
+### Creating Models
+<br>
+<br>
+- Some modeling functions have a **non-formula (XY) interface**. These functions have separate arguments for the predictors and the outcome(s):
+
+```{r, eval = FALSE}
+# Use separate inputs for X and Y
+features <- c("Year_Sold", "Longitude", "Latitude")
+model_fn(x = ames[, features], y = ames$Sale_Price)
+```
+
+---
+
+### Creating Models
+<br>
+<br>
+A third interface, is to **use variable name specification** where we provide all the data combined in one training frame but we specify the features and response with character strings. This is the interface used by the h2o package.
+
+```{r, eval = FALSE}
+model_fn(
+  x = c("Year_Sold", "Longitude", "Latitude"),
+  y = "Sale_Price",
+  data = ames.h2o
+)
+```
+
+---
+
+### Creating Models
+
+- There are many individual ML packages available and an abundance of meta engines. For example, the following all produce the same linear regression model output:
+
+```{r}
+lm_lm    <- lm(Sale_Price ~ ., data = ames)
+lm_glm   <- glm(Sale_Price ~ ., data = ames, 
+                family = gaussian)
+lm_caret <- train(Sale_Price ~ ., data = ames, 
+                  method = "lm")
+```
+
+- Here, lm() and glm() are two different algorithm engines that can be used to fit the linear model and caret::train() is a meta engine (aggregator) that allows you to apply almost any direct engine with method = "<method-name>".
+
+- There are trade-offs to consider when using direct versus meta engines. For example, using direct engines can allow for extreme flexibility but also requires you to familiarize yourself with the unique differences of each implementation.
+
+---
+
+### Resampling methods
+
+- One option is to **assess an error metric based on the training data** but this leads to biased results as some models can perform very well on the training data but not generalize well to a new data set. 
+
+- A second method is to use a **validation approach**, which involves splitting the training set further to create two parts: a training set and a validation set (or holdout set). We can then train our model(s) on the new training set and estimate the performance on the validation set.
+
+- Resampling methods provide an alternative approach by allowing us to repeatedly fit a model of interest to parts of the training data and test its performance on other parts. The two most commonly used resampling methods include **k-fold cross validation** and **bootstrapping**.
+
+- k-fold cross-validation (aka k-fold CV) is a resampling method that randomly divides the training data into k groups (aka folds) of approximately equal size. The model is fit on k−1 folds and then the remaining fold is used to compute model performance.
+
+---
+
+### Resampling methods
+
+- You can often perform CV directly within certain ML functions:
+
+```{r, eval=FALSE}
+# Example using h2o
+h2o.cv <- h2o.glm(
+  x = x, 
+  y = y, 
+  training_frame = ames.h2o,
+  nfolds = 10  # perform 10-fold CV
+)
+```
+
+- When applying it externally to an ML algorithm as below, we’ll need a process to apply the ML model to each resample.
+
+```{r, eval=FALSE}
+vfold_cv(ames, v = 10)
+```
+
+---
+
+### Resampling methods
+
+- **Bootstrap** sample is a random sample of the data taken with replacement. A bootstrap sample is the same size as the original data set from which it was constructed. Since samples are drawn with replacement, each bootstrap sample is likely to contain duplicate values. The original observations not contained in a particular bootstrap sample are considered out-of-bag (OOB). Since observations are replicated in bootstrapping, there tends to be less variability in the error measure compared with k-fold CV but this can also increase the bias of your error estimate. 
+
+We can create bootstrap samples easily with `rsample::bootstraps()`, as illustrated in the code chunk:
+
+```{r, eval=FALSE}
+bootstraps(ames, times = 10)
+```
+
+
+---
+
+### Bias variance trade-off
+
+- Prediction errors can be decomposed into two important subcomponents: error due to “bias” and error due to “variance”. There is often a tradeoff between a model’s ability to minimize bias and variance. 
+
+- **Bias** is the difference between the expected (or average) prediction of our model and the correct value which we are trying to predict. It measures how far off in general a model’s predictions are from the correct value, which provides a sense of how well a model can conform to the underlying structure of the data. If a model has high bias, it will have consistency in its resampling performance.
+
+- **Variance** is defined as the variability of a model prediction for a given data point. Many models (e.g., k-nearest neighbor, decision trees, gradient boosting machines) are very adaptable and offer extreme flexibility in the patterns that they can fit to. However, these models offer their own problems as they run the risk of overfitting to the training data. Although you may achieve very good performance on your training data, the model will not automatically generalize well to unseen data. Since high variance models are more prone to overfitting, using resampling procedures are critical to reduce this risk.
+
+---
+
+### Bias variance trade-off
+
+- Hyperparameters (aka tuning parameters) are the “knobs to twiddle”7 to control the complexity of machine learning algorithms and, therefore, the bias-variance trade-off. Not all algorithms have hyperparameters (e.g., ordinary least squares8); however, most have at least one or more.
+
+- One way to perform hyperparameter tuning is to fiddle with hyperparameters manually until you find a great combination of hyperparameter values that result in high predictive accuracy (as measured using k-fold CV, for instance). However, this can be very tedious work depending on the number of hyperparameters. An alternative approach is to perform a grid search.
+
+- A grid search is an automated approach to searching across many combinations of hyperparameter values. For our k-nearest neighbor example, a grid search would predefine a candidate set of values for k (e.g., k=1,2,…,j) and perform a resampling method (e.g., k-fold CV) to estimate which k value generalizes the best to unseen data.
+
+- Additional approaches include random grid searches which explores randomly selected hyperparameter values from a range of possible values.
+
+---
+
+### Model evaluation
+
+- The performance of statistical models was largely based on goodness-of-fit tests and assessment of residuals. Unfortunately, misleading conclusions may follow from predictive models that pass these kinds of assessments.
+
+- It has become widely accepted that a more sound approach to assessing model performance is to assess the predictive accuracy via loss functions. Loss functions are metrics that compare the predicted values to the actual value (the output of a loss function is often referred to as the error or pseudo residual). 
+
+- When performing resampling methods, we assess the predicted values for a validation set compared to the actual target value. For example, in regression, one way to measure error is to take the difference between the actual and predicted value for a given observation (this is the usual definition of a residual in ordinary linear regression). The overall validation error of the model is computed by aggregating the errors across the entire validation data set.
+
+---
+
+### Model evaluation
+
+Its important to consider the problem context when identifying the preferred performance metric to use. And when comparing multiple models, we need to compare them across the same metric.
+
+For regression:
+
+- **MSE**: Mean squared error is the average of the squared error. The squared component results in larger errors having larger penalties. This (along with RMSE) is the most common error metric to use.
+
+- **RMSE**: Root mean squared error. This simply takes the square root of the MSE metric so that your error is in the same units as your response variable. If your response variable units are dollars, the units of MSE are dollars-squared, but the RMSE will be in dollars. 
+
+- **Deviance**: Short for mean residual deviance. In essence, it provides a degree to which a model explains the variation in a set of data when using maximum likelihood estimation. Essentially this compares a saturated model (i.e. fully featured model) to an unsaturated model (i.e. intercept only or average).
+
+---
+
+### Model evaluation
+(**regression*)
+
+- **MAE**: Mean absolute error. Similar to MSE but rather than squaring, it just takes the mean absolute difference between the actual and predicted values (MAE=1n∑ni=1(|yi−^yi|)). This results in less emphasis on larger errors than MSE. 
+
+- **RMSLE**: Root mean squared logarithmic error. Similar to RMSE but it performs a log() on the actual and predicted values prior to computing the difference (RMSLE=√1n∑ni=1(log(yi+1)−log(^yi+1))2). When your response variable has a wide range of values, large response values with large errors can dominate the MSE/RMSE metric. RMSLE minimizes this impact so that small response values with large errors can have just as meaningful of an impact as large response values with large errors. 
+
+- **R2**: This is a popular metric that represents the proportion of the variance in the dependent variable that is predictable from the independent variable(s). Unfortunately, it has several limitations. For example, two models built from two different data sets could have the exact same RMSE but if one has less variability in the response variable then it would have a lower R2 than the other. You should not place too much emphasis on this metric.
+
+---
+
+### Model evaluation
+
+For classification:
+
+- **Misclassification**: This is the overall error. For example, say you are predicting 3 classes ( high, medium, low ) and each class has 25, 30, 35 observations respectively (90 observations total). If you misclassify 3 observations of class high, 6 of class medium, and 4 of class low, then you misclassified 13 out of 90 observations resulting in a 14% misclassification rate. 
+
+ -**Mean per class error**: This is the average error rate for each class. For the above example, this would be the mean of 325,630,435, which is 14.5%. If your classes are balanced this will be identical to misclassification. Objective: minimize
+
+- **MSE**: Mean squared error. Computes the distance from 1.0 to the probability suggested. So, say we have three classes, A, B, and C, and your model predicts a probability of 0.91 for A, 0.07 for B, and 0.02 for C. If the correct answer was A the MSE=0.092=0.0081
+, if it is B MSE=0.932=0.8649, if it is C MSE=0.982=0.9604. The squared component results in large differences in probabilities for the true class having larger penalties. Objective: minimize
+
+---
+
+### Model evaluation
+
+(**classification*)
+- **Cross-entropy (aka Log Loss or Deviance)**: Similar to MSE but it incorporates a log of the predicted probability multiplied by the true class. Consequently, this metric disproportionately punishes predictions where we predict a small probability for the true class, which is another way of saying having high confidence in the wrong answer is really bad. Objective: minimize
+
+- **Gini index**: Mainly used with tree-based methods and commonly referred to as a measure of purity where a small value indicates that a node contains predominantly observations from a single class. Objective: minimize
+
+---
+
+### Model evaluation
+
+(**classification*)
+
+- When applying classification models, we often use a confusion matrix to evaluate certain performance measures.
+
+- A confusion matrix is simply a matrix that compares actual categorical levels (or events) to the predicted categorical levels. 
+
+- When we predict the right level, we refer to this as a true positive.
+
+- If we predict a level or event that did not happen this is called a false positive (i.e. we predicted a customer would redeem a coupon and they did not). 
+
+- Alternatively, when we do not predict a level or event and it does happen that this is called a false negative (i.e. a customer that we did not predict to redeem a coupon does).
+
+---
+
+### Model evaluation
+
+(**classification*)
+- We can extract different levels of performance for binary classifiers to assess the following:
+
+**Accuracy**: Overall, how often is the classifier correct? Opposite of misclassification above. Example: TP+TNtotal
+
+**Precision**: How accurately does the classifier predict events? This metric is concerned with maximizing the true positives to false positive ratio. In other words, for the number of predictions that we made, how many were correct? Example: TPTP+FP
+
+**Sensitivity (aka recall)**: How accurately does the classifier classify actual events? This metric is concerned with maximizing the true positives to false negatives ratio. In other words, for the events that occurred, how many did we predict? Example: TPTP+FN
+
+---
+
+### Model evaluation
+
+(**classification*)
+<br>
+<br>
+**Specificity**: How accurately does the classifier classify actual non-events? Example: TNTN+FP
+
+**AUC**: Area under the curve. A good binary classifier will have high precision and sensitivity. This means the classifier does well when it predicts an event will and will not occur, which minimizes false positives and false negatives. To capture this balance, we often use a ROC curve that plots the false positive rate along the x-axis and the true positive rate along the y-axis. A line that is diagonal from the lower left corner to the upper right corner represents a random guess. The higher the line is in the upper left-hand corner, the better. 
+
+---
+
+### Putting it all together
+<br>
+<br>
+
+- First, we perform stratified sampling to break our data into training vs. test data:
+
+```{r}
+# Stratified sampling with the rsample package
+set.seed(123)
+split <- initial_split(ames, prop = 0.7, 
+                       strata = "Sale_Price")
+ames_train  <- training(split)
+ames_test   <- testing(split)
+```
+
+---
+
+### Putting it all together
+<br>
+<br>
+- Next, we’re going to apply a k-nearest neighbor regressor to our data. To do so, we’ll use caret, which is a meta-engine to simplify the resampling, grid search, and model application processes. 
+
+The following defines:
+
+- **Resampling method**: we use 10-fold CV repeated 5 times.
+- **Grid search**: we specify the hyperparameter values to assess (k=2,3,4,…,25).
+- **Model training & Validation**: we train a k-nearest neighbor (method = "knn") model using our pre-specified resampling procedure (trControl = cv), grid search (tuneGrid = hyper_grid), and preferred loss function (metric = "RMSE").
+
+---
+
+### Putting it all together
+<br>
+<br>
+```{r}
+# Specify resampling strategy
+cv <- trainControl(
+  method = "repeatedcv", 
+  number = 10, 
+  repeats = 5
+)
+# Create grid of hyperparameter values
+hyper_grid <- expand.grid(k = seq(2, 25, by = 1))
+
+# Tune a knn model using grid search
+knn_fit <- train(
+  Sale_Price ~ ., 
+  data = ames_train, 
+  method = "knn", 
+  trControl = cv, 
+  tuneGrid = hyper_grid,
+  metric = "RMSE"
+)
+```
+
+---
+
+### Putting it all together
+
+Looking at our results we see that the best model coincided with k= 7, which resulted in an RMSE of 43439.07. This implies that, on average, our model mispredicts the expected sale price of a home by $43,439.
+
+```{r, eval=FALSE}
+# Print and plot the CV results
+knn_fit
+## RMSE was used to select the optimal model using the smallest value.
+## The final value used for the model was k = 7.
+ggplot(knn_fit)
+```
+
+- Is this the best predictive model we can find? We may have identified the optimal k-nearest neighbor model for our given data set, but this doesn’t mean we’ve found the best possible overall model. Nor have we considered potential feature and target engineering options.
+
+---
+layout: true
+# FEATURE & TARGET ENGENEERING
+---
+
+- Data preprocessing and engineering techniques generally refer to the addition, deletion, or transformation of data. The time spent on identifying data engineering needs can be significant and requires you to spend substantial time understanding your data.
+
+This part uses the following packages:
+
+```{r}
+# Helper packages
+library(dplyr)    # for data manipulation
+library(ggplot2)  # for awesome graphics
+library(visdat)   # for additional visualizations
+
+# Feature engineering packages
+library(caret)    # for various ML tasks
+library(recipes)  # for feature engineering tasks
+```
+
+---
+
+### Target engineering
+
+- Although not always a requirement, transforming the response variable can lead to predictive improvement, especially with parametric models (which require that certain assumptions about the model be met). For instance, ordinary linear regression models assume that the prediction errors (and hence the response) are normally distributed. This is usually fine, except when the prediction target has heavy tails (i.e., outliers) or is skewed in one direction or the other. In these cases, the normality assumption likely does not hold. 
+
+- We will transform most right skewed distributions to be approximately normal. One way to do this is to simply log transform the training and test set in a manual, single step manner similar to:
+
+```{r}
+transformed_response <- log(ames_train$Sale_Price)
+# log transformation
+ames_recipe <- recipe(Sale_Price ~ ., data = ames_train) %>%
+  step_log(all_outcomes())
+```
+
+---
+
+### Target engineering
+<br>
+<br>
+- A Box Cox transformation is more flexible than (but also includes as a special case) the log transformation and will find an appropriate transformation from a family of power transforms that will transform the variable as close as possible to a normal distribution.
+
+- At the core of the Box Cox transformation is an exponent, lambda (λ), which varies from -5 to 5. All values of λ are considered and the optimal value for the given data is estimated from the training data; The “optimal value” is the one which results in the best transformation to an approximate normal distribution
+
+---
+
+### Target engineering
+
+```{r, eval=FALSE}
+# Log transform a value
+y <- log(10)
+
+# Undo log-transformation
+exp(y)
+## [1] 10
+
+# Box Cox transform a value
+y <- forecast::BoxCox(10, lambda)
+
+# Inverse Box Cox function
+inv_box_cox <- function(x, lambda) {
+  # for Box-Cox, lambda = 0 --> log transform
+  if (lambda == 0) exp(x) else (lambda*x + 1)^(1/lambda) 
+}
+
+# Undo Box Cox-transformation
+inv_box_cox(y, lambda)
+## [1] 10
+## attr(,"lambda")
+## [1] -0.03616899
+```
+
+---
+
+### Dealing with missingness
+<br>
+
+- Data can be missing for many different reasons; however, these reasons are usually lumped into two categories: *informative missingness* and *missingness at random*.
+
+- Different machine learning models handle missingness differently. 
+
+- Most algorithms cannot handle missingness (e.g., generalized linear models and their cousins, neural networks, and support vector machines). 
+
+- A few models (mainly tree-based), have built-in procedures to deal with missing values.
+
+- However, since the modeling process involves comparing and contrasting multiple models to identify the optimal one, you will want to handle missing values prior to applying any models so that your algorithms are based on the same data quality assumptions.
+
+---
+
+### Dealing with missingness
+
+
+- It is important to understand the distribution of missing values (i.e., NA) in any data set:
+
+```{r}
+sum(is.na(AmesHousing::ames_raw))
+```
+
+```{r}
+gg1 <- AmesHousing::ames_raw %>%
+  is.na() %>%
+  reshape2::melt() %>%
+  ggplot(aes(Var2, Var1, fill=value)) + 
+    geom_raster() + 
+    coord_flip() +
+    scale_y_continuous(NULL, expand = c(0, 0)) +
+    scale_fill_grey(name = "", 
+                    labels = c("Present", 
+                               "Missing")) +
+    xlab("Observation") +
+    theme(axis.text.y  = element_text(size = 4))
+```
+
+---
+
+### Dealing with missingness
+
+
+```{r, fig.width= 6, echo = FALSE}
+gg1
+```
+
+---
+
+### Dealing with missingness
+
+- Digging a little deeper into these variables, we might notice that `Garage_Cars` and `Garage_Area` contain the value 0 whenever the other `Garage_xx` variables have missing values (i.e. a value of NA). 
+
+```{r}
+AmesHousing::ames_raw %>% 
+  filter(is.na(`Garage Type`)) %>% 
+  select(`Garage Type`, `Garage Cars`, `Garage Area`) %>%
+  head(6)
+```
+
+---
+
+### Dealing with missingness
+
+```{r, fig.width=6}
+vis_miss(AmesHousing::ames_raw, cluster = TRUE)
+```
+
+---
+
+### Dealing with missingness
+
+
+- Imputation is the process of replacing a missing value with a substituted, “best guess” value. Imputation should be one of the first feature engineering steps you take as it will affect any downstream preprocessing.
+
+- An elementary approach to imputing missing values for a feature is to compute descriptive statistics such as the mean, median, or mode (for categorical) and use that value to replace NA.
+
+- An alternative is to use grouped statistics to capture expected values for observations that fall into similar groups.
+---
+
+### Dealing with missingness
+
+- The following would build onto our ames_recipe and impute all missing values for the `Gr_Liv_Area` variable with the median value:
+
+```{r}
+ames_recipe %>%
+  step_medianimpute(Gr_Liv_Area)
+```
+
+---
+
+### Dealing with missingness
+
+- K-nearest neighbor (KNN) imputes values by identifying observations with missing values, then identifying other observations that are most similar based on the other available features, and using the values from these nearest neighbor observations to impute missing values.
+
+```{r, Eval = FALSE}
+ames_recipe %>%
+  step_knnimpute(all_predictors(), neighbors = 6)
+```
+
+---
+
+### Feature filtering
+
+- In many data analyses and modeling projects we end up with hundreds or even thousands of collected features. From a practical perspective, a model with more features often becomes harder to interpret and is costly to compute.
+
+- Although the performance of some of our models are not significantly affected by non-informative predictors, the time to train these models can be negatively impacted as more features are added. 
+
+- Zero variance variables, meaning the feature only contains a single unique value, provides no useful information to a model. Some algorithms are unaffected by zero variance features. However, features that have near-zero variance also offer very little, if any, information to a model. Furthermore, they can cause problems during resampling as there is a high probability that a given sample will only contain a single unique value (the dominant value) for that feature.
+
+---
+
+### Feature filtering
+
+- For the Ames data, we do not have any zero variance predictors but there are ~20 features that meet the near-zero threshold.
+
+```{r}
+caret::nearZeroVar(ames_train, saveMetrics = TRUE) %>% 
+  tibble::rownames_to_column() %>% 
+  filter(nzv)
+```
+
+---
+
+### Numeric feature engineering
+<br>
+<br>
+- Numeric features can create a host of problems for certain models when their distributions are skewed, contain outliers, or have a wide range in magnitudes. 
+
+- Tree-based models are quite immune to these types of problems in the feature space, but many other models (e.g., GLMs, regularized regression, KNN, support vector machines, neural networks) can be greatly hampered by these issues. 
+
+- Normalizing and standardizing heavily skewed features can help minimize these concerns.
+
+---
+
+### Numeric feature engineering
+
+- Similar to the process discussed to normalize target variables, parametric models that have distributional assumptions (e.g., GLMs, and regularized models) can benefit from minimizing the skewness of numeric features.
+
+```{r}
+# Normalize all numeric columns
+recipe(Sale_Price ~ ., data = ames_train) %>%
+  step_YeoJohnson(all_numeric())       
+```
+
+---
+
+### Numeric feature engineering
+
+- We must also consider the scale on which the individual features are measured. What are the largest and smallest values across all features and do they span several orders of magnitude? 
+
+- Many algorithms use linear functions within their algorithms, some more obvious (e.g., GLMs and regularized regression) than others (e.g., neural networks, support vector machines, and principal components analysis). Other examples include algorithms that use distance measures such as the Euclidean distance (e.g., k nearest neighbor, k-means clustering, and hierarchical clustering).
+
+- Standardizing features includes centering and scaling so that numeric variables have zero mean and unit variance, which provides a common comparable unit of measure across all the variables.
+
+```{r, eval = FALSE}
+ames_recipe %>%
+  step_center(all_numeric(), -all_outcomes()) %>%
+  step_scale(all_numeric(), -all_outcomes())
+
+```
+
+---
+
+### Categorical feature engineering
+
+- Sometimes features will contain levels that have very few observations. For example, there are 28 unique neighborhoods represented in the Ames housing data but several of them only have a few observations.
+
+```{r}
+count(ames_train, Neighborhood) %>% arrange(n)
+```
+
+---
+
+### Categorical feature engineering
+
+- Even numeric features can have similar distributions. For example, Screen_Porch has 92% values recorded as zero (zero square footage meaning no screen porch) and the remaining 8% have unique dispersed values.
+
+```{r}
+count(ames_train, Screen_Porch) %>% arrange(n)
+```
+
+---
+
+### Categorical feature engineering
+
+- Sometimes we can benefit from collapsing, or “lumping” these into a lesser number of categories. In the above examples, we may want to collapse all levels that are observed in less than 10% of the training sample into an “other” category.
+
+```{r, eval=FALSE}
+# Lump levels for two features
+lumping <- recipe(Sale_Price ~ ., data = ames_train) %>%
+  step_other(Neighborhood, threshold = 0.01, 
+             other = "other") %>%
+  step_other(Screen_Porch, threshold = 0.1, 
+             other = ">0")
+
+# Apply this blue print --> you will learn about this at 
+# the end of the chapter
+apply_2_training <- prep(lumping, training = ames_train) %>%
+  bake(ames_train)
+
+# New distribution of Neighborhood
+count(apply_2_training, Neighborhood) %>% arrange(n)
+```
+
+---
+
+### Categorical feature engineering
+<br>
+<br>
+- Many models require that all predictor variables be numeric. Consequently, we need to intelligently transform any categorical variables into numeric representations so that these algorithms can compute. Some packages automate this process (e.g., h2o and caret) while others do not (e.g., glmnet and keras). There are many ways to recode categorical variables as numeric. 
+- The most common is referred to as one-hot encoding, where we transpose our categorical variables so that each level of the feature is represented as a boolean value.
+
+```{r, eval=FALSE}
+# Lump levels for two features
+recipe(Sale_Price ~ ., data = ames_train) %>%
+  step_dummy(all_nominal(), one_hot = TRUE)
+```
+
+---
+
+### Categorical feature engineering
+<br>
+<br>
+- Label encoding is a pure numeric conversion of the levels of a categorical variable. If a categorical variable is a factor and it has pre-specified levels then the numeric conversion will be in level order. If no levels are specified, the encoding will be based on alphabetical order.
+
+```{r, eval=FALSE}
+recipe(Sale_Price ~ ., data = ames_train) %>%
+  step_integer(MS_SubClass) %>%
+  prep(ames_train) %>%
+  bake(ames_train) %>%
+  count(MS_SubClass)
+```
+
+---
+
+### Dimension reduction
+<br>
+<br>
+- Dimension reduction is an alternative approach to filter out non-informative features without manually removing them. 
+
+- However, we wanted to highlight that it is very common to include these types of dimension reduction approaches during the feature engineering process. For example, we may wish to reduce the dimension of our features with principal components analysis (Chapter 17) and retain the number of components required to explain, say, 95% of the variance and use these components as features in downstream modeling.
+
+```{r, eval=FALSE}
+recipe(Sale_Price ~ ., data = ames_train) %>%
+  step_center(all_numeric()) %>%
+  step_scale(all_numeric()) %>%
+  step_pca(all_numeric(), threshold = .95)
+```
+
+
+---
+
+### Putting the process together
+<br>
+<br>
+There are three main steps in creating and applying feature engineering with recipes:
+
+- **recipe**: where you define your feature engineering steps to create your blueprint.
+- **prepare**:estimate feature engineering parameters based on training data.
+- **bake**: apply the blueprint to new data.
+
+- The first step is where you define your blueprint (aka recipe). With this process, you supply the formula of interest (the target variable, features, and the data these are based on) with recipe() and then you sequentially add feature engineering steps with step_xxx(). For example, the following defines Sale_Price as the target variable and then uses all the remaining columns as features based on ames_train.
+
+
+---
+
+### Putting the process together
+
+The first step also includes:
+
+- Remove near-zero variance features that are categorical (aka nominal).
+- Ordinal encode our quality-based features (which are inherently ordinal).
+- Center and scale (i.e., standardize) all numeric features.
+- Perform dimension reduction by applying PCA to all numeric features.
+
+```{r}
+blueprint <- recipe(Sale_Price ~ ., data = ames_train) %>%
+  step_nzv(all_nominal())  %>%
+  step_integer(matches("Qual|Cond|QC|Qu")) %>%
+  step_center(all_numeric(), -all_outcomes()) %>%
+  step_scale(all_numeric(), -all_outcomes()) %>%
+  step_pca(all_numeric(), -all_outcomes())
+```
+
+---
+
+### Putting the process together
+
+<br>
+<br>
+- In the second step we need to train this blueprint on some training data. Remember, there are many feature engineering steps that we do not want to train on the test data (e.g., standardize and PCA) as this would create data leakage. So in this step we estimate these parameters based on the training data of interest
+
+```{r}
+prepare <- prep(blueprint, training = ames_train)
+```
+
+---
+
+### Putting the process together
+<br>
+<br>
+In the third step we apply our blueprint to new data (e.g., the training data or future test data) with bake().
+
+```{r}
+baked_train <- bake(prepare, new_data = ames_train)
+baked_test <- bake(prepare, new_data = ames_test)
+```
+
+---
+
+### Putting the process together
+<br>
+<br>
+- The main goal is to develop our blueprint, then within each resample iteration we want to apply prep() and bake() to our resample training and validation data. 
+- The caret package simplifies this process. We only need to specify the blueprint and caret will automatically prepare and bake within each resample.
+- Lets check another example.
+---
+
+### Putting the process together
+<br>
+- First, we create our feature engineering blueprint to perform the following tasks:
+- Filter out near-zero variance features for categorical features.
+- Ordinally encode all quality features, which are on a 1–10 Likert scale.
+- Standardize (center and scale) all numeric features.
+- One-hot encode our remaining categorical features.
+
+```{r}
+blueprint <- recipe(Sale_Price ~ ., data = ames_train) %>%
+  step_nzv(all_nominal()) %>%
+  step_integer(matches("Qual|Cond|QC|Qu")) %>%
+  step_center(all_numeric(), -all_outcomes()) %>%
+  step_scale(all_numeric(), -all_outcomes()) %>%
+  step_dummy(all_nominal(), -all_outcomes(), one_hot = TRUE)
+```
+
+---
+
+### Putting the process together
+
+- Second, we apply the same resampling method and hyperparameter search grid. 
+
+```{r}
+# Specify resampling plan
+cv <- trainControl(
+  method = "repeatedcv", 
+  number = 10, 
+  repeats = 5
+)
+
+# Construct grid of hyperparameter values
+hyper_grid <- expand.grid(k = seq(2, 25, by = 1))
+
+# Tune a knn model using grid search
+knn_fit2 <- train(
+  blueprint, 
+  data = ames_train, 
+  method = "knn", 
+  trControl = cv, 
+  tuneGrid = hyper_grid,
+  metric = "RMSE"
+)
+```
+
+---
+
+### Putting the process together
+
+- We see that the best model was associated with k= 13, which resulted in a cross-validated RMSE of 32,898. 
+
+```{r}
+knn_fit2
+```
+
+---
+class: inverse, middle
+layout:false
+# Thank you for your attention!

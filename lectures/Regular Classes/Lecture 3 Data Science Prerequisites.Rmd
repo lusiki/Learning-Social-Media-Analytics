@@ -189,7 +189,7 @@ nchar(dataArticles$articletext)
 - lets quickly inspect the [API documentation](https://documenter.getpostman.com/view/7210955/S1EMUebv?version=latest) 
 - then we need to compile the full API request and retrieve the data
 
-```{r}
+```{r, eval = F}
 # this is a private info
 source(here::here("Creds/api.R"))
 # identify from your Mediatoolkit App

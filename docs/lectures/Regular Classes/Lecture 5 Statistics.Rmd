@@ -49,11 +49,9 @@ library(data.table)
 # DESCRIPTIVE STATISTICS
 
 
-
-
 ```{r, echo=FALSE, eval = T}
 # FULL SAMPLE
-path <- "D:/LUKA/Freelance/Mediatoolkit/FULLDATA"
+path <- "D:/LUKA/Freelance/Mediatoolkit/FULLtxtDATA"
 raw <- list.files(path = path , pattern="xlsx")
 raw_path <- paste0(path, "/", raw)
 all_raw <- map_df(raw_path, read_excel) %>% data.table()
@@ -609,13 +607,38 @@ Combine all variables together in a multiple regression model:
 
 ```{r}
 # run the model5
-model5 <- lm(log(REACH) ~ log(LIKE_COUNT) + log(COMMENT_COUNT) + TITLE + INTERDAYTIME, 
+model5 <- lm(REACH ~ LIKE_COUNT + COMMENT_COUNT + TITLE + INTERDAYTIME, 
                     data = reg)
 # output content
 summary(model5)
 ```
 
 
+The procedure doesnt end with the model. We also need to choose the best model and asses its quality. The main criteria in regression model is R2.
+
+```{r}
+library(moderndive)
+# Get fitted/values & residuals, compute R^2 using residuals for model1
+get_regression_points(model1) %>%
+  summarize(r_squared = 1 - var(residual) / var(REACH))
+  
+# Get fitted/values & residuals, compute R^2 using residuals for model2
+get_regression_points(model2) %>%
+  summarize(r_squared = 1 - var(residual) / var(REACH))
+
+# Get fitted/values & residuals, compute R^2 using residuals for model3
+get_regression_points(model3) %>%
+  summarize(r_squared = 1 - var(residual) / var(REACH))
+
+# Get fitted/values & residuals, compute R^2 using residuals for model4
+get_regression_points(model4) %>%
+  summarize(r_squared = 1 - var(residual) / var(REACH))
+
+# Get fitted/values & residuals, compute R^2 using residuals for model5
+get_regression_points(model5) %>%
+  summarize(r_squared = 1 - var(residual) / var(REACH))
+  
+```
 
 
 
