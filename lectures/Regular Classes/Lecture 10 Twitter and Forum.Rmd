@@ -420,7 +420,7 @@ forum <- as.data.table(forum)
 
 forum[,.N, TITLE][order(-N)] %>% head(50)
 
-forum[TITLE == "Anksioznost - opća tema(Vol.V)",] %>% 
+forum[TITLE == "Zoran Milanović, predsjednik Republike Hrvatske vol. IV",] %>% 
   unnest_tokens(word,FULL_TEXT) -> ZM_token
   
   
