@@ -4,18 +4,18 @@ subtitle: "Lecture 1: Course introduction"
 author: "Luka Sikic, PhD"
 date: '`r Sys.Date()`'
 output:
-  xaringan::moon_reader:
-    lib_dir: libs
-    css: xaringan-themer.css
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
+  html_document:
+    code_folding: show
+    theme: flatly
+    highlight: haddock
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+    keep_md: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '4'
 ---
-
-
-
-
 
 
 ```{r setup, include=FALSE}
@@ -24,7 +24,11 @@ knitr::opts_chunk$set(echo = F)
 
 
 ```{r libs, include=TRUE, echo=FALSE,message=FALSE, warning=FALSE}
-
+library(tidyverse)
+library(readxl)
+library(here)
+library(kableExtra)
+library(DT)
 
 ```
 

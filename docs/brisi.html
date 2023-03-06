@@ -9,10 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Luka Sikic, PhD" />
+<meta name="author" content="Luka Sikic" />
 
 
-<title>PRIMJENJENA STATISTIKA</title>
+<title>MULTIVARIJATNE STATISTIČKE METODE</title>
 
 <script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -336,11 +336,11 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">PRIMJENJENA STATISTIKA</h1>
+<h1 class="title toc-ignore">MULTIVARIJATNE STATISTIČKE METODE</h1>
 <h3 class="subtitle">Predavanje 1: Pregled kolegija</h3>
-<h4 class="author">Luka Sikic, PhD</h4>
+<h4 class="author">Luka Sikic</h4>
 <h4 class="date">Fakultet hrvatskih studija | <a
-href="https://github.com/BrbanMiro/WebStatistika">Github PS</a></h4>
+href="https://lusiki.github.io/WebMultiVar/">Github MV</a></h4>
 
 </div>
 
@@ -348,30 +348,44 @@ href="https://github.com/BrbanMiro/WebStatistika">Github PS</a></h4>
 <p>class: inverse, middle</p>
 <div id="tehnički-detalji" class="section level2">
 <h2>TEHNIČKI DETALJI</h2>
-<p><br> <br> <br> - Nastava iz obveznog kolegija <strong>Primjena
-statistike u društvenim istraživanjima</strong> sastoji se od dva sata
-predavanja i dva sata seminara tjedno (7 ECTS). - Predavanja se
-održavaju u blok satima (dva školska sata od 45 min) kao i seminar. -
-Pohađanje nastave (i predavanja i seminara) je obavezno i evidentira se.
-- Predavanje se održava ponedjeljkom od 16:00 do 17:30 u a seminar odmah
-iza predavanja od 17:30 do 19:00 u dvorani xy. - Tijekom nastave, molim
-studente da ne koriste mobitele i ne izlaze iz dvorane.</p>
-<p>layout: true # CILJEVI KOLEGIJA — <br> <br> <br> - Upoznati vas sa
-osnovama programskog sučelja <a
-href="https://rstudio.com/"><strong>R</strong></a>. - Osposobiti vas za
-primjenu osnovnih statističkih koncepata u programu <strong>R</strong>.
-- Naučiti vas kako operacionalizirati osnovne statističke koncepte u
-empirijskoj analizi i interpretirati rezultate. - Upoznati vas sa
-važnostima, korisnostima i znanstvenom relevantnosti domaćih i stranih
-sekundarnih izvora podataka (npr. Iz <a
+<p><br> <br> <br></p>
+<ul>
+<li>Nastava iz kolegija <strong>Multivarijatne statističke
+metode</strong> sastoji se od dva sata predavanja i tri sata vježbi
+tjedno (6 ECTS) <br><br></li>
+<li>Pohađanje nastave (predavanja i seminara) je obavezno i evidentira
+se <br><br></li>
+<li>Predavanja se održavaju ponedjeljkom (u dvorani Split) od 16:00 do
+17:30 <br><br></li>
+<li>Vježbe se održavaju četvrtkom (u dvorani Rijeka) od 16:00 do 17:30
+<br><br></li>
+<li>Službeni repozitorij kolegija se nalazi na GitHubu i dostupan je na
+<a href="https://lusiki.github.io/WebMultiVar/">linku</a> <br></li>
+</ul>
+<p>layout: true # CILJEVI KOLEGIJA — <br> <br> <br></p>
+<ul>
+<li><strong>Razumijevanje</strong> i <strong>primjena</strong>
+multivarijatnih statističkih metoda <br><br></li>
+<li>Operacionaliziranje multivarijatnih metoda u empirijskoj analizi i
+interpretacija rezultata <br><br></li>
+<li>Upoznavanje sa osnovama programske sintakse jezika <a
+href="https://rstudio.com/"><strong>R</strong></a> <br><br></li>
+<li>Važnost, korisnost i znanstvena relevantnost domaćih i stranih
+izvora podataka (npr. iz <a
 href="https://www.dzs.hr/"><strong>DZS</strong></a>, <a
 href="https://www.hgk.hr/"><strong>HGK</strong></a>, <a
 href="https://ec.europa.eu/eurostat/data/database"><strong>EUROSTAT</strong></a>
-i sl.).</p>
+i sl.).</li>
+</ul>
 <p>layout: true # SADRŽAJ KOLEGIJA — <br> <br> <br></p>
+<div id="tehnički-uvod" class="section level3">
+<h3>TEHNIČKI UVOD</h3>
+<ol style="list-style-type: decimal">
+<li>Osnove programskog jezika R: <strong>R</strong> osnove, dodatni
+koncepti u <strong>R</strong> <br><br></li>
+<li>Osnove statistike (ponavljanje): <br></li>
+</ol>
 <ul>
-<li>Računalna podrška: <strong>R</strong> osnove, dodatni koncepti u
-<strong>R</strong>.</li>
 <li>Pregled podataka: deskriptivna statistika, vizualizacija
 podataka.</li>
 <li>Statistička teorija: vjerojatnost, distribucije, procjena
@@ -379,55 +393,56 @@ parametara, testiranje hipoteza.</li>
 <li>Statistički alati: kategorijalna analiza, usporedba dva prosjeka,
 usporedba više prosjeka, osnove regresijske analize.</li>
 </ul>
-<p>layout: true # STUDENTSKE OBVEZE (Predavanja) — <br> <br> <br></p>
-<ul>
-<li>Studentima se preporučuje da na predavanjima koriste svoje
-prijenosno računalo i zapisuju bilješke.</li>
-<li>Predavanja će biti dostupna nakon svakog predavanja.</li>
-<li>Predavanja su sastavni dio ispita.</li>
-<li>Nije dopušteno snimanje predavanja.</li>
-</ul>
 <p><br> <br> <br></p>
+</div>
+<div id="eksplorativna-analiza" class="section level3">
+<h3>EKSPLORATIVNA ANALIZA</h3>
+<p><br> 3. Klaster analiza <br><br> 4. Analiza glavnih komponenti
+<br><br> 5. Multidimenzionalno skaliranje</p>
+<p><br> <br></p>
+</div>
+<div id="konfirmatorna-analiza" class="section level3">
+<h3>KONFIRMATORNA ANALIZA</h3>
+<p><br> 6. Diskriminativna analiza <br> 7. Faktorska analiza <br> 8.
+Multivarijatna regresijska analiza <br> 9. Analiza panel podataka <br>
+10. “Survival” analiza <br> 11. Analiza vremenskih serija <br> 12.
+Strojno učenje <br> 13. Analiza teksta <br> 14. Network analiza</p>
+<p>layout: true # STUDENTSKE OBVEZE — <br> <br> <br></p>
 <ul>
-<li>Svi studenti tijekom semestra moraju održati jednu prezentaciju
-prema zadanoj literaturi u .ppt formi.<br />
-</li>
-<li>Izlagači moraju pripremiti na kraju prezentacije i nekoliko (2-3)
-ključnih pitanja za raspravu koju imamo na kraju obrađene teme.</li>
-<li>Prezentaciju studenti moraju poslati profesoru na e-mail najkasnije
-u petak, tjedan dana prije seminara.</li>
-<li>Seminari osim prezentacije uključuju: povezivanje teorijskih
-koncepata s praktičnom primjenom, zajednička empirijska analiza,
-rasprava o društvenim aspektima statističkih rezultata, aktivno
-sudjelovanje u raspravi na zadanu temu.</li>
-</ul>
-<p><br> <br> <br></p>
-<ul>
-<li>Studentima se preporuča i omogućuje da polože kolegij kroz
-prezentaciju i dva kolokvija. Sustav bodovanja za studente koji polažu
-kolegij preko kolokvija: moguće je skupiti 100 bodova, pri tome je na
-prezentaciji moguće ostvariti do 10 bodova, a na svakom kolokviju do 40
-bodova. Pri tome je sustav bodovanja jednak kao kod ispita(vidi
-niže!).</li>
 <li>U zimskom , ljetnom i jesenskom ispitnom roku studenti imaju završni
-pismeni ispit iz tema obrađenih na predavanjima i prema priloženoj
-literaturi.</li>
+pismeni i usmeni ispit iz tema obrađenih na predavanjima i prema
+priloženoj literaturi</li>
 <li>Ispit je položen ako student ostvari 60% od ukupno mogućih bodova:
 60-64% = (2); 65-74% = (3); 75-84% = (4); 85% = (5)</li>
+<li>Predavanja su sastavni dio ispita i obvezno je prisutvovanje</li>
 </ul>
-<p>layout: true # LITERATURA — <br> <br> <br></p>
+<p>layout: true # LITERATURA — <br> <br> <br> - <a
+href="http://www.alinea.hr/105.html">Udžbenik</a> iz multivarijatnih
+statističkih metoda na hrvatskom jeziku.</p>
 <ul>
-<li><a
-href="https://github.com/BrbanMiro/WebStatistika"><strong>Materijali</strong></a>
-koji će biti distribuirani u toku kolegija</li>
-<li><a href="https://learningstatisticswithr.com/"><strong>Navarro, D.
-(2014)</strong> <em>Learning statistics with R: A tutorial</em></a></li>
-<li><strong>Petz, B. (1997).</strong> <em>Osnovne statističke metode za
-nematematičare</em>, III, Naklada Slap, Jastrebarsko</li>
+<li><p><a
+href="https://link.springer.com/book/10.1007/978-1-4419-9650-3">Uvodni
+udžbenik</a> za multivarijatne metode u R.</p></li>
+<li><p><a
+href="https://github.com/gabi493/ADEI/blob/master/Husson%20F.%20et%20al.%20-%20Exploratory%20Multivariate%20Analysis%20by%20Example%20-%20Using%20R%20-%202011.pdf">Udžbenik</a>
+iz eksplorativne multivarijatne analize u R.</p></li>
+<li><p><a href="https://www.springer.com/gp/book/9783642360046">Detaljni
+udžbenik</a> za multivarijatnu statistiku.</p></li>
+<li><p><a
+href="https://us.sagepub.com/en-us/nam/using-r-with-multivariate-statistics/book243861#contents">Sveobuhvatni
+udžbenik</a> za multivarijatnu statistiku u R.</p></li>
+<li><p><a
+href="https://web.uniroma1.it/memotef/sites/default/files/file%20lezioni/102b_textbook.pdf">Tehnički
+udžbenik</a> za multivarijatne metode u R.</p></li>
+<li><p>Za pregled modernog pristupa društvenim znanostima na osnovi
+podataka: <a href="https://www.bitbybitbook.com/en/1st-ed/preface/">Bit
+by Bit: Social Research in the Digital Age</a>.</p></li>
+<li><p>Ovo je klasična literatura za <a
+href="https://r4ds.had.co.nz/">R</a>.</p></li>
 </ul>
 <p>layout: true # KONZULTACIJE — <br> <br> <br></p>
 <ul>
-<li>od 15:00 do 16:00 u sobi 18 (prizemlje)</li>
+<li>od 17:30 do 18:30 u sobi 18 (I.kat)</li>
 <li>prema dogovoru na mail: <a href="mailto:luka.sikic@hrstud.hr"
 class="email">luka.sikic@hrstud.hr</a></li>
 </ul>
@@ -439,7 +454,8 @@ layout:false class: middle, inverse # HVALA NA PAŽNJI!
 </div>
 <hr color='#EB811B' size=1px width=796px>
 </html>
-<p>(Sljedeće predavanje: Uvod u R!)</p>
+<p>(Sljedeće predavanje: Osnove programskog jezika R!)</p>
+</div>
 </div>
 
 
