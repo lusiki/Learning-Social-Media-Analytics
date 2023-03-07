@@ -14,7 +14,7 @@ navbar:
         - text: "1. Course introduction"
           href: "https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture1CourseIntroduction.html"
         - text: "2. Current state and latest trends in the social media space"
-          href: "https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-2-State-and-trends.html" 
+          href: "https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture2StateandTrends.html" 
         - text: "3. Data Science Prerequisites"
           href: "https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-3-Data-Science-Prerequisites.html"
         - text: "4. R syntax (refresher)"
