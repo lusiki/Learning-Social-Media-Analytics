@@ -219,7 +219,7 @@ layout: true
 # FACEBOOK
 ---
 <br>
-<br>
+
 
 ```{r, echo=F, warning=FALSE, message=FALSE}
 # choose variables to investigate
@@ -313,8 +313,7 @@ layout: true
 # WEB
 ---
 <br>
-<br>
-  
+
 ```{r, echo=F, warning=FALSE, message=FALSE}
 # choose variables to investigate
 fullDta %>%
@@ -427,7 +426,7 @@ twitter %>%
 ---
  
 - originality of conntent
-  
+<br>
 ```{r, echo=F, warning=FALSE, message=FALSE,}
 # originality
 twitter %>% 
@@ -458,7 +457,6 @@ layout: true
 # YOUTUBE
 ---
 <br>
-<br>
 ```{r, echo=F, warning=FALSE, message=FALSE,}
 # choose variables to investigate
 fullDta %>%
@@ -476,7 +474,7 @@ fullDta %>%
 ```
 
 - most active youtubers
-  
+<br>
 ```{r, echo=F, warning=FALSE, message=FALSE,}
 # most active authors
 youtube %>%
@@ -491,7 +489,7 @@ youtube %>%
 ---
 
 - summary of activity (per view)
-
+<br>
 ```{r, echo=F, warning=FALSE, message=FALSE,}
 # activity per author
 youtube %>%
@@ -515,7 +513,7 @@ youtube %>%
   group_by(AUTHOR, URL,REACH,LIKE_COUNT, VIEW_COUNT, COMMENTS_COUNT) %>%
   arrange(desc(VIEW_COUNT)) %>%
   #  datatable(., rownames = FALSE, filter="top", options = list(pageLength = 5, scrollX=T))
-  head(12) %>% kbl() %>% kable_styling(font_size = 11)
+  head(7) %>% kbl() %>% kable_styling(font_size = 8)
 
 ```   
 
@@ -538,6 +536,7 @@ fullDta %>%
 ``` 
 
 - not a very good data coverage!?
+<br>
 <br>
 ```{r, echo=F, warning=FALSE, message=FALSE,}
 # not a very good coverage
@@ -573,7 +572,8 @@ fullDta %>%
 ``` 
 
 - influencer statistics
-<br>  
+<br> 
+<br>
 ```{r, echo=F, warning=FALSE, message=FALSE,}
 # influencer impact
 instagram %>%
@@ -591,6 +591,7 @@ instagram %>%
 
 - influencer activity
 <br>
+<br>
 ```{r, echo=F, warning=FALSE, message=FALSE,}
 # influencer activity
 instagram %>%
@@ -607,6 +608,7 @@ instagram %>%
 layout: true
 # RESOURCES
 ---
+<br>
 <br>
 <br>
 - The data sample in the GiHub repo
