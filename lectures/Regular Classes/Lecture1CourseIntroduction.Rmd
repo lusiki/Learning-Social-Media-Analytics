@@ -3,7 +3,7 @@ title: "Learning Social Media Analytics"
 subtitle: "Lecture 1 Course introduction"
 author: "Luka Sikic PhD"
 institute: "Fakultet hrvatskih studija"
-date: "2016/12/12 (updated: `r Sys.Date()`)"
+date: "(updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
     lib_dir: libs
