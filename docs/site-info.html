@@ -13,13 +13,13 @@
 
 <title>site-info.knit</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="site_libs/header-attrs/header-attrs.js"></script>
+<script src="site_libs/jquery/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<link href="site_libs/bootstrap/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap/shim/respond.min.js"></script>
 <style>h1 {font-size: 34px;}
        h1.title {font-size: 38px;}
        h2 {font-size: 30px;}
@@ -29,10 +29,10 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+<script src="site_libs/navigation/tabsets.js"></script>
+<link href="site_libs/highlightjs/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs/highlight.js"></script>
+<link href="site_libs/ionicons/css/ionicons.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -61,6 +61,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -81,6 +82,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -138,11 +142,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -171,8 +179,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -180,16 +188,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -233,7 +234,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -252,17 +253,17 @@ $(document).ready(function () {
   <a href="schedule.html">Schedule</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Courses
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-1-Course-introduction.html">1. Course introduction</a>
+      <a href="https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture1CourseIntroduction.html">1. Course introduction</a>
     </li>
     <li>
-      <a href="https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-2-State-and-trends.html">2. Current state and latest trends in the social media space</a>
+      <a href="https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture2StateandTrends.html">2. Current state and latest trends in the social media space</a>
     </li>
     <li>
       <a href="https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-3-Data-Science-Prerequisites.html">3. Data Science Prerequisites</a>
@@ -274,7 +275,7 @@ $(document).ready(function () {
       <a href="https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-5-Statistics.html">5. Methods for social media analysis I</a>
     </li>
     <li>
-      <a href="">6. Methods for social media analysis II</a>
+      <a href="https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-6-Machine-Learning.html">6. Methods for social media analysis II</a>
     </li>
     <li>
       <a href="">7. Methods for social media analysis III</a>
@@ -338,29 +339,43 @@ $(document).ready(function () {
 </div>
 
 
-<p>This page is made in <a href="http://rmarkdown.rstudio.com/">R Markdown</a> kroz <a href="http://rstudio.com">RStudio</a>.</p>
+<p>This page is made in <a href="http://rmarkdown.rstudio.com/">R
+Markdown</a> kroz <a href="http://rstudio.com">RStudio</a>.</p>
 <pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>## R version 4.1.1 (2021-08-10)
+<pre><code>## R version 4.2.2 (2022-10-31 ucrt)
 ## Platform: x86_64-w64-mingw32/x64 (64-bit)
 ## Running under: Windows 10 x64 (build 19044)
 ## 
 ## Matrix products: default
 ## 
 ## locale:
-## [1] LC_COLLATE=Croatian_Croatia.1250  LC_CTYPE=Croatian_Croatia.1250   
-## [3] LC_MONETARY=Croatian_Croatia.1250 LC_NUMERIC=C                     
-## [5] LC_TIME=Croatian_Croatia.1250    
-## system code page: 1252
+## [1] LC_COLLATE=Croatian_Croatia.utf8  LC_CTYPE=Croatian_Croatia.utf8   
+## [3] LC_MONETARY=Croatian_Croatia.utf8 LC_NUMERIC=C                     
+## [5] LC_TIME=Croatian_Croatia.utf8    
 ## 
 ## attached base packages:
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
+## other attached packages:
+##  [1] DT_0.27          kableExtra_1.3.4 here_1.0.1       readxl_1.4.2    
+##  [5] lubridate_1.9.2  forcats_1.0.0    stringr_1.5.0    dplyr_1.1.0     
+##  [9] purrr_1.0.1      readr_2.1.4      tidyr_1.3.0      tibble_3.1.8    
+## [13] ggplot2_3.4.1    tidyverse_2.0.0 
+## 
 ## loaded via a namespace (and not attached):
-##  [1] digest_0.6.27     R6_2.5.1          jsonlite_1.7.2    magrittr_2.0.1   
-##  [5] evaluate_0.14     rlang_0.4.11      stringi_1.7.4     jquerylib_0.1.4  
-##  [9] bslib_0.2.5.1     rmarkdown_2.11    tools_4.1.1       stringr_1.4.0    
-## [13] xfun_0.25         yaml_2.2.1        compiler_4.1.1    htmltools_0.5.1.1
-## [17] knitr_1.36        sass_0.4.0</code></pre>
+##  [1] tidyselect_1.2.0  xfun_0.37         bslib_0.4.2       colorspace_2.1-0 
+##  [5] vctrs_0.5.2       generics_0.1.3    viridisLite_0.4.1 htmltools_0.5.4  
+##  [9] yaml_2.3.7        utf8_1.2.3        rlang_1.0.6       jquerylib_0.1.4  
+## [13] pillar_1.8.1      glue_1.6.2        withr_2.5.0       lifecycle_1.0.3  
+## [17] munsell_0.5.0     gtable_0.3.1      cellranger_1.1.0  rvest_1.0.3      
+## [21] htmlwidgets_1.6.1 evaluate_0.20     knitr_1.42        tzdb_0.3.0       
+## [25] fastmap_1.1.1     fansi_1.0.4       scales_1.2.1      cachem_1.0.7     
+## [29] webshot_0.5.4     jsonlite_1.8.4    systemfonts_1.0.4 hms_1.1.2        
+## [33] digest_0.6.31     stringi_1.7.12    xaringan_0.28     grid_4.2.2       
+## [37] rprojroot_2.0.3   cli_3.6.0         tools_4.2.2       magrittr_2.0.3   
+## [41] sass_0.4.5        pkgconfig_2.0.3   ellipsis_0.3.2    xml2_1.3.3       
+## [45] timechange_0.2.0  svglite_2.1.1     rmarkdown_2.20    httr_1.4.5       
+## [49] rstudioapi_0.14   R6_2.5.1          compiler_4.2.2</code></pre>
 
 
 

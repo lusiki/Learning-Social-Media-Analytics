@@ -13,13 +13,13 @@
 
 <title>resources.knit</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="site_libs/header-attrs/header-attrs.js"></script>
+<script src="site_libs/jquery/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<link href="site_libs/bootstrap/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap/shim/respond.min.js"></script>
 <style>h1 {font-size: 34px;}
        h1.title {font-size: 38px;}
        h2 {font-size: 30px;}
@@ -29,10 +29,10 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+<script src="site_libs/navigation/tabsets.js"></script>
+<link href="site_libs/highlightjs/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs/highlight.js"></script>
+<link href="site_libs/ionicons/css/ionicons.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -61,6 +61,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -81,6 +82,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -138,11 +142,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -171,8 +179,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -180,16 +188,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -233,7 +234,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -252,17 +253,17 @@ $(document).ready(function () {
   <a href="schedule.html">Schedule</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Courses
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-1-Course-introduction.html">1. Course introduction</a>
+      <a href="https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture1CourseIntroduction.html">1. Course introduction</a>
     </li>
     <li>
-      <a href="https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-2-State-and-trends.html">2. Current state and latest trends in the social media space</a>
+      <a href="https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture2StateandTrends.html">2. Current state and latest trends in the social media space</a>
     </li>
     <li>
       <a href="https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-3-Data-Science-Prerequisites.html">3. Data Science Prerequisites</a>
@@ -274,7 +275,7 @@ $(document).ready(function () {
       <a href="https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-5-Statistics.html">5. Methods for social media analysis I</a>
     </li>
     <li>
-      <a href="">6. Methods for social media analysis II</a>
+      <a href="https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-6-Machine-Learning.html">6. Methods for social media analysis II</a>
     </li>
     <li>
       <a href="">7. Methods for social media analysis III</a>
@@ -339,75 +340,254 @@ $(document).ready(function () {
 
 
 <p><br> <br> <br> <br></p>
-<div id="curated-list-of-the-social-media-analytics-resources" class="section level1">
+<div id="curated-list-of-the-social-media-analytics-resources"
+class="section level1">
 <h1>Curated list of the social media analytics resources</h1>
 <p><br> <br></p>
 <div id="university-courses" class="section level2">
 <h2>University courses</h2>
-<p><a href="https://www.futurelearn.com/courses/social-media-analytics?utm_source=RakutenMarketing&amp;utm_medium=Affiliate&amp;utm_campaign=3372305:Digital+Defynd&amp;utm_content=10:1&amp;utm_term=USNetwork&amp;ranMID=44015&amp;ranEAID=vedj0cWlu2Y&amp;ranSiteID=vedj0cWlu2Y-JiJOW5RAxa.IezsIKn8vqA">Social Media Analytics: Using Data to Understand Public Conversations by Queensland University of Technology</a> <br> <a href="https://www.futurelearn.com/programs/digital-media-analytics?utm_source=RakutenMarketing&amp;utm_medium=Affiliate&amp;utm_campaign=3372305:Digital+Defynd&amp;utm_content=10:1&amp;utm_term=USNetwork&amp;ranMID=44015&amp;ranEAID=vedj0cWlu2Y&amp;ranSiteID=vedj0cWlu2Y-rFD..k0J1VoIFtJkHheEWQ">Purdue University: Digital Media Analytics</a> <br> <a href="https://ashleyrsanders.com/social-media-data-analytics-spring-2019-syllabus/">UCLA: Social Media Data Analytics</a> <br> <a href="https://catalogus.tilburguniversity.edu/osiris_student_tiuprd/OnderwijsCatalogusSelect.do?selectie=cursus&amp;collegejaar=2019&amp;taal=en&amp;cursus=800861-M-3">Tilburg University: Social Media Analytics</a> <br> <a href="https://comm.osu.edu/sites/default/files/AU20%20Comm%204558%20Syllabus%20Bayer.pdf">Social Media Analytics syllabus</a> <br> <a href="https://snap.stanford.edu/proj/socmedia-kdd/">Stanford: Social Media Analytics Tracking, Modeling and Predicting the Flow of Information through Networks</a> <br></p>
+<p><a
+href="https://www.futurelearn.com/courses/social-media-analytics?utm_source=RakutenMarketing&amp;utm_medium=Affiliate&amp;utm_campaign=3372305:Digital+Defynd&amp;utm_content=10:1&amp;utm_term=USNetwork&amp;ranMID=44015&amp;ranEAID=vedj0cWlu2Y&amp;ranSiteID=vedj0cWlu2Y-JiJOW5RAxa.IezsIKn8vqA">Social
+Media Analytics: Using Data to Understand Public Conversations by
+Queensland University of Technology</a> <br> <a
+href="https://www.futurelearn.com/programs/digital-media-analytics?utm_source=RakutenMarketing&amp;utm_medium=Affiliate&amp;utm_campaign=3372305:Digital+Defynd&amp;utm_content=10:1&amp;utm_term=USNetwork&amp;ranMID=44015&amp;ranEAID=vedj0cWlu2Y&amp;ranSiteID=vedj0cWlu2Y-rFD..k0J1VoIFtJkHheEWQ">Purdue
+University: Digital Media Analytics</a> <br> <a
+href="https://ashleyrsanders.com/social-media-data-analytics-spring-2019-syllabus/">UCLA:
+Social Media Data Analytics</a> <br> <a
+href="https://catalogus.tilburguniversity.edu/osiris_student_tiuprd/OnderwijsCatalogusSelect.do?selectie=cursus&amp;collegejaar=2019&amp;taal=en&amp;cursus=800861-M-3">Tilburg
+University: Social Media Analytics</a> <br> <a
+href="https://comm.osu.edu/sites/default/files/AU20%20Comm%204558%20Syllabus%20Bayer.pdf">Social
+Media Analytics syllabus</a> <br> <a
+href="https://snap.stanford.edu/proj/socmedia-kdd/">Stanford: Social
+Media Analytics Tracking, Modeling and Predicting the Flow of
+Information through Networks</a> <br></p>
 </div>
 <div id="online-courses" class="section level2">
 <h2>Online courses</h2>
-<p><a href="https://www.datacamp.com/courses/analyzing-social-media-data-in-r">Data Camp: Analyzing Social Media Data in R</a> <br> <a href="https://www.coursera.org/learn/social-media-data-analytics?ranMID=40328&amp;ranEAID=vedj0cWlu2Y&amp;ranSiteID=vedj0cWlu2Y-445AtQnqXSIP36TMlNd8bA&amp;siteID=vedj0cWlu2Y-445AtQnqXSIP36TMlNd8bA&amp;utm_content=10&amp;utm_medium=partners&amp;utm_source=linkshare&amp;utm_campaign=vedj0cWlu2Y#syllabus">Coursera: Social Media Data Analytics</a> <br> <a href="https://academy.quintly.com/courses/free-social-media-analytics">Quintly: Free Social Media Analytics Course</a> <br> <a href="https://www.experfy.com/training/courses/social-media-analytics-6b828917-4d6d-4752-b19e-92aa60ee6ace">Experfy Training: Social Media Analytics</a></p>
+<p><a
+href="https://www.datacamp.com/courses/analyzing-social-media-data-in-r">Data
+Camp: Analyzing Social Media Data in R</a> <br> <a
+href="https://www.coursera.org/learn/social-media-data-analytics?ranMID=40328&amp;ranEAID=vedj0cWlu2Y&amp;ranSiteID=vedj0cWlu2Y-445AtQnqXSIP36TMlNd8bA&amp;siteID=vedj0cWlu2Y-445AtQnqXSIP36TMlNd8bA&amp;utm_content=10&amp;utm_medium=partners&amp;utm_source=linkshare&amp;utm_campaign=vedj0cWlu2Y#syllabus">Coursera:
+Social Media Data Analytics</a> <br> <a
+href="https://academy.quintly.com/courses/free-social-media-analytics">Quintly:
+Free Social Media Analytics Course</a> <br> <a
+href="https://www.experfy.com/training/courses/social-media-analytics-6b828917-4d6d-4752-b19e-92aa60ee6ace">Experfy
+Training: Social Media Analytics</a></p>
 <p><br></p>
 </div>
 <div id="books" class="section level2">
 <h2>Books</h2>
-<p><a href="https://www.wiley.com/en-us/Social+Media+Data+Mining+and+Analytics-p-9781118824856">Social Media Data Mining and Analytics</a> <br> <a href="https://link.springer.com/book/10.1007/978-1-4842-3102-9">Social Media Analytics Strategy</a> <br> <a href="https://www.packtpub.com/product/mastering-social-media-mining-with-r/9781784396312">Mastering Social Media Mining with R</a> <br> <a href="https://www.amazon.com/Social-Media-Mining-Nathan-Danneman/dp/1783281774">Social Media Mining with R</a> <br> <a href="https://www.amazon.com/Mining-spatial-text-social-media-ebook/dp/B072XN54R9">R: Mining spatial, text, web, and social media data</a> <br> <a href="https://www.packtpub.com/product/learning-social-media-analytics-with-r/9781787127524">Learning Social Media Analytics with R</a> <br> <a href="https://www.webpages.uidaho.edu/~stevel/504/mining-the-social-web-2nd-edition.pdf">Mining the Social Web</a> <br> <a href="http://socialdata.site/">Mining Social Media: Finding Stories in Internet Data</a> <br> <a href="https://www.packtpub.com/product/python-social-media-analytics/9781787121485">Python Social Media Analytics</a></p>
+<p><a
+href="https://www.wiley.com/en-us/Social+Media+Data+Mining+and+Analytics-p-9781118824856">Social
+Media Data Mining and Analytics</a> <br> <a
+href="https://link.springer.com/book/10.1007/978-1-4842-3102-9">Social
+Media Analytics Strategy</a> <br> <a
+href="https://www.packtpub.com/product/mastering-social-media-mining-with-r/9781784396312">Mastering
+Social Media Mining with R</a> <br> <a
+href="https://www.amazon.com/Social-Media-Mining-Nathan-Danneman/dp/1783281774">Social
+Media Mining with R</a> <br> <a
+href="https://www.amazon.com/Mining-spatial-text-social-media-ebook/dp/B072XN54R9">R:
+Mining spatial, text, web, and social media data</a> <br> <a
+href="https://www.packtpub.com/product/learning-social-media-analytics-with-r/9781787127524">Learning
+Social Media Analytics with R</a> <br> <a
+href="https://www.webpages.uidaho.edu/~stevel/504/mining-the-social-web-2nd-edition.pdf">Mining
+the Social Web</a> <br> <a href="http://socialdata.site/">Mining Social
+Media: Finding Stories in Internet Data</a> <br> <a
+href="https://www.packtpub.com/product/python-social-media-analytics/9781787121485">Python
+Social Media Analytics</a></p>
 </div>
 <div id="free-time-books" class="section level2">
 <h2>Free time books</h2>
-<p><a href="https://www.amazon.com/Next-Billion-Users-Digital-Beyond/dp/0674983785">The Next Billion Users</a> <br> <a href="https://www.amazon.com/Cause-Power-Digital-Storytelling-Social/dp/0615782159">The Cause: The Power of Digital Storytelling for Social Good</a> <br> <a href="https://www.intellectbooks.com/instafame">Instafame Graffiti and Street Art in the Instagram Era</a> <br> <a href="https://www.goodreads.com/book/show/51236404-reset">Reset: Reclaiming the Internet for Civil Society</a> <br> <a href="https://rowman.com/ISBN/9781793604019/Recasting-the-Disney-Princess-in-an-Era-of-New-Media-and-Social-Movements">Recasting the Disney Princess in an Era of New Media and Social Movements</a> <br> <a href="https://rowman.com/ISBN/9781793613615/Research-Perspectives-on-Social-Media-Influencers-and-Brand-Communication">Research Perspectives on Social Media Influencers and Brand Communication</a> <br> <a href="https://www.jstor.org/stable/j.ctv1b0fvrn">Violence and Trolling on Social Media: History, Affect, and Effects of Online Vitriol</a> <br> <a href="https://outsideinsight.com/">Outside Insight: the leading resource for decision-makers</a> <br></p>
+<p><a
+href="https://www.amazon.com/Next-Billion-Users-Digital-Beyond/dp/0674983785">The
+Next Billion Users</a> <br> <a
+href="https://www.amazon.com/Cause-Power-Digital-Storytelling-Social/dp/0615782159">The
+Cause: The Power of Digital Storytelling for Social Good</a> <br> <a
+href="https://www.intellectbooks.com/instafame">Instafame Graffiti and
+Street Art in the Instagram Era</a> <br> <a
+href="https://www.goodreads.com/book/show/51236404-reset">Reset:
+Reclaiming the Internet for Civil Society</a> <br> <a
+href="https://rowman.com/ISBN/9781793604019/Recasting-the-Disney-Princess-in-an-Era-of-New-Media-and-Social-Movements">Recasting
+the Disney Princess in an Era of New Media and Social Movements</a> <br>
+<a
+href="https://rowman.com/ISBN/9781793613615/Research-Perspectives-on-Social-Media-Influencers-and-Brand-Communication">Research
+Perspectives on Social Media Influencers and Brand Communication</a>
+<br> <a href="https://www.jstor.org/stable/j.ctv1b0fvrn">Violence and
+Trolling on Social Media: History, Affect, and Effects of Online
+Vitriol</a> <br> <a href="https://outsideinsight.com/">Outside Insight:
+the leading resource for decision-makers</a> <br></p>
 <p><br></p>
 </div>
 <div id="journals-and-conferences" class="section level2">
 <h2>Journals and Conferences</h2>
-<p><br> <a href="https://ojs.aaai.org/index.php/ICWSM/issue/archive">International Conference on Web and Social Media</a> <br> <a href="https://conferenceindex.org/conferences/social-media">Social Media Conferences</a> <br> <a href="https://www.tandfonline.com/toc/rics20/current">Information, Communication &amp; Society</a> <br> <a href="https://www.thejsms.org/index.php/TSMRI/index">The Journal of Social Media in Society</a> <br> <a href="https://www.sciencedirect.com/journal/international-journal-of-research-in-marketing">International Journal of Research in Marketing</a> <br> <a href="https://www.sciencedirect.com/journal/online-social-networks-and-media">Online Social Networks and Media</a> <br> <a href="https://home.liebertpub.com/publications/cyberpsychology-behavior-and-social-networking/10/overview">Cyberpsychology, Behavior, and Social Networking</a> <br> <a href="https://journals.sagepub.com/home/con">Convergence: The International Journal of Research into New Media Technologies</a> <br> <a href="https://www.journals.elsevier.com/social-networks">Social Networks</a> <br> <a href="https://journals.sagepub.com/home/sms">Social Media + Society</a> <br> <a href="https://www.inderscience.com/jhome.php?jcode=ijsmile">International Journal of Social Media and Interactive Learning Environments</a> <br> <a href="https://www.igi-global.com/journal/international-journal-social-media-online/224362#table-of-contents">International Journal of Social Media and Online Communities</a> <br> <a href="https://www.inderscience.com/jhome.php?jcode=ijwbc&amp;csid=orob1f5204egv8bikst23mbvs0">International Journal of Web Based Communities</a> <br> <a href="https://dblp.org/db/conf/ecis/index.html">European Conference on Information Systems</a> <br> <a href="https://link.springer.com/conference/socinfo">International Conference on Social Informatics</a></p>
+<p><br> <a
+href="https://ojs.aaai.org/index.php/ICWSM/issue/archive">International
+Conference on Web and Social Media</a> <br> <a
+href="https://conferenceindex.org/conferences/social-media">Social Media
+Conferences</a> <br> <a
+href="https://www.tandfonline.com/toc/rics20/current">Information,
+Communication &amp; Society</a> <br> <a
+href="https://www.thejsms.org/index.php/TSMRI/index">The Journal of
+Social Media in Society</a> <br> <a
+href="https://www.sciencedirect.com/journal/international-journal-of-research-in-marketing">International
+Journal of Research in Marketing</a> <br> <a
+href="https://www.sciencedirect.com/journal/online-social-networks-and-media">Online
+Social Networks and Media</a> <br> <a
+href="https://home.liebertpub.com/publications/cyberpsychology-behavior-and-social-networking/10/overview">Cyberpsychology,
+Behavior, and Social Networking</a> <br> <a
+href="https://journals.sagepub.com/home/con">Convergence: The
+International Journal of Research into New Media Technologies</a> <br>
+<a href="https://www.journals.elsevier.com/social-networks">Social
+Networks</a> <br> <a href="https://journals.sagepub.com/home/sms">Social
+Media + Society</a> <br> <a
+href="https://www.inderscience.com/jhome.php?jcode=ijsmile">International
+Journal of Social Media and Interactive Learning Environments</a> <br>
+<a
+href="https://www.igi-global.com/journal/international-journal-social-media-online/224362#table-of-contents">International
+Journal of Social Media and Online Communities</a> <br> <a
+href="https://www.inderscience.com/jhome.php?jcode=ijwbc&amp;csid=orob1f5204egv8bikst23mbvs0">International
+Journal of Web Based Communities</a> <br> <a
+href="https://dblp.org/db/conf/ecis/index.html">European Conference on
+Information Systems</a> <br> <a
+href="https://link.springer.com/conference/socinfo">International
+Conference on Social Informatics</a></p>
 <p><br></p>
 </div>
 </div>
 <div id="analytic-groups-and-platforms" class="section level1">
 <h1>Analytic groups and platforms</h1>
-<p><a href="https://social-media-analytics.org/">Social Media Analytics for Society and Crisis Communication</a> <br> <a href="https://wiki.digitalmethods.net/Dmi/DmiAbout">The Digital Methods Initiative</a> <br> <a href="https://mediabiasfactcheck.com/">mediabiasfactcheck</a> <br> <a href="https://www.pewresearch.org/">Pew Research Center</a> <br> <a href="https://mediacloud.org/">Media Cloud</a> <br> <a href="https://ocean.sagepub.com/">Sage Ocean</a></p>
+<p><a href="https://social-media-analytics.org/">Social Media Analytics
+for Society and Crisis Communication</a> <br> <a
+href="https://wiki.digitalmethods.net/Dmi/DmiAbout">The Digital Methods
+Initiative</a> <br> <a
+href="https://mediabiasfactcheck.com/">mediabiasfactcheck</a> <br> <a
+href="https://www.pewresearch.org/">Pew Research Center</a> <br> <a
+href="https://mediacloud.org/">Media Cloud</a> <br> <a
+href="https://ocean.sagepub.com/">Sage Ocean</a></p>
 <p><br></p>
 <div id="open-source-repositories" class="section level2">
 <h2>Open Source repositories</h2>
-<p><a href="https://library.bath.ac.uk/research-software/social-media-data">University of Bath: Collecting Social Media Data</a> <br> <a href="https://libguides.colorado.edu/c.php?g=740614&amp;p=5296852">University of Colorado</a></p>
+<p><a
+href="https://library.bath.ac.uk/research-software/social-media-data">University
+of Bath: Collecting Social Media Data</a> <br> <a
+href="https://libguides.colorado.edu/c.php?g=740614&amp;p=5296852">University
+of Colorado</a></p>
 </div>
 <div id="tutorials" class="section level2">
 <h2>Tutorials</h2>
-<p><a href="https://www.earthdatascience.org/courses/earth-analytics/get-data-using-apis/intro-to-social-media-text-mining-r/">Twitter Social media data in R</a> <br> <a href="https://github.com/maria-pro/useR2019_tutorial">Github tutorial</a> <br> <a href="https://uoa-eresearch.github.io/HackyHour/static/tipstricks/Social%20media%20data%20-%20tips%20and%20tricks.pdf">Excellent presentation about Social Media Analysis</a> <br> <a href="https://willbowditch.github.io/scraping_with_R/">Scraping with R</a> <br> <a href="https://towardsdatascience.com/nine-years-on-linkedin-in-data-b34047c77223">Visualizing Nine Years on LinkedIn using R</a> <br> <a href="https://arxiv.org/pdf/2011.13327.pdf">Analysing Social Media Network Data with R</a> <br> <a href="https://www.mzes.uni-mannheim.de/socialsciencedatalab/article/collecting-and-analyzing-twitter-using-r/">Collecting and Analyzing Twitter Data Using R</a></p>
+<p><a
+href="https://www.earthdatascience.org/courses/earth-analytics/get-data-using-apis/intro-to-social-media-text-mining-r/">Twitter
+Social media data in R</a> <br> <a
+href="https://github.com/maria-pro/useR2019_tutorial">Github
+tutorial</a> <br> <a
+href="https://uoa-eresearch.github.io/HackyHour/static/tipstricks/Social%20media%20data%20-%20tips%20and%20tricks.pdf">Excellent
+presentation about Social Media Analysis</a> <br> <a
+href="https://willbowditch.github.io/scraping_with_R/">Scraping with
+R</a> <br> <a
+href="https://towardsdatascience.com/nine-years-on-linkedin-in-data-b34047c77223">Visualizing
+Nine Years on LinkedIn using R</a> <br> <a
+href="https://arxiv.org/pdf/2011.13327.pdf">Analysing Social Media
+Network Data with R</a> <br> <a
+href="https://www.mzes.uni-mannheim.de/socialsciencedatalab/article/collecting-and-analyzing-twitter-using-r/">Collecting
+and Analyzing Twitter Data Using R</a></p>
 </div>
 <div id="blogs-and-forums" class="section level2">
 <h2>Blogs and forums</h2>
-<p><a href="https://www.reddit.com/r/socialmedia/">Reddit:Social Media</a> <br> <a href="https://tristanhotham.com/blog/">Tristan Hotham</a> <br> <a href="https://blog.loomly.com/social-media-analytics/">Social Media Analytics: The Definitive Guide</a> <br> <a href="https://www.brandwatch.com/blog/">Brandwatch blog</a></p>
+<p><a href="https://www.reddit.com/r/socialmedia/">Reddit:Social
+Media</a> <br> <a href="https://tristanhotham.com/blog/">Tristan
+Hotham</a> <br> <a
+href="https://blog.loomly.com/social-media-analytics/">Social Media
+Analytics: The Definitive Guide</a> <br> <a
+href="https://www.brandwatch.com/blog/">Brandwatch blog</a></p>
 </div>
 <div id="useful-texts" class="section level2">
 <h2>Useful texts</h2>
-<p><a href="https://ourworldindata.org/rise-of-social-media">The rise of social media</a> <br> <a href="https://ocean.sagepub.com/blog/social-media-data-in-research-a-review-of-the-current-landscape">Social media data in research: a review of the current landscape</a> <br> <a href="https://eprints.qut.edu.au/202962/1/View_of_Mapping_YouTube_First_Monday.pdf">Mapping YouTube</a> <br> <a href="https://www.tandfonline.com/doi/abs/10.1080/1369118X.2019.1637447">After the ‘APIcalypse</a></p>
+<p><a href="https://ourworldindata.org/rise-of-social-media">The rise of
+social media</a> <br> <a
+href="https://ocean.sagepub.com/blog/social-media-data-in-research-a-review-of-the-current-landscape">Social
+media data in research: a review of the current landscape</a> <br> <a
+href="https://eprints.qut.edu.au/202962/1/View_of_Mapping_YouTube_First_Monday.pdf">Mapping
+YouTube</a> <br> <a
+href="https://www.tandfonline.com/doi/abs/10.1080/1369118X.2019.1637447">After
+the ’APIcalypse</a></p>
 </div>
 <div id="data-tools" class="section level2">
 <h2>Data tools</h2>
-<p><a href="http://socialmediadata.wikidot.com/">wikidot list of social media data collection tools</a> <br> <a href="https://socialmediadata.org/social-media-research-toolkit/">Social Media Research Toolkit</a> <br> <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Social_media_-_statistics_on_the_use_by_enterprises">Social media - statistics on the use by enterprises</a> <br> <a href="https://apify.com/">Social Media Scraper Apify</a> <br> <a href="https://data.world/datasets/social-media">Social Media Data</a> <br> <a href="https://datareportal.com/">Datareportal</a> <br> <a href="https://mediacloud.org/">Mediacloud</a> <br> <a href="https://channelcrawler.com/">Youtube crawler</a> <br> <a href="https://socialblade.com/">Socialblade</a> <br> <a href="https://starngage.com/app/global">Starngage</a> <br> <a href="https://starngage.com/app/global">Influencer data</a> <br> <a href="https://archive.org/">Internet Archive</a> <br> <a href="https://webhose.io/">WebHose</a> <br> <a href="https://newsapi.ai/">NewsAPI</a> <br> <a href="https://zenodo.org/record/3836810#.YMsZSUxJ0uV">ClaimBuster</a> <br> <a href="https://tubularlabs.com/">tubular</a> <br> <a href="https://tools.digitalmethods.net/netvizz/youtube/index.php">Youtube data</a> <br> <a href="https://github.com/vosonlab/VOSONDash">VOSONLab Dashboard</a> <br> <a href="https://explorer.mediacloud.org/#/home">Media Cloud</a></p>
+<p><a href="http://socialmediadata.wikidot.com/">wikidot list of social
+media data collection tools</a> <br> <a
+href="https://socialmediadata.org/social-media-research-toolkit/">Social
+Media Research Toolkit</a> <br> <a
+href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Social_media_-_statistics_on_the_use_by_enterprises">Social
+media - statistics on the use by enterprises</a> <br> <a
+href="https://apify.com/">Social Media Scraper Apify</a> <br> <a
+href="https://data.world/datasets/social-media">Social Media Data</a>
+<br> <a href="https://datareportal.com/">Datareportal</a> <br> <a
+href="https://mediacloud.org/">Mediacloud</a> <br> <a
+href="https://channelcrawler.com/">Youtube crawler</a> <br> <a
+href="https://socialblade.com/">Socialblade</a> <br> <a
+href="https://starngage.com/app/global">Starngage</a> <br> <a
+href="https://starngage.com/app/global">Influencer data</a> <br> <a
+href="https://archive.org/">Internet Archive</a> <br> <a
+href="https://webhose.io/">WebHose</a> <br> <a
+href="https://newsapi.ai/">NewsAPI</a> <br> <a
+href="https://zenodo.org/record/3836810#.YMsZSUxJ0uV">ClaimBuster</a>
+<br> <a href="https://tubularlabs.com/">tubular</a> <br> <a
+href="https://tools.digitalmethods.net/netvizz/youtube/index.php">Youtube
+data</a> <br> <a href="https://github.com/vosonlab/VOSONDash">VOSONLab
+Dashboard</a> <br> <a
+href="https://explorer.mediacloud.org/#/home">Media Cloud</a></p>
 </div>
 <div id="social-data-vendors" class="section level2">
 <h2>Social data vendors</h2>
-<p><a href="https://www.brandwatch.com/">Brandwatch</a> <br> <a href="https://www.lexisnexis.co.uk/">LexisNexis</a> <br> <a href="https://mediastack.com/">mediastack</a> <br> <a href="https://www.gdeltproject.org/data.html">GDELT</a></p>
+<p><a href="https://www.brandwatch.com/">Brandwatch</a> <br> <a
+href="https://www.lexisnexis.co.uk/">LexisNexis</a> <br> <a
+href="https://mediastack.com/">mediastack</a> <br> <a
+href="https://www.gdeltproject.org/data.html">GDELT</a></p>
 </div>
 <div id="github-repositories" class="section level2">
 <h2>Github repositories</h2>
-<p><a href="https://github.com/mdredze/twitter_stream_downloader">Twitter Stream Downloader</a> <br> <a href="https://github.com/PacktPublishing/Learning-Social-Media-Analytics-with-R">Learning Social Media Analytics with R</a> <br> <a href="https://github.com/vivek2319/SocialMediaAnalysis">Social Media Analysis</a> <br> <a href="https://github.com/JonasSchroeder/InstaCrawlR">Instagram Crawler</a> <br> <a href="https://github.com/lamthuyvo/social-media-data-scripts">Mining data from social media platforms</a> <br> <a href="https://github.com/0xnr/awesome-analytics">Curated list of awesome analyics</a> <br> <a href="https://github.com/pushshift/api">Reddit pushshift API</a> <br> <a href="https://github.com/ksb2043/instagram_influencer_dataset">Instagram influencer dataset</a> <br> <a href="https://github.com/cptq/genius-expertise">Genius dataset (music)</a> <br> <a href="https://nijianmo.github.io/amazon/index.html">Amazon Review Data</a> <br> <a href="https://github.com/epfl-dlab/YouNiverse">Youtube data</a> <br> <a href="https://github.com/bernorieder?tab=repositories">Bernhard Reider</a></p>
+<p><a
+href="https://github.com/mdredze/twitter_stream_downloader">Twitter
+Stream Downloader</a> <br> <a
+href="https://github.com/PacktPublishing/Learning-Social-Media-Analytics-with-R">Learning
+Social Media Analytics with R</a> <br> <a
+href="https://github.com/vivek2319/SocialMediaAnalysis">Social Media
+Analysis</a> <br> <a
+href="https://github.com/JonasSchroeder/InstaCrawlR">Instagram
+Crawler</a> <br> <a
+href="https://github.com/lamthuyvo/social-media-data-scripts">Mining
+data from social media platforms</a> <br> <a
+href="https://github.com/0xnr/awesome-analytics">Curated list of awesome
+analyics</a> <br> <a href="https://github.com/pushshift/api">Reddit
+pushshift API</a> <br> <a
+href="https://github.com/ksb2043/instagram_influencer_dataset">Instagram
+influencer dataset</a> <br> <a
+href="https://github.com/cptq/genius-expertise">Genius dataset
+(music)</a> <br> <a
+href="https://nijianmo.github.io/amazon/index.html">Amazon Review
+Data</a> <br> <a href="https://github.com/epfl-dlab/YouNiverse">Youtube
+data</a> <br> <a
+href="https://github.com/bernorieder?tab=repositories">Bernhard
+Reider</a></p>
 </div>
 </div>
 <div id="stay-updated-with-current-trends" class="section level1">
 <h1>Stay updated with current trends</h1>
-<p><a href="https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2021">Oxford Digital News Report</a></p>
+<p><a
+href="https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2021">Oxford
+Digital News Report</a></p>
 <div id="other" class="section level2">
 <h2>Other</h2>
 </div>
 <div id="my-courses" class="section level2">
 <h2>My courses</h2>
-<p><a href="https://lusiki.github.io/WebStatistika/">Applied statistics</a> <br> <a href="https://lusiki.github.io/WebMultiVar/">Multivariate methods</a> <br> <a href="https://lusiki.github.io/WebObradaPodataka/">Computational social science</a> <br> <a href="https://github.com/lusiki/Analiza-teksta">Natural language processing</a> <em>Beta version</em>.</p>
+<p><a href="https://lusiki.github.io/WebStatistika/">Applied
+statistics</a> <br> <a
+href="https://lusiki.github.io/WebMultiVar/">Multivariate methods</a>
+<br> <a href="https://lusiki.github.io/WebObradaPodataka/">Computational
+social science</a> <br> <a
+href="https://github.com/lusiki/Analiza-teksta">Natural language
+processing</a> <em>Beta version</em>.</p>
 <p><br> <br> <br></p>
 </div>
 </div>

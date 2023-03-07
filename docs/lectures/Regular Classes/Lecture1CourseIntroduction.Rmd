@@ -1,0 +1,218 @@
+---
+title: "Learning Social Media Analytics"
+subtitle: "Lecture 1 Course introduction"
+author: "Luka Sikic PhD"
+institute: "Faculty of Croatian Studies"
+date: "(updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+
+```{r libs, include=TRUE, echo=FALSE,message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readxl)
+library(here)
+library(kableExtra)
+library(DT)
+
+```
+
+
+# STRUCTURE
+<br>
+<br>
+<br>
+<br>
+- General course information
+<br>
+<br>
+- Objectives of the course
+<br>
+<br>
+- Course Literature
+<br>
+<br>
+- Data and resources
+<br>
+<br>
+
+---
+layout: true
+# GENERAL COURSE INFORMATION
+---
+<br>
+#### What is this all about?
+<br>
+<br>
+<br>
+- understand social media landscape and trends
+<br>
+<br>
+- focus is on methods and techniques for social media analysis
+<br>
+<br>
+- state of the art tools for social media analysis 
+<br>
+<br>
+- independently interpret, analyse or/and develop social media strategy
+
+---
+<br>
+#### How do we do that?
+<br>
+<br>
+<br>
+- R and Python will be be used for the purposes of demonstrating methods
+<br>
+<br>
+- prior knowledge od the programming language syntax is not necessery
+<br>
+<br>
+- learning some of the basic syntax is warmly recommended
+<br>
+<br>
+- we can dedicate one lecture to syntax
+
+---
+<br>
+#### In the background!
+<br>
+<br>
+- *data science* techniques in focus 
+<br>
+<br>
+- working with databases (*SQL*,*Google Big Querry*)
+<br>
+<br>
+- web data (*web scraping*, *API*)
+<br>
+<br>
+- data manipulation and cleaning (*tidyverse*, *pandas*, *data.table*)
+<br>
+<br>
+- IT ollaboration and code sharing (*Git*, *GitHub*) and open source reporting (*RMarkdown*)
+<br>
+<br>
+- *computational social science* paradigm 
+
+---
+<br>
+#### Syllabus
+<br>
+<br>
+<br>
+- unofficial [syllab](https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/syllab/syllab.html) (please follow up for updates); also as [.pdf](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/syllab/syllab.pdf).
+<br>
+<br>
+- offiical syllab on [English](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/syllab/Learning%20social%20media%20analytics.docx) and [Croatian](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/syllab/Analitika%20dru%C5%A1tvenih%20medija.docx)
+
+---
+layout: true
+# OBJECTIVES OF THE COURSE
+---
+<br>
+<br>
+<br>
+
+- Catching up with the current state and trends in the social media space 
+<br>
+<br>
+- IT infrastructure (Big Data) of social media platforms  
+<br>
+<br>
+- Relevant topics in social media research and business 
+<br>
+<br>
+- Tools, methodology and results in social media analytics
+<br>
+<br>
+- Independent social media research
+
+---
+layout: true
+# COURSE LITERATURE
+---
+<br>
+#### Books
+<br>
+<br>
+- [Mining the Social Web](https://www.webpages.uidaho.edu/~stevel/504/mining-the-social-web-2nd-edition.pdf) 
+<br>
+<br>
+- [Learning Social Media Analytics with R](https://www.packtpub.com/product/learning-social-media-analytics-with-r/9781787127524)
+<br>
+<br>
+- [Mastering Social Media Mining with Python](https://www.packtpub.com/product/mastering-social-media-mining-with-python/9781783552016) 
+<br>
+<br>
+- [Social Media Data Mining and Analytics](https://www.wiley.com/en-us/Social+Media+Data+Mining+and+Analytics-p-9781118824856) 
+<br>
+<br>
+- [Social Media Analytics Strategy](https://www.apress.com/us/book/9781484231012)
+---
+<br>
+#### Academic literature
+<br>
+<br>
+- [International Conference on Web and Social Media](https://ojs.aaai.org/index.php/ICWSM/issue/archive)
+<br>
+<br>
+- [Social Media + Society](https://journals.sagepub.com/home/sms)
+<br>
+<br>
+- [Information, Communication & Society](https://www.tandfonline.com/journals/rics20)
+<br>
+<br>
+- Optionally you can pick another journal to follow, check the [list](https://lusiki.github.io/Learning-Social-Media-Analytics/resources.html) 
+---
+layout: true
+# DATA AND RESOURCES
+---
+<br>
+#### Data
+<br>
+<br>
+- There are numerous social media data sources
+<br>
+<br>
+- We will be working with Croatian data so please thoughly check [Mediatoolkit](https://www.mediatoolkit.com/) (alternatives are [presscut](https://www1.presscut.hr/en/), [pressclipping](https://www.pressclipping.hr/))
+<br>
+<br>
+- Data samples are provided in the repo
+<br>
+<br>
+- These data sources are equally inconvenient (expensive and partitial)
+<br>
+<br>
+- Serious solution requires your own database complilation 
+
+
+---
+<br>
+#### Resources 
+<br>
+<br>
+- There are countless social media resources
+<br>
+<br>
+- Please check my [curated list](https://lusiki.github.io/Learning-Social-Media-Analytics/resources.html)
+<br>
+<br>
+- Consider adding to it (maybe as a student project)
+
+---
+class: inverse, middle
+layout:false
+# Thank you for your attention!

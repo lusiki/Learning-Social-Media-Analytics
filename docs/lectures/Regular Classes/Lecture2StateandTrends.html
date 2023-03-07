@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Learning Social Media Analytics</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Luka Sikic, PhD" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Learning Social Media Analytics
+]
+.subtitle[
+## Current state and latest trends
+]
+.author[
+### Luka Sikic, PhD
+]
+.institute[
+### Faculty of Croatian Studies
+]
+.date[
+### (updated: 2023-03-07)
+]
+
+---
+
+
+
+
+
+
+
+
+
+
+# CLASS OUTLINE
+&lt;br&gt;
+&lt;br&gt;
+- DATA OVERVIEW (full media space)
+&lt;br&gt;
+&lt;br&gt;
+- FACEBOOK
+&lt;br&gt;
+&lt;br&gt;
+- WEB
+&lt;br&gt;
+&lt;br&gt;
+- TWITTER
+&lt;br&gt;
+&lt;br&gt;
+- YOUTUBE
+&lt;br&gt;
+&lt;br&gt;
+- FORUM
+&lt;br&gt;
+&lt;br&gt;
+- INSTAGRAM
+&lt;br&gt;
+&lt;br&gt;
+
+---
+layout: true
+# DATA OVERVIEW (full media space)
+---
+
+- check the raw [data](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/data/Mediatoolkit/sample.xlsx)
+&lt;br&gt;
+- sourced from [Mediatoolkit](https://www.mediatoolkit.com/)
+
+
+
+
+
+- one day worth of data (2022-01-01)
+
+
+```
+## [1] 27604    45
+```
+
+- random data snapshot
+
+
+```
+## Rows: 27,604
+## Columns: 10
+## $ DATE         &lt;chr&gt; "2022-01-02", "2022-01-02", "2022-01-01", "2022-01-01", "…
+## $ TIME         &lt;chr&gt; "07:36:52", "10:25:07", "11:04:30", "19:13:34", "19:41:37…
+## $ TITLE        &lt;chr&gt; "ATP kup: Medvjedev izgubio, Rusija ipak slavila", "U žup…
+## $ FROM         &lt;chr&gt; "glasistre.hr", "sibenskiportal.hr", "Mladež HDZ-a (YEPP)…
+## $ AUTHOR       &lt;chr&gt; "https://www.facebook.com/Glasistre.hr", NA, "Mladež HDZ-…
+## $ URL          &lt;chr&gt; "https://www.glasistre.hr/sport/atp-kup-medvjedev-izgubio…
+## $ URL_PHOTO    &lt;chr&gt; "https://mediatoolkit.com/img/50x50,sc,sQEDT5TGJFspLSBUR9…
+## $ SOURCE_TYPE  &lt;chr&gt; "web", "web", "twitter", "web", "twitter", "web", "forum"…
+## $ GROUP_NAME   &lt;chr&gt; "Luka", "Luka", "Luka", "Luka", "Luka", "Luka", "Luka", "…
+## $ KEYWORD_NAME &lt;chr&gt; "opće", "opće", "opće", "opće", "opće", "opće", "opće", "…
+```
+---
+
+- avaliable data characteristics
+
+&lt;br&gt;
+
+
+```
+##  [1] "DATE"                  "TIME"                  "TITLE"                
+##  [4] "FROM"                  "AUTHOR"                "URL"                  
+##  [7] "URL_PHOTO"             "SOURCE_TYPE"           "GROUP_NAME"           
+## [10] "KEYWORD_NAME"          "FOUND_KEYWORDS"        "LANGUAGES"            
+## [13] "LOCATIONS"             "TAGS"                  "MANUAL_SENTIMENT"     
+## [16] "AUTO_SENTIMENT"        "MENTION_SNIPPET"       "REACH"                
+## [19] "VIRALITY"              "FOLLOWERS_COUNT"       "LIKE_COUNT"           
+## [22] "COMMENT_COUNT"         "SHARE_COUNT"           "TWEET_COUNT"          
+## [25] "LOVE_COUNT"            "WOW_COUNT"             "HAHA_COUNT"           
+## [28] "SAD_COUNT"             "ANGRY_COUNT"           "TOTAL_REACTIONS_COUNT"
+## [31] "FAVORITE_COUNT"        "RETWEET_COUNT"         "VIEW_COUNT"           
+## [34] "DISLIKE_COUNT"         "COMMENTS_COUNT"        "LIKES"                
+## [37] "DISLIKES"              "COUNT"                 "REPOST_COUNT"         
+## [40] "REDDIT_TYPE"           "REDDIT_SCORE"          "INFLUENCE_SCORE"      
+## [43] "TWEET_TYPE"            "TWEET_SOURCE_NAME"     "TWEET_SOURCE_URL"
+```
+
+---
+&lt;br&gt;
+&lt;br&gt;
+
+- rows and columns
+
+
+```
+## [1] 2283991      47
+```
+
+
+
+
+- time span
+
+
+```
+## [1] "2021-11-07" "2022-03-27"
+```
+
+- social media avaliable
+
+
+```
+## [1] "forum"     "web"       "twitter"   "reddit"    "youtube"   "comment"  
+## [7] "facebook"  "instagram"
+```
+
+- how many authors
+
+
+```
+## [1] 123952
+```
+
+- how many unique titles
+
+
+```
+## [1] 1482450
+```
+
+---
+
+- how many unique sources
+
+
+```
+## [1] 87001
+```
+
+- how many unique urls
+
+
+```
+## [1] 2185355
+```
+
+---
+
+- how much activity per media
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; SOURCE_TYPE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; n &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 971.611 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 493.377 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 237.562 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 234.390 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 135.690 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 112.289 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; comment &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 53.277 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; instagram &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 45.795 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+---
+
+- check some text (random choice)
+
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; SOURCE_TYPE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; MENTION_SNIPPET &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Pa imunitet se može i treba ojačati i sigurno da je najbolje krenuti prije pojave simptoma. On očekuje da se zarazio noćas. Jel bolje sad 3 dana jest McDonalds ili puno povrća i voća i ciljano konzumirati stvari kao naprimjer propolis i češnjak? &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Na pitanje, koliko je Hrvatska daleko od petog vala i očekuje li se on sada, nakon novogodišnje proslave, odgovorio […] ... I još da, usput, ne mutira previše. To očekujemo da bi se moglo dogoditi s omikronom. Ali ne trebamo zaboraviti da je ova &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Quote: BolajiBadejo kaže: Jesi provjerio particije, i jel postoji neka recovery particija ili si zgazio cijeli disk? To neki NVMe2 disk? Srušio sam cijeli disk i onda napravio novu, jednu particiju. NVMe. &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Brza kombinacija nakon kornera, lopta De Bruynea u kazneni prostor, a tamo i Laporte i Jesus skaču, no lopta upućena glavom ide tik pored vratnice. 3' Rezervirane prve minute i jednih i drugih, City nastoji razviti svoju igru s dosta dodavanja u &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Kolijevka naive više nije što je nekad bila. Sada ima i festival rakija. Rezultati se vide. https://t.co/IyBN6P3TZ4 https://podravski.hr/sinoc-u-hlebinama-proboden-muskarac-32-hitno-prebacen-u-bolnicu/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Saurov grob, u prijevodu i zastave koje su pozabijali oni koji su držali položaj u nemogućim uvjetima dok nije došlo pojačanje. &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A još kad krene sezona, kaos, zaboravi na mobitel, a bome i televiziju i internet preko toga, ostaje jedino žica a svi znamo brzine preko žice u 90% države. :-) Poslano sa mog IN2023 koristeći Tapatalk &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://slobodnadalmacija.hr/mozaik/...fijama-1155976 dalmatinci, ajde vi lukicu i sobina autajte. nemojte da index opet ... I da imaju list, nece ga objavit ma koliko se ti tu trudila. &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+- check some titles (random choice)
+&lt;br&gt; 
+&lt;br&gt;
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; SOURCE_TYPE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; TITLE &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 🎀 Svake godine u Yves Rocher asortiman pristigne Limitirana blagdanska kolekcija proizvoda, a naš tim iz godine u godinu glasa koji je to poklon paket s... &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Čokoladne žerbo šnite... Jako fine, sviđa mi se što se ne moraju posebno peći kore, i čim se ohladi može se sjeći :))) RECEPT U KOMENTARU 👇 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Potraga za razlogom ili teorije zavjere vol. 8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mirjana Bohanec-Vidović i Miro Ungar u RTL Direktu otkrili tajnu vitalnosti: 'Čovjek se mora znati veseliti životu' &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NADNICA: Mt 21, 23-27 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Rekordan broj zaraženih u svijetu u zadnjih tjedan dana &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tesla Motors &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Provalio u konobu na Poluotoku i ukrao pršut, sir, sušeno meso, 10 kilograma ribe i pivo! &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+layout: true
+# FACEBOOK
+---
+&lt;br&gt;
+&lt;br&gt;
+
+
+
+- most important authors (per followers)
+&lt;br&gt;
+
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; AUTHOR &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; FOLLOWERS_COUNT &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; N &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jutarnji &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 767.075 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 36 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; eMedjimurje &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 74.446 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 31 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; DNEVNIK.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 762.897 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 30 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dubrovnik Press &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10.640 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 26 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Udruga ATMA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 206.150 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 24 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 24sata &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.424.094 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 23 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Index.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.005.983 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 23 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Net.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 664.493 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 23 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Slobodna Dalmacija &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 205.092 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 21 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Unknown user &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 21 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+---
+
+- most important authors (per impact)
+&lt;br&gt;
+&lt;br&gt;
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; AUTHOR &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; LIKES &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; COMMENT &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; REACH &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; REACTIONS &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; HGSS - Hrvatska Gorska Služba Spašavanja &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 19.304 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 587 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.110.078 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 22.956 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; HNK Hajduk Split &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 16.045 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 420 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 688.144 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 16.768 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Hajdučke vijesti &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 14.227 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 190 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 489.645 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 14.481 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 24sata &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 12.430 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.237 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.247.195 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 14.902 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Petar Grašo &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 11.757 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 334 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 651.344 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 13.831 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; FC Barcelona Balkan fans &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10.649 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 110 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.799.696 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10.776 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jutarnji &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10.496 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.493 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.134.344 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15.218 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; DNEVNIK.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 7.221 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.378 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.419.225 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 8.918 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+---
+
+- summary of  important activity  
+&lt;br&gt;
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; TITLE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; LIKES &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; COMMENT &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; REACH &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; REACTIONS &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Prijateljstvo i ljubav između čovjeka i psa ne poznaju granice. Spletom nesretnih okolnosti jučer popodne otklizali su zajedno niz padinu. Zajedno u sretnim... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 12.554 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 347 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 853.863 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15.854 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Oboren rekord-35000 ljudi na trgu😄..hvala Banja Luci na jednom od najljepsih i najzabavnijih ulazaka u Novu Godinu …i sretno svima od srca ❤️❤️ &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 11.757 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 334 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 651.344 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 13.831 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sretan nova godina dragi ljudi 🥳 Držite do onog što je temelj, ulažite u ono što ostaje, mislite na ono trajno i nepropadljivo ❤️ &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6.716 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.368 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 331.416 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 8.110 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Svaka nova godina nosi nove izazove, a ja se nadam i želim da ćete u 2022. biti blagoslovljeni, zdravi, sretni i uspješni! AAAAJMOOOO 2022.! &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5.168 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 752 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 235.312 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5.947 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dragi hajdukovci, pred nama je 2022. godina u kojoj slavimo 111. rođendan. Godina u znaku broja 1. Bez obzira gdje god bili, što god radili, dajte ono... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.960 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 263 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 204.113 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5.331 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; DOŠLA JE 2022. - NEK’ VAM BUDE BOLJA I SRETNIJA! Nema predaje💪 Idemo dalje, sinovi pobjede! #bujicatim🇭🇷 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3.623 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 539 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 168.863 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.208 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; "Prijateljstvo i ljubav između čovjeka i psa ne poznaju granice'', napisali su iz HGSS-a &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3.573 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 64 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 143.348 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3.728 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+- activity of important authors  
+&lt;br&gt;
+
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; AUTHOR &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; TITLE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; LIKES &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; COMMENT &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; REACH &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; REACTIONS &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; HGSS - Hrvatska Gorska Služba Spašavanja &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Prijateljstvo i ljubav između čovjeka i psa ne poznaju granice. Spletom nesretnih okolnosti jučer popodne otklizali su zajedno niz padinu. Zajedno u sretnim... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 12.554 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 347 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 853.863 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15.854 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Petar Grašo &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Oboren rekord-35000 ljudi na trgu😄..hvala Banja Luci na jednom od najljepsih i najzabavnijih ulazaka u Novu Godinu …i sretno svima od srca ❤️❤️ &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 11.757 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 334 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 651.344 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 13.831 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nikola Grmoja &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sretan nova godina dragi ljudi 🥳 Držite do onog što je temelj, ulažite u ono što ostaje, mislite na ono trajno i nepropadljivo ❤️ &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6.716 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.368 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 331.416 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 8.110 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Zdravko Mamić &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Svaka nova godina nosi nove izazove, a ja se nadam i želim da ćete u 2022. biti blagoslovljeni, zdravi, sretni i uspješni! AAAAJMOOOO 2022.! &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5.168 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 752 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 235.312 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5.947 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; HNK Hajduk Split &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dragi hajdukovci, pred nama je 2022. godina u kojoj slavimo 111. rođendan. Godina u znaku broja 1. Bez obzira gdje god bili, što god radili, dajte ono... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.960 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 263 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 204.113 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5.331 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+---
+layout: true
+# WEB
+---
+&lt;br&gt;
+&lt;br&gt;
+  
+
+
+- most active authors
+  
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; FROM &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; N &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; index.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 34.597 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; jutarnji.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 28.272 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; slobodnadalmacija.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 28.204 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 24sata.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 24.971 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; glasistre.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 24.074 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; vecernji.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 21.727 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; novine.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 21.475 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; hina.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 19.884 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; dnevnik.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 19.036 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; tportal.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 18.814 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+- summary of important sources (by likes)
+  
+
+
+
+---
+layout: true
+# TWITTER
+---
+  
+
+
+- most important authors (by followers)
+  
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; AUTHOR &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; FOLLOWERS &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Khloé &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 29.687.436 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; twelve carat toothache &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6.914.650 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Pabllo Vittar &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3.072.344 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Niki &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.266.627 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; IVYSON &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.010.115 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; City Girl.🦋 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.879.982 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jack Posobiec 🇺🇸 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.599.330 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Pamela Swing &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.559.883 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ja Morant &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.494.872 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Heidi Montag &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.290.289 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+- most active authors
+
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; AUTHOR &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; N &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; HRT vijesti &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.868 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ninoslav Šafarić &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.418 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dalmacija Danas &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.231 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Forboat.eu - Hrvatska &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.100 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; DNEVNIK.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.089 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; kairos &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.025 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 24sata &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.002 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; HRT Sport &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 944 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Zagrebinfo &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 934 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Direktno.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 824 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+- summary of most active authors
+
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; AUTHOR &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; FAVORITE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; RETWEET &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ♡ &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 151.481 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55.473 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 182 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 27.666 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Z &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 22.276 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Kee 💗 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 21.856 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 🦋 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 70 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 21.350 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; koo admirer &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 106.071 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 20.297 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; lea &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 17.008 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ally &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 16.669 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Janjoon &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 16.113 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 444 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 16.036 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+ 
+- originality of conntent
+  
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; TWEET_TYPE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; N &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ORIGINAL &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 180.780 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; RETWEET &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 50.719 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; QUOTE &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6.063 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+- technology used
+&lt;br&gt;
+
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; TWEET_SOURCE_NAME &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; N &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Twitter for Android &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 106.510 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Twitter Web App &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 66.256 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Twitter for iPhone &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 43.524 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; TweetDeck &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6.609 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; WordPress.com &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3.329 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Twitter for iPad &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.688 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dalmacija Danas &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.231 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nautička oprema za plovila &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.100 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+layout: true
+# YOUTUBE
+---
+&lt;br&gt;
+&lt;br&gt;
+
+
+- most active youtubers
+  
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; AUTHOR &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; n &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Večernji list &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.410 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Televizija Slavonije i Baranje &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.129 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Arena Sport TV &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.097 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dubrovačka televizija &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.031 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; SBTV - Slavonskobrodska televizija &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 861 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; LaudatoTV &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 843 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ** &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 696 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; RTL &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 625 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Podcast Inkubator &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 565 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Informativni Servis Zapad &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 554 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+- summary of activity (per view)
+
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; AUTHOR &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; REACH &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; LIKE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; VIEW &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; COMMENTS &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Arena Sport TV &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 20.438.861 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 275.334 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 20.438.861 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 36.169 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; AmiG Show &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 19.915.416 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 187.571 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 19.915.416 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; MC STOJAN &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 7.758.625 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 124.112 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 7.758.625 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.378 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 24sata &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6.928.668 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 66.443 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6.928.668 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 9.910 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; RTL &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6.611.582 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55.806 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6.611.582 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Podcast Inkubator &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5.255.556 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 89.589 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5.255.556 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 12.652 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; JoomBoos &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.992.216 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 190.260 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.992.216 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 9.675 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Imperator FX &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.855.910 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 284.561 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.855.910 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 20.297 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Pod Lupom &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.832.196 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 13.822 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.832.196 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ADRI &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.647.495 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 372.165 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.647.495 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 17.304 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+- conntent summary (most views)
+&lt;br&gt;
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; AUTHOR &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; REACH &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; LIKE_COUNT &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; VIEW_COUNT &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; COMMENTS_COUNT &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; TITLE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; URL &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; DATE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; TIME &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; MC STOJAN &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4943409 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56939 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4943409 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1799 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; MC STOJAN X WAJWAI - VEGAN (OFFICIAL VIDEO) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=zFi0m45E6-w &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021-11-29 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 13:05:33 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; MC STOJAN &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2679133 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 62775 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2679133 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2390 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; MC STOJAN x BRESKVICA - ZIVOT SI MOJ (OFFICIAL VIDEO) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=uIVq3VRwE5s &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-02-03 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15:00:01 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; E̳K̳I̳P̳A̳ ̳U̳Z̳I̳V̳O̳ 21 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1762920 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2676 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1762920 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ZADRUGA UZIVO - 🔥🔥🔥🔥🔥❚█══𝐄𝐊𝐈𝐏𝐀 𝐔𝐙𝐈𝐕𝐎══█❚🔥🔥🔥🔥🔥 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=boFad0bcrDc &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-01-27 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 21:36:18 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Zdravlje i ljepota &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1660371 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13133 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1660371 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 164 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Recept za jaču ljubav čak i ako imate 65 godina - Naranče, mrkva i đumbir &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=5BNm6_nY3VE &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021-12-22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15:00:03 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Samsung Hrvatska &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1555507 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1555507 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; SAMSUNG I Omiljeni Galaxy uređaj uz poklon &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=IfZrix3z0kM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021-11-27 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 07:51:22 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; PETAR GRAŠO (official) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1314077 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15311 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1314077 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 975 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Petar Grašo - Jel' ti reka 'ko (Official music video) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=EEYKc0eveZ0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021-12-04 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10:55:45 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; SBM Label &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1235210 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 71682 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1235210 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1572 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; GOMBAO 33 - Łyk i buch (Hotel Maffija 2) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=KxyD4-wvWDE &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-01-18 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 17:45:18 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Zdravlje 69 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1192134 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2016 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1192134 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 55 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JEDNOSTAVNI RECEPTI za jaču ljubav u krevetu - Jogurt, čaj i Jaja &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=faouRJ2YYjM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021-12-10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 07:07:29 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; SBM Label &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1156148 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 70202 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1156148 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1557 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; GOMBAO 33 - Łyk i buch (Hotel Maffija 2) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=KxyD4-wvWDE &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-01-18 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 17:45:18 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nestali Matej Periš &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1144489 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 207 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1144489 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 425 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 9 sekunda videa ""ajde sad ustani""-posljednja snimka Mateja na nadzornim kamerama! #matejperiš &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=xc0hnqW_nUE &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-01-17 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 05:58:15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Franka &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1010306 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14828 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1010306 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 615 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Franka x Sara Jo – On (Official Music Video) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=1RYejwQIJqQ &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021-12-17 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 12:00:01 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Best Of Zadruga &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 879524 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1842 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 879524 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 🔴ZADRUGA 5 LIVE STREAM! (24/7)🔴 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=Xhl8ytM3tRI &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-01-21 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 18:29:50 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+layout: true
+# FORUM
+---
+&lt;br&gt;
+&lt;br&gt;
+
+
+
+- not a very good data coverage!?
+&lt;br&gt;
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; FROM &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; n &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 489.761 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; stripovi.com &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.222 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; pcekspert.com &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.205 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; osijek031.com &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.142 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; elitesecurity.org &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 28 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; geekhack.org &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; finanzaonline.com &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; smokingmeatforums.com &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+layout: true
+# INSTAGRAM
+---
+&lt;br&gt;
+
+
+
+- influencer statistics
+&lt;br&gt;  
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; FROM &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; REACH &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; COMMENT &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; LIKE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; VIEW &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; anonymous_user &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10.851.783 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 153.862 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.517.668 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 96.303 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; elladvornik &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6.013.020 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 204.905 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 396.400 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; majasuput &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.876.660 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5.737 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 281.944 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; jutarnji.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.898.630 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 12.670 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 277.195 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; hana &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3.308.490 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 65.500 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 265.350 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; severina &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.498.770 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.855 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 247.022 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; nivescelsius &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.633.260 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.734 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 158.594 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 24sata.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.603.720 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3.599 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 156.774 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; marijanabatinic &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.961.360 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 42.269 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 153.867 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; jelenamarinovic &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.016.720 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 51.154 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 150.530 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+- influencer activity
+&lt;br&gt;
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; FROM &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; n &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; anonymous_user &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 39.163 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; beautypharmacy_hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 523 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; jutarnji.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 505 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; vecernji.list &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 423 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; dnevnikhr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 340 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; obuca.metro.montenegro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 180 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; tvojaljekarna &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 168 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 24sata.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 108 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; rkzagreb &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 105 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; obuca.metro_bih &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 99 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; maxfactor_bih &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 95 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; rtl_hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+
+---
+layout: true
+# RESOURCES
+---
+&lt;br&gt;
+&lt;br&gt;
+- The data sample in the GiHub repo
+&lt;br&gt;
+&lt;br&gt;
+- Check other clipping agencies
+&lt;br&gt;
+&lt;br&gt;
+- Other data vendors
+&lt;br&gt;
+&lt;br&gt;
+- DATAREPORTAL
+
+---
+class: inverse, middle
+layout:false
+# Thank you for your attention!
+
+
+
+
+
+
+
+
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

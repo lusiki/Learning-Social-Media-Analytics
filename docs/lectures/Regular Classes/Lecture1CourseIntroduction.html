@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Presentation Ninja</title>
+    <title>Learning Social Media Analytics</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Yihui Xie" />
-    <script src="site_libs/header-attrs/header-attrs.js"></script>
-    <link href="site_libs/remark-css/default.css" rel="stylesheet" />
-    <link href="site_libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <meta name="author" content="Luka Sikic PhD" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
   </head>
   <body>
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
 .title[
-# Presentation Ninja
+# Learning Social Media Analytics
 ]
 .subtitle[
-## ⚔<br/>with xaringan
+## Lecture 1 Course introduction
 ]
 .author[
-### Yihui Xie
+### Luka Sikic PhD
 ]
 .institute[
-### RStudio, PBC
+### Fakultet hrvatskih studija
 ]
 .date[
-### 2016/12/12 (updated: 2023-03-07)
+### (updated: 2023-03-07)
 ]
 
 ---
 
 
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
 
 
 
@@ -39,89 +38,193 @@ background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharin
 
 
 
-# CLASS OUTLINE
+
+# STRUCTURE
 &lt;br&gt;
 &lt;br&gt;
-- DATA OVERVIEW
 &lt;br&gt;
 &lt;br&gt;
-- FACEBOOK
+- General course information
 &lt;br&gt;
 &lt;br&gt;
-- WEB
+- Objectives of the course
 &lt;br&gt;
 &lt;br&gt;
-- TWITTER
+- Course Literature
 &lt;br&gt;
 &lt;br&gt;
-- YOUTUBE
-&lt;br&gt;
-&lt;br&gt;
-- FORUM
-&lt;br&gt;
-&lt;br&gt;
-- INSTAGRAM
+- Data and resources
 &lt;br&gt;
 &lt;br&gt;
 
 ---
 layout: true
-# DATA OVERVIEW
+# GENERAL COURSE INFORMATION
 ---
-
-- check the raw [data](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/data/Mediatoolkit/sample.xlsx)
-- sourced from [Mediatoolkit](https://www.mediatoolkit.com/)
-
-
-
-
-```
-## [1] 27604    45
-```
-
-```
-## Rows: 27,604
-## Columns: 35
-## $ DATE                  &lt;chr&gt; "2022-01-02", "2022-01-01", "2022-01-02", "2022-…
-## $ TIME                  &lt;chr&gt; "08:01:44", "20:54:00", "09:28:42", "08:57:36", …
-## $ TITLE                 &lt;chr&gt; "RT @Veliborbiancon1 Jel i sutra otvorena, Ulica…
-## $ FROM                  &lt;chr&gt; "ljupka ok", "Rijeka Danas", "gol.hr", "Do₩e", "…
-## $ AUTHOR                &lt;chr&gt; "ljupka ok", "Rijeka Danas", "gol.hr", "Do₩e", "…
-## $ URL                   &lt;chr&gt; "https://twitter.com/mamapeglaa/status/147753556…
-## $ URL_PHOTO             &lt;chr&gt; "https://mediatoolkit.com/img/50x50,sc,s1VBD9Xql…
-## $ SOURCE_TYPE           &lt;chr&gt; "twitter", "facebook", "facebook", "twitter", "w…
-## $ GROUP_NAME            &lt;chr&gt; "Luka", "Luka", "Luka", "Luka", "Luka", "Luka", …
-## $ KEYWORD_NAME          &lt;chr&gt; "opće", "opće", "opće", "opće", "opće", "opće", …
-## $ FOUND_KEYWORDS        &lt;chr&gt; "i", "i", "i", "I, i", "i", "i", "i", "i", "i, I…
-## $ LANGUAGES             &lt;chr&gt; "hr, bs", "hr", "hr, bs", "hr", "hr", "hr, bs", …
-## $ LOCATIONS             &lt;chr&gt; "HR, BA", "HR", "HR", "HR", "HR", "HR", "HR", "H…
-## $ TAGS                  &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
-## $ MANUAL_SENTIMENT      &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
-## $ AUTO_SENTIMENT        &lt;chr&gt; "neutral", "neutral", "positive", "neutral", "po…
-## $ MENTION_SNIPPET       &lt;chr&gt; "RT @Veliborbiancon1 Jel i sutra otvorena, Ulica…
-## $ REACH                 &lt;dbl&gt; 538, 1290, 38599, 24, 2428, 0, 1, NA, 14666, 3, …
-## $ VIRALITY              &lt;dbl&gt; NA, NA, NA, NA, 7.048179, NA, NA, NA, 3.597193, …
-## $ FOLLOWERS_COUNT       &lt;dbl&gt; 10750, 53265, 218770, 275, NA, 3, 10, NA, NA, NA…
-## $ LIKE_COUNT            &lt;dbl&gt; NA, 25, 771, NA, 77, NA, NA, NA, 256, 0, 0, NA, …
-## $ COMMENT_COUNT         &lt;dbl&gt; NA, 3, 47, NA, 1, NA, NA, NA, 51, NA, 0, NA, NA,…
-## $ SHARE_COUNT           &lt;dbl&gt; NA, 0, 2, NA, 21, NA, NA, NA, 8, NA, 0, NA, NA, …
-## $ TWEET_COUNT           &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
-## $ LOVE_COUNT            &lt;dbl&gt; NA, 0, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
-## $ WOW_COUNT             &lt;dbl&gt; NA, 0, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
-## $ HAHA_COUNT            &lt;dbl&gt; NA, 0, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
-## $ SAD_COUNT             &lt;dbl&gt; NA, 0, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
-## $ ANGRY_COUNT           &lt;dbl&gt; NA, 0, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
-## $ TOTAL_REACTIONS_COUNT &lt;dbl&gt; NA, 28, 820, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
-## $ FAVORITE_COUNT        &lt;dbl&gt; 0, NA, NA, 1, NA, 0, 0, NA, NA, NA, NA, 1, NA, N…
-## $ RETWEET_COUNT         &lt;dbl&gt; 0, NA, NA, 0, NA, 0, 0, NA, NA, NA, NA, 0, NA, N…
-## $ VIEW_COUNT            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, 3, NA, NA, N…
-## $ DISLIKE_COUNT         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
-## $ COMMENTS_COUNT        &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, 0, NA, NA, N…
-```
+&lt;br&gt;
+#### What is this all about?
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+- understand social media landscape and trends
+&lt;br&gt;
+&lt;br&gt;
+- focus is on methods and techniques for social media analysis
+&lt;br&gt;
+&lt;br&gt;
+- state of the art tools for social media analysis 
+&lt;br&gt;
+&lt;br&gt;
+- independently interpret, analyse or/and develop social media strategy
 
 ---
 &lt;br&gt;
+#### How do we do that?
 &lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+- R and Python will be be used for the purposes of demonstrating methods
+&lt;br&gt;
+&lt;br&gt;
+- prior knowledge od the programming language syntax is not necessery
+&lt;br&gt;
+&lt;br&gt;
+- learning some of the basic syntax is warmly recommended
+&lt;br&gt;
+&lt;br&gt;
+- we can dedicate one lecture to syntax
+
+---
+&lt;br&gt;
+#### In the background!
+&lt;br&gt;
+&lt;br&gt;
+- *data science* techniques in focus 
+&lt;br&gt;
+&lt;br&gt;
+- working with databases (*SQL*,*Google Big Querry*)
+&lt;br&gt;
+&lt;br&gt;
+- web data (*web scraping*, *API*)
+&lt;br&gt;
+&lt;br&gt;
+- data manipulation and cleaning (*tidyverse*, *pandas*, *data.table*)
+&lt;br&gt;
+&lt;br&gt;
+- IT ollaboration and code sharing (*Git*, *GitHub*) and open source reporting (*RMarkdown*)
+&lt;br&gt;
+&lt;br&gt;
+- *computational social science* paradigm 
+
+---
+&lt;br&gt;
+#### Syllabus
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+- unofficial [syllab](https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/syllab/syllab.html) (please follow up for updates); also as [.pdf](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/syllab/syllab.pdf).
+&lt;br&gt;
+&lt;br&gt;
+- offiical syllab on [English](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/syllab/Learning%20social%20media%20analytics.docx) and [Croatian](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/syllab/Analitika%20dru%C5%A1tvenih%20medija.docx)
+
+---
+layout: true
+# OBJECTIVES OF THE COURSE
+---
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+- Catching up with the current state and trends in the social media space 
+&lt;br&gt;
+&lt;br&gt;
+- IT infrastructure (Big Data) of social media platforms  
+&lt;br&gt;
+&lt;br&gt;
+- Relevant topics in social media research and business 
+&lt;br&gt;
+&lt;br&gt;
+- Tools, methodology and results in social media analytics
+&lt;br&gt;
+&lt;br&gt;
+- Independent social media research
+
+---
+layout: true
+# COURSE LITERATURE
+---
+&lt;br&gt;
+#### Books
+&lt;br&gt;
+&lt;br&gt;
+- [Mining the Social Web](https://www.webpages.uidaho.edu/~stevel/504/mining-the-social-web-2nd-edition.pdf) 
+&lt;br&gt;
+&lt;br&gt;
+- [Learning Social Media Analytics with R](https://www.packtpub.com/product/learning-social-media-analytics-with-r/9781787127524)
+&lt;br&gt;
+&lt;br&gt;
+- [Mastering Social Media Mining with Python](https://www.packtpub.com/product/mastering-social-media-mining-with-python/9781783552016) 
+&lt;br&gt;
+&lt;br&gt;
+- [Social Media Data Mining and Analytics](https://www.wiley.com/en-us/Social+Media+Data+Mining+and+Analytics-p-9781118824856) 
+&lt;br&gt;
+&lt;br&gt;
+- [Social Media Analytics Strategy](https://www.apress.com/us/book/9781484231012)
+---
+&lt;br&gt;
+#### Academic literature
+&lt;br&gt;
+&lt;br&gt;
+- [International Conference on Web and Social Media](https://ojs.aaai.org/index.php/ICWSM/issue/archive)
+&lt;br&gt;
+&lt;br&gt;
+- [Social Media + Society](https://journals.sagepub.com/home/sms)
+&lt;br&gt;
+&lt;br&gt;
+- [Information, Communication &amp; Society](https://www.tandfonline.com/journals/rics20)
+&lt;br&gt;
+&lt;br&gt;
+- Optionally you can pick another journal to follow, check the [list](https://lusiki.github.io/Learning-Social-Media-Analytics/resources.html) 
+---
+layout: true
+# DATA AND RESOURCES
+---
+&lt;br&gt;
+#### Data
+&lt;br&gt;
+&lt;br&gt;
+- There are numerous social media data sources
+&lt;br&gt;
+&lt;br&gt;
+- We will be working with Croatian data so please thoughly check [Mediatoolkit](https://www.mediatoolkit.com/) (alternatives are [presscut](https://www1.presscut.hr/en/), [pressclipping](https://www.pressclipping.hr/))
+&lt;br&gt;
+&lt;br&gt;
+- Data samples are provided in the repo
+&lt;br&gt;
+&lt;br&gt;
+- These data sources are equally inconvenient (expensive and partitial)
+&lt;br&gt;
+&lt;br&gt;
+- Serious solution requires your own database complilation 
+
+
+---
+&lt;br&gt;
+#### Resources 
+&lt;br&gt;
+&lt;br&gt;
+- There are countless social media resources
+&lt;br&gt;
+&lt;br&gt;
+- Please check my [curated list](https://lusiki.github.io/Learning-Social-Media-Analytics/resources.html)
+&lt;br&gt;
+&lt;br&gt;
+- Consider adding to it (maybe as a student project)
+
+---
+class: inverse, middle
+layout:false
+# Thank you for your attention!
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
