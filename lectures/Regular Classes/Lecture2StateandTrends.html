@@ -18,7 +18,7 @@ class: center, middle, inverse, title-slide
 # Learning Social Media Analytics
 ]
 .subtitle[
-## Lecture 2 Current state and latest trends
+## Current state and latest trends
 ]
 .author[
 ### Luka Sikic, PhD
@@ -44,7 +44,7 @@ class: center, middle, inverse, title-slide
 # CLASS OUTLINE
 &lt;br&gt;
 &lt;br&gt;
-- DATA OVERVIEW
+- DATA OVERVIEW (full media space)
 &lt;br&gt;
 &lt;br&gt;
 - FACEBOOK
@@ -68,86 +68,47 @@ class: center, middle, inverse, title-slide
 
 ---
 layout: true
-# DATA OVERVIEW
+# DATA OVERVIEW (full media space)
 ---
 
 - check the raw [data](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/data/Mediatoolkit/sample.xlsx)
+&lt;br&gt;
 - sourced from [Mediatoolkit](https://www.mediatoolkit.com/)
 
 
+
+
+
+- one day worth of data (2022-01-01)
 
 
 ```
 ## [1] 27604    45
 ```
 
+- random data snapshot
+
+
 ```
 ## Rows: 27,604
-## Columns: 35
-## $ DATE                  &lt;chr&gt; "2022-01-02", "2022-01-01", "2022-01-02", "2022-…
-## $ TIME                  &lt;chr&gt; "11:02:37", "14:21:56", "22:23:29", "11:10:02", …
-## $ TITLE                 &lt;chr&gt; "[TRAŽIMO VLASNIKA] Ovaj pesek izgubio se i luta…
-## $ FROM                  &lt;chr&gt; "eMedjimurje", "otvoreno.hr", "forum.hr", "forum…
-## $ AUTHOR                &lt;chr&gt; "eMedjimurje", NA, NA, NA, NA, NA, NA, "DiL∀N 🌸…
-## $ URL                   &lt;chr&gt; "https://www.facebook.com/106800796021573/posts/…
-## $ URL_PHOTO             &lt;chr&gt; "https://mediatoolkit.com/img/50x50,sc,sLs7mRLQ3…
-## $ SOURCE_TYPE           &lt;chr&gt; "facebook", "web", "forum", "forum", "web", "web…
-## $ GROUP_NAME            &lt;chr&gt; "Luka", "Luka", "Luka", "Luka", "Luka", "Luka", …
-## $ KEYWORD_NAME          &lt;chr&gt; "opće", "opće", "opće", "opće", "opće", "opće", …
-## $ FOUND_KEYWORDS        &lt;chr&gt; "i", "i", "i", "I", "i", "i", "i", "İ, I", "i", …
-## $ LANGUAGES             &lt;chr&gt; "hr, bs", "hr", "hr", "hr", "hr", "hr", "hr", "h…
-## $ LOCATIONS             &lt;chr&gt; "HR", "HR", "HR", "HR", "HR", "HR", "HR", "NO, H…
-## $ TAGS                  &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
-## $ MANUAL_SENTIMENT      &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
-## $ AUTO_SENTIMENT        &lt;chr&gt; "positive", "negative", "neutral", "neutral", "n…
-## $ MENTION_SNIPPET       &lt;chr&gt; "[TRAŽIMO VLASNIKA] Ovaj pesek izgubio se i luta…
-## $ REACH                 &lt;dbl&gt; 13442, 107, NA, NA, 1342, 3289, 1184, 1, 247, 15…
-## $ VIRALITY              &lt;dbl&gt; NA, 0.37619901, NA, NA, 0.18281726, 0.01142454, …
-## $ FOLLOWERS_COUNT       &lt;dbl&gt; 74446, NA, NA, NA, NA, NA, NA, 23, 1547, 285, 42…
-## $ LIKE_COUNT            &lt;dbl&gt; 44, 9, NA, NA, 0, 0, 9, NA, NA, NA, 424, NA, 2, …
-## $ COMMENT_COUNT         &lt;dbl&gt; 0, 1, NA, NA, 0, 0, 18, NA, NA, NA, 2, NA, 0, 1,…
-## $ SHARE_COUNT           &lt;dbl&gt; 56, 1, NA, NA, 4, 1, 6, NA, NA, NA, 25, NA, 4, 1…
-## $ TWEET_COUNT           &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
-## $ LOVE_COUNT            &lt;dbl&gt; 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, 0, NA, NA…
-## $ WOW_COUNT             &lt;dbl&gt; 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, 0, NA, NA…
-## $ HAHA_COUNT            &lt;dbl&gt; 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, 0, NA, NA…
-## $ SAD_COUNT             &lt;dbl&gt; 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, 0, NA, NA…
-## $ ANGRY_COUNT           &lt;dbl&gt; 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, 0, NA, NA…
-## $ TOTAL_REACTIONS_COUNT &lt;dbl&gt; 100, NA, NA, NA, NA, NA, NA, NA, NA, NA, 451, NA…
-## $ FAVORITE_COUNT        &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, 0, 17, 0, NA, NA, NA…
-## $ RETWEET_COUNT         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, 0, 0, 0, NA, NA, NA,…
-## $ VIEW_COUNT            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
-## $ DISLIKE_COUNT         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
-## $ COMMENTS_COUNT        &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## Columns: 10
+## $ DATE         &lt;chr&gt; "2022-01-02", "2022-01-02", "2022-01-01", "2022-01-01", "…
+## $ TIME         &lt;chr&gt; "07:36:52", "10:25:07", "11:04:30", "19:13:34", "19:41:37…
+## $ TITLE        &lt;chr&gt; "ATP kup: Medvjedev izgubio, Rusija ipak slavila", "U žup…
+## $ FROM         &lt;chr&gt; "glasistre.hr", "sibenskiportal.hr", "Mladež HDZ-a (YEPP)…
+## $ AUTHOR       &lt;chr&gt; "https://www.facebook.com/Glasistre.hr", NA, "Mladež HDZ-…
+## $ URL          &lt;chr&gt; "https://www.glasistre.hr/sport/atp-kup-medvjedev-izgubio…
+## $ URL_PHOTO    &lt;chr&gt; "https://mediatoolkit.com/img/50x50,sc,sQEDT5TGJFspLSBUR9…
+## $ SOURCE_TYPE  &lt;chr&gt; "web", "web", "twitter", "web", "twitter", "web", "forum"…
+## $ GROUP_NAME   &lt;chr&gt; "Luka", "Luka", "Luka", "Luka", "Luka", "Luka", "Luka", "…
+## $ KEYWORD_NAME &lt;chr&gt; "opće", "opće", "opće", "opće", "opće", "opće", "opće", "…
 ```
-
 ---
+
+- avaliable data characteristics
+
 &lt;br&gt;
-&lt;br&gt;
 
-```r
-fullDta &lt;- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_NOTXT.csv")
-dim(fullDta)
-```
-
-```
-## [1] 2283991      47
-```
-
-```r
-range(fullDta$DATE)
-```
-
-```
-## [1] "2021-11-07" "2022-03-27"
-```
-
-
-
----
-&lt;br&gt;
-&lt;br&gt;
-  
 
 ```
 ##  [1] "DATE"                  "TIME"                  "TITLE"                
@@ -171,87 +132,67 @@ range(fullDta$DATE)
 &lt;br&gt;
 &lt;br&gt;
 
+- rows and columns
+
+
 ```
-## [1] 2283991
+## [1] 2283991      47
 ```
+
+
+
+
+- time span
+
+
+```
+## [1] "2021-11-07" "2022-03-27"
+```
+
+- social media avaliable
+
 
 ```
 ## [1] "forum"     "web"       "twitter"   "reddit"    "youtube"   "comment"  
 ## [7] "facebook"  "instagram"
 ```
 
-```
-## [1] 123952
-```
+- how many authors
 
----
-  
-
-```r
-# unique authors
-length(unique(fullDta$AUTHOR))
-```
 
 ```
 ## [1] 123952
 ```
 
-```r
-# unique titles
-length(unique(fullDta$TITLE))
-```
+- how many unique titles
+
 
 ```
 ## [1] 1482450
 ```
 
-```r
-# unique sources
-length(unique(fullDta$FROM))
-```
+---
+
+- how many unique sources
+
 
 ```
 ## [1] 87001
 ```
 
-```r
-# unique urls
-length(unique(fullDta$URL))
-```
+- how many unique urls
+
 
 ```
 ## [1] 2185355
 ```
 
 ---
-  
 
-```r
-# GENERAL OVERVIEW 
-fullDta %&gt;%
-  group_by(SOURCE_TYPE) %&gt;%
-  count() %&gt;%
-  arrange(desc(n)) %&gt;%
-  mutate_if(is.numeric, format, big.mark = ".") %&gt;%
-  kbl() %&gt;%
-  kable_styling(font_size = 11)
-```
+- how much activity per media
 
-```
-## `mutate_if()` ignored the following grouping variables:
-## • Column `SOURCE_TYPE`
-```
-
-```
-## Warning: There were 8 warnings in `mutate()`.
-## The first warning was:
-## ℹ In argument: `n = (function (x, ...) ...`.
-## ℹ In group 1: `SOURCE_TYPE = "comment"`.
-## Caused by warning in `prettyNum()`:
-## ! 'big.mark' and 'decimal.mark' are both '.', which could be confusing
-## ℹ Run ]8;;ide:run:dplyr::last_dplyr_warnings()dplyr::last_dplyr_warnings()]8;; to see the 7 remaining warnings.
-```
-
+&lt;br&gt;
+&lt;br&gt;
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
@@ -295,18 +236,10 @@ fullDta %&gt;%
 &lt;/tbody&gt;
 &lt;/table&gt;
 
----
-  
 
-```r
-# SAMPLE SOME TXT
-one_day_sample %&gt;%
-  select(SOURCE_TYPE, MENTION_SNIPPET) %&gt;%
-  unique(.) %&gt;%  
-  sample_n(8) %&gt;%
-  kbl() %&gt;%
-  kable_styling(font_size = 11)
-```
+---
+
+- check some text (random choice)
 
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
@@ -317,52 +250,45 @@ one_day_sample %&gt;%
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; instagram &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Ivan Tomečak skupio je 304 nastupa u hrvatskim natjecanjima i Europi (nastupi za hrvatske klubove) te postigao 28 pogodaka. Ali zabio je Realu na Bernabeu. Tko te ima što pitat više... #HNL #championsleague #europaleague #gnkdinamo #hnkhajduk &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Pa imunitet se može i treba ojačati i sigurno da je najbolje krenuti prije pojave simptoma. On očekuje da se zarazio noćas. Jel bolje sad 3 dana jest McDonalds ili puno povrća i voća i ciljano konzumirati stvari kao naprimjer propolis i češnjak? &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Na pitanje, koliko je Hrvatska daleko od petog vala i očekuje li se on sada, nakon novogodišnje proslave, odgovorio […] ... I još da, usput, ne mutira previše. To očekujemo da bi se moglo dogoditi s omikronom. Ali ne trebamo zaboraviti da je ova &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Quote: BolajiBadejo kaže: Jesi provjerio particije, i jel postoji neka recovery particija ili si zgazio cijeli disk? To neki NVMe2 disk? Srušio sam cijeli disk i onda napravio novu, jednu particiju. NVMe. &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Brza kombinacija nakon kornera, lopta De Bruynea u kazneni prostor, a tamo i Laporte i Jesus skaču, no lopta upućena glavom ide tik pored vratnice. 3' Rezervirane prve minute i jednih i drugih, City nastoji razviti svoju igru s dosta dodavanja u &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; @SRazmera @mb11bh @kokolok14219762 @ThisAintARace Laže, ne ložite se da je kupio stan. Ni stan u Bg nije njegov već rentiran kao i sva luksuzna kola je vozio kija su lizing ili rentacar. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Kolijevka naive više nije što je nekad bila. Sada ima i festival rakija. Rezultati se vide. https://t.co/IyBN6P3TZ4 https://podravski.hr/sinoc-u-hlebinama-proboden-muskarac-32-hitno-prebacen-u-bolnicu/ &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Spremni za 'crne dane': Na žiro i tekućim računima držimo oko 76 milijardi kuna Prema posljednjim podacima Hrvatske narodne banke (HNB) krajem listopada, ukupni depoziti kod poslovnih banaka koji obuhvaćaju depozitni novac te štedne i oročene &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Saurov grob, u prijevodu i zastave koje su pozabijali oni koji su držali položaj u nemogućim uvjetima dok nije došlo pojačanje. &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Žarko Te molimo, da se na nama vidi duhovni poučak ‘ K Mariji Isusu’ Gospodine sve je novo, novo...  Sve vedrinom i novošću odsijeva.  Aha, to je danas svetkovina Svete Bogorodice Marije,  Tvoje majke, Gospodine Isuse,  naše Gospe.  Tako je lijepo, &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A još kad krene sezona, kaos, zaboravi na mobitel, a bome i televiziju i internet preko toga, ostaje jedino žica a svi znamo brzine preko žice u 90% države. :-) Poslano sa mog IN2023 koristeći Tapatalk &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Tužan početak 2022.: Umrli su Ante Pavlović i Dragutin Poljak Pavlović je desetljećima radio u HNS-u kao tajnik i savjetnik, sudjelovao je u organizaciji povijesne utakmice Hrvatske i SAD-a, a Tužan početak 2022.: Umrli su Ante Pavlović i Dragutin &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Crnogorski državljani i stranci mogu da uđu preko svih graničnih prelaza u Crnu Goru uz dokaz iz kovid potvrde – da je osoba potpuno cijepljena i da od druge doze cjepiva nije prošlo više od šest mjeseci ili uz dokaz da je osoba preboljela covid-19 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Tokom života, jedni su ga smatrali šarlatanom, drugi genijem! Coco Chanel ga je zvala prvim muškarcem-feministom, a dvije stvari su obilježile njegovu karijeru – razotkrivanje misterije ljudskog sna i “nalaženje” ključa za podsvijest... 👇 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Novčanice kuna moći ćemo mijenjati trajno, no za kovanice je rok ograničen U HNB-u očekuju da će se prilikom konverzije vratiti oko 36% količine kovanica i 99% količine novčanica, piše Poslovni Dnevnik. Ako će išta na gospodarskom planu obilježiti &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://slobodnadalmacija.hr/mozaik/...fijama-1155976 dalmatinci, ajde vi lukicu i sobina autajte. nemojte da index opet ... I da imaju list, nece ga objavit ma koliko se ti tu trudila. &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
 ---
-  
 
-```r
-# SAMPLE SOME TITLES
-fullDta %&gt;%
-  select(SOURCE_TYPE, TITLE) %&gt;%
-  sample_n(9) %&gt;%
-  kbl() %&gt;%
-  kable_styling(font_size = 11)
-```
-
+- check some titles (random choice)
+&lt;br&gt; 
+&lt;br&gt;
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
@@ -372,40 +298,40 @@ fullDta %&gt;%
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 🎀 Svake godine u Yves Rocher asortiman pristigne Limitirana blagdanska kolekcija proizvoda, a naš tim iz godine u godinu glasa koji je to poklon paket s... &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Čokoladne žerbo šnite... Jako fine, sviđa mi se što se ne moraju posebno peći kore, i čim se ohladi može se sjeći :))) RECEPT U KOMENTARU 👇 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Potraga za razlogom ili teorije zavjere vol. 8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mirjana Bohanec-Vidović i Miro Ungar u RTL Direktu otkrili tajnu vitalnosti: 'Čovjek se mora znati veseliti životu' &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NADNICA: Mt 21, 23-27 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Rekordan broj zaraženih u svijetu u zadnjih tjedan dana &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tesla Motors &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; C. ORFF: CARMINA BURANA &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Što u Kataru čeka hrvatske navijače? ‘S jednom se stvari nitko ne zafrkava, koga s tim uhvate - taj nestane‘ &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Naknada za komplikacije u trudnoći vol. 2 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 3. klupska izložba Hrvatske patuljaste kokoši i 2. izložba malih životinja u Đurđevcu &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Modne kritike za hrabre kokoši vol. 5 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Provalio u konobu na Poluotoku i ukrao pršut, sir, sušeno meso, 10 kilograma ribe i pivo! &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -417,51 +343,10 @@ layout: true
 &lt;br&gt;
 &lt;br&gt;
 
-```r
-# choose variables to investigate
-one_day_sample %&gt;%
-  filter(SOURCE_TYPE == "facebook") %&gt;%
-  select(AUTHOR,
-         REACH,
-         FOLLOWERS_COUNT,
-         LIKE_COUNT,
-         COMMENT_COUNT,
-         TOTAL_REACTIONS_COUNT,
-         INFLUENCE_SCORE,
-         TITLE,
-         MENTION_SNIPPET,
-         DATE, 
-         TIME) -&gt; fb
-```
 
----
-  
 
-```r
-# most active authors
-fb %&gt;% 
-  group_by(AUTHOR,FOLLOWERS_COUNT) %&gt;%
-  summarise(N = n()) %&gt;%
-  arrange(desc(N))  %&gt;%
-  mutate_if(is.numeric, format, big.mark = ".") %&gt;%
-  head(10) %&gt;% kbl() %&gt;%  kable_styling(font_size = 11)
-```
-
-```
-## `summarise()` has grouped output by 'AUTHOR'. You can override using the
-## `.groups` argument.
-## `mutate_if()` ignored the following grouping variables:
-```
-
-```
-## Warning: There were 1752 warnings in `mutate()`.
-## The first warning was:
-## ℹ In argument: `FOLLOWERS_COUNT = (function (x, ...) ...`.
-## ℹ In group 1: `AUTHOR = "(bes)korisno znanje"`.
-## Caused by warning in `prettyNum()`:
-## ! 'big.mark' and 'decimal.mark' are both '.', which could be confusing
-## ℹ Run ]8;;ide:run:dplyr::last_dplyr_warnings()dplyr::last_dplyr_warnings()]8;; to see the 1751 remaining warnings.
-```
+- most important authors (per followers)
+&lt;br&gt;
 
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
@@ -525,31 +410,12 @@ fb %&gt;%
 &lt;/tbody&gt;
 &lt;/table&gt;
 
+
 ---
-  
 
-```r
-# authors with impact
-fb %&gt;% 
-  group_by(AUTHOR) %&gt;%
-  summarise(LIKES = sum(LIKE_COUNT),
-            COMMENT = sum(COMMENT_COUNT),
-            REACH = sum(REACH),
-            REACTIONS = sum(TOTAL_REACTIONS_COUNT)) %&gt;%
-  arrange(desc(LIKES)) %&gt;%
-  mutate_if(is.numeric, format, big.mark = ".") %&gt;%
-  head(8) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)
-```
-
-```
-## Warning: There were 4 warnings in `mutate()`.
-## The first warning was:
-## ℹ In argument: `LIKES = (function (x, ...) ...`.
-## Caused by warning in `prettyNum()`:
-## ! 'big.mark' and 'decimal.mark' are both '.', which could be confusing
-## ℹ Run ]8;;ide:run:dplyr::last_dplyr_warnings()dplyr::last_dplyr_warnings()]8;; to see the 3 remaining warnings.
-```
-
+- most important authors (per impact)
+&lt;br&gt;
+&lt;br&gt;
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
@@ -620,31 +486,11 @@ fb %&gt;%
 &lt;/tbody&gt;
 &lt;/table&gt;
 
+
 ---
-  
 
-```r
-# important activity
-fb %&gt;% 
-  group_by(TITLE) %&gt;%
-  summarise(LIKES = sum(LIKE_COUNT),
-            COMMENT = sum(COMMENT_COUNT),
-            REACH = sum(REACH),
-            REACTIONS = sum(TOTAL_REACTIONS_COUNT)) %&gt;%
-  arrange(desc(LIKES)) %&gt;%
-  mutate_if(is.numeric, format, big.mark = ".") %&gt;%
-  head(7) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)
-```
-
-```
-## Warning: There were 4 warnings in `mutate()`.
-## The first warning was:
-## ℹ In argument: `LIKES = (function (x, ...) ...`.
-## Caused by warning in `prettyNum()`:
-## ! 'big.mark' and 'decimal.mark' are both '.', which could be confusing
-## ℹ Run ]8;;ide:run:dplyr::last_dplyr_warnings()dplyr::last_dplyr_warnings()]8;; to see the 3 remaining warnings.
-```
-
+- summary of  important activity  
+&lt;br&gt;
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
@@ -708,7 +554,65 @@ fb %&gt;%
 &lt;/tbody&gt;
 &lt;/table&gt;
 
+---
 
+- activity of important authors  
+&lt;br&gt;
+
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; AUTHOR &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; TITLE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; LIKES &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; COMMENT &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; REACH &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; REACTIONS &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; HGSS - Hrvatska Gorska Služba Spašavanja &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Prijateljstvo i ljubav između čovjeka i psa ne poznaju granice. Spletom nesretnih okolnosti jučer popodne otklizali su zajedno niz padinu. Zajedno u sretnim... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 12.554 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 347 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 853.863 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15.854 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Petar Grašo &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Oboren rekord-35000 ljudi na trgu😄..hvala Banja Luci na jednom od najljepsih i najzabavnijih ulazaka u Novu Godinu …i sretno svima od srca ❤️❤️ &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 11.757 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 334 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 651.344 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 13.831 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nikola Grmoja &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sretan nova godina dragi ljudi 🥳 Držite do onog što je temelj, ulažite u ono što ostaje, mislite na ono trajno i nepropadljivo ❤️ &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6.716 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.368 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 331.416 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 8.110 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Zdravko Mamić &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Svaka nova godina nosi nove izazove, a ja se nadam i želim da ćete u 2022. biti blagoslovljeni, zdravi, sretni i uspješni! AAAAJMOOOO 2022.! &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5.168 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 752 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 235.312 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5.947 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; HNK Hajduk Split &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dragi hajdukovci, pred nama je 2022. godina u kojoj slavimo 111. rođendan. Godina u znaku broja 1. Bez obzira gdje god bili, što god radili, dajte ono... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.960 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 263 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 204.113 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5.331 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 
 ---
@@ -719,43 +623,9 @@ layout: true
 &lt;br&gt;
   
 
-```r
-# choose variables to investigate
-fullDta %&gt;%
-  filter(SOURCE_TYPE == "web") %&gt;%
-  select(FROM,
-         AUTHOR,
-         REACH,
-         VIRALITY,
-         LIKE_COUNT,
-         COMMENT_COUNT,
-         INFLUENCE_SCORE,
-         TITLE,
-   #      MENTION_SNIPPET,
-         DATE, 
-         TIME) -&gt; web
-```
 
----
+- most active authors
   
-
-```r
-# most active authors
-web %&gt;% 
-  group_by(FROM) %&gt;%
-  summarise(N = n()) %&gt;%
-  arrange(desc(N))  %&gt;%
-  mutate_if(is.numeric, format, big.mark = ".") %&gt;%
-  head(10) %&gt;% kbl() %&gt;%  kable_styling(font_size = 11)
-```
-
-```
-## Warning: There was 1 warning in `mutate()`.
-## ℹ In argument: `N = (function (x, ...) ...`.
-## Caused by warning in `prettyNum()`:
-## ! 'big.mark' and 'decimal.mark' are both '.', which could be confusing
-```
-
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
@@ -808,19 +678,11 @@ web %&gt;%
 &lt;/table&gt;
 
 ---
+
+- summary of important sources (by likes)
   
 
-```r
-web %&gt;% 
-  group_by(FROM) %&gt;%
-  summarise(LIKES = sum(LIKE_COUNT),
-            COMMENT = sum(COMMENT_COUNT),
-            REACH = sum(REACH),
-            VIRALITY = sum(VIRALITY)) %&gt;%
-  arrange(desc(LIKES)) %&gt;%
-  mutate_if(is.numeric, format, big.mark = ".") %&gt;%
-  head(8) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)
-```
+
 
 ---
 layout: true
@@ -828,43 +690,9 @@ layout: true
 ---
   
 
-```r
-# choose variables to investigate
-fullDta %&gt;%
-  filter(SOURCE_TYPE == "twitter") %&gt;%
-  select(AUTHOR,
-         REACH,
-         FOLLOWERS_COUNT,
-         FAVORITE_COUNT,
-         RETWEET_COUNT,
-         TWEET_TYPE,
-         TWEET_SOURCE_NAME,
-         TITLE,
-   #      MENTION_SNIPPET,
-         DATE, 
-         TIME) -&gt; twitter
-```
 
----
+- most important authors (by followers)
   
-
-```r
-# most important authors
-twitter %&gt;% 
-  group_by(AUTHOR) %&gt;%
-  summarise(FOLLOWERS = max(FOLLOWERS_COUNT)) %&gt;%
-  arrange(desc(FOLLOWERS))  %&gt;%
-  mutate_if(is.numeric, format, big.mark = ".") %&gt;%
-  head(10) %&gt;% kbl() %&gt;%  kable_styling(font_size = 11)
-```
-
-```
-## Warning: There was 1 warning in `mutate()`.
-## ℹ In argument: `FOLLOWERS = (function (x, ...) ...`.
-## Caused by warning in `prettyNum()`:
-## ! 'big.mark' and 'decimal.mark' are both '.', which could be confusing
-```
-
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
@@ -917,24 +745,8 @@ twitter %&gt;%
 &lt;/table&gt;
 
 ---
-  
 
-```r
-# most active authors
-twitter %&gt;% 
-  group_by(AUTHOR) %&gt;%
-  summarise(N = n()) %&gt;%
-  arrange(desc(N))  %&gt;%
-  mutate_if(is.numeric, format, big.mark = ".") %&gt;%
-  head(10) %&gt;% kbl() %&gt;%  kable_styling(font_size = 11)
-```
-
-```
-## Warning: There was 1 warning in `mutate()`.
-## ℹ In argument: `N = (function (x, ...) ...`.
-## Caused by warning in `prettyNum()`:
-## ! 'big.mark' and 'decimal.mark' are both '.', which could be confusing
-```
+- most active authors
 
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
@@ -988,27 +800,8 @@ twitter %&gt;%
 &lt;/table&gt;
 
 ---
-  
 
-```r
-# most active authors
-twitter %&gt;% 
-  group_by(AUTHOR) %&gt;%
-  summarise(FAVORITE = sum(FAVORITE_COUNT),
-            RETWEET = sum(RETWEET_COUNT)) %&gt;%
-  arrange(desc(RETWEET))  %&gt;%
-  mutate_if(is.numeric, format, big.mark = ".") %&gt;%
-  head(10) %&gt;% kbl() %&gt;%  kable_styling(font_size = 11)
-```
-
-```
-## Warning: There were 2 warnings in `mutate()`.
-## The first warning was:
-## ℹ In argument: `FAVORITE = (function (x, ...) ...`.
-## Caused by warning in `prettyNum()`:
-## ! 'big.mark' and 'decimal.mark' are both '.', which could be confusing
-## ℹ Run ]8;;ide:run:dplyr::last_dplyr_warnings()dplyr::last_dplyr_warnings()]8;; to see the 1 remaining warning.
-```
+- summary of most active authors
 
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
@@ -1073,25 +866,9 @@ twitter %&gt;%
 &lt;/table&gt;
 
 ---
+ 
+- originality of conntent
   
-
-```r
-# originality
-twitter %&gt;% 
-  group_by(TWEET_TYPE) %&gt;% # interesting to check per author
-  summarise(N = n()) %&gt;%
-  arrange(desc(N)) %&gt;%
-  mutate_if(is.numeric, format, big.mark = ".") %&gt;%
-  head(8) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)
-```
-
-```
-## Warning: There was 1 warning in `mutate()`.
-## ℹ In argument: `N = (function (x, ...) ...`.
-## Caused by warning in `prettyNum()`:
-## ! 'big.mark' and 'decimal.mark' are both '.', which could be confusing
-```
-
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
@@ -1116,24 +893,9 @@ twitter %&gt;%
 &lt;/table&gt;
 
 ---
-  
 
-```r
-# technology
-twitter %&gt;% 
-  group_by(TWEET_SOURCE_NAME) %&gt;%
-  summarise(N = n()) %&gt;%
-  arrange(desc(N)) %&gt;%
-  mutate_if(is.numeric, format, big.mark = ".") %&gt;%
-  head(8) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)
-```
-
-```
-## Warning: There was 1 warning in `mutate()`.
-## ℹ In argument: `N = (function (x, ...) ...`.
-## Caused by warning in `prettyNum()`:
-## ! 'big.mark' and 'decimal.mark' are both '.', which could be confusing
-```
+- technology used
+&lt;br&gt;
 
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
@@ -1182,53 +944,12 @@ twitter %&gt;%
 layout: true
 # YOUTUBE
 ---
- &lt;br&gt;
+&lt;br&gt;
 &lt;br&gt;
 
-```r
-# choose variables to investigate
-fullDta %&gt;%
-  filter(SOURCE_TYPE == "youtube") %&gt;%
-  select(AUTHOR,
-         REACH,
-         LIKE_COUNT,
-         VIEW_COUNT,
-         COMMENTS_COUNT,
-         TITLE,
-  #       MENTION_SNIPPET,
-         URL,
-         DATE, 
-         TIME) -&gt; youtube
-```
 
----
+- most active youtubers
   
-
-```r
-# most active authors
-youtube %&gt;%
-  group_by(AUTHOR) %&gt;%
-  count() %&gt;%
-  arrange(desc(n)) %&gt;%
-  mutate_if(is.numeric, format, big.mark = ".") %&gt;%
-  head(10) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)
-```
-
-```
-## `mutate_if()` ignored the following grouping variables:
-## • Column `AUTHOR`
-```
-
-```
-## Warning: There were 26546 warnings in `mutate()`.
-## The first warning was:
-## ℹ In argument: `n = (function (x, ...) ...`.
-## ℹ In group 1: `AUTHOR = "##motivational video##"`.
-## Caused by warning in `prettyNum()`:
-## ! 'big.mark' and 'decimal.mark' are both '.', which could be confusing
-## ℹ Run ]8;;ide:run:dplyr::last_dplyr_warnings()dplyr::last_dplyr_warnings()]8;; to see the 26545 remaining warnings.
-```
-
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
@@ -1281,29 +1002,8 @@ youtube %&gt;%
 &lt;/table&gt;
 
 ---
-  
 
-```r
-# activity per author
-youtube %&gt;%
-  group_by(AUTHOR) %&gt;%
-  summarise(REACH = sum(REACH),
-            LIKE = sum(LIKE_COUNT),
-            VIEW = sum(VIEW_COUNT),
-            COMMENTS= sum(COMMENTS_COUNT)) %&gt;%
-  arrange(desc(VIEW)) %&gt;%
-  mutate_if(is.numeric, format, big.mark = ".") %&gt;%
-  head(10) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)
-```
-
-```
-## Warning: There were 4 warnings in `mutate()`.
-## The first warning was:
-## ℹ In argument: `REACH = (function (x, ...) ...`.
-## Caused by warning in `prettyNum()`:
-## ! 'big.mark' and 'decimal.mark' are both '.', which could be confusing
-## ℹ Run ]8;;ide:run:dplyr::last_dplyr_warnings()dplyr::last_dplyr_warnings()]8;; to see the 3 remaining warnings.
-```
+- summary of activity (per view)
 
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
@@ -1389,56 +1089,171 @@ youtube %&gt;%
 &lt;/tbody&gt;
 &lt;/table&gt;
 
+---
 
-
+- conntent summary (most views)
+&lt;br&gt;
+&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; AUTHOR &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; REACH &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; LIKE_COUNT &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; VIEW_COUNT &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; COMMENTS_COUNT &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; TITLE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; URL &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; DATE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; TIME &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; MC STOJAN &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4943409 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56939 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4943409 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1799 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; MC STOJAN X WAJWAI - VEGAN (OFFICIAL VIDEO) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=zFi0m45E6-w &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021-11-29 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 13:05:33 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; MC STOJAN &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2679133 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 62775 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2679133 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2390 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; MC STOJAN x BRESKVICA - ZIVOT SI MOJ (OFFICIAL VIDEO) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=uIVq3VRwE5s &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-02-03 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15:00:01 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; E̳K̳I̳P̳A̳ ̳U̳Z̳I̳V̳O̳ 21 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1762920 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2676 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1762920 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ZADRUGA UZIVO - 🔥🔥🔥🔥🔥❚█══𝐄𝐊𝐈𝐏𝐀 𝐔𝐙𝐈𝐕𝐎══█❚🔥🔥🔥🔥🔥 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=boFad0bcrDc &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-01-27 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 21:36:18 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Zdravlje i ljepota &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1660371 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13133 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1660371 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 164 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Recept za jaču ljubav čak i ako imate 65 godina - Naranče, mrkva i đumbir &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=5BNm6_nY3VE &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021-12-22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15:00:03 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Samsung Hrvatska &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1555507 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1555507 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; SAMSUNG I Omiljeni Galaxy uređaj uz poklon &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=IfZrix3z0kM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021-11-27 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 07:51:22 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; PETAR GRAŠO (official) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1314077 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15311 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1314077 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 975 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Petar Grašo - Jel' ti reka 'ko (Official music video) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=EEYKc0eveZ0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021-12-04 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10:55:45 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; SBM Label &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1235210 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 71682 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1235210 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1572 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; GOMBAO 33 - Łyk i buch (Hotel Maffija 2) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=KxyD4-wvWDE &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-01-18 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 17:45:18 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Zdravlje 69 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1192134 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2016 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1192134 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 55 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JEDNOSTAVNI RECEPTI za jaču ljubav u krevetu - Jogurt, čaj i Jaja &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=faouRJ2YYjM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021-12-10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 07:07:29 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; SBM Label &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1156148 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 70202 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1156148 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1557 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; GOMBAO 33 - Łyk i buch (Hotel Maffija 2) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=KxyD4-wvWDE &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-01-18 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 17:45:18 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nestali Matej Periš &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1144489 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 207 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1144489 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 425 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 9 sekunda videa ""ajde sad ustani""-posljednja snimka Mateja na nadzornim kamerama! #matejperiš &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=xc0hnqW_nUE &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-01-17 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 05:58:15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Franka &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1010306 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14828 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1010306 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 615 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Franka x Sara Jo – On (Official Music Video) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=1RYejwQIJqQ &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021-12-17 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 12:00:01 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Best Of Zadruga &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 879524 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1842 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 879524 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 🔴ZADRUGA 5 LIVE STREAM! (24/7)🔴 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=Xhl8ytM3tRI &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-01-21 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 18:29:50 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 ---
 layout: true
 # FORUM
 ---
-  &lt;br&gt;
-  &lt;br&gt;
-  &lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 
-```r
-# choose variables to investigate
-fullDta %&gt;%
-  filter(SOURCE_TYPE == "forum") %&gt;%
-  select(FROM,
-         TITLE,
-   #      MENTION_SNIPPET,
-         DATE, 
-         TIME) -&gt; forum
-```
 
----
-  
 
-```r
-# not a very good coverage
-forum %&gt;%
-  group_by(FROM) %&gt;%
-  count() %&gt;%
-  arrange(desc(n)) %&gt;%
-  mutate_if(is.numeric, format, big.mark = ".") %&gt;%
-  head(8) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)
-```
-
-```
-## `mutate_if()` ignored the following grouping variables:
-## • Column `FROM`
-```
-
-```
-## Warning: There were 12 warnings in `mutate()`.
-## The first warning was:
-## ℹ In argument: `n = (function (x, ...) ...`.
-## ℹ In group 1: `FROM = "bbq-brethren.com"`.
-## Caused by warning in `prettyNum()`:
-## ! 'big.mark' and 'decimal.mark' are both '.', which could be confusing
-## ℹ Run ]8;;ide:run:dplyr::last_dplyr_warnings()dplyr::last_dplyr_warnings()]8;; to see the 11 remaining warnings.
-```
-
+- not a very good data coverage!?
+&lt;br&gt;
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
@@ -1486,51 +1301,12 @@ forum %&gt;%
 layout: true
 # INSTAGRAM
 ---
-  &lt;br&gt;
-  &lt;br&gt;
+&lt;br&gt;
 
-```r
-# choose variables to investigate
-fullDta %&gt;%
-  filter(SOURCE_TYPE == "instagram") %&gt;%
-  select(FROM,
-         TITLE,
-         AUTHOR,
-   #      MENTION_SNIPPET,
-         REACH,
-         LIKE_COUNT,
-         COMMENT_COUNT,
-         SHARE_COUNT,
-         VIEW_COUNT,
-         DATE, 
-         TIME) -&gt; instagram
-```
 
----
-  
 
-```r
-# influencer impact
-instagram %&gt;%
-  group_by(FROM) %&gt;%
-  summarise(REACH = sum(REACH),
-            COMMENT = sum(COMMENT_COUNT),
-            LIKE = sum(LIKE_COUNT),
-            VIEW = sum(VIEW_COUNT)) %&gt;%
-  mutate_if(is.numeric, format, big.mark = ".") %&gt;%
-  arrange(desc(LIKE)) %&gt;%
-  head(10) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)
-```
-
-```
-## Warning: There were 4 warnings in `mutate()`.
-## The first warning was:
-## ℹ In argument: `REACH = (function (x, ...) ...`.
-## Caused by warning in `prettyNum()`:
-## ! 'big.mark' and 'decimal.mark' are both '.', which could be confusing
-## ℹ Run ]8;;ide:run:dplyr::last_dplyr_warnings()dplyr::last_dplyr_warnings()]8;; to see the 3 remaining warnings.
-```
-
+- influencer statistics
+&lt;br&gt;  
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
@@ -1616,33 +1392,9 @@ instagram %&gt;%
 &lt;/table&gt;
 
 ---
-  
 
-```r
-# influencer activity
-instagram %&gt;%
-  group_by(FROM) %&gt;%
-  count() %&gt;%
-  arrange(desc(n)) %&gt;%
-  mutate_if(is.numeric, format, big.mark = ".") %&gt;%
-  head(12) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)
-```
-
-```
-## `mutate_if()` ignored the following grouping variables:
-## • Column `FROM`
-```
-
-```
-## Warning: There were 284 warnings in `mutate()`.
-## The first warning was:
-## ℹ In argument: `n = (function (x, ...) ...`.
-## ℹ In group 1: `FROM = "24sata.hr"`.
-## Caused by warning in `prettyNum()`:
-## ! 'big.mark' and 'decimal.mark' are both '.', which could be confusing
-## ℹ Run ]8;;ide:run:dplyr::last_dplyr_warnings()dplyr::last_dplyr_warnings()]8;; to see the 283 remaining warnings.
-```
-
+- influencer activity
+&lt;br&gt;
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
@@ -1701,18 +1453,19 @@ instagram %&gt;%
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-  
-  
-  
+
+
+
 ---
-&lt;br&gt;
-#### Resources
+layout: true
+# RESOURCES
+---
 &lt;br&gt;
 &lt;br&gt;
 - The data sample in the GiHub repo
 &lt;br&gt;
 &lt;br&gt;
-- Other clipping agencies
+- Check other clipping agencies
 &lt;br&gt;
 &lt;br&gt;
 - Other data vendors
@@ -1724,6 +1477,18 @@ instagram %&gt;%
 class: inverse, middle
 layout:false
 # Thank you for your attention!
+
+
+
+
+
+
+
+
+
+
+
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

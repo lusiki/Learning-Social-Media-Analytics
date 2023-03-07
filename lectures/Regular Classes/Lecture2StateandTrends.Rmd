@@ -1,6 +1,6 @@
 ---
 title: "Learning Social Media Analytics"
-subtitle: "Lecture 2 Current state and latest trends"
+subtitle: "Current state and latest trends"
 author: "Luka Sikic, PhD"
 institute: "Faculty of Croatian Studies"
 date: "(updated: `r Sys.Date()`)"
@@ -34,7 +34,7 @@ library(data.table)
 # CLASS OUTLINE
 <br>
 <br>
-- DATA OVERVIEW
+- DATA OVERVIEW (full media space)
 <br>
 <br>
 - FACEBOOK
@@ -58,10 +58,11 @@ library(data.table)
 
 ---
 layout: true
-# DATA OVERVIEW
+# DATA OVERVIEW (full media space)
 ---
 
 - check the raw [data](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/data/Mediatoolkit/sample.xlsx)
+<br>
 - sourced from [Mediatoolkit](https://www.mediatoolkit.com/)
 
 
@@ -69,21 +70,41 @@ layout: true
 ```{r, echo=F}
 # read data in (one day worth of data)
 one_day_sample <- read_excel(here::here("data/Mediatoolkit/sample.xlsx"))
-# size of the data
-dim(one_day_sample)
-# sneek peak
-glimpse(one_day_sample[sample(nrow(one_day_sample)),1:35])
+```
 
+- one day worth of data (2022-01-01)
+
+```{r, echo=F}
+dim(one_day_sample)
+```
+
+- random data snapshot
+
+```{r, echo=F}
+glimpse(one_day_sample[sample(nrow(one_day_sample)),1:10])
+```
+---
+
+- avaliable data characteristics
+
+<br>
+
+```{r, echo=F}
+# other variables
+names(one_day_sample)
 ```
 
 ---
 <br>
 <br>
-```{r, echo=T, eval = T, warning=FALSE,message=FALSE}
+
+- rows and columns
+
+```{r, echo=F, eval = T, warning=FALSE, message=FALSE}
 fullDta <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_NOTXT.csv")
 dim(fullDta)
-range(fullDta$DATE)
 ```
+
 
 ```{r eval=F,echo=FALSE}
 # read data in (full data sample)
@@ -105,44 +126,55 @@ write.csv2(dt_unique, "D:/LUKA/Freelance/Mediatoolkit/FULLDATA_TXT.csv")
 
 ```
 
----
-<br>
-<br>
-  
+- time span
+
 ```{r, echo=F}
-# other variables
-names(one_day_sample)
+range(fullDta$DATE)
 ```
 
----
-<br>
-<br>
+- social media avaliable
+
 ```{r, echo=F}
-# observations/activity
-nrow(fullDta)
-# social media networks
 unique(fullDta$SOURCE_TYPE)
-# unique authors
+```
+
+- how many authors
+
+```{r, echo=F}
 length(unique(fullDta$AUTHOR))
 ```
 
----
-  
-```{r, echo=T}
-# unique authors
-length(unique(fullDta$AUTHOR))
+- how many unique titles
+
+```{r, echo=F}
 # unique titles
 length(unique(fullDta$TITLE))
+```
+
+---
+
+- how many unique sources
+
+```{r, echo=F}
 # unique sources
 length(unique(fullDta$FROM))
+```
+
+- how many unique urls
+
+```{r, echo=F}
 # unique urls
 length(unique(fullDta$URL))
 
 ```
 
 ---
-  
-```{r, echo=T}
+
+- how much activity per media
+
+<br>
+<br>
+```{r, echo=F, warning=FALSE, message=FALSE}
 # GENERAL OVERVIEW 
 fullDta %>%
   group_by(SOURCE_TYPE) %>%
@@ -153,9 +185,12 @@ fullDta %>%
   kable_styling(font_size = 11)
 ```
 
+
 ---
-  
-```{r, echo=T}
+
+- check some text (random choice)
+
+```{r, echo=F, warning=FALSE, message=FALSE}
 # SAMPLE SOME TXT
 one_day_sample %>%
   select(SOURCE_TYPE, MENTION_SNIPPET) %>%
@@ -166,8 +201,11 @@ one_day_sample %>%
 ```
 
 ---
-  
-```{r, echo=T}
+
+- check some titles (random choice)
+<br> 
+<br>
+```{r, echo=F, warning=FALSE, message=FALSE}
 # SAMPLE SOME TITLES
 fullDta %>%
   select(SOURCE_TYPE, TITLE) %>%
@@ -182,7 +220,8 @@ layout: true
 ---
 <br>
 <br>
-```{r , echo=T}
+
+```{r, echo=F, warning=FALSE, message=FALSE}
 # choose variables to investigate
 one_day_sample %>%
   filter(SOURCE_TYPE == "facebook") %>%
@@ -199,9 +238,10 @@ one_day_sample %>%
          TIME) -> fb
 ```
 
----
-  
-```{r, echo=T}
+- most important authors (per followers)
+<br>
+
+```{r, echo=F, warning=FALSE, message=FALSE}
 # most active authors
 fb %>% 
   group_by(AUTHOR,FOLLOWERS_COUNT) %>%
@@ -211,9 +251,13 @@ fb %>%
   head(10) %>% kbl() %>%  kable_styling(font_size = 11)
 ```
 
+
 ---
-  
-```{r, echo=T}
+
+- most important authors (per impact)
+<br>
+<br>
+```{r, echo=F, warning=FALSE, message=FALSE}
 # authors with impact
 fb %>% 
   group_by(AUTHOR) %>%
@@ -226,10 +270,13 @@ fb %>%
   head(8) %>% kbl() %>% kable_styling(font_size = 11)
 ```
 
+
 ---
-  
-```{r, echo=T}
-# important activity
+
+- summary of  important activity  
+<br>
+```{r, echo=F, warning=FALSE, message=FALSE}
+
 fb %>% 
   group_by(TITLE) %>%
   summarise(LIKES = sum(LIKE_COUNT),
@@ -241,8 +288,12 @@ fb %>%
   head(7) %>% kbl() %>% kable_styling(font_size = 11)
 ```
 
+---
 
-```{r, echo=F, eval=F, include=F}
+- activity of important authors  
+<br>
+
+```{r, echo=F, warning=FALSE, message=FALSE}
 # important activity and author
 fb %>% 
   group_by(TITLE) %>%
@@ -256,6 +307,7 @@ fb %>%
   head(5) %>% kbl() %>% kable_styling(font_size = 11)
 ```
 
+
 ---
 layout: true
 # WEB
@@ -263,7 +315,7 @@ layout: true
 <br>
 <br>
   
-```{r , echo=T}
+```{r, echo=F, warning=FALSE, message=FALSE}
 # choose variables to investigate
 fullDta %>%
   filter(SOURCE_TYPE == "web") %>%
@@ -275,14 +327,14 @@ fullDta %>%
          COMMENT_COUNT,
          INFLUENCE_SCORE,
          TITLE,
-   #      MENTION_SNIPPET,
+         #      MENTION_SNIPPET,
          DATE, 
          TIME) -> web
 ```
 
----
+- most active authors
   
-```{r, echo=T}
+```{r, echo=F, warning=FALSE, message=FALSE}
 # most active authors
 web %>% 
   group_by(FROM) %>%
@@ -293,8 +345,10 @@ web %>%
 ```
 
 ---
+
+- summary of important sources (by likes)
   
-```{r, echo=T, eval = F}
+```{r, echo=F, warning=FALSE, message=FALSE, eval = F}
 web %>% 
   group_by(FROM) %>%
   summarise(LIKES = sum(LIKE_COUNT),
@@ -306,12 +360,13 @@ web %>%
   head(8) %>% kbl() %>% kable_styling(font_size = 11)
 ```
 
+
 ---
 layout: true
 # TWITTER
 ---
   
-```{r, echo=T}
+```{r, echo=F, warning=FALSE, message=FALSE,}
 # choose variables to investigate
 fullDta %>%
   filter(SOURCE_TYPE == "twitter") %>%
@@ -323,14 +378,14 @@ fullDta %>%
          TWEET_TYPE,
          TWEET_SOURCE_NAME,
          TITLE,
-   #      MENTION_SNIPPET,
+         #      MENTION_SNIPPET,
          DATE, 
          TIME) -> twitter
 ```
 
----
+- most important authors (by followers)
   
-```{r, echo=T}
+```{r, echo=F, warning=FALSE, message=FALSE,}
 # most important authors
 twitter %>% 
   group_by(AUTHOR) %>%
@@ -341,8 +396,10 @@ twitter %>%
 ```
 
 ---
-  
-```{r, echo=T}
+
+- most active authors
+
+```{r, echo=F, warning=FALSE, message=FALSE,}
 # most active authors
 twitter %>% 
   group_by(AUTHOR) %>%
@@ -353,8 +410,10 @@ twitter %>%
 ```
 
 ---
-  
-```{r, echo=T}
+
+- summary of most active authors
+
+```{r, echo=F, warning=FALSE, message=FALSE,}
 # most active authors
 twitter %>% 
   group_by(AUTHOR) %>%
@@ -366,8 +425,10 @@ twitter %>%
 ```
 
 ---
+ 
+- originality of conntent
   
-```{r, echo=T}
+```{r, echo=F, warning=FALSE, message=FALSE,}
 # originality
 twitter %>% 
   group_by(TWEET_TYPE) %>% # interesting to check per author
@@ -378,8 +439,11 @@ twitter %>%
 ```
 
 ---
-  
-```{r, echo=T}
+
+- technology used
+<br>
+
+```{r, echo=F, warning=FALSE, message=FALSE,}
 # technology
 twitter %>% 
   group_by(TWEET_SOURCE_NAME) %>%
@@ -393,9 +457,9 @@ twitter %>%
 layout: true
 # YOUTUBE
 ---
- <br>
 <br>
-```{r, echo=T}
+<br>
+```{r, echo=F, warning=FALSE, message=FALSE,}
 # choose variables to investigate
 fullDta %>%
   filter(SOURCE_TYPE == "youtube") %>%
@@ -405,15 +469,15 @@ fullDta %>%
          VIEW_COUNT,
          COMMENTS_COUNT,
          TITLE,
-  #       MENTION_SNIPPET,
+         #       MENTION_SNIPPET,
          URL,
          DATE, 
          TIME) -> youtube
 ```
 
----
+- most active youtubers
   
-```{r, echo=T}
+```{r, echo=F, warning=FALSE, message=FALSE,}
 # most active authors
 youtube %>%
   group_by(AUTHOR) %>%
@@ -425,8 +489,10 @@ youtube %>%
 ```
 
 ---
-  
-```{r, echo=T}
+
+- summary of activity (per view)
+
+```{r, echo=F, warning=FALSE, message=FALSE,}
 # activity per author
 youtube %>%
   group_by(AUTHOR) %>%
@@ -439,8 +505,11 @@ youtube %>%
   head(10) %>% kbl() %>% kable_styling(font_size = 11)
 ``` 
 
+---
 
-```{r, echo=F, eval=F, include=F}
+- conntent summary (most views)
+<br>
+```{r, echo=F, warning=FALSE, message=FALSE,}
 # breaks down
 youtube %>%
   group_by(AUTHOR, URL,REACH,LIKE_COUNT, VIEW_COUNT, COMMENTS_COUNT) %>%
@@ -454,23 +523,23 @@ youtube %>%
 layout: true
 # FORUM
 ---
-  <br>
-  <br>
-  <br>
-```{r, echo=T}
+<br>
+<br>
+
+```{r, echo=F, warning=FALSE, message=FALSE,}
 # choose variables to investigate
 fullDta %>%
   filter(SOURCE_TYPE == "forum") %>%
   select(FROM,
          TITLE,
-   #      MENTION_SNIPPET,
+         #      MENTION_SNIPPET,
          DATE, 
          TIME) -> forum
 ``` 
 
----
-  
-```{r, echo=T}
+- not a very good data coverage!?
+<br>
+```{r, echo=F, warning=FALSE, message=FALSE,}
 # not a very good coverage
 forum %>%
   group_by(FROM) %>%
@@ -484,16 +553,16 @@ forum %>%
 layout: true
 # INSTAGRAM
 ---
-  <br>
-  <br>
-```{r, echo=T}
+<br>
+
+```{r, echo=F, warning=FALSE, message=FALSE,}
 # choose variables to investigate
 fullDta %>%
   filter(SOURCE_TYPE == "instagram") %>%
   select(FROM,
          TITLE,
          AUTHOR,
-   #      MENTION_SNIPPET,
+         #      MENTION_SNIPPET,
          REACH,
          LIKE_COUNT,
          COMMENT_COUNT,
@@ -503,9 +572,9 @@ fullDta %>%
          TIME) -> instagram
 ``` 
 
----
-  
-```{r, echo=T}
+- influencer statistics
+<br>  
+```{r, echo=F, warning=FALSE, message=FALSE,}
 # influencer impact
 instagram %>%
   group_by(FROM) %>%
@@ -519,8 +588,10 @@ instagram %>%
 ```   
 
 ---
-  
-```{r, echo=T}
+
+- influencer activity
+<br>
+```{r, echo=F, warning=FALSE, message=FALSE,}
 # influencer activity
 instagram %>%
   group_by(FROM) %>%
@@ -529,18 +600,19 @@ instagram %>%
   mutate_if(is.numeric, format, big.mark = ".") %>%
   head(12) %>% kbl() %>% kable_styling(font_size = 11)
 ```    
-  
-  
-  
+
+
+
 ---
-<br>
-#### Resources
+layout: true
+# RESOURCES
+---
 <br>
 <br>
 - The data sample in the GiHub repo
 <br>
 <br>
-- Other clipping agencies
+- Check other clipping agencies
 <br>
 <br>
 - Other data vendors
@@ -552,3 +624,15 @@ instagram %>%
 class: inverse, middle
 layout:false
 # Thank you for your attention!
+
+
+
+
+
+
+
+
+
+
+
+
