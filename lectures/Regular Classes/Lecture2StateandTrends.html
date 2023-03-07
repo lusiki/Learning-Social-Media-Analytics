@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Presentation Ninja</title>
+    <title>Learning Social Media Analytics</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Yihui Xie" />
+    <meta name="author" content="Luka Sikic, PhD" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
@@ -15,19 +15,19 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Presentation Ninja
+# Learning Social Media Analytics
 ]
 .subtitle[
-## ⚔<br/>with xaringan
+## Lecture 2 Current state and latest trends
 ]
 .author[
-### Yihui Xie
+### Luka Sikic, PhD
 ]
 .institute[
-### RStudio, PBC
+### Faculty of Croatian Studies
 ]
 .date[
-### 2016/12/12 (updated: 2023-03-07)
+### (updated: 2023-03-07)
 ]
 
 ---
@@ -85,40 +85,40 @@ layout: true
 ## Rows: 27,604
 ## Columns: 35
 ## $ DATE                  &lt;chr&gt; "2022-01-02", "2022-01-01", "2022-01-02", "2022-…
-## $ TIME                  &lt;chr&gt; "11:15:17", "17:06:16", "19:20:22", "18:24:08", …
-## $ TITLE                 &lt;chr&gt; "HGSS cijelu noć spašavao teško ozlijeđenog plan…
-## $ FROM                  &lt;chr&gt; "telegram.hr", "vecernji.hr", "forum.hr", "forum…
-## $ AUTHOR                &lt;chr&gt; "Telegram.hr", NA, NA, NA, "Stefke &amp; Rokan", NA,…
-## $ URL                   &lt;chr&gt; "https://www.telegram.hr/politika-kriminal/hgss-…
-## $ URL_PHOTO             &lt;chr&gt; "https://mediatoolkit.com/img/50x50,sc,sKJ-fdNWL…
-## $ SOURCE_TYPE           &lt;chr&gt; "web", "web", "forum", "forum", "youtube", "foru…
+## $ TIME                  &lt;chr&gt; "11:02:37", "14:21:56", "22:23:29", "11:10:02", …
+## $ TITLE                 &lt;chr&gt; "[TRAŽIMO VLASNIKA] Ovaj pesek izgubio se i luta…
+## $ FROM                  &lt;chr&gt; "eMedjimurje", "otvoreno.hr", "forum.hr", "forum…
+## $ AUTHOR                &lt;chr&gt; "eMedjimurje", NA, NA, NA, NA, NA, NA, "DiL∀N 🌸…
+## $ URL                   &lt;chr&gt; "https://www.facebook.com/106800796021573/posts/…
+## $ URL_PHOTO             &lt;chr&gt; "https://mediatoolkit.com/img/50x50,sc,sLs7mRLQ3…
+## $ SOURCE_TYPE           &lt;chr&gt; "facebook", "web", "forum", "forum", "web", "web…
 ## $ GROUP_NAME            &lt;chr&gt; "Luka", "Luka", "Luka", "Luka", "Luka", "Luka", …
 ## $ KEYWORD_NAME          &lt;chr&gt; "opće", "opće", "opće", "opće", "opće", "opće", …
-## $ FOUND_KEYWORDS        &lt;chr&gt; "i", "i", "i", "i", "i", "i", "i", "i", "i", "i"…
-## $ LANGUAGES             &lt;chr&gt; "hr", "hr", "hr", "hr", "hr, bs", "hr", "hr, bs"…
-## $ LOCATIONS             &lt;chr&gt; "HR", "HR", "HR", "HR", "HR, BA", "HR", "HR, BA"…
+## $ FOUND_KEYWORDS        &lt;chr&gt; "i", "i", "i", "I", "i", "i", "i", "İ, I", "i", …
+## $ LANGUAGES             &lt;chr&gt; "hr, bs", "hr", "hr", "hr", "hr", "hr", "hr", "h…
+## $ LOCATIONS             &lt;chr&gt; "HR", "HR", "HR", "HR", "HR", "HR", "HR", "NO, H…
 ## $ TAGS                  &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
 ## $ MANUAL_SENTIMENT      &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
-## $ AUTO_SENTIMENT        &lt;chr&gt; "negative", "neutral", "positive", "neutral", "p…
-## $ MENTION_SNIPPET       &lt;chr&gt; "HGSS je na teren uputio 25 spašavatelja iz stan…
-## $ REACH                 &lt;dbl&gt; 963, 5888, NA, NA, 242, NA, NA, 744, 1, 5378, 84…
-## $ VIRALITY              &lt;dbl&gt; 0.00000000, 2.49623737, NA, NA, NA, NA, NA, 0.01…
-## $ FOLLOWERS_COUNT       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, 84169, 79, N…
-## $ LIKE_COUNT            &lt;dbl&gt; 0, 221, NA, NA, 10, NA, NA, 0, 0, 39, NA, NA, 2,…
-## $ COMMENT_COUNT         &lt;dbl&gt; 0, 93, NA, NA, NA, NA, NA, 0, 0, 0, NA, NA, 0, 1…
-## $ SHARE_COUNT           &lt;dbl&gt; 0, 1, NA, NA, NA, NA, NA, 1, 0, 0, NA, NA, 1, 1,…
+## $ AUTO_SENTIMENT        &lt;chr&gt; "positive", "negative", "neutral", "neutral", "n…
+## $ MENTION_SNIPPET       &lt;chr&gt; "[TRAŽIMO VLASNIKA] Ovaj pesek izgubio se i luta…
+## $ REACH                 &lt;dbl&gt; 13442, 107, NA, NA, 1342, 3289, 1184, 1, 247, 15…
+## $ VIRALITY              &lt;dbl&gt; NA, 0.37619901, NA, NA, 0.18281726, 0.01142454, …
+## $ FOLLOWERS_COUNT       &lt;dbl&gt; 74446, NA, NA, NA, NA, NA, NA, 23, 1547, 285, 42…
+## $ LIKE_COUNT            &lt;dbl&gt; 44, 9, NA, NA, 0, 0, 9, NA, NA, NA, 424, NA, 2, …
+## $ COMMENT_COUNT         &lt;dbl&gt; 0, 1, NA, NA, 0, 0, 18, NA, NA, NA, 2, NA, 0, 1,…
+## $ SHARE_COUNT           &lt;dbl&gt; 56, 1, NA, NA, 4, 1, 6, NA, NA, NA, 25, NA, 4, 1…
 ## $ TWEET_COUNT           &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
-## $ LOVE_COUNT            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, 0, NA, NA, 0…
-## $ WOW_COUNT             &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, 0, NA, NA, 0…
-## $ HAHA_COUNT            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, 0, NA, NA, 0…
-## $ SAD_COUNT             &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, 0, NA, NA, 0…
-## $ ANGRY_COUNT           &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, 0, NA, NA, 0…
-## $ TOTAL_REACTIONS_COUNT &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, 39, NA, NA, …
-## $ FAVORITE_COUNT        &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 8, NA, N…
-## $ RETWEET_COUNT         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 0, NA, N…
-## $ VIEW_COUNT            &lt;dbl&gt; NA, NA, NA, NA, 242, NA, NA, NA, NA, NA, NA, NA,…
+## $ LOVE_COUNT            &lt;dbl&gt; 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, 0, NA, NA…
+## $ WOW_COUNT             &lt;dbl&gt; 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, 0, NA, NA…
+## $ HAHA_COUNT            &lt;dbl&gt; 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, 0, NA, NA…
+## $ SAD_COUNT             &lt;dbl&gt; 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, 0, NA, NA…
+## $ ANGRY_COUNT           &lt;dbl&gt; 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, 0, NA, NA…
+## $ TOTAL_REACTIONS_COUNT &lt;dbl&gt; 100, NA, NA, NA, NA, NA, NA, NA, NA, NA, 451, NA…
+## $ FAVORITE_COUNT        &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, 0, 17, 0, NA, NA, NA…
+## $ RETWEET_COUNT         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, 0, 0, 0, NA, NA, NA,…
+## $ VIEW_COUNT            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
 ## $ DISLIKE_COUNT         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
-## $ COMMENTS_COUNT        &lt;dbl&gt; NA, NA, NA, NA, 13, NA, NA, NA, NA, NA, NA, NA, …
+## $ COMMENTS_COUNT        &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
 ```
 
 ---
@@ -126,37 +126,28 @@ layout: true
 &lt;br&gt;
 
 ```r
-# read data in (full data sample)
-path &lt;- "D:/LUKA/Freelance/Mediatoolkit/FULLDATA"
-raw &lt;- list.files(path = path , pattern="xlsx")
-raw_path &lt;- paste0(path, "/", raw)
-all_raw &lt;- map_df(raw_path, read_excel)
-#all_raw &lt;- all_raw  %&gt;%  mutate(DATE = as.Date(DATE,"%Y-%m-%d" ))
-
-dim(all_raw)
+fullDta &lt;- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_NOTXT.csv")
+dim(fullDta)
 ```
 
 ```
-## [1] 4310422      47
+## [1] 2283991      47
 ```
 
 ```r
-range(all_raw$DATE)
+range(fullDta$DATE)
 ```
 
 ```
 ## [1] "2021-11-07" "2022-03-27"
 ```
 
+
+
 ---
 &lt;br&gt;
 &lt;br&gt;
   
-
-```r
-# other variables
-names(one_day_sample)
-```
 
 ```
 ##  [1] "DATE"                  "TIME"                  "TITLE"                
@@ -180,28 +171,13 @@ names(one_day_sample)
 &lt;br&gt;
 &lt;br&gt;
 
-```r
-# observations/activity
-nrow(all_raw)
 ```
-
-```
-## [1] 4310422
-```
-
-```r
-# social media networks
-unique(all_raw$SOURCE_TYPE)
+## [1] 2283991
 ```
 
 ```
 ## [1] "forum"     "web"       "twitter"   "reddit"    "youtube"   "comment"  
 ## [7] "facebook"  "instagram"
-```
-
-```r
-# unique authors
-length(unique(all_raw$AUTHOR))
 ```
 
 ```
@@ -213,7 +189,7 @@ length(unique(all_raw$AUTHOR))
 
 ```r
 # unique authors
-length(unique(all_raw$AUTHOR))
+length(unique(fullDta$AUTHOR))
 ```
 
 ```
@@ -222,7 +198,7 @@ length(unique(all_raw$AUTHOR))
 
 ```r
 # unique titles
-length(unique(all_raw$TITLE))
+length(unique(fullDta$TITLE))
 ```
 
 ```
@@ -231,7 +207,7 @@ length(unique(all_raw$TITLE))
 
 ```r
 # unique sources
-length(unique(all_raw$FROM))
+length(unique(fullDta$FROM))
 ```
 
 ```
@@ -240,46 +216,11 @@ length(unique(all_raw$FROM))
 
 ```r
 # unique urls
-length(unique(all_raw$URL))
+length(unique(fullDta$URL))
 ```
 
 ```
 ## [1] 2185355
-```
-
-```r
-all &lt;- unique(all_raw[1:10,])
-
-library(data.table)
-```
-
-```
-## 
-## Attaching package: 'data.table'
-```
-
-```
-## The following objects are masked from 'package:lubridate':
-## 
-##     hour, isoweek, mday, minute, month, quarter, second, wday, week,
-##     yday, year
-```
-
-```
-## The following objects are masked from 'package:dplyr':
-## 
-##     between, first, last
-```
-
-```
-## The following object is masked from 'package:purrr':
-## 
-##     transpose
-```
-
-```r
-all_raw &lt;- as.data.table(all_raw)
-all_raw &lt;- unique(all_raw)
 ```
 
 ---
@@ -287,7 +228,7 @@ all_raw &lt;- unique(all_raw)
 
 ```r
 # GENERAL OVERVIEW 
-all_raw %&gt;%
+fullDta %&gt;%
   group_by(SOURCE_TYPE) %&gt;%
   count() %&gt;%
   arrange(desc(n)) %&gt;%
@@ -345,7 +286,7 @@ all_raw %&gt;%
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; comment &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 58.468 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 53.277 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; instagram &lt;/td&gt;
@@ -377,35 +318,35 @@ one_day_sample %&gt;%
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; instagram &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; VAŽAN VITAMIN ZA SVE STARIJE OD 50 GODINA: Utiče Na Imunitet I Metabolizam, A Evo U Kojim Ga Namirnicama IMA NAJVIŠE Cijeli savjet možete pronaći na našem storiju ili na linku u opisu našeg profila www.ekuharica.com #recepti #kuhajpecisvimareci &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ivan Tomečak skupio je 304 nastupa u hrvatskim natjecanjima i Europi (nastupi za hrvatske klubove) te postigao 28 pogodaka. Ali zabio je Realu na Bernabeu. Tko te ima što pitat više... #HNL #championsleague #europaleague #gnkdinamo #hnkhajduk &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Sretna Nova godina drage žene!!! Da bude bolja od prošle uz puno zdravlja i sreće Poslano sa mog MAR-LX1A koristeći Tapatalk &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; comment &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; wice: Hrana je svakog dana skuplja i skuplja,dok je u isto vrijeme Slavonija iseljena. Nešto tu ne štima,koji su to razlozi? Odlaze vani i životare,nema tu više nekakve zarade i ušteđevine ako žele normalno živjeti? Bio sam kod nekih prijatelja i ... &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Jel dobio netko bon za ono testiranje i slanje uzorka? Meni je rezultat testiranja došao, no bon još ne. &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Međimurska, varaždinska, krapinsko-zagorska i koprivničko-križevačka županija pod Sjevernu Hrvatsku/Sjevernu regiju. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; @SRazmera @mb11bh @kokolok14219762 @ThisAintARace Laže, ne ložite se da je kupio stan. Ni stan u Bg nije njegov već rentiran kao i sva luksuzna kola je vozio kija su lizing ili rentacar. &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Navijači nakon Kovačićevog gola karijere: "Žena mi rađa, a ja ju pitam da se mali zove Mateo" Chelsea i Liverpool odigrali ... Pogledajte vozni red Utorak, 7.12.2021, 13:22 JAVNA USTANOVA PARK ŠUMA MARJAN NASTAVLJA BORBU PROTIV TEREZE ŽDERIĆ I &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Spremni za 'crne dane': Na žiro i tekućim računima držimo oko 76 milijardi kuna Prema posljednjim podacima Hrvatske narodne banke (HNB) krajem listopada, ukupni depoziti kod poslovnih banaka koji obuhvaćaju depozitni novac te štedne i oročene &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Pristižu nove informacije sukoba u Monacu i zašto je Kovač dobio otkaz Niko Kovač dobio je otkaz u Monacu, vijest o otkazu ... Pogledajte vozni red Utorak, 7.12.2021, 13:22 JAVNA USTANOVA PARK ŠUMA MARJAN NASTAVLJA BORBU PROTIV TEREZE ŽDERIĆ I &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Žarko Te molimo, da se na nama vidi duhovni poučak ‘ K Mariji Isusu’ Gospodine sve je novo, novo...  Sve vedrinom i novošću odsijeva.  Aha, to je danas svetkovina Svete Bogorodice Marije,  Tvoje majke, Gospodine Isuse,  naše Gospe.  Tako je lijepo, &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; ZTBH - BEAUTIFUL LIFE BUILD (android instalacija) ZTBH - BEAUTIFUL LIFE BUILD Instalacija i podešavanje na Androidu repo: http://zadarbuild.com.hr/zadarteam VIP unos aktivacijskog ključa: 6:29 music: Abunai! - Inspiration &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tužan početak 2022.: Umrli su Ante Pavlović i Dragutin Poljak Pavlović je desetljećima radio u HNS-u kao tajnik i savjetnik, sudjelovao je u organizaciji povijesne utakmice Hrvatske i SAD-a, a Tužan početak 2022.: Umrli su Ante Pavlović i Dragutin &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Crnogorski državljani i stranci mogu da uđu preko svih graničnih prelaza u Crnu Goru uz dokaz iz kovid potvrde – da je osoba potpuno cijepljena i da od druge doze cjepiva nije prošlo više od šest mjeseci ili uz dokaz da je osoba preboljela covid-19 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tokom života, jedni su ga smatrali šarlatanom, drugi genijem! Coco Chanel ga je zvala prvim muškarcem-feministom, a dvije stvari su obilježile njegovu karijeru – razotkrivanje misterije ljudskog sna i “nalaženje” ključa za podsvijest... 👇 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Novčanice kuna moći ćemo mijenjati trajno, no za kovanice je rok ograničen U HNB-u očekuju da će se prilikom konverzije vratiti oko 36% količine kovanica i 99% količine novčanica, piše Poslovni Dnevnik. Ako će išta na gospodarskom planu obilježiti &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -415,7 +356,7 @@ one_day_sample %&gt;%
 
 ```r
 # SAMPLE SOME TITLES
-all_raw %&gt;%
+fullDta %&gt;%
   select(SOURCE_TYPE, TITLE) %&gt;%
   sample_n(9) %&gt;%
   kbl() %&gt;%
@@ -431,12 +372,28 @@ all_raw %&gt;%
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Edin iz 'Braka na prvu' otkrio: 'Sanela i ja više nismo zajedno! Nije nam išlo i zaslužujem više' &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Watch Movies Online &amp;amp; TV shows - Watch Kuća noćnih mora (2021) Full Movie Online in HD Quality - ICS FILM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; C. ORFF: CARMINA BURANA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Što u Kataru čeka hrvatske navijače? ‘S jednom se stvari nitko ne zafrkava, koga s tim uhvate - taj nestane‘ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Naknada za komplikacije u trudnoći vol. 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3. klupska izložba Hrvatske patuljaste kokoši i 2. izložba malih životinja u Đurđevcu &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
@@ -444,27 +401,11 @@ all_raw %&gt;%
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Tomato &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Pust hrust s Tefal crvtniki &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; comment &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Comment on vecernji.hr &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Plesni koreograf i redatelj Igor Barberić jedan je od članova žirija showa Ples sa zvijezdama! 👨‍⚖️ &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Modne kritike za hrabre kokoši vol. 5 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Proizvodi za intenzivnu njegu kože oko očiju - Nikel kozmetika &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -478,7 +419,7 @@ layout: true
 
 ```r
 # choose variables to investigate
-all_raw %&gt;%
+one_day_sample %&gt;%
   filter(SOURCE_TYPE == "facebook") %&gt;%
   select(AUTHOR,
          REACH,
@@ -513,13 +454,13 @@ fb %&gt;%
 ```
 
 ```
-## Warning: There were 11230 warnings in `mutate()`.
+## Warning: There were 1752 warnings in `mutate()`.
 ## The first warning was:
 ## ℹ In argument: `FOLLOWERS_COUNT = (function (x, ...) ...`.
-## ℹ In group 1: `AUTHOR = "\"Chuj wie\" czyli Chuj jako istota Wszechwiedząca"`.
+## ℹ In group 1: `AUTHOR = "(bes)korisno znanje"`.
 ## Caused by warning in `prettyNum()`:
 ## ! 'big.mark' and 'decimal.mark' are both '.', which could be confusing
-## ℹ Run ]8;;ide:run:dplyr::last_dplyr_warnings()dplyr::last_dplyr_warnings()]8;; to see the 11229 remaining warnings.
+## ℹ Run ]8;;ide:run:dplyr::last_dplyr_warnings()dplyr::last_dplyr_warnings()]8;; to see the 1751 remaining warnings.
 ```
 
 &lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
@@ -532,54 +473,54 @@ fb %&gt;%
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Unknown user &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 2.003 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Jutarnji &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 767.075 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.612 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Slobodna Dalmacija &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 205.092 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.470 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Dalmatinski portal &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 121.002 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.455 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Mamine tajne anonimne i javne &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 102.770 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.390 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; RTL Vijesti &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 139.221 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.376 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Udruga ATMA &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 206.150 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.340 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Index.hr &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.005.983 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.339 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; DNEVNIK.hr &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 762.897 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.326 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 36 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; eMedjimurje &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 74.446 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.302 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 31 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; DNEVNIK.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 762.897 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 30 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dubrovnik Press &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10.640 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 26 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Udruga ATMA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 206.150 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 24 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 24sata &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.424.094 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 23 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Index.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.005.983 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 23 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Net.hr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 664.493 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 23 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Slobodna Dalmacija &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 205.092 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 21 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Unknown user &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 21 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -621,60 +562,60 @@ fb %&gt;%
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; 24sata &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 914.561 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 204.933 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 148.611.070 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.148.543 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; HGSS - Hrvatska Gorska Služba Spašavanja &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 19.304 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 587 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.110.078 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 22.956 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Index.hr &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 756.276 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 238.583 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 130.641.956 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.017.835 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; FC Barcelona Balkan fans &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 701.900 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 11.369 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 99.240.042 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 714.474 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; HRT Vijesti &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 523.943 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 53.495 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 34.404.216 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 614.199 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; HNK Hajduk Split &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 16.045 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 420 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 688.144 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 16.768 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Hajdučke vijesti &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 486.964 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 7.676 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 16.735.361 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 497.407 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 14.227 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 190 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 489.645 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 14.481 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 24sata &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 12.430 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.237 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.247.195 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 14.902 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Petar Grašo &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 11.757 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 334 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 651.344 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 13.831 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; FC Barcelona Balkan fans &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10.649 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 110 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.799.696 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10.776 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Jutarnji &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 451.969 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 170.862 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 103.612.383 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 642.249 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10.496 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.493 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.134.344 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15.218 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; DNEVNIK.hr &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 410.717 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 126.107 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 88.994.295 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 560.654 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Čitaj knjigu &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 408.489 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 16.464 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 35.144.378 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 473.915 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 7.221 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.378 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.419.225 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 8.918 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -716,53 +657,53 @@ fb %&gt;%
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; D O I N G S 🤯😈💪🏿 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 70.748 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 2.959 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 2.447.414 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 74.098 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Prijateljstvo i ljubav između čovjeka i psa ne poznaju granice. Spletom nesretnih okolnosti jučer popodne otklizali su zajedno niz padinu. Zajedno u sretnim... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 12.554 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 347 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 853.863 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15.854 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Jučer sam u Požegi nakon 8 mjeseci ponovo vidio rotvajlericu koju je udomio moj frend Mario a koju sam ja preuzeo u azilu u Čakovcu i odvezao ju u njen novi... &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 43.708 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.372 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.552.929 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 45.692 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Oboren rekord-35000 ljudi na trgu😄..hvala Banja Luci na jednom od najljepsih i najzabavnijih ulazaka u Novu Godinu …i sretno svima od srca ❤️❤️ &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 11.757 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 334 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 651.344 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 13.831 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Créditos TW I Franjorodowski #cabronazi #cabroworld &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 39.897 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 3.085 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 8.697.468 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 54.789 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sretan nova godina dragi ljudi 🥳 Držite do onog što je temelj, ulažite u ono što ostaje, mislite na ono trajno i nepropadljivo ❤️ &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6.716 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.368 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 331.416 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 8.110 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Nikada nije želio u rat: Ukrajinci su mladom ruskom vojniku koji se predao dali hranu, topli čaj i dopustili mu da se javi obitelji &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 37.032 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 3.088 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.740.477 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 42.240 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Svaka nova godina nosi nove izazove, a ja se nadam i želim da ćete u 2022. biti blagoslovljeni, zdravi, sretni i uspješni! AAAAJMOOOO 2022.! &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5.168 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 752 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 235.312 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5.947 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Potresna snimka iz Ukrajine o kojoj priča cijeli svijet: Dječak uplakan i sam prešao granicu Više na: https://bit.ly/3HU7LAl &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 33.245 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 5.714 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 2.037.888 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 41.990 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dragi hajdukovci, pred nama je 2022. godina u kojoj slavimo 111. rođendan. Godina u znaku broja 1. Bez obzira gdje god bili, što god radili, dajte ono... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.960 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 263 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 204.113 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5.331 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Ispratili smo našeg Akija. Svima koji su u ovim teškim danima bili uz nas i uz Akijevu obitelj od srca zahvaljujemo na podršci. - fotografije: Matej Grgić /... &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 32.434 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.205 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.150.082 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 33.860 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; DOŠLA JE 2022. - NEK’ VAM BUDE BOLJA I SRETNIJA! Nema predaje💪 Idemo dalje, sinovi pobjede! #bujicatim🇭🇷 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3.623 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 539 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 168.863 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.208 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Prošlo je deset godina od kada sam prvi put vidila najlipse oči na svitu. I sve mi je u ovih deset godina bilo lako, samo kad bi pogledala u te oči... Za te... &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 30.374 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.308 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.088.544 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 31.751 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; "Prijateljstvo i ljubav između čovjeka i psa ne poznaju granice'', napisali su iz HGSS-a &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3.573 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 64 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 143.348 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3.728 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -780,7 +721,7 @@ layout: true
 
 ```r
 # choose variables to investigate
-all_raw %&gt;%
+fullDta %&gt;%
   filter(SOURCE_TYPE == "web") %&gt;%
   select(FROM,
          AUTHOR,
@@ -790,7 +731,7 @@ all_raw %&gt;%
          COMMENT_COUNT,
          INFLUENCE_SCORE,
          TITLE,
-         MENTION_SNIPPET,
+   #      MENTION_SNIPPET,
          DATE, 
          TIME) -&gt; web
 ```
@@ -881,85 +822,6 @@ web %&gt;%
   head(8) %&gt;% kbl() %&gt;% kable_styling(font_size = 11)
 ```
 
-```
-## Warning: There were 4 warnings in `mutate()`.
-## The first warning was:
-## ℹ In argument: `LIKES = (function (x, ...) ...`.
-## Caused by warning in `prettyNum()`:
-## ! 'big.mark' and 'decimal.mark' are both '.', which could be confusing
-## ℹ Run ]8;;ide:run:dplyr::last_dplyr_warnings()dplyr::last_dplyr_warnings()]8;; to see the 3 remaining warnings.
-```
-
-&lt;table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;"&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:left;"&gt; FROM &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; LIKES &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; COMMENT &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; REACH &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; VIRALITY &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; jutarnji.hr &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 3.492.298 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.595.332 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 422.845.759 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 3.081805e+04 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; campaign-archive.com &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 2.779.750 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 770.345 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 367.763.587 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 7.009902e+02 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; priceless.com &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.189.660 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 68.841 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 54.359.098 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 2.363774e+02 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; novizivot.net &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.095.809 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 132.356 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 26.931.135 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 2.690548e+03 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; geopolitika.news &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 502.112 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 134.073 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 18.788.037 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 2.385309e+03 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; maxportal.hr &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 358.279 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 197.283 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 15.979.841 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 2.586158e+03 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; teleskop.hr &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 350.047 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 103.481 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 19.056.470 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.767277e+03 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; hkm.hr &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 347.210 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 30.517 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 12.295.920 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 5.148555e+03 &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
 ---
 layout: true
 # TWITTER
@@ -968,7 +830,7 @@ layout: true
 
 ```r
 # choose variables to investigate
-all_raw %&gt;%
+fullDta %&gt;%
   filter(SOURCE_TYPE == "twitter") %&gt;%
   select(AUTHOR,
          REACH,
@@ -978,7 +840,7 @@ all_raw %&gt;%
          TWEET_TYPE,
          TWEET_SOURCE_NAME,
          TITLE,
-         MENTION_SNIPPET,
+   #      MENTION_SNIPPET,
          DATE, 
          TIME) -&gt; twitter
 ```
@@ -1325,7 +1187,7 @@ layout: true
 
 ```r
 # choose variables to investigate
-all_raw %&gt;%
+fullDta %&gt;%
   filter(SOURCE_TYPE == "youtube") %&gt;%
   select(AUTHOR,
          REACH,
@@ -1333,7 +1195,7 @@ all_raw %&gt;%
          VIEW_COUNT,
          COMMENTS_COUNT,
          TITLE,
-         MENTION_SNIPPET,
+  #       MENTION_SNIPPET,
          URL,
          DATE, 
          TIME) -&gt; youtube
@@ -1540,11 +1402,11 @@ layout: true
 
 ```r
 # choose variables to investigate
-all_raw %&gt;%
+fullDta %&gt;%
   filter(SOURCE_TYPE == "forum") %&gt;%
   select(FROM,
          TITLE,
-         MENTION_SNIPPET,
+   #      MENTION_SNIPPET,
          DATE, 
          TIME) -&gt; forum
 ```
@@ -1629,12 +1491,12 @@ layout: true
 
 ```r
 # choose variables to investigate
-all_raw %&gt;%
+fullDta %&gt;%
   filter(SOURCE_TYPE == "instagram") %&gt;%
   select(FROM,
          TITLE,
          AUTHOR,
-         MENTION_SNIPPET,
+   #      MENTION_SNIPPET,
          REACH,
          LIKE_COUNT,
          COMMENT_COUNT,
