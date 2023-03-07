@@ -1,25 +1,22 @@
 ---
 title: "Learning Social Media Analytics"
-subtitle: "Lecture 1: Course introduction"  
-author: "Luka Sikic, PhD"
-date: '`r Sys.Date()`'
+subtitle: "Lecture 1 Course introduction"
+author: "Luka Sikic PhD"
+institute: "Fakultet hrvatskih studija"
+date: "2016/12/12 (updated: `r Sys.Date()`)"
 output:
-  html_document:
-    code_folding: show
-    theme: flatly
-    highlight: haddock
-    toc: yes
-    toc_depth: 4
-    toc_float: yes
-    keep_md: yes
-  pdf_document:
-    toc: yes
-    toc_depth: '4'
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
 ---
 
 
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = F)
+options(htmltools.dir.version = FALSE)
 ```
 
 
@@ -219,21 +216,3 @@ layout: true
 class: inverse, middle
 layout:false
 # Thank you for your attention!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
