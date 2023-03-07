@@ -13,7 +13,7 @@
 
 <title>index.knit</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -61,6 +61,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -81,6 +82,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -138,11 +142,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -171,8 +179,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -180,16 +188,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -233,7 +234,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -252,7 +253,7 @@ $(document).ready(function () {
   <a href="schedule.html">Schedule</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Courses
      
     <span class="caret"></span>
@@ -274,7 +275,7 @@ $(document).ready(function () {
       <a href="https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-5-Statistics.html">5. Methods for social media analysis I</a>
     </li>
     <li>
-      <a href="">6. Methods for social media analysis II</a>
+      <a href="https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Regular%20Classes/Lecture-6-Machine-Learning.html">6. Methods for social media analysis II</a>
     </li>
     <li>
       <a href="">7. Methods for social media analysis III</a>
@@ -346,9 +347,33 @@ $(document).ready(function () {
 <img src="Foto/SoMe9.jpeg" width="950" height="400" title="hover text">
 </p>
 <p><br> <br></p>
-<p>This is the official website of the course <b>Learning Social Media Analytics</b> at the <a href="https://www.hrstud.unizg.hr/en">Faculty of Croatian Studies</a>. The aim of the course is to introduce students to the important concepts of the social media and demonstrate state of the art methods for the analysis of social media data. The course is made for graduate level students with humanistic, interdisciplinary and social science background that have been introduced to the basic statistics (101) and desirably have some practical experience with empirical analysis. After the course, students will be able to: 1) understand data generation and infrastructure behind (different) social media, 2) identify, interpret and follow frontier research and business trends in social media, 3) independently analyze social media data for research and business purposes. The course doesn`t assume prior knowledge of programming language syntax (R, Python) and all necessary data science (IT) concepts will be explained along the way. However, to make a practical use of the course content, participants should be open to learn new technical skills and concepts <em>en route</em>. This course aims to promote <strong>computational approach</strong> to social sciences and inclusive learning through <strong>Open Source</strong> principles. All <a href="https://github.com/lusiki/Learning-Social-Media-Analytics">repository materials</a> are maintained by Luka Sikic.</p>
+<p>This is the official website of the course <b>Learning Social Media
+Analytics</b> at the <a href="https://www.hrstud.unizg.hr/en">Faculty of
+Croatian Studies</a>. The aim of the course is to introduce students to
+the important concepts of the social media and demonstrate state of the
+art methods for the analysis of social media data. The course is made
+for graduate level students with humanistic, interdisciplinary and
+social science background that have been introduced to the basic
+statistics (101) and desirably have some practical experience with
+empirical analysis. After the course, students will be able to: 1)
+understand data generation and infrastructure behind (different) social
+media, 2) identify, interpret and follow frontier research and business
+trends in social media, 3) independently analyze social media data for
+research and business purposes. The course doesn`t assume prior
+knowledge of programming language syntax (R, Python) and all necessary
+data science (IT) concepts will be explained along the way. However, to
+make a practical use of the course content, participants should be open
+to learn new technical skills and concepts <em>en route</em>. This
+course aims to promote <strong>computational approach</strong> to social
+sciences and inclusive learning through <strong>Open Source</strong>
+principles. All <a
+href="https://github.com/lusiki/Learning-Social-Media-Analytics">repository
+materials</a> are maintained by Luka Sikic.</p>
 <p><br> <br> <br> <br></p>
-<p><a href="https://www.lukasikic.info/">Luka Sikic</a>, PhD</br> Faculty of Croatian Studies, Department of Sociology</br> <b>Office hours</b>   Tuesday, od 11h do 12h</br> mail: <a href="mailto:lsikic@hrstud.hr" class="email">lsikic@hrstud.hr</a></br> mob: + 385 98 162 30 52</br></p>
+<p><a href="https://www.lukasikic.info/">Luka Sikic</a>, PhD</br>
+Catholic University of Croatia</br> <b>Office hours</b></br> mail: <a
+href="mailto:lsikic@hrstud.hr" class="email">lsikic@hrstud.hr</a></br>
+mob: + 385 98 162 30 52</br></p>
 </div>
 
 
