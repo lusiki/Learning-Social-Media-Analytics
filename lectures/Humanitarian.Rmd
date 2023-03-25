@@ -1,0 +1,105 @@
+---
+title: "Untitled"
+author: "Lux"
+date: "2023-03-25"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Warm Up
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(here)
+library(kableExtra)
+library(DT)
+library(purrr)
+library(data.table)
+```
+
+
+
+
+```{r echo=FALSE}
+fullDta <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_NOTXT.csv")
+```
+
+## Identify Sample
+
+
+```{r }
+humanitarno <- fullDta %>%
+#  select(TITLE) %>%
+  filter(grepl("humanitar",TITLE,ignore.case = FALSE))
+```
+
+
+# General Description
+
+```{r}
+length(unique(humanitarno$FROM))
+
+length(unique(humanitarno$TITLE))
+```
+
+
+- how much activity per media
+
+<br>
+<br>
+```{r, echo=F, warning=FALSE, message=FALSE}
+# GENERAL OVERVIEW 
+humanitarno %>%
+  group_by(SOURCE_TYPE) %>%
+  count() %>%
+  arrange(desc(n)) %>%
+  mutate_if(is.numeric, format, big.mark = ".") %>%
+  kbl() %>%
+  kable_styling(font_size = 11)
+```
+
+```{r, echo=F, warning=FALSE, message=FALSE}
+# GENERAL OVERVIEW 
+humanitarno %>%
+  filter(SOURCE_TYPE == "web") %>%
+  group_by(FROM) %>%
+  count() %>%
+  arrange(desc(n)) %>%
+  mutate_if(is.numeric, format, big.mark = ".") %>%
+  kbl() %>%
+  kable_styling(font_size = 11)
+```
+
+- check some titles (random choice)
+
+```{r, echo=F, warning=FALSE, message=FALSE}
+# SAMPLE SOME TXT
+humanitarno %>%
+  select(SOURCE_TYPE, TITLE) %>%
+  unique(.) %>%  
+  sample_n(8) %>%
+  kbl() %>%
+  kable_styling(font_size = 11)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

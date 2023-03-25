@@ -96,7 +96,6 @@ names(one_day_sample)
 
 ---
 <br>
-<br>
 
 - rows and columns
 
@@ -209,9 +208,9 @@ one_day_sample %>%
 # SAMPLE SOME TITLES
 fullDta %>%
   select(SOURCE_TYPE, TITLE) %>%
-  sample_n(9) %>%
+  sample_n(12) %>%
   kbl() %>%
-  kable_styling(font_size = 11)
+  kable_styling(font_size = 9)
 ```
 
 ---
@@ -223,7 +222,7 @@ layout: true
 
 ```{r, echo=F, warning=FALSE, message=FALSE}
 # choose variables to investigate
-one_day_sample %>%
+fullDta %>%
   filter(SOURCE_TYPE == "facebook") %>%
   select(AUTHOR,
          REACH,
@@ -233,7 +232,7 @@ one_day_sample %>%
          TOTAL_REACTIONS_COUNT,
          INFLUENCE_SCORE,
          TITLE,
-         MENTION_SNIPPET,
+#         MENTION_SNIPPET,
          DATE, 
          TIME) -> fb
 ```
@@ -248,7 +247,7 @@ fb %>%
   summarise(N = n()) %>%
   arrange(desc(N))  %>%
   mutate_if(is.numeric, format, big.mark = ".") %>%
-  head(10) %>% kbl() %>%  kable_styling(font_size = 11)
+  head(15) %>% kbl() %>%  kable_styling(font_size = 9)
 ```
 
 
@@ -267,7 +266,7 @@ fb %>%
             REACTIONS = sum(TOTAL_REACTIONS_COUNT)) %>%
   arrange(desc(LIKES)) %>%
   mutate_if(is.numeric, format, big.mark = ".") %>%
-  head(8) %>% kbl() %>% kable_styling(font_size = 11)
+  head(15) %>% kbl() %>% kable_styling(font_size = 9)
 ```
 
 
@@ -285,12 +284,13 @@ fb %>%
             REACTIONS = sum(TOTAL_REACTIONS_COUNT)) %>%
   arrange(desc(LIKES)) %>%
   mutate_if(is.numeric, format, big.mark = ".") %>%
-  head(7) %>% kbl() %>% kable_styling(font_size = 11)
+  head(15) %>% kbl() %>% kable_styling(font_size = 9)
 ```
 
 ---
 
 - activity of important authors  
+
 <br>
 
 ```{r, echo=F, warning=FALSE, message=FALSE}
@@ -326,7 +326,7 @@ fullDta %>%
          COMMENT_COUNT,
          INFLUENCE_SCORE,
          TITLE,
-         #      MENTION_SNIPPET,
+#       MENTION_SNIPPET,
          DATE, 
          TIME) -> web
 ```
@@ -340,7 +340,7 @@ web %>%
   summarise(N = n()) %>%
   arrange(desc(N))  %>%
   mutate_if(is.numeric, format, big.mark = ".") %>%
-  head(10) %>% kbl() %>%  kable_styling(font_size = 11)
+  head(15) %>% kbl() %>%  kable_styling(font_size = 9)
 ```
 
 ---
@@ -391,7 +391,7 @@ twitter %>%
   summarise(FOLLOWERS = max(FOLLOWERS_COUNT)) %>%
   arrange(desc(FOLLOWERS))  %>%
   mutate_if(is.numeric, format, big.mark = ".") %>%
-  head(10) %>% kbl() %>%  kable_styling(font_size = 11)
+  head(15) %>% kbl() %>%  kable_styling(font_size = 9)
 ```
 
 ---
@@ -405,7 +405,7 @@ twitter %>%
   summarise(N = n()) %>%
   arrange(desc(N))  %>%
   mutate_if(is.numeric, format, big.mark = ".") %>%
-  head(10) %>% kbl() %>%  kable_styling(font_size = 11)
+  head(15) %>% kbl() %>%  kable_styling(font_size = 9)
 ```
 
 ---
@@ -420,12 +420,13 @@ twitter %>%
             RETWEET = sum(RETWEET_COUNT)) %>%
   arrange(desc(RETWEET))  %>%
   mutate_if(is.numeric, format, big.mark = ".") %>%
-  head(10) %>% kbl() %>%  kable_styling(font_size = 11)
+  head(15) %>% kbl() %>%  kable_styling(font_size = 9)
 ```
 
 ---
  
 - originality of conntent
+<br>
 <br>
 ```{r, echo=F, warning=FALSE, message=FALSE,}
 # originality
@@ -441,7 +442,7 @@ twitter %>%
 
 - technology used
 <br>
-
+<br>
 ```{r, echo=F, warning=FALSE, message=FALSE,}
 # technology
 twitter %>% 
@@ -457,6 +458,7 @@ layout: true
 # YOUTUBE
 ---
 <br>
+<br>
 ```{r, echo=F, warning=FALSE, message=FALSE,}
 # choose variables to investigate
 fullDta %>%
@@ -467,13 +469,14 @@ fullDta %>%
          VIEW_COUNT,
          COMMENTS_COUNT,
          TITLE,
-         #       MENTION_SNIPPET,
+#        MENTION_SNIPPET,
          URL,
          DATE, 
          TIME) -> youtube
 ```
 
 - most active youtubers
+<br>
 <br>
 ```{r, echo=F, warning=FALSE, message=FALSE,}
 # most active authors
@@ -482,13 +485,14 @@ youtube %>%
   count() %>%
   arrange(desc(n)) %>%
   mutate_if(is.numeric, format, big.mark = ".") %>%
-  head(10) %>% kbl() %>% kable_styling(font_size = 11)
+  head(15) %>% kbl() %>% kable_styling(font_size = 9)
 
 ```
 
 ---
 
 - summary of activity (per view)
+<br>
 <br>
 ```{r, echo=F, warning=FALSE, message=FALSE,}
 # activity per author
@@ -500,12 +504,13 @@ youtube %>%
             COMMENTS= sum(COMMENTS_COUNT)) %>%
   arrange(desc(VIEW)) %>%
   mutate_if(is.numeric, format, big.mark = ".") %>%
-  head(10) %>% kbl() %>% kable_styling(font_size = 11)
+  head(15) %>% kbl() %>% kable_styling(font_size = 9)
 ``` 
 
 ---
 
 - conntent summary (most views)
+<br>
 <br>
 ```{r, echo=F, warning=FALSE, message=FALSE,}
 # breaks down
@@ -513,7 +518,7 @@ youtube %>%
   group_by(AUTHOR, URL,REACH,LIKE_COUNT, VIEW_COUNT, COMMENTS_COUNT) %>%
   arrange(desc(VIEW_COUNT)) %>%
   #  datatable(., rownames = FALSE, filter="top", options = list(pageLength = 5, scrollX=T))
-  head(7) %>% kbl() %>% kable_styling(font_size = 8)
+  head(15) %>% kbl() %>% kable_styling(font_size = 9)
 
 ```   
 
@@ -584,7 +589,7 @@ instagram %>%
             VIEW = sum(VIEW_COUNT)) %>%
   mutate_if(is.numeric, format, big.mark = ".") %>%
   arrange(desc(LIKE)) %>%
-  head(10) %>% kbl() %>% kable_styling(font_size = 11)
+  head(15) %>% kbl() %>% kable_styling(font_size = 9)
 ```   
 
 ---
@@ -599,7 +604,7 @@ instagram %>%
   count() %>%
   arrange(desc(n)) %>%
   mutate_if(is.numeric, format, big.mark = ".") %>%
-  head(12) %>% kbl() %>% kable_styling(font_size = 11)
+  head(15) %>% kbl() %>% kable_styling(font_size = 9)
 ```    
 
 
