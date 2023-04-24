@@ -19,16 +19,141 @@ library(kableExtra)
 library(DT)
 library(purrr)
 library(data.table)
+library(tidytext)
+library(dplyr)
+library(purrr)
+```
+
+
+## Import dt
+
+```{r echo=F, eval=F, message=F}
+# path <- "D:/LUKA/Freelance/Mediatoolkit/FULLtxtDATA"
+# raw <- list.files(path = path , pattern="xlsx")
+# raw_path <- paste0(path, "/", raw)
+# all_raw <- map_df(raw_path, read_excel)
+# dt <- distinct(all_raw)
+# write.csv(dt, file = "D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv", row.names = T)
+```
+
+```{r echo=F, eval=F, message=F}
+# fullDta <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_NOTXT.csv")
+# fullDtaTxt <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_TXT.csv")
+dt <- fread("D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv")
+```
+
+## Split into 
+
+```{r echo=F, eval=F, message=F}
+n <- nrow(dt)
+chunk_size <- n %/% 20
+
+chunks <- split(dt, rep(1:20, each = chunk_size, length.out = n))
+
+for (i in 1:20) {
+  fwrite(chunks[[i]], file = paste0("D:/LUKA/Freelance/Mediatoolkit/chunk_", i, ".csv"))
+}
+
+```
+
+## Identify articles
+
+```{r echo=F, eval=F, message=F}
+
+path <- "D:/LUKA/Freelance/Mediatoolkit"
+files <- list.files(path)
+chunk_files <- files[grep("chunk", files)]
+filepath <- file.path(path, chunk_files)
+
+
+
+tokenize_chunk <- function(filepath) {
+ filepath %>%
+    read.csv() %>%
+    unnest_tokens(word, FULL_TEXT, token = "words") %>%
+    filter(str_detect(word, "humanitar")) %>%
+    distinct(TITLE, URL, .keep_all = F) 
+}
+
+
+tokenized_chunks <- map(filepath, tokenize_chunk)
+
+tokenized_chunks_df <- bind_rows(tokenized_chunks)
+
+
+
+```
+
+
+```{r  echo=F, eval=F, message=F}
+
+
+df_filtered <- dt %>% 
+  filter(URL %in% tokenized_chunks_df$URL)
+
+write.csv2(df_filtered, file = "D:/LUKA/Freelance/Mediatoolkit/Humanitar.csv", row.names = T)
+
+
 ```
 
 
 
+## Tokenize
 
-```{r echo=FALSE}
-fullDta <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_NOTXT.csv")
+
+```{r}
+
+
+tokenize_chunk <- function(chunk) {
+  chunk %>%
+    unnest_tokens(word, FULL_TEXT, token = "words")
+}
+
+
+batch_size <- 1000  
+n_batches <- ceiling(nrow(dt) / batch_size)
+
+tokenized_data <- map_dfr(seq_len(n_batches), function(batch) {
+  start_row <- (batch - 1) * batch_size + 1
+  end_row <- min(batch * batch_size, nrow(dt))
+  chunk <- dt[start_row:end_row, ]
+  tokenize_chunk(chunk)
+})
+
+
+
+
+proba <- dt[1:300000,] %>%
+    unnest_tokens(word, FULL_TEXT, token = "words")
+
+dt
+
+
+
+
+
+
 ```
+
+
 
 ## Identify Sample
+
+
+
+
+
+```{r}
+
+
+
+
+
+
+
+
+```
+
 
 
 ```{r }
