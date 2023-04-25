@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Library
 
-```{r message=FALSE}
+```{r echo=FALSE, message=FALSE , warning= FALSE}
 library(tidyverse)
 library(readxl)
 library(here)
@@ -26,7 +26,7 @@ library(dplyr)
 ## Data
 
 
-```{r pressure, echo=FALSE}
+```{r echo=FALSE, message=FALSE, warning= FALSE}
 # read data
 dta <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_NOTXT.csv")
 
@@ -37,7 +37,7 @@ dta <- dta %>%
 
 ## Basic descriptives
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE}
 
 # date range
 range(dta$DATE)
@@ -69,7 +69,7 @@ ggplot(data = daily_counts, aes(x = DATE, y = count)) +
 
 ## Portals
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE}
 # Portals by activity
 activity <- dta %>%
   group_by(FROM) %>%
@@ -80,7 +80,7 @@ activity <- dta %>%
 datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE}
 # Portals by reach
 reach <- dta %>%
   group_by(FROM) %>%
@@ -90,7 +90,7 @@ reach <- dta %>%
 datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE}
 # Portals by likes
 like <- dta %>%
   group_by(FROM) %>%
@@ -101,7 +101,7 @@ like <- dta %>%
 datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE}
 # Portals by comments
 comment <- dta %>%
   group_by(FROM) %>%
@@ -112,7 +112,7 @@ comment <- dta %>%
 datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE}
 # Portals by shares
 shares <- dta %>%
   group_by(FROM) %>%
@@ -125,7 +125,7 @@ datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
 
 ## Authors
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE}
 # Authors by activity
 authors <- dta %>%
   group_by(AUTHOR) %>%
@@ -136,7 +136,7 @@ authors <- dta %>%
 datatable(authors, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE}
 # Authors by reach
 reach <- dta %>%
   group_by(AUTHOR) %>%
@@ -146,7 +146,7 @@ reach <- dta %>%
 datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE}
 # Authors by likes
 like <- dta %>%
   group_by(AUTHOR) %>%
@@ -157,7 +157,7 @@ like <- dta %>%
 datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE}
 # Authors by comments
 comment <- dta %>%
   group_by(AUTHOR) %>%
@@ -168,7 +168,7 @@ comment <- dta %>%
 datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE}
 # Authors by shares
 shares <- dta %>%
   group_by(AUTHOR) %>%
@@ -182,10 +182,10 @@ datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
 
 ## Articles
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE, eval=FALSE}
 # Articles by activity
 articles <-  dta %>%
-  group_by(TITLE, URL) %>%
+  group_by(TITLE) %>%
   summarise(count = n()) %>% 
   arrange(desc(count))
 
@@ -193,7 +193,7 @@ datatable(articles, options = list(scrollX = TRUE, scrollY = "500px"))
 
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
 # Articles by reach
 reach <- dta %>%
   group_by(TITLE) %>%
@@ -205,7 +205,7 @@ datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
 # Articles by likes
 like <- dta %>%
   group_by(TITLE) %>%
@@ -217,7 +217,7 @@ like <- dta %>%
 datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
 # Articles by comments
 comment <- dta %>%
   group_by(TITLE) %>%
@@ -229,7 +229,7 @@ comment <- dta %>%
 datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
 # Arcicles by shares
 shares <- dta %>%
   group_by(TITLE) %>%
@@ -242,13 +242,9 @@ datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
 
 ```
 
-
-
 ## Humanitarne akcije
 
-
-
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
 
 dt <- fread("D:/LUKA/Freelance/Mediatoolkit/Humanitar.csv") %>%
   select(-V1)
@@ -277,7 +273,7 @@ ggplot(data = daily_counts, aes(x = DATE, y = count)) +
 
 
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
 activity <- dt %>%
   group_by(SOURCE_TYPE) %>%
   summarise(count = n()) %>%
@@ -293,7 +289,7 @@ datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
 
 ## Web
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
 # Portals by activity
 activity <- dt %>%
   filter(SOURCE_TYPE == "web") %>%
@@ -305,7 +301,7 @@ activity <- dt %>%
 datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
 # Portals by reach
 reach <- dt %>%
   filter(SOURCE_TYPE == "web") %>%
@@ -316,7 +312,7 @@ reach <- dt %>%
 datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
 # Portals by likes
 like <- dt %>%
   filter(SOURCE_TYPE == "web") %>%
@@ -328,7 +324,7 @@ like <- dt %>%
 datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
 # Portals by comments
 comment <- dt %>%
   filter(SOURCE_TYPE == "web") %>%
@@ -340,7 +336,7 @@ comment <- dt %>%
 datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
 # Portals by shares
 shares <- dt %>%
   filter(SOURCE_TYPE == "web") %>%
@@ -353,7 +349,7 @@ datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE, eval=F}
 dt %>%
   filter(SOURCE_TYPE == "web") %>%
   group_by(TITLE) %>%
@@ -370,21 +366,22 @@ dt %>%
 
 
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
 dt %>%
   filter(SOURCE_TYPE == "web") %>%
   group_by(TITLE) %>%
   summarise(shares = sum(REACH, na.rm = T),
             likes = sum(LIKE_COUNT, na.rm = T),
             comments = sum(COMMENT_COUNT, na.rm = T),
-            shares = sum(SHARE_COUNT, na.rm = T)) %>%
+            shares = sum(SHARE_COUNT, na.rm = T),
+            across(URL)) %>%
  # mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
   arrange(desc(likes)) %>%
   slice(1:200) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
 dt %>%
   filter(SOURCE_TYPE == "web") %>%
   group_by(TITLE) %>%
@@ -398,15 +395,9 @@ dt %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r}
-dt %>%
-  filter(SOURCE_TYPE == "web") 
 
 
-```
-
-
-```{r leksikoni, message=F, warning=F}
+```{r leksikoni, echo=FALSE, message=FALSE , warning= FALSE, eval=F}
 # read in lexicons
 CroSentilex_n <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-negatives.txt",
                                    header = FALSE,
@@ -475,7 +466,7 @@ head(sample_n(stop_corpus,100),15)
 
 
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE, eval=F}
 
 token_dt <- dt %>%
   filter(SOURCE_TYPE == "web") %>%
@@ -500,7 +491,7 @@ tokenTidy %>%
 
 
 
-```{r}
+```{r echo=FALSE, message=FALSE , warning= FALSE, eval=F}
 tokenTidy[,.N,by = word][order(-N),][N > 1500]
 
 ## Vizualize most common words
