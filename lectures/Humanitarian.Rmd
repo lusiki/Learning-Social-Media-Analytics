@@ -85,6 +85,8 @@ tokenized_chunks_df <- bind_rows(tokenized_chunks)
 ```
 
 
+## Create "humanitarian" sample
+
 ```{r  echo=F, eval=F, message=F}
 
 
@@ -102,34 +104,6 @@ write.csv2(df_filtered, file = "D:/LUKA/Freelance/Mediatoolkit/Humanitar.csv", r
 
 
 ```{r}
-
-
-tokenize_chunk <- function(chunk) {
-  chunk %>%
-    unnest_tokens(word, FULL_TEXT, token = "words")
-}
-
-
-batch_size <- 1000  
-n_batches <- ceiling(nrow(dt) / batch_size)
-
-tokenized_data <- map_dfr(seq_len(n_batches), function(batch) {
-  start_row <- (batch - 1) * batch_size + 1
-  end_row <- min(batch * batch_size, nrow(dt))
-  chunk <- dt[start_row:end_row, ]
-  tokenize_chunk(chunk)
-})
-
-
-
-
-proba <- dt[1:300000,] %>%
-    unnest_tokens(word, FULL_TEXT, token = "words")
-
-dt
-
-
-
 
 
 

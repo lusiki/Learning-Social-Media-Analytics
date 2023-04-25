@@ -1,0 +1,543 @@
+---
+title: "Untitled"
+author: "Lux"
+date: "2023-04-25"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Library
+
+```{r message=FALSE}
+library(tidyverse)
+library(readxl)
+library(here)
+library(kableExtra)
+library(DT)
+library(purrr)
+library(data.table)
+library(tidytext)
+library(dplyr)
+```
+
+## Data
+
+
+```{r pressure, echo=FALSE}
+# read data
+dta <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_NOTXT.csv")
+
+# select web
+dta <- dta %>% 
+  filter(SOURCE_TYPE == "web")
+```
+
+## Basic descriptives
+
+```{r}
+
+# date range
+range(dta$DATE)
+# number of articles
+nrow(dta)
+
+# articles over time
+daily_counts <- dta %>%
+  group_by(DATE) %>%
+  summarise(count = n())
+
+# descriptives 
+summ <- daily_counts %>% 
+  summarize(min = min(count), max = max(count), 
+            mean = mean(count), q1= quantile(count, probs = 0.25), 
+            median = median(count), q3= quantile(count, probs = 0.75),
+            sd = sd(count)) %>%
+  mutate_if(is.numeric, round, digits=2) 
+
+summ
+
+# create plot
+ggplot(data = daily_counts, aes(x = DATE, y = count)) +
+  geom_line() +
+  labs(x = "Date", y = "Number of Articles")
+ 
+
+```
+
+## Portals
+
+```{r}
+# Portals by activity
+activity <- dta %>%
+  group_by(FROM) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count))
+
+datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r}
+# Portals by reach
+reach <- dta %>%
+  group_by(FROM) %>%
+  summarise(reach = sum(REACH)) %>%
+  arrange(desc(reach))
+
+datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r}
+# Portals by likes
+like <- dta %>%
+  group_by(FROM) %>%
+  summarise(like = sum(LIKE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(like / sum(like) * 100,2)) %>% 
+  arrange(desc(like))
+
+datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r}
+# Portals by comments
+comment <- dta %>%
+  group_by(FROM) %>%
+  summarise(comment = sum(COMMENT_COUNT, na.rm = T)) %>%
+  mutate(percent = round(comment / sum(comment) * 100,2)) %>% 
+  arrange(desc(comment))
+
+datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r}
+# Portals by shares
+shares <- dta %>%
+  group_by(FROM) %>%
+  summarise(shares = sum(SHARE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
+  arrange(desc(shares))
+
+datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## Authors
+
+```{r}
+# Authors by activity
+authors <- dta %>%
+  group_by(AUTHOR) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count))
+
+datatable(authors, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r}
+# Authors by reach
+reach <- dta %>%
+  group_by(AUTHOR) %>%
+  summarise(reach = sum(REACH)) %>%
+  arrange(desc(reach))
+
+datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r}
+# Authors by likes
+like <- dta %>%
+  group_by(AUTHOR) %>%
+  summarise(like = sum(LIKE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(like / sum(like) * 100,2)) %>% 
+  arrange(desc(like))
+
+datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r}
+# Authors by comments
+comment <- dta %>%
+  group_by(AUTHOR) %>%
+  summarise(comment = sum(COMMENT_COUNT, na.rm = T)) %>%
+  mutate(percent = round(comment / sum(comment) * 100,2)) %>% 
+  arrange(desc(comment))
+
+datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r}
+# Authors by shares
+shares <- dta %>%
+  group_by(AUTHOR) %>%
+  summarise(shares = sum(SHARE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
+  arrange(desc(shares))
+
+datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+
+## Articles
+
+```{r}
+# Articles by activity
+articles <-  dta %>%
+  group_by(TITLE, URL) %>%
+  summarise(count = n()) %>% 
+  arrange(desc(count))
+
+datatable(articles, options = list(scrollX = TRUE, scrollY = "500px"))
+
+```
+
+```{r}
+# Articles by reach
+reach <- dta %>%
+  group_by(TITLE) %>%
+  summarise(reach = sum(REACH)) %>%
+  arrange(desc(reach)) %>%
+  slice(1:1000)
+
+datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+
+```{r}
+# Articles by likes
+like <- dta %>%
+  group_by(TITLE) %>%
+  summarise(like = sum(LIKE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(like / sum(like) * 100,2)) %>% 
+  arrange(desc(like)) %>%
+  slice(1:1000)
+
+datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r}
+# Articles by comments
+comment <- dta %>%
+  group_by(TITLE) %>%
+  summarise(comment = sum(COMMENT_COUNT, na.rm = T)) %>%
+  mutate(percent = round(comment / sum(comment) * 100,2)) %>% 
+  arrange(desc(comment)) %>%
+  slice(1:1000)
+
+datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r}
+# Arcicles by shares
+shares <- dta %>%
+  group_by(TITLE) %>%
+  summarise(shares = sum(SHARE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
+  arrange(desc(shares)) %>%
+  slice(1:1000)
+
+datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
+
+```
+
+
+
+## Humanitarne akcije
+
+
+
+```{r}
+
+dt <- fread("D:/LUKA/Freelance/Mediatoolkit/Humanitar.csv") %>%
+  select(-V1)
+
+daily_counts <- dt %>%
+  group_by(DATE) %>%
+  summarise(count = n())
+
+# descriptives 
+summ <- daily_counts %>% 
+  summarize(min = min(count), max = max(count), 
+            mean = mean(count), q1= quantile(count, probs = 0.25), 
+            median = median(count), q3= quantile(count, probs = 0.75),
+            sd = sd(count)) %>%
+  mutate_if(is.numeric, round, digits=2) 
+
+summ
+
+# create plot
+ggplot(data = daily_counts, aes(x = DATE, y = count)) +
+  geom_line() +
+  labs(x = "Date", y = "Number of Articles")
+ 
+```
+
+
+
+
+```{r}
+activity <- dt %>%
+  group_by(SOURCE_TYPE) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count))
+
+
+datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
+
+
+```
+
+
+## Web
+
+```{r}
+# Portals by activity
+activity <- dt %>%
+  filter(SOURCE_TYPE == "web") %>%
+  group_by(FROM) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count))
+
+datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r}
+# Portals by reach
+reach <- dt %>%
+  filter(SOURCE_TYPE == "web") %>%
+  group_by(FROM) %>%
+  summarise(reach = sum(REACH)) %>%
+  arrange(desc(reach))
+
+datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r}
+# Portals by likes
+like <- dt %>%
+  filter(SOURCE_TYPE == "web") %>%
+  group_by(FROM) %>%
+  summarise(like = sum(LIKE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(like / sum(like) * 100,2)) %>% 
+  arrange(desc(like))
+
+datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r}
+# Portals by comments
+comment <- dt %>%
+  filter(SOURCE_TYPE == "web") %>%
+  group_by(FROM) %>%
+  summarise(comment = sum(COMMENT_COUNT, na.rm = T)) %>%
+  mutate(percent = round(comment / sum(comment) * 100,2)) %>% 
+  arrange(desc(comment))
+
+datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r}
+# Portals by shares
+shares <- dt %>%
+  filter(SOURCE_TYPE == "web") %>%
+  group_by(FROM) %>%
+  summarise(shares = sum(SHARE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
+  arrange(desc(shares))
+
+datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+
+```{r}
+dt %>%
+  filter(SOURCE_TYPE == "web") %>%
+  group_by(TITLE) %>%
+  summarise(shares = sum(SHARE_COUNT, na.rm = T),
+            likes = sum(LIKE_COUNT, na.rm = T),
+            comments = sum(COMMENT_COUNT, na.rm = T),
+            reach = sum(REACH_COUNT, na.rm = T)) %>%
+ # mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
+  arrange(desc(reach)) %>%
+  slice(1:200) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+```
+
+
+
+```{r}
+dt %>%
+  filter(SOURCE_TYPE == "web") %>%
+  group_by(TITLE) %>%
+  summarise(shares = sum(REACH, na.rm = T),
+            likes = sum(LIKE_COUNT, na.rm = T),
+            comments = sum(COMMENT_COUNT, na.rm = T),
+            shares = sum(SHARE_COUNT, na.rm = T)) %>%
+ # mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
+  arrange(desc(likes)) %>%
+  slice(1:200) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r}
+dt %>%
+  filter(SOURCE_TYPE == "web") %>%
+  group_by(TITLE) %>%
+  summarise(shares = sum(REACH, na.rm = T),
+            likes = sum(LIKE_COUNT, na.rm = T),
+            comments = sum(COMMENT_COUNT, na.rm = T),
+            shares = sum(SHARE_COUNT, na.rm = T)) %>%
+ # mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
+  arrange(desc(comments)) %>%
+  slice(1:200) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r}
+dt %>%
+  filter(SOURCE_TYPE == "web") 
+
+
+```
+
+
+```{r leksikoni, message=F, warning=F}
+# read in lexicons
+CroSentilex_n <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-negatives.txt",
+                                   header = FALSE,
+                                   sep = " ",
+                                   stringsAsFactors = FALSE,
+                                   fileEncoding = "UTF-8")  %>%
+                   rename(word = "V1", sentiment = "V2" ) %>%
+                   mutate(brija = "NEG")
+ 
+CroSentilex_p  <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-positives.txt",
+                                   header = FALSE,
+                                   sep = " ",
+                                   stringsAsFactors = FALSE,
+                                   fileEncoding = "UTF-8") %>%
+                    rename(word = "V1", sentiment = "V2" ) %>%
+                    mutate(brija = "POZ")
+ 
+Crosentilex_sve <- rbind(setDT(CroSentilex_n), setDT(CroSentilex_p))
+# check lexicon data 
+head(sample_n(Crosentilex_sve,1000),15)
+
+ 
+CroSentilex_Gold  <- read.delim2("C:/Users/Lukas/Dropbox/Mislav@Luka/gs-sentiment-annotations.txt",
+                                 header = FALSE,
+                                 sep = " ",
+                                 stringsAsFactors = FALSE) %>%
+                    rename(word = "V1", sentiment = "V2" ) 
+ Encoding(CroSentilex_Gold$word) <- "UTF-8"
+ CroSentilex_Gold[1,1] <- "dati"
+ CroSentilex_Gold$sentiment <- str_replace(CroSentilex_Gold$sentiment , "-", "1")
+ CroSentilex_Gold$sentiment <- str_replace(CroSentilex_Gold$sentiment , "\\+", "2")
+ CroSentilex_Gold$sentiment <- as.numeric(unlist(CroSentilex_Gold$sentiment))
+# check lexicon data 
+head(sample_n(CroSentilex_Gold,100),15)
+ 
+# create stop words
+stopwords_cro <- get_stopwords(language = "hr", source = "stopwords-iso")
+# check stopwords data
+head(sample_n(stopwords_cro,100),15)
+# extend stop words
+my_stop_words <- tibble(
+  word = c(
+    "jedan","mjera", "može", "mogu", "kad", "sada", "treba", "ima", "osoba",
+    "e","prvi", "dva","dvije","drugi",
+    "tri","treći","pet","kod",
+    "ove","ova",  "ovo","bez", "kod",
+    "evo","oko",  "om", "ek",
+    "mil","tko","šest", "sedam",
+    "osam",   "čim", "zbog",
+    "prema", "dok","zato", "koji", 
+    "im", "čak","među", "tek",
+    "koliko", "tko","kod","poput", 
+    "baš", "dakle", "osim", "svih", 
+    "svoju", "odnosno", "gdje",
+    "kojoj", "ovi", "toga",
+     "ubera", "vozača", "hrvatskoj", "usluge", "godine", "više", "taksi", "taxi", "taksija", "taksija", "kaže", "rekao", "19"," aee", "ae"
+  ),
+  lexicon = "lux"
+)
+stop_corpus <- my_stop_words %>%
+  bind_rows(stopwords_cro)
+# check stopwords data
+head(sample_n(stop_corpus,100),15)
+
+```
+
+
+
+```{r}
+
+token_dt <- dt %>%
+  filter(SOURCE_TYPE == "web") %>%
+  unnest_tokens(word, FULL_TEXT, "words")
+
+token_dt %>% 
+  anti_join(stop_corpus, by = "word") %>%
+  mutate(word = gsub("\\d+", NA, word)) %>%
+  mutate(word = gsub("^[a-zA-Z]$", NA, word)) -> tokenTidy
+
+tokenTidy %>%
+  filter(!is.na(word)) -> tokenTidy
+
+
+# check
+tokenTidy %>%
+  sample_n(.,15) %>%
+  datatable(., rownames = FALSE, options = list(pageLength = 5, scrollX=T))
+
+
+```
+
+
+
+```{r}
+tokenTidy[,.N,by = word][order(-N),][N > 1500]
+
+## Vizualize most common words
+tokenTidy[,.N,by = word][N>5000][order(-N),][,word := reorder(word,N)][]
+tokenTidy[,.N,by = word][N>20000][order(-N),][,word := reorder(word,N)] %>%
+  ggplot(aes(word, N)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip() +
+  theme_economist()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
