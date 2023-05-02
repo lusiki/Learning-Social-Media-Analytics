@@ -41,7 +41,7 @@ library(ggraph)
 library(widyr)
 library(topicmodels)
 library(ggthemes)
-library(reportMD)
+#library(reportMD)
 ```
 
 
@@ -65,29 +65,242 @@ library(reportMD)
 
 #### ARTICLES
 
-```{r, echo=T}
+```{r, echo=T, include=TRUE,eval = T, message=FALSE, warning=FALSE}
 # read in data
-path <- "D:/LUKA/Freelance/Mediatoolkit/FULLtxtDATA"
-raw <- list.files(path = path , pattern="xlsx")
-raw_path <- paste0(path, "/", raw)
-all_raw <- map_df(raw_path, read_excel)
+# path <- "D:/LUKA/Freelance/Mediatoolkit/FULLtxtDATA"
+# raw <- list.files(path = path , pattern="xlsx")
+# raw_path <- paste0(path, "/", raw)
+# all_raw <- map_df(raw_path, read_excel)
+
+dt <- fread("D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv")
 ```
 
 
-```{r}
+```{r, echo=T, include=TRUE, eval = T, message=FALSE, warning=FALSE}
 # some basic data wrangle
-all <- as.data.table(all_raw)
-all <- all[,DATE := as.Date(DATE,"%Y-%m-%d")][,DATETIME := anytime(paste(DATE,TIME))]
-posts <- all[!duplicated(all),]
-rm(all,all_raw)
+# all <- as.data.table(all_raw)
+# all <- all[,DATE := as.Date(DATE,"%Y-%m-%d")][,DATETIME := anytime(paste(DATE,TIME))]
+# posts <- all[!duplicated(all),]
+# rm(all,all_raw)
 # select facebook
-fb <- posts[SOURCE_TYPE == "facebook",]
-fb <- as.data.table(fb)
+# fb <- posts[SOURCE_TYPE == "facebook",]
+# fb <- as.data.table(fb)
+dta <- dt %>% 
+  filter(SOURCE_TYPE == "facebook")
 ```
+
+## Basic descriptives
+
+```{r echo=FALSE, message=FALSE , warning= FALSE}
+
+# date range
+range(dta$DATE)
+# number of articles
+nrow(dta)
+
+# articles over time
+daily_counts <- dta %>%
+  group_by(DATE) %>%
+  summarise(count = n())
+
+# descriptives 
+summ <- daily_counts %>% 
+  summarize(min = min(count), max = max(count), 
+            mean = mean(count), q1= quantile(count, probs = 0.25), 
+            median = median(count), q3= quantile(count, probs = 0.75),
+            sd = sd(count)) %>%
+  mutate_if(is.numeric, round, digits=2) 
+
+summ
+
+# create plot
+ggplot(data = daily_counts, aes(x = DATE, y = count)) +
+  geom_line() +
+  labs(x = "Date", y = "Number of Articles")
+ 
+
+```
+
+## Bigest profiles
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Portals by activity
+activity <- dta %>%
+  group_by(FROM) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count))
+
+datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Portals by reach
+reach <- dta %>%
+  group_by(FROM) %>%
+  summarise(reach = sum(REACH)) %>%
+  arrange(desc(reach))
+
+datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Portals by likes
+like <- dta %>%
+  group_by(FROM) %>%
+  summarise(like = sum(LIKE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(like / sum(like) * 100,2)) %>% 
+  arrange(desc(like))
+
+datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Portals by comments
+comment <- dta %>%
+  group_by(FROM) %>%
+  summarise(comment = sum(COMMENT_COUNT, na.rm = T)) %>%
+  mutate(percent = round(comment / sum(comment) * 100,2)) %>% 
+  arrange(desc(comment))
+
+datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Portals by shares
+shares <- dta %>%
+  group_by(FROM) %>%
+  summarise(shares = sum(SHARE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
+  arrange(desc(shares))
+
+datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## Authors
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Authors by activity
+authors <- dta %>%
+  group_by(AUTHOR) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count))
+
+datatable(authors, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Authors by reach
+reach <- dta %>%
+  group_by(AUTHOR) %>%
+  summarise(reach = sum(REACH)) %>%
+  arrange(desc(reach))
+
+datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Authors by likes
+like <- dta %>%
+  group_by(AUTHOR) %>%
+  summarise(like = sum(LIKE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(like / sum(like) * 100,2)) %>% 
+  arrange(desc(like))
+
+datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Authors by comments
+comment <- dta %>%
+  group_by(AUTHOR) %>%
+  summarise(comment = sum(COMMENT_COUNT, na.rm = T)) %>%
+  mutate(percent = round(comment / sum(comment) * 100,2)) %>% 
+  arrange(desc(comment))
+
+datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Authors by shares
+shares <- dta %>%
+  group_by(AUTHOR) %>%
+  summarise(shares = sum(SHARE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
+  arrange(desc(shares))
+
+datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+
+## Articles
+
+```{r echo=T, message=FALSE , warning= FALSE, eval=FALSE}
+# Articles by activity
+articles <-  dta %>%
+  group_by(TITLE) %>%
+  summarise(count = n()) %>% 
+  arrange(desc(count)) %>%
+  slice(1:1000)
+
+datatable(articles, options = list(scrollX = TRUE, scrollY = "500px"))
+
+```
+
+```{r echo=T, message=FALSE , warning= FALSE, eval=T}
+# Articles by reach
+reach <- dta %>%
+  group_by(TITLE) %>%
+  summarise(reach = sum(REACH)) %>%
+  arrange(desc(reach)) %>%
+  slice(1:1000)
+
+datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+
+```{r echo=T, message=FALSE , warning= FALSE, eval=T}
+# Articles by likes
+like <- dta %>%
+  group_by(TITLE) %>%
+  summarise(like = sum(LIKE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(like / sum(like) * 100,2)) %>% 
+  arrange(desc(like)) %>%
+  slice(1:1000)
+
+datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE, eval=T}
+# Articles by comments
+comment <- dta %>%
+  group_by(TITLE) %>%
+  summarise(comment = sum(COMMENT_COUNT, na.rm = T)) %>%
+  mutate(percent = round(comment / sum(comment) * 100,2)) %>% 
+  arrange(desc(comment)) %>%
+  slice(1:1000)
+
+datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE, eval=T}
+# Arcicles by shares
+shares <- dta %>%
+  group_by(TITLE) %>%
+  summarise(shares = sum(SHARE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
+  arrange(desc(shares)) %>%
+  slice(1:1000)
+
+datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
+
+```
+
 
 #### LEXICON 
 
-```{r leksikoni, message=F, warning=F}
+```{r leksikoni, echo = F, message=F, warning=F}
 # read in lexicons
 CroSentilex_n <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-negatives.txt",
                                    header = FALSE,
@@ -158,17 +371,17 @@ head(sample_n(stop_corpus,100),15)
 ```{r tokeni, eval = T}
 
 # influencers by ACTIVITY
-fb[,.N,FROM][order(-N)]
+dta[,.N,FROM][order(-N)]
 
 # influencers by FOLLOWERS
-fb[,FOLLOWERS := max(FOLLOWERS_COUNT), FROM][,c("FOLLOWERS","FROM")][order(-FOLLOWERS)] %>% unique() 
+dta[,FOLLOWERS := max(FOLLOWERS_COUNT), FROM][,c("FOLLOWERS","FROM")][order(-FOLLOWERS)] %>% unique() 
 
 # influencers by REACH
-fb[,REACH := sum(REACH), FROM][,.(REACH,FROM)][order(-REACH)] %>% unique() 
+dta[,REACH := sum(REACH), FROM][,.(REACH,FROM)][order(-REACH)] %>% unique() 
 
 # influencers by REACH II
 
-fb %>% 
+dta %>% 
   group_by(FROM) %>%
   mutate(ACTIVITY = n(),
          REACH = sum(REACH),
@@ -192,7 +405,7 @@ fb[,LIKE := sum(LIKE_COUNT), FROM][,.(LIKE,FROM)][order(-LIKE)] %>% unique()
 
 # influencers by LIKE II
 
-fb %>% 
+dta %>% 
   group_by(FROM) %>%
   mutate(LIKE = sum(LIKE_COUNT),
          ACTIVITY = n(),
@@ -205,16 +418,16 @@ fb %>%
 
 
 # influencers by INTERACTIONS
-fb[,INTERACTIONS := sum(INTERACTIONS), FROM][,.(INTERACTIONS,FROM)][order(-INTERACTIONS)] %>% unique() 
+dta[,INTERACTIONS := sum(INTERACTIONS), FROM][,.(INTERACTIONS,FROM)][order(-INTERACTIONS)] %>% unique() 
 
 
 # influencers by COMMENT
-fb[,COMMENT := sum(COMMENT_COUNT), FROM][,.(COMMENT,FROM)][order(-COMMENT)] %>% unique() 
+dta[,COMMENT := sum(COMMENT_COUNT), FROM][,.(COMMENT,FROM)][order(-COMMENT)] %>% unique() 
 
 
 # influencers by COMMENT II
 
-fb %>% 
+dta %>% 
   group_by(FROM) %>%
   mutate(COMMENT = sum(COMMENT_COUNT),
          ACTIVITY = n(),
@@ -227,12 +440,12 @@ fb %>%
 #fb[, `:=` (ACTIVITY = .N , COMMENT = sum(COMMENT_COUNT),ENGAGE = COMMENT/ACTIVITY), FROM][,.(FROM,ACTIVITY,COMMENT, ENGAGE)][ACTIVITY >= 100][order(-COMMENT)] %>% unique()
 
 # influencers by SHARE
-fb[,SHARE := sum(SHARE_COUNT), FROM][,.(SHARE,FROM)][order(-SHARE)] %>% unique() 
+dta[,SHARE := sum(SHARE_COUNT), FROM][,.(SHARE,FROM)][order(-SHARE)] %>% unique() 
 
 
 # influencers by SHARE II
 
-fb %>% 
+dta %>% 
   group_by(FROM) %>%
   mutate(SHARE = sum(SHARE_COUNT),
          ACTIVITY = n(),
@@ -247,7 +460,7 @@ fb %>%
 
 # letters by influencer
 
-fb %>% 
+dta %>% 
   group_by(FROM) %>%
   mutate(LETTERS = sum(SHARE_COUNT),
          ACTIVITY = n(),
@@ -266,34 +479,34 @@ fb %>%
 
 # posts by REACH
 
-fb[,.(SHARE_COUNT,FROM,FULL_TEXT, URL)][order(-SHARE_COUNT)] 
+dta[,.(SHARE_COUNT,FROM,FULL_TEXT, URL)][order(-SHARE_COUNT)] 
 
 # posts by LIKE
 
-fb[,.(LIKE_COUNT,FROM,FULL_TEXT, URL)][order(-LIKE_COUNT)] 
+dta[,.(LIKE_COUNT,FROM,FULL_TEXT, URL)][order(-LIKE_COUNT)] 
 
 # posts by INTERACTIONS
 
-fb[,.(INTERACTIONS,FROM,FULL_TEXT, URL)][order(-INTERACTIONS)]  
+dta[,.(INTERACTIONS,FROM,FULL_TEXT, URL)][order(-INTERACTIONS)]  
 
 # posts by COMMENT
 
-fb[,.(COMMENT_COUNT,FROM,FULL_TEXT, URL)][order(-COMMENT_COUNT)]  
+dta[,.(COMMENT_COUNT,FROM,FULL_TEXT, URL)][order(-COMMENT_COUNT)]  
 
 # posts by SHARE
 
-fb[,.(SHARE_COUNT,FROM,FULL_TEXT, URL)][order(-SHARE_COUNT)] 
+dta[,.(SHARE_COUNT,FROM,FULL_TEXT, URL)][order(-SHARE_COUNT)] 
 
 
 # how many letters in a title
-fb[,
+dta[,
        .(Avg = mean(nchar(TITLE), na.rm = T),
          STD = sd(nchar(TITLE), na.rm = T),
          min = min(nchar(TITLE), na.rm = T),
          max = max(nchar(TITLE), na.rm = T)),
       SOURCE_TYPE][order(-Avg),]
 # how many letters in a text
-fb[,
+dta[,
        .(Avg = mean(nchar(FULL_TEXT)),
          STD = sd(nchar(FULL_TEXT)),
          min = min(nchar(FULL_TEXT)),
@@ -304,7 +517,7 @@ fb[,
 ```
 
 
-```{r eval=FALSE}
+```{r echo = F, eval=FALSE, include = F}
 
 
 nog <- fb[,.N,FROM][order(-N)]
@@ -351,19 +564,17 @@ forumAP <- write_csv2(ap, "D:/LUKA/Freelance/Mediatoolkit/forumAP.csv")
 
 
 
-
-
 # TEXT TOKENIZATION AND CLEAN
 
 
 #### TOKENIZE
 
-```{r}
+```{r echo = T, eval=T, include =T }
 # dim before tokenize
-dim(fb)
+dim(dta)
 
 # tokenize
-fb %>% 
+dta %>% 
   unnest_tokens(word, FULL_TEXT) -> fb_token
 
 # dim after tokenize
@@ -372,7 +583,7 @@ dim(fb_token)
 # check
 fb_token %>% 
   select(FROM, word, MENTION_SNIPPET ) %>%
-    sample_n(.,10)
+    sample_n(.,100)
 ```
 
 #### CLEAN
@@ -390,7 +601,7 @@ fb_tokenTidy %>%
 # check
 fb_tokenTidy  %>% 
   select(FROM, word, MENTION_SNIPPET ) %>%
-  sample_n(.,15)
+  sample_n(.,100)
 
 ```
 
@@ -400,7 +611,7 @@ fb_tokenTidy  %>%
 
 #### BASIC FREQUENCIES
 
-```{r}
+```{r, fig.height=12, message=F, warning=F}
 ## Most common words
 fb_tokenTidy[,.N,by = word][order(-N),]
 
@@ -551,7 +762,7 @@ fb_tokenTidy %>%
 
 ```{r}
 # Select postes with +5k likes
-fb[order(-LIKE_COUNT)][LIKE_COUNT >= 1000] -> fb_TopLike
+dta[order(-LIKE_COUNT)][LIKE_COUNT >= 1000] -> fb_TopLike
 # check
 dim(fb_TopLike)
 # influencer activity
@@ -577,7 +788,7 @@ fb_tokenTidy_TopLike %>%
 
 ```
 
-```{r}
+```{r warning=F, message=FALSE}
 ## most common words
 fb_tokenTidy_TopLike[,.N,by = word][order(-N),]
 ## word cloud
