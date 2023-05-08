@@ -1,0 +1,290 @@
+---
+title: "Learning Social Media Analytics"
+# subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
+subtitle: "Lecture 8: Facebook"
+author: "Luka Sikic, PhD <br> Faculty of Croatian Studies | [LSMA](https://lusiki.github.io/Learning-Social-Media-Analytics/)"
+output:
+  html_document:
+    code_folding: show
+    theme: flatly
+    highlight: haddock
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+    keep_md: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '4'
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, message = F, warning = F)
+```
+
+
+```{r libs, include=TRUE, echo=FALSE,message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readxl)
+library(here)
+library(kableExtra)
+library(DT)
+library(data.table)
+library(lubridate)
+library(anytime)
+library(tidytext)
+library(grid)
+library(wordcloud)
+library(reshape2)
+library(ggraph)
+library(widyr)
+library(topicmodels)
+library(ggthemes)
+#library(reportMD)
+```
+
+
+# OUTLINE
+<br>
+<br>
+<br>
+- DATA IMPORT
+<br>
+<br>
+- DESCRIPTIVE EXPLORATION
+<br>
+<br>
+- TEXT TOKENIZATION AND CLEAN
+<br>
+<br>
+- ANALYSIS
+
+
+## DATA IMPORT
+
+```{r, echo=T, include=TRUE,eval = T, message=FALSE, warning=FALSE}
+dt <- fread("D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv")
+dt <- dt[!duplicated(dt),]
+
+```
+
+```{r, echo=T, include=TRUE,eval = T, message=FALSE, warning=FALSE}
+dta <- dt %>% 
+# unique(.) %>%
+  filter(SOURCE_TYPE == "instagram")
+```
+
+## BASIC DESCRIPTIVES 
+
+```{r echo=FALSE, message=FALSE , warning= FALSE}
+
+# date range
+range(dta$DATE)
+# number of articles
+nrow(dta)
+
+# articles over time
+daily_counts <- dta %>%
+  group_by(DATE) %>%
+  summarise(count = n())
+
+# descriptives 
+summ <- daily_counts %>% 
+  summarize(min = min(count), max = max(count), 
+            mean = mean(count), q1= quantile(count, probs = 0.25), 
+            median = median(count), q3= quantile(count, probs = 0.75),
+            sd = sd(count)) %>%
+  mutate_if(is.numeric, round, digits=2) 
+
+summ
+
+# create plot
+ggplot(data = daily_counts, aes(x = DATE, y = count)) +
+  geom_line() +
+  labs(x = "Date", y = "Number of Articles")
+ 
+
+```
+
+### Bigest profiles
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Portals by activity
+activity <- dta %>%
+  group_by(FROM) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count))
+
+datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Portals by reach
+reach <- dta %>%
+  group_by(FROM) %>%
+  summarise(reach = sum(REACH)) %>%
+  arrange(desc(reach))
+
+datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Portals by likes
+like <- dta %>%
+  group_by(FROM) %>%
+  summarise(like = sum(LIKE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(like / sum(like) * 100,2)) %>% 
+  arrange(desc(like))
+
+datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Portals by comments
+comment <- dta %>%
+  group_by(FROM) %>%
+  summarise(comment = sum(COMMENT_COUNT, na.rm = T)) %>%
+  mutate(percent = round(comment / sum(comment) * 100,2)) %>% 
+  arrange(desc(comment))
+
+datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Portals by shares
+shares <- dta %>%
+  group_by(FROM) %>%
+  summarise(shares = sum(SHARE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
+  arrange(desc(shares))
+
+datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## Authors
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Authors by activity
+authors <- dta %>%
+  group_by(AUTHOR) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count))
+
+datatable(authors, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Authors by reach
+reach <- dta %>%
+  group_by(AUTHOR) %>%
+  summarise(reach = sum(REACH)) %>%
+  arrange(desc(reach))
+
+datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Authors by likes
+like <- dta %>%
+  group_by(AUTHOR) %>%
+  summarise(like = sum(LIKE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(like / sum(like) * 100,2)) %>% 
+  arrange(desc(like))
+
+datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Authors by comments
+comment <- dta %>%
+  group_by(AUTHOR) %>%
+  summarise(comment = sum(COMMENT_COUNT, na.rm = T)) %>%
+  mutate(percent = round(comment / sum(comment) * 100,2)) %>% 
+  arrange(desc(comment))
+
+datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE}
+# Authors by shares
+shares <- dta %>%
+  group_by(AUTHOR) %>%
+  summarise(shares = sum(SHARE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
+  arrange(desc(shares))
+
+datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## Articles
+
+```{r echo=T, message=FALSE , warning= FALSE, eval=FALSE}
+# Articles by activity
+articles <-  dta %>%
+  group_by(TITLE) %>%
+  summarise(count = n()) %>% 
+  arrange(desc(count)) %>%
+  slice(1:1000)
+
+datatable(articles, options = list(scrollX = TRUE, scrollY = "500px"))
+
+```
+
+```{r echo=T, message=FALSE , warning= FALSE, eval=T}
+# Articles by reach
+reach <- dta %>%
+  group_by(TITLE) %>%
+  summarise(reach = sum(REACH)) %>%
+  arrange(desc(reach)) %>%
+  slice(1:1000)
+
+datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+
+```{r echo=T, message=FALSE , warning= FALSE, eval=T}
+# Articles by likes
+like <- dta %>%
+  group_by(TITLE) %>%
+  summarise(like = sum(LIKE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(like / sum(like) * 100,2)) %>% 
+  arrange(desc(like)) %>%
+  slice(1:1000)
+
+datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE, eval=T}
+# Articles by comments
+comment <- dta %>%
+  group_by(TITLE) %>%
+  summarise(comment = sum(COMMENT_COUNT, na.rm = T)) %>%
+  mutate(percent = round(comment / sum(comment) * 100,2)) %>% 
+  arrange(desc(comment)) %>%
+  slice(1:1000)
+
+datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r echo=T, message=FALSE , warning= FALSE, eval=T}
+# Arcicles by shares
+shares <- dta %>%
+  group_by(TITLE) %>%
+  summarise(shares = sum(SHARE_COUNT, na.rm = T)) %>%
+  mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
+  arrange(desc(shares)) %>%
+  slice(1:1000)
+
+datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
+
+```
+
+
+
+
+
+
+
