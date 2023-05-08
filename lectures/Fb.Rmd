@@ -86,6 +86,7 @@ dt <- fread("D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv")
 # fb <- posts[SOURCE_TYPE == "facebook",]
 # fb <- as.data.table(fb)
 dta <- dt %>% 
+# unique(.) %>%
   filter(SOURCE_TYPE == "facebook")
 ```
 
