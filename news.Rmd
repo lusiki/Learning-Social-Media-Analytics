@@ -12,6 +12,8 @@ title: " "
 <br>
 <br>
 
+**08/05/2023** - Humanitarian sample [report](https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/Humanitarian.html)
+
 **08/01/2022** - CroTech competititon [report](https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/TechBrands/demo.html) 
 
 **07/07/2021** - YouTube blog [post](https://raw.githack.com/lusiki/Learning-Social-Media-Analytics/main/lectures/YouTube.html)  
