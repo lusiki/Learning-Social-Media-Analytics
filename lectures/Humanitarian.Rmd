@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Korupus Humanitar tekstova"
 author: "Lux"
 date: "2023-03-25"
 output: html_document
@@ -9,7 +9,6 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Warm Up
 
 ```{r echo=F, eval=T, message=F , warning= FALSE, message=F}
 library(tidyverse)
@@ -31,8 +30,6 @@ library(widyr)
 library(topicmodels)
 library(ggthemes)
 ```
-
-## Import dt
 
 ```{r echo=F, eval=F, message=F , warning= FALSE}
 # path <- "D:/LUKA/Freelance/Mediatoolkit/FULLtxtDATA"
@@ -765,7 +762,7 @@ fb_tokenTidy_TopLike %>%
 
 #### Term importance
 
-```{r frekvencija, message=F, warning=F, fig.height=10, fig.width=12}
+```{r frekvencija, echo = F, message=F, warning=F, fig.height=10, fig.width=12}
 ## Udio riječi po domenama
 domenaWords <- fb_tokenTidy_TopLike %>%
   filter(FROM %in% c("24sata", "jutarnji.hr", "slobodnadalmacija.hr", "Index.hr" )) %>% 
@@ -806,7 +803,7 @@ idf %>%
 
 #### Phrases
 
-```{r nGRAMI, message=F, warning=F, fig.height=15, fig.width=15}
+```{r nGRAMI, echo = F, message=F, warning=F, fig.height=15, fig.width=15}
 fb_bigram <- fb_TopLike %>%
   unnest_tokens(bigram, FULL_TEXT, token = "ngrams", n = 2)
 #fb_bigram %>% head(10)
@@ -861,7 +858,7 @@ bigram_tf_idf %>%
 
 #### PHRASES CORRELATION
 
-```{r eval = F,message=F, warning=F, fig.height=12, fig.width=12}
+```{r echo=F, eval = F,message=F, warning=F, fig.height=12, fig.width=12}
 
 fb_tokenTidy %>% 
 #  filter(datum > "2020-02-20") %>%
@@ -889,7 +886,7 @@ corsWords %>%
 ### TEMATIC ANALYSIS
 
 
-```{r TEME, message=F, warning=F, fig.height=12, fig.width=12}
+```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=12, fig.width=12}
 fb_tokenTidy_TopLike %>%
   count(FROM, word, sort = TRUE) %>%
   cast_dtm(FROM, word,n) -> dtm
