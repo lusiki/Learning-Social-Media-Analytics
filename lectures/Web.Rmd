@@ -21,6 +21,15 @@ library(purrr)
 library(data.table)
 library(tidytext)
 library(dplyr)
+library(lubridate)
+library(anytime)
+library(grid)
+library(wordcloud)
+library(reshape2)
+library(ggraph)
+library(widyr)
+library(topicmodels)
+library(ggthemes)
 ```
 
 ## Data

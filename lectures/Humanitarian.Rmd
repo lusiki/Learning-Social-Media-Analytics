@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Warm Up
 
-```{r}
+```{r echo=F, eval=T, message=F , warning= FALSE, message=F}
 library(tidyverse)
 library(readxl)
 library(here)
@@ -21,7 +21,14 @@ library(purrr)
 library(data.table)
 library(tidytext)
 library(dplyr)
-library(purrr)
+library(lubridate)
+library(anytime)
+library(grid)
+library(wordcloud)
+library(reshape2)
+library(ggraph)
+library(widyr)
+library(topicmodels)
 library(ggthemes)
 ```
 
@@ -244,7 +251,7 @@ datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
 
 ## Articles
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # Articles by activity
 articles <-  dta %>%
   group_by(TITLE) %>%
@@ -258,51 +265,59 @@ datatable(articles, options = list(scrollX = TRUE, scrollY = "500px"))
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Articles by reach
-reach <- dta %>%
-  group_by(TITLE) %>%
-  summarise(reach = sum(REACH),across(URL)) %>%
-  arrange(desc(reach)) %>%
-  slice(1:1000)
+dta %>% 
+  ungroup %>%
+  arrange(desc(REACH)) %>% 
+  slice(1:3000) %>%
+  group_by(V1) %>%
+  summarise(REACH = sum(REACH),across(c(TITLE, AUTHOR, FROM, URL))) %>% 
+  ungroup() %>%
+  select(-V1, TITLE, AUTHOR, FROM, URL, REACH) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
-datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Articles by likes
-like <- dta %>%
-  group_by(TITLE) %>%
-  summarise(like = sum(LIKE_COUNT, na.rm = T), across(URL)) %>%
-  mutate(percent = round(like / sum(like) * 100,2)) %>% 
-  arrange(desc(like)) %>%
-  slice(1:1000)
+dta %>% 
+  ungroup %>%
+  arrange(desc(LIKE_COUNT)) %>% 
+  slice(1:3000) %>%
+  group_by(V1) %>%
+  summarise(LIKE = sum(LIKE_COUNT),across(c(TITLE, AUTHOR, FROM, URL))) %>% 
+  ungroup() %>%
+  select(-V1, TITLE, AUTHOR, FROM, URL, LIKE) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
-datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Articles by comments
-comment <- dta %>%
-  group_by(TITLE) %>%
-  summarise(comment = sum(COMMENT_COUNT, na.rm = T), acrosss = URL) %>%
-  mutate(percent = round(comment / sum(comment) * 100,2)) %>% 
-  arrange(desc(comment)) %>%
-  slice(1:1000)
-
-datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
+dta %>% 
+  ungroup %>%
+  arrange(desc(COMMENT_COUNT)) %>% 
+  slice(1:3000) %>%
+  group_by(V1) %>%
+  summarise(COMMENT = sum(COMMENT_COUNT),across(c(TITLE, AUTHOR, FROM, URL))) %>% 
+  ungroup() %>%
+  select(-V1, TITLE, AUTHOR, FROM, URL, COMMENT) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 ```
+
+
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Arcicles by shares
-shares <- dta %>%
-  group_by(TITLE) %>%
-  summarise(shares = sum(SHARE_COUNT, na.rm = T), acrosss = URL) %>%
-  mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
-  arrange(desc(shares)) %>%
-  slice(1:1000)
-
-datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
-
+dta %>% 
+  ungroup %>%
+  arrange(desc(SHARE_COUNT)) %>% 
+  slice(1:3000) %>%
+  group_by(V1) %>%
+  summarise(SHARE = sum(SHARE_COUNT),across(c(TITLE, AUTHOR, FROM, URL))) %>% 
+  ungroup() %>%
+  select(-V1, TITLE, AUTHOR, FROM, URL, SHARE) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 
@@ -328,7 +343,7 @@ CroSentilex_p  <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-pos
  
 Crosentilex_sve <- rbind(setDT(CroSentilex_n), setDT(CroSentilex_p))
 # check lexicon data 
-head(sample_n(Crosentilex_sve,1000),15)
+#head(sample_n(Crosentilex_sve,1000),15)
 
  
 CroSentilex_Gold  <- read.delim2("C:/Users/Lukas/Dropbox/Mislav@Luka/gs-sentiment-annotations.txt",
@@ -342,12 +357,12 @@ CroSentilex_Gold  <- read.delim2("C:/Users/Lukas/Dropbox/Mislav@Luka/gs-sentimen
  CroSentilex_Gold$sentiment <- str_replace(CroSentilex_Gold$sentiment , "\\+", "2")
  CroSentilex_Gold$sentiment <- as.numeric(unlist(CroSentilex_Gold$sentiment))
 # check lexicon data 
-head(sample_n(CroSentilex_Gold,100),15)
+#head(sample_n(CroSentilex_Gold,100),15)
  
 # create stop words
 stopwords_cro <- get_stopwords(language = "hr", source = "stopwords-iso")
 # check stopwords data
-head(sample_n(stopwords_cro,100),15)
+#head(sample_n(stopwords_cro,100),15)
 # extend stop words
 my_stop_words <- tibble(
   word = c(
@@ -851,13 +866,13 @@ bigram_tf_idf %>%
 fb_tokenTidy %>% 
 #  filter(datum > "2020-02-20") %>%
   group_by(word) %>%
-  filter(n() > 20) %>%
+  filter(n() > 200) %>%
   filter(!is.na(word)) %>%
   pairwise_cor(word,DATE, sort = T) -> corsWords
 #corsWords %>%
 #  filter(item1 == "oporavak")
 corsWords %>%
-  filter(item1 %in% c("kupnja", "akcija", "sex", "poklon")) %>%
+  filter(item1 %in% c("kupnja", "akcija", "poklon")) %>%
   group_by(item1) %>%
   top_n(10) %>%
   ungroup() %>%
@@ -874,7 +889,7 @@ corsWords %>%
 ### TEMATIC ANALYSIS
 
 
-```{r TEME, message=F, warning=F, fig.height=10, fig.width=10}
+```{r TEME, message=F, warning=F, fig.height=12, fig.width=12}
 fb_tokenTidy_TopLike %>%
   count(FROM, word, sort = TRUE) %>%
   cast_dtm(FROM, word,n) -> dtm
