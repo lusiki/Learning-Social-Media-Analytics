@@ -1,5 +1,5 @@
 ---
-title: "Korupus Humanitar tekstova"
+title: "Korupus native tekstova"
 author: "Lux"
 date: "2023-03-25"
 output: html_document
@@ -40,7 +40,7 @@ library(ggthemes)
 # write.csv(dt, file = "D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv", row.names = T)
 ```
 
-```{r echo=F, eval=F, message=F , warning= FALSE}
+```{r echo=F, eval=T, message=F , warning= FALSE}
 # fullDta <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_NOTXT.csv")
 # fullDtaTxt <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_TXT.csv")
 dt <- fread("D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv")
@@ -95,9 +95,21 @@ write.csv2(df_filtered, file = "D:/LUKA/Freelance/Mediatoolkit/Humanitar.csv", r
 
 ```
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
-dta <- fread("D:/LUKA/Freelance/Mediatoolkit/Humanitar.csv") 
+```{r echo=F, eval=F, message=F , warning= FALSE}
+dta <- dt %>%
+  filter(str_detect(AUTHOR,fixed("sponzor",ignore_case = TRUE))) 
 dta <- dta[,-1]
+```
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+dta <- dt %>%
+  filter(SOURCE_TYPE =="web") %>%
+  filter(str_detect(FULL_TEXT,"sadržaj nastao") |
+           str_detect(AUTHOR,fixed("sponzor",ignore_case = TRUE)))
+  
+rm(dt)
+
 ```
 
 
@@ -107,6 +119,7 @@ dta <- dta[,-1]
 
 # date range
 range(dta$DATE)
+
 # number of articles
 nrow(dta)
 # articles over time
@@ -203,6 +216,17 @@ authors <- dta %>%
 datatable(authors, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
+
+
+```{r}
+authors <- dt %>%
+  group_by(AUTHOR) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count))
+
+datatable(authors, options = list(scrollX = TRUE, scrollY = "500px"))
+```
 
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
