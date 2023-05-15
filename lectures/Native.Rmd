@@ -115,13 +115,25 @@ rm(dt)
 
 ## Basic descriptives
 
+
+#### Vremenski raspon
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 
 # date range
 range(dta$DATE)
+```
 
+
+##### Broj članaka
+```{r echo=F, eval=T, message=F , warning= FALSE}
 # number of articles
 nrow(dta)
+
+```
+
+
+#### Deskriptiva na dnevnoj razini
+```{r echo=F, eval=T, message=F , warning= FALSE}
 # articles over time
 daily_counts <- dta %>%
   group_by(DATE) %>%
@@ -136,7 +148,10 @@ summ <- daily_counts %>%
   mutate_if(is.numeric, round, digits=2) 
 
 summ
+```
 
+#### Broj objava po danima  
+```{r echo=F, eval=T, message=F , warning= FALSE}
 # create plot of articles over time
 ggplot(data = daily_counts, aes(x = DATE, y = count)) +
   geom_line() +
@@ -148,6 +163,8 @@ ggplot(data = daily_counts, aes(x = DATE, y = count)) +
 
 ## Bigest profiles
 
+
+#### Broj objava po izvoru 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Portals by activity
 activity <- dta %>%
@@ -159,6 +176,8 @@ activity <- dta %>%
 datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
+
+#### Doseg objava po izvoru 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Portals by reach
 reach <- dta %>%
@@ -168,6 +187,8 @@ reach <- dta %>%
 
 datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
+
+#### Like-ovi objava po izvoru 
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Portals by likes
@@ -180,6 +201,8 @@ like <- dta %>%
 datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
+
+#### Komentari objava po izvoru 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Portals by comments
 comment <- dta %>%
@@ -191,6 +214,8 @@ comment <- dta %>%
 datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
+
+#### Share-ovi objava po izvoru 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Portals by shares
 shares <- dta %>%
@@ -205,6 +230,8 @@ datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
 
 ## Authors
 
+
+#### Broj objava po autoru 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Authors by activity
 authors <- dta %>%
@@ -217,17 +244,7 @@ datatable(authors, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 
-
-```{r}
-authors <- dt %>%
-  group_by(AUTHOR) %>%
-  summarise(count = n()) %>%
-  mutate(percent = round(count / sum(count) * 100,2)) %>% 
-  arrange(desc(count))
-
-datatable(authors, options = list(scrollX = TRUE, scrollY = "500px"))
-```
-
+#### Doseg objava po autoru 
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Authors by reach
@@ -239,6 +256,8 @@ reach <- dta %>%
 datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
+
+#### Like-ovi objava po autoru 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Authors by likes
 like <- dta %>%
@@ -250,6 +269,8 @@ like <- dta %>%
 datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
+#### Komentari objava po autoru 
+
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Authors by comments
 comment <- dta %>%
@@ -260,6 +281,9 @@ comment <- dta %>%
 
 datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
+
+#### Broj share-ova po autoru 
+
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Authors by shares
@@ -274,6 +298,8 @@ datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
 
 ## Articles
 
+#### Objave po share-ovima 
+
 ```{r echo=F, eval=F, message=F , warning= FALSE}
 # Articles by activity
 articles <-  dta %>%
@@ -285,6 +311,9 @@ articles <-  dta %>%
 datatable(articles, options = list(scrollX = TRUE, scrollY = "500px"))
 
 ```
+
+#### Objave po reach-u
+
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Articles by reach
@@ -301,6 +330,10 @@ dta %>%
 ```
 
 
+
+
+#### Objave po like-ovima 
+
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Articles by likes
 dta %>% 
@@ -315,6 +348,10 @@ dta %>%
 
 ```
 
+
+#### Objave po komentarima
+
+
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Articles by comments
 dta %>% 
@@ -328,7 +365,7 @@ dta %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-
+#### Objave po share-ovima 
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Arcicles by shares
@@ -542,6 +579,8 @@ dta[,.(COMMENT_COUNT,FROM,FULL_TEXT, URL)][order(-COMMENT_COUNT)]
 dta[,.(SHARE_COUNT,FROM,FULL_TEXT, URL)][order(-SHARE_COUNT)] 
 ```
 
+#### Slova u prosječnom  naslovu i tesktu (deskripiva)
+
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 
 # how many letters in a title
@@ -562,6 +601,7 @@ dta[,
 
 ```
 
+#### Tokenizirani tekst prije i nakon čišćenja (broj riječi)
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # dim before tokenize
 dim(dta)
@@ -598,31 +638,32 @@ dim(fb_tokenTidy)
 
 ```
 
-#### Basic freq
+#### Najčešće riječi
 
 ```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=12}
 ## Most common words
-fb_tokenTidy[,.N,by = word][order(-N),]
+fb_tokenTidy[,.N,by = word][order(-N),] %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 ## Vizualize most common words
-fb_tokenTidy[,.N,by = word][N>10000][order(-N),][,word := reorder(word,N)] %>%
-  ggplot(aes(word, N)) +
-  geom_col() +
-  xlab(NULL) +
-  coord_flip() +
-  theme_economist()
-
-## Vizualize most common words over time
-fb_tokenTidy[,DAY:=floor_date(DATE,"day")][,N:=.N,by=DAY][,gn:=sum(N)][
-  word %in% c("ukrajini", "pomoć", "humanitarnu", "udruga", "prava"),] %>%
-  ggplot(., aes(DAY,  N / gn)) + 
-   geom_point() +
-   ggtitle("Učestalost korištenja riječi") +
-   ylab("% ukupnih riječi") +
-   geom_smooth() +
-   facet_wrap(~ word, scales = "free_y") +
-   scale_y_continuous(labels = scales::percent_format())+
-   theme_economist()
+# fb_tokenTidy[,.N,by = word][N>10000][order(-N),][,word := reorder(word,N)] %>%
+#   ggplot(aes(word, N)) +
+#   geom_col() +
+#   xlab(NULL) +
+#   coord_flip() +
+#   theme_economist()
+# 
+# ## Vizualize most common words over time
+# fb_tokenTidy[,DAY:=floor_date(DATE,"day")][,N:=.N,by=DAY][,gn:=sum(N)][
+#   word %in% c("ukrajini", "pomoć", "humanitarnu", "udruga", "prava"),] %>%
+#   ggplot(., aes(DAY,  N / gn)) + 
+#    geom_point() +
+#    ggtitle("Učestalost korištenja riječi") +
+#    ylab("% ukupnih riječi") +
+#    geom_smooth() +
+#    facet_wrap(~ word, scales = "free_y") +
+#    scale_y_continuous(labels = scales::percent_format())+
+#    theme_economist()
 
 ```
 
@@ -714,6 +755,8 @@ fb_tokenTidy %>%
 
 ```
 
+#### Najpozitivniji i najnegativni portali
+
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 ## Negative profiles
 wCount <- fb_tokenTidy %>% 
@@ -777,18 +820,18 @@ fb_tokenTidy_TopLike %>%
 ## most common words
 fb_tokenTidy_TopLike[,.N,by = word][order(-N),]
 ## word cloud
-fb_tokenTidy_TopLike %>%
-  anti_join(CroSentilex_Gold,by="word") %>% 
-  count(word) %>% 
-  arrange(desc(n)) %>%
-  top_n(100) %>%
-  with(wordcloud(word, n, max.words = 120)) 
+# fb_tokenTidy_TopLike %>%
+#   anti_join(CroSentilex_Gold,by="word") %>% 
+#   count(word) %>% 
+#   arrange(desc(n)) %>%
+#   top_n(100) %>%
+#   with(wordcloud(word, n, max.words = 120)) 
 
 ```
 
 #### Term importance
 
-```{r frekvencija, echo = F, message=F, warning=F, fig.height=10, fig.width=12}
+```{r frekvencija, eval = F, echo = F, message=F, warning=F, fig.height=10, fig.width=12}
 ## Udio riječi po domenama
 domenaWords <- fb_tokenTidy_TopLike %>%
   filter(FROM %in% c("24sata", "jutarnji.hr", "slobodnadalmacija.hr", "Index.hr" )) %>% 
@@ -829,7 +872,7 @@ idf %>%
 
 #### Phrases
 
-```{r nGRAMI, echo = F, message=F, warning=F, fig.height=15, fig.width=15}
+```{r nGRAMI,eval = F, echo = F, message=F, warning=F, fig.height=15, fig.width=15}
 fb_bigram <- fb_TopLike %>%
   unnest_tokens(bigram, FULL_TEXT, token = "ngrams", n = 2)
 #fb_bigram %>% head(10)
@@ -912,7 +955,7 @@ corsWords %>%
 ### TEMATIC ANALYSIS
 
 
-```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=12, fig.width=12}
+```{r echo=F, eval=F, message=F , warning= FALSE, fig.height=12, fig.width=12}
 fb_tokenTidy_TopLike %>%
   count(FROM, word, sort = TRUE) %>%
   cast_dtm(FROM, word,n) -> dtm
