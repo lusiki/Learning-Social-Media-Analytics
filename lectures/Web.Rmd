@@ -89,6 +89,19 @@ activity <- dta %>%
 datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
+
+
+
+```{r  eval = F, include = F, echo=FALSE, message=FALSE , warning= FALSE}
+prigorski <- dt %>%
+  filter(FROM == "prigorski.hr" ) %>%
+  distinct()
+
+write.csv2(prigorski, file = "D:/LUKA/Freelance/Mediatoolkit/prigorski.csv", row.names = T)
+```
+
+
+
 ```{r echo=FALSE, message=FALSE , warning= FALSE}
 # Portals by reach
 reach <- dta %>%

@@ -13,6 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r echo=F, eval=T, message=F , warning= FALSE, message=F}
 library(tidyverse)
 library(readxl)
+library(xlsx)
 library(here)
 library(kableExtra)
 library(DT)
@@ -29,6 +30,7 @@ library(ggraph)
 library(widyr)
 library(topicmodels)
 library(ggthemes)
+
 ```
 
 ```{r echo=F, eval=F, message=F , warning= FALSE}
@@ -90,7 +92,7 @@ tokenized_chunks_df <- bind_rows(tokenized_chunks)
 df_filtered <- dt %>% 
   filter(URL %in% tokenized_chunks_df$URL)
 
-write.csv2(df_filtered, file = "D:/LUKA/Freelance/Mediatoolkit/Humanitar.csv", row.names = T)
+#write.csv2(df_filtered, file = "D:/LUKA/Freelance/Mediatoolkit/Humanitar.csv", row.names = T)
 
 
 ```
@@ -239,6 +241,9 @@ authors <- dta %>%
   summarise(count = n()) %>%
   mutate(percent = round(count / sum(count) * 100,2)) %>% 
   arrange(desc(count))
+
+write.xlsx(dta, file = "D:/LUKA/Freelance/Mediatoolkit/native.xlsx", row.names = T)
+
 
 datatable(authors, options = list(scrollX = TRUE, scrollY = "500px"))
 ```

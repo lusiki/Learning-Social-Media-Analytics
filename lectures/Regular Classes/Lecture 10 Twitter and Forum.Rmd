@@ -39,13 +39,13 @@ library(ggraph)
 library(widyr)
 library(topicmodels)
 library(ggthemes)
-library(reportMD)
+#library(reportMD)
 library(anytime)
 library(scales)
 ```
 
 
-```{r, eval=FALSE, echo=T}
+```{r, echo=F,eval=F}
 # read in data
 path <- "D:/LUKA/Freelance/Mediatoolkit/FULLtxtDATA"
 raw <- list.files(path = path , pattern="xlsx")
@@ -53,7 +53,7 @@ raw_path <- paste0(path, "/", raw)
 all_raw <- map_df(raw_path, read_excel)
 ```
 
-```{r , eval=F}
+```{r, echo=F,eval=F}
 # some basic data wrangle
 all <- as.data.table(all_raw)
 all <- all[,DATE := as.Date(DATE,"%Y-%m-%d")][,DATETIME := anytime(paste(DATE,TIME))]
@@ -65,7 +65,7 @@ posts <- as.data.table(posts)
 
 
 range(posts$DATE)
-forum[,.N,TITLE][order(-N)]
+forum[,.N,TITLE][order(-N)][]
 
 
 posts %>% 
@@ -144,8 +144,27 @@ forum[TITLE == "Potraga za razlogom ili teorije zavjere vol. 9",][]
 
 ```
 
-```{r}
-tw <- read.csv2("C:/Users/Lukas/OneDrive/Desktop/tw.csv")
+
+## Data
+
+
+```{r echo=FALSE, message=FALSE, warning= FALSE}
+# read data
+# dta <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_NOTXT.csv")
+# dta <- dta[!duplicated(dta),]
+
+
+dta <- fread("D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv")
+#dta <- dta[!duplicated(dta),]
+
+
+# select twitter
+tw <- dta %>% 
+  filter(SOURCE_TYPE == "twitter")
+
+# select forum
+forum <- dta %>% 
+  filter(SOURCE_TYPE == "forum")
 
 ```
 
@@ -154,82 +173,94 @@ tw <- read.csv2("C:/Users/Lukas/OneDrive/Desktop/tw.csv")
 
 # Basic descriptives of overall activity
 
-```{r}
+```{r,  echo=TRUE, message=FALSE, warning= FALSE}
 # PER INFLUENCER
 tw <- tw %>%
   mutate(PROFILE = gsub("^.*\\.com/([^/]+).*", "\\1", URL))
 tw <- as.data.table(tw)
 
 # most active profiles
-unique(tw[,.N,PROFILE][order(-N)])
+unique(tw[,.N,PROFILE][order(-N)]) %>% 
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 # most popular
 tw %>% 
   group_by(PROFILE) %>%
   summarise(FOLLOW = mean(FOLLOWERS_COUNT)) %>%
   arrange(desc(FOLLOW)) %>% 
-  head(40) 
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 # most influential
 tw %>% 
   group_by(PROFILE) %>%
   summarise(REACH = sum(REACH)) %>%
-  arrange(desc(REACH))  %>% 
-  head(40)
+  arrange(desc(REACH)) %>% 
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 # most influential II
 tw %>% 
   group_by(PROFILE) %>%
   summarise(INTERACTIONS = sum(INTERACTIONS)) %>%
   arrange(desc(INTERACTIONS)) %>% 
-  head(40)
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 # most appreciated
 tw %>% 
   group_by(PROFILE) %>%
   summarise(FAVORITE = sum(FAVORITE_COUNT)) %>%
   arrange(desc(FAVORITE)) %>% 
-  head(40)
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 # most appreciated
 tw %>% 
   group_by(PROFILE) %>%
   summarise(RETWEET = sum(RETWEET_COUNT)) %>%
   arrange(desc(RETWEET)) %>% 
-  head(40)
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 ```
 
-```{r}
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
 # PER TWEET
 
 # most popular
 tw %>% 
   select(PROFILE, FULL_TEXT, FOLLOWERS_COUNT,URL) %>%
   arrange(desc(FOLLOWERS_COUNT)) %>% 
-  head(40)
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 # most influential
 tw %>% 
   select(PROFILE, FULL_TEXT, REACH,URL) %>%
   arrange(desc(REACH))  %>% 
-  head(40)
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 # most influential II
 tw %>% 
   select(PROFILE, FULL_TEXT, INTERACTIONS,URL) %>%
   arrange(desc(INTERACTIONS))  %>% 
-  head(40)
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 # most appreciated
 tw %>% 
   select(PROFILE, FULL_TEXT, FAVORITE_COUNT,URL) %>%
   arrange(desc(FAVORITE_COUNT)) %>% 
-  head(40)
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 # most appreciated
 tw %>% 
   select(PROFILE, FULL_TEXT, RETWEET_COUNT,URL) %>%
-  arrange(desc(RETWEET_COUNT))  %>% 
-  head(40)
+  arrange(desc(RETWEET_COUNT)) %>% 
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 ```
 
 
 # check twitter activity on CRO supply side 
 
-```{r}
+```{r, echo=TRUE, message=FALSE, warning= FALSE}
 # select relevant CRO profiles
 unique(tw[,.N,FROM][order(-N)]) %>%
   filter(N > 5) %>% 
@@ -245,67 +276,77 @@ CTW %>%
   group_by(PROFILE) %>%
   summarise(FOLLOW = mean(FOLLOWERS_COUNT)) %>%
   arrange(desc(FOLLOW))  %>% 
-  head(100)
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 # most influential
 CTW %>% 
   group_by(PROFILE) %>%
   summarise(REACH = sum(REACH)) %>%
-  arrange(desc(REACH))  %>% 
-  head(40)
+  arrange(desc(REACH)) %>% 
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 # most influential II
 CTW %>% 
   group_by(PROFILE) %>%
   summarise(INTERACTIONS = sum(INTERACTIONS)) %>%
   arrange(desc(INTERACTIONS))  %>% 
-  head(40)
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 # most appreciated
 CTW %>% 
   group_by(PROFILE) %>%
   summarise(FAVORITE = sum(FAVORITE_COUNT)) %>%
   arrange(desc(FAVORITE)) %>% 
-  head(40)
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 # most appreciated
 CTW %>% 
   group_by(PROFILE) %>%
   summarise(RETWEET = sum(RETWEET_COUNT)) %>%
   arrange(desc(RETWEET))  %>% 
-  head(40)
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
   
 ```
 
 
-```{r}
+```{r, echo=TRUE, message=FALSE, warning= FALSE}
 # PER TWEET
 
 # most popular
 CTW %>% 
   select(PROFILE, FULL_TEXT, FOLLOWERS_COUNT,URL) %>%
   arrange(desc(FOLLOWERS_COUNT))  %>% 
-  head(40)
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 # most influential
 CTW %>% 
   select(PROFILE, FULL_TEXT, REACH,URL) %>%
   arrange(desc(REACH))  %>% 
-  head(40)
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 # most influential II
 CTW %>% 
   select(PROFILE, FULL_TEXT, INTERACTIONS,URL) %>%
-  arrange(desc(INTERACTIONS))  %>% 
-  head(40)
+  arrange(desc(INTERACTIONS)) %>% 
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 # most appreciated
 CTW %>% 
   select(PROFILE, FULL_TEXT, FAVORITE_COUNT,URL) %>%
-  arrange(desc(FAVORITE_COUNT))  %>% 
-  head(40)
+  arrange(desc(FAVORITE_COUNT)) %>% 
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 # most appreciated
 CTW %>% 
   select(PROFILE, FULL_TEXT, RETWEET_COUNT,URL) %>%
   arrange(desc(RETWEET_COUNT))  %>% 
-  head(40)
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 ```
 
-```{r, eval=FALSE, fig.length = 12}
+```{r, eval=FALSE,  echo=FALSE , message=FALSE, warning= FALSE, fig.length = 12}
 posts[,.N,DATE][order(-DATE)]
 
 all <- posts[DATE > "2021-12-01",]
@@ -345,7 +386,7 @@ text = element_text(family = "serif")) +
 
 # Check forum activity 
 
-```{r leksikoni, message=F, warning=F}
+```{r leksikoni, echo=FALSE, message=F, warning=F}
 # read in lexicons
 CroSentilex_n <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-negatives.txt",
                                    header = FALSE,
@@ -379,12 +420,12 @@ CroSentilex_Gold  <- read.delim2("C:/Users/Lukas/Dropbox/Mislav@Luka/gs-sentimen
  CroSentilex_Gold$sentiment <- str_replace(CroSentilex_Gold$sentiment , "\\+", "2")
  CroSentilex_Gold$sentiment <- as.numeric(unlist(CroSentilex_Gold$sentiment))
 # check lexicon data 
-head(sample_n(CroSentilex_Gold,100),15)
+#head(sample_n(CroSentilex_Gold,100),15)
  
 # create stop words
 stopwords_cro <- get_stopwords(language = "hr", source = "stopwords-iso")
 # check stopwords data
-head(sample_n(stopwords_cro,100),15)
+#head(sample_n(stopwords_cro,100),15)
 # extend stop words
 my_stop_words <- tibble(
   word = c(
@@ -408,17 +449,18 @@ my_stop_words <- tibble(
 stop_corpus <- my_stop_words %>%
   bind_rows(stopwords_cro)
 # check stopwords data
-head(sample_n(stop_corpus,100),15)
+#head(sample_n(stop_corpus,100),15)
 ```
 
 
-```{r}
+```{r,echo=TRUE, message=FALSE, warning=FALSE}
 # read in data
-forum <- read.csv2( "C:/Users/Lukas/OneDrive/Desktop/forum.csv")
 forum <- as.data.table(forum)
 
 
-forum[,.N, TITLE][order(-N)] %>% head(50)
+forum[,.N, TITLE][order(-N)] %>% 
+  slice(1:1000) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 forum[TITLE == "Zoran Milanović, predsjednik Republike Hrvatske vol. IV",] %>% 
   unnest_tokens(word,FULL_TEXT) -> ZM_token
