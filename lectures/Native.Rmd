@@ -99,16 +99,262 @@ df_filtered <- dt %>%
 
 ```{r echo=F, eval=F, message=F , warning= FALSE}
 dta <- dt %>%
-  filter(str_detect(AUTHOR,fixed("sponzor",ignore_case = TRUE))) 
+  filter(SOURCE_TYPE =="web")  %>%
+  filter(str_detect(AUTHOR,fixed("Content",ignore_case = TRUE))) 
+
+dta <- dt %>%
+  filter(SOURCE_TYPE =="web")  %>%
+  filter(str_detect(AUTHOR,fixed("Native tim",ignore_case = TRUE)))
+
+
+dta <- dt %>%
+  filter(SOURCE_TYPE =="web")  %>%
+  filter(str_detect(AUTHOR,fixed("Native",ignore_case = TRUE)))
+
+dta <- dt %>%
+  filter(SOURCE_TYPE =="web")  %>%
+  filter(str_detect(FULL_TEXT,fixed("24Content",ignore_case = TRUE)))
+
+dta <- dt %>%
+  filter(SOURCE_TYPE =="web") %>%
+  filter(str_detect(FULL_TEXT,fixed("Sponzorirani sadržaj",ignore_case = TRUE)))
+
+# sadržaj donosi (txt) == 205
+
+# sadržaj nastao (txt) == 801
+
+# prilog je napravljen (txt) == 5
+
+# nativ (title) == 11
+
+# Native tim (txt) == 142
+
+# Sponzorirani sadržaj == 439
+
+# 24Content ==
+
+
+
+
 dta <- dta[,-1]
 ```
+
+## 24h
+
+- 24h kod autorstva ima 24ContentHaus i u tekstu formulaciju sadržaj donosi
+
+- 24ContentHaus nema u naslovu
+
+- sadržaj donosi u tekstu ima 205
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+# 24h kod autorstva ima 24ContentHaus i u tekstu formulaciju sadržaj donosi
+
+dta <- dt %>%
+  filter(SOURCE_TYPE =="web")  %>%
+  filter(str_detect(AUTHOR,fixed("24ContentHaus",ignore_case = TRUE)))
+
+dta <- dt %>%
+  filter(SOURCE_TYPE =="web")  %>%
+  filter(str_detect(FULL_TEXT,fixed("sadržaj donosi",ignore_case = TRUE)))
+
+
+activity <- dta %>%
+  group_by(FROM) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count))
+
+datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
+
+dta %>% 
+  select(DATE,TIME,TITLE,FROM,AUTHOR,URL, FULL_TEXT) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+  
+
+```
+
+
+## Telegram
+
+- formulacija na kraju članka *sadržaj nastao* ili možemo probati s frazom donosi (ovo ne može je ima previše reziduala) 
+
+- sadržaj nastao u tekstu ima 803
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+# 24h kod autorstva ima 24ContentHaus i u tekstu formulaciju sadržaj donosi
+
+
+dta <- dt %>%
+  filter(SOURCE_TYPE =="web")  %>%
+  filter(str_detect(FULL_TEXT,fixed("sadržaj nastao",ignore_case = TRUE)))
+
+
+activity <- dta %>%
+  group_by(FROM) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count))
+
+datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
+
+
+dta %>% 
+  select(DATE,TIME,TITLE,FROM,AUTHOR,URL, FULL_TEXT) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+
+```
+
+
+## T-portal
+
+- tportal ima potpis tnative i na kraju članka ima formulaciju *prilog je napravljen* u produkciji 
+
+- tnative u naslovu ima 0
+
+- prilog je napravljen u tekstu ima 5
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+# 24h kod autorstva ima 24ContentHaus i u tekstu formulaciju sadržaj donosi
+
+
+dta <- dt %>%
+  filter(SOURCE_TYPE =="web")  %>%
+  filter(str_detect(AUTHOR,fixed("tnative",ignore_case = TRUE)))
+
+dta <- dt %>%
+  filter(SOURCE_TYPE =="web")  %>%
+  filter(str_detect(FULL_TEXT,fixed("prilog je napravljen",ignore_case = TRUE)))
+
+
+activity <- dta %>%
+  group_by(FROM) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count))
+
+datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
+
+
+dta %>% 
+  select(DATE,TIME,TITLE,FROM,AUTHOR,URL, FULL_TEXT) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+```
+
+
+
+## VL
+
+- VL ima Native tim 
+
+- native u autoru ima 11
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+# 24h kod autorstva ima 24ContentHaus i u tekstu formulaciju sadržaj donosi
+
+
+dta <- dt %>%
+  filter(SOURCE_TYPE =="web")  %>%
+  filter(str_detect(AUTHOR,fixed("Native",ignore_case = TRUE)))
+
+# dta <- dt %>%
+#   filter(SOURCE_TYPE =="web")  %>%
+#   filter(str_detect(FULL_TEXT,fixed("prilog je napravljen",ignore_case = TRUE)))
+
+
+activity <- dta %>%
+  group_by(FROM) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count))
+
+datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
+
+
+dta %>% 
+  select(DATE,TIME,TITLE,FROM,AUTHOR,URL, FULL_TEXT) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+```
+
+
+## JL
+
+- JL ima pod autorstvom Sponzorirani sadržaj 
+
+
+- Sponzorirani sadržaj u naslovu ima 46
+
+
+- Sponzorirani sadržaj u teskstu ima 439
+
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+# 24h kod autorstva ima 24ContentHaus i u tekstu formulaciju sadržaj donosi
+
+
+dta <- dt %>%
+  filter(SOURCE_TYPE =="web")  %>%
+  filter(str_detect(AUTHOR,fixed("Sponzorirani sadržaj",ignore_case = TRUE)))
+
+activity <- dta %>%
+  group_by(FROM) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count))
+
+datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
+
+dta %>% 
+  select(DATE,TIME,TITLE,FROM,AUTHOR,URL, FULL_TEXT) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+dta <- dt %>%
+  filter(SOURCE_TYPE =="web")  %>%
+  filter(str_detect(FULL_TEXT,fixed("Sponzorirani sadržaj",ignore_case = TRUE)))
+
+
+activity <- dta %>%
+  group_by(FROM) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count))
+
+datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
+
+dta %>% 
+  select(DATE,TIME,TITLE,FROM,AUTHOR,URL, FULL_TEXT) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+```
+
+
+
+
+
+
 
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 dta <- dt %>%
   filter(SOURCE_TYPE =="web") %>%
-  filter(str_detect(FULL_TEXT,"sadržaj nastao") |
-           str_detect(AUTHOR,fixed("sponzor",ignore_case = TRUE)))
+  filter(str_detect(FULL_TEXT,"sadržaj nastao",ignore_case = TRUE) |
+           str_detect(AUTHOR,fixed("sponzor",ignore_case = TRUE))|
+           str_detect(AUTHOR,fixed("native",ignore_case = TRUE))|
+           str_detect(AUTHOR,fixed("tnative",ignore_case = TRUE))|
+           str_detect(FULL,fixed("tnative",ignore_case = TRUE))|
+           str_detect(AUTHOR,fixed("tnative",ignore_case = TRUE)))
   
 rm(dt)
 
