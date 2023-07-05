@@ -139,7 +139,7 @@ dta <- dt %>%
 dta <- dta[,-1]
 ```
 
-## 24h
+#### 24h
 
 - 24h kod autorstva ima 24ContentHaus i u tekstu formulaciju sadržaj donosi
 
@@ -177,7 +177,7 @@ dta %>%
 ```
 
 
-## Telegram
+#### Telegram
 
 - formulacija na kraju članka *sadržaj nastao* ili možemo probati s frazom donosi (ovo ne može je ima previše reziduala) 
 
@@ -210,7 +210,7 @@ dta %>%
 ```
 
 
-## T-portal
+#### T-portal
 
 - tportal ima potpis tnative i na kraju članka ima formulaciju *prilog je napravljen* u produkciji 
 
@@ -250,7 +250,7 @@ dta %>%
 
 
 
-## VL
+#### VL
 
 - VL ima Native tim 
 
@@ -287,7 +287,7 @@ dta %>%
 ```
 
 
-## JL
+#### JL
 
 - JL ima pod autorstvom Sponzorirani sadržaj 
 
@@ -339,13 +339,7 @@ dta %>%
 
 ```
 
-
-
-
-
-
-
-
+#### Select native corpus
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 
 # 
@@ -358,7 +352,7 @@ dta %>%
 #            str_detect(FULL_TEXT,fixed("tnative",ignore_case = TRUE))|
 #            str_detect(AUTHOR,fixed("tnative",ignore_case = TRUE)))
   
-rm(dt)
+
 
 
 dta <- dt[SOURCE_TYPE == "web" &
@@ -376,9 +370,7 @@ dta <- dt[SOURCE_TYPE == "web" &
 ```
 
 
-## Basic descriptives
-
-
+#### Basic descriptives
 #### Vremenski raspon
 ```{r echo=F, eval=F, message=F , warning= FALSE}
 
@@ -430,7 +422,7 @@ ggplot(data = daily_counts, aes(x = DATE, y = count)) +
 #### Broj objava po izvoru 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Portals by activity
-activity <- dta %>%
+activity <- dt %>%
   group_by(FROM) %>%
   summarise(count = n()) %>%
   mutate(percent = round(count / sum(count) * 100,2)) %>% 
@@ -847,17 +839,17 @@ dta[,.(SHARE_COUNT,FROM,FULL_TEXT, URL)][order(-SHARE_COUNT)]
 
 #### Slova u prosječnom  naslovu i tesktu (deskripiva)
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 # how many letters in a title
-dta[,
+dt[,
        .(Avg = mean(nchar(TITLE), na.rm = T),
          STD = sd(nchar(TITLE), na.rm = T),
          min = min(nchar(TITLE), na.rm = T),
          max = max(nchar(TITLE), na.rm = T)),
       SOURCE_TYPE][order(-Avg),]
 # how many letters in a text
-dta[,
+dt[,
        .(Avg = mean(nchar(FULL_TEXT)),
          STD = sd(nchar(FULL_TEXT)),
          min = min(nchar(FULL_TEXT)),
@@ -878,7 +870,7 @@ dta %>%
   unnest_tokens(word, FULL_TEXT) -> n_token
 
 # dim after tokenize
-dim(fb_token)
+dim(n_token)
 
 # check
 # fb_token %>% 
@@ -900,12 +892,12 @@ n_tokenTidy %>%
 #   sample_n(.,100)
 
 # dim after clean
-dim(fb_tokenTidy)
+dim(n_tokenTidy)
 
 ```
 
 
-#### Najčešće riječi
+#### Najčešće riječi (>150)
 
 ```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=12}
 ## Most common words
@@ -913,14 +905,14 @@ n_tokenTidy[,.N,by = word][order(-N),] %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 
-n_tokenTidy %>%
+an_tokenTidy <- n_tokenTidy %>%
   group_by(word, FROM) %>%
   summarise(N = n()) %>%
   arrange(desc(N)) %>%
-  filter(N > 150) -> n_tokenTidy
+  filter(N > 150) 
 
   
-ggplot(n_tokenTidy, aes(reorder(word, N), N, fill = FROM)) +
+ggplot(an_tokenTidy, aes(reorder(word, N), N, fill = FROM)) +
   geom_col(show.legend = FALSE) +
   ggtitle( "") +
   labs( x = "Riječ", y = "Number of words") +
@@ -1024,12 +1016,13 @@ dataset %>%
  gg_doprinos_sentimentu
  
 }
-doprinos_sentimentu(fb_tokenTidy,30)
+doprinos_sentimentu(n_tokenTidy,30)
 ```
 
+##### svi
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 ## ComparisonCloud
-fb_tokenTidy %>%
+n_tokenTidy %>%
   inner_join(CroSentilex_Gold,by="word") %>% 
   count(word, sentiment) %>% 
   top_n(200) %>%
@@ -1042,36 +1035,104 @@ fb_tokenTidy %>%
 
 ```
 
+##### vecernji
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+n_tokenTidy %>%
+  filter(FROM == "vecernji.hr") %>%
+  inner_join(CroSentilex_Gold,by="word") %>% 
+  count(word, sentiment) %>% 
+  top_n(200) %>%
+  mutate(sentiment = case_when(sentiment == 0 ~ "+/-",
+                                 sentiment == 1 ~ "-",
+                                 sentiment == 2 ~ "+")) %>%
+  acast(word ~ sentiment, value.var = "n", fill = 0) %>%
+  comparison.cloud(colors = c("firebrick3", "deepskyblue3","darkslategray"),
+                   max.words = 120)
+
+```
+
+##### index
+```{r echo=F, eval=T, message=F , warning= FALSE}
+n_tokenTidy %>%
+  filter(FROM == "index.hr") %>%
+  inner_join(CroSentilex_Gold,by="word") %>% 
+  count(word, sentiment) %>% 
+  top_n(200) %>%
+  mutate(sentiment = case_when(sentiment == 0 ~ "+/-",
+                                 sentiment == 1 ~ "-",
+                                 sentiment == 2 ~ "+")) %>%
+  acast(word ~ sentiment, value.var = "n", fill = 0) %>%
+  comparison.cloud(colors = c("firebrick3", "deepskyblue3","darkslategray"),
+                   max.words = 120)
+
+```
+
+##### tportal
+```{r echo=F, eval=T, message=F , warning= FALSE}
+n_tokenTidy %>%
+  filter(FROM == "tportal.hr") %>%
+  inner_join(CroSentilex_Gold,by="word") %>% 
+  count(word, sentiment) %>% 
+  top_n(200) %>%
+  mutate(sentiment = case_when(sentiment == 0 ~ "+/-",
+                                 sentiment == 1 ~ "-",
+                                 sentiment == 2 ~ "+")) %>%
+  acast(word ~ sentiment, value.var = "n", fill = 0) %>%
+  comparison.cloud(colors = c("firebrick3", "deepskyblue3","darkslategray"),
+                   max.words = 120)
+
+```
+
+##### 24h
+```{r echo=F, eval=T, message=F , warning= FALSE}
+n_tokenTidy %>%
+  filter(FROM == "24sata.hr") %>%
+  inner_join(CroSentilex_Gold,by="word") %>% 
+  count(word, sentiment) %>% 
+  top_n(200) %>%
+  mutate(sentiment = case_when(sentiment == 0 ~ "+/-",
+                                 sentiment == 1 ~ "-",
+                                 sentiment == 2 ~ "+")) %>%
+  acast(word ~ sentiment, value.var = "n", fill = 0) %>%
+  comparison.cloud(colors = c("firebrick3", "deepskyblue3","darkslategray"),
+                   max.words = 120)
+
+```
+
+
 #### Najpozitivniji i najnegativni portali
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 ## Negative profiles
-wCount <- fb_tokenTidy %>% 
+wCount <- n_tokenTidy %>% 
   group_by(FROM) %>%
   summarise(word = n())
 CroSentilex_Gold_neg <- CroSentilex_Gold %>% filter(sentiment == 1)
 CroSentilex_Gold_poz <- CroSentilex_Gold %>% filter(sentiment == 2)
-fb_tokenTidy %>% 
+n_tokenTidy %>% 
   semi_join(CroSentilex_Gold_neg, by= "word") %>%
   group_by(FROM) %>% 
   summarise(negWords = n()) %>%
   left_join(wCount, by = "FROM") %>%
   mutate(negativnostIndex = (negWords/word)*100) %>%
   arrange(desc(negativnostIndex)) %>%
-  select(FROM, negativnostIndex)
+  select(FROM, negativnostIndex)  %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 ## Najpozitivniji portali
 CroSentilex_Gold_poz <- CroSentilex_Gold %>% filter(sentiment == 2)
-fb_tokenTidy %>% 
+n_tokenTidy %>% 
   semi_join(CroSentilex_Gold_poz, by= "word") %>%
   group_by(FROM) %>% 
   summarise(pozWords = n()) %>%
   left_join(wCount, by = "FROM") %>%
   mutate(pozitivnostIndex = (pozWords/word)*100) %>%
   arrange(desc(pozitivnostIndex)) %>%
-  select(FROM, pozitivnostIndex)
+  select(FROM, pozitivnostIndex)  %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 
@@ -1116,12 +1177,12 @@ fb_tokenTidy_TopLike[,.N,by = word][order(-N),]
 
 ```
 
-#### Term importance
+#### Term importance (najbitnije riječi po portalima)
 
 ```{r frekvencija, eval = F, echo = F, message=F, warning=F, fig.height=10, fig.width=12}
 ## Udio riječi po domenama
-domenaWords <- fb_tokenTidy_TopLike %>%
-  filter(FROM %in% c("vecernji.hr", "jutarnji.hr", "slobodnadalmacija.hr", "Index.hr" )) %>% 
+domenaWords <- n_tokenTidy %>%
+  filter(FROM %in% c("vecernji.hr", "jutarnji.hr", "telegram.hr", "index.hr", "24sata.hr")) %>% 
   count(FROM, word, sort = T)
   
 ukupnoWords <- domenaWords %>%
@@ -1146,7 +1207,7 @@ idf %>%
   mutate(word = factor(word, levels = rev(unique(word)))) %>% 
   mutate(FROM = factor(FROM)) %>%
   group_by(FROM) %>% 
-  top_n(11) %>% 
+  top_n(20) %>% 
   ungroup() %>%
   ggplot(aes(word, tf_idf, fill = FROM)) +
   geom_col(show.legend = FALSE) +
@@ -1159,8 +1220,8 @@ idf %>%
 
 #### Phrases
 
-```{r nGRAMI,eval = F, echo = F, message=F, warning=F, fig.height=15, fig.width=15}
-fb_bigram <- fb_TopLike %>%
+```{r ,eval = T, echo = F, message=F, warning=F, fig.height=15, fig.width=15}
+fb_bigram <- dta %>%
   unnest_tokens(bigram, FULL_TEXT, token = "ngrams", n = 2)
 #fb_bigram %>% head(10)
 # fb_bigram %>%
@@ -1188,6 +1249,11 @@ bigrams_united %>%
 bigrams_united %>%
   count(bigram, sort = T) %>%
   head(45) 
+```
+
+
+##### Skupno
+```{r ,eval = T, echo = F, message=F, warning=F, fig.height=15, fig.width=15}
 
 
 # Najvažniji bigrami po domenama
@@ -1196,8 +1262,29 @@ bigrams_united %>%
   count(FROM, bigram) %>%
   bind_tf_idf(bigram, FROM, n) %>%
   arrange(desc(tf_idf))
+
 bigram_tf_idf %>%
-  filter(FROM %in% c("vecenji.hr", "jutarnji.hr", "slobodnadalmacija.hr", "Index.hr")) %>%
+  arrange(desc(tf_idf)) %>%
+  filter(tf_idf > 0.09) %>%
+  mutate(bigram = factor(bigram, levels = rev(unique(bigram)))) %>% 
+#  group_by(FROM) %>% 
+#  top_n(20) %>% 
+  ungroup() %>%
+  ggplot(aes(bigram, tf_idf, fill = FROM)) +
+  geom_col(show.legend = FALSE) +
+  labs(x = NULL, y = "tf-idf") +
+#  facet_wrap(~FROM, ncol = 2, scales = "free") +
+  coord_flip() + 
+  theme_economist()
+
+```
+
+#### Domene
+
+```{r ,eval = T, echo = F, message=F, warning=F, fig.height=15, fig.width=15}
+
+bigram_tf_idf %>%
+  filter(FROM %in% c("vecenji.hr", "jutarnji.hr", "24sata.hr", "telegram.hr")) %>%
   arrange(desc(tf_idf)) %>%
   mutate(bigram = factor(bigram, levels = rev(unique(bigram)))) %>% 
   group_by(FROM) %>% 
@@ -1239,11 +1326,11 @@ corsWords %>%
 ```
 
 
-### TEMATIC ANALYSIS
+### TEMATIC ANALYSIS (moguće napraviti i po portalima)
 
 
-```{r echo=F, eval=F, message=F , warning= FALSE, fig.height=12, fig.width=12}
-fb_tokenTidy_TopLike %>%
+```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=12, fig.width=12}
+n_tokenTidy %>%
   count(FROM, word, sort = TRUE) %>%
   cast_dtm(FROM, word,n) -> dtm
 fb_LDA <- LDA(dtm, k = 4,  control = list(seed = 1234))
@@ -1267,12 +1354,7 @@ insta_terms %>%
 ```
 
 
-
-
-
-#### BIGRAM
-
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 bitokens <- dta %>%
   unnest_tokens(bigram, FULL_TEXT, token = "ngrams", n = 2)
 
