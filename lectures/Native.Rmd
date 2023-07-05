@@ -148,7 +148,7 @@ dta <- dta[,-1]
 - sadržaj donosi u tekstu ima 205
 
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 # 24h kod autorstva ima 24ContentHaus i u tekstu formulaciju sadržaj donosi
 
@@ -183,7 +183,7 @@ dta %>%
 
 - sadržaj nastao u tekstu ima 803
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 # 24h kod autorstva ima 24ContentHaus i u tekstu formulaciju sadržaj donosi
 
@@ -219,7 +219,7 @@ dta %>%
 - prilog je napravljen u tekstu ima 5
 
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 # 24h kod autorstva ima 24ContentHaus i u tekstu formulaciju sadržaj donosi
 
@@ -257,7 +257,7 @@ dta %>%
 - native u autoru ima 11
 
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 # 24h kod autorstva ima 24ContentHaus i u tekstu formulaciju sadržaj donosi
 
@@ -299,7 +299,7 @@ dta %>%
 
 
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 # 24h kod autorstva ima 24ContentHaus i u tekstu formulaciju sadržaj donosi
 
@@ -347,16 +347,29 @@ dta %>%
 
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
-dta <- dt %>%
-  filter(SOURCE_TYPE =="web") %>%
-  filter(str_detect(FULL_TEXT,"sadržaj nastao",ignore_case = TRUE) |
-           str_detect(AUTHOR,fixed("sponzor",ignore_case = TRUE))|
-           str_detect(AUTHOR,fixed("native",ignore_case = TRUE))|
-           str_detect(AUTHOR,fixed("tnative",ignore_case = TRUE))|
-           str_detect(FULL,fixed("tnative",ignore_case = TRUE))|
-           str_detect(AUTHOR,fixed("tnative",ignore_case = TRUE)))
+
+# 
+# dta <- dt %>%
+#   filter(SOURCE_TYPE =="web") %>%
+#   filter(str_detect(FULL_TEXT,fixed("sadržaj nastao",ignore_case = TRUE)) |
+#            str_detect(AUTHOR,fixed("sponzor",ignore_case = TRUE))|
+#            str_detect(AUTHOR,fixed("native",ignore_case = TRUE))|
+#            str_detect(AUTHOR,fixed("tnative",ignore_case = TRUE))|
+#            str_detect(FULL_TEXT,fixed("tnative",ignore_case = TRUE))|
+#            str_detect(AUTHOR,fixed("tnative",ignore_case = TRUE)))
   
 rm(dt)
+
+
+dta <- dt[SOURCE_TYPE == "web" &
+          (str_detect(FULL_TEXT, fixed("sadržaj nastao",ignore_case = TRUE)) |
+           str_detect(AUTHOR, fixed("sponzor",ignore_case = TRUE)) |
+           str_detect(AUTHOR, fixed("native",ignore_case = TRUE)) |
+           str_detect(AUTHOR, fixed("tnative",ignore_case = TRUE)) |
+           str_detect(FULL_TEXT, fixed("tnative",ignore_case = TRUE)) |
+           str_detect(AUTHOR, fixed("tnative",ignore_case = TRUE)))]
+
+
 
 ```
 
@@ -365,15 +378,15 @@ rm(dt)
 
 
 #### Vremenski raspon
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 # date range
 range(dta$DATE)
 ```
 
 
-##### Broj članaka
-```{r echo=F, eval=T, message=F , warning= FALSE}
+#### Broj članaka
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # number of articles
 nrow(dta)
 
@@ -381,7 +394,7 @@ nrow(dta)
 
 
 #### Deskriptiva na dnevnoj razini
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # articles over time
 daily_counts <- dta %>%
   group_by(DATE) %>%
@@ -399,7 +412,7 @@ summ
 ```
 
 #### Broj objava po danima  
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # create plot of articles over time
 ggplot(data = daily_counts, aes(x = DATE, y = count)) +
   geom_line() +
@@ -409,7 +422,7 @@ ggplot(data = daily_counts, aes(x = DATE, y = count)) +
 ```
 
 
-## Bigest profiles
+#### Bigest profiles
 
 
 #### Broj objava po izvoru 
@@ -426,7 +439,7 @@ datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
 
 
 #### Doseg objava po izvoru 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # Portals by reach
 reach <- dta %>%
   group_by(FROM) %>%
@@ -438,7 +451,7 @@ datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
 
 #### Like-ovi objava po izvoru 
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # Portals by likes
 like <- dta %>%
   group_by(FROM) %>%
@@ -451,7 +464,7 @@ datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
 
 
 #### Komentari objava po izvoru 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # Portals by comments
 comment <- dta %>%
   group_by(FROM) %>%
@@ -464,7 +477,7 @@ datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
 
 
 #### Share-ovi objava po izvoru 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # Portals by shares
 shares <- dta %>%
   group_by(FROM) %>%
@@ -476,11 +489,11 @@ datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 
-## Authors
+#### Authors
 
 
 #### Broj objava po autoru 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # Authors by activity
 authors <- dta %>%
   group_by(AUTHOR) %>%
@@ -497,7 +510,7 @@ datatable(authors, options = list(scrollX = TRUE, scrollY = "500px"))
 
 #### Doseg objava po autoru 
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # Authors by reach
 reach <- dta %>%
   group_by(AUTHOR) %>%
@@ -509,7 +522,7 @@ datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
 
 
 #### Like-ovi objava po autoru 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # Authors by likes
 like <- dta %>%
   group_by(AUTHOR) %>%
@@ -522,7 +535,7 @@ datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
 
 #### Komentari objava po autoru 
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # Authors by comments
 comment <- dta %>%
   group_by(AUTHOR) %>%
@@ -536,7 +549,7 @@ datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
 #### Broj share-ova po autoru 
 
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # Authors by shares
 shares <- dta %>%
   group_by(AUTHOR) %>%
@@ -547,7 +560,7 @@ shares <- dta %>%
 datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-## Articles
+#### Articles
 
 #### Objave po share-ovima 
 
@@ -566,7 +579,7 @@ datatable(articles, options = list(scrollX = TRUE, scrollY = "500px"))
 #### Objave po reach-u
 
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # Articles by reach
 dta %>% 
   ungroup %>%
@@ -585,7 +598,7 @@ dta %>%
 
 #### Objave po like-ovima 
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # Articles by likes
 dta %>% 
   ungroup %>%
@@ -603,7 +616,7 @@ dta %>%
 #### Objave po komentarima
 
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # Articles by comments
 dta %>% 
   ungroup %>%
@@ -618,7 +631,7 @@ dta %>%
 
 #### Objave po share-ovima 
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # Arcicles by shares
 dta %>% 
   ungroup %>%
@@ -632,7 +645,7 @@ dta %>%
 ```
 
 
-## Text analysis 
+#### Text analysis 
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # read in lexicons
@@ -853,6 +866,7 @@ dta[,
 ```
 
 #### Tokenizirani tekst prije i nakon čišćenja (broj riječi)
+
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # dim before tokenize
 dim(dta)
@@ -889,6 +903,7 @@ dim(fb_tokenTidy)
 
 ```
 
+
 #### Najčešće riječi
 
 ```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=12}
@@ -919,7 +934,7 @@ fb_tokenTidy[,.N,by = word][order(-N),] %>%
 ```
 
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 ## WordCloud(vulgaris)
 fb_tokenTidy %>%
   anti_join(CroSentilex_Gold,by="word") %>% 
@@ -929,9 +944,13 @@ fb_tokenTidy %>%
   with(wordcloud(word, n, max.words = 80)) 
 ```
 
+
+
+
+
 #### Sentiment
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 ## Sentiment over time
 vizualiziraj_sentiment <- function(dataset, frq = "week") {
 dataset %>%
@@ -1041,7 +1060,7 @@ fb_tokenTidy %>%
 
 #### Analysis of most liked posts
 
-```{r echo=F, eval=T, message=F , warning= FALSE, fig.width=12}
+```{r echo=F, eval=F, message=F , warning= FALSE, fig.width=12}
 # Select postes with +5k likes
 dta[order(-LIKE_COUNT)][LIKE_COUNT >= 500] -> fb_TopLike
 # check
@@ -1085,7 +1104,7 @@ fb_tokenTidy_TopLike[,.N,by = word][order(-N),]
 ```{r frekvencija, eval = F, echo = F, message=F, warning=F, fig.height=10, fig.width=12}
 ## Udio riječi po domenama
 domenaWords <- fb_tokenTidy_TopLike %>%
-  filter(FROM %in% c("24sata", "jutarnji.hr", "slobodnadalmacija.hr", "Index.hr" )) %>% 
+  filter(FROM %in% c("vecernji.hr", "jutarnji.hr", "slobodnadalmacija.hr", "Index.hr" )) %>% 
   count(FROM, word, sort = T)
   
 ukupnoWords <- domenaWords %>%
@@ -1161,7 +1180,7 @@ bigrams_united %>%
   bind_tf_idf(bigram, FROM, n) %>%
   arrange(desc(tf_idf))
 bigram_tf_idf %>%
-  filter(FROM %in% c("24sata", "jutarnji.hr", "slobodnadalmacija.hr", "Index.hr")) %>%
+  filter(FROM %in% c("vecenji.hr", "jutarnji.hr", "slobodnadalmacija.hr", "Index.hr")) %>%
   arrange(desc(tf_idf)) %>%
   mutate(bigram = factor(bigram, levels = rev(unique(bigram)))) %>% 
   group_by(FROM) %>% 
@@ -1230,4 +1249,68 @@ insta_terms %>%
   theme_economist()
 ```
 
+
+
+
+
+#### BIGRAM
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+bitokens <- dta %>%
+  unnest_tokens(bigram, FULL_TEXT, token = "ngrams", n = 2)
+
+
+bitokens %>% head(10)
+
+bitokens %>%
+  count(bigram, sort = T) %>%
+  head(15)
+
+
+bitokens_sep <- bitokens %>%
+  separate(bigram, c("word1","word2"), sep = " ")
+
+
+bitokens_sep_tidy <- bitokens_sep %>%
+  filter(!word1 %in% stop_corpus$word) %>%
+  filter(!word2 %in% stop_corpus$word) %>%
+  mutate(word1 = gsub("\\d+", NA, word1)) %>%
+  mutate(word2 = gsub("\\d+", NA, word2)) %>%
+  mutate(word1 = gsub("^[a-zA-Z]$", NA, word1)) %>%
+  mutate(word2 = gsub("^[a-zA-Z]$", NA, word2)) %>%
+  filter(!is.na(word1)) %>%
+  filter(!is.na(word2))
+
+
+
+
+bitokens_sep_counts <- bitokens_sep_tidy %>% 
+  count(word1, word2, sort = TRUE)
+
+bigrams_united <- bitokens_sep_counts %>%
+  unite(bigram, word1, word2, sep = " ")
+#bigrams_united
+
+
+bigrams_united %>% 
+  count(FROM,bigram,sort = T) -> topicBigram
+# Najvažniji bigrami po domenama
+ bigram_tf_idf <- bigrams_united %>%
+  count(FROM, bigram) %>%
+  bind_tf_idf(bigram, FROM, n) %>%
+  arrange(desc(tf_idf))
+bigram_tf_idf %>%
+  filter(FROM %in% c("elladvornik", "imerovic_sandi_budivelik", "elaajerkovic" )) %>%
+  arrange(desc(tf_idf)) %>%
+  mutate(bigram = factor(bigram, levels = rev(unique(bigram)))) %>% 
+  group_by(FROM) %>% 
+  top_n(7) %>% 
+  ungroup() %>%
+  ggplot(aes(bigram, tf_idf, fill = FROM)) +
+  geom_col(show.legend = FALSE) +
+  labs(x = NULL, y = "tf-idf") +
+  facet_wrap(~FROM, ncol = 2, scales = "free") +
+  coord_flip() + 
+  theme_economist()
+```
 
