@@ -367,6 +367,8 @@ dta <- dt[SOURCE_TYPE == "web" &
            str_detect(AUTHOR, fixed("native",ignore_case = TRUE)) |
            str_detect(AUTHOR, fixed("tnative",ignore_case = TRUE)) |
            str_detect(FULL_TEXT, fixed("tnative",ignore_case = TRUE)) |
+           str_detect(FULL_TEXT, fixed("sadržaj donosi", ignore_case = TRUE)) |
+           str_detect(FULL_TEXT, fixed("sponzorirani sadržaj", ignore_case = TRUE)) | 
            str_detect(AUTHOR, fixed("tnative",ignore_case = TRUE)))]
 
 
@@ -873,7 +875,7 @@ dim(dta)
 
 # tokenize
 dta %>% 
-  unnest_tokens(word, FULL_TEXT) -> fb_token
+  unnest_tokens(word, FULL_TEXT) -> n_token
 
 # dim after tokenize
 dim(fb_token)
@@ -884,13 +886,13 @@ dim(fb_token)
 #     sample_n(.,100)
 
 # remove stop words, numbers, single letters
-fb_token %>% 
+n_token %>% 
   anti_join(stop_corpus, by = "word") %>%
   mutate(word = gsub("\\d+", NA, word)) %>%
-  mutate(word = gsub("^[a-zA-Z]$", NA, word)) -> fb_tokenTidy
+  mutate(word = gsub("^[a-zA-Z]$", NA, word)) -> n_tokenTidy
 # remove NA
-fb_tokenTidy %>%
-  filter(!is.na(word)) -> fb_tokenTidy
+n_tokenTidy %>%
+  filter(!is.na(word)) -> n_tokenTidy
 
 # check
 # fb_tokenTidy  %>% 
@@ -900,7 +902,6 @@ fb_tokenTidy %>%
 # dim after clean
 dim(fb_tokenTidy)
 
-
 ```
 
 
@@ -908,9 +909,28 @@ dim(fb_tokenTidy)
 
 ```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=12}
 ## Most common words
-fb_tokenTidy[,.N,by = word][order(-N),] %>%
+n_tokenTidy[,.N,by = word][order(-N),] %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
+
+n_tokenTidy %>%
+  group_by(word, FROM) %>%
+  summarise(N = n()) %>%
+  arrange(desc(N)) %>%
+  filter(N > 150) -> n_tokenTidy
+
+  
+ggplot(n_tokenTidy, aes(reorder(word, N), N, fill = FROM)) +
+  geom_col(show.legend = FALSE) +
+  ggtitle( "") +
+  labs( x = "Riječ", y = "Number of words") +
+  facet_wrap(~ FROM, scales = "free_y") +
+  coord_flip() +
+  theme_economist()
+
+
+
+  
 ## Vizualize most common words
 # fb_tokenTidy[,.N,by = word][N>10000][order(-N),][,word := reorder(word,N)] %>%
 #   ggplot(aes(word, N)) +
@@ -943,9 +963,6 @@ fb_tokenTidy %>%
   top_n(100) %>%
   with(wordcloud(word, n, max.words = 80)) 
 ```
-
-
-
 
 
 #### Sentiment
