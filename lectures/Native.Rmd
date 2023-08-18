@@ -160,6 +160,8 @@ dta <- dt %>%
   filter(SOURCE_TYPE =="web")  %>%
   filter(str_detect(FULL_TEXT,fixed("sadržaj donosi",ignore_case = TRUE)))
 
+#### promo u URL-u
+
 
 activity <- dta %>%
   group_by(FROM) %>%
