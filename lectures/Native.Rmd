@@ -46,6 +46,12 @@ library(ggthemes)
 # fullDta <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_NOTXT.csv")
 # fullDtaTxt <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_TXT.csv")
 dt <- fread("D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv")
+
+
+dt <- dt %>% filter(SOURCE_TYPE == "web")
+
+
+
 ```
 
 ```{r echo=F, eval=F, message=F , warning= FALSE}
@@ -152,15 +158,45 @@ dta <- dta[,-1]
 
 # 24h kod autorstva ima 24ContentHaus i u tekstu formulaciju sadržaj donosi
 
-dta <- dt %>%
-  filter(SOURCE_TYPE =="web")  %>%
-  filter(str_detect(AUTHOR,fixed("24ContentHaus",ignore_case = TRUE)))
+dta1 <- dt %>%
+#  filter(SOURCE_TYPE =="web")  %>%
+  filter(FROM == "tportal.hr") %>% 
+  filter(str_detect(FULL,fixed("24Content",ignore_case = TRUE)))
 
 dta <- dt %>%
   filter(SOURCE_TYPE =="web")  %>%
-  filter(str_detect(FULL_TEXT,fixed("sadržaj donosi",ignore_case = TRUE)))
+  filter(str_detect(FULL_TEXT,fixed("Sadržaj nastao",ignore_case = TRUE)))
 
 #### promo u URL-u
+
+dta <- dt %>%
+  filter(SOURCE_TYPE =="web")  %>%
+  filter(FROM == "24sata.hr") %>%
+  filter(str_detect(URL,fixed("native",ignore_case = TRUE)))
+
+
+
+write.xlsx(dta1, file = "D:/LUKA/Freelance/Mediatoolkit/powered_by_24h.xlsx", row.names = T)
+
+
+
+
+
+dchour <- dt %>%
+  filter(SOURCE_TYPE =="web")  %>%
+  filter(FROM == "24sata.hr") 
+
+dta1 <- dchour %>%
+  filter(str_detect(FULL_TEXT,fixed("Powered by",ignore_case = TRUE)))
+
+
+
+
+
+
+
+
+
 
 
 activity <- dta %>%

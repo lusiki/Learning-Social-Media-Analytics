@@ -1,0 +1,79 @@
+---
+title: "Korupus katolickih tekstova"
+author: "Lux"
+date: "2023-03-25"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE, message=F}
+library(tidyverse)
+library(readxl)
+library(xlsx)
+library(here)
+library(kableExtra)
+library(DT)
+library(purrr)
+library(data.table)
+library(tidytext)
+library(dplyr)
+library(lubridate)
+library(anytime)
+library(grid)
+library(wordcloud)
+library(reshape2)
+library(ggraph)
+library(widyr)
+library(topicmodels)
+library(ggthemes)
+
+```
+
+```{r echo=F, eval=F, message=F , warning= FALSE}
+# path <- "D:/LUKA/Freelance/Mediatoolkit/FULLtxtDATA"
+# raw <- list.files(path = path , pattern="xlsx")
+# raw_path <- paste0(path, "/", raw)
+# all_raw <- map_df(raw_path, read_excel)
+# dt <- distinct(all_raw)
+# write.csv(dt, file = "D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv", row.names = T)
+```
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+# fullDta <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_NOTXT.csv")
+# fullDtaTxt <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_TXT.csv")
+dt <- fread("D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv")
+
+
+dt <- dt %>% filter(SOURCE_TYPE == "web")
+
+```
+
+
+
+
+```{r}
+dta <- dt[SOURCE_TYPE == "web" &
+          (str_detect(FULL_TEXT, fixed("biskup",ignore_case = TRUE)) |
+           str_detect(FULL_TEXT, fixed("crkva",ignore_case = TRUE)) |
+           str_detect(FULL_TEXT, fixed("isus",ignore_case = TRUE)) |
+           str_detect(FULL_TEXT, fixed("nadbiskup",ignore_case = TRUE)) |
+           str_detect(FULL_TEXT, fixed("katolički",ignore_case = TRUE)) |
+           str_detect(FULL_TEXT, fixed("kršćanski", ignore_case = TRUE)) |
+           str_detect(FULL_TEXT, fixed("kaptol", ignore_case = TRUE)))]
+```
+
+
+
+
+
+
+
+
+
+
+
+
