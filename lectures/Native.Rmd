@@ -169,10 +169,10 @@ dta <- dt %>%
 
 #### promo u URL-u
 
-dta <- dt %>%
-  filter(SOURCE_TYPE =="web")  %>%
-  filter(FROM == "24sata.hr") %>%
-  filter(str_detect(URL,fixed("native",ignore_case = TRUE)))
+test <- dt %>%
+#  filter(SOURCE_TYPE =="web")  %>%
+#  filter(FROM == "24sata.hr") %>%
+  filter(str_detect(URL,fixed("836688",ignore_case = TRUE)))
 
 
 
@@ -184,7 +184,9 @@ write.xlsx(dta1, file = "D:/LUKA/Freelance/Mediatoolkit/powered_by_24h.xlsx", ro
 
 dchour <- dt %>%
   filter(SOURCE_TYPE =="web")  %>%
-  filter(FROM == "24sata.hr") 
+  filter(FROM == "24sata.hr") %>%
+  filter(DATE== "2022-05-19") %>%
+  filter(str_detect(URL, fixed("native",ignore_case = TRUE)))
 
 dta1 <- dchour %>%
   filter(str_detect(FULL_TEXT,fixed("Powered by",ignore_case = TRUE)))
@@ -268,7 +270,7 @@ dta <- dt %>%
 
 dta <- dt %>%
   filter(SOURCE_TYPE =="web")  %>%
-  filter(str_detect(FULL_TEXT,fixed("prilog je napravljen",ignore_case = TRUE)))
+  filter(str_detect(URL,fixed("836688",ignore_case = TRUE)))
 
 
 activity <- dta %>%
