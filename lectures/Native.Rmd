@@ -30,19 +30,12 @@ library(ggraph)
 library(widyr)
 library(topicmodels)
 library(ggthemes)
+library(xlsx)
 
 ```
+
 
 ```{r echo=F, eval=F, message=F , warning= FALSE}
-# path <- "D:/LUKA/Freelance/Mediatoolkit/FULLtxtDATA"
-# raw <- list.files(path = path , pattern="xlsx")
-# raw_path <- paste0(path, "/", raw)
-# all_raw <- map_df(raw_path, read_excel)
-# dt <- distinct(all_raw)
-# write.csv(dt, file = "D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv", row.names = T)
-```
-
-```{r echo=F, eval=T, message=F , warning= FALSE}
 # fullDta <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_NOTXT.csv")
 # fullDtaTxt <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_TXT.csv")
 dt <- fread("D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv")
@@ -145,15 +138,6 @@ dta <- dt %>%
 dta <- dta[,-1]
 ```
 
-#### 24h
-
-- 24h kod autorstva ima 24ContentHaus i u tekstu formulaciju sadržaj donosi
-
-- 24ContentHaus nema u naslovu
-
-- sadržaj donosi u tekstu ima 205
-
-
 ```{r echo=F, eval=F, message=F , warning= FALSE}
 
 # 24h kod autorstva ima 24ContentHaus i u tekstu formulaciju sadržaj donosi
@@ -216,13 +200,6 @@ dta %>%
 
 ```
 
-
-#### Telegram
-
-- formulacija na kraju članka *sadržaj nastao* ili možemo probati s frazom donosi (ovo ne može je ima previše reziduala) 
-
-- sadržaj nastao u tekstu ima 803
-
 ```{r echo=F, eval=F, message=F , warning= FALSE}
 
 # 24h kod autorstva ima 24ContentHaus i u tekstu formulaciju sadržaj donosi
@@ -248,16 +225,6 @@ dta %>%
 
 
 ```
-
-
-#### T-portal
-
-- tportal ima potpis tnative i na kraju članka ima formulaciju *prilog je napravljen* u produkciji 
-
-- tnative u naslovu ima 0
-
-- prilog je napravljen u tekstu ima 5
-
 
 ```{r echo=F, eval=F, message=F , warning= FALSE}
 
@@ -288,15 +255,6 @@ dta %>%
 
 ```
 
-
-
-#### VL
-
-- VL ima Native tim 
-
-- native u autoru ima 11
-
-
 ```{r echo=F, eval=F, message=F , warning= FALSE}
 
 # 24h kod autorstva ima 24ContentHaus i u tekstu formulaciju sadržaj donosi
@@ -325,19 +283,6 @@ dta %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 ```
-
-
-#### JL
-
-- JL ima pod autorstvom Sponzorirani sadržaj 
-
-
-- Sponzorirani sadržaj u naslovu ima 46
-
-
-- Sponzorirani sadržaj u teskstu ima 439
-
-
 
 ```{r echo=F, eval=F, message=F , warning= FALSE}
 
@@ -379,8 +324,140 @@ dta %>%
 
 ```
 
-#### Select native corpus
+```{r  echo=F, eval=F, message=F , warning= FALS}
+library(rvest)
+library(purrr)
+
+# Function to check for specific text in a specific HTML field of a webpage
+# Function to check for specific text in a specific HTML field of a webpage
+check_text_in_page <- function(url, xpath_field, text_to_check) {
+  page <- read_html(url)
+  
+  # Use XPath to locate the HTML field
+  text_field <- html_text(html_nodes(page, xpath = xpath_field))
+  
+  # Check if the specific text exists in the field
+  if (text_to_check %in% text_field) {
+    return(TRUE)
+  } else {
+    return(FALSE)
+  }
+}
+
+# XPath for the HTML field
+xpath_field <- "/html/body/div[2]/div/div[2]/section/article/div[1]/div[1]/div[1]/header/div/div/div/span/span[1]/a"
+
+
+24ContentHaus
+<a href="/autori/24contenthaus-46917" class="article__authors_link">24ContentHaus</a>
+
+# Text to look for
+text_to_check <- "24ContentHaus"
+
+# URL to scrape
+promo24 <- read.xlsx("C:/Users/Lukas/OneDrive/Desktop/promo24h.xlsx",sheetIndex = 1)
+url  <- "https://www.24sata.hr/promo-sadrzaj/od-padobrana-do-elektricne-energije-genijalne-ideje-kojima-smo-nadahnuli-ostatak-svijeta-825451"
+  
+  promo24$URL[2]
+# Call the function
+result <- check_text_in_page(url, xpath_field, text_to_check)
+
+# Print the result
+print(result)
+
+
+```
+
+```{r  echo=F, eval=F, message=F , warning= FALS}
+library(rvest)
+library(tidyverse)
+library(stringr)
+
+# List of URLs to check
+urls <- promo24$URL[400:916]
+
+# Function to check for the presence of specific text in the HTML of a URL
+
+
+check_text_presence <- function(url) {
+  message("Checking URL: ", url)
+  
+  # Initialize the result as NA
+  any_author_matches <- NA
+  
+  # Try block to catch errors
+  try({
+    # Read the HTML content from the URL
+    html_content <- read_html(url)
+  
+    # Extract the text of all "a" tags with the class "article__authors_link"
+    author_tags <- html_content %>% html_nodes("a.article__authors_link") %>% html_text()
+  
+    # Check if '24ContentHaus' is present
+    any_author_matches <- any(str_detect(author_tags, fixed("24ContentHaus")))
+  }, silent = TRUE)
+  
+  return(any_author_matches)
+}
+
+
+# Check each URL and store the results in a data frame
+results1 <- tibble(
+  url = urls,
+  contains_text = map_lgl(urls, check_text_presence)
+)
+
+results2 <- tibble(
+  url = urls,
+  contains_text = map_lgl(urls, check_text_presence)
+)
+
+results3 <- tibble(
+  url = urls,
+  contains_text = map_lgl(urls, check_text_presence)
+)
+
+results4 <- tibble(
+  url = urls,
+  contains_text = map_lgl(urls, check_text_presence)
+)
+
+results4 %>% filter(contains_text == TRUE)
+
+results <- rbind(results,results2, results3,results4)
+
+results <- results %>% filter(contains_text == TRUE)
+
+# Print results
+print(results)
+
+
+ch24 <- promo24 %>% filter(URL %in% results$url)
+
+write.xlsx(ch24, file = "D:/LUKA/Freelance/Mediatoolkit/ch24.xlsx", row.names = T)
+
+```
+
+
+# Read In 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
+original <- read.xlsx("D:/LUKA/Freelance/Mediatoolkit/native1.xlsx", sheetIndex = 1)
+variables <- read.xlsx("C:/Users/Lukas/OneDrive/Desktop/Native.xlsx", sheetIndex = 1)
+variables <- variables[,-c(23,24,25)] %>% drop_na()
+original <- original %>% filter(V1 %in% variables$V1)
+dta <- merge(original, variables, by = "V1", all.x = TRUE)
+dta$DATE <- as.Date(dta$DATE)
+```
+
+
+
+
+
+
+
+
+
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 # 
 # dta <- dt %>%
@@ -410,16 +487,15 @@ dta <- dt[SOURCE_TYPE == "web" &
 ```
 
 
-#### Basic descriptives
-#### Vremenski raspon
-```{r echo=F, eval=F, message=F , warning= FALSE}
+# Basic descriptives
 
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
 # date range
 range(dta$DATE)
 ```
 
 
-#### Broj članaka
 ```{r echo=F, eval=F, message=F , warning= FALSE}
 # number of articles
 nrow(dta)
@@ -428,7 +504,7 @@ nrow(dta)
 
 
 #### Deskriptiva na dnevnoj razini
-```{r echo=F, eval=F, message=F , warning= FALSE}
+```{r echo=F, eval=T, message=F , warning= FALSE}
 # articles over time
 daily_counts <- dta %>%
   group_by(DATE) %>%
@@ -446,7 +522,7 @@ summ
 ```
 
 #### Broj objava po danima  
-```{r echo=F, eval=F, message=F , warning= FALSE}
+```{r echo=F, eval=T, message=F , warning= FALSE}
 # create plot of articles over time
 ggplot(data = daily_counts, aes(x = DATE, y = count)) +
   geom_line() +
@@ -456,13 +532,10 @@ ggplot(data = daily_counts, aes(x = DATE, y = count)) +
 ```
 
 
-#### Bigest profiles
-
-
 #### Broj objava po izvoru 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Portals by activity
-activity <- dt %>%
+activity <- dta %>%
   group_by(FROM) %>%
   summarise(count = n()) %>%
   mutate(percent = round(count / sum(count) * 100,2)) %>% 
@@ -520,162 +593,6 @@ shares <- dta %>%
   arrange(desc(shares))
 
 datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
-```
-
-
-#### Authors
-
-
-#### Broj objava po autoru 
-```{r echo=F, eval=F, message=F , warning= FALSE}
-# Authors by activity
-authors <- dta %>%
-  group_by(AUTHOR) %>%
-  summarise(count = n()) %>%
-  mutate(percent = round(count / sum(count) * 100,2)) %>% 
-  arrange(desc(count))
-
-write.xlsx(dta, file = "D:/LUKA/Freelance/Mediatoolkit/native.xlsx", row.names = T)
-
-
-datatable(authors, options = list(scrollX = TRUE, scrollY = "500px"))
-```
-
-
-#### Doseg objava po autoru 
-
-```{r echo=F, eval=F, message=F , warning= FALSE}
-# Authors by reach
-reach <- dta %>%
-  group_by(AUTHOR) %>%
-  summarise(reach = sum(REACH)) %>%
-  arrange(desc(reach))
-
-datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
-```
-
-
-#### Like-ovi objava po autoru 
-```{r echo=F, eval=F, message=F , warning= FALSE}
-# Authors by likes
-like <- dta %>%
-  group_by(AUTHOR) %>%
-  summarise(like = sum(LIKE_COUNT, na.rm = T)) %>%
-  mutate(percent = round(like / sum(like) * 100,2)) %>% 
-  arrange(desc(like))
-
-datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
-```
-
-#### Komentari objava po autoru 
-
-```{r echo=F, eval=F, message=F , warning= FALSE}
-# Authors by comments
-comment <- dta %>%
-  group_by(AUTHOR) %>%
-  summarise(comment = sum(COMMENT_COUNT, na.rm = T)) %>%
-  mutate(percent = round(comment / sum(comment) * 100,2)) %>% 
-  arrange(desc(comment))
-
-datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
-```
-
-#### Broj share-ova po autoru 
-
-
-```{r echo=F, eval=F, message=F , warning= FALSE}
-# Authors by shares
-shares <- dta %>%
-  group_by(AUTHOR) %>%
-  summarise(shares = sum(SHARE_COUNT, na.rm = T)) %>%
-  mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
-  arrange(desc(shares))
-
-datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
-```
-
-#### Articles
-
-#### Objave po share-ovima 
-
-```{r echo=F, eval=F, message=F , warning= FALSE}
-# Articles by activity
-articles <-  dta %>%
-  group_by(TITLE) %>%
-  summarise(count = n(),across(URL)) %>% 
-  arrange(desc(count)) %>%
-  slice(1:1000)
-
-datatable(articles, options = list(scrollX = TRUE, scrollY = "500px"))
-
-```
-
-#### Objave po reach-u
-
-
-```{r echo=F, eval=F, message=F , warning= FALSE}
-# Articles by reach
-dta %>% 
-  ungroup %>%
-  arrange(desc(REACH)) %>% 
-  slice(1:3000) %>%
-  group_by(V1) %>%
-  summarise(REACH = sum(REACH),across(c(TITLE, AUTHOR, FROM, URL))) %>% 
-  ungroup() %>%
-  select(-V1, TITLE, AUTHOR, FROM, URL, REACH) %>%
-  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
-
-```
-
-
-
-
-#### Objave po like-ovima 
-
-```{r echo=F, eval=F, message=F , warning= FALSE}
-# Articles by likes
-dta %>% 
-  ungroup %>%
-  arrange(desc(LIKE_COUNT)) %>% 
-  slice(1:3000) %>%
-  group_by(V1) %>%
-  summarise(LIKE = sum(LIKE_COUNT),across(c(TITLE, AUTHOR, FROM, URL))) %>% 
-  ungroup() %>%
-  select(-V1, TITLE, AUTHOR, FROM, URL, LIKE) %>%
-  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
-
-```
-
-
-#### Objave po komentarima
-
-
-```{r echo=F, eval=F, message=F , warning= FALSE}
-# Articles by comments
-dta %>% 
-  ungroup %>%
-  arrange(desc(COMMENT_COUNT)) %>% 
-  slice(1:3000) %>%
-  group_by(V1) %>%
-  summarise(COMMENT = sum(COMMENT_COUNT),across(c(TITLE, AUTHOR, FROM, URL))) %>% 
-  ungroup() %>%
-  select(-V1, TITLE, AUTHOR, FROM, URL, COMMENT) %>%
-  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
-```
-
-#### Objave po share-ovima 
-
-```{r echo=F, eval=F, message=F , warning= FALSE}
-# Arcicles by shares
-dta %>% 
-  ungroup %>%
-  arrange(desc(SHARE_COUNT)) %>% 
-  slice(1:3000) %>%
-  group_by(V1) %>%
-  summarise(SHARE = sum(SHARE_COUNT),across(c(TITLE, AUTHOR, FROM, URL))) %>% 
-  ungroup() %>%
-  select(-V1, TITLE, AUTHOR, FROM, URL, SHARE) %>%
-  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 
@@ -747,170 +664,21 @@ stop_corpus <- my_stop_words %>%
 #head(sample_n(stop_corpus,100),15)
 ```
 
-```{r echo=F, eval=F, message=F , warning= FALSE}
-
-# influencers by ACTIVITY
-dta[,.N,FROM][order(-N)]
-
-# influencers by FOLLOWERS
-dta[,FOLLOWERS := max(FOLLOWERS_COUNT), FROM][,c("FOLLOWERS","FROM")][order(-FOLLOWERS)] %>% unique() 
-
-# influencers by REACH
-dta[,REACH := sum(REACH), FROM][,.(REACH,FROM)][order(-REACH)] %>% unique() 
-
-# influencers by REACH II
-
-dta %>% 
-  group_by(FROM) %>%
-  mutate(ACTIVITY = n(),
-         REACH = sum(REACH),
-         EFFECT = REACH/ACTIVITY) %>%
-  select(FROM,ACTIVITY,REACH,EFFECT) %>%
-  filter(ACTIVITY>100) %>%
-  arrange(desc(EFFECT)) %>%
-  unique()
-         
-#  fb %>% 
-#  group_by(FROM) %>%
-#  mutate(ACTIVITY = n(),
-#         REACH = sum(REACH),
-#         EFFECT = REACH/ACTIVITY) %>%
-#  filter(ACTIVITY>100) %>%
-#  arrange(desc(EFFECT)) %>%
-#  unique() -> fb
-#fb <- as.data.table(fb)
-# influencers by LIKE
-dta[,LIKE := sum(LIKE_COUNT), FROM][,.(LIKE,FROM)][order(-LIKE)] %>% unique() 
-
-# influencers by LIKE II
-
-dta %>% 
-  group_by(FROM) %>%
-  mutate(LIKE = sum(LIKE_COUNT),
-         ACTIVITY = n(),
-         EFFECT = LIKE/ACTIVITY) %>%
-  select(FROM,ACTIVITY,LIKE,EFFECT) %>%
-  filter(ACTIVITY>100) %>%
-  arrange(desc(EFFECT)) %>%
-  unique()
 
 
-
-# influencers by INTERACTIONS
-dta[,INTERACTIONS := sum(INTERACTIONS), FROM][,.(INTERACTIONS,FROM)][order(-INTERACTIONS)] %>% unique() 
-
-
-# influencers by COMMENT
-dta[,COMMENT := sum(COMMENT_COUNT), FROM][,.(COMMENT,FROM)][order(-COMMENT)] %>% unique() 
-
-
-# influencers by COMMENT II
-
-dta %>% 
-  group_by(FROM) %>%
-  mutate(COMMENT = sum(COMMENT_COUNT),
-         ACTIVITY = n(),
-         ENGAGE = COMMENT/ACTIVITY) %>%
-  select(FROM,ACTIVITY,COMMENT,ENGAGE) %>%
-  filter(ACTIVITY>100) %>%
-  arrange(desc(ENGAGE)) %>%
-  unique()
-
-#fb[, `:=` (ACTIVITY = .N , COMMENT = sum(COMMENT_COUNT),ENGAGE = COMMENT/ACTIVITY), FROM][,.(FROM,ACTIVITY,COMMENT, ENGAGE)][ACTIVITY >= 100][order(-COMMENT)] %>% unique()
-
-# influencers by SHARE
-dta[,SHARE := sum(SHARE_COUNT), FROM][,.(SHARE,FROM)][order(-SHARE)] %>% unique() 
-
-
-# influencers by SHARE II
-
-dta %>% 
-  group_by(FROM) %>%
-  mutate(SHARE = sum(SHARE_COUNT),
-         ACTIVITY = n(),
-         DISPERSION = SHARE/ACTIVITY) %>%
-  select(FROM,ACTIVITY,SHARE,DISPERSION) %>%
-  filter(ACTIVITY>100) %>%
-  arrange(desc(DISPERSION)) %>%
-  unique()
-
-
-#fb[, `:=` (ACTIVITY = .N , SHARE = sum(SHARE_COUNT), DISPERSION = SHARE/ACTIVITY), FROM][,.(FROM,ACTIVITY,SHARE,DISPERSION)][ACTIVITY >= 100][order(-DISPERSION)] %>% unique()
-
-# letters by influencer
-
-dta %>% 
-  group_by(FROM) %>%
-  mutate(LETTERS = sum(SHARE_COUNT),
-         ACTIVITY = n(),
-         EFFORT = LETTERS/ACTIVITY) %>%
-  select(FROM,ACTIVITY,LETTERS,EFFORT) %>%
-  filter(ACTIVITY>100) %>%
-  arrange(desc(EFFORT)) %>%
-  unique()
-
-
-
-#fb[, `:=` (ACTIVITY = .N ,LETTERS = sum(nchar(FULL_TEXT))),FROM]
-
-#fb[, `:=` (ACTIVITY = .N ,LETTERS = sum(nchar(FULL_TEXT)), EFFORT = LETTERS/ACTIVITY), FROM][,.(FROM,ACTIVITY,LETTERS, EFFORT)][ACTIVITY >= 100][order(-EFFORT)] %>% unique()
-
-
-# posts by REACH
-
-dta[,.(SHARE_COUNT,FROM,FULL_TEXT, URL)][order(-SHARE_COUNT)] 
-
-# posts by LIKE
-
-dta[,.(LIKE_COUNT,FROM,FULL_TEXT, URL)][order(-LIKE_COUNT)] 
-
-# posts by INTERACTIONS
-
-dta[,.(INTERACTIONS,FROM,FULL_TEXT, URL)][order(-INTERACTIONS)]  
-
-# posts by COMMENT
-
-dta[,.(COMMENT_COUNT,FROM,FULL_TEXT, URL)][order(-COMMENT_COUNT)]  
-
-# posts by SHARE
-
-dta[,.(SHARE_COUNT,FROM,FULL_TEXT, URL)][order(-SHARE_COUNT)] 
-```
-
-#### Slova u prosječnom  naslovu i tesktu (deskripiva)
-
-```{r echo=F, eval=F, message=F , warning= FALSE}
-
-# how many letters in a title
-dt[,
-       .(Avg = mean(nchar(TITLE), na.rm = T),
-         STD = sd(nchar(TITLE), na.rm = T),
-         min = min(nchar(TITLE), na.rm = T),
-         max = max(nchar(TITLE), na.rm = T)),
-      SOURCE_TYPE][order(-Avg),]
-# how many letters in a text
-dt[,
-       .(Avg = mean(nchar(FULL_TEXT)),
-         STD = sd(nchar(FULL_TEXT)),
-         min = min(nchar(FULL_TEXT)),
-         max = max(nchar(FULL_TEXT))),
-      SOURCE_TYPE][order(-Avg),]
-
-
-```
 
 #### Tokenizirani tekst prije i nakon čišćenja (broj riječi)
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # dim before tokenize
-dim(dta)
+#dim(dta)
 
 # tokenize
 dta %>% 
   unnest_tokens(word, FULL_TEXT) -> n_token
 
 # dim after tokenize
-dim(n_token)
+#dim(n_token)
 
 # check
 # fb_token %>% 
@@ -932,33 +700,49 @@ n_tokenTidy %>%
 #   sample_n(.,100)
 
 # dim after clean
-dim(n_tokenTidy)
+#dim(n_tokenTidy)
 
 ```
 
 
-#### Najčešće riječi (>150)
+#### Najčešće riječi (>50)
 
-```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=12}
-## Most common words
-n_tokenTidy[,.N,by = word][order(-N),] %>%
+```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=25}
+# ## Most common words
+# n_tokenTidy[,.N,by = word][order(-N),] %>%
+#   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+n_tokenTidy %>%
+  group_by(word) %>%
+  summarise(N = n()) %>%
+  arrange(desc(N)) %>%
+  filter(N > 50) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 
-an_tokenTidy <- n_tokenTidy %>%
-  group_by(word, FROM) %>%
-  summarise(N = n()) %>%
-  arrange(desc(N)) %>%
-  filter(N > 150) 
+#unique(an_tokenTidy$FROM)
+
+
+# an_tokenTidy <- n_tokenTidy %>%
+#   group_by(word, FROM) %>%
+#   summarise(N = n()) %>%
+#   arrange(desc(N)) %>%
+#   filter(N > 70) 
+
+
+
 
   
-ggplot(an_tokenTidy, aes(reorder(word, N), N, fill = FROM)) +
-  geom_col(show.legend = FALSE) +
-  ggtitle( "") +
-  labs( x = "Riječ", y = "Number of words") +
-  facet_wrap(~ FROM, scales = "free_y") +
-  coord_flip() +
-  theme_economist()
+# ggplot(an_tokenTidy, aes(reorder(word, N), N, fill = FROM)) +
+#   geom_col(show.legend = FALSE) +
+#   ggtitle( "") +
+#   labs( x = "Riječ", y = "Number of words") +
+#   facet_wrap(~ FROM, scales = "free_y") +
+#   coord_flip() +
+#   theme_economist()
+
+
+
 
 
 
@@ -985,14 +769,63 @@ ggplot(an_tokenTidy, aes(reorder(word, N), N, fill = FROM)) +
 
 ```
 
+#### jutarnji.hr
+```{r}
+n_tokenTidy %>%
+  filter(FROM == "jutarnji.hr") %>%
+  group_by(word) %>%
+  summarise(N = n()) %>%
+  arrange(desc(N))   %>%
+  filter(N > 10) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+
+#### telegram.hr
+```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=25}
+n_tokenTidy %>%
+  filter(FROM == "telegram.hr") %>%
+  group_by(word) %>%
+  summarise(N = n()) %>%
+  arrange(desc(N))   %>%
+  filter(N > 10) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+
+#### vecernji.hr
+```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=25}
+n_tokenTidy %>%
+  filter(FROM == "vecernji.hr") %>%
+  group_by(word) %>%
+  summarise(N = n()) %>%
+  arrange(desc(N))   %>%
+  filter(N > 10) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+
+#### index.hr
+```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=25}
+n_tokenTidy %>%
+  filter(FROM == "index.hr") %>%
+  group_by(word) %>%
+  summarise(N = n()) %>%
+  arrange(desc(N))   %>%
+  filter(N > 10) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+
+
 
 ```{r echo=F, eval=F, message=F , warning= FALSE}
 ## WordCloud(vulgaris)
-fb_tokenTidy %>%
+n_tokenTidy %>%
   anti_join(CroSentilex_Gold,by="word") %>% 
   count(word) %>% 
   arrange(desc(n)) %>%
-  top_n(100) %>%
+  top_n(200) %>%
   with(wordcloud(word, n, max.words = 80)) 
 ```
 
@@ -1108,10 +941,10 @@ n_tokenTidy %>%
 
 ```
 
-##### tportal
-```{r echo=F, eval=T, message=F , warning= FALSE}
+##### index
+```{r echo=F, eval=F, message=F , warning= FALSE}
 n_tokenTidy %>%
-  filter(FROM == "tportal.hr") %>%
+  filter(FROM == "index.hr") %>%
   inner_join(CroSentilex_Gold,by="word") %>% 
   count(word, sentiment) %>% 
   top_n(200) %>%
@@ -1125,9 +958,9 @@ n_tokenTidy %>%
 ```
 
 ##### 24h
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 n_tokenTidy %>%
-  filter(FROM == "24sata.hr") %>%
+  filter(FROM == "slobodnadalmacija.hr") %>%
   inner_join(CroSentilex_Gold,by="word") %>% 
   count(word, sentiment) %>% 
   top_n(200) %>%
@@ -1143,7 +976,7 @@ n_tokenTidy %>%
 
 #### Najpozitivniji i najnegativni portali
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 ## Negative profiles
 wCount <- n_tokenTidy %>% 
   group_by(FROM) %>%
@@ -1161,7 +994,7 @@ n_tokenTidy %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 ## Najpozitivniji portali
 CroSentilex_Gold_poz <- CroSentilex_Gold %>% filter(sentiment == 2)
 n_tokenTidy %>% 
@@ -1222,7 +1055,7 @@ fb_tokenTidy_TopLike[,.N,by = word][order(-N),]
 ```{r frekvencija, eval = F, echo = F, message=F, warning=F, fig.height=10, fig.width=12}
 ## Udio riječi po domenama
 domenaWords <- n_tokenTidy %>%
-  filter(FROM %in% c("vecernji.hr", "jutarnji.hr", "telegram.hr", "index.hr", "24sata.hr")) %>% 
+  filter(FROM %in% c("vecernji.hr", "jutarnji.hr", "telegram.hr", "index.hr", "slobodnadalmacija.hr")) %>% 
   count(FROM, word, sort = T)
   
 ukupnoWords <- domenaWords %>%
@@ -1288,7 +1121,7 @@ bigrams_united %>%
 
 bigrams_united %>%
   count(bigram, sort = T) %>%
-  head(45) 
+  filter(n>10)
 ```
 
 
@@ -1328,7 +1161,7 @@ bigram_tf_idf %>%
   arrange(desc(tf_idf)) %>%
   mutate(bigram = factor(bigram, levels = rev(unique(bigram)))) %>% 
   group_by(FROM) %>% 
-  top_n(20) %>% 
+  top_n(10) %>% 
   ungroup() %>%
   ggplot(aes(bigram, tf_idf, fill = FROM)) +
   geom_col(show.legend = FALSE) +
@@ -1343,16 +1176,16 @@ bigram_tf_idf %>%
 
 ```{r echo=F, eval = F,message=F, warning=F, fig.height=12, fig.width=12}
 
-fb_tokenTidy %>% 
+n_tokenTidy %>% 
 #  filter(datum > "2020-02-20") %>%
   group_by(word) %>%
-  filter(n() > 200) %>%
+  filter(n() > 20) %>%
   filter(!is.na(word)) %>%
   pairwise_cor(word,DATE, sort = T) -> corsWords
 #corsWords %>%
 #  filter(item1 == "oporavak")
 corsWords %>%
-  filter(item1 %in% c("kupnja", "akcija", "poklon")) %>%
+  filter(item1 %in% c("bolest", "rizik", "strah")) %>%
   group_by(item1) %>%
   top_n(10) %>%
   ungroup() %>%
