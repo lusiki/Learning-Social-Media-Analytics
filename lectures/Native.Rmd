@@ -1423,5 +1423,427 @@ dta %>%
 ```
 
 
+### Rubrika
+
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+
+
+
+rubrika <- data.frame(
+  number = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18),
+  text = c(
+    "Native",
+    "Partneri",
+    "Promo",
+    "Vijesti",
+    "Vanjska politika",
+    "Unutarnja politika",
+    "Magazin / mozaik / zabava",
+    "Financije / novac / biznis / poduzetnički savjetnik",
+    "Dom i dizajn",
+    "Lifestyle / estrada / celebrity / scena / showbiz",
+    "Auto-moto",
+    "Sport",
+    "Tehnologija / znanost (tech-sci)",
+    "Putovanja",
+    "Prehrana / gastro / dobra hrana",
+    "Lokalna rubrika (Zagreb, Dalmacija)",
+    "Zdravlje, zdrav život",
+    "Openspace (Telegram.hr)"
+  )
+)
+
+dta %>% 
+  group_by(RUBRIKA) %>%
+  summarise(BrojObjava = n()) %>% 
+  arrange(desc(BrojObjava)) %>%
+  left_join(rubrika, by = c("RUBRIKA" = "number")) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+rubr <- dta %>% 
+  group_by(RUBRIKA) %>%
+  summarise(BrojObjava = n()) %>% 
+  arrange(desc(BrojObjava)) %>%
+  left_join(rubrika, by = c("RUBRIKA" = "number"))
+
+
+rubr
+
+ggplot(data = dta, aes(x = RUBRIKA)) +
+  geom_histogram(binwidth = 1, fill = "blue", alpha = 0.7) +
+  ggtitle("Rubrika") +
+  xlab("Rubrika") +
+  ylab("Frequency") +
+  scale_x_continuous(breaks = seq(from = min(dta$RUBRIKA), to =  max(dta$RUBRIKA), by = 1))
+```
+
+
+### Clickbait
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+clickbait <- data.frame(
+  number = c(1, 2, 3, 4, 5, 6, 7),
+  text = c("Nedefinirane zamjenice", "Neizvjesnost", "Stil obrnutog narativa",
+           "Naglašavanje emocija", "Korištenje brojkama", "Više kombinacija",
+           "Nije clickbait naslov")
+)
+dta %>% 
+  group_by(CLICKBAIT) %>%
+  summarise(BrojObjava = n()) %>% 
+  arrange(desc(BrojObjava)) %>%
+  left_join(clickbait, by = c("CLICKBAIT" = "number")) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+
+
+
+
+```
+
+
+
+
+### Brend u naslovu
+
+```{r}
+ggplot(data = dta, aes(x = ZASTUPLJENOST.BRENDA)) +
+  geom_histogram(binwidth = 0.5, fill = "blue", alpha = 0.7) +
+  ggtitle("Brend u naslovu") +
+  xlab("Brend u naslovu") +
+  ylab("Frequency")+
+  scale_x_continuous(breaks = seq(from = min(dta$ZASTUPLJENOST.BRENDA), to =  max(dta$ZASTUPLJENOST.BRENDA), by = 1))
+```
+
+
+### Vrsta rečenice naslovu
+
+```{r}
+
+df_sentence_type <- data.frame(
+  number = c(1, 2, 3),
+  text = c("Izjavna", "Upitna", "Usklična")
+)
+
+
+ggplot(data = dta, aes(x = VRSTA.REČENICE)) +
+  geom_histogram(binwidth = 0.5, fill = "blue", alpha = 0.7) +
+  ggtitle("Vrsta rečenice naslovu") +
+  xlab("Rečenica u naslovu") +
+  ylab("Frequency")+
+  scale_x_continuous(breaks = seq(from = min(dta$VRSTA.REČENICE), to =  max(dta$VRSTA.REČENICE), by = 1))
+```
+
+
+
+
+### Oprema
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+oprema <- data.frame(
+  number = c(1, 2, 3, 4, 5, 6, 7, 8),
+  text = c(
+    "Foto-sadržaj",
+    "Video-sadržaj",
+    "Grafika ili infografika (ne uključuje logo)",
+    "Foto i video sadržaj",
+    "Foto i grafički sadržaj",
+    "Video i grafički sadržaj",
+    "Foto, video i grafički sadržaj",
+    "Članak nema nikakvu opremu"
+  )
+)
+
+dta %>% 
+  group_by(OPREMA) %>%
+  summarise(BrojObjava = n()) %>% 
+  arrange(desc(BrojObjava)) %>%
+  left_join(oprema, by = c("OPREMA" = "number")) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+
+
+
+
+```
+
+
+
+
+### Vizualni identitet
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+ggplot(data = dta, aes(x = VIZUALNI.IDENTITET)) +
+  geom_histogram(binwidth = 0.5, fill = "blue", alpha = 0.7) +
+  ggtitle("Vizualni identitet") +
+  xlab("Vizualni identitet") +
+  ylab("Frequency")+
+  scale_x_continuous(breaks = seq(from = min(dta$VIZUALNI.IDENTITET), to =  max(dta$VIZUALNI.IDENTITET), by = 1))
+```
+
+
+### Poveznice
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+poveznice <- data.frame(
+  number = c(1, 2, 3, 4, 5, 6),
+  text = c(
+    "Društvene mreže",
+    "Službena internetska stranica brenda",
+    "Neka druga poveznica (druga web stranica)",
+    "Članak ne sadrži poveznice na kanale brenda / oglašivača",
+    "Kolaboracija (Oglašivač + neki drugi brend)",
+    "Više kombinacija"
+  )
+)
+dta %>% 
+  group_by(POVEZNICE.KANALI) %>%
+  summarise(BrojObjava = n()) %>% 
+  arrange(desc(BrojObjava)) %>%
+  left_join(poveznice, by = c("POVEZNICE.KANALI" = "number")) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+
+
+
+
+```
+
+
+
+### Izvori
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+
+izvori <- data.frame(
+  number = c(1, 2, 3, 4, 5, 6, 7),
+  text = c(
+    "Nema izvora / izjave",
+    "Izvor iz organizacije / tvrtke",
+    "Brend ambasador",
+    "Influencer, celebrity, slavna / poznata osoba",
+    "Korisnik proizvoda ili usluge (poduzetnik, Marica iz Benkovca)",
+    "Više izvora",
+    "Izvor nepovezan s proizvodom ili uslugom koja se promovira"
+  )
+)
+
+dta %>% 
+  group_by(IZVORI...IZJAVE) %>%
+  summarise(BrojObjava = n()) %>% 
+  arrange(desc(BrojObjava)) %>%
+  left_join(izvori, by = c("IZVORI...IZJAVE" = "number")) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+
+
+
+
+
+
+```
+
+
+
+### Formulacija uz izvor
+####(možemo napraviti analizu teksta ako smatrate da ćemo naći nešto)
+
+```{r  echo=F, eval=T, message=F , warning= FALSE}
+dta %>% 
+  group_by(FORMULACIJA.UZ.IZVOR) %>%
+  summarise(BrojObjava = n()) %>% 
+  arrange(desc(BrojObjava))%>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+
+### Sentiment
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+
+sentiment <- data.frame(
+  number = c(1, 2, 3),
+  text = c("Pozitivan", "Neutralan", "Negativan")
+)
+
+
+ggplot(data = dta, aes(x = SENTIMENT)) +
+  geom_histogram(binwidth = 0.5, fill = "blue", alpha = 0.7) +
+  ggtitle("Sentiment") +
+  xlab("Sentiment") +
+  ylab("Frequency")+
+  scale_x_continuous(breaks = seq(from = min(dta$SENTIMENT), to =  max(dta$SENTIMENT), by = 1))
+```
+
+
+
+
+
+### Doseg
+####( ne razumijem odakle ste vadili doseg)
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+
+doseg <- data.frame(
+  number = c(1, 2, 3, 4, 5, 6, 7),
+  text = c(
+    "0 - 2 000",
+    "2 000 - 5 000",
+    "5 000 - 10 000",
+    "10 000 - 20 000",
+    "20 000 - 50 000",
+    "50 000 - 100 000",
+    "100 000 - 200 000"
+  )
+)
+
+dta %>% 
+  group_by(DOSEG.PUBLIKE) %>%
+  summarise(BrojObjava = n()) %>% 
+  arrange(desc(BrojObjava)) %>%
+  left_join(doseg, by = c("DOSEG.PUBLIKE" = "number")) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+
+dta %>%
+  filter(DOSEG.PUBLIKE == 6) %>%
+  select(URL)
+
+```
+
+
+
+
+### Lajkovi
+
+
+####( ne razumijem odakle ste vadili doseg)
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+
+lajkovi <- data.frame(
+  number = c(1, 2, 3, 4, 5, 6, 7),
+  text = c(
+    "0 - 20",
+    "20 - 50",
+    "50 - 100",
+    "100 - 200",
+    "200 - 500",
+    "500 - 1000",
+    "1 000 - 2000"
+  )
+)
+
+dta %>% 
+  group_by(BROJ.LAJKOVA) %>%
+  summarise(BrojObjava = n()) %>% 
+  arrange(desc(BrojObjava)) %>%
+  left_join(lajkovi, by = c("BROJ.LAJKOVA" = "number")) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+dta %>%
+  filter(BROJ.LAJKOVA == 6 ) %>%
+  select(URL)
+
+dta %>%
+  filter(BROJ.LAJKOVA == 7 ) %>%
+  select(URL)
+```
+
+
+### Komentari
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+komentari <- data.frame(
+  number = c(1, 2, 3, 4, 5, 6, 7, 8),
+  text = c(
+    "0 - 2",
+    "2 - 5",
+    "5 - 10",
+    "10 - 20",
+    "20 - 50",
+    "50 - 100",
+    "100 - 200",
+    "200 - 500"
+  )
+)
+
+
+dta %>% 
+  group_by(BROJ.KOMENTARA) %>%
+  summarise(BrojObjava = n()) %>% 
+  arrange(desc(BrojObjava)) %>%
+  left_join(komentari, by = c("BROJ.KOMENTARA" = "number")) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+dta %>%
+  filter(BROJ.KOMENTARA == 7 ) %>%
+  select(URL)
+
+dta %>%
+  filter(BROJ.KOMENTARA == 8 ) %>%
+  select(URL)
+
+
+
+
+
+
+
+
+
+```
+
+
+
+### Interakcije
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+interakcije <- data.frame(
+  number = c(1, 2, 3, 4, 5, 6, 7, 8),
+  text = c(
+    "0 - 20",
+    "20 - 50",
+    "50 - 100",
+    "100 - 200",
+    "200 - 500",
+    "500 - 1000",
+    "1 000 - 2000",
+    "2 000 - 5 000"
+  )
+)
+
+
+dta %>% 
+  group_by(BROJ.INTERAKCIJA) %>%
+  summarise(BrojObjava = n()) %>% 
+  arrange(desc(BrojObjava)) %>%
+  left_join(interakcije, by = c("BROJ.INTERAKCIJA" = "number")) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+dta %>%
+  filter(BROJ.INTERAKCIJA == 7 ) %>%
+  select(URL)
+
+dta %>%
+  filter(BROJ.INTERAKCIJA == 8 ) %>%
+  select(URL)
+
+
+```
+
+
+
+
 
 
