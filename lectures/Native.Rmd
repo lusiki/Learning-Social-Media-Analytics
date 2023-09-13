@@ -324,7 +324,7 @@ dta %>%
 
 ```
 
-```{r  echo=F, eval=F, message=F , warning= FALS}
+```{r  echo=F, eval=F, message=F , warning= FALSE}
 library(rvest)
 library(purrr)
 
@@ -368,7 +368,7 @@ print(result)
 
 ```
 
-```{r  echo=F, eval=F, message=F , warning= FALS}
+```{r  echo=F, eval=F, message=F , warning= FALSE}
 library(rvest)
 library(tidyverse)
 library(stringr)
