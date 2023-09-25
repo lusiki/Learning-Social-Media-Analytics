@@ -111,24 +111,36 @@ df_result %>% filter(matches == TRUE)
 
 ```{r}
 # Define a function to check if any string from string_vector is contained in a text
-contains_string <- function(text) {
-  return(any(str_detect(text, fixed(generalno, ignore_case = TRUE))))
+# Define a function to return matched words from string_vector in a text
+# Define a function to return matched words from string_vector in a text
+matched_words_and_bool <- function(text) {
+  matched <- str_subset(generalno, fixed(text, ignore_case = TRUE))
+  matched_str <- ifelse(length(matched) > 0, paste(matched, collapse = ", "), NA)
+  return(list(matches = length(matched) > 0, matched_words = matched_str))
 }
 
 # Split the data frame into batches
 # Assume batch_size is the number of rows per batch (e.g., 100)
-batch_size <- 100
-batches <- split(katoliq, ceiling(seq_along(katoliq$FULL_TEXT)/batch_size))
+batch_size <- 1000
+batches <- split(dt, ceiling(seq_along(dt$FULL_TEXT)/batch_size))
 
 # Process each batch
 results <- purrr::map(batches, function(batch) {
-  batch_matches <- sapply(batch$FULL_TEXT, contains_string)
-  return(data.frame(text_column = batch$FULL_TEXT, matches = batch_matches))
+  batch_results <- lapply(batch$FULL_TEXT, matched_words_and_bool)
+  batch_df <- data.frame(
+    text_column = batch$FULL_TEXT,
+    matches = sapply(batch_results, `[[`, "matches"),
+    matched_words = sapply(batch_results, `[[`, "matched_words"),
+    stringsAsFactors = FALSE
+  )
+  return(batch_df)
 })
+
+
 
 # Recombine the results into a single data frame
 df_result <- bind_rows(results)
-
+df_result <- df_result %>% filter (matches == T)
 ```
 
 
@@ -175,8 +187,8 @@ df[, matches := sapply(FULL_TEXT, function(text) any(str_detect(text, fixed(gene
 
 
 dta <- dt %>%
-  filter(SOURCE_TYPE =="web")  %>%
-  filter(str_detect(AUTHOR,fixed("tnative",ignore_case = TRUE)))
+ # filter(SOURCE_TYPE =="web")  %>%
+  filter(str_detect(FULL_TEXT,fixed("crkva",ignore_case = TRUE)))
 
 dta <- dt %>%
   filter(SOURCE_TYPE =="web")  %>%
