@@ -40,7 +40,8 @@ library(xlsx)
 dt <- fread("D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv")
 
 
-dt <- dt %>% filter(SOURCE_TYPE == "web")
+dt <- dt %>% filter(SOURCE_TYPE == "web") %>%
+  distinct(URL,.keep_all = TRUE)
 
 
 
@@ -65,11 +66,11 @@ politika <- C("Hod za život", "U ime obitelji", "prolife", "poništenje Rimskih
 
 fraze <- c("pedofilija", "klečavci", "kaptolaši", "popovi lopovi", "zatucani katolici", "katolički fanatici", "katolički fašisti", "katolibani","crkvenjak", "ekstremni vjernici")
 
-pomocno <- c( "smijenjen","konzervativci", "tradicionalisti", "pobačaj", "abortus", "aktivisti", "aktivizam", "jezuiti", "nazadan", "zaostao", "neobrazovan", "privilegije" , "privilegiran", "diskriminacija", "nacionalizam", "nacionalisti", "ekstremisti", "otpušten", "prekrštavanje", "izopćen", "izbačen", "bludničio",  "posvećenje",  , "inkardiniran", "inkardinacija",  "mračno doba", "razotkrio", "prijavio", "bludničio", "pronevjerio", "homofobijam", "zlodjela", "progoni", "dogma", "kontroverzni svećenik", "moderni svećenik", "tolerantna vjera", "vjerska policija", "vjerska kontrola", "crkveni mediji", "vjerski mediji", "ukidanje", "homofob", "pedofil", "homoseksualnost", "patrijarhat", "čudesno ozdravljenje", "čudo",,)
+pomocno <- c( "smijenjen","konzervativci", "tradicionalisti", "pobačaj", "abortus", "aktivisti", "aktivizam", "jezuiti", "nazadan", "zaostao", "neobrazovan", "privilegije" , "privilegiran", "diskriminacija", "nacionalizam", "nacionalisti", "ekstremisti", "otpušten", "prekrštavanje", "izopćen", "izbačen", "bludničio",  "posvećenje",  , "inkardiniran", "inkardinacija",  "mračno doba", "razotkrio", "prijavio", "bludničio", "pronevjerio", "homofobijam", "zlodjela", "progoni", "dogma", "kontroverzni svećenik", "moderni svećenik", "tolerantna vjera", "vjerska policija", "vjerska kontrola", "crkveni mediji", "vjerski mediji", "ukidanje", "homofob", "pedofil", "homoseksualnost", "patrijarhat", "čudesno ozdravljenje", "čudo")
 
-cuda <- 
+ 
   
-rijeci <-  c("Novosti", "Progledaj srcem" "Autograf", "David", "vjera.hr")
+nesvrstano <-  c("Novosti", "Progledaj srcem" ,"Autograf", "David", "vjera.hr")
 
 
 
@@ -81,20 +82,73 @@ rijeci <-  c("Novosti", "Progledaj srcem" "Autograf", "David", "vjera.hr")
 
 
 
+```{r}
+
+
+contains_string <- function(text) {
+  return(any(str_detect(text, fixed(generalno, ignore_case = TRUE))))
+}
+
+# Split the data frame into batches
+# Assume batch_size is the number of rows per batch (e.g., 1000)
+batch_size <- 1000
+batches <- split(katoliq, ceiling(seq_along(katoliq$FULL_TEXT)/batch_size))
+
+# Process each batch
+results <- purrr::map(batches, function(batch) {
+  batch %>%
+    filter(contains_string(generalno))
+})
+
+# Recombine the results into a single data frame
+df_result <- bind_rows(results)
+
+
+df_result %>% filter(matches == TRUE)
+```
+
+
+
+```{r}
+# Define a function to check if any string from string_vector is contained in a text
+contains_string <- function(text) {
+  return(any(str_detect(text, fixed(generalno, ignore_case = TRUE))))
+}
+
+# Split the data frame into batches
+# Assume batch_size is the number of rows per batch (e.g., 100)
+batch_size <- 100
+batches <- split(katoliq, ceiling(seq_along(katoliq$FULL_TEXT)/batch_size))
+
+# Process each batch
+results <- purrr::map(batches, function(batch) {
+  batch_matches <- sapply(batch$FULL_TEXT, contains_string)
+  return(data.frame(text_column = batch$FULL_TEXT, matches = batch_matches))
+})
+
+# Recombine the results into a single data frame
+df_result <- bind_rows(results)
+
+```
+
+
 
 ```{r}
 
 
 katoliq <- dt %>%
   distinct(URL,.keep_all = TRUE) %>%
-  filter(sapply(generalno, 
-                function(word) any(str_detect(FULL_TEXT, fixed(word, ignore_case = TRUE)))))
+  slice(1:10000) 
+
+# 
+# %>%
+#   filter(str_detect(FULL_TEXT %in% generalno, fixed(word, ignore_case = TRUE)))
 
 
 
 
-df <- dt %>%
-  mutate(matches = any(str_detect(text_column, fixed(FUL))))
+df <- katoliq %>%
+  filter(str_detect(FULL_TEXT,fixed(generalno,ignore_case = TRUE)))
 
 
 
