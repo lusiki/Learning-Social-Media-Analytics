@@ -1,0 +1,149 @@
+---
+title: "Katoličke dezinformacije"
+author: "Lux"
+date: "2023-03-25"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE, message=F}
+library(tidyverse)
+library(readxl)
+library(xlsx)
+library(here)
+library(kableExtra)
+library(DT)
+library(purrr)
+library(data.table)
+library(tidytext)
+library(dplyr)
+library(lubridate)
+library(anytime)
+library(grid)
+library(wordcloud)
+library(reshape2)
+library(ggraph)
+library(widyr)
+library(topicmodels)
+library(ggthemes)
+library(xlsx)
+
+```
+
+```{r echo=F, eval=F, message=F , warning= FALSE}
+# fullDta <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_NOTXT.csv")
+# fullDtaTxt <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_TXT.csv")
+dt <- fread("D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv")
+
+
+dt <- dt %>% filter(SOURCE_TYPE == "web")
+
+
+
+```
+
+
+
+```{r}
+
+
+
+generalno <- c("crkva", "biskup", "Kaptol", "časna sestra", "svećenik", "župnik", "vjernik", "kardinal", "papa", "sveti otac", "redovnik", "redovnica","kršćanstvo", "vjera", "Gospa", "Bog", "Isus", "katolički", "misa", "pričest", "krizma", "grijeh", "vjeroučitelj", "vjeronauk", "blagoslov","svjedočanstvo", "relikvija", "stigma", "duhovna zvanja", "don", "fra", "velečasni","zaređenje", "krunica", "vjeronauk", "ukazanje")
+
+
+imena <- c("Stepinac","don Damir Stojić", "Željka Markić", "pater Ike Mandurić","Vlado Košić","Robert Bajruši", "Inoslav Bešker", "Ante Tomić", "Branimir Pofuk", "Igor Lasić", "Hrvoje Marjanović","Bozanić", "Ksenija Abramović", "Drago Pilsel")
+
+institucije  <- c("Ksaver", "HBK", "Opus Dei", "Udruga Protagora","Caritas")
+
+pravno <- c("vatikanski ugovori", "plaćanje blagoslova"," plaćanje sakramenata", "crkvene nekretnine", "crkvena imovina")
+
+politika <- C("Hod za život", "U ime obitelji", "prolife", "poništenje Rimskih ugovora", "sekularizacija", "sekularna država", "klerikalizam", "Crkva ruši vlast", "veličaju ustaštvo", "oduzimaju prava ženama", "žele stvoriti katoličku državu", "crkvena afera", "zataškavanje Kaptola", "šutnja Kaptola", "Rimski ugovori","vjeronauk u školama", "vatikanski ugovori", "vatikanska banka" ,"klerikalna vlast","država nije odvojena od Crkve", "potiče homofobiju", "rodna ideologija", "klerikalizam", "ravnozemljaši", "gay brak", "podržavali ustaše", "podržavali naciste", "blagoslovili rat", "Hrvatska nije sekularna država","Katolička crkva vlada Hrvatskom","žene u Crkvi")
+
+fraze <- c("pedofilija", "klečavci", "kaptolaši", "popovi lopovi", "zatucani katolici", "katolički fanatici", "katolički fašisti", "katolibani","crkvenjak", "ekstremni vjernici")
+
+pomocno <- c( "smijenjen","konzervativci", "tradicionalisti", "pobačaj", "abortus", "aktivisti", "aktivizam", "jezuiti", "nazadan", "zaostao", "neobrazovan", "privilegije" , "privilegiran", "diskriminacija", "nacionalizam", "nacionalisti", "ekstremisti", "otpušten", "prekrštavanje", "izopćen", "izbačen", "bludničio",  "posvećenje",  , "inkardiniran", "inkardinacija",  "mračno doba", "razotkrio", "prijavio", "bludničio", "pronevjerio", "homofobijam", "zlodjela", "progoni", "dogma", "kontroverzni svećenik", "moderni svećenik", "tolerantna vjera", "vjerska policija", "vjerska kontrola", "crkveni mediji", "vjerski mediji", "ukidanje", "homofob", "pedofil", "homoseksualnost", "patrijarhat", "čudesno ozdravljenje", "čudo",,)
+
+cuda <- 
+  
+rijeci <-  c("Novosti", "Progledaj srcem" "Autograf", "David", "vjera.hr")
+
+
+
+
+
+
+
+```
+
+
+
+
+```{r}
+
+
+katoliq <- dt %>%
+  distinct(URL,.keep_all = TRUE) %>%
+  filter(sapply(generalno, 
+                function(word) any(str_detect(FULL_TEXT, fixed(word, ignore_case = TRUE)))))
+
+
+
+
+df <- dt %>%
+  mutate(matches = any(str_detect(text_column, fixed(FUL))))
+
+
+
+setDT(dt)
+
+# Use data.table to add a new column indicating whether any string from string_vector is found
+df[, matches := sapply(FULL_TEXT, function(text) any(str_detect(text, fixed(generalno))))]
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+# 24h kod autorstva ima 24ContentHaus i u tekstu formulaciju sadržaj donosi
+
+
+dta <- dt %>%
+  filter(SOURCE_TYPE =="web")  %>%
+  filter(str_detect(AUTHOR,fixed("tnative",ignore_case = TRUE)))
+
+dta <- dt %>%
+  filter(SOURCE_TYPE =="web")  %>%
+  filter(str_detect(URL,fixed("836688",ignore_case = TRUE)))
+
+
+activity <- dta %>%
+  group_by(FROM) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count))
+
+datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
+
+
+dta %>% 
+  select(DATE,TIME,TITLE,FROM,AUTHOR,URL, FULL_TEXT) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+
+
+```
+
+
