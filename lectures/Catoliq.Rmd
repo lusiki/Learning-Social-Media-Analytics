@@ -43,6 +43,11 @@ dt <- fread("D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv")
 dt <- dt %>% filter(SOURCE_TYPE == "web") %>%
   distinct(URL,.keep_all = TRUE)
 
+dt <- dt %>%
+  mutate(V1 = as.numeric(V1)) %>%
+  distinct(V1, .keep_all = F) %>%
+  slice(1:2500)
+
 
 
 ```
@@ -54,6 +59,9 @@ dt <- dt %>% filter(SOURCE_TYPE == "web") %>%
 
 
 generalno <- c("crkva", "biskup", "Kaptol", "časna sestra", "svećenik", "župnik", "vjernik", "kardinal", "papa", "sveti otac", "redovnik", "redovnica","kršćanstvo", "vjera", "Gospa", "Bog", "Isus", "katolički", "misa", "pričest", "krizma", "grijeh", "vjeroučitelj", "vjeronauk", "blagoslov","svjedočanstvo", "relikvija", "stigma", "duhovna zvanja", "don", "fra", "velečasni","zaređenje", "krunica", "vjeronauk", "ukazanje")
+
+
+generalno <- c("crkva", "biskup", "Kaptol", "časna sestra", "svećenik", "župnik", "vjernik", "kardinal", "papa", "sveti otac", "redovnik", "redovnica","kršćanstvo", "vjera", "Gospa", "Bog", "Isus", "katolički", "misa", "pričest", "krizma", "grijeh", "vjeroučitelj", "vjeronauk", "blagoslov","svjedočanstvo", "relikvija", "stigma", "duhovna zvanja", "velečasni","zaređenje", "krunica", "vjeronauk", "ukazanje")
 
 
 imena <- c("Stepinac","don Damir Stojić", "Željka Markić", "pater Ike Mandurić","Vlado Košić","Robert Bajruši", "Inoslav Bešker", "Ante Tomić", "Branimir Pofuk", "Igor Lasić", "Hrvoje Marjanović","Bozanić", "Ksenija Abramović", "Drago Pilsel")
@@ -122,7 +130,7 @@ matched_words_and_bool <- function(text) {
 # Split the data frame into batches
 # Assume batch_size is the number of rows per batch (e.g., 100)
 batch_size <- 1000
-batches <- split(dt, ceiling(seq_along(dt$FULL_TEXT)/batch_size))
+batches <- split(katoliq, ceiling(seq_along(katoliq$FULL_TEXT)/batch_size))
 
 # Process each batch
 results <- purrr::map(batches, function(batch) {
@@ -142,6 +150,31 @@ results <- purrr::map(batches, function(batch) {
 df_result <- bind_rows(results)
 df_result <- df_result %>% filter (matches == T)
 ```
+
+
+
+```{r}
+process_batch <- function(batch) {
+  result <- batch %>%
+    filter(if_any(everything(), ~ grepl(paste(generalno, collapse = "|"), .)))
+  return(result)
+}
+
+# Split the data frame into batches
+# Assume batch_size is the number of rows per batch (e.g., 1000)
+batch_size <- 1000
+batches <- split(dt, ceiling(seq_along(dt$FULL_TEXT)/batch_size))
+
+# Process each batch
+results <- purrr::map(batches, process_batch)
+
+# Recombine the results into a single data frame
+filtered_df <- bind_rows(results)
+```
+
+
+
+
 
 
 
@@ -175,6 +208,36 @@ df[, matches := sapply(FULL_TEXT, function(text) any(str_detect(text, fixed(gene
 
 
 
+```{r}
+matches <- sapply(generalno, function(string) grepl(string, dt$FULL_TEXT))
+
+# Any returns TRUE if at least one of the elements is TRUE
+any_match <- any(matches)
+
+# Print result
+print(any_match)
+
+
+
+
+
+as_tibble(dt) %>%
+  select(V1, DATE, TITLE, URL, FULL_TEXT) %>%
+  mutate(full_text = tolower(dt$FULL_TEXT),
+         match = str_c(generalno, collapse = '|'),
+         key_word = str_extract_all(full_text, match)) %>%
+  select(-match) %>%
+  filter(lengths(key_word)>0) %>%
+  unnest(key_word) %>%
+  distinct(V1, .keep_all = F)
+
+
+
+
+
+
+
+```
 
 
 
@@ -183,12 +246,15 @@ df[, matches := sapply(FULL_TEXT, function(text) any(str_detect(text, fixed(gene
 
 
 ```{r}
-# 24h kod autorstva ima 24ContentHaus i u tekstu formulaciju sadržaj donosi
 
 
 dta <- dt %>%
  # filter(SOURCE_TYPE =="web")  %>%
   filter(str_detect(FULL_TEXT,fixed("crkva",ignore_case = TRUE)))
+
+
+
+
 
 dta <- dt %>%
   filter(SOURCE_TYPE =="web")  %>%
