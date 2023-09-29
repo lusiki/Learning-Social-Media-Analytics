@@ -443,9 +443,9 @@ write.xlsx(ch24, file = "D:/LUKA/Freelance/Mediatoolkit/ch24.xlsx", row.names = 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 
 # Read In 
-original <- read.xlsx("D:/LUKA/Freelance/Mediatoolkit/native1.xlsx", sheetIndex = 1)
+original <- read.xlsx("D:/LUKA/Freelance/Mediatoolkit/native1.xlsx", sheetIndex = 1) %>% mutate(V1 = as.numeric(V1))
 variables <- read.xlsx("C:/Users/Lukas/OneDrive/Desktop/Native.xlsx", sheetIndex = 1)
-variables <- variables[,-c(23,24,25)] %>% drop_na()
+variables <- variables[,-c(23,24,25)]# %>% drop_na()
 original <- original %>% filter(V1 %in% variables$V1)
 dta <- merge(original, variables, by = "V1", all.x = TRUE)
 dta$DATE <- as.Date(dta$DATE)
@@ -761,6 +761,20 @@ n_tokenTidy %>%
 
 ```
 
+#### Najčešće riječi  24h.hr
+```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=25}
+n_tokenTidy %>%
+  filter(FROM == "24sata.hr") %>%
+  group_by(word) %>%
+  summarise(N = n()) %>%
+  arrange(desc(N))   %>%
+  filter(N > 10) %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+
+
+
 #### Najčešće riječi  jutarnji.hr
 ```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=25}
 n_tokenTidy %>%
@@ -900,6 +914,28 @@ n_tokenTidy %>%
                    max.words = 120)
 
 ```
+
+
+#### Oblak riječi sa sentimentom (za sve native članke koje ste pronašli za 24sata.hr)
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+n_tokenTidy %>%
+  filter(FROM == "24sata.hr") %>%
+  inner_join(CroSentilex_Gold,by="word") %>% 
+  count(word, sentiment) %>% 
+  top_n(200) %>%
+  mutate(sentiment = case_when(sentiment == 0 ~ "+/-",
+                                 sentiment == 1 ~ "-",
+                                 sentiment == 2 ~ "+")) %>%
+  acast(word ~ sentiment, value.var = "n", fill = 0) %>%
+  comparison.cloud(colors = c("firebrick3", "deepskyblue3","darkslategray"),
+                   max.words = 120)
+
+```
+
+
+
+
 
 #### Oblak riječi sa sentimentom (za sve native članke koje ste pronašli za večernji.hr)
 ```{r echo=F, eval=T, message=F , warning= FALSE}
@@ -1063,7 +1099,7 @@ fb_tokenTidy_TopLike[,.N,by = word][order(-N),]
 ```{r frekvencija, eval = T, echo = F, message=F, warning=F, fig.height=10, fig.width=12}
 ## Udio riječi po domenama
 domenaWords <- n_tokenTidy %>%
-  filter(FROM %in% c("vecernji.hr", "jutarnji.hr", "telegram.hr", "index.hr", "slobodnadalmacija.hr")) %>% 
+  filter(FROM %in% c("vecernji.hr", "jutarnji.hr", "telegram.hr", "24sata.hr", "index.hr", "slobodnadalmacija.hr")) %>% 
   count(FROM, word, sort = T)
   
 ukupnoWords <- domenaWords %>%
@@ -1714,7 +1750,7 @@ dta %>%
 
 ### Sentiment
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 
 sentiment <- data.frame(
