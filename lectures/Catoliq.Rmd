@@ -34,41 +34,153 @@ library(xlsx)
 
 ```
 
-```{r echo=F, eval=F, message=F , warning= FALSE}
+```{r echo=F, eval=T, message=F , warning= FALSE}
 # fullDta <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_NOTXT.csv")
 # fullDtaTxt <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_TXT.csv")
-dt <- fread("D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv")
+all <- fread("D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv")
+# 
+# 
+# dt <- dt %>% filter(SOURCE_TYPE == "web") %>%
+#   distinct(URL,.keep_all = TRUE)
+# 
+# dt <- dt %>%
+#   mutate(V1 = as.numeric(V1)) %>%
+#   distinct(V1, .keep_all = T)# %>%
+#  # slice(1:300000) 
 
+dt <- read_excel("D:/LUKA/Freelance/Mediatoolkit/catholiq.xlsx") %>% select(-match)
+```
+```{r}
+dt <- merge(dt, all, by = "V1", all.x = TRUE)
+dt$DATE <- as.Date(dt$DATE.x)
+```
 
-dt <- dt %>% filter(SOURCE_TYPE == "web") %>%
-  distinct(URL,.keep_all = TRUE)
+#### Deskriptiva na dnevnoj razini
+```{r echo=F, eval=T, message=F , warning= FALSE}
+# articles over time
+daily_counts <- dt %>%
+  group_by(DATE) %>%
+  summarise(count = n())
 
-dt <- dt %>%
-  mutate(V1 = as.numeric(V1)) %>%
-  distinct(V1, .keep_all = T)# %>%
- # slice(1:300000) 
+# descriptives 
+summ <- daily_counts %>% 
+  summarize(min = min(count), max = max(count), 
+            mean = mean(count), q1= quantile(count, probs = 0.25), 
+            median = median(count), q3= quantile(count, probs = 0.75),
+            sd = sd(count)) %>%
+  mutate_if(is.numeric, round, digits=2) 
 
-
+summ
 ```
 
 
 
-```{r}
+#### Broj objava po danima  
+```{r echo=F, eval=T, message=F , warning= FALSE}
+# create plot of articles over time
+ggplot(data = daily_counts, aes(x = DATE, y = count)) +
+  geom_line() +
+  labs(x = "Date", y = "Number of Articles")
+ 
+
+```
+
+
+#### Broj objava po izvoru 
+```{r echo=F, eval=T, message=F , warning= FALSE}
+# Portals by activity
+activity <- dt %>%
+  group_by(FROM) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count))
+
+datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+# Text analysis 
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+# read in lexicons
+CroSentilex_n <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-negatives.txt",
+                                   header = FALSE,
+                                   sep = " ",
+                                   stringsAsFactors = FALSE,
+                                   fileEncoding = "UTF-8")  %>%
+                   rename(word = "V1", sentiment = "V2" ) %>%
+                   mutate(brija = "NEG")
+ 
+CroSentilex_p  <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-positives.txt",
+                                   header = FALSE,
+                                   sep = " ",
+                                   stringsAsFactors = FALSE,
+                                   fileEncoding = "UTF-8") %>%
+                    rename(word = "V1", sentiment = "V2" ) %>%
+                    mutate(brija = "POZ")
+ 
+Crosentilex_sve <- rbind(setDT(CroSentilex_n), setDT(CroSentilex_p))
+# check lexicon data 
+#head(sample_n(Crosentilex_sve,1000),15)
+
+ 
+CroSentilex_Gold  <- read.delim2("C:/Users/Lukas/Dropbox/Mislav@Luka/gs-sentiment-annotations.txt",
+                                 header = FALSE,
+                                 sep = " ",
+                                 stringsAsFactors = FALSE) %>%
+                    rename(word = "V1", sentiment = "V2" ) 
+ Encoding(CroSentilex_Gold$word) <- "UTF-8"
+ CroSentilex_Gold[1,1] <- "dati"
+ CroSentilex_Gold$sentiment <- str_replace(CroSentilex_Gold$sentiment , "-", "1")
+ CroSentilex_Gold$sentiment <- str_replace(CroSentilex_Gold$sentiment , "\\+", "2")
+ CroSentilex_Gold$sentiment <- as.numeric(unlist(CroSentilex_Gold$sentiment))
+# check lexicon data 
+#head(sample_n(CroSentilex_Gold,100),15)
+ 
+# create stop words
+stopwords_cro <- get_stopwords(language = "hr", source = "stopwords-iso")
+# check stopwords data
+#head(sample_n(stopwords_cro,100),15)
+# extend stop words
+my_stop_words <- tibble(
+  word = c(
+    "jedan","mjera", "može", "možete", "mogu", "kad", "sada", "treba", "ima", "osoba",
+    "e","prvi", "dva","dvije","drugi",
+    "tri","treći","pet","kod",
+    "ove","ova",  "ovo","bez", "kod",
+    "evo","oko",  "om", "ek",
+    "mil","tko","šest", "sedam",
+    "osam",   "čim", "zbog",
+    "prema", "dok","zato", "koji", 
+    "im", "čak","među", "tek",
+    "koliko", "tko","kod","poput", 
+    "baš", "dakle", "osim", "svih", 
+    "svoju", "odnosno", "gdje",
+    "kojoj", "ovi", "toga",
+     "ubera", "vozača", "hrvatskoj", "usluge", "godine", "više", "taksi", "taxi", "taksija", "taksija", "kaže", "rekao", "19"," aee", "ae","bit.ly", "https", "one", "the"
+  ),
+  lexicon = "lux"
+)
+stop_corpus <- my_stop_words %>%
+  bind_rows(stopwords_cro)
+# check stopwords data
+#head(sample_n(stop_corpus,100),15)
+```
+
+
+
+
+
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 
 
 generalno <- c("crkva", "biskup", "Kaptol", "časna sestra", "svećenik", "župnik", "vjernik", "kardinal", "papa", "sveti otac", "redovnik", "redovnica","kršćanstvo", "vjera", "Gospa", "Bog", "Isus", "katolički", "misa", "pričest", "krizma", "grijeh", "vjeroučitelj", "vjeronauk", "blagoslov","svjedočanstvo", "relikvija", "stigma", "duhovnost", "don", "fra", "velečasni","zaređenje", "krunica", "vjeronauk", "ukazanje")
 
-
-imena <- c("Stepinac","Damir Stojić", "Željka Markić", "Ike Mandurić","Vlado Košić","Robert Bajruši", "Inoslav Bešker", "Ante Tomić", "Branimir Pofuk", "Igor Lasić", "Hrvoje Marjanović","Bozanić", "Ksenija Abramović", "Drago Pilsel")
-
 imena <- c("Stepinac","Damir", "Stojić", "Željka" ,"Markić", "Ike", "Mandurić","Vlado", "Košić","Robert" ,"Bajruši", "Inoslav", "Bešker", "Ante" ,"Tomić", "Branimir" ,"Pofuk", "Igor", "Lasić", "Hrvoje", "Marjanović","Bozanić", "Ksenija" ,"Abramović", "Drago","Pilsel")
-
-
 
 institucije  <- c("Ksaver", "HBK", "Opus Dei", "Udruga Protagora","Caritas")
 
-pravno <- c("vatikanski ugovori", "plaćanje blagoslova","plaćanje sakramenata", "crkvene nekretnine", "crkvena imovina")
+pravno <- c("vatikanski", "ugovori", "plaćanje", "blagoslova","sakramenata", "nekretnine", "imovina")
 
 politika <- C("Hod za život", "U ime obitelji", "prolife", "poništenje Rimskih ugovora", "sekularizacija", "sekularna država", "klerikalizam", "Crkva ruši vlast", "veličaju ustaštvo", "oduzimaju prava ženama", "žele stvoriti katoličku državu", "crkvena afera", "zataškavanje Kaptola", "šutnja Kaptola", "Rimski ugovori","vjeronauk u školama", "vatikanski ugovori", "vatikanska banka" ,"klerikalna vlast","država nije odvojena od Crkve", "potiče homofobiju", "rodna ideologija", "klerikalizam", "ravnozemljaši", "gay brak", "podržavali ustaše", "podržavali naciste", "blagoslovili rat", "Hrvatska nije sekularna država","Katolička crkva vlada Hrvatskom","žene u Crkvi")
 
@@ -81,8 +193,8 @@ pomocno <- c( "smijenjen","konzervativci", "tradicionalisti", "pobačaj", "abort
 
 ```
 
-
-```{r}
+# imena
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 imena <- c("Stepinac","Stojić","Markić", "Ike", "Mandurić", "Košić" ,"Bajruši", "Bešker","Tomić","Pofuk",  "Lasić", "Marjanović","Bozanić", "Abramović", "Pilsel") %>% tolower()
 
@@ -121,23 +233,14 @@ filtered_df <- df %>%
   filter(str_detect(full_text, pattern_imena))
 
 
-#write.csv2(filtered_df, file = "D:/LUKA/Freelance/Mediatoolkit/catholiq.csv", row.names = T)
-
-# Install the writexl package if you haven't already
-#install.packages("writexl")
-
-# Load the writexl package
-#ibrary(writexl)
-
-#write_xlsx(filtered_df, path = "D:/LUKA/Freelance/Mediatoolkit/catholiq.xlsx")
+filtered_df %>% group_by(key_word) %>% count() %>% arrange(desc(n))
 
 
-dt <- read_excel("D:/LUKA/Freelance/Mediatoolkit/catholiq.xlsx") %>% select(-match)
 
 ```
 
-
-```{r}
+# fraze
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 fraze <- c("pedofilija", "klečavci", "kaptolaši", "popovi lopovi", "zatucani katolici", "katolički fanatici", "katolički fašisti", "katolibani","crkvenjak", "ekstremni vjernici")
 
@@ -174,85 +277,189 @@ df <- bind_rows(results)
 
 filtered_df <- df %>%
   filter(str_detect(full_text, pattern_fraze))
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```{r}
-
-fraze <- c("pedofilija", "klečavci", "kaptolaši", "popovi lopovi", "zatucani katolici", "katolički fanatici", "katolički fašisti", "katolibani","crkvenjak", "ekstremni vjernici")
-
-
-pattern_fraze <- str_c("\\b(", str_c(fraze, collapse = "|"), ")\\b")
-
-
-# Define the batch size
-batch_size <- 1000
-
-# Split your data into batches
-batches <- split(dt, ceiling(seq_along(dt[[1]])/batch_size))
-
-# Function to process each batch
-process_batch <- function(batch) {
-  batch %>%
-    as_tibble() %>%
-    select(V1, DATE, TITLE, URL, FULL_TEXT) %>%
-    mutate(
-      full_text = tolower(FULL_TEXT),
-      match = str_c(fraze, collapse = '|'),
-      key_word = str_extract_all(full_text, match)
-    ) %>%
-    filter(lengths(key_word) > 0) %>%
-    unnest(key_word) %>%
-    distinct(V1, .keep_all = TRUE)
-}
-
-# Process each batch
-results <- batches %>%
-  map(~ process_batch(.x))
-
-df <- bind_rows(results)
-
-filtered_df <- df %>%
-  filter(str_detect(full_text, pattern_fraze))
-```
-
-
-
-```{r}
-
-proba <- as_tibble(dt) %>%
-  select(V1, DATE, TITLE, URL, FULL_TEXT) %>%
-  mutate(full_text = tolower(dt$FULL_TEXT),
-         match = str_c(generalno, collapse = '|'),
-         key_word = str_extract_all(full_text, match)) %>%
-  select(-match) %>%
-  filter(lengths(key_word)>0) %>%
-  unnest(key_word) %>%
-  distinct(V1, .keep_all = T)
-
-
-pattern <- str_c("\\b(", str_c(generalno, collapse = "|"), ")\\b")
-
-filtered_df <- proba %>%
-  filter(str_detect(full_text, pattern))
 
 filtered_df %>% group_by(key_word) %>% count() %>% arrange(desc(n))
 ```
+
+# pravno
+```{r echo=F, eval=F, message=F , warning= FALSE}
+
+pravno <- c("vatikanski", "ugovori", "plaćanje", "blagoslova","sakramenata", "nekretnine", "imovina")
+
+pattern_pravno <- str_c("\\b(", str_c(pravno, collapse = "|"), ")\\b")
+
+
+# Define the batch size
+batch_size <- 1000
+
+# Split your data into batches
+batches <- split(dt, ceiling(seq_along(dt[[1]])/batch_size))
+
+# Function to process each batch
+process_batch <- function(batch) {
+  batch %>%
+    as_tibble() %>%
+    select(V1, DATE, TITLE, URL, FULL_TEXT) %>%
+    mutate(
+      full_text = tolower(FULL_TEXT),
+      match = str_c(pravno, collapse = '|'),
+      key_word = str_extract_all(full_text, match)
+    ) %>%
+    filter(lengths(key_word) > 0) %>%
+    unnest(key_word) %>%
+    distinct(V1, .keep_all = TRUE)
+}
+
+# Process each batch
+results <- batches %>%
+  map(~ process_batch(.x))
+
+df <- bind_rows(results)
+
+filtered_df <- df %>%
+  filter(str_detect(full_text, pattern_pravno))
+
+filtered_df %>% group_by(key_word) %>% count() %>% arrange(desc(n))
+```
+
+# institucije
+```{r echo=F, eval=F, message=F , warning= FALSE}
+institucije  <- c("Ksaver", "HBK", "Opus Dei", "Udruga Protagora","Caritas") %>% tolower()
+
+
+pattern_institucije <- str_c("\\b(", str_c(institucije, collapse = "|"), ")\\b")
+
+
+# Define the batch size
+batch_size <- 1000
+
+# Split your data into batches
+batches <- split(dt, ceiling(seq_along(dt[[1]])/batch_size))
+
+# Function to process each batch
+process_batch <- function(batch) {
+  batch %>%
+    as_tibble() %>%
+    select(V1, DATE, TITLE, URL, FULL_TEXT) %>%
+    mutate(
+      full_text = tolower(FULL_TEXT),
+      match = str_c(institucije, collapse = '|'),
+      key_word = str_extract_all(full_text, match)
+    ) %>%
+    filter(lengths(key_word) > 0) %>%
+    unnest(key_word) %>%
+    distinct(V1, .keep_all = TRUE)
+}
+
+# Process each batch
+results <- batches %>%
+  map(~ process_batch(.x))
+
+df <- bind_rows(results)
+
+filtered_df <- df %>%
+  filter(str_detect(full_text, pattern_institucije))
+
+filtered_df %>% group_by(key_word) %>% count() %>% arrange(desc(n))
+
+```
+
+
+# politika
+```{r echo=F, eval=F, message=F , warning= FALSE}
+politika <- c("Hod","život", "obitelji", "prolife", "poništenje", "ugovora", "sekularizacija", "sekularna","država", "klerikalizam", "ruši","vlast", "veličaju" ,"ustaštvo", "oduzimaju", "prava", "ženama", "katoličku","državu", "afera", "zataškavanje", "Kaptol", "šutnja", "Rimski","vjeronauk" ,"škola", "vatikanski", "ugovori", "vatikanska", "banka" ,"klerikalna", "vlast","država","odvojena", "potiče", "homofobiju", "rodna", "ideologija", "klerikalizam", "ravnozemljaši", "gay", "brak", "podržavali", "ustaše", "podržavali", "naciste", "blagoslovili", "rat", "Hrvatska", "sekularna","katolička", "crkva", "vlada","Hrvatskom","žene") %>% tolower()
+
+
+pattern_politika <- str_c("\\b(", str_c(politika, collapse = "|"), ")\\b")
+
+
+# Define the batch size
+batch_size <- 1000
+
+# Split your data into batches
+batches <- split(dt, ceiling(seq_along(dt[[1]])/batch_size))
+
+# Function to process each batch
+process_batch <- function(batch) {
+  batch %>%
+    as_tibble() %>%
+    select(V1, DATE, TITLE, URL, FULL_TEXT) %>%
+    mutate(
+      full_text = tolower(FULL_TEXT),
+      match = str_c(politika, collapse = '|'),
+      key_word = str_extract_all(full_text, match)
+    ) %>%
+    filter(lengths(key_word) > 0) %>%
+    unnest(key_word) %>%
+    distinct(V1, .keep_all = TRUE)
+}
+
+# Process each batch
+results <- batches %>%
+  map(~ process_batch(.x))
+
+df <- bind_rows(results)
+
+filtered_df <- df %>%
+  filter(str_detect(full_text, pattern_politika))
+
+filtered_df %>% group_by(key_word) %>% count() %>% arrange(desc(n))
+
+```
+
+
+
+
+# pomocno
+
+```{r echo=F, eval=F, message=F , warning= FALSE}
+pomocno <- c( "smijenjen","konzervativci", "tradicionalisti", "pobačaj", "abortus", "aktivisti", "aktivizam", "jezuiti", "nazadan", "zaostao", "neobrazovan", "privilegije" , "privilegiran", "diskriminacija", "nacionalizam", "nacionalisti", "ekstremisti", "otpušten", "prekrštavanje", "izopćen", "izbačen", "bludničio",  "posvećenje", "inkardiniran", "inkardinacija",  "mračno doba", "razotkrio", "prijavio", "bludničio", "pronevjerio", "homofobijam", "zlodjela", "progoni", "dogma", "kontroverzni" , "moderni", "svećenik", "tolerantna", "vjera", "vjerska", "policija", "vjerska", "kontrola", "crkveni", "mediji", "vjerski" ,"mediji", "ukidanje", "homofob", "pedofil", "homoseksualnost", "patrijarhat", "čudesno" , "ozdravljenje", "čudo")
+
+
+pattern_pomocno <- str_c("\\b(", str_c(pomocno, collapse = "|"), ")\\b")
+
+
+# Define the batch size
+batch_size <- 1000
+
+# Split your data into batches
+batches <- split(dt, ceiling(seq_along(dt[[1]])/batch_size))
+
+# Function to process each batch
+process_batch <- function(batch) {
+  batch %>%
+    as_tibble() %>%
+    select(V1, DATE, TITLE, URL, FULL_TEXT) %>%
+    mutate(
+      full_text = tolower(FULL_TEXT),
+      match = str_c(pomocno, collapse = '|'),
+      key_word = str_extract_all(full_text, match)
+    ) %>%
+    filter(lengths(key_word) > 0) %>%
+    unnest(key_word) %>%
+    distinct(V1, .keep_all = TRUE)
+}
+
+# Process each batch
+results <- batches %>%
+  map(~ process_batch(.x))
+
+df <- bind_rows(results)
+
+filtered_df <- df %>%
+  filter(str_detect(full_text, pattern_pomocno))
+
+
+
+
+
+```
+
+
+
+
+
+filtered_df %>% group_by(key_word) %>% count() %>% arrange(desc(n))
 
 
 
