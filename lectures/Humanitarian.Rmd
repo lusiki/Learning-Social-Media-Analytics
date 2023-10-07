@@ -135,9 +135,42 @@ ggplot(data = daily_counts, aes(x = DATE, y = count)) +
 
 ## Bigest profiles
 
+
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+# Portals by activity
+source_type <- dta %>%
+  group_by(SOURCE_TYPE) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count))
+
+datatable(source_type, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+
+
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Portals by activity
 activity <- dta %>%
+  filter(SOURCE_TYPE == "web") %>%
+  group_by(FROM) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count))
+
+datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+
+
+
+
+```{r echo=F, eval=F, message=F , warning= FALSE}
+# Portals by activity
+activity <- dta %>%
+  filter(SOURCE_TYPE == "web") %>%
   group_by(FROM) %>%
   summarise(count = n()) %>%
   mutate(percent = round(count / sum(count) * 100,2)) %>% 
@@ -148,7 +181,8 @@ datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Portals by reach
-reach <- dta %>%
+reach <- dta%>%
+  filter(SOURCE_TYPE == "web")%>%
   group_by(FROM) %>%
   summarise(reach = sum(REACH)) %>%
   arrange(desc(reach))
@@ -170,6 +204,7 @@ datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Portals by comments
 comment <- dta %>%
+  filter(SOURCE_TYPE == "web") %>%
   group_by(FROM) %>%
   summarise(comment = sum(COMMENT_COUNT, na.rm = T)) %>%
   mutate(percent = round(comment / sum(comment) * 100,2)) %>% 
@@ -181,6 +216,7 @@ datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Portals by shares
 shares <- dta %>%
+  filter(SOURCE_TYPE == "web") %>%
   group_by(FROM) %>%
   summarise(shares = sum(SHARE_COUNT, na.rm = T)) %>%
   mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
@@ -192,9 +228,10 @@ datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
 
 ## Authors
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # Authors by activity
 authors <- dta %>%
+  filter(SOURCE_TYPE == "web") %>%
   group_by(AUTHOR) %>%
   summarise(count = n()) %>%
   mutate(percent = round(count / sum(count) * 100,2)) %>% 
@@ -205,7 +242,7 @@ datatable(authors, options = list(scrollX = TRUE, scrollY = "500px"))
 
 
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # Authors by reach
 reach <- dta %>%
   group_by(AUTHOR) %>%
@@ -215,7 +252,7 @@ reach <- dta %>%
 datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # Authors by likes
 like <- dta %>%
   group_by(AUTHOR) %>%
@@ -226,7 +263,7 @@ like <- dta %>%
 datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # Authors by comments
 comment <- dta %>%
   group_by(AUTHOR) %>%
@@ -237,7 +274,7 @@ comment <- dta %>%
 datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # Authors by shares
 shares <- dta %>%
   group_by(AUTHOR) %>%
@@ -253,6 +290,7 @@ datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
 ```{r echo=F, eval=F, message=F , warning= FALSE}
 # Articles by activity
 articles <-  dta %>%
+  filter(SOURCE_TYPE == "web") %>%
   group_by(TITLE) %>%
   summarise(count = n(),across(URL)) %>% 
   arrange(desc(count)) %>%
@@ -264,7 +302,8 @@ datatable(articles, options = list(scrollX = TRUE, scrollY = "500px"))
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Articles by reach
-dta %>% 
+dta  %>%
+  filter(SOURCE_TYPE == "web") %>% 
   ungroup %>%
   arrange(desc(REACH)) %>% 
   slice(1:3000) %>%
@@ -279,7 +318,8 @@ dta %>%
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Articles by likes
-dta %>% 
+dta  %>%
+  filter(SOURCE_TYPE == "web") %>% 
   ungroup %>%
   arrange(desc(LIKE_COUNT)) %>% 
   slice(1:3000) %>%
@@ -293,7 +333,8 @@ dta %>%
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Articles by comments
-dta %>% 
+dta  %>%
+  filter(SOURCE_TYPE == "web") %>% 
   ungroup %>%
   arrange(desc(COMMENT_COUNT)) %>% 
   slice(1:3000) %>%
@@ -308,7 +349,8 @@ dta %>%
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Arcicles by shares
-dta %>% 
+dta  %>%
+  filter(SOURCE_TYPE == "web") %>% 
   ungroup %>%
   arrange(desc(SHARE_COUNT)) %>% 
   slice(1:3000) %>%
@@ -518,6 +560,9 @@ dta[,.(COMMENT_COUNT,FROM,FULL_TEXT, URL)][order(-COMMENT_COUNT)]
 dta[,.(SHARE_COUNT,FROM,FULL_TEXT, URL)][order(-SHARE_COUNT)] 
 ```
 
+
+
+### Prva tablica->naslov/ druga tablica ->txt
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 
 # how many letters in a title
@@ -538,12 +583,16 @@ dta[,
 
 ```
 
+
+
+### broj clanaka/broj riječi (tokenizirano)/broj riječi(očišćeno)
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # dim before tokenize
 dim(dta)
 
 # tokenize
-dta %>% 
+dta %>%
+  filter(SOURCE_TYPE == "web") %>% 
   unnest_tokens(word, FULL_TEXT) -> fb_token
 
 # dim after tokenize
@@ -576,9 +625,10 @@ dim(fb_tokenTidy)
 
 #### Basic freq
 
-```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=12}
+```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=12, fig.length = 17}
 ## Most common words
-fb_tokenTidy[,.N,by = word][order(-N),]
+fb_tokenTidy[,.N,by = word][order(-N),] %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 ## Vizualize most common words
 fb_tokenTidy[,.N,by = word][N>10000][order(-N),][,word := reorder(word,N)] %>%
@@ -690,7 +740,7 @@ fb_tokenTidy %>%
 
 ```
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 ## Negative profiles
 wCount <- fb_tokenTidy %>% 
   group_by(FROM) %>%
@@ -707,7 +757,7 @@ fb_tokenTidy %>%
   select(FROM, negativnostIndex)
 ```
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 ## Najpozitivniji portali
 CroSentilex_Gold_poz <- CroSentilex_Gold %>% filter(sentiment == 2)
 fb_tokenTidy %>% 
@@ -888,7 +938,7 @@ corsWords %>%
 ### TEMATIC ANALYSIS
 
 
-```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=12, fig.width=12}
+```{r echo=F, eval=F, message=F , warning= FALSE, fig.height=12, fig.width=12}
 fb_tokenTidy_TopLike %>%
   count(FROM, word, sort = TRUE) %>%
   cast_dtm(FROM, word,n) -> dtm
