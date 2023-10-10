@@ -2006,6 +2006,7 @@ gg2 <- dta %>%
 ggplot(gg2, aes(x = factor(text), y = BrojObjava, fill = factor(text))) +
   geom_bar(stat = "identity") +
   facet_wrap(~ FROM, scales = "free_y") +
+#  coord_flip() +
   labs(
     x = "Autorstvo",
     y = "Broj Objava",
@@ -2053,13 +2054,13 @@ ggplot(gg3, aes(x = factor(text), y = BrojObjava, fill = factor(text))) +
 
 ####4.	Doseg publike vs. Industrija
 
-```{r  echo=F, eval=T, message=F , warning= FALSE, fig.height=15, fig.width=15}
+```{r  echo=F, eval=T, message=F , warning= FALSE, fig.height=15, fig.width=20}
 gg4 <- dta %>% 
   group_by(DOSEG.PUBLIKE,INDUSTRIJA) %>%
   summarise(BrojObjava = n())  %>%
   left_join(doseg, by = c("DOSEG.PUBLIKE" = "number"))
 
-ggplot(gg4, aes(x = factor(text), y = BrojObjava, fill = factor(text))) +
+ggplot(gg4, aes(x = text, y = BrojObjava, fill = factor(text))) +
   geom_bar(stat = "identity") +
   facet_wrap(~ INDUSTRIJA, scales = "free_y") +
   labs(
@@ -2077,6 +2078,26 @@ ggplot(gg4, aes(x = factor(text), y = BrojObjava, fill = factor(text))) +
 
 ####5.	Najčešće riječi po industriji
 
+```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=30, fig.width=15}
+gg5 <- n_tokenTidy %>%
+  group_by(word, INDUSTRIJA) %>%
+  summarise(N = n()) %>%
+  arrange(desc(N)) %>%
+  filter(N > 50) 
+
+
+ggplot(gg5, aes(x = factor(word), y = N)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  facet_wrap(~ INDUSTRIJA, scales = "free_y") +
+  labs(
+    x = "Industrija",
+    y = "Broj Objava",
+    title = "Doseg publike po Industrijama"
+  ) +
+  theme_minimal() 
+
+```
 
 
 #### Sentiment: 6.	Sentiment – pozitivan, negativan ili neutralan
