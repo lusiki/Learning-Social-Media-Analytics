@@ -1912,7 +1912,7 @@ dta %>%
 
 ####1.	Industrija vs. sentiment
 
-```{r  echo=F, eval=T, message=F , warning= FALSE}
+```{r  echo=F, eval=T, message=F , warning= FALSE, fig.height=15, fig.width=15}
 
 industry_list <- data.frame(
   id = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28),
@@ -1967,7 +1967,7 @@ industry_list %>%
 
 
 
-sentind <- dta %>% 
+gg1 <- dta %>% 
   group_by(INDUSTRIJA,SENTIMENT) %>%
   summarise(BrojObjava = n()) %>% 
 #  arrange(desc(BrojObjava)) %>%
@@ -1975,31 +1975,106 @@ sentind <- dta %>%
 
 
 
-
-dta %>% 
-  group_by(INDUSTRIJA,SENTIMENT) %>%
-  summarise(BrojObjava = n()) %>% 
-#  arrange(desc(BrojObjava)) %>%
-  left_join(industry_list, by = c("INDUSTRIJA" = "id")) %>%
-  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
-
-
-
-ggplot(sentind, aes(x = BrojObjava)) +
-  geom_histogram(stat = "identity") + 
-  facet_wrap(INDUSTRIJA ~ SENTIMENT, scales = "free", ncol = 3) +
-  labs(title = "", 
-       x = "Broj Objava", 
-       y = "Count") +
-  theme_minimal()
+ggplot(gg1, aes(x = factor(SENTIMENT), y = BrojObjava, fill = factor(SENTIMENT))) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~ INDUSTRIJA, scales = "free_y") +
+  labs(
+    x = "Sentiment",
+    y = "Broj Objava",
+    title = "Sentimenti po Industrijama"
+  ) +
+  theme_minimal() +
+  scale_fill_discrete(name = "Sentiment")
 
 
 
 ```
 
 ####2.	Autorstvo vs. medij
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=15, fig.width=15}
+
+
+gg2 <- dta %>% 
+  group_by(AUTORSTVO,FROM) %>%
+  summarise(BrojObjava = n()) %>% 
+#  arrange(desc(BrojObjava)) %>%
+  left_join(autorstvo, by = c("AUTORSTVO" = "number"))
+
+
+ggplot(gg2, aes(x = factor(text), y = BrojObjava, fill = factor(text))) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~ FROM, scales = "free_y") +
+  labs(
+    x = "Autorstvo",
+    y = "Broj Objava",
+    title = "Autorstvo po Medijima"
+  ) +
+  theme_minimal() +
+  scale_fill_discrete(name = "text")
+
+
+
+
+```
+
+
+
+
+
 ####3.	Poveznice na kanale vs. industrija
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=15, fig.width=15}
+
+
+gg3 <- dta %>% 
+  group_by(POVEZNICE.KANALI,INDUSTRIJA) %>%
+  summarise(BrojObjava = n()) %>%
+  left_join(poveznice, by = c("POVEZNICE.KANALI" = "number"))
+
+ggplot(gg3, aes(x = factor(text), y = BrojObjava, fill = factor(text))) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~ INDUSTRIJA, scales = "free_y") +
+  labs(
+    x = "Industrija",
+    y = "Broj Objava",
+    title = "Poveznice na kanale po Industrijama"
+  ) +
+  theme_minimal() 
+
+
+
+```
+
+
+
+
 ####4.	Doseg publike vs. Industrija
+
+```{r  echo=F, eval=T, message=F , warning= FALSE, fig.height=15, fig.width=15}
+gg4 <- dta %>% 
+  group_by(DOSEG.PUBLIKE,INDUSTRIJA) %>%
+  summarise(BrojObjava = n())  %>%
+  left_join(doseg, by = c("DOSEG.PUBLIKE" = "number"))
+
+ggplot(gg4, aes(x = factor(text), y = BrojObjava, fill = factor(text))) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~ INDUSTRIJA, scales = "free_y") +
+  labs(
+    x = "Industrija",
+    y = "Broj Objava",
+    title = "Doseg publike po Industrijama"
+  ) +
+  theme_minimal() 
+
+```
+
+
+
+
+
 ####5.	Najčešće riječi po industriji
 
 
