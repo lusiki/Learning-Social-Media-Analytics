@@ -628,7 +628,20 @@ CroSentilex_Gold  <- read.delim2("C:/Users/Lukas/Dropbox/Mislav@Luka/gs-sentimen
  CroSentilex_Gold$sentiment <- as.numeric(unlist(CroSentilex_Gold$sentiment))
 # check lexicon data 
 #head(sample_n(CroSentilex_Gold,100),15)
+
  
+LilaHR  <- read.xlsx2("C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHR_.xlsx", sheetIndex = 1)
+#df <- separate_rows(LilaHR, HR, sep = ", ") 
+# 
+# zero_rows_count <- sum(apply(df[-1], 1, function(row) all(row == 0)))
+# print(zero_rows_count)
+# 
+# filtered_df <- df %>% 
+#   filter(!apply(.[,-1], 1, function(row) all(row == 0)))
+#  
+# write.xlsx(filtered_df, "C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHR_.xlsx" )
+
+  
 # create stop words
 stopwords_cro <- get_stopwords(language = "hr", source = "stopwords-iso")
 # check stopwords data

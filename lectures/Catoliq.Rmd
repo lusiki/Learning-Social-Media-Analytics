@@ -69,6 +69,41 @@ dt <- read_excel("D:/LUKA/Freelance/Mediatoolkit/catholiq.xlsx")
 
 
 
+
+
+```{r}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #### Deskriptiva na dnevnoj razini
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # articles over time
@@ -149,7 +184,11 @@ CroSentilex_Gold  <- read.delim2("C:/Users/Lukas/Dropbox/Mislav@Luka/gs-sentimen
  CroSentilex_Gold$sentiment <- as.numeric(unlist(CroSentilex_Gold$sentiment))
 # check lexicon data 
 #head(sample_n(CroSentilex_Gold,100),15)
+
  
+ 
+LilaHR  <- read.xlsx2("C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHR_.xlsx", sheetIndex = 1)
+  
 # create stop words
 stopwords_cro <- get_stopwords(language = "hr", source = "stopwords-iso")
 # check stopwords data
@@ -169,7 +208,7 @@ my_stop_words <- tibble(
     "koliko", "tko","kod","poput", 
     "baš", "dakle", "osim", "svih", 
     "svoju", "odnosno", "gdje",
-    "kojoj", "ovi", "toga",
+    "kojoj", "ovi", "toga","u", "ne", "su",
      "ubera", "vozača", "hrvatskoj", "usluge", "godine", "više", "taksi", "taxi", "taksija", "taksija", "kaže", "rekao", "19"," aee", "ae","bit.ly", "https", "one", "the"
   ),
   lexicon = "lux"
@@ -181,13 +220,96 @@ stop_corpus <- my_stop_words %>%
 ```
 
 
+
+
+
+```{r}
+
+stop=c('biti','jesam','budem','sam','jesi','budeš','si','jesmo','budemo','smo','jeste','budete','ste','jesu','budu','su','bih','bijah','bjeh','bijaše','bi','bje','bješe','bijasmo','bismo','bjesmo','bijaste','biste','bjeste','bijahu','biste','bjeste','bijahu','bi','biše','bjehu','bješe','bio','bili','budimo','budite','bila','bilo','bile','ću','ćeš','će','ćemo','ćete','želim','želiš','želi','želimo','želite','žele','moram','moraš','mora','moramo','morate','moraju','trebam','trebaš','treba','trebamo','trebate','trebaju','mogu','možeš','može','možemo','možete')
+
+
+
+istakniSlogotvornoR <- function(niz) {
+  stringr::str_replace_all(niz, "(^|[^aeiou])r($|[^aeiou])", "\\1R\\2")
+}
+
+imaSamoglasnik <- function(niz) {
+  !is.na(stringr::str_detect(istakniSlogotvornoR(niz), "[aeiouR]"))
+}
+
+transformiraj <- function(pojavnica) {
+  for(i in 1:nrow(transformacije)) {
+    trazi <- transformacije[i, 1]
+    zamijeni <- transformacije[i, 2]
+    if (endsWith(pojavnica, trazi)) {
+      return(sub(paste0(trazi, "$"), zamijeni, pojavnica))
+    }
+  }
+  return(pojavnica)
+}
+
+korjenuj <- function(pojavnica) {
+  for(pravilo in pravila) {
+    dioba <- stringr::str_match(pojavnica, pravilo)
+    if (!is.na(dioba[2])) {
+      if (imaSamoglasnik(dioba[2]) && nchar(dioba[2]) > 1) {
+        return(dioba[2])
+      }
+    }
+  }
+  return(pojavnica)
+}
+
+# Assuming you have 'input_file.txt' and 'output_file.txt' as your input and output
+input_file <- 'input_file.txt'
+output_file <- 'output_file.txt'
+
+pravila <- lapply(strsplit(trimws(readLines('C:/Users/Lukas/Dropbox/Mislav@Luka/rules.txt')), ' '), function(x) paste0('^(', x[1], ')(', x[2], ')$'))
+transformacije <- as.data.frame(do.call(rbind, strsplit(trimws(readLines('C:/Users/Lukas/Dropbox/Mislav@Luka/transformations.txt')), '\t')))
+
+
+text <- n_tokenTidy$word %>% head(1000)
+text <- tolower(readLines(input_file))
+
+
+tokens <- unlist(stringi::stri_extract_all_words(text))
+
+write_tokens <- function(token) {
+  if (token %in% stop) {
+    return(paste0(token, '\t', token))
+  } else {
+    return(paste0(token, '\t', korjenuj(transformiraj(token))))
+  }
+}
+
+results <- sapply(tokens, write_tokens)
+
+
+extracted <- sapply(strsplit(results, "\t"), `[`, 2)
+names(extracted) <- NULL
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # dim before tokenize
 #dim(dta)
 
 # tokenize
 dt %>% 
-  unnest_tokens(word, FULL_TEXT) -> n_token
+  unnest_tokens(word, TITLE) -> n_token
 
 # dim after tokenize
 #dim(n_token)
@@ -228,7 +350,7 @@ n_tokenTidy %>%
   group_by(word) %>%
   summarise(N = n()) %>%
   arrange(desc(N)) %>%
-  filter(N > 10000) %>%
+  filter(N > 100) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 ```
