@@ -449,6 +449,14 @@ variables <- variables[,-c(23,24,25)]# %>% drop_na()
 original <- original %>% filter(V1 %in% variables$V1)
 dta <- merge(original, variables, by = "V1", all.x = TRUE)
 dta$DATE <- as.Date(dta$DATE)
+
+
+
+stemmed <- readRDS("D:/LUKA/Freelance/Mediatoolkit/native_token_stemm.rds")
+
+stemmed <- stemmed %>%
+  rename("wordp" = "word") %>%
+  rename("word" = "transformed_column")
 ```
 
 
@@ -666,8 +674,19 @@ my_stop_words <- tibble(
   ),
   lexicon = "lux"
 )
+
+# full set with diacritics
+cro_sw_full_d <- tibble(word = c("a","ako","ali","baš","bez","bi","bih","bila","bili","bilo","bio","bismo","bit","biti","bolje","bude","čak","čega","čemu","često","četiri","čime","čini","će","ćemo","ćete","ću","da","dakle","dalje","dan","dana","dana","danas","dio","do","dobro","dok","dosta","dva","dvije","eto","evo","ga","gdje","god","godina","godine","gotovo","grada","i","iako","ići","ih","ili","im","ima","imaju","imali","imam","imao","imati","inače","ipak","isto","iz","iza","između","ja","jako","je","jedan","jedna","jednog","jednom","jednostavno","jednu","jer","joj","još","ju","ka","kad","kada","kaj","kako","kao","kaže","kod","koja","koje","kojeg","kojeg","kojem","koji","kojih","kojim","kojima","kojoj","kojom","koju","koliko","kraju","kroz","li","malo","manje","me","među","međutim","mene","meni","mi","milijuna","mislim","mjesto","mnogo","mogao","mogli","mogu","moj","mora","možda","može","možemo","možete","mu","na","način","nad","naime","nakon","nam","naravno","nas","ne","neće","nego","neka","neke","neki","nekog","nekoliko","neku","nema","nešto","netko","ni","nije","nikad","nisam","nisu","ništa","niti","no","njih","o","od","odmah","odnosno","oko","on","ona","onda","oni","onih","ono","opet","osim","ova","ovaj","ovdje","ove","ovim","ovo","ovog","ovom","ovu","pa","pak","par","po","pod","poput","posto","postoji","pred","preko","prema","pri","prije","protiv","prvi","puno","put","radi","reći","s","sa","sad","sada","sam","samo","sati","se","sebe","si","smo","ste","stoga","strane","su","svaki","sve","svi","svih","svoj","svoje","svoju","što","ta","tada","taj","tako","također","tamo","te","tek","teško","ti","tih","tijekom","time","tko","to","tog","toga","toj","toliko","tom","tome","treba","tu","u","uopće","upravo","uvijek","uz","vam","vas","već","vi","više","vrijeme","vrlo","za","zapravo","zar","zato","zbog","zna","znači"),
+                        lexicon = "boras")
+
+
 stop_corpus <- my_stop_words %>%
   bind_rows(stopwords_cro)
+
+
+stop_corpus <- stop_corpus %>%
+  bind_rows(cro_sw_full_d)
+
 # check stopwords data
 #head(sample_n(stop_corpus,100),15)
 ```
@@ -710,6 +729,130 @@ n_tokenTidy %>%
 ```
 
 
+```{r echo=F, eval=F, message=F , warning= FALSE}
+stop=c('biti','jesam','budem','sam','jesi','budeš','si','jesmo','budemo','smo','jeste','budete','ste','jesu','budu','su','bih','bijah','bjeh','bijaše','bi','bje','bješe','bijasmo','bismo','bjesmo','bijaste','biste','bjeste','bijahu','biste','bjeste','bijahu','bi','biše','bjehu','bješe','bio','bili','budimo','budite','bila','bilo','bile','ću','ćeš','će','ćemo','ćete','želim','želiš','želi','želimo','želite','žele','moram','moraš','mora','moramo','morate','moraju','trebam','trebaš','treba','trebamo','trebate','trebaju','mogu','možeš','može','možemo','možete')
+
+
+
+istakniSlogotvornoR <- function(niz) {
+  stringr::str_replace_all(niz, "(^|[^aeiou])r($|[^aeiou])", "\\1R\\2")
+}
+
+imaSamoglasnik <- function(niz) {
+  !is.na(stringr::str_detect(istakniSlogotvornoR(niz), "[aeiouR]"))
+}
+
+transformiraj <- function(pojavnica) {
+  for(i in 1:nrow(transformacije)) {
+    trazi <- transformacije[i, 1]
+    zamijeni <- transformacije[i, 2]
+    if (endsWith(pojavnica, trazi)) {
+      return(sub(paste0(trazi, "$"), zamijeni, pojavnica))
+    }
+  }
+  return(pojavnica)
+}
+
+korjenuj <- function(pojavnica) {
+  for(pravilo in pravila) {
+    dioba <- stringr::str_match(pojavnica, pravilo)
+    if (!is.na(dioba[2])) {
+      if (imaSamoglasnik(dioba[2]) && nchar(dioba[2]) > 1) {
+        return(dioba[2])
+      }
+    }
+  }
+  return(pojavnica)
+}
+
+
+
+pravila <- lapply(strsplit(trimws(readLines('C:/Users/Lukas/Dropbox/Mislav@Luka/rules.txt')), ' '), function(x) paste0('^(', x[1], ')(', x[2], ')$'))
+transformacije <- as.data.frame(do.call(rbind, strsplit(trimws(readLines('C:/Users/Lukas/Dropbox/Mislav@Luka/transformations.txt')), '\t')))
+
+
+#text <- n_tokenTidy$word %>% head(1000)
+#text <- tolower(readLines(input_file))
+
+
+tokens <- unlist(stringi::stri_extract_all_words(text))
+
+write_tokens <- function(token) {
+  if (token %in% stop) {
+    return(paste0(token, '\t', token))
+  } else {
+    return(paste0(token, '\t', korjenuj(transformiraj(token))))
+  }
+}
+
+```
+
+
+```{r echo=F, eval=F, message=F , warning= FALSE}
+proba <- n_tokenTidy %>% slice(1:10000) %>%
+  mutate(
+    word_korijen = sapply(word, function(x) {
+      result <- sapply(x, write_tokens)
+      extracted <- sapply(strsplit(result, "\t"), `[`, 2)
+      return(extracted)
+    })
+  )
+
+
+
+proba <- n_tokenTidy %>% slice(300000:nrow(n_tokenTidy)) %>%
+  mutate(
+    results = map(word, write_tokens),
+    transformed_column = map_chr(results, ~ str_extract(.x, "(?<=\t)[^\t]+$"))
+  ) %>%
+  select(-results) 
+
+
+setDT(proba)
+
+proba[, transformed_column := sapply(strsplit(sapply(word, write_tokens), "\t"), `[`, 2)]
+
+
+
+
+
+process_batch <- function(batch) {
+  batch[, transformed_column := sapply(strsplit(sapply(word, write_tokens), "\t"), `[`, 2)]
+  return(batch)
+}
+
+# Splitting data into batches
+batch_size <- 10000  # Adjust this to the size you want
+number_of_batches <- ceiling(nrow(proba) / batch_size)
+batched_data <- split(proba, seq(1, nrow(proba), by=batch_size))
+
+# Applying the transformation on each batch and collecting results
+result_list <- lapply(batched_data, process_batch)
+
+# Binding batches back together
+result4 <- rbindlist(result_list)
+
+stemmed <- rbind(result, result2, result3, result4)
+
+print(result)
+
+
+
+
+
+
+
+
+
+proba <- readRDS("D:/LUKA/Freelance/Mediatoolkit/native_token_stemm.rds")
+
+
+
+
+```
+
+
+
 #### Najčešće riječi (>50)
 
 ```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=25}
@@ -717,11 +860,12 @@ n_tokenTidy %>%
 # n_tokenTidy[,.N,by = word][order(-N),] %>%
 #   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
-n_tokenTidy %>%
+stemmed %>%
   group_by(word) %>%
-  summarise(N = n()) %>%
-  arrange(desc(N)) %>%
-  filter(N > 50) %>%
+  summarise(count = n()) %>%
+  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  arrange(desc(count)) %>%
+  filter(count > 50) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 
@@ -776,10 +920,11 @@ n_tokenTidy %>%
 
 #### Najčešće riječi  24h.hr
 ```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=25}
-n_tokenTidy %>%
+stemmed %>%
   filter(FROM == "24sata.hr") %>%
   group_by(word) %>%
   summarise(N = n()) %>%
+  mutate(percent = round(N / sum(N) * 100,2)) %>% 
   arrange(desc(N))   %>%
   filter(N > 10) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
@@ -790,10 +935,11 @@ n_tokenTidy %>%
 
 #### Najčešće riječi  jutarnji.hr
 ```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=25}
-n_tokenTidy %>%
+stemmed %>%
   filter(FROM == "jutarnji.hr") %>%
   group_by(word) %>%
   summarise(N = n()) %>%
+  mutate(percent = round(N / sum(N) * 100,2)) %>% 
   arrange(desc(N))   %>%
   filter(N > 10) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
@@ -802,10 +948,11 @@ n_tokenTidy %>%
 
 #### Najčešće riječi  telegram.hr
 ```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=25}
-n_tokenTidy %>%
+stemmed %>%
   filter(FROM == "telegram.hr") %>%
   group_by(word) %>%
   summarise(N = n()) %>%
+  mutate(percent = round(N / sum(N) * 100,2)) %>% 
   arrange(desc(N))   %>%
   filter(N > 10) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
@@ -814,10 +961,11 @@ n_tokenTidy %>%
 
 #### Najčešće riječi  vecernji.hr
 ```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=25}
-n_tokenTidy %>%
+stemmed %>%
   filter(FROM == "vecernji.hr") %>%
   group_by(word) %>%
   summarise(N = n()) %>%
+  mutate(percent = round(N / sum(N) * 100,2)) %>% 
   arrange(desc(N))   %>%
   filter(N > 10) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
@@ -826,10 +974,11 @@ n_tokenTidy %>%
 
 #### Najčešće riječi  index.hr
 ```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=25}
-n_tokenTidy %>%
+stemmed %>%
   filter(FROM == "index.hr") %>%
   group_by(word) %>%
   summarise(N = n()) %>%
+  mutate(percent = round(N / sum(N) * 100,2)) %>% 
   arrange(desc(N))   %>%
   filter(N > 10) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
@@ -840,8 +989,10 @@ n_tokenTidy %>%
 
 ```{r echo=F, eval=F, message=F , warning= FALSE}
 
+
+
 ## WordCloud(vulgaris)
-n_tokenTidy %>%
+stemmed %>%
   anti_join(CroSentilex_Gold,by="word") %>% 
   count(word) %>% 
   arrange(desc(n)) %>%
@@ -882,7 +1033,7 @@ sm %>%
   theme_economist()-> gg_sentiment_kroz_vrijeme_qv
 gg_sentiment_kroz_vrijeme_qv
 }
-vizualiziraj_sentiment(fb_tokenTidy,"week")
+vizualiziraj_sentiment(stemmed,"week")
 ```
 
 ```{r echo=F, eval=T, message=F , warning= FALSE, fig.width=12}
@@ -909,13 +1060,13 @@ dataset %>%
  gg_doprinos_sentimentu
  
 }
-doprinos_sentimentu(n_tokenTidy,30)
+doprinos_sentimentu(stemmed,30)
 ```
 
 #### Oblak riječi sa sentimentom (za sve native članke koje ste pronašli)
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 ## ComparisonCloud
-n_tokenTidy %>%
+stemmed %>%
   inner_join(CroSentilex_Gold,by="word") %>% 
   count(word, sentiment) %>% 
   top_n(200) %>%
@@ -932,7 +1083,7 @@ n_tokenTidy %>%
 #### Oblak riječi sa sentimentom (za sve native članke koje ste pronašli za 24sata.hr)
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 
-n_tokenTidy %>%
+stemmed %>%
   filter(FROM == "24sata.hr") %>%
   inner_join(CroSentilex_Gold,by="word") %>% 
   count(word, sentiment) %>% 
@@ -953,7 +1104,7 @@ n_tokenTidy %>%
 #### Oblak riječi sa sentimentom (za sve native članke koje ste pronašli za večernji.hr)
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 
-n_tokenTidy %>%
+stemmed %>%
   filter(FROM == "vecernji.hr") %>%
   inner_join(CroSentilex_Gold,by="word") %>% 
   count(word, sentiment) %>% 
@@ -970,7 +1121,7 @@ n_tokenTidy %>%
 
 #### Oblak riječi sa sentimentom (za sve native članke koje ste pronašli za jutranji.hr)
 ```{r echo=F, eval=T, message=F , warning= FALSE}
-n_tokenTidy %>%
+stemmed %>%
   filter(FROM == "jutarnji.hr") %>%
   inner_join(CroSentilex_Gold,by="word") %>% 
   count(word, sentiment) %>% 
@@ -987,7 +1138,7 @@ n_tokenTidy %>%
 
 #### Oblak riječi sa sentimentom (za sve native članke koje ste pronašli za index.hr)
 ```{r echo=F, eval=T, message=F , warning= FALSE}
-n_tokenTidy %>%
+stemmed %>%
   filter(FROM == "index.hr") %>%
   inner_join(CroSentilex_Gold,by="word") %>% 
   count(word, sentiment) %>% 
@@ -1004,7 +1155,7 @@ n_tokenTidy %>%
 
 #### Oblak riječi sa sentimentom (za sve native članke koje ste pronašli za sdalmancija.hr)
 ```{r echo=F, eval=T, message=F , warning= FALSE}
-n_tokenTidy %>%
+stemmed %>%
   filter(FROM == "slobodnadalmacija.hr") %>%
   inner_join(CroSentilex_Gold,by="word") %>% 
   count(word, sentiment) %>% 
@@ -1020,7 +1171,7 @@ n_tokenTidy %>%
 
 #### Oblak riječi sa sentimentom (za sve native članke koje ste pronašli za telegram.hr)
 ```{r echo=F, eval=T, message=F , warning= FALSE}
-n_tokenTidy %>%
+stemmed %>%
   filter(FROM == "telegram.hr") %>%
   inner_join(CroSentilex_Gold,by="word") %>% 
   count(word, sentiment) %>% 
@@ -1111,7 +1262,7 @@ fb_tokenTidy_TopLike[,.N,by = word][order(-N),]
 
 ```{r frekvencija, eval = T, echo = F, message=F, warning=F, fig.height=10, fig.width=12}
 ## Udio riječi po domenama
-domenaWords <- n_tokenTidy %>%
+domenaWords <- stemmed %>%
   filter(FROM %in% c("vecernji.hr", "jutarnji.hr", "telegram.hr", "24sata.hr", "index.hr", "slobodnadalmacija.hr")) %>% 
   count(FROM, word, sort = T)
   
@@ -1256,7 +1407,7 @@ bigram_tf_idf %>%
 
 ```{r echo=F, eval = T,message=F, warning=F, fig.height=12, fig.width=12}
 
-n_tokenTidy %>% 
+stemmed %>% 
 #  filter(datum > "2020-02-20") %>%
   group_by(word) %>%
   filter(n() > 20) %>%
@@ -1283,7 +1434,7 @@ corsWords %>%
 
 
 ```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=12, fig.width=12}
-n_tokenTidy %>%
+stemmed %>%
   count(FROM, word, sort = TRUE) %>%
   cast_dtm(FROM, word,n) -> dtm
 fb_LDA <- LDA(dtm, k = 3,  control = list(seed = 1234))
@@ -1456,8 +1607,9 @@ ggplot(data = dta, aes(x = HRV.IL.STRANI.BREND)) +
 
 dta %>% 
   group_by(NAZIV.BRENDA) %>%
-  summarise(BrojObjava = n()) %>% 
-  arrange(desc(BrojObjava)) %>%
+  summarise(N = n()) %>% 
+  mutate(percent = round(N / sum(N) * 100,2)) %>% 
+  arrange(desc(N)) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 
@@ -1505,8 +1657,9 @@ autorstvo <- data.frame(
 
 dta %>% 
   group_by(AUTORSTVO) %>%
-  summarise(BrojObjava = n()) %>% 
-  arrange(desc(BrojObjava)) %>%
+  summarise(N = n()) %>% 
+  mutate(percent = round(N / sum(N) * 100,2)) %>% 
+  arrange(desc(N)) %>%
   left_join(autorstvo, by = c("AUTORSTVO" = "number")) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
@@ -1552,15 +1705,17 @@ rubrika <- data.frame(
 
 dta %>% 
   group_by(RUBRIKA) %>%
-  summarise(BrojObjava = n()) %>% 
-  arrange(desc(BrojObjava)) %>%
+  summarise(N = n()) %>% 
+  mutate(percent = round(N / sum(N) * 100,2)) %>% 
+  arrange(desc(N)) %>%
   left_join(rubrika, by = c("RUBRIKA" = "number")) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 rubr <- dta %>% 
   group_by(RUBRIKA) %>%
-  summarise(BrojObjava = n()) %>% 
-  arrange(desc(BrojObjava)) %>%
+  summarise(N = n()) %>% 
+  mutate(percent = round(N / sum(N) * 100,2)) %>% 
+  arrange(desc(N)) %>%
   left_join(rubrika, by = c("RUBRIKA" = "number"))
 
 
@@ -1588,8 +1743,9 @@ clickbait <- data.frame(
 )
 dta %>% 
   group_by(CLICKBAIT) %>%
-  summarise(BrojObjava = n()) %>% 
-  arrange(desc(BrojObjava)) %>%
+  summarise(N = n()) %>% 
+  mutate(percent = round(N / sum(N) * 100,2)) %>% 
+  arrange(desc(N)) %>%
   left_join(clickbait, by = c("CLICKBAIT" = "number")) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
@@ -1657,8 +1813,9 @@ oprema <- data.frame(
 
 dta %>% 
   group_by(OPREMA) %>%
-  summarise(BrojObjava = n()) %>% 
-  arrange(desc(BrojObjava)) %>%
+  summarise(N = n()) %>% 
+  mutate(percent = round(N / sum(N) * 100,2)) %>% 
+  arrange(desc(N)) %>%
   left_join(oprema, by = c("OPREMA" = "number")) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
@@ -1701,8 +1858,9 @@ poveznice <- data.frame(
 )
 dta %>% 
   group_by(POVEZNICE.KANALI) %>%
-  summarise(BrojObjava = n()) %>% 
-  arrange(desc(BrojObjava)) %>%
+  summarise(N = n()) %>% 
+  mutate(percent = round(N / sum(N) * 100,2)) %>% 
+  arrange(desc(N)) %>%
   left_join(poveznice, by = c("POVEZNICE.KANALI" = "number")) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
@@ -1734,8 +1892,9 @@ izvori <- data.frame(
 
 dta %>% 
   group_by(IZVORI...IZJAVE) %>%
-  summarise(BrojObjava = n()) %>% 
-  arrange(desc(BrojObjava)) %>%
+  summarise(N = n()) %>% 
+  mutate(percent = round(N / sum(N) * 100,2)) %>% 
+  arrange(desc(N)) %>%
   left_join(izvori, by = c("IZVORI...IZJAVE" = "number")) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
@@ -1755,8 +1914,9 @@ dta %>%
 ```{r  echo=F, eval=T, message=F , warning= FALSE}
 dta %>% 
   group_by(FORMULACIJA.UZ.IZVOR) %>%
-  summarise(BrojObjava = n()) %>% 
-  arrange(desc(BrojObjava))%>%
+  summarise(N = n()) %>% 
+  mutate(percent = round(N / sum(N) * 100,2)) %>% 
+  arrange(desc(N))%>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1786,8 +1946,9 @@ doseg <- data.frame(
 
 dta %>% 
   group_by(DOSEG.PUBLIKE) %>%
-  summarise(BrojObjava = n()) %>% 
-  arrange(desc(BrojObjava)) %>%
+  summarise(N = n()) %>% 
+  mutate(percent = round(N / sum(N) * 100,2)) %>% 
+  arrange(desc(N)) %>%
   left_join(doseg, by = c("DOSEG.PUBLIKE" = "number")) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
@@ -1823,8 +1984,9 @@ lajkovi <- data.frame(
 
 dta %>% 
   group_by(BROJ.LAJKOVA) %>%
-  summarise(BrojObjava = n()) %>% 
-  arrange(desc(BrojObjava)) %>%
+  summarise(N = n()) %>% 
+  mutate(percent = round(N / sum(N) * 100,2)) %>% 
+  arrange(desc(N)) %>%
   left_join(lajkovi, by = c("BROJ.LAJKOVA" = "number")) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
@@ -1858,8 +2020,9 @@ komentari <- data.frame(
 
 dta %>% 
   group_by(BROJ.KOMENTARA) %>%
-  summarise(BrojObjava = n()) %>% 
-  arrange(desc(BrojObjava)) %>%
+  summarise(N = n()) %>% 
+  mutate(percent = round(N / sum(N) * 100,2)) %>% 
+  arrange(desc(N)) %>%
   left_join(komentari, by = c("BROJ.KOMENTARA" = "number")) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
@@ -1903,18 +2066,12 @@ interakcije <- data.frame(
 
 dta %>% 
   group_by(BROJ.INTERAKCIJA) %>%
-  summarise(BrojObjava = n()) %>% 
-  arrange(desc(BrojObjava)) %>%
+  summarise(N = n()) %>% 
+  mutate(percent = round(N / sum(N) * 100,2)) %>% 
+  arrange(desc(N)) %>%
   left_join(interakcije, by = c("BROJ.INTERAKCIJA" = "number")) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
-dta %>%
-  filter(BROJ.INTERAKCIJA == 7 ) %>%
-  select(URL)
-
-dta %>%
-  filter(BROJ.INTERAKCIJA == 8 ) %>%
-  select(URL)
 
 
 ```
@@ -2089,14 +2246,14 @@ ggplot(gg4, aes(x = text, y = BrojObjava, fill = factor(text))) +
 
 
 
-####5.	Najčešće riječi po industriji
+####5.	Najčešće riječi po industriji (više od 70 riječi je minimum)
 
-```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=30, fig.width=15}
-gg5 <- n_tokenTidy %>%
+```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=50, fig.width=15}
+gg5 <- stemmed %>%
   group_by(word, INDUSTRIJA) %>%
   summarise(N = n()) %>%
   arrange(desc(N)) %>%
-  filter(N > 50) 
+  filter(N > 70) 
 
 
 ggplot(gg5, aes(x = factor(word), y = N)) +
