@@ -638,7 +638,8 @@ CroSentilex_Gold  <- read.delim2("C:/Users/Lukas/Dropbox/Mislav@Luka/gs-sentimen
 #head(sample_n(CroSentilex_Gold,100),15)
 
  
-LilaHR  <- read.xlsx2("C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHR_.xlsx", sheetIndex = 1)
+LilaHR  <- read_excel("C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHR_.xlsx", sheet = "Sheet1")
+proba <- read.csv2("C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHRcsv.csv", encoding = "UTF-8")
 #df <- separate_rows(LilaHR, HR, sep = ", ") 
 # 
 # zero_rows_count <- sum(apply(df[-1], 1, function(row) all(row == 0)))
@@ -1560,16 +1561,23 @@ industry_list <- data.frame(
 )
 
 
+IND <- dta %>%
+  group_by(INDUSTRIJA) %>%
+  summarise(N = n()) %>% 
+  mutate(percentIND = round(N / sum(N) * 100,2))
 
+  
 
 # Create a histogram of the 'price' variable in the 'diamonds' dataset
-ggplot(data = dta, aes(x = INDUSTRIJA)) +
+ggplot(data = IND, aes(x = percentIND)) +
   geom_histogram(binwidth = 1, fill = "blue", alpha = 0.7) +
   ggtitle("Industrija") +
   xlab("Industrija") +
-  ylab("Frequency") +
+  ylab("%") +
   scale_x_continuous(breaks = seq(from = min(dta$INDUSTRIJA), to =  max(dta$INDUSTRIJA), by = 1))
 
+IND %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 
 industry_list %>%
@@ -1586,7 +1594,14 @@ industry_list %>%
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 
+PORIJEKLO <- dta %>%
+  group_by(HRV.IL.STRANI.BREND) %>%
+  summarise(N = n()) %>% 
+  mutate(percentPORIJEKLO = round(N / sum(N) * 100,2))
 
+
+PORIJEKLO %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 ggplot(data = dta, aes(x = HRV.IL.STRANI.BREND)) +
   geom_histogram(binwidth = 0.5, fill = "blue", alpha = 0.7) +
@@ -2273,6 +2288,18 @@ ggplot(gg5, aes(x = factor(word), y = N)) +
 #### Sentiment: 6.	Sentiment – pozitivan, negativan ili neutralan
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
+
+
+SENTIMENT <- dta %>%
+  group_by(SENTIMENT) %>%
+  summarise(N = n()) %>% 
+  mutate(percentSENTIMENT = round(N / sum(N) * 100,2))
+
+
+SENTIMENT %>%
+  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+
 
 
 sentiment <- data.frame(
