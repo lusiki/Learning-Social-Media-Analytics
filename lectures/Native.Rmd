@@ -638,8 +638,9 @@ CroSentilex_Gold  <- read.delim2("C:/Users/Lukas/Dropbox/Mislav@Luka/gs-sentimen
 #head(sample_n(CroSentilex_Gold,100),15)
 
  
-LilaHR  <- read_excel("C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHR_.xlsx", sheet = "Sheet1")
-proba <- read.csv2("C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHRcsv.csv", encoding = "UTF-8")
+LilaHR  <- read_excel("C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHR_.xlsx", sheet = "Sheet1") 
+LilaHR <- LilaHR[complete.cases(LilaHR), ]
+#proba <- read.csv2("C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHRcsv.csv", encoding = "UTF-8")
 #df <- separate_rows(LilaHR, HR, sep = ", ") 
 # 
 # zero_rows_count <- sum(apply(df[-1], 1, function(row) all(row == 0)))
@@ -776,7 +777,7 @@ transformacije <- as.data.frame(do.call(rbind, strsplit(trimws(readLines('C:/Use
 #text <- tolower(readLines(input_file))
 
 
-tokens <- unlist(stringi::stri_extract_all_words(text))
+#tokens <- unlist(stringi::stri_extract_all_words(text))
 
 write_tokens <- function(token) {
   if (token %in% stop) {
@@ -790,7 +791,7 @@ write_tokens <- function(token) {
 
 
 ```{r echo=F, eval=F, message=F , warning= FALSE}
-proba <- n_tokenTidy %>% slice(1:10000) %>%
+proba <- LilaHR %>% 
   mutate(
     word_korijen = sapply(word, function(x) {
       result <- sapply(x, write_tokens)
@@ -799,9 +800,9 @@ proba <- n_tokenTidy %>% slice(1:10000) %>%
     })
   )
 
+LilaHR <- LilaHR %>% rename("word" = "HR")
 
-
-proba <- n_tokenTidy %>% slice(300000:nrow(n_tokenTidy)) %>%
+proba <- LilaHR %>% #slice(1:500) %>%
   mutate(
     results = map(word, write_tokens),
     transformed_column = map_chr(results, ~ str_extract(.x, "(?<=\t)[^\t]+$"))
@@ -809,9 +810,9 @@ proba <- n_tokenTidy %>% slice(300000:nrow(n_tokenTidy)) %>%
   select(-results) 
 
 
-setDT(proba)
+ setDT(LilaHR)
 
-proba[, transformed_column := sapply(strsplit(sapply(word, write_tokens), "\t"), `[`, 2)]
+LilaHR[, transformed_column := sapply(strsplit(sapply(word, write_tokens), "\t"), `[`, 2)]
 
 
 
@@ -823,9 +824,9 @@ process_batch <- function(batch) {
 }
 
 # Splitting data into batches
-batch_size <- 10000  # Adjust this to the size you want
-number_of_batches <- ceiling(nrow(proba) / batch_size)
-batched_data <- split(proba, seq(1, nrow(proba), by=batch_size))
+batch_size <- 1000  # Adjust this to the size you want
+number_of_batches <- ceiling(nrow(LilaHR) / batch_size)
+batched_data <- split(LilaHR, seq(1, nrow(LilaHR), by=batch_size))
 
 # Applying the transformation on each batch and collecting results
 result_list <- lapply(batched_data, process_batch)
@@ -1428,6 +1429,23 @@ corsWords %>%
   coord_flip() + 
   theme_economist()
 
+```
+
+
+#### Riječi najkoreliranjije sa izabranim riječima (problem, račun)
+
+```{r}
+corsWords %>%
+  filter(item1 %in% c("problem", "račun")) %>%
+  group_by(item1) %>%
+  top_n(20) %>%
+  ungroup() %>%
+  mutate(item2 = reorder(item2, correlation)) %>%
+  ggplot(aes(item2, correlation)) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~ item1, scales = "free") +
+  coord_flip() + 
+  theme_economist()
 ```
 
 
@@ -2318,13 +2336,78 @@ ggplot(data = dta, aes(x = SENTIMENT)) +
 
 
 
+#### Oblak riječi sa sentimentom (za Financijsku industriju, i.e. 1); ispod toga je doprinos riječi sentimentu za industriju
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+
+stemmed %>%
+  filter(INDUSTRIJA == 1) %>%
+  inner_join(CroSentilex_Gold,by="word") %>% 
+  count(word, sentiment) %>% 
+  top_n(200) %>%
+  mutate(sentiment = case_when(sentiment == 0 ~ "+/-",
+                                 sentiment == 1 ~ "-",
+                                 sentiment == 2 ~ "+")) %>%
+  acast(word ~ sentiment, value.var = "n", fill = 0) %>%
+  comparison.cloud(colors = c("firebrick3", "deepskyblue3","darkslategray"),
+                   max.words = 120)
 
 
 
 
 
+doprinos_sentimentu(stemmed %>%
+  filter(INDUSTRIJA == 1),30)
 
 
+```
+
+
+#### Oblak riječi sa sentimentom (za ICT, i.e. 11)
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+
+stemmed %>%
+  filter(INDUSTRIJA == 11) %>%
+  inner_join(CroSentilex_Gold,by="word") %>% 
+  count(word, sentiment) %>% 
+  top_n(200) %>%
+  mutate(sentiment = case_when(sentiment == 0 ~ "+/-",
+                                 sentiment == 1 ~ "-",
+                                 sentiment == 2 ~ "+")) %>%
+  acast(word ~ sentiment, value.var = "n", fill = 0) %>%
+  comparison.cloud(colors = c("firebrick3", "deepskyblue3","darkslategray"),
+                   max.words = 120)
+
+
+
+
+doprinos_sentimentu(stemmed %>%
+  filter(INDUSTRIJA == 11),30)
+```
+
+
+#### Oblak riječi sa sentimentom (za Zdravlje, i.e. 6)
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+
+stemmed %>%
+  filter(INDUSTRIJA == 6) %>%
+  inner_join(CroSentilex_Gold,by="word") %>% 
+  count(word, sentiment) %>% 
+  top_n(200) %>%
+  mutate(sentiment = case_when(sentiment == 0 ~ "+/-",
+                                 sentiment == 1 ~ "-",
+                                 sentiment == 2 ~ "+")) %>%
+  acast(word ~ sentiment, value.var = "n", fill = 0) %>%
+  comparison.cloud(colors = c("firebrick3", "deepskyblue3","darkslategray"),
+                   max.words = 120)
+
+
+
+doprinos_sentimentu(stemmed %>%
+  filter(INDUSTRIJA == 6),30)
+```
 
 
 
