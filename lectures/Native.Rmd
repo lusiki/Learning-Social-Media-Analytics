@@ -1,5 +1,5 @@
 ---
-title: "Korupus native tekstova"
+title: "Korpus native tekstova"
 author: "Lux"
 date: "2023-03-25"
 output: html_document
@@ -638,8 +638,14 @@ CroSentilex_Gold  <- read.delim2("C:/Users/Lukas/Dropbox/Mislav@Luka/gs-sentimen
 #head(sample_n(CroSentilex_Gold,100),15)
 
  
-LilaHR  <- read_excel("C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHR_.xlsx", sheet = "Sheet1") 
-LilaHR <- LilaHR[complete.cases(LilaHR), ]
+LilaHR  <- read_excel("C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHR_clean.xlsx", sheet = "Sheet1") %>% select (-"...1")
+LilaHR_long <- read_excel("C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHR_clean_long.xlsx", sheet = "Sheet1") %>% select (-"...1") 
+
+
+
+# Print the long format data
+#print(data_long)
+
 #proba <- read.csv2("C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHRcsv.csv", encoding = "UTF-8")
 #df <- separate_rows(LilaHR, HR, sep = ", ") 
 # 
@@ -731,7 +737,7 @@ n_tokenTidy %>%
 ```
 
 
-```{r echo=F, eval=F, message=F , warning= FALSE}
+```{r echo=F, eval=T, message=F , warning= FALSE}
 stop=c('biti','jesam','budem','sam','jesi','budeš','si','jesmo','budemo','smo','jeste','budete','ste','jesu','budu','su','bih','bijah','bjeh','bijaše','bi','bje','bješe','bijasmo','bismo','bjesmo','bijaste','biste','bjeste','bijahu','biste','bjeste','bijahu','bi','biše','bjehu','bješe','bio','bili','budimo','budite','bila','bilo','bile','ću','ćeš','će','ćemo','ćete','želim','želiš','želi','želimo','želite','žele','moram','moraš','mora','moramo','morate','moraju','trebam','trebaš','treba','trebamo','trebate','trebaju','mogu','možeš','može','možemo','možete')
 
 
@@ -802,15 +808,22 @@ proba <- LilaHR %>%
 
 LilaHR <- LilaHR %>% rename("word" = "HR")
 
-proba <- LilaHR %>% #slice(1:500) %>%
+proba <- CroSentilex_Gold %>%
+#  slice(1:500) %>%
   mutate(
     results = map(word, write_tokens),
-    transformed_column = map_chr(results, ~ str_extract(.x, "(?<=\t)[^\t]+$"))
+    korijen = map_chr(results, ~ str_extract(.x, "(?<=\t)[^\t]+$")),
+    rijec = map_chr(results, ~ str_extract(.x, "^[^\t]+(?=\t)"))
   ) %>%
-  select(-results) 
+  select(-results)
 
 
- setDT(LilaHR)
+
+
+
+
+
+setDT(LilaHR)
 
 LilaHR[, transformed_column := sapply(strsplit(sapply(word, write_tokens), "\t"), `[`, 2)]
 
@@ -1038,7 +1051,20 @@ gg_sentiment_kroz_vrijeme_qv
 vizualiziraj_sentiment(stemmed,"week")
 ```
 
+# CroSentilex sentiment (positive, negative, neutral)
+
 ```{r echo=F, eval=T, message=F , warning= FALSE, fig.width=12}
+proba <- CroSentilex_Gold %>%
+#  slice(1:500) %>%
+  mutate(
+    results = map(word, write_tokens),
+    korijen = map_chr(results, ~ str_extract(.x, "(?<=\t)[^\t]+$")),
+    rijec = map_chr(results, ~ str_extract(.x, "^[^\t]+(?=\t)"))
+  ) %>%
+  select(-results)
+CroSentilex_Gold <- proba %>% select(-"word") %>% rename("word" ="korijen")
+
+
 ## Sentiment 
 doprinos_sentimentu <- function(dataset, no = n) {
 dataset %>%
@@ -1065,7 +1091,75 @@ dataset %>%
 doprinos_sentimentu(stemmed,30)
 ```
 
-#### Oblak riječi sa sentimentom (za sve native članke koje ste pronašli)
+# NRC sentiment (positive vs. negative)
+
+```{r echo=F, eval=T, message=F , warning= FALSE, fig.width=12, fig.height=20}
+
+NRCpn <- LilaHR_long %>% rename("word" = "korijen") %>%
+  filter(Emotion %in% c("Positive","Negative"))
+
+
+## Sentiment 
+doprinos_sentimentu <- function(dataset, no = n) {
+dataset %>%
+  inner_join(NRCpn, by = "word") %>% 
+  count(word, Emotion,sort = TRUE) %>% 
+  group_by(Emotion) %>%
+  top_n(no) %>%
+  ungroup() %>%
+#  mutate(sentiment = case_when(sentiment == 0 ~ "NEUTRAL",
+#                                 sentiment == 1 ~ "NEGATIVE",
+#                                 sentiment == 2 ~ "POSITIVE")) %>%
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(word, n, fill = Emotion)) +
+  geom_col(show.legend = FALSE) +
+  ggtitle( "Sentiment") +
+  labs( x = "Riječ", y = "Number of words") +
+  facet_wrap(~ Emotion, scales = "free_y") +
+  coord_flip() +
+  theme_economist() -> gg_doprinos_sentimentu
+  
+ gg_doprinos_sentimentu
+ 
+}
+doprinos_sentimentu(stemmed,30)
+```
+
+# NRC sentiment ("Anger","Anticipation","Disgust","Fear","Joy","Sadness","Surprise","Trust")
+
+```{r echo=F, eval=T, message=F , warning= FALSE, fig.width=16, fig.height=25}
+NRC <- LilaHR_long %>% rename("word" = "korijen") %>%
+  filter(Emotion %in% c("Anger","Anticipation","Disgust","Fear","Joy","Sadness","Surprise","Trust"))
+
+
+## Sentiment 
+doprinos_sentimentu_full <- function(dataset, no = n) {
+dataset %>%
+  inner_join(NRC, by = "word") %>% 
+  count(word, Emotion,sort = TRUE) %>% 
+  group_by(Emotion,) %>%
+  top_n(no) %>%
+  ungroup() %>%
+#  mutate(sentiment = case_when(sentiment == 0 ~ "NEUTRAL",
+#                                 sentiment == 1 ~ "NEGATIVE",
+#                                 sentiment == 2 ~ "POSITIVE")) %>%
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(word, n, fill = Emotion)) +
+  geom_col(show.legend = FALSE) +
+  ggtitle( "Sentiment") +
+  labs( x = "Riječ", y = "Number of words") +
+  facet_wrap(~ Emotion, scales = "free_y") +
+  coord_flip() +
+  theme_economist() -> gg_doprinos_sentimentu
+  
+ gg_doprinos_sentimentu
+ 
+}
+doprinos_sentimentu_full(stemmed,30)
+```
+
+
+#### Oblak riječi sa sentimentom CroSentilex (za sve native članke koje ste pronašli)
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 ## ComparisonCloud
 stemmed %>%
@@ -1080,6 +1174,25 @@ stemmed %>%
                    max.words = 120)
 
 ```
+
+
+#### Oblak riječi sa sentimentom NRC (za sve native članke koje ste pronašli) **da li treba dodati za portale?**
+
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+stemmed %>%
+  inner_join(NRCpn,by="word") %>% 
+  count(word, Emotion) %>% 
+  top_n(200) %>%
+#  mutate(sentiment = case_when(sentiment == 0 ~ "+/-",
+#                                sentiment == 1 ~ "-",
+#                                 sentiment == 2 ~ "+")) %>%
+  acast(word ~ Emotion, value.var = "n", fill = 0) %>%
+  comparison.cloud(colors = c("firebrick3", "deepskyblue3","darkslategray"),
+                   max.words = 120)
+```
+
 
 
 #### Oblak riječi sa sentimentom (za sve native članke koje ste pronašli za 24sata.hr)
@@ -1099,6 +1212,9 @@ stemmed %>%
 
 ```
 
+```{r}
+
+```
 
 
 
@@ -2336,7 +2452,7 @@ ggplot(data = dta, aes(x = SENTIMENT)) +
 
 
 
-#### Oblak riječi sa sentimentom (za Financijsku industriju, i.e. 1); ispod toga je doprinos riječi sentimentu za industriju
+#### Oblak riječi sa sentimentom CroSentilex (za Financijsku industriju, i.e. 1); ispod toga je doprinos riječi sentimentu za industriju
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 
 
@@ -2363,7 +2479,52 @@ doprinos_sentimentu(stemmed %>%
 ```
 
 
-#### Oblak riječi sa sentimentom (za ICT, i.e. 11)
+
+#### Oblak riječi sa sentimentom NRC (za Financijsku industriju, i.e. 1); ispod toga je doprinos riječi sentimentu za industriju
+
+
+
+
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=15}
+stemmed %>%
+  filter(INDUSTRIJA == 1) %>%
+  inner_join(NRCpn,by="word") %>% 
+  count(word, Emotion) %>% 
+  top_n(200) %>%
+#  mutate(sentiment = case_when(sentiment == 0 ~ "+/-",
+#                                 sentiment == 1 ~ "-",
+#                                 sentiment == 2 ~ "+")) %>%
+  acast(word ~ Emotion, value.var = "n", fill = 0) %>%
+  comparison.cloud(colors = c("firebrick3", "deepskyblue3","darkslategray"),
+                   max.words = 120)
+
+
+
+doprinos_sentimentu(stemmed %>%
+  filter(INDUSTRIJA == 1),30)
+
+
+doprinos_sentimentu_full(stemmed %>%
+  filter(INDUSTRIJA == 1),30)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Oblak riječi sa sentimentom CroSentilex (za ICT, i.e. 11)
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 
 
@@ -2385,9 +2546,35 @@ stemmed %>%
 doprinos_sentimentu(stemmed %>%
   filter(INDUSTRIJA == 11),30)
 ```
+#### Oblak riječi sa sentimentom NRC (za ICT industriju, i.e. 1); ispod toga je doprinos riječi sentimentu za industriju
 
 
-#### Oblak riječi sa sentimentom (za Zdravlje, i.e. 6)
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=15}
+stemmed %>%
+  filter(INDUSTRIJA == 11) %>%
+  inner_join(NRCpn,by="word") %>% 
+  count(word, Emotion) %>% 
+  top_n(200) %>%
+#  mutate(sentiment = case_when(sentiment == 0 ~ "+/-",
+#                                 sentiment == 1 ~ "-",
+#                                 sentiment == 2 ~ "+")) %>%
+  acast(word ~ Emotion, value.var = "n", fill = 0) %>%
+  comparison.cloud(colors = c("firebrick3", "deepskyblue3","darkslategray"),
+                   max.words = 120)
+
+
+
+doprinos_sentimentu(stemmed %>%
+  filter(INDUSTRIJA == 11),30)
+
+doprinos_sentimentu_full(stemmed %>%
+  filter(INDUSTRIJA == 11),30)
+
+```
+
+#### Oblak riječi sa sentimentom Crosentilex (za Zdravlje, i.e. 6)
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 
 
@@ -2409,8 +2596,29 @@ doprinos_sentimentu(stemmed %>%
   filter(INDUSTRIJA == 6),30)
 ```
 
+#### Oblak riječi sa sentimentom NRC (za Zdravlje, i.e. 6)
+
+```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=15}
+stemmed %>%
+  filter(INDUSTRIJA == 6) %>%
+  inner_join(NRCpn,by="word") %>% 
+  count(word, Emotion) %>% 
+  top_n(200) %>%
+#  mutate(sentiment = case_when(sentiment == 0 ~ "+/-",
+#                                 sentiment == 1 ~ "-",
+#                                 sentiment == 2 ~ "+")) %>%
+  acast(word ~ Emotion, value.var = "n", fill = 0) %>%
+  comparison.cloud(colors = c("firebrick3", "deepskyblue3","darkslategray"),
+                   max.words = 120)
 
 
 
+doprinos_sentimentu(stemmed %>%
+  filter(INDUSTRIJA == 6),30)
+
+
+doprinos_sentimentu_full(stemmed %>%
+  filter(INDUSTRIJA == 6),30)
+```
 
 
