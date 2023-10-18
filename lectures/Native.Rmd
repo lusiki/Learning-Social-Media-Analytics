@@ -2452,6 +2452,29 @@ ggplot(data = dta, aes(x = SENTIMENT)) +
 
 
 
+```{r echo=F, eval=T, message=F , warning= FALSE}
+proba <- stemmed %>%
+  inner_join(NRCpn, by = "word") %>% 
+  group_by(V1) %>%
+  count(Emotion) %>% 
+  spread(Emotion, n) %>%
+  mutate(Sentiment = Positive - Negative) 
+
+
+positive_count <- nrow(filter(proba, Sentiment > 0))
+
+negative_count <- nrow(filter(proba, Sentiment < 0))
+
+
+print(paste("Broj članaka sa  positive sentimentom:", positive_count))
+print(paste("Broj članaka sa  negative sentimentom:", negative_count))
+  
+```
+
+
+
+
+
 #### Oblak riječi sa sentimentom CroSentilex (za Financijsku industriju, i.e. 1); ispod toga je doprinos riječi sentimentu za industriju
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 
