@@ -2450,7 +2450,7 @@ ggplot(data = dta, aes(x = SENTIMENT)) +
   #scale_x_continuous(breaks = seq(from = min(dta$SENTIMENT), to =  max(dta$SENTIMENT), by = 1))
 ```
 
-
+#### prema NRC riječniku (broj pozitivnih - broj negativnih riječi u članku):
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 proba <- stemmed %>%
@@ -2470,6 +2470,33 @@ print(paste("Broj članaka sa  positive sentimentom:", positive_count))
 print(paste("Broj članaka sa  negative sentimentom:", negative_count))
   
 ```
+
+#### prema CroSentilex riječniku (broj pozitivnih - broj negativnih riječi u članku):
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+proba <- stemmed %>%
+  inner_join(CroSentilex_Gold, by = "word") %>% 
+  group_by(V1) %>%
+  count(sentiment) %>% 
+  mutate(sentiment = case_when(sentiment == 0 ~ "Neutral",
+                                 sentiment == 1 ~ "Negative",
+                                 sentiment == 2 ~ "Positive")) %>%
+  spread(sentiment, n) %>%
+  mutate(Sentiment_netto = Positive - Negative) 
+
+
+positive_count <- nrow(filter(proba, Sentiment_netto > 0))
+
+negative_count <- nrow(filter(proba, Sentiment_netto < 0))
+
+
+print(paste("Broj članaka sa  positive sentimentom:", positive_count))
+print(paste("Broj članaka sa  negative sentimentom:", negative_count))
+
+```
+
+
+
 
 
 
