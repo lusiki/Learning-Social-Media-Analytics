@@ -161,7 +161,7 @@ CroSentilex_Gold  <- read.delim2("C:/Users/Lukas/Dropbox/Mislav@Luka/gs-sentimen
 
  
  
-LilaHR  <- read.xlsx2("C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHR_.xlsx", sheetIndex = 1)
+LilaHR  <- read.xlsx2("C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHR_clean.xlsx", sheetIndex = 1)
   
 # create stop words
 stopwords_cro <- get_stopwords(language = "hr", source = "stopwords-iso")
@@ -433,8 +433,8 @@ pravila <- lapply(strsplit(trimws(readLines('C:/Users/Lukas/Dropbox/Mislav@Luka/
 transformacije <- as.data.frame(do.call(rbind, strsplit(trimws(readLines('C:/Users/Lukas/Dropbox/Mislav@Luka/transformations.txt')), '\t')))
 
 
-text <- n_tokenTidy$word %>% head(1000)
-text <- tolower(readLines(input_file))
+#text <- n_tokenTidy$word %>% head(1000)
+#text <- tolower(readLines(input_file))
 
 
 tokens <- unlist(stringi::stri_extract_all_words(text))
@@ -447,14 +447,21 @@ write_tokens <- function(token) {
   }
 }
 
-results <- sapply(tokens, write_tokens)
-extracted <- sapply(strsplit(results, "\t"), `[`, 2)
-names(extracted) <- NULL
+#results <- sapply(tokens, write_tokens)
+#extracted <- sapply(strsplit(results, "\t"), `[`, 2)
+#names(extracted) <- NULL
 ```
 
 
 
 
+```{r}
+genralno_root <- sapply(generalno, write_tokens)
+genralno_root <- sapply(strsplit(genralno_root, "\t"), `[`, 2)
+
+
+generalno <- enframe(genralno_root, name = "name", value = "root")
+```
 
 
 
@@ -568,22 +575,61 @@ proba %>%
 
 ```{r echo=F, eval=F, message=F , warning= FALSE}
 
+generalno <- c("crkva", "biskup", "Kaptol", "časna sestra", "svećenik", "župnik", "vjernik", "kardinal", "papa", "sveti otac", "redovnik", "redovnica","kršćanstvo", "vjera", "Gospa", "Bog", "Isus", "katolički", "misa", "pričest", "krizma", "grijeh", "vjeroučitelj", "vjeronauk", "blagoslov","svjedočanstvo", "relikvija", "stigma", "duhovnost", "don", "fra", "velečasni","zaređenje", "krunica", "vjeronauk", "ukazanje") %>% tolower()
+genralno_root <- sapply(generalno, write_tokens)
+genralno_root <- sapply(strsplit(genralno_root, "\t"), `[`, 2)
+
+generalno <- enframe(genralno_root, name = "name", value = "root")
 
 
-generalno <- c("crkva", "biskup", "Kaptol", "časna sestra", "svećenik", "župnik", "vjernik", "kardinal", "papa", "sveti otac", "redovnik", "redovnica","kršćanstvo", "vjera", "Gospa", "Bog", "Isus", "katolički", "misa", "pričest", "krizma", "grijeh", "vjeroučitelj", "vjeronauk", "blagoslov","svjedočanstvo", "relikvija", "stigma", "duhovnost", "don", "fra", "velečasni","zaređenje", "krunica", "vjeronauk", "ukazanje")
 
-imena <- c("Stepinac","Damir", "Stojić", "Željka" ,"Markić", "Ike", "Mandurić","Vlado", "Košić","Robert" ,"Bajruši", "Inoslav", "Bešker", "Ante" ,"Tomić", "Branimir" ,"Pofuk", "Igor", "Lasić", "Hrvoje", "Marjanović","Bozanić", "Ksenija" ,"Abramović", "Drago","Pilsel")
 
-institucije  <- c("Ksaver", "HBK", "Opus Dei", "Udruga Protagora","Caritas")
+imena <- c("Stepinac","Damir", "Stojić", "Željka" ,"Markić", "Ike", "Mandurić","Vlado", "Košić","Robert" ,"Bajruši", "Inoslav", "Bešker", "Ante" ,"Tomić", "Branimir" ,"Pofuk", "Igor", "Lasić", "Hrvoje", "Marjanović","Bozanić", "Ksenija" ,"Abramović", "Drago","Pilsel") %>% tolower()
+imena_root <- sapply(imena, write_tokens)
+imena_root <- sapply(strsplit(imena_root, "\t"), `[`, 2)
 
-pravno <- c("vatikanski", "ugovori", "plaćanje", "blagoslova","sakramenata", "nekretnine", "imovina")
+imena <- enframe(imena_root, name = "name", value = "root")
 
-politika <- C("Hod za život", "U ime obitelji", "prolife", "poništenje Rimskih ugovora", "sekularizacija", "sekularna država", "klerikalizam", "Crkva ruši vlast", "veličaju ustaštvo", "oduzimaju prava ženama", "žele stvoriti katoličku državu", "crkvena afera", "zataškavanje Kaptola", "šutnja Kaptola", "Rimski ugovori","vjeronauk u školama", "vatikanski ugovori", "vatikanska banka" ,"klerikalna vlast","država nije odvojena od Crkve", "potiče homofobiju", "rodna ideologija", "klerikalizam", "ravnozemljaši", "gay brak", "podržavali ustaše", "podržavali naciste", "blagoslovili rat", "Hrvatska nije sekularna država","Katolička crkva vlada Hrvatskom","žene u Crkvi")
 
-fraze <- c("pedofilija", "klečavci", "kaptolaši", "popovi lopovi", "zatucani katolici", "katolički fanatici", "katolički fašisti", "katolibani","crkvenjak", "ekstremni vjernici")
 
-pomocno <- c( "smijenjen","konzervativci", "tradicionalisti", "pobačaj", "abortus", "aktivisti", "aktivizam", "jezuiti", "nazadan", "zaostao", "neobrazovan", "privilegije" , "privilegiran", "diskriminacija", "nacionalizam", "nacionalisti", "ekstremisti", "otpušten", "prekrštavanje", "izopćen", "izbačen", "bludničio",  "posvećenje",  , "inkardiniran", "inkardinacija",  "mračno doba", "razotkrio", "prijavio", "bludničio", "pronevjerio", "homofobijam", "zlodjela", "progoni", "dogma", "kontroverzni svećenik", "moderni svećenik", "tolerantna vjera", "vjerska policija", "vjerska kontrola", "crkveni mediji", "vjerski mediji", "ukidanje", "homofob", "pedofil", "homoseksualnost", "patrijarhat", "čudesno ozdravljenje", "čudo")
+institucije  <- c("Ksaver", "HBK", "Opus Dei", "Udruga Protagora","Caritas") %>% tolower()
+institucije_root <- sapply(institucije, write_tokens)
+institucije_root <- sapply(strsplit(institucije_root, "\t"), `[`, 2)
 
+institucije <- enframe(institucije_root, name = "name", value = "root")
+
+
+
+pravno <- c("vatikanski", "ugovori", "plaćanje", "blagoslova","sakramenata", "nekretnine", "imovina") %>% tolower()
+pravno_root <- sapply(pravno, write_tokens)
+pravno_root <- sapply(strsplit(pravno_root, "\t"), `[`, 2)
+
+pravno <- enframe(pravno_root, name = "name", value = "root")
+
+
+
+politika <- C("Hod za život", "U ime obitelji", "prolife", "poništenje Rimskih ugovora", "sekularizacija", "sekularna država", "klerikalizam", "Crkva ruši vlast", "veličaju ustaštvo", "oduzimaju prava ženama", "žele stvoriti katoličku državu", "crkvena afera", "zataškavanje Kaptola", "šutnja Kaptola", "Rimski ugovori","vjeronauk u školama", "vatikanski ugovori", "vatikanska banka" ,"klerikalna vlast","država nije odvojena od Crkve", "potiče homofobiju", "rodna ideologija", "klerikalizam", "ravnozemljaši", "gay brak", "podržavali ustaše", "podržavali naciste", "blagoslovili rat", "Hrvatska nije sekularna država","Katolička crkva vlada Hrvatskom","žene u Crkvi") %>% tolower()
+
+
+
+
+fraze <- c("pedofilija", "klečavci", "kaptolaši", "popovi lopovi", "zatucani katolici", "katolički fanatici", "katolički fašisti", "katolibani","crkvenjak", "ekstremni vjernici") %>% tolower()
+fraze_root <- sapply(fraze, write_tokens)
+fraze_root <- sapply(strsplit(fraze_root, "\t"), `[`, 2)
+
+fraze <- enframe(fraze_root, name = "name", value = "root")
+
+
+
+
+
+
+
+
+
+
+pomocno <- c( "smijenjen","konzervativci", "tradicionalisti", "pobačaj", "abortus", "aktivisti", "aktivizam", "jezuiti", "nazadan", "zaostao", "neobrazovan", "privilegije" , "privilegiran", "diskriminacija", "nacionalizam", "nacionalisti", "ekstremisti", "otpušten", "prekrštavanje", "izopćen", "izbačen", "bludničio",  "posvećenje", "inkardiniran", "inkardinacija",  "mračno doba", "razotkrio", "prijavio", "bludničio", "pronevjerio", "homofobijam", "zlodjela", "progoni", "dogma", "kontroverzni svećenik", "moderni svećenik", "tolerantna vjera", "vjerska policija", "vjerska kontrola", "crkveni mediji", "vjerski mediji", "ukidanje", "homofob", "pedofil", "homoseksualnost", "patrijarhat", "čudesno ozdravljenje", "čudo")
+%>% tolower()
  
 
 
