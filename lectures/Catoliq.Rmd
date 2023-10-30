@@ -73,6 +73,18 @@ dt <- read_excel("D:/LUKA/Freelance/Mediatoolkit/catholiq.xlsx")
 
 ```{r}
 
+dt <- fread("D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv")
+
+
+setDT(df)
+"D:/LUKA/Academic/HKS/Projekti/Dezinformacije/Data/katolički_izrazi.xlsx"
+# Words vector (for simplicity, using a shortened version)
+words_vector <- c("anglican", "atheist", "baptist", "catholic", "biskup rima" )
+
+
+df[, `:=` (has_match = sapply(text, function(x) any(sapply(words_vector, grepl, x))),
+           matched_words = sapply(text, function(x) paste(words_vector[sapply(words_vector, grepl, x)], collapse=", ")))]
+
 ```
 
 
@@ -437,7 +449,7 @@ transformacije <- as.data.frame(do.call(rbind, strsplit(trimws(readLines('C:/Use
 #text <- tolower(readLines(input_file))
 
 
-tokens <- unlist(stringi::stri_extract_all_words(text))
+#tokens <- unlist(stringi::stri_extract_all_words(text))
 
 write_tokens <- function(token) {
   if (token %in% stop) {
@@ -565,9 +577,264 @@ proba %>%
 
 ```
 
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
-`
+words_vector <- c(
+  "anglican",
+  "anglican communion",
+  "apostolic",
+  "apostolic succession",
+  "archbishop",
+  "atheist",
+  "baptist",
+  "benedictine",
+  "bishop",
+  "bishop of rome",
+  "blessed sacrament",
+  "broad-minded",
+  "calvinist",
+  "cardinal newman",
+  "cathedral",
+  "catholic",
+  "catholic bishops",
+  "catholic church",
+  "catholicism",
+  "christian",
+  "christian denomination",
+  "christianity",
+  "christians",
+  "church",
+  "confessional",
+  "congregational",
+  "conservative",
+  "devout",
+  "diocese",
+  "doctrine",
+  "eastern",
+  "eastern catholic churches",
+  "eastern orthodox church",
+  "ecclesiastical",
+  "episcopal",
+  "episcopalian",
+  "ethics",
+  "eucharist",
+  "evangelical",
+  "full communion",
+  "fundamentalist",
+  "greek language",
+  "holy cross",
+  "holy family",
+  "holy rosary",
+  "holy see",
+  "holy trinity",
+  "ignatius of antioch",
+  "immaculate conception",
+  "immaculate heart",
+  "irish",
+  "italian",
+  "jerusalem",
+  "jesuit",
+  "jesuits",
+  "jesus christ",
+  "jewish",
+  "latin liturgical rites",
+  "latin rite",
+  "latitudinarian",
+  "liturgy",
+  "lutheran",
+  "melkite",
+  "methodist",
+  "mormon",
+  "msgr",
+  "muslim",
+  "nationalist",
+  "nicene creed",
+  "nuns",
+  "orthodox",
+  "orthodoxy",
+  "parish",
+  "parishes",
+  "particular church",
+  "pentecost",
+  "pentecostal",
+  "pontiff",
+  "pope",
+  "presbyterian",
+  "priest",
+  "private",
+  "protestant",
+  "protestant reformation",
+  "public",
+  "religion",
+  "religious",
+  "republican",
+  "roman",
+  "roman catholic",
+  "roman catholic church",
+  "rome",
+  "sacred heart",
+  "salesian",
+  "smyrna",
+  "st. thomas aquinas",
+  "theological",
+  "theology",
+  "tradition"
+)
+```
 
+
+```{r echo=F, eval=F, message=F , warning= FALSE}
+
+cro_catoliq <- c(
+  "anglikanac",          # anglican
+  "anglikanska zajednica", # anglican communion
+  "apostolski",          # apostolic
+  "apostolsko nasljeđe",  # apostolic succession
+  "nadbiskup",           # archbishop
+  "ateist",              # atheist
+  "baptist",             # baptist
+  "benediktinac",        # benedictine
+  "biskup",              # bishop
+  "biskup Rima",         # bishop of rome
+  "blagoslovljeni sakrament", # blessed sacrament
+  "blagoslovljeni",
+  "sakrament",
+  "širokogrudan",        # broad-minded
+  "kalvinist",           # calvinist
+  "kardinal Newman",     # cardinal newman
+  "katedrala",           # cathedral
+  "katolički",           # catholic
+  "katolički biskupi",   # catholic bishops
+  "katolička crkva",     # catholic church
+  "katolicizam",         # catholicism
+  "kršćanin",           # christian
+  "kršćanska denominacija", # christian denomination
+  "kršćanstvo",       # christianity
+  "crkva",               # church
+  "ispovjedaonica",      # confessional
+  "kongregacija",    # congregational
+  "konzervativac",       # conservative
+  "pobožan",             # devout
+  "biskupija",           # diocese
+  "doktrina",            # doctrine
+  "istočne katoličke crkve", # eastern catholic churches
+  "istočno pravoslavna crkva", # eastern orthodox church
+  "crkveni",             # ecclesiastical
+  "episkopalni",         # episcopal
+  "episkopalianac",      # episcopalian
+  "etika",               # ethics
+  "euharistija",         # eucharist
+  "evanđeoski",          # evangelical
+  "puna zajednica",      # full communion
+  "fundamentalist",      # fundamentalist
+  "grčki jezik",         # greek language
+  "sveti križ",          # holy cross
+  "sveta obitelj",       # holy family
+  "sveta krunica",       # holy rosary
+  "sveta stolica",       # holy see
+  "sveto trojstvo",      # holy trinity
+  "Ignacije Antiohijski", # ignatius of antioch
+  "neokaljano začeće",  # immaculate conception
+  "neokaljano srce",     # immaculate heart
+  "Irski",               # irish
+  "Talijanski",          # italian
+  "Jeruzalem",           # jerusalem
+  "isusovac",            # jesuit
+  "isusovci",            # jesuits
+  "Isus Krist",          # jesus christ
+  "židov",               # jewish
+  "latinske liturgijske obrede", # latin liturgical rites
+  "latinski obred",      # latin rite
+  "latitudinarijanac",   # latitudinarian
+  "liturgija",           # liturgy
+  "luteran",             # lutheran
+  "melkit",              # melkite
+  "metodist",            # methodist
+  "mormon",              # mormon
+  "msgr",                # msgr (this might remain the same as it's an abbreviation)
+  "musliman",            # muslim
+  "nacionalist",         # nationalist
+  "nicejsko vjerovanje", # nicene creed
+  "časne sestre",        # nuns
+  "pravoslavac",         # orthodox
+  "pravoslavlje",        # orthodoxy
+  "župa",                # parish
+  "župe",                # parishes
+  "posebna crkva",       # particular church
+  "Duhovi",              # pentecost
+  "pentekostalac",       # pentecostal
+  "pontif",              # pontiff
+  "papa",                # pope
+  "presbiterijanac",     # presbyterian
+  "svećenik",            # priest
+  "privatni",            # private
+  "protestant",          # protestant
+  "protestantska reformacija", # protestant reformation
+  "javni",               # public
+  "vjera",               # religion
+  "vjerski",             # religious
+  "republikanac",        # republican
+  "rimski",              # roman
+# "rim",
+  "rimokatolički",       # roman catholic
+  "rimokatolička crkva", # roman catholic church
+  "sveto srce",          # sacred heart
+  "salezijanac",         # salesian
+  "Smirna",              # smyrna
+  "sv. Toma Akvinski",   # st. thomas aquinas
+  "teološki",            # theological
+  "teologija",           # theology
+  "tradicija",           # tradition
+  "crkva",
+  "biskup",
+  "Kaptol",
+  "časna sestra",
+  "svećenik",
+  "župnik",
+  "vjernik",
+  "kardinal",
+  "papa",
+  "sveti otac",
+  "redovnik",
+  "redovnica",
+  "kršćanstvo",
+  "vjera",
+  "Gospa",
+# "Bog",
+  "Isus",
+  "katolički",
+  "misa",
+  "pričest",
+  "krizma",
+  "grijeh",
+  "vjeroučitelj",
+  "vjeronauk",
+  "blagoslov",
+  "svjedočanstvo",
+  "relikvija",
+  "stigma",
+  "duhovnost",
+#  "don",
+  "fra",
+  "velečasni",
+  "zaređenje",
+  "krunica",
+  "vjeronauk",
+  "ukazanje"            # tradition
+) %>% tolower()
+
+
+cro_catoliq <- sapply(cro_catoliq, write_tokens)
+cro_catoliq <- sapply(strsplit(cro_catoliq, "\t"), `[`, 2)
+
+cro_catoliq <- enframe(cro_catoliq, name = "name", value = "root")
+
+
+#write_xlsx(cro_catoliq,"D:/LUKA/Academic/HKS/Projekti/Dezinformacije/Data/katolički_izrazi.xlsx")
+
+
+
+```
 
 
 
@@ -628,10 +895,12 @@ fraze <- enframe(fraze_root, name = "name", value = "root")
 
 
 
-pomocno <- c( "smijenjen","konzervativci", "tradicionalisti", "pobačaj", "abortus", "aktivisti", "aktivizam", "jezuiti", "nazadan", "zaostao", "neobrazovan", "privilegije" , "privilegiran", "diskriminacija", "nacionalizam", "nacionalisti", "ekstremisti", "otpušten", "prekrštavanje", "izopćen", "izbačen", "bludničio",  "posvećenje", "inkardiniran", "inkardinacija",  "mračno doba", "razotkrio", "prijavio", "bludničio", "pronevjerio", "homofobijam", "zlodjela", "progoni", "dogma", "kontroverzni svećenik", "moderni svećenik", "tolerantna vjera", "vjerska policija", "vjerska kontrola", "crkveni mediji", "vjerski mediji", "ukidanje", "homofob", "pedofil", "homoseksualnost", "patrijarhat", "čudesno ozdravljenje", "čudo")
-%>% tolower()
+pomocno <- c( "smijenjen","konzervativci", "tradicionalisti", "pobačaj", "abortus", "aktivisti", "aktivizam", "jezuiti", "nazadan", "zaostao", "neobrazovan", "privilegije" , "privilegiran", "diskriminacija", "nacionalizam", "nacionalisti", "ekstremisti", "otpušten", "prekrštavanje", "izopćen", "izbačen", "bludničio",  "posvećenje", "inkardiniran", "inkardinacija",  "mračno doba", "razotkrio", "prijavio", "bludničio", "pronevjerio", "homofobijam", "zlodjela", "progoni", "dogma", "kontroverzni svećenik", "moderni svećenik", "tolerantna vjera", "vjerska policija", "vjerska kontrola", "crkveni mediji", "vjerski mediji", "ukidanje", "homofob", "pedofil", "homoseksualnost", "patrijarhat", "čudesno ozdravljenje", "čudo") %>% tolower()
  
+pomocno_root <- sapply(pomocno, write_tokens)
+pomocno_root <- sapply(strsplit(pomocno_root, "\t"), `[`, 2)
 
+pomocno <- enframe(pomocno_root, name = "name", value = "root")
 
 ```
 
@@ -674,6 +943,10 @@ filtered_imena <- imena %>%
   filter(str_detect(full_text, pattern_imena))
 
 
+
+#write_xlsx(imena,"D:/LUKA/Academic/HKS/Projekti/Dezinformacije/Data/imena.xlsx")
+
+
 filtered_imena %>% group_by(key_word) %>% count() %>% arrange(desc(n))
 
 
@@ -688,9 +961,11 @@ filtered_imena %>% group_by(key_word) %>% count() %>% arrange(desc(n))
 ```{r echo=F, eval=F, message=F , warning= FALSE}
 
 fraze <- c("pedofilija", "klečavci", "kaptolaši", "popovi", "lopovi", "zatucani" , "fanatici", "fašisti", "katolibani","crkvenjak", "ekstremni")
+fraze_root <- sapply(fraze, write_tokens)
+fraze_root <- sapply(strsplit(fraze_root, "\t"), `[`, 2)
+fraze <- enframe(fraze_root, name = "name", value = "root")
 
-
-pattern_fraze <- str_c("\\b(", str_c(fraze, collapse = "|"), ")\\b")
+pattern_fraze <- str_c("\\b(", str_c(fraze$root, collapse = "|"), ")\\b")
 
 
 # Define the batch size
@@ -718,6 +993,12 @@ results <- batches %>%
   map(~ process_batch(.x))
 
 fraze <- bind_rows(results)
+
+
+write_xlsx(fraze,"D:/LUKA/Academic/HKS/Projekti/Dezinformacije/Data/fraze.xlsx")
+
+
+
 
 filtered_df <- fraze %>%
   filter(str_detect(full_text, pattern_fraze))
