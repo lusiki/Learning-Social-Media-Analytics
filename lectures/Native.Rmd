@@ -31,6 +31,8 @@ library(widyr)
 library(topicmodels)
 library(ggthemes)
 library(xlsx)
+library(knitr)
+library(kableExtra)
 
 ```
 
@@ -545,6 +547,21 @@ activity <- dta %>%
   arrange(desc(count))
 
 datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
+
+
+
+
+
+kable_output <- activity %>%
+  kable(format = "pandoc",
+        col.names = c("Izvor", "Broj objava", "%"), 
+        caption = "Objava po izvorima")
+
+kable_output
+
+
+
+
 ```
 
 
@@ -1083,7 +1100,13 @@ dataset %>%
   labs( x = "Riječ", y = "Number of words") +
   facet_wrap(~ sentiment, scales = "free_y") +
   coord_flip() +
-  theme_economist() -> gg_doprinos_sentimentu
+  scale_fill_manual(values = c("grey40", "grey50","grey60")) +  # Assuming two sentiment values; adjust as needed
+  theme_minimal() + 
+  theme(
+    panel.background = element_blank(),
+    strip.background = element_blank(),
+    panel.grid = element_blank()
+  ) -> gg_doprinos_sentimentu
   
  gg_doprinos_sentimentu
  
@@ -1091,12 +1114,25 @@ dataset %>%
 doprinos_sentimentu(stemmed,30)
 ```
 
+
+
+
+
+
+
+
+
+
+
 # NRC sentiment (positive vs. negative)
 
 ```{r echo=F, eval=T, message=F , warning= FALSE, fig.width=12, fig.height=20}
 
 NRCpn <- LilaHR_long %>% rename("word" = "korijen") %>%
-  filter(Emotion %in% c("Positive","Negative"))
+  filter(Emotion %in% c("Positive","Negative")) %>%
+  mutate(Emotion = recode(Emotion,
+                          "Positive" = "Pozitivno",
+                          "Negative" = "Negativno"))
 
 
 ## Sentiment 
@@ -1114,22 +1150,37 @@ dataset %>%
   ggplot(aes(word, n, fill = Emotion)) +
   geom_col(show.legend = FALSE) +
   ggtitle( "Sentiment") +
-  labs( x = "Riječ", y = "Number of words") +
+  labs( x = "Riječ", y = "Broj riječi") +
   facet_wrap(~ Emotion, scales = "free_y") +
   coord_flip() +
-  theme_economist() -> gg_doprinos_sentimentu
+  scale_fill_manual(values = c("grey40", "grey50")) +  # Assuming two sentiment values; adjust as needed
+  theme_minimal() + 
+  theme(
+    panel.background = element_blank(),
+    strip.background = element_blank(),
+    panel.grid = element_blank()
+  ) -> gg_doprinos_sentimentu
   
  gg_doprinos_sentimentu
  
 }
-doprinos_sentimentu(stemmed,30)
+doprinos_sentimentu(stemmed,20)
 ```
 
 # NRC sentiment ("Anger","Anticipation","Disgust","Fear","Joy","Sadness","Surprise","Trust")
 
 ```{r echo=F, eval=T, message=F , warning= FALSE, fig.width=16, fig.height=25}
 NRC <- LilaHR_long %>% rename("word" = "korijen") %>%
-  filter(Emotion %in% c("Anger","Anticipation","Disgust","Fear","Joy","Sadness","Surprise","Trust"))
+  filter(Emotion %in% c("Anger","Anticipation","Disgust","Fear","Joy","Sadness","Surprise","Trust")) %>%
+  mutate(Emotion = recode(Emotion,
+                          "Anger" = "Ljutnja",
+                          "Anticipation" = "Iščekivanje",
+                          "Disgust" = "Gađenje",
+                          "Fear" = "Strah",
+                          "Joy" = "Zadovoljstvo",
+                          "Sadness" = "Tuga",
+                          "Surprise" = "Iznenađenje",
+                          "Trust" = "Povjerenje"))
 
 
 ## Sentiment 
@@ -1147,15 +1198,21 @@ dataset %>%
   ggplot(aes(word, n, fill = Emotion)) +
   geom_col(show.legend = FALSE) +
   ggtitle( "Sentiment") +
-  labs( x = "Riječ", y = "Number of words") +
+  labs( x = "Riječ", y = "Broj riječi") +
   facet_wrap(~ Emotion, scales = "free_y") +
   coord_flip() +
-  theme_economist() -> gg_doprinos_sentimentu
+  scale_fill_manual(values = c("grey10", "grey20","grey30","grey40","grey50","grey60","grey70","grey80")) +  # Assuming two sentiment values; adjust as needed
+  theme_minimal() + 
+  theme(
+    panel.background = element_blank(),
+    strip.background = element_blank(),
+    panel.grid = element_blank()
+  ) -> gg_doprinos_sentimentu
   
  gg_doprinos_sentimentu
  
 }
-doprinos_sentimentu_full(stemmed,30)
+doprinos_sentimentu_full(stemmed,20)
 ```
 
 
@@ -1211,12 +1268,6 @@ stemmed %>%
                    max.words = 120)
 
 ```
-
-```{r}
-
-```
-
-
 
 
 #### Oblak riječi sa sentimentom (za sve native članke koje ste pronašli za večernji.hr)
@@ -1378,7 +1429,7 @@ fb_tokenTidy_TopLike[,.N,by = word][order(-N),]
 
 #### Najbitnije riječi po portalima prema tf-idf metodi(ovo bi bilo dobro pogledati prema drugim kriterijima osim portala)
 
-```{r frekvencija, eval = T, echo = F, message=F, warning=F, fig.height=10, fig.width=12}
+```{r frekvencija, eval = F, echo = F, message=F, warning=F, fig.height=10, fig.width=12}
 ## Udio riječi po domenama
 domenaWords <- stemmed %>%
   filter(FROM %in% c("vecernji.hr", "jutarnji.hr", "telegram.hr", "24sata.hr", "index.hr", "slobodnadalmacija.hr")) %>% 
@@ -1419,7 +1470,7 @@ idf %>%
 
 #### Najčešće freze (bigrami; moguće i za 3 ili više riječi)
 
-```{r eval = T, echo = F, message=F, warning=F, fig.height=15, fig.width=15}
+```{r eval = F, echo = F, message=F, warning=F, fig.height=15, fig.width=15}
 fb_bigram <- dta %>%
   unnest_tokens(bigram, FULL_TEXT, token = "ngrams", n = 2)
 #fb_bigram %>% head(10)
@@ -1710,12 +1761,57 @@ ggplot(data = IND, aes(x = percentIND)) +
   ylab("%") +
   scale_x_continuous(breaks = seq(from = min(dta$INDUSTRIJA), to =  max(dta$INDUSTRIJA), by = 1))
 
+
+
+
+# Joining the dataframes
+IND_joined <- IND %>%
+  left_join(industry_list, by = c("INDUSTRIJA" = "id")) %>%
+  arrange(desc(N))
+
+# Reordering the levels of 'category'
+IND_joined$category <- with(IND_joined, reorder(category, percentIND))
+
+# Plotting
+ggplot(data = IND_joined, aes(x = category, y = percentIND)) +
+  geom_bar(stat = "identity", fill = "black") + 
+  labs(title = "Industrija", x = "Industrija", y = "%") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
+    panel.grid.major.x = element_blank(),  # Remove vertical grid lines
+    panel.border = element_rect(fill = NA, color = "black")  # Add border
+  ) +
+  coord_flip()  # Flip coordinates to have horizontal bars
+
+
+
 IND %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 
 industry_list %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+
+
+IND_joined <- IND %>%
+  left_join(industry_list, by = c("INDUSTRIJA" = "id"))
+
+IND_final <- IND_joined %>%
+  select(category, N, percentIND) %>%
+  arrange(desc(N))
+
+
+IND_kable <- IND_final %>%
+  kable(format = "pandoc", 
+        col.names = c("Industrija", "Broj objava", "%"),
+        caption = "Pregled po industrijama") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F)
+
+
+IND_kable
+
 
 
 
@@ -1814,7 +1910,21 @@ dta %>%
 
 
 
+table_data <- dta %>%
+  group_by(AUTORSTVO) %>%
+  summarise(N = n()) %>% 
+  mutate(percent = round(N / sum(N) * 100, 2)) %>% 
+  arrange(desc(N)) %>%
+  left_join(autorstvo, by = c("AUTORSTVO" = "number"))
 
+table_output <- table_data %>%
+  select(text, N, percent) %>%
+  kable(format = "pandoc",
+        col.names = c("Autorstvo", "Broj objava", "%"),
+        caption = "Autorstvo") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F)
+
+table_output
 
 ```
 
@@ -2013,6 +2123,27 @@ dta %>%
   left_join(poveznice, by = c("POVEZNICE.KANALI" = "number")) %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
+table_data <- dta %>%
+  group_by(POVEZNICE.KANALI) %>%
+  summarise(N = n()) %>% 
+  mutate(percent = round(N / sum(N) * 100, 2)) %>% 
+  arrange(desc(N)) %>%
+  left_join(poveznice, by = c("POVEZNICE.KANALI" = "number"))
+
+
+table_output <- table_data %>%
+  select(text, N, percent) %>%
+  kable(format = "pandoc",
+        col.names = c("Poveznica", "Broj objava", "%"),
+        caption = "Pregled poveznica") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F)
+
+
+
+
+
+table_output
+
 
 
 
@@ -2102,9 +2233,23 @@ dta %>%
   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 
-dta %>%
-  filter(DOSEG.PUBLIKE == 6) %>%
-  select(URL)
+table_data <- dta %>%
+  group_by(DOSEG.PUBLIKE) %>%
+  summarise(N = n()) %>% 
+  mutate(percent = round(N / sum(N) * 100, 2)) %>% 
+  arrange(desc(N)) %>%
+  left_join(doseg, by = c("DOSEG.PUBLIKE" = "number"))
+
+table_output <- table_data %>%
+  select(text, N, percent) %>%
+  kable(format = "pandoc",
+        col.names = c("Razredi dosega", "Broj objava", "%"),
+        caption = "Doseg publike") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F)
+
+
+table_output
+
 
 ```
 
@@ -2231,7 +2376,7 @@ dta %>%
 
 ####1.	Industrija vs. sentiment
 
-```{r  echo=F, eval=T, message=F , warning= FALSE, fig.height=15, fig.width=15}
+```{r  echo=F, eval=T, message=F , warning= FALSE, fig.height=20, fig.width=20}
 
 industry_list <- data.frame(
   id = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28),
@@ -2270,13 +2415,13 @@ industry_list <- data.frame(
 
 
 # Create a histogram of the 'price' variable in the 'diamonds' dataset
-ggplot(data = dta, aes(x = INDUSTRIJA)) +
-  geom_histogram(binwidth = 1, fill = "blue", alpha = 0.7) +
-  ggtitle("Industrija") +
-  xlab("Industrija") +
-  ylab("Frequency") +
-  scale_x_continuous(breaks = seq(from = min(dta$INDUSTRIJA), to =  max(dta$INDUSTRIJA), by = 1)) +
-  coord_flip()
+# ggplot(data = dta, aes(x = INDUSTRIJA)) +
+#   geom_histogram(binwidth = 1, fill = "blue", alpha = 0.7) +
+#   ggtitle("Industrija") +
+#   xlab("Industrija") +
+#   ylab("Frequency") +
+#   scale_x_continuous(breaks = seq(from = min(dta$INDUSTRIJA), to =  max(dta$INDUSTRIJA), by = 1)) +
+#   coord_flip()
 
 
 
@@ -2285,12 +2430,13 @@ industry_list %>%
 
 
 
-
 gg1 <- dta %>% 
   group_by(INDUSTRIJA,SENTIMENT) %>%
   summarise(BrojObjava = n()) %>% 
-#  arrange(desc(BrojObjava)) %>%
   left_join(industry_list, by = c("INDUSTRIJA" = "id"))
+
+gg1$INDUSTRIJA <- gg1$category
+gg1 <- gg1 %>% select(-category)
 
 
 
@@ -2303,9 +2449,37 @@ ggplot(gg1, aes(x = factor(SENTIMENT), y = BrojObjava, fill = factor(SENTIMENT))
     title = "Sentimenti po Industrijama"
   ) +
   theme_minimal() +
-  scale_fill_discrete(name = "Sentiment")
+#  scale_fill_discrete(name = "Sentiment")+
+  scale_fill_manual(values = c("grey10", "grey30", "grey50", "grey70"), name = "Sentiment") +  # Assuming two sentiment values; adjust as needed
+  theme(
+    axis.text.x = element_text(color = "black"),
+    axis.text.y = element_text(color = "black"),
+    axis.title.x = element_text(color = "black"),
+    axis.title.y = element_text(color = "black"),
+    plot.title = element_text(color = "black"),
+    strip.background = element_blank(),
+    strip.text.y = element_text(color = "black")
+  ) +
+  coord_flip()
 
 
+gg1 %>% filter(INDUSTRIJA == "Zdravlje") %>% 
+ggplot(., aes(x = factor(SENTIMENT), y = BrojObjava, fill = factor(SENTIMENT))) +
+  geom_bar(stat = "identity") +
+  labs(
+    x = "Sentiment",
+    y = "Broj Objava",
+    title = "Sentiment u industriji Zdravlja"
+  ) +
+  scale_fill_manual(values = c("black", "grey50", "grey80"), name = "Sentiment") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(color = "black"),
+    axis.text.y = element_text(color = "black"),
+    axis.title.x = element_text(color = "black"),
+    axis.title.y = element_text(color = "black"),
+    plot.title = element_text(color = "black")
+  )
 
 ```
 
@@ -2458,7 +2632,7 @@ proba <- stemmed %>%
   group_by(V1) %>%
   count(Emotion) %>% 
   spread(Emotion, n) %>%
-  mutate(Sentiment = Positive - Negative) 
+  mutate(Sentiment = Pozitivno - Negativno) 
 
 
 positive_count <- nrow(filter(proba, Sentiment > 0))
