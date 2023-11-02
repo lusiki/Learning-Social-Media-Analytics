@@ -1962,30 +1962,56 @@ rubrika <- data.frame(
   )
 )
 
-dta %>% 
-  group_by(RUBRIKA) %>%
-  summarise(N = n()) %>% 
-  mutate(percent = round(N / sum(N) * 100,2)) %>% 
-  arrange(desc(N)) %>%
-  left_join(rubrika, by = c("RUBRIKA" = "number")) %>%
-  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+# dta %>% 
+#   group_by(RUBRIKA) %>%
+#   summarise(N = n()) %>% 
+#   mutate(percent = round(N / sum(N) * 100,2)) %>% 
+#   arrange(desc(N)) %>%
+#   left_join(rubrika, by = c("RUBRIKA" = "number")) %>%
+#   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
-rubr <- dta %>% 
+# rubr <- dta %>% 
+#   group_by(RUBRIKA) %>%
+#   summarise(N = n()) %>% 
+#   mutate(percent = round(N / sum(N) * 100,2)) %>% 
+#   arrange(desc(N)) %>%
+#   left_join(rubrika, by = c("RUBRIKA" = "number"))
+# 
+# 
+# 
+# 
+# ggplot(data = dta, aes(x = RUBRIKA)) +
+#   geom_histogram(binwidth = 1, fill = "blue", alpha = 0.7) +
+#   ggtitle("Rubrika") +
+#   xlab("Rubrika") +
+#   ylab("Frequency") +
+#   scale_x_continuous(breaks = seq(from = min(dta$RUBRIKA), to =  max(dta$RUBRIKA), by = 1))
+
+
+
+table_data <- dta %>%
   group_by(RUBRIKA) %>%
   summarise(N = n()) %>% 
-  mutate(percent = round(N / sum(N) * 100,2)) %>% 
+  mutate(percent = round(N / sum(N) * 100, 2)) %>% 
   arrange(desc(N)) %>%
   left_join(rubrika, by = c("RUBRIKA" = "number"))
 
+table_output <- table_data %>%
+  select(text, N, percent) %>%
+  kable(format = "pandoc",
+        col.names = c("Rubrika", "Broj objava", "%"),
+        caption = "Rubrika") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F)
+
+table_output
 
 
 
-ggplot(data = dta, aes(x = RUBRIKA)) +
-  geom_histogram(binwidth = 1, fill = "blue", alpha = 0.7) +
-  ggtitle("Rubrika") +
-  xlab("Rubrika") +
-  ylab("Frequency") +
-  scale_x_continuous(breaks = seq(from = min(dta$RUBRIKA), to =  max(dta$RUBRIKA), by = 1))
+
+
+
+
+
 ```
 
 
@@ -2224,19 +2250,19 @@ doseg <- data.frame(
   )
 )
 
-dta %>% 
-  group_by(DOSEG.PUBLIKE) %>%
-  summarise(N = n()) %>% 
-  mutate(percent = round(N / sum(N) * 100,2)) %>% 
-  arrange(desc(N)) %>%
-  left_join(doseg, by = c("DOSEG.PUBLIKE" = "number")) %>%
-  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
-
-
+# dta %>% 
+#   group_by(DOSEG.PUBLIKE) %>%
+#   summarise(N = n()) %>% 
+#   mutate(percent = round(N / sum(N) * 100,2)) %>% 
+#   arrange(desc(N)) %>%
+#   left_join(doseg, by = c("DOSEG.PUBLIKE" = "number")) %>%
+#   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+# 
+# 
 table_data <- dta %>%
   group_by(DOSEG.PUBLIKE) %>%
-  summarise(N = n()) %>% 
-  mutate(percent = round(N / sum(N) * 100, 2)) %>% 
+  summarise(N = n()) %>%
+  mutate(percent = round(N / sum(N) * 100, 2)) %>%
   arrange(desc(N)) %>%
   left_join(doseg, by = c("DOSEG.PUBLIKE" = "number"))
 
@@ -2260,7 +2286,7 @@ table_output
 
 
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 
 lajkovi <- data.frame(
@@ -2296,7 +2322,7 @@ dta %>%
 
 #### Komentari
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 komentari <- data.frame(
   number = c(1, 2, 3, 4, 5, 6, 7, 8),
   text = c(
@@ -2342,7 +2368,7 @@ dta %>%
 
 #### Interakcije
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 interakcije <- data.frame(
   number = c(1, 2, 3, 4, 5, 6, 7, 8),
   text = c(
@@ -2450,7 +2476,9 @@ ggplot(gg1, aes(x = factor(SENTIMENT), y = BrojObjava, fill = factor(SENTIMENT))
   ) +
   theme_minimal() +
 #  scale_fill_discrete(name = "Sentiment")+
-  scale_fill_manual(values = c("grey10", "grey30", "grey50", "grey70"), name = "Sentiment") +  # Assuming two sentiment values; adjust as needed
+  scale_fill_manual(values = c("grey10", "grey30", "grey50", "grey70"), name = "Sentiment",
+  breaks = c("1", "2", "3"),
+  labels = c("1 = Positive", "2 = Neutral", "3 = Negative")) +  # Assuming two sentiment values; adjust as needed
   theme(
     axis.text.x = element_text(color = "black"),
     axis.text.y = element_text(color = "black"),
@@ -2470,8 +2498,11 @@ ggplot(., aes(x = factor(SENTIMENT), y = BrojObjava, fill = factor(SENTIMENT))) 
     x = "Sentiment",
     y = "Broj Objava",
     title = "Sentiment u industriji Zdravlja"
-  ) +
-  scale_fill_manual(values = c("black", "grey50", "grey80"), name = "Sentiment") +
+  )  +
+#  scale_fill_discrete(name = "Sentiment")+
+  scale_fill_manual(values = c("grey10", "grey30", "grey50", "grey70"), name = "Sentiment",
+  breaks = c("1", "2", "3"),
+  labels = c("1 = Positive", "2 = Neutral", "3 = Negative")) +
   theme_minimal() +
   theme(
     axis.text.x = element_text(color = "black"),
@@ -2604,9 +2635,8 @@ SENTIMENT <- dta %>%
   mutate(percentSENTIMENT = round(N / sum(N) * 100,2))
 
 
-SENTIMENT %>%
-  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
-
+# SENTIMENT %>%
+#   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 
 
@@ -2620,8 +2650,56 @@ ggplot(data = dta, aes(x = SENTIMENT)) +
   geom_histogram(binwidth = 0.5, fill = "blue", alpha = 0.7) +
   ggtitle("Sentiment") +
   xlab("Sentiment") +
-  ylab("Frequency") #+
-  #scale_x_continuous(breaks = seq(from = min(dta$SENTIMENT), to =  max(dta$SENTIMENT), by = 1))
+  ylab("Frequency") 
+
+
+
+
+table_data <- dta %>%
+  group_by(SENTIMENT) %>%
+  summarise(N = n()) %>% 
+  mutate(percent = round(N / sum(N) * 100, 2)) %>% 
+  arrange(desc(N)) %>%
+  left_join(sentiment, by = c("SENTIMENT" = "number"))
+
+
+table_output <- table_data %>%
+  select(text, N, percent) %>%
+  kable(format = "pandoc",
+        col.names = c("Sentiment", "Broj objava", "%"),
+        caption = "Pregled sentimenta") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F)
+
+
+
+table_output
+
+
+
+
+ggplot(data = dta, aes(x = factor(SENTIMENT), fill = factor(SENTIMENT))) +
+  geom_bar() +
+  labs(
+    x = "Sentiment",
+    y = "Broj objava",
+    title = "Sentiment u industriji Zdravlja"
+  ) +
+  scale_fill_manual(
+    values = c("grey10", "grey30", "grey50", "grey70"), 
+    name = "Sentiment",
+    breaks = c("1", "2", "3"),
+    labels = c("1 = Positive", "2 = Neutral", "3 = Negative")
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(color = "black"),
+    axis.text.y = element_text(color = "black"),
+    axis.title.x = element_text(color = "black"),
+    axis.title.y = element_text(color = "black"),
+    plot.title = element_text(color = "black")
+  )
+
+
 ```
 
 #### prema NRC riječniku (broj pozitivnih - broj negativnih riječi u članku):
@@ -2727,11 +2805,11 @@ stemmed %>%
 
 
 doprinos_sentimentu(stemmed %>%
-  filter(INDUSTRIJA == 1),30)
+  filter(INDUSTRIJA == 1),15)
 
 
 doprinos_sentimentu_full(stemmed %>%
-  filter(INDUSTRIJA == 1),30)
+  filter(INDUSTRIJA == 1),15)
 
 ```
 
@@ -2791,10 +2869,10 @@ stemmed %>%
 
 
 doprinos_sentimentu(stemmed %>%
-  filter(INDUSTRIJA == 11),30)
+  filter(INDUSTRIJA == 11),15)
 
 doprinos_sentimentu_full(stemmed %>%
-  filter(INDUSTRIJA == 11),30)
+  filter(INDUSTRIJA == 11),15)
 
 ```
 
@@ -2817,7 +2895,7 @@ stemmed %>%
 
 
 doprinos_sentimentu(stemmed %>%
-  filter(INDUSTRIJA == 6),30)
+  filter(INDUSTRIJA == 6),15)
 ```
 
 #### Oblak riječi sa sentimentom NRC (za Zdravlje, i.e. 6)
@@ -2838,11 +2916,11 @@ stemmed %>%
 
 
 doprinos_sentimentu(stemmed %>%
-  filter(INDUSTRIJA == 6),30)
+  filter(INDUSTRIJA == 6),15)
 
 
 doprinos_sentimentu_full(stemmed %>%
-  filter(INDUSTRIJA == 6),30)
+  filter(INDUSTRIJA == 6),15)
 ```
 
 
