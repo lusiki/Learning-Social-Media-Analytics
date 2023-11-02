@@ -1772,17 +1772,17 @@ IND_joined <- IND %>%
 # Reordering the levels of 'category'
 IND_joined$category <- with(IND_joined, reorder(category, percentIND))
 
-# Plotting
-# ggplot(data = IND_joined, aes(x = category, y = percentIND)) +
-#   geom_bar(stat = "identity", fill = "black") + 
-#   labs(title = "Industrija", x = "Industrija", y = "%") +
-#   theme_minimal() +
-#   theme(
-#     axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
-#     panel.grid.major.x = element_blank(),  # Remove vertical grid lines
-#     panel.border = element_rect(fill = NA, color = "black")  # Add border
-#   ) +
-#   coord_flip()  # Flip coordinates to have horizontal bars
+#Plotting
+ggplot(data = IND_joined, aes(x = category, y = percentIND)) +
+  geom_bar(stat = "identity", fill = "black") +
+  labs(title = "Industrija", x = "Industrija", y = "%") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
+    panel.grid.major.x = element_blank(),  # Remove vertical grid lines
+    panel.border = element_rect(fill = NA, color = "black")  # Add border
+  ) +
+  coord_flip()  # Flip coordinates to have horizontal bars
 
 
 
