@@ -2785,6 +2785,67 @@ doprinos_sentimentu(stemmed %>%
 #### Oblak riječi sa sentimentom NRC (za Financijsku industriju, i.e. 1); ispod toga je doprinos riječi sentimentu za industriju
 
 
+```{r}
+NRC_some <- LilaHR_long %>%
+  rename("word" = "korijen") %>%
+  filter(Emotion %in% c("Anger",
+                        #"Anticipation",
+                        "Disgust",
+                        "Fear",
+                        #"Joy",
+                        "Sadness"
+                        #"Surprise",
+                        #"Trust"
+                        )) %>%
+  mutate(Emotion = recode(Emotion,
+                          "Anger" = "Ljutnja",
+                          #"Anticipation" = "Iščekivanje",
+                          "Disgust" = "Gađenje",
+                          "Fear" = "Strah",
+                          #"Joy" = "Zadovoljstvo",
+                          "Sadness" = "Tuga"
+                          #"Surprise" = "Iznenađenje",
+                          #"Trust" = "Povjerenje"
+                          ))
+
+
+
+## Sentiment 
+doprinos_sentimentu_full_some_emotion <- function(dataset, no = n) {
+dataset %>%
+  inner_join(NRC_some, by = "word") %>% 
+  count(word, Emotion,sort = TRUE) %>% 
+  group_by(Emotion,) %>%
+  top_n(no) %>%
+  ungroup() %>%
+#  mutate(sentiment = case_when(sentiment == 0 ~ "NEUTRAL",
+#                                 sentiment == 1 ~ "NEGATIVE",
+#                                 sentiment == 2 ~ "POSITIVE")) %>%
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(word, n, fill = Emotion)) +
+  geom_col(show.legend = FALSE) +
+  ggtitle( "Sentiment") +
+  labs( x = "Riječ", y = "Broj riječi") +
+  facet_wrap(~ Emotion, scales = "free_y") +
+  coord_flip() +
+  scale_fill_manual(values = c("grey10", "grey20","grey30","grey40","grey50","grey60","grey70","grey80")) +  # Assuming two sentiment values; adjust as needed
+  theme_minimal() + 
+  theme(
+    panel.background = element_blank(),
+    strip.background = element_blank(),
+    panel.grid = element_blank()
+  ) -> gg_doprinos_sentimentu
+  
+ gg_doprinos_sentimentu
+ 
+}
+
+
+doprinos_sentimentu_full(stemmed,20)
+
+
+doprinos_sentimentu_full_some_emotion(stemmed,20)
+```
 
 
 
@@ -2811,6 +2872,8 @@ doprinos_sentimentu(stemmed %>%
 doprinos_sentimentu_full(stemmed %>%
   filter(INDUSTRIJA == 1),15)
 
+doprinos_sentimentu_full_some_emotion(stemmed %>%
+  filter(INDUSTRIJA == 1),15)
 ```
 
 
@@ -2874,6 +2937,9 @@ doprinos_sentimentu(stemmed %>%
 doprinos_sentimentu_full(stemmed %>%
   filter(INDUSTRIJA == 11),15)
 
+doprinos_sentimentu_full_some_emotion(stemmed %>%
+  filter(INDUSTRIJA == 11),15)
+
 ```
 
 #### Oblak riječi sa sentimentom Crosentilex (za Zdravlje, i.e. 6)
@@ -2921,6 +2987,9 @@ doprinos_sentimentu(stemmed %>%
 
 doprinos_sentimentu_full(stemmed %>%
   filter(INDUSTRIJA == 6),15)
+
+doprinos_sentimentu_full_some_emotion(stemmed %>%
+  filter(INDUSTRIJA == 1),15)
 ```
 
 
