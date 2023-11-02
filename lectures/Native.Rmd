@@ -495,7 +495,7 @@ dta <- dt[SOURCE_TYPE == "web" &
 # Basic descriptives
 
 #### Vremenski raspon analize
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # date range
 range(dta$DATE)
 ```
@@ -509,7 +509,7 @@ nrow(dta)
 
 
 #### Deskriptiva na dnevnoj razini
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # articles over time
 daily_counts <- dta %>%
   group_by(DATE) %>%
@@ -527,7 +527,7 @@ summ
 ```
 
 #### Broj objava po danima  
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 # create plot of articles over time
 ggplot(data = daily_counts, aes(x = DATE, y = count)) +
   geom_line() +
@@ -887,7 +887,7 @@ proba <- readRDS("D:/LUKA/Freelance/Mediatoolkit/native_token_stemm.rds")
 
 #### Najčešće riječi (>50)
 
-```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=25}
+```{r echo=F, eval=F, message=F , warning= FALSE, fig.height=25}
 # ## Most common words
 # n_tokenTidy[,.N,by = word][order(-N),] %>%
 #   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
@@ -951,7 +951,7 @@ stemmed %>%
 ```
 
 #### Najčešće riječi  24h.hr
-```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=25}
+```{r echo=F, eval=F, message=F , warning= FALSE, fig.height=25}
 stemmed %>%
   filter(FROM == "24sata.hr") %>%
   group_by(word) %>%
@@ -966,7 +966,7 @@ stemmed %>%
 
 
 #### Najčešće riječi  jutarnji.hr
-```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=25}
+```{r echo=F, eval=F, message=F , warning= FALSE, fig.height=25}
 stemmed %>%
   filter(FROM == "jutarnji.hr") %>%
   group_by(word) %>%
@@ -979,7 +979,7 @@ stemmed %>%
 
 
 #### Najčešće riječi  telegram.hr
-```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=25}
+```{r echo=F, eval=F, message=F , warning= FALSE, fig.height=25}
 stemmed %>%
   filter(FROM == "telegram.hr") %>%
   group_by(word) %>%
@@ -992,7 +992,7 @@ stemmed %>%
 
 
 #### Najčešće riječi  vecernji.hr
-```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=25}
+```{r echo=F, eval=F, message=F , warning= FALSE, fig.height=25}
 stemmed %>%
   filter(FROM == "vecernji.hr") %>%
   group_by(word) %>%
@@ -1005,7 +1005,7 @@ stemmed %>%
 
 
 #### Najčešće riječi  index.hr
-```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=25}
+```{r echo=F, eval=F, message=F , warning= FALSE, fig.height=25}
 stemmed %>%
   filter(FROM == "index.hr") %>%
   group_by(word) %>%
@@ -1164,7 +1164,7 @@ dataset %>%
  gg_doprinos_sentimentu
  
 }
-doprinos_sentimentu(stemmed,20)
+#doprinos_sentimentu(stemmed,20)
 ```
 
 # NRC sentiment ("Anger","Anticipation","Disgust","Fear","Joy","Sadness","Surprise","Trust")
@@ -1217,7 +1217,7 @@ doprinos_sentimentu_full(stemmed,20)
 
 
 #### Oblak riječi sa sentimentom CroSentilex (za sve native članke koje ste pronašli)
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 ## ComparisonCloud
 stemmed %>%
   inner_join(CroSentilex_Gold,by="word") %>% 
@@ -1237,7 +1237,7 @@ stemmed %>%
 
 
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 stemmed %>%
   inner_join(NRCpn,by="word") %>% 
   count(word, Emotion) %>% 
@@ -1253,7 +1253,7 @@ stemmed %>%
 
 
 #### Oblak riječi sa sentimentom (za sve native članke koje ste pronašli za 24sata.hr)
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 stemmed %>%
   filter(FROM == "24sata.hr") %>%
@@ -1271,7 +1271,7 @@ stemmed %>%
 
 
 #### Oblak riječi sa sentimentom (za sve native članke koje ste pronašli za večernji.hr)
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 stemmed %>%
   filter(FROM == "vecernji.hr") %>%
@@ -1289,7 +1289,7 @@ stemmed %>%
 
 
 #### Oblak riječi sa sentimentom (za sve native članke koje ste pronašli za jutranji.hr)
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 stemmed %>%
   filter(FROM == "jutarnji.hr") %>%
   inner_join(CroSentilex_Gold,by="word") %>% 
@@ -1306,7 +1306,7 @@ stemmed %>%
 
 
 #### Oblak riječi sa sentimentom (za sve native članke koje ste pronašli za index.hr)
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 stemmed %>%
   filter(FROM == "index.hr") %>%
   inner_join(CroSentilex_Gold,by="word") %>% 
@@ -1323,7 +1323,7 @@ stemmed %>%
 
 
 #### Oblak riječi sa sentimentom (za sve native članke koje ste pronašli za sdalmancija.hr)
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 stemmed %>%
   filter(FROM == "slobodnadalmacija.hr") %>%
   inner_join(CroSentilex_Gold,by="word") %>% 
@@ -1339,7 +1339,7 @@ stemmed %>%
 ```
 
 #### Oblak riječi sa sentimentom (za sve native članke koje ste pronašli za telegram.hr)
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 stemmed %>%
   filter(FROM == "telegram.hr") %>%
   inner_join(CroSentilex_Gold,by="word") %>% 
@@ -1574,7 +1574,7 @@ bigram_tf_idf %>%
 
 #### Riječi najkoreliranjije sa izabranim riječima (bolest, rizik, strah; moguće dodati druge koje sugerirate)
 
-```{r echo=F, eval = T,message=F, warning=F, fig.height=12, fig.width=12}
+```{r echo=F, eval = F,message=F, warning=F, fig.height=12, fig.width=12}
 
 stemmed %>% 
 #  filter(datum > "2020-02-20") %>%
@@ -1601,7 +1601,7 @@ corsWords %>%
 
 #### Riječi najkoreliranjije sa izabranim riječima (problem, račun)
 
-```{r}
+```{r echo=F, eval = F, message=F, warning=F, fig.height=12, fig.width=12}
 corsWords %>%
   filter(item1 %in% c("problem", "račun")) %>%
   group_by(item1) %>%
@@ -1619,7 +1619,7 @@ corsWords %>%
 #### Tematska analiza (riječi algoritamski svrstane u 3 teme;moguće napraviti i po portalima)
 
 
-```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=12, fig.width=12}
+```{r echo=F, eval=F, message=F , warning= FALSE, fig.height=12, fig.width=12}
 stemmed %>%
   count(FROM, word, sort = TRUE) %>%
   cast_dtm(FROM, word,n) -> dtm
@@ -1754,12 +1754,12 @@ IND <- dta %>%
   
 
 # Create a histogram of the 'price' variable in the 'diamonds' dataset
-ggplot(data = IND, aes(x = percentIND)) +
-  geom_histogram(binwidth = 1, fill = "blue", alpha = 0.7) +
-  ggtitle("Industrija") +
-  xlab("Industrija") +
-  ylab("%") +
-  scale_x_continuous(breaks = seq(from = min(dta$INDUSTRIJA), to =  max(dta$INDUSTRIJA), by = 1))
+# ggplot(data = IND, aes(x = percentIND)) +
+#   geom_histogram(binwidth = 1, fill = "blue", alpha = 0.7) +
+#   ggtitle("Industrija") +
+#   xlab("Industrija") +
+#   ylab("%") +
+#   scale_x_continuous(breaks = seq(from = min(dta$INDUSTRIJA), to =  max(dta$INDUSTRIJA), by = 1))
 
 
 
@@ -1773,25 +1773,25 @@ IND_joined <- IND %>%
 IND_joined$category <- with(IND_joined, reorder(category, percentIND))
 
 # Plotting
-ggplot(data = IND_joined, aes(x = category, y = percentIND)) +
-  geom_bar(stat = "identity", fill = "black") + 
-  labs(title = "Industrija", x = "Industrija", y = "%") +
-  theme_minimal() +
-  theme(
-    axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
-    panel.grid.major.x = element_blank(),  # Remove vertical grid lines
-    panel.border = element_rect(fill = NA, color = "black")  # Add border
-  ) +
-  coord_flip()  # Flip coordinates to have horizontal bars
+# ggplot(data = IND_joined, aes(x = category, y = percentIND)) +
+#   geom_bar(stat = "identity", fill = "black") + 
+#   labs(title = "Industrija", x = "Industrija", y = "%") +
+#   theme_minimal() +
+#   theme(
+#     axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
+#     panel.grid.major.x = element_blank(),  # Remove vertical grid lines
+#     panel.border = element_rect(fill = NA, color = "black")  # Add border
+#   ) +
+#   coord_flip()  # Flip coordinates to have horizontal bars
 
 
 
-IND %>%
-  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
-
-
-industry_list %>%
-  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+# IND %>%
+#   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+# 
+# 
+# industry_list %>%
+#   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 
 
@@ -1848,7 +1848,7 @@ ggplot(data = dta, aes(x = HRV.IL.STRANI.BREND)) +
 
 ### Brend
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 dta %>% 
   group_by(NAZIV.BRENDA) %>%
@@ -1891,22 +1891,22 @@ autorstvo <- data.frame(
   text = c(
     "Redakcija / redakcijski izvještaj",
     "Inicijali novinara",
-    "Autor, puno ime i prezime",
-    "Sponzorirani sadržaj / PR / PR sadržaj",
-    "Native team / studio",
+    "Autor / puno ime i prezime",
+    "Sponzorirani sadržaj / PR sadržaj",
+    "Nativni tim / studio",
     "Ime i prezime autora / sponzorirani sadržaj",
     "Nije naveden autor",
     "Organizacija / udruga / tvrtka / zajednica"
   )
 )
 
-dta %>% 
-  group_by(AUTORSTVO) %>%
-  summarise(N = n()) %>% 
-  mutate(percent = round(N / sum(N) * 100,2)) %>% 
-  arrange(desc(N)) %>%
-  left_join(autorstvo, by = c("AUTORSTVO" = "number")) %>%
-  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+# dta %>% 
+#   group_by(AUTORSTVO) %>%
+#   summarise(N = n()) %>% 
+#   mutate(percent = round(N / sum(N) * 100,2)) %>% 
+#   arrange(desc(N)) %>%
+#   left_join(autorstvo, by = c("AUTORSTVO" = "number")) %>%
+#   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 
 
@@ -1956,7 +1956,7 @@ rubrika <- data.frame(
     "Tehnologija / znanost (tech-sci)",
     "Putovanja",
     "Prehrana / gastro / dobra hrana",
-    "Lokalna rubrika (Zagreb, Dalmacija)",
+    "Lokalna rubrika",
     "Zdravlje, zdrav život",
     "Openspace (Telegram.hr)"
   )
@@ -2018,7 +2018,7 @@ table_output
 ### Clickbait
 
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 clickbait <- data.frame(
   number = c(1, 2, 3, 4, 5, 6, 7),
@@ -2045,7 +2045,7 @@ dta %>%
 
 ### Brend u naslovu
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 ggplot(data = dta, aes(x = ZASTUPLJENOST.BRENDA)) +
   geom_histogram(binwidth = 0.5, fill = "blue", alpha = 0.7) +
@@ -2058,7 +2058,7 @@ ggplot(data = dta, aes(x = ZASTUPLJENOST.BRENDA)) +
 
 ### Vrsta rečenice naslovu
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 df_sentence_type <- data.frame(
   number = c(1, 2, 3),
@@ -2080,7 +2080,7 @@ ggplot(data = dta, aes(x = VRSTA.REČENICE)) +
 ### Oprema
 
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 oprema <- data.frame(
   number = c(1, 2, 3, 4, 5, 6, 7, 8),
@@ -2115,7 +2115,7 @@ dta %>%
 
 ### Vizualni identitet
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 ggplot(data = dta, aes(x = VIZUALNI.IDENTITET)) +
   geom_histogram(binwidth = 0.5, fill = "blue", alpha = 0.7) +
   ggtitle("Vizualni identitet") +
@@ -2133,21 +2133,21 @@ ggplot(data = dta, aes(x = VIZUALNI.IDENTITET)) +
 poveznice <- data.frame(
   number = c(1, 2, 3, 4, 5, 6),
   text = c(
-    "Društvene mreže",
+    "Društvene mreže brenda",
     "Službena internetska stranica brenda",
-    "Neka druga poveznica (druga web stranica)",
+    "Poveznica nevezana za brend",
     "Članak ne sadrži poveznice na kanale brenda / oglašivača",
-    "Kolaboracija (Oglašivač + neki drugi brend)",
+    "Suradnja oglašivača i drugog brenda",
     "Više kombinacija"
   )
 )
-dta %>% 
-  group_by(POVEZNICE.KANALI) %>%
-  summarise(N = n()) %>% 
-  mutate(percent = round(N / sum(N) * 100,2)) %>% 
-  arrange(desc(N)) %>%
-  left_join(poveznice, by = c("POVEZNICE.KANALI" = "number")) %>%
-  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+# dta %>% 
+#   group_by(POVEZNICE.KANALI) %>%
+#   summarise(N = n()) %>% 
+#   mutate(percent = round(N / sum(N) * 100,2)) %>% 
+#   arrange(desc(N)) %>%
+#   left_join(poveznice, by = c("POVEZNICE.KANALI" = "number")) %>%
+#   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 table_data <- dta %>%
   group_by(POVEZNICE.KANALI) %>%
@@ -2166,11 +2166,7 @@ table_output <- table_data %>%
 
 
 
-
-
 table_output
-
-
 
 
 
@@ -2180,7 +2176,7 @@ table_output
 
 ### Izvori
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 
 izvori <- data.frame(
@@ -2217,7 +2213,7 @@ dta %>%
 ### Formulacija uz izvor
 ####(možemo napraviti analizu teksta ako smatrate da ćemo naći nešto)
 
-```{r  echo=F, eval=T, message=F , warning= FALSE}
+```{r  echo=F, eval=F, message=F , warning= FALSE}
 dta %>% 
   group_by(FORMULACIJA.UZ.IZVOR) %>%
   summarise(N = n()) %>% 
@@ -2402,7 +2398,7 @@ dta %>%
 
 ####1.	Industrija vs. sentiment
 
-```{r  echo=F, eval=T, message=F , warning= FALSE, fig.height=20, fig.width=20}
+```{r  echo=F, eval=T, message=F , warning= FALSE}
 
 industry_list <- data.frame(
   id = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28),
@@ -2451,8 +2447,8 @@ industry_list <- data.frame(
 
 
 
-industry_list %>%
-  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+# industry_list %>%
+#   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
 
 
 
@@ -2466,29 +2462,29 @@ gg1 <- gg1 %>% select(-category)
 
 
 
-ggplot(gg1, aes(x = factor(SENTIMENT), y = BrojObjava, fill = factor(SENTIMENT))) +
-  geom_bar(stat = "identity") +
-  facet_wrap(~ INDUSTRIJA, scales = "free_y") +
-  labs(
-    x = "Sentiment",
-    y = "Broj Objava",
-    title = "Sentimenti po Industrijama"
-  ) +
-  theme_minimal() +
-#  scale_fill_discrete(name = "Sentiment")+
-  scale_fill_manual(values = c("grey10", "grey30", "grey50", "grey70"), name = "Sentiment",
-  breaks = c("1", "2", "3"),
-  labels = c("1 = Positive", "2 = Neutral", "3 = Negative")) +  # Assuming two sentiment values; adjust as needed
-  theme(
-    axis.text.x = element_text(color = "black"),
-    axis.text.y = element_text(color = "black"),
-    axis.title.x = element_text(color = "black"),
-    axis.title.y = element_text(color = "black"),
-    plot.title = element_text(color = "black"),
-    strip.background = element_blank(),
-    strip.text.y = element_text(color = "black")
-  ) +
-  coord_flip()
+# ggplot(gg1, aes(x = factor(SENTIMENT), y = BrojObjava, fill = factor(SENTIMENT))) +
+#   geom_bar(stat = "identity") +
+#   facet_wrap(~ INDUSTRIJA, scales = "free_y") +
+#   labs(
+#     x = "Sentiment",
+#     y = "Broj Objava",
+#     title = "Sentimenti po Industrijama"
+#   ) +
+#   theme_minimal() +
+# #  scale_fill_discrete(name = "Sentiment")+
+#   scale_fill_manual(values = c("grey10", "grey30", "grey50", "grey70"), name = "Sentiment",
+#   breaks = c("1", "2", "3"),
+#   labels = c("1 = Positive", "2 = Neutral", "3 = Negative")) +  # Assuming two sentiment values; adjust as needed
+#   theme(
+#     axis.text.x = element_text(color = "black"),
+#     axis.text.y = element_text(color = "black"),
+#     axis.title.x = element_text(color = "black"),
+#     axis.title.y = element_text(color = "black"),
+#     plot.title = element_text(color = "black"),
+#     strip.background = element_blank(),
+#     strip.text.y = element_text(color = "black")
+#   ) +
+#   coord_flip()
 
 
 gg1 %>% filter(INDUSTRIJA == "Zdravlje") %>% 
@@ -2517,7 +2513,7 @@ ggplot(., aes(x = factor(SENTIMENT), y = BrojObjava, fill = factor(SENTIMENT))) 
 ####2.	Autorstvo vs. medij
 
 
-```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=15, fig.width=15}
+```{r echo=F, eval=F, message=F , warning= FALSE, fig.height=15, fig.width=15}
 
 
 gg2 <- dta %>% 
@@ -2551,7 +2547,7 @@ ggplot(gg2, aes(x = factor(text), y = BrojObjava, fill = factor(text))) +
 ####3.	Poveznice na kanale vs. industrija
 
 
-```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=15, fig.width=15}
+```{r echo=F, eval=F, message=F , warning= FALSE, fig.height=15, fig.width=15}
 
 
 gg3 <- dta %>% 
@@ -2578,7 +2574,7 @@ ggplot(gg3, aes(x = factor(text), y = BrojObjava, fill = factor(text))) +
 
 ####4.	Doseg publike vs. Industrija
 
-```{r  echo=F, eval=T, message=F , warning= FALSE, fig.height=15, fig.width=20}
+```{r  echo=F, eval=F, message=F , warning= FALSE, fig.height=15, fig.width=20}
 gg4 <- dta %>% 
   group_by(DOSEG.PUBLIKE,INDUSTRIJA) %>%
   summarise(BrojObjava = n())  %>%
@@ -2602,7 +2598,7 @@ ggplot(gg4, aes(x = text, y = BrojObjava, fill = factor(text))) +
 
 ####5.	Najčešće riječi po industriji (više od 70 riječi je minimum)
 
-```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=50, fig.width=15}
+```{r echo=F, eval=F, message=F , warning= FALSE, fig.height=50, fig.width=15}
 gg5 <- stemmed %>%
   group_by(word, INDUSTRIJA) %>%
   summarise(N = n()) %>%
@@ -2646,11 +2642,11 @@ sentiment <- data.frame(
 )
 
 
-ggplot(data = dta, aes(x = SENTIMENT)) +
-  geom_histogram(binwidth = 0.5, fill = "blue", alpha = 0.7) +
-  ggtitle("Sentiment") +
-  xlab("Sentiment") +
-  ylab("Frequency") 
+# ggplot(data = dta, aes(x = SENTIMENT)) +
+#   geom_histogram(binwidth = 0.5, fill = "blue", alpha = 0.7) +
+#   ggtitle("Sentiment") +
+#   xlab("Sentiment") +
+#   ylab("Frequency") 
 
 
 
@@ -2682,7 +2678,7 @@ ggplot(data = dta, aes(x = factor(SENTIMENT), fill = factor(SENTIMENT))) +
   labs(
     x = "Sentiment",
     y = "Broj objava",
-    title = "Sentiment u industriji Zdravlja"
+    title = "Pregled sentimenta"
   ) +
   scale_fill_manual(
     values = c("grey10", "grey30", "grey50", "grey70"), 
@@ -2704,7 +2700,7 @@ ggplot(data = dta, aes(x = factor(SENTIMENT), fill = factor(SENTIMENT))) +
 
 #### prema NRC riječniku (broj pozitivnih - broj negativnih riječi u članku):
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 proba <- stemmed %>%
   inner_join(NRCpn, by = "word") %>% 
   group_by(V1) %>%
@@ -2725,7 +2721,7 @@ print(paste("Broj članaka sa  negative sentimentom:", negative_count))
 
 #### prema CroSentilex riječniku (broj pozitivnih - broj negativnih riječi u članku):
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 proba <- stemmed %>%
   inner_join(CroSentilex_Gold, by = "word") %>% 
   group_by(V1) %>%
@@ -2755,7 +2751,7 @@ print(paste("Broj članaka sa  negative sentimentom:", negative_count))
 
 
 #### Oblak riječi sa sentimentom CroSentilex (za Financijsku industriju, i.e. 1); ispod toga je doprinos riječi sentimentu za industriju
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 
 stemmed %>%
@@ -2785,7 +2781,7 @@ doprinos_sentimentu(stemmed %>%
 #### Oblak riječi sa sentimentom NRC (za Financijsku industriju, i.e. 1); ispod toga je doprinos riječi sentimentu za industriju
 
 
-```{r}
+```{r echo=F, eval=T, message=F , warning= FALSE}
 NRC_some <- LilaHR_long %>%
   rename("word" = "korijen") %>%
   filter(Emotion %in% c("Anger",
@@ -2841,7 +2837,7 @@ dataset %>%
 }
 
 
-doprinos_sentimentu_full(stemmed,20)
+# doprinos_sentimentu_full(stemmed,20)
 
 
 doprinos_sentimentu_full_some_emotion(stemmed,20)
@@ -2851,26 +2847,26 @@ doprinos_sentimentu_full_some_emotion(stemmed,20)
 
 
 ```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=15}
-stemmed %>%
-  filter(INDUSTRIJA == 1) %>%
-  inner_join(NRCpn,by="word") %>% 
-  count(word, Emotion) %>% 
-  top_n(200) %>%
-#  mutate(sentiment = case_when(sentiment == 0 ~ "+/-",
-#                                 sentiment == 1 ~ "-",
-#                                 sentiment == 2 ~ "+")) %>%
-  acast(word ~ Emotion, value.var = "n", fill = 0) %>%
-  comparison.cloud(colors = c("firebrick3", "deepskyblue3","darkslategray"),
-                   max.words = 120)
+# stemmed %>%
+#   filter(INDUSTRIJA == 1) %>%
+#   inner_join(NRCpn,by="word") %>% 
+#   count(word, Emotion) %>% 
+#   top_n(200) %>%
+# #  mutate(sentiment = case_when(sentiment == 0 ~ "+/-",
+# #                                 sentiment == 1 ~ "-",
+# #                                 sentiment == 2 ~ "+")) %>%
+#   acast(word ~ Emotion, value.var = "n", fill = 0) %>%
+#   comparison.cloud(colors = c("firebrick3", "deepskyblue3","darkslategray"),
+#                    max.words = 120)
 
 
 
-doprinos_sentimentu(stemmed %>%
-  filter(INDUSTRIJA == 1),15)
+# doprinos_sentimentu(stemmed %>%
+#   filter(INDUSTRIJA == 1),15)
 
 
-doprinos_sentimentu_full(stemmed %>%
-  filter(INDUSTRIJA == 1),15)
+# doprinos_sentimentu_full(stemmed %>%
+#   filter(INDUSTRIJA == 1),15)
 
 doprinos_sentimentu_full_some_emotion(stemmed %>%
   filter(INDUSTRIJA == 1),15)
@@ -2890,7 +2886,7 @@ doprinos_sentimentu_full_some_emotion(stemmed %>%
 
 
 #### Oblak riječi sa sentimentom CroSentilex (za ICT, i.e. 11)
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=F, message=F , warning= FALSE}
 
 
 stemmed %>%
@@ -2916,7 +2912,7 @@ doprinos_sentimentu(stemmed %>%
 
 
 
-```{r echo=F, eval=T, message=F , warning= FALSE, fig.height=15}
+```{r echo=F, eval=F, message=F , warning= FALSE, fig.height=15}
 stemmed %>%
   filter(INDUSTRIJA == 11) %>%
   inner_join(NRCpn,by="word") %>% 
@@ -2981,15 +2977,15 @@ stemmed %>%
 
 
 
-doprinos_sentimentu(stemmed %>%
-  filter(INDUSTRIJA == 6),15)
-
-
-doprinos_sentimentu_full(stemmed %>%
-  filter(INDUSTRIJA == 6),15)
-
-doprinos_sentimentu_full_some_emotion(stemmed %>%
-  filter(INDUSTRIJA == 1),15)
+# doprinos_sentimentu(stemmed %>%
+#   filter(INDUSTRIJA == 6),15)
+# 
+# 
+# doprinos_sentimentu_full(stemmed %>%
+#   filter(INDUSTRIJA == 6),15)
+# 
+# doprinos_sentimentu_full_some_emotion(stemmed %>%
+#   filter(INDUSTRIJA == 1),15)
 ```
 
 
