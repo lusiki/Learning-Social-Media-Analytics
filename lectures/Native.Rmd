@@ -1720,19 +1720,19 @@ industry_list <- data.frame(
     "Moda i ljepota",
     "Politička institucija",
     "Sportska industrija",
-    "Zdravlje",
+    "Faramaceutska industrija",
     "Obrazovanje i znanost",
     "Tehnologija",
     "Auto-moto industrija",
-    "ICT",
+    "ICT industrija",
     "Kultura i umjetnost",
     "Turizam, odmor, putovanja, ugostiteljstvo",
     "Energetska industrija",
     "Prehrambena industrija",
     "Industrija bezalkoholnih pića",
     "Alkoholna pića",
-    "Nekretninska industrija",
-    "Maloprodajna trgovina",
+    "Industrija nekretnina",
+    "Maloprodaja",
     "Igre na sreću",
     "Medijske kuće i marketinške, digitalne agencije",
     "Namještaj, saloni namještaja, kućanske potrepštine, kućanski uređaji, sredstva za čišćenje",
@@ -2436,7 +2436,7 @@ industry_list <- data.frame(
 
 
 
-# Create a histogram of the 'price' variable in the 'diamonds' dataset
+#Create a histogram of the 'price' variable in the 'diamonds' dataset
 # ggplot(data = dta, aes(x = INDUSTRIJA)) +
 #   geom_histogram(binwidth = 1, fill = "blue", alpha = 0.7) +
 #   ggtitle("Industrija") +
@@ -2462,29 +2462,29 @@ gg1 <- gg1 %>% select(-category)
 
 
 
-# ggplot(gg1, aes(x = factor(SENTIMENT), y = BrojObjava, fill = factor(SENTIMENT))) +
-#   geom_bar(stat = "identity") +
-#   facet_wrap(~ INDUSTRIJA, scales = "free_y") +
-#   labs(
-#     x = "Sentiment",
-#     y = "Broj Objava",
-#     title = "Sentimenti po Industrijama"
-#   ) +
-#   theme_minimal() +
-# #  scale_fill_discrete(name = "Sentiment")+
-#   scale_fill_manual(values = c("grey10", "grey30", "grey50", "grey70"), name = "Sentiment",
-#   breaks = c("1", "2", "3"),
-#   labels = c("1 = Positive", "2 = Neutral", "3 = Negative")) +  # Assuming two sentiment values; adjust as needed
-#   theme(
-#     axis.text.x = element_text(color = "black"),
-#     axis.text.y = element_text(color = "black"),
-#     axis.title.x = element_text(color = "black"),
-#     axis.title.y = element_text(color = "black"),
-#     plot.title = element_text(color = "black"),
-#     strip.background = element_blank(),
-#     strip.text.y = element_text(color = "black")
-#   ) +
-#   coord_flip()
+ggplot(gg1, aes(x = factor(SENTIMENT), y = BrojObjava, fill = factor(SENTIMENT))) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~ INDUSTRIJA, scales = "free_y") +
+  labs(
+    x = "Sentiment",
+    y = "Broj Objava",
+    title = "Sentimenti po Industrijama"
+  ) +
+  theme_minimal() +
+#  scale_fill_discrete(name = "Sentiment")+
+  scale_fill_manual(values = c("grey10", "grey30", "grey50", "grey70"), name = "Sentiment",
+  breaks = c("1", "2", "3"),
+  labels = c("1 = Positive", "2 = Neutral", "3 = Negative")) +  # Assuming two sentiment values; adjust as needed
+  theme(
+    axis.text.x = element_text(color = "black"),
+    axis.text.y = element_text(color = "black"),
+    axis.title.x = element_text(color = "black"),
+    axis.title.y = element_text(color = "black"),
+    plot.title = element_text(color = "black"),
+    strip.background = element_blank(),
+    strip.text.y = element_text(color = "black")
+  ) +
+  coord_flip()
 
 
 gg1 %>% filter(INDUSTRIJA == "Zdravlje") %>% 
