@@ -481,13 +481,13 @@ write.xlsx(ch24, file = "D:/LUKA/Freelance/Mediatoolkit/ch24.xlsx", row.names = 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 
 # Read In 
-<<<<<<< HEAD
+
 original <- read.xlsx("D:/LUKA/Freelance/Mediatoolkit/native1.xlsx", sheetIndex = 1) %>% mutate(V1 = as.numeric(V1))
 variables <- read.xlsx("D:/LUKA/Academic/Native rad/Native.xlsx", sheetIndex = 1)
-=======
+
 original <- read.xlsx("C:/Users/lukas/Desktop/native1.xlsx", sheetIndex = 1) %>% mutate(V1 = as.numeric(V1))
 variables <- read.xlsx("C:/Users/lukas/Desktop/Native.xlsx", sheetIndex = 1)
->>>>>>> 23951cf33a10b58d363b43f6cce8b6122bf3a806
+
 variables <- variables[,-c(23,24,25)]# %>% drop_na()
 original <- original %>% filter(V1 %in% variables$V1)
 dta <- merge(original, variables, by = "V1", all.x = TRUE)
