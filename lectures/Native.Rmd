@@ -41,11 +41,46 @@ library(kableExtra)
 # fullDta <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_NOTXT.csv")
 # fullDtaTxt <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_TXT.csv")
 dt <- fread("D:/LUKA/Freelance/Mediatoolkit/MktFULLtxt.csv")
+n_distinct(dt$URL)
 
 
 dt <- dt %>% filter(SOURCE_TYPE == "web")
+n_distinct(dt$FROM)
 
 
+
+
+result <- dt[, .(Count = .N), by = .(FROM)][, Percentage := (Count / sum(Count)) * 100]
+
+# Sort the result in descending order of Count
+result <- result[order(-Count)]
+
+
+
+# Function to calculate cumulative count and percentage for top N factors
+summarize_top_n <- function(data, n) {
+    top_n <- head(data, n)
+    list(
+        Total_Count = sum(top_n$Count),
+        Total_Percentage = sum(top_n$Percentage)
+    )
+}
+
+# Calculate for top 10, 20, 50, and 100
+top_10 <- summarize_top_n(result, 10)
+top_20 <- summarize_top_n(result, 20)
+top_50 <- summarize_top_n(result, 50)
+top_100 <- summarize_top_n(result, 100)
+
+# Print the results
+print("Top 10:")
+print(top_10)
+print("Top 20:")
+print(top_20)
+print("Top 50:")
+print(top_50)
+print("Top 100:")
+print(top_100)
 
 ```
 
@@ -446,7 +481,7 @@ write.xlsx(ch24, file = "D:/LUKA/Freelance/Mediatoolkit/ch24.xlsx", row.names = 
 
 # Read In 
 original <- read.xlsx("D:/LUKA/Freelance/Mediatoolkit/native1.xlsx", sheetIndex = 1) %>% mutate(V1 = as.numeric(V1))
-variables <- read.xlsx("C:/Users/Lukas/OneDrive/Desktop/Native.xlsx", sheetIndex = 1)
+variables <- read.xlsx("D:/LUKA/Academic/Native rad/Native.xlsx", sheetIndex = 1)
 variables <- variables[,-c(23,24,25)]# %>% drop_na()
 original <- original %>% filter(V1 %in% variables$V1)
 dta <- merge(original, variables, by = "V1", all.x = TRUE)
