@@ -482,9 +482,13 @@ write.xlsx(ch24, file = "D:/LUKA/Freelance/Mediatoolkit/ch24.xlsx", row.names = 
 
 # Read In 
 
-original <- read.xlsx("D:/LUKA/Freelance/Mediatoolkit/native1.xlsx", sheetIndex = 1) %>% mutate(V1 = as.numeric(V1))
-variables <- read.xlsx("D:/LUKA/Academic/Native rad/Native.xlsx", sheetIndex = 1)
+original <- read.xlsx("C:/Users/lukas/Dropbox/Članci/Native rad/native1.xlsx", sheetIndex = 1) %>% mutate(V1 = as.numeric(V1))
+variables <- read.xlsx("C:/Users/lukas/Dropbox/Članci/Native rad/Native.xlsx", sheetIndex = 1)
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2d9d50db1fe459021a62f3077fca0beccc308fae
 variables <- variables[,-c(23,24,25)]# %>% drop_na()
 original <- original %>% filter(V1 %in% variables$V1)
 dta <- merge(original, variables, by = "V1", all.x = TRUE)
@@ -492,7 +496,11 @@ dta$DATE <- as.Date(dta$DATE)
 
 
 
+<<<<<<< HEAD
 stemmed <- readRDS("C:/Users/Lukas/Dropbox/Mediatoolkit/native_token_stemm.rds")
+=======
+stemmed <- readRDS("C:/Users/lukas/Dropbox/Članci/Native rad/native_token_stemm.rds")
+>>>>>>> 2d9d50db1fe459021a62f3077fca0beccc308fae
 
 stemmed <- stemmed %>%
   rename("wordp" = "word") %>%
@@ -1758,7 +1766,7 @@ industry_list <- data.frame(
     "Moda i ljepota",
     "Politička institucija",
     "Sportska industrija",
-    "Faramaceutska industrija",
+    "Zdravstvena industrija",
     "Obrazovanje i znanost",
     "Tehnologija",
     "Auto-moto industrija",
@@ -2194,6 +2202,7 @@ table_data <- dta %>%
   arrange(desc(N)) %>%
   left_join(poveznice, by = c("POVEZNICE.KANALI" = "number"))
 
+table_data <- na.omit(table_data)
 
 table_output <- table_data %>%
   select(text, N, percent) %>%
@@ -2446,7 +2455,7 @@ industry_list <- data.frame(
     "Moda i ljepota",
     "Politička institucija",
     "Sportska industrija",
-    "Zdravlje",
+    "Zdravstvena industrija",
     "Obrazovanje i znanost",
     "Tehnologija",
     "Auto-moto industrija",
@@ -2525,13 +2534,13 @@ ggplot(gg1, aes(x = factor(SENTIMENT), y = BrojObjava, fill = factor(SENTIMENT))
   coord_flip()
 
 
-gg1 %>% filter(INDUSTRIJA == "Zdravlje") %>% 
+gg1 %>% filter(INDUSTRIJA == "Zdravstvena industrija") %>% 
 ggplot(., aes(x = factor(SENTIMENT), y = BrojObjava, fill = factor(SENTIMENT))) +
   geom_bar(stat = "identity") +
   labs(
     x = "Sentiment",
     y = "Broj Objava",
-    title = "Sentiment u industriji Zdravlja"
+    title = "Sentiment u zdravstvenoj industriji "
   )  +
 #  scale_fill_discrete(name = "Sentiment")+
   scale_fill_manual(values = c("grey10", "grey30", "grey50", "grey70"), name = "Sentiment",
@@ -2545,6 +2554,146 @@ ggplot(., aes(x = factor(SENTIMENT), y = BrojObjava, fill = factor(SENTIMENT))) 
     axis.title.y = element_text(color = "black"),
     plot.title = element_text(color = "black")
   )
+
+
+# Filter the data for INDUSTRIJA == "ICT"
+filtered_data <- gg1 %>%
+  filter(INDUSTRIJA == "Zdravstvena industrija")
+
+# Calculate the number of rows for each SENTIMENT
+sentiment_counts <- filtered_data %>%
+  group_by(SENTIMENT) %>%
+  summarise(BrojObjava = sum(BrojObjava))
+
+# Calculate the percentage within the ICT category
+sentiment_counts <- sentiment_counts %>%
+  mutate(PercentTotal = (BrojObjava / sum(BrojObjava)) * 100)
+
+# Create the ggplot
+ggplot(sentiment_counts, aes(x = factor(SENTIMENT), y = PercentTotal, fill = factor(SENTIMENT))) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = paste0(round(PercentTotal, 2), "%")), vjust = -0.5) + # Add labels
+  labs(
+    x = "Sentiment",
+    y = "Percentage of Total",
+    title = "Sentiment Distribution within Zdravstvena industrija Category"
+  ) +
+  scale_fill_manual(
+    values = c("grey10", "grey30", "grey50", "grey70"),
+    name = "Sentiment",
+    breaks = c("1", "2", "3"),
+    labels = c("1 = Positive", "2 = Neutral", "3 = Negative")
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(color = "black"),
+    axis.text.y = element_text(color = "black"),
+    axis.title.x = element_text(color = "black"),
+    axis.title.y = element_text(color = "black"),
+    plot.title = element_text(color = "black")
+  )
+
+
+
+# Filter the data for INDUSTRIJA == "ICT"
+filtered_data <- gg1 %>%
+  filter(INDUSTRIJA == "Financijska industrija")
+
+# Calculate the number of rows for each SENTIMENT
+sentiment_counts <- filtered_data %>%
+  group_by(SENTIMENT) %>%
+  summarise(BrojObjava = sum(BrojObjava))
+
+# Calculate the percentage within the ICT category
+sentiment_counts <- sentiment_counts %>%
+  mutate(PercentTotal = (BrojObjava / sum(BrojObjava)) * 100)
+
+# Create the ggplot
+ggplot(sentiment_counts, aes(x = factor(SENTIMENT), y = PercentTotal, fill = factor(SENTIMENT))) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = paste0(round(PercentTotal, 2), "%")), vjust = -0.5) + # Add labels
+  labs(
+    x = "Sentiment",
+    y = "Percentage of Total",
+    title = "Sentiment Distribution within Financijska industrija Category"
+  ) +
+  scale_fill_manual(
+    values = c("grey10", "grey30", "grey50", "grey70"),
+    name = "Sentiment",
+    breaks = c("1", "2", "3"),
+    labels = c("1 = Positive", "2 = Neutral", "3 = Negative")
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(color = "black"),
+    axis.text.y = element_text(color = "black"),
+    axis.title.x = element_text(color = "black"),
+    axis.title.y = element_text(color = "black"),
+    plot.title = element_text(color = "black")
+  )
+
+
+
+# Filter the data for INDUSTRIJA == "ICT"
+filtered_data <- gg1 %>%
+  filter(INDUSTRIJA == "ICT")
+
+# Calculate the number of rows for each SENTIMENT
+sentiment_counts <- filtered_data %>%
+  group_by(SENTIMENT) %>%
+  summarise(BrojObjava = sum(BrojObjava))
+
+# Calculate the percentage within the ICT category
+sentiment_counts <- sentiment_counts %>%
+  mutate(PercentTotal = (BrojObjava / sum(BrojObjava)) * 100)
+
+# Create the ggplot
+ggplot(sentiment_counts, aes(x = factor(SENTIMENT), y = PercentTotal, fill = factor(SENTIMENT))) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = paste0(round(PercentTotal, 2), "%")), vjust = -0.5) + # Add labels
+  labs(
+    x = "Sentiment",
+    y = "Percentage of Total",
+    title = "Sentiment Distribution within ICT Category"
+  ) +
+  scale_fill_manual(
+    values = c("grey10", "grey30", "grey50", "grey70"),
+    name = "Sentiment",
+    breaks = c("1", "2", "3"),
+    labels = c("1 = Positive", "2 = Neutral", "3 = Negative")
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(color = "black"),
+    axis.text.y = element_text(color = "black"),
+    axis.title.x = element_text(color = "black"),
+    axis.title.y = element_text(color = "black"),
+    plot.title = element_text(color = "black")
+  )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ```
 
@@ -2709,7 +2858,8 @@ table_output <- table_data %>%
 table_output
 
 
-
+dta <- dta %>%
+  filter(!is.na(SENTIMENT))
 
 ggplot(data = dta, aes(x = factor(SENTIMENT), fill = factor(SENTIMENT))) +
   geom_bar() +
