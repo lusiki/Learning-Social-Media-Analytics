@@ -485,9 +485,6 @@ write.xlsx(ch24, file = "D:/LUKA/Freelance/Mediatoolkit/ch24.xlsx", row.names = 
 original <- read.xlsx("D:/LUKA/Freelance/Mediatoolkit/native1.xlsx", sheetIndex = 1) %>% mutate(V1 = as.numeric(V1))
 variables <- read.xlsx("D:/LUKA/Academic/Native rad/Native.xlsx", sheetIndex = 1)
 
-original <- read.xlsx("C:/Users/lukas/Desktop/native1.xlsx", sheetIndex = 1) %>% mutate(V1 = as.numeric(V1))
-variables <- read.xlsx("C:/Users/lukas/Desktop/Native.xlsx", sheetIndex = 1)
-
 variables <- variables[,-c(23,24,25)]# %>% drop_na()
 original <- original %>% filter(V1 %in% variables$V1)
 dta <- merge(original, variables, by = "V1", all.x = TRUE)
@@ -495,7 +492,7 @@ dta$DATE <- as.Date(dta$DATE)
 
 
 
-stemmed <- readRDS("C:/Users/lukas/Desktop/native_token_stemm.rds")
+stemmed <- readRDS("C:/Users/Lukas/Dropbox/Mediatoolkit/native_token_stemm.rds")
 
 stemmed <- stemmed %>%
   rename("wordp" = "word") %>%
@@ -661,7 +658,7 @@ datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # read in lexicons
-CroSentilex_n <- read.delim("C:/Users/lukas/Desktop/Mislav@Luka/crosentilex-negatives.txt",
+CroSentilex_n <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-negatives.txt",
                                    header = FALSE,
                                    sep = " ",
                                    stringsAsFactors = FALSE,
@@ -669,7 +666,7 @@ CroSentilex_n <- read.delim("C:/Users/lukas/Desktop/Mislav@Luka/crosentilex-nega
                    rename(word = "V1", sentiment = "V2" ) %>%
                    mutate(brija = "NEG")
  
-CroSentilex_p  <- read.delim("C:/Users/lukas/Desktop/Mislav@Luka/crosentilex-positives.txt",
+CroSentilex_p  <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-positives.txt",
                                    header = FALSE,
                                    sep = " ",
                                    stringsAsFactors = FALSE,
@@ -682,7 +679,7 @@ Crosentilex_sve <- rbind(setDT(CroSentilex_n), setDT(CroSentilex_p))
 #head(sample_n(Crosentilex_sve,1000),15)
 
  
-CroSentilex_Gold  <- read.delim2("C:/Users/lukas/Desktop/Mislav@Luka/gs-sentiment-annotations.txt",
+CroSentilex_Gold  <- read.delim2("C:/Users/Lukas/Dropbox/Mislav@Luka/gs-sentiment-annotations.txt",
                                  header = FALSE,
                                  sep = " ",
                                  stringsAsFactors = FALSE) %>%
@@ -696,8 +693,8 @@ CroSentilex_Gold  <- read.delim2("C:/Users/lukas/Desktop/Mislav@Luka/gs-sentimen
 #head(sample_n(CroSentilex_Gold,100),15)
 
  
-LilaHR  <- read_excel("C:/Users/lukas/Desktop/Mislav@Luka/lilaHR_clean.xlsx", sheet = "Sheet1") %>% select (-"...1")
-LilaHR_long <- read_excel("C:/Users/lukas/Desktop/Mislav@Luka/lilaHR_clean_long.xlsx", sheet = "Sheet1") %>% select (-"...1") 
+LilaHR  <- read_excel("C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHR_clean.xlsx", sheet = "Sheet1") %>% select (-"...1")
+LilaHR_long <- read_excel("C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHR_clean_long.xlsx", sheet = "Sheet1") %>% select (-"...1") 
 
 
 
@@ -833,8 +830,8 @@ korjenuj <- function(pojavnica) {
 
 
 
-pravila <- lapply(strsplit(trimws(readLines('C:/Users/lukas/Desktop/Mislav@Luka/rules.txt')), ' '), function(x) paste0('^(', x[1], ')(', x[2], ')$'))
-transformacije <- as.data.frame(do.call(rbind, strsplit(trimws(readLines('C:/Users/lukas/Desktop/Mislav@Luka/transformations.txt')), '\t')))
+pravila <- lapply(strsplit(trimws(readLines('C:/Users/Lukas/Dropbox/Mislav@Luka/rules.txt')), ' '), function(x) paste0('^(', x[1], ')(', x[2], ')$'))
+transformacije <- as.data.frame(do.call(rbind, strsplit(trimws(readLines('C:/Users/Lukas/Dropbox/Mislav@Luka/transformations.txt')), '\t')))
 
 
 #text <- n_tokenTidy$word %>% head(1000)
