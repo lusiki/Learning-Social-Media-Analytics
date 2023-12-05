@@ -3024,23 +3024,23 @@ doprinos_sentimentu_full_some_emotion(stemmed,20)
 NRC_some <- LilaHR_long %>%
   rename("word" = "korijen") %>%
   filter(Emotion %in% c("Anger",
-                        "Anticipation",
+                      #  "Anticipation",
                         "Disgust",
                         "Fear",
-                        "Joy",
-                        "Sadness",
-                        "Surprise",
-                        "Trust"
+                      #  "Joy",
+                        "Sadness"
+                      #  "Surprise",
+                      #  "Trust"
                         )) %>%
   mutate(Emotion = recode(Emotion,
                           "Anger" = "Ljutnja",
-                          "Anticipation" = "Iščekivanje",
+                        #  "Anticipation" = "Iščekivanje",
                           "Disgust" = "Gađenje",
                           "Fear" = "Strah",
-                          "Joy" = "Zadovoljstvo",
-                          "Sadness" = "Tuga",
-                          "Surprise" = "Iznenađenje",
-                          "Trust" = "Povjerenje"
+                        #  "Joy" = "Zadovoljstvo",
+                          "Sadness" = "Tuga"
+                        #  "Surprise" = "Iznenađenje",
+                        #  "Trust" = "Povjerenje"
                           ))
 
 
