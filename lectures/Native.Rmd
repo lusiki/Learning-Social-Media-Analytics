@@ -485,10 +485,6 @@ write.xlsx(ch24, file = "D:/LUKA/Freelance/Mediatoolkit/ch24.xlsx", row.names = 
 original <- read.xlsx("C:/Users/lukas/Dropbox/Članci/Native rad/native1.xlsx", sheetIndex = 1) %>% mutate(V1 = as.numeric(V1))
 variables <- read.xlsx("C:/Users/lukas/Dropbox/Članci/Native rad/Native.xlsx", sheetIndex = 1)
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 2d9d50db1fe459021a62f3077fca0beccc308fae
 variables <- variables[,-c(23,24,25)]# %>% drop_na()
 original <- original %>% filter(V1 %in% variables$V1)
 dta <- merge(original, variables, by = "V1", all.x = TRUE)
@@ -496,11 +492,8 @@ dta$DATE <- as.Date(dta$DATE)
 
 
 
-<<<<<<< HEAD
 stemmed <- readRDS("C:/Users/Lukas/Dropbox/Mediatoolkit/native_token_stemm.rds")
-=======
 stemmed <- readRDS("C:/Users/lukas/Dropbox/Članci/Native rad/native_token_stemm.rds")
->>>>>>> 2d9d50db1fe459021a62f3077fca0beccc308fae
 
 stemmed <- stemmed %>%
   rename("wordp" = "word") %>%
@@ -2973,19 +2966,19 @@ doprinos_sentimentu(stemmed %>%
 NRC_some <- LilaHR_long %>%
   rename("word" = "korijen") %>%
   filter(Emotion %in% c("Anger",
-                        #"Anticipation",
+                        "Anticipation",
                         "Disgust"
                         
                         )) %>%
   mutate(Emotion = recode(Emotion,
                           "Anger" = "Ljutnja",
-                          #"Anticipation" = "Iščekivanje",
+                          "Anticipation" = "Iščekivanje",
                           "Disgust" = "Gađenje",
-                        #  "Fear" = "Strah",
-                          #"Joy" = "Zadovoljstvo",
-                        #  "Sadness" = "Tuga"
-                          #"Surprise" = "Iznenađenje",
-                          #"Trust" = "Povjerenje"
+                          "Fear" = "Strah",
+                          "Joy" = "Zadovoljstvo",
+                          "Sadness" = "Tuga",
+                          "Surprise" = "Iznenađenje",
+                          "Trust" = "Povjerenje"
                           ))
 
 
@@ -3030,24 +3023,24 @@ doprinos_sentimentu_full_some_emotion(stemmed,20)
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 NRC_some <- LilaHR_long %>%
   rename("word" = "korijen") %>%
-  filter(Emotion %in% c(#"Anger",
-                        #"Anticipation",
-                        #"Disgust",
+  filter(Emotion %in% c("Anger",
+                        "Anticipation",
+                        "Disgust",
                         "Fear",
-                        #"Joy",
-                        "Sadness"
-                        #"Surprise",
-                        #"Trust"
+                        "Joy",
+                        "Sadness",
+                        "Surprise",
+                        "Trust"
                         )) %>%
   mutate(Emotion = recode(Emotion,
-                          #"Anger" = "Ljutnja",
-                          #"Anticipation" = "Iščekivanje",
-                         # "Disgust" = "Gađenje",
+                          "Anger" = "Ljutnja",
+                          "Anticipation" = "Iščekivanje",
+                          "Disgust" = "Gađenje",
                           "Fear" = "Strah",
-                          #"Joy" = "Zadovoljstvo",
-                          "Sadness" = "Tuga"
-                          #"Surprise" = "Iznenađenje",
-                          #"Trust" = "Povjerenje"
+                          "Joy" = "Zadovoljstvo",
+                          "Sadness" = "Tuga",
+                          "Surprise" = "Iznenađenje",
+                          "Trust" = "Povjerenje"
                           ))
 
 
