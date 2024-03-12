@@ -1129,9 +1129,9 @@ dataset %>%
   group_by(sentiment) %>%
   top_n(no) %>%
   ungroup() %>%
-  mutate(sentiment = case_when(sentiment == 0 ~ "NEUTRAL",
-                                 sentiment == 1 ~ "NEGATIVE",
-                                 sentiment == 2 ~ "POSITIVE")) %>%
+  mutate(sentiment = case_when(sentiment == 0 ~ "NEUTRALNO",
+                                 sentiment == 1 ~ "NEGATIVNO",
+                                 sentiment == 2 ~ "POZITIVNO")) %>%
   mutate(word = reorder(word, n)) %>%
   ggplot(aes(word, n, fill = sentiment)) +
   geom_col(show.legend = FALSE) +
@@ -2514,7 +2514,7 @@ ggplot(gg1, aes(x = factor(SENTIMENT), y = BrojObjava, fill = factor(SENTIMENT))
 #  scale_fill_discrete(name = "Sentiment")+
   scale_fill_manual(values = c("grey10", "grey30", "grey50", "grey70"), name = "Sentiment",
   breaks = c("1", "2", "3"),
-  labels = c("1 = Positive", "2 = Neutral", "3 = Negative")) +  # Assuming two sentiment values; adjust as needed
+  labels = c("1 = Pozitivan", "2 = Neutralan", "3 = Negativan")) +  # Assuming two sentiment values; adjust as needed
   theme(
     axis.text.x = element_text(color = "black"),
     axis.text.y = element_text(color = "black"),
@@ -2538,7 +2538,7 @@ ggplot(., aes(x = factor(SENTIMENT), y = BrojObjava, fill = factor(SENTIMENT))) 
 #  scale_fill_discrete(name = "Sentiment")+
   scale_fill_manual(values = c("grey10", "grey30", "grey50", "grey70"), name = "Sentiment",
   breaks = c("1", "2", "3"),
-  labels = c("1 = Positive", "2 = Neutral", "3 = Negative")) +
+  labels = c("1 = Pozitivan", "2 = Neutralan", "3 = Negativan")) +
   theme_minimal() +
   theme(
     axis.text.x = element_text(color = "black"),
@@ -2575,7 +2575,7 @@ ggplot(sentiment_counts, aes(x = factor(SENTIMENT), y = PercentTotal, fill = fac
     values = c("grey10", "grey30", "grey50", "grey70"),
     name = "Sentiment",
     breaks = c("1", "2", "3"),
-    labels = c("1 = Positive", "2 = Neutral", "3 = Negative")
+    labels = c("1 = Pozitivan", "2 = Neutralan", "3 = Negativan")
   ) +
   theme_minimal() +
   theme(
@@ -2614,7 +2614,7 @@ ggplot(sentiment_counts, aes(x = factor(SENTIMENT), y = PercentTotal, fill = fac
     values = c("grey10", "grey30", "grey50", "grey70"),
     name = "Sentiment",
     breaks = c("1", "2", "3"),
-    labels = c("1 = Positive", "2 = Neutral", "3 = Negative")
+    labels = c("1 = Pozitivan", "2 = Neutralan", "3 = Negativan")
   ) +
   theme_minimal() +
   theme(
@@ -2653,7 +2653,7 @@ ggplot(sentiment_counts, aes(x = factor(SENTIMENT), y = PercentTotal, fill = fac
     values = c("grey10", "grey30", "grey50", "grey70"),
     name = "Sentiment",
     breaks = c("1", "2", "3"),
-    labels = c("1 = Positive", "2 = Neutral", "3 = Negative")
+    labels = c("1 = Pozitivan", "2 = Neutralan", "3 = Negativan")
   ) +
   theme_minimal() +
   theme(
@@ -2865,7 +2865,7 @@ ggplot(data = dta, aes(x = factor(SENTIMENT), fill = factor(SENTIMENT))) +
     values = c("grey10", "grey30", "grey50", "grey70"), 
     name = "Sentiment",
     breaks = c("1", "2", "3"),
-    labels = c("1 = Positive", "2 = Neutral", "3 = Negative")
+    labels = c("1 = Pozitivan", "2 = Neutralan", "3 = Negativan")
   ) +
   theme_minimal() +
   theme(
@@ -2907,9 +2907,9 @@ proba <- stemmed %>%
   inner_join(CroSentilex_Gold, by = "word") %>% 
   group_by(V1) %>%
   count(sentiment) %>% 
-  mutate(sentiment = case_when(sentiment == 0 ~ "Neutral",
-                                 sentiment == 1 ~ "Negative",
-                                 sentiment == 2 ~ "Positive")) %>%
+  mutate(sentiment = case_when(sentiment == 0 ~ "Neutralan",
+                                 sentiment == 1 ~ "Negativan",
+                                 sentiment == 2 ~ "Pozitivan")) %>%
   spread(sentiment, n) %>%
   mutate(Sentiment_netto = Positive - Negative) 
 
