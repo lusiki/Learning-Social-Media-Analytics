@@ -481,13 +481,10 @@ write.xlsx(ch24, file = "D:/LUKA/Freelance/Mediatoolkit/ch24.xlsx", row.names = 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 
 # Read In 
-<<<<<<< HEAD
-original <- read.xlsx("D:/LUKA/Freelance/Mediatoolkit/native1.xlsx", sheetIndex = 1) %>% mutate(V1 = as.numeric(V1))
-variables <- read.xlsx("D:/LUKA/Academic/Native rad/Native.xlsx", sheetIndex = 1)
-=======
-original <- read.xlsx("C:/Users/lukas/Desktop/native1.xlsx", sheetIndex = 1) %>% mutate(V1 = as.numeric(V1))
-variables <- read.xlsx("C:/Users/lukas/Desktop/Native.xlsx", sheetIndex = 1)
->>>>>>> 23951cf33a10b58d363b43f6cce8b6122bf3a806
+
+original <- read.xlsx("C:/Users/lukas/Dropbox/Članci/Native rad/native1.xlsx", sheetIndex = 1) %>% mutate(V1 = as.numeric(V1))
+variables <- read.xlsx("C:/Users/lukas/Dropbox/Članci/Native rad/Native.xlsx", sheetIndex = 1)
+
 variables <- variables[,-c(23,24,25)]# %>% drop_na()
 original <- original %>% filter(V1 %in% variables$V1)
 dta <- merge(original, variables, by = "V1", all.x = TRUE)
@@ -495,7 +492,8 @@ dta$DATE <- as.Date(dta$DATE)
 
 
 
-stemmed <- readRDS("C:/Users/lukas/Desktop/native_token_stemm.rds")
+stemmed <- readRDS("C:/Users/Lukas/Dropbox/Mediatoolkit/native_token_stemm.rds")
+stemmed <- readRDS("C:/Users/lukas/Dropbox/Članci/Native rad/native_token_stemm.rds")
 
 stemmed <- stemmed %>%
   rename("wordp" = "word") %>%
@@ -661,7 +659,7 @@ datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # read in lexicons
-CroSentilex_n <- read.delim("C:/Users/lukas/Desktop/Mislav@Luka/crosentilex-negatives.txt",
+CroSentilex_n <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-negatives.txt",
                                    header = FALSE,
                                    sep = " ",
                                    stringsAsFactors = FALSE,
@@ -669,7 +667,7 @@ CroSentilex_n <- read.delim("C:/Users/lukas/Desktop/Mislav@Luka/crosentilex-nega
                    rename(word = "V1", sentiment = "V2" ) %>%
                    mutate(brija = "NEG")
  
-CroSentilex_p  <- read.delim("C:/Users/lukas/Desktop/Mislav@Luka/crosentilex-positives.txt",
+CroSentilex_p  <- read.delim("C:/Users/Lukas/Dropbox/Mislav@Luka/crosentilex-positives.txt",
                                    header = FALSE,
                                    sep = " ",
                                    stringsAsFactors = FALSE,
@@ -682,7 +680,7 @@ Crosentilex_sve <- rbind(setDT(CroSentilex_n), setDT(CroSentilex_p))
 #head(sample_n(Crosentilex_sve,1000),15)
 
  
-CroSentilex_Gold  <- read.delim2("C:/Users/lukas/Desktop/Mislav@Luka/gs-sentiment-annotations.txt",
+CroSentilex_Gold  <- read.delim2("C:/Users/Lukas/Dropbox/Mislav@Luka/gs-sentiment-annotations.txt",
                                  header = FALSE,
                                  sep = " ",
                                  stringsAsFactors = FALSE) %>%
@@ -696,8 +694,8 @@ CroSentilex_Gold  <- read.delim2("C:/Users/lukas/Desktop/Mislav@Luka/gs-sentimen
 #head(sample_n(CroSentilex_Gold,100),15)
 
  
-LilaHR  <- read_excel("C:/Users/lukas/Desktop/Mislav@Luka/lilaHR_clean.xlsx", sheet = "Sheet1") %>% select (-"...1")
-LilaHR_long <- read_excel("C:/Users/lukas/Desktop/Mislav@Luka/lilaHR_clean_long.xlsx", sheet = "Sheet1") %>% select (-"...1") 
+LilaHR  <- read_excel("C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHR_clean.xlsx", sheet = "Sheet1") %>% select (-"...1")
+LilaHR_long <- read_excel("C:/Users/Lukas/Dropbox/Mislav@Luka/lilaHR_clean_long.xlsx", sheet = "Sheet1") %>% select (-"...1") 
 
 
 
@@ -833,8 +831,8 @@ korjenuj <- function(pojavnica) {
 
 
 
-pravila <- lapply(strsplit(trimws(readLines('C:/Users/lukas/Desktop/Mislav@Luka/rules.txt')), ' '), function(x) paste0('^(', x[1], ')(', x[2], ')$'))
-transformacije <- as.data.frame(do.call(rbind, strsplit(trimws(readLines('C:/Users/lukas/Desktop/Mislav@Luka/transformations.txt')), '\t')))
+pravila <- lapply(strsplit(trimws(readLines('C:/Users/Lukas/Dropbox/Mislav@Luka/rules.txt')), ' '), function(x) paste0('^(', x[1], ')(', x[2], ')$'))
+transformacije <- as.data.frame(do.call(rbind, strsplit(trimws(readLines('C:/Users/Lukas/Dropbox/Mislav@Luka/transformations.txt')), '\t')))
 
 
 #text <- n_tokenTidy$word %>% head(1000)
@@ -1131,9 +1129,9 @@ dataset %>%
   group_by(sentiment) %>%
   top_n(no) %>%
   ungroup() %>%
-  mutate(sentiment = case_when(sentiment == 0 ~ "NEUTRAL",
-                                 sentiment == 1 ~ "NEGATIVE",
-                                 sentiment == 2 ~ "POSITIVE")) %>%
+  mutate(sentiment = case_when(sentiment == 0 ~ "NEUTRALNO",
+                                 sentiment == 1 ~ "NEGATIVNO",
+                                 sentiment == 2 ~ "POZITIVNO")) %>%
   mutate(word = reorder(word, n)) %>%
   ggplot(aes(word, n, fill = sentiment)) +
   geom_col(show.legend = FALSE) +
@@ -1761,7 +1759,7 @@ industry_list <- data.frame(
     "Moda i ljepota",
     "Politička institucija",
     "Sportska industrija",
-    "Faramaceutska industrija",
+    "Zdravstvena industrija",
     "Obrazovanje i znanost",
     "Tehnologija",
     "Auto-moto industrija",
@@ -2197,6 +2195,7 @@ table_data <- dta %>%
   arrange(desc(N)) %>%
   left_join(poveznice, by = c("POVEZNICE.KANALI" = "number"))
 
+table_data <- na.omit(table_data)
 
 table_output <- table_data %>%
   select(text, N, percent) %>%
@@ -2449,7 +2448,7 @@ industry_list <- data.frame(
     "Moda i ljepota",
     "Politička institucija",
     "Sportska industrija",
-    "Zdravlje",
+    "Zdravstvena industrija",
     "Obrazovanje i znanost",
     "Tehnologija",
     "Auto-moto industrija",
@@ -2515,7 +2514,7 @@ ggplot(gg1, aes(x = factor(SENTIMENT), y = BrojObjava, fill = factor(SENTIMENT))
 #  scale_fill_discrete(name = "Sentiment")+
   scale_fill_manual(values = c("grey10", "grey30", "grey50", "grey70"), name = "Sentiment",
   breaks = c("1", "2", "3"),
-  labels = c("1 = Positive", "2 = Neutral", "3 = Negative")) +  # Assuming two sentiment values; adjust as needed
+  labels = c("1 = Pozitivan", "2 = Neutralan", "3 = Negativan")) +  # Assuming two sentiment values; adjust as needed
   theme(
     axis.text.x = element_text(color = "black"),
     axis.text.y = element_text(color = "black"),
@@ -2528,18 +2527,18 @@ ggplot(gg1, aes(x = factor(SENTIMENT), y = BrojObjava, fill = factor(SENTIMENT))
   coord_flip()
 
 
-gg1 %>% filter(INDUSTRIJA == "Zdravlje") %>% 
+gg1 %>% filter(INDUSTRIJA == "Zdravstvena industrija") %>% 
 ggplot(., aes(x = factor(SENTIMENT), y = BrojObjava, fill = factor(SENTIMENT))) +
   geom_bar(stat = "identity") +
   labs(
     x = "Sentiment",
     y = "Broj Objava",
-    title = "Sentiment u industriji Zdravlja"
+    title = "Sentiment u zdravstvenoj industriji "
   )  +
 #  scale_fill_discrete(name = "Sentiment")+
   scale_fill_manual(values = c("grey10", "grey30", "grey50", "grey70"), name = "Sentiment",
   breaks = c("1", "2", "3"),
-  labels = c("1 = Positive", "2 = Neutral", "3 = Negative")) +
+  labels = c("1 = Pozitivan", "2 = Neutralan", "3 = Negativan")) +
   theme_minimal() +
   theme(
     axis.text.x = element_text(color = "black"),
@@ -2548,6 +2547,146 @@ ggplot(., aes(x = factor(SENTIMENT), y = BrojObjava, fill = factor(SENTIMENT))) 
     axis.title.y = element_text(color = "black"),
     plot.title = element_text(color = "black")
   )
+
+
+# Filter the data for INDUSTRIJA == "ICT"
+filtered_data <- gg1 %>%
+  filter(INDUSTRIJA == "Zdravstvena industrija")
+
+# Calculate the number of rows for each SENTIMENT
+sentiment_counts <- filtered_data %>%
+  group_by(SENTIMENT) %>%
+  summarise(BrojObjava = sum(BrojObjava))
+
+# Calculate the percentage within the ICT category
+sentiment_counts <- sentiment_counts %>%
+  mutate(PercentTotal = (BrojObjava / sum(BrojObjava)) * 100)
+
+# Create the ggplot
+ggplot(sentiment_counts, aes(x = factor(SENTIMENT), y = PercentTotal, fill = factor(SENTIMENT))) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = paste0(round(PercentTotal, 2), "%")), vjust = -0.5) + # Add labels
+  labs(
+    x = "Sentiment",
+    y = "Percentage of Total",
+    title = "Sentiment Distribution within Zdravstvena industrija Category"
+  ) +
+  scale_fill_manual(
+    values = c("grey10", "grey30", "grey50", "grey70"),
+    name = "Sentiment",
+    breaks = c("1", "2", "3"),
+    labels = c("1 = Pozitivan", "2 = Neutralan", "3 = Negativan")
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(color = "black"),
+    axis.text.y = element_text(color = "black"),
+    axis.title.x = element_text(color = "black"),
+    axis.title.y = element_text(color = "black"),
+    plot.title = element_text(color = "black")
+  )
+
+
+
+# Filter the data for INDUSTRIJA == "ICT"
+filtered_data <- gg1 %>%
+  filter(INDUSTRIJA == "Financijska industrija")
+
+# Calculate the number of rows for each SENTIMENT
+sentiment_counts <- filtered_data %>%
+  group_by(SENTIMENT) %>%
+  summarise(BrojObjava = sum(BrojObjava))
+
+# Calculate the percentage within the ICT category
+sentiment_counts <- sentiment_counts %>%
+  mutate(PercentTotal = (BrojObjava / sum(BrojObjava)) * 100)
+
+# Create the ggplot
+ggplot(sentiment_counts, aes(x = factor(SENTIMENT), y = PercentTotal, fill = factor(SENTIMENT))) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = paste0(round(PercentTotal, 2), "%")), vjust = -0.5) + # Add labels
+  labs(
+    x = "Sentiment",
+    y = "Percentage of Total",
+    title = "Sentiment Distribution within Financijska industrija Category"
+  ) +
+  scale_fill_manual(
+    values = c("grey10", "grey30", "grey50", "grey70"),
+    name = "Sentiment",
+    breaks = c("1", "2", "3"),
+    labels = c("1 = Pozitivan", "2 = Neutralan", "3 = Negativan")
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(color = "black"),
+    axis.text.y = element_text(color = "black"),
+    axis.title.x = element_text(color = "black"),
+    axis.title.y = element_text(color = "black"),
+    plot.title = element_text(color = "black")
+  )
+
+
+
+# Filter the data for INDUSTRIJA == "ICT"
+filtered_data <- gg1 %>%
+  filter(INDUSTRIJA == "ICT")
+
+# Calculate the number of rows for each SENTIMENT
+sentiment_counts <- filtered_data %>%
+  group_by(SENTIMENT) %>%
+  summarise(BrojObjava = sum(BrojObjava))
+
+# Calculate the percentage within the ICT category
+sentiment_counts <- sentiment_counts %>%
+  mutate(PercentTotal = (BrojObjava / sum(BrojObjava)) * 100)
+
+# Create the ggplot
+ggplot(sentiment_counts, aes(x = factor(SENTIMENT), y = PercentTotal, fill = factor(SENTIMENT))) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = paste0(round(PercentTotal, 2), "%")), vjust = -0.5) + # Add labels
+  labs(
+    x = "Sentiment",
+    y = "Percentage of Total",
+    title = "Sentiment Distribution within ICT Category"
+  ) +
+  scale_fill_manual(
+    values = c("grey10", "grey30", "grey50", "grey70"),
+    name = "Sentiment",
+    breaks = c("1", "2", "3"),
+    labels = c("1 = Pozitivan", "2 = Neutralan", "3 = Negativan")
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(color = "black"),
+    axis.text.y = element_text(color = "black"),
+    axis.title.x = element_text(color = "black"),
+    axis.title.y = element_text(color = "black"),
+    plot.title = element_text(color = "black")
+  )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ```
 
@@ -2712,7 +2851,8 @@ table_output <- table_data %>%
 table_output
 
 
-
+dta <- dta %>%
+  filter(!is.na(SENTIMENT))
 
 ggplot(data = dta, aes(x = factor(SENTIMENT), fill = factor(SENTIMENT))) +
   geom_bar() +
@@ -2725,7 +2865,7 @@ ggplot(data = dta, aes(x = factor(SENTIMENT), fill = factor(SENTIMENT))) +
     values = c("grey10", "grey30", "grey50", "grey70"), 
     name = "Sentiment",
     breaks = c("1", "2", "3"),
-    labels = c("1 = Positive", "2 = Neutral", "3 = Negative")
+    labels = c("1 = Pozitivan", "2 = Neutralan", "3 = Negativan")
   ) +
   theme_minimal() +
   theme(
@@ -2767,9 +2907,9 @@ proba <- stemmed %>%
   inner_join(CroSentilex_Gold, by = "word") %>% 
   group_by(V1) %>%
   count(sentiment) %>% 
-  mutate(sentiment = case_when(sentiment == 0 ~ "Neutral",
-                                 sentiment == 1 ~ "Negative",
-                                 sentiment == 2 ~ "Positive")) %>%
+  mutate(sentiment = case_when(sentiment == 0 ~ "Neutralan",
+                                 sentiment == 1 ~ "Negativan",
+                                 sentiment == 2 ~ "Pozitivan")) %>%
   spread(sentiment, n) %>%
   mutate(Sentiment_netto = Positive - Negative) 
 
@@ -2826,19 +2966,19 @@ doprinos_sentimentu(stemmed %>%
 NRC_some <- LilaHR_long %>%
   rename("word" = "korijen") %>%
   filter(Emotion %in% c("Anger",
-                        #"Anticipation",
+                        "Anticipation",
                         "Disgust"
                         
                         )) %>%
   mutate(Emotion = recode(Emotion,
                           "Anger" = "Ljutnja",
-                          #"Anticipation" = "Iščekivanje",
+                          "Anticipation" = "Iščekivanje",
                           "Disgust" = "Gađenje",
-                        #  "Fear" = "Strah",
-                          #"Joy" = "Zadovoljstvo",
-                        #  "Sadness" = "Tuga"
-                          #"Surprise" = "Iznenađenje",
-                          #"Trust" = "Povjerenje"
+                          "Fear" = "Strah",
+                          "Joy" = "Zadovoljstvo",
+                          "Sadness" = "Tuga",
+                          "Surprise" = "Iznenađenje",
+                          "Trust" = "Povjerenje"
                           ))
 
 
@@ -2883,24 +3023,24 @@ doprinos_sentimentu_full_some_emotion(stemmed,20)
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 NRC_some <- LilaHR_long %>%
   rename("word" = "korijen") %>%
-  filter(Emotion %in% c(#"Anger",
-                        #"Anticipation",
-                        #"Disgust",
+  filter(Emotion %in% c("Anger",
+                      #  "Anticipation",
+                        "Disgust",
                         "Fear",
-                        #"Joy",
+                      #  "Joy",
                         "Sadness"
-                        #"Surprise",
-                        #"Trust"
+                      #  "Surprise",
+                      #  "Trust"
                         )) %>%
   mutate(Emotion = recode(Emotion,
-                          #"Anger" = "Ljutnja",
-                          #"Anticipation" = "Iščekivanje",
-                         # "Disgust" = "Gađenje",
+                          "Anger" = "Ljutnja",
+                        #  "Anticipation" = "Iščekivanje",
+                          "Disgust" = "Gađenje",
                           "Fear" = "Strah",
-                          #"Joy" = "Zadovoljstvo",
+                        #  "Joy" = "Zadovoljstvo",
                           "Sadness" = "Tuga"
-                          #"Surprise" = "Iznenađenje",
-                          #"Trust" = "Povjerenje"
+                        #  "Surprise" = "Iznenađenje",
+                        #  "Trust" = "Povjerenje"
                           ))
 
 

@@ -1,0 +1,220 @@
+---
+title: "Learning Social Media Analytics"
+subtitle: "Current state and latest trends"
+author: "Luka Sikic, PhD"
+institute: "Faculty of Croatian Studies"
+date: "(updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+
+
+```{r libs, include=TRUE, echo=FALSE,message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readxl)
+library(here)
+library(kableExtra)
+library(DT)
+library(purrr)
+library(data.table)
+library(RMySQL)
+```
+
+
+# CLASS OUTLINE
+<br>
+<br>
+- DATA OVERVIEW (full media space)
+<br>
+<br>
+- FACEBOOK
+<br>
+<br>
+- WEB
+<br>
+<br>
+- TWITTER
+<br>
+<br>
+- YOUTUBE
+<br>
+<br>
+- FORUM
+<br>
+<br>
+- INSTAGRAM
+<br>
+<br>
+
+---
+layout: true
+# DATA OVERVIEW (full media space)
+---
+
+- check the raw [data](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/data/Mediatoolkit/sample.xlsx)
+<br>
+- sourced from [Mediatoolkit](https://www.mediatoolkit.com/)
+
+
+
+```{r, echo=F}
+# read data in (one day worth of data)
+one_day_sample <- read_excel(here::here("data/Mediatoolkit/sample.xlsx"))
+```
+
+- one day worth of data (2022-01-01)
+
+```{r, echo=F}
+dim(one_day_sample)
+```
+
+- random data snapshot
+
+```{r, echo=F}
+glimpse(one_day_sample[sample(nrow(one_day_sample)),1:10])
+```
+---
+
+- avaliable data characteristics
+
+<br>
+
+```{r, echo=F}
+# other variables
+names(one_day_sample)
+```
+
+---
+<br>
+
+- rows and columns 2021
+
+
+```{r, eval = F, warning=FALSE, message=FALSE,  echo=F, cache = TRUE}
+conn <- dbConnect(RMySQL::MySQL(), dbname = "determ_all", host = "127.0.0.1",
+                  user = "Lux", password = "Theanswer0207", local_infile = TRUE)
+
+query <- "SELECT * FROM media_space_2023"
+data <- dbGetQuery(conn, query)
+
+
+#fwrite(data, "C:/Users/lukas/Desktop/dta23.xlsx")
+
+```
+```{r}
+data_read <- fread("C:/Users/lukas/Desktop/dta23.xlsx")
+```
+
+
+- time span
+
+```{r, echo=F}
+range(data_read$DATE)
+```
+
+- social media avaliable
+
+```{r, echo=F}
+unique(data_read$SOURCE_TYPE)
+```
+
+- how many authors
+
+```{r, echo=F}
+length(unique(data_read$AUTHOR))
+```
+
+- how many unique titles
+
+```{r, echo=F}
+# unique titles
+length(unique(data_read$TITLE))
+```
+
+---
+
+- how many unique sources
+
+```{r, echo=F}
+# unique sources
+length(unique(data_read$FROM))
+```
+
+- how many unique urls
+
+```{r, echo=F}
+# unique urls
+length(unique(data_read$URL))
+
+```
+
+---
+
+- how much activity per media
+
+<br>
+<br>
+```{r, echo=F, warning=FALSE, message=FALSE}
+# GENERAL OVERVIEW 
+data_read %>%
+  group_by(SOURCE_TYPE) %>%
+  count() %>%
+  arrange(desc(n)) %>%
+  mutate_if(is.numeric, format, big.mark = ".") %>%
+  kable(., "html") %>%
+  kable_styling("striped", full_width = F) 
+  
+```
+
+
+---
+
+- check some text (random choice)
+
+```{r, echo=F, warning=FALSE, message=FALSE}
+# SAMPLE SOME TXT
+data_read %>%
+  select(SOURCE_TYPE, MENTION_SNIPPET, URL) %>%
+  unique() %>%
+  sample_n(50) %>%
+  kable("html") %>% # Specify HTML to use kableExtra features effectively
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), # Make table responsive
+                full_width = F, 
+                fixed_thead = T) %>% # Keep the header visible while scrolling
+  scroll_box(width = "100%", height = "200px")
+
+```
+
+---
+
+- check some titles (random choice)
+<br> 
+<br>
+```{r, echo=F, warning=FALSE, message=FALSE}
+# SAMPLE SOME TITLES
+data_read %>%
+  select(SOURCE_TYPE, TITLE, URL) %>%
+  sample_n(50)  %>%
+  kable("html") %>% # Specify HTML to use kableExtra features effectively
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), # Make table responsive
+                full_width = F, 
+                fixed_thead = T) %>% # Keep the header visible while scrolling
+  scroll_box(width = "100%", height = "200px")
+```
+
+
+
+
+
+
