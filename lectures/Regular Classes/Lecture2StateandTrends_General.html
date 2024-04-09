@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Learning Social Media Analytics</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Luka Sikic, PhD" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Learning Social Media Analytics
+]
+.subtitle[
+## Current state and latest trends
+]
+.author[
+### Luka Sikic, PhD
+]
+.institute[
+### Faculty of Croatian Studies
+]
+.date[
+### (updated: 2024-04-09)
+]
+
+---
+
+
+
+
+
+
+
+
+
+
+# CLASS OUTLINE
+&lt;br&gt;
+&lt;br&gt;
+- DATA OVERVIEW (full media space)
+&lt;br&gt;
+&lt;br&gt;
+- FACEBOOK
+&lt;br&gt;
+&lt;br&gt;
+- WEB
+&lt;br&gt;
+&lt;br&gt;
+- TWITTER
+&lt;br&gt;
+&lt;br&gt;
+- YOUTUBE
+&lt;br&gt;
+&lt;br&gt;
+- FORUM
+&lt;br&gt;
+&lt;br&gt;
+- INSTAGRAM
+&lt;br&gt;
+&lt;br&gt;
+
+---
+layout: true
+# DATA OVERVIEW (full media space)
+---
+
+- check the raw [data](https://github.com/lusiki/Learning-Social-Media-Analytics/blob/main/data/Mediatoolkit/sample.xlsx)
+&lt;br&gt;
+- sourced from [Mediatoolkit](https://www.mediatoolkit.com/)
+
+
+
+
+
+- one day worth of data (2022-01-01)
+
+
+```
+## [1] 27604    45
+```
+
+- random data snapshot
+
+
+```
+## Rows: 27,604
+## Columns: 10
+## $ DATE         &lt;chr&gt; "2022-01-01", "2022-01-01", "2022-01-01", "2022-01-01", "…
+## $ TIME         &lt;chr&gt; "19:56:26", "09:35:39", "21:55:47", "19:15:00", "19:40:27…
+## $ TITLE        &lt;chr&gt; "RT @JuricNovaTV Dragi pratitelji, molim jedan RT. Splića…
+## $ FROM         &lt;chr&gt; "jj5", "n1info.com", "24sata.hr", "Journal.hr", "croatia"…
+## $ AUTHOR       &lt;chr&gt; "jj5", NA, NA, "Journal.hr", "morethanyouknow96", NA, NA,…
+## $ URL          &lt;chr&gt; "https://twitter.com/jj578432267/status/14773530380461916…
+## $ URL_PHOTO    &lt;chr&gt; "https://mediatoolkit.com/img/50x50,sc,s6fxpq90ojhWTQjqBd…
+## $ SOURCE_TYPE  &lt;chr&gt; "twitter", "web", "web", "facebook", "reddit", "forum", "…
+## $ GROUP_NAME   &lt;chr&gt; "Luka", "Luka", "Luka", "Luka", "Luka", "Luka", "Luka", "…
+## $ KEYWORD_NAME &lt;chr&gt; "opće", "opće", "opće", "opće", "opće", "opće", "opće", "…
+```
+---
+
+- avaliable data characteristics
+
+&lt;br&gt;
+
+
+```
+##  [1] "DATE"                  "TIME"                  "TITLE"                
+##  [4] "FROM"                  "AUTHOR"                "URL"                  
+##  [7] "URL_PHOTO"             "SOURCE_TYPE"           "GROUP_NAME"           
+## [10] "KEYWORD_NAME"          "FOUND_KEYWORDS"        "LANGUAGES"            
+## [13] "LOCATIONS"             "TAGS"                  "MANUAL_SENTIMENT"     
+## [16] "AUTO_SENTIMENT"        "MENTION_SNIPPET"       "REACH"                
+## [19] "VIRALITY"              "FOLLOWERS_COUNT"       "LIKE_COUNT"           
+## [22] "COMMENT_COUNT"         "SHARE_COUNT"           "TWEET_COUNT"          
+## [25] "LOVE_COUNT"            "WOW_COUNT"             "HAHA_COUNT"           
+## [28] "SAD_COUNT"             "ANGRY_COUNT"           "TOTAL_REACTIONS_COUNT"
+## [31] "FAVORITE_COUNT"        "RETWEET_COUNT"         "VIEW_COUNT"           
+## [34] "DISLIKE_COUNT"         "COMMENTS_COUNT"        "LIKES"                
+## [37] "DISLIKES"              "COUNT"                 "REPOST_COUNT"         
+## [40] "REDDIT_TYPE"           "REDDIT_SCORE"          "INFLUENCE_SCORE"      
+## [43] "TWEET_TYPE"            "TWEET_SOURCE_NAME"     "TWEET_SOURCE_URL"
+```
+
+---
+&lt;br&gt;
+
+- rows and columns 2021
+
+
+
+
+```r
+data_read &lt;- fread("C:/Users/lukas/Desktop/dta23.xlsx")
+```
+
+
+- time span
+
+
+```
+## [1] "2022-12-31" "2023-12-31"
+```
+
+- social media avaliable
+
+
+```
+## [1] "web"       "youtube"   "facebook"  "twitter"   "reddit"    "comment"  
+## [7] "tiktok"    "instagram" "forum"
+```
+
+- how many authors
+
+
+```
+## [1] 214699
+```
+
+- how many unique titles
+
+
+```
+## [1] 4255165
+```
+
+---
+
+- how many unique sources
+
+
+```
+## [1] 127548
+```
+
+- how many unique urls
+
+
+```
+## [1] 5412115
+```
+
+---
+
+- how much activity per media
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; SOURCE_TYPE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; n &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3.135.573 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 819.675 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 457.789 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 404.736 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 345.919 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 261.196 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; comment &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 19.196 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; tiktok &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 758 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; instagram &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 422 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+---
+
+- check some text (random choice)
+
+&lt;div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; overflow-x: scroll; width:100%; "&gt;&lt;table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;position: sticky; top:0; background-color: #FFFFFF;"&gt; SOURCE_TYPE &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;position: sticky; top:0; background-color: #FFFFFF;"&gt; MENTION_SNIPPET &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;position: sticky; top:0; background-color: #FFFFFF;"&gt; URL &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Školska knjiga zapošljava! ◾ Pravnik (m/ž) 📍 Mjesto rada: Zagreb ◾ Vodeći nacionalni i regionalni nakladnik u potrazi je za osobom sa završenim pravnim fakultetom i položenim pravosudnim ispitom. Prednost imaju kandidati s iskustvom rada u &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.facebook.com/123726393536/posts/10160738183963537/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; nismo ni mi daleko. nekidan splitski student isto. srećom nije mu uspjelo, a mogli smo biti priča prije ove. ""Također, otkriveni su i videi na kojima sam sebe mobitelom snima dok hoda po hodnicima i dvoranama fakulteta koji pohađa te pojašnjava kako &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; http://www.forum.hr/showpost.php?p=98121601&amp;amp;postcount=2983 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Lovačka škola - 13. Predavanje (15.02.2023.) Zoologija - Osnove ekologije i zaštita prirode, lovačka etika i lovački običaji (prof Rončević) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=t_73WriDW1k &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; MREŽE I UDICE Eksploatacija mora u doba antike i ranog srednjeg vijeka Hrvatski pomorski muzej Split i Muzej Grada Umaga pozivaju vas na otvorenje izložbe ""Mreže i udice"",  autorice Branke Milošević Zakić. Izložba Mreže i udice obrađuje temu &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.morski.hr/mreze-i-udice-eksploatacija-mora-u-doba-antike-i-ranog-srednjeg-vijeka/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Stream 1 - Državno prvenstvo ŠSD-a u stolnom tenisu za osnovne i srednje škole 2023. Raspored utakmica, rezultate iz svih dvorana i ostale informacije vezane za Državno prvenstvo u stolnom tenisu za osnovne i srednje škole pronađite ovdje: &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=IEBKBPdvcRs &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Predstavljen Nacrt prijedloga zakona o inkluzivnom dodatku Predstavljen Nacrt prijedloga zakona o inkluzivnom dodatku Galerija fotografija U utorak, 17. listopada 2023. predsjednik Vlade RH Andrej Plenković i ministar Marin Piletić, na sjednici &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://mrosp.gov.hr/vijesti/predstavljen-nacrt-prijedloga-zakona-o-inkluzivnom-dodatku/13194 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ana-Maria, Željka, Katica, Ivana, Manuela i Karla svojim iskustvom ukazuju na strašnu činjenicu da se moždani udar može dogoditi svakome, bez obzira na životnu dob. ⬇️⬇️⬇️ &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.facebook.com/158275260864535/posts/9479289755429659/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; su nepotrebni, jer taj prostor je do pred 2 godine izgledao potpuno očajno, ovime se dobila dodatna pozornica na kojoj se mogu izvoditi razne predstave ili koncerti nekih 4-5 mjeseca godišnje. Ničim nije narušen postojeći oblik kazališta i zapravo &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.reddit.com/r/croatia/comments/126ykc6/_/jedzr77 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Što se dogodi kada vuk želi da napadne i pojede ovce ? 🤔 Dođe lovac sa puškom i objesi vuka za noge nakon što ga napuni olovom. 😄 @avucic @sns_srbija https://t.co/AX9AFwxsm1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://twitter.com/globalpatria1/status/1616554151193808896 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; tragedije je slomile - težak život Ane Bekute SMATRALI SU ME GLUPAČOM JER “SAM GA UBILA: Sina smaknula po kratkom postupku, dve tragedije je slomile – težak život Ane Bekute By WhatsApp Slavna pjevačica Ana Bekuta nedavno je obilježila šezdeset i &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://usk-vijesti.info/smatrali-su-me-glupacom-jer-sam-ga-ubila-sina-smaknula-po-kratkom-postupku-dve-tragedije-je-slomile-tezak-zivot-ane-bekute/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Kreću prve ture u potkop Karlota. Rašani prvi ulaze u svoj rudnik Kreću prve ture u potkop Karlota. Rašani prvi ulaze u svoj rudnik Rašani u ponedjeljak prvi ulaze u njihov rudnik! Kako je i najavljeno, u ponedjeljak, 17. srpnja, &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://5portal.hr/vijesti_detalj.php?id=43536 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; U Molvama održana info-točka na temu Osim savjeta kako se u prometu ponašati odgovorno i sigurno dijeljeni su promotivni materijali policijske postaje Objavljeno: 30.01.2023. U Molvama održana info-točka na temu ""4 glavne ubojice u prometu"" Osim &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://koprivnicko-krizevacka-policija.gov.hr/vijesti/u-molvama-odrzana-info-tocka-na-temu-4-glavne-ubojice-u-prometu/21836 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; na veljaču 2022., obujam industrijske proizvodnje manji je za 1,7%. Promatrano prema kalendarski prilagođenim podacima, navedeno predstavlja blago usporavanje dinamike pada (u siječnju je pad iznosio 2,8% godišnje). U odnosu na siječanj sezonski i &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.seebiz.eu/ekonomija/product.php?title=industrijska-proizvodnja-u-veljaci-porasla-0-7-posto&amp;amp;id=289959 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Predsjednik Čović na sastanku s dužnosnicima HDZ-a BiH iz Središnje Bosne - Običan radio Predsjednik HDZ-a BiH i Hrvatskog narodnog sabora BiH dr. Dragan Čović danas je u Vitezu održao radni sastanak sa dužnosnicima Županijskog odbora HDZ-a BiH &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.obican.info/predsjednik-covic-na-sastanku-s-duznosnicima-hdz-a-bih-iz-sredisnje-bosne/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Levčenko: “Medvedev je naživciran, zato nastavlja sa svojim nepromišljenim i agresivnim izjavama” Levčenko: “Medvedev je ... I kao peto – neophodnost ubrzanja procesa transformacije u Ukrajini i europsku integraciju zemlje.  Bilo je naglašeno da &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.nacional.hr/levcenko-medvedev-je-nazivciran-zato-nastavlja-sa-svojim-nepromisljenim-i-agresivnim-izjavama/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [PODCAST] Data analitičari i inženjeri u svom se poslu susreću sa mnogim nesvakidašnjim situacijama. Nešto što je do jučer ... I, na kraju dana, postoji li jedno univerzalno rješenje za sve izazove? Pogledajte Kristinin citat i saznajte! Cijelu &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.facebook.com/142948301177251/posts/588249269980483 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; @NivesGasparic ni ja....Vukovac, Marić, Puljak, Mrak, Benčić, Orešković....i tako stalno u krug &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://twitter.com/ridarco1/status/1651898802930950144 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; šesnaestogodišnjih učenika dviju beogradskih srednjih škola, potvrdila je policija. Policiji je u utorak poslijepodne prijavljeno da je veći broj maturanata ušao u jezero na Adi Ciganliji, a da dvije osobe nisu isplivale. Policijske ophodnje i &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.vecernji.hr/vijesti/tuga-u-beogradu-dvojica-tinejdzera-utopila-se-u-jezeru-na-adi-ciganliji-1685820 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; mi se ostvariti? Petak 13-ti? - s tarotom kroz godinu Petak 13-ti? - s tarotom kroz godinu Vezani članci Petak je 13-ti, a ja imam plan, hoće li mi se ostvariti? 18 Mjesec, odgovor je: Ne Ovo je negativna karta koja pokazuje da imate neke probleme i &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.magicus.info/ezoterija/tarot/petak-13-ti-s-tarotom-kroz-godinu &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; www.elfs.hr ELFS BIG XMAS SHOPPING SATURDAY 30% NA SVE! Popust vrijedi u svim ELFS dućanima u Zagrebu, Splitu, Rijeci i Opatiji te putem ELFS web stranice www.elfs.hr uz kod: XMAS Kupon za popust moguće je iskoristiti kao popust od 30% na artikle &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.facebook.com/787865706058247/posts/897835478394602 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; comment &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; tambura: Iako nisam Hajdukovac,Stipe mi je uvijek bio posebno drag decko,pogotovo zbog njegove tuzne zivotne price,zato mu od sveg srca zelim da uspije u Americi i da ne dozivi sudbinu mnogih mladih talenata koji su prerano otisli a danas ih nigdje &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; http://www.vecernji.hr/sport/gotovo-je-hajduk-prodao-stipu-biuka-u-povijesnom-transferu-1645856/komentari#komentiraj &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; I know &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.reddit.com/r/de/comments/12fee37/_/jfflont &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Deutsche Welle: Novo sortiranje političkih snaga u Bosni i Hercegovini Ne prestaju napadi na politički „Osmerac“ u ... I može se promijeniti jedino u Parlamentu BiH dvotrećinskom većinom, kada svi za to glasamo“, rekao je tijekom posjeta &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.hkv.hr/vijesti/inozemni-tisak/41111-deutsche-welle-novo-sortiranje-politickih-snaga-u-bosni-i-hercegovini.html &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Kako bi istražio ovu vilu i snimio što je pronašao unutra, youtuber je morao dobiti posebno dopuštenje🧐👇 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.facebook.com/558084126361550/posts/565410915628871 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; I dok su pripreme za početak novog, do sada neviđenog projekt urednik Leave a Comment on Svi je jako dobro znate. Ona ... I dok su pripreme za početak novog, do sada neviđenog projekta, u punom jeku, kucnuo je čas da se ekskluzivno i zvanično &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://bosanskakrajina.online/2023/08/03/svi-je-jako-dobro-znate-ona-ulazi-u-zadrugu-7-sa-posebnim-zadatkom-evo-o-cemu-je-rijec-foto/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bilo bi dobro da suci nisu tužitelji DOBRONIĆ O TUŽBAMA PROTIV MEDIJA DOBRONIĆ O TUŽBAMA PROTIV MEDIJA Bilo bi dobro da suci nisu tužitelji Objavljeno prije 4 min Podijeli U Hrvatskoj je aktivno 945 tužbi protiv medija, urednika i novinara, od kojih &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.glas-slavonije.hr/521684/1/Bilo-bi-dobro-da-suci-nisu-tuzitelji &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 🤠 GRADSKA TURA, 8:20 🤠 🫶 U potrazi za autentičnim zagrebačkim darom, naša Purgerica Josipa ove subote svratila je u najstariju ljekarnu kod Kamenitih vrata i na Jelačić plac gdje je utočište vrijednih nalivpera Slavoljuba Penkale✒️ #slušamsljeme &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.facebook.com/604167147903804/posts/952317409755441 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Iskoristite ovu posebu ponudu u svim poslovnicama i u online shopu te ostvarite 50% popusta pri kupovini srebrne kolekcije Dubrovački nakit. Ponuda traje do 31.3.2023. https://www.krizek.hr/dubrovacki-nakit-srebro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.facebook.com/Zlatarna.Krizek/photos/a.461468450866/10160547617370867/?type=3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; RT @ivanmarkovicsec Na društvenoj mreži Facebook pojavila lažna stranica pod imenom ,,BANKA Unicredit” koja objavljuje sadržaj sa lažnim ponudama keš kredita. Putem Facebook Messenger su stizale i poruke sa sumnjivim sadržajem sa ciljem da se građani &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://twitter.com/Cicibanka1/status/1621635847974961152 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; par mjeseci. Sudsko rješenje o razvodu je doneseno. Niti ja niti bivši suprug nismo pokretali sudski postupak za imovinsko pravnu podjelu. On ne posjeduje nikakve nekretnine niti pokretnine. Ja sam u vlasništvu auta koje je kupljeno u braku kao i &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://legalis.hr/topic/138945-imovinska-podjela/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Izloženost kreativnim djelima potiče nas na razmišljanje i promišljanje koja nam može pomoći prilikom nošenja sa svakodnevicom. 🎨 Udruga ""DIRA Rijeka"" &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.facebook.com/263687959092716/posts/709670954494412 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; selfijem iz bolničkog kreveta koji je objavila na svom Instagram profilu. Tada je otkrila je da je završila u bolnici zbog otežanog disanja, ""užasne vrtoglavice"" te povišenog krvnog tlaka. ""Evo me u bolnici od kasnih noćnih sati"", napisala je Tori i &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.gloria.hr/gl/scena/price/nova-godina-nova-drama-hemiplegicna-migrena-ugrozila-14-godisnju-kcer-slavne-glumice-15297153 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; @OknarMartyr Imat ce manje stanovnika od Zadra i Osijeka &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://twitter.com/zele88/status/1696926292124352695 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ono što je upravo ovdje i sada već je najbolje. To je ono zbog čega se 𝑐ℎ𝑎𝑛 može smatrati krajnjim realizmom. Naš ... Tako kako jest."" - učitelj Guojun, Samo je samo samo (U: I pad je let) Više o knjizi saznajte i svoj primjerak potražite &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.facebook.com/464729808987089/posts/663130149147053 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; turizma u Xinjiangu Od početka svibnja ove godine u Autonomnoj ujgurskoj regiji Xinjiang odvija se procvat  “pustinjskog turizma”. Slikovito pustinjsko mjesto Kumtag u Xinjiangu prepuno je turista. Roštilj, surfanje na pijesku, jahanje deva i &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://osijek-danas.com/2023/05/17/procvat-pustinjskog-turizma-u-xinjiangu/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Omron M3 tlakomjer za nadlakticu Kratki opis Potpuno automatski tlakomjer za nadlakticu Omron M3 sa nizom naprednih funkcija. Precizno mjeri krvni tlak i otkriva nepravilan srčani puls. Opis proizvoda Specifikacije: Intellisense tehnologija Precizno &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://apoteka.hr/products/omron-m3-tlakomjer-za-nadlakticu &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ne postoji opuštenije doba godine, kad mnogi uživaju u zasluženom odmoru u dugim toplim danima i još dužim noćima uz ... I mi smo jedva dočekali ljeto te vam pripremili sjajne novitete i omiljene proizvode u veselom izdanju idealnom za svaki &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://progressive.com.hr/?p=27695 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Umjesto da upgradeam racunalo, instaliram linux i bacim ga u smece. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.reddit.com/r/croatia/comments/155ydjn/_/jt06u8b &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Archives - Stranica 2 od 135 - Običan radio 2 1 2 3 ... 135 Stranica 2 od 135 Običan radio Mostar radijska je postaja koja svoj program emitira na području cijele Hercegovine. Uz #najboljudomaćuglazbu donosimo mnoštvo aktualnih tema, osim toga i &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://obican.info/category/vijesti/vijesti-plus/page/2/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A POTRAŽITE NAS I NA VELESAJMU! Kolege iz Mozaika otvorili su svoju pop-up knjižaru na Zagrebačkom Velesajmu, a u paviljonu 7a potražite i naše naslove! &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.facebook.com/574524741356265/posts/652417256900346 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Hoćemo li ove sezone gledati Barcelonu u Ligi prvaka? Uefa je presudila... Barcelona se našla na udaru španjolskih i UEFA-inih organa zbog navodnih isplata koje je katalonski klub izvršio od 2001. do 2018. u ukupnom iznosu od 7.3 milijuna eura &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.tportal.hr/sport/clanak/hocemo-li-ove-sezone-gledati-barcelonu-u-ligi-prvaka-uefa-je-presudila-20230727 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Aaaaaa fuj, brokula frizura 🤢 Ali hot, čak i preko ovih linija 🥵 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.reddit.com/r/CroatiaAlt/comments/174rnea/_/k4c30x8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; VIDEO Iskopali tunel u najvećem makedonskom zatvoru i pokušali pobjeći, pogledajte GRUPA zatvorenika u makedonskom zatvoru GRUPA zatvorenika u makedonskom zatvoru ""Idrizovo"" pokušala je pobjeći kroz iskopani tunel, priopćilo je tamošnje Ministarstvo &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.index.hr/vijesti/clanak/video-iskopali-tunel-u-najvecem-makedonskom-zatvoru-i-pokusali-pobjeci-pogledajte/2448587.aspx &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; stjerana pred kut. Izetbegoviću nikada nije bila primamljivija ideja eskalacije odnosa u BIH nego što je danas. Nije mu mrska ni neovisna Republika Srpska ako to znači potpunu vlast u ostatku nekadašnje BIH. Dodik iza sebe ima moćnog Putina, USA i &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://poskok.info/bosnjaci-cine-sve-da-se-srpska-otcijepi-hrvati-cine-sve-da-ostanu-manjina-u-bosnjackoj-republici/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Društvo za istraživanje i potporu ŠTO SMO RADILI PROŠLI TJEDAN? 17.7.-21.7.2023. 21.07.2023 DJECA I MLADI Tjedan smo započeli aktivnosti iznenađenja koju je za nas održala volonterka Nika izrađivali smo &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://dip.hr/sto-smo-radili-prosli-tjedan-17-7-21-7-2023/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; TV doktor otkriva tri namirnice od kojih se debljamo, jednu često jedemo za doručak UPOZORAVA da su bogate rafiniranim šećerom i sabotiraju mršavljenje. Pročitajte više na Index.hr TV doktor otkriva tri namirnice od kojih se debljamo, jednu često &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://novine.hr/index-hr/tv-doktor-otkriva-tri-namirnice-od-kojih-se-debljamo-jednu-cesto-jedemo-za-dorucak &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dok je prvi tražio vode za popiti, drugi je pokrao novčanike Umaška policija zaprimila je prijavu dvoje slovenskih državljana na čiju štetu su počinjena kaznena djela krađe i računalne prijevare. Naime, nepoznata muška osoba prišla je &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.radio-banovina.hr/dok-je-prvi-trazio-vode-za-popiti-drugi-je-pokrao-novcanike/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Quote: Broo kaže: i visinu I broj cipela &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; http://www.forum.hr/showpost.php?p=101353065&amp;amp;postcount=4755 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; RIBOLOVNI RASPOREDDo lovine daleko od površine: rujan je idealan za kančarenje na pučini, evo nekoliko savjeta Rujan je uz lipanj najprikladniji mjesec za udičarenje na moru, a zbog klimatskih promjena to je sve više i listopad. U to doba godine &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://slobodnadalmacija.hr/om/ribolov/do-lovine-daleko-od-povrsine-rujan-je-idealan-za-kancarenje-na-pucini-evo-nekoliko-savjeta-1322378 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Facebookom se širi nova prijevara zbog koje biste mogli ostati bez svog profila, ali i puno više Vjerojatno ste u ... I na kraju, obavezno uključite dvostupanjsku autentifikaciju kako bi za bilo kakvo ulogiranje bilo potrebno potvrditi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://likemetkovic.hr/portal/facebookom-se-siri-nova-prijevara-zbog-koje-biste-mogli-ostati-bez-svog-profila-ali-i-puno-vise/ &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/div&gt;
+
+---
+
+- check some titles (random choice)
+&lt;br&gt; 
+&lt;br&gt;
+&lt;div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; "&gt;&lt;table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;position: sticky; top:0; background-color: #FFFFFF;"&gt; SOURCE_TYPE &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;position: sticky; top:0; background-color: #FFFFFF;"&gt; TITLE &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;position: sticky; top:0; background-color: #FFFFFF;"&gt; URL &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tomo Vukšić: Kršćanstvo svjedočiti dobrim djelima i prihvaćanjem svih ljudi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.tportal.hr/vijesti/clanak/tomo-vuksic-krscanstvo-svjedociti-dobrim-djelima-i-prihvacanjem-svih-ljudi-20230409 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; @NKRijeka Idemo dečki , samo 💪, Ne treba govoriti koliko nama navijačima znači pobjeda protiv njih. Dajte sve od sebe  i donesite tri punta u Rijeku. FF! &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://twitter.com/robert_1973_/status/1685624641786613760 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Keratinsko ravnanje kose #brazilianrenewal #keratherapytreatment -za zdraviju i sjajnu kosu - za jednostavnije održavanje frizure /bez ili uz minimalno... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.facebook.com/552708806881148/posts/605653768253318 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Polomio sam kicmu DRUNKEN WRESTLERS 2 *DamjanGames* &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=b1YhN9vBbcM &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; PKG Stari Lec 03 03 2023 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=q9DYW-jD2ew &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [FOTO/VIDEO] Snijeg i vjetar i dalje stvaraju probleme: Kamioni i tegljači s prikolicama ne mogu iz unutrašnjosti prema obali &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.tportal.hr/vijesti/clanak/foto-video-snijeg-i-vjetar-i-dalje-stvaraju-probleme-kamioni-i-tegljaci-s-prikolicama-ne-mogu-iz-unutrasnjosti-prema-obali-foto-20230123 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Nasilno ušao u kuću pa pokrao odjevene predmete, nakit i skupocjene satove u protuvrijednosti od oko 29.500 eura &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.novilist.hr/novosti/crna-kronika/nasilno-usao-u-kucu-pa-pokrao-odjevene-predmete-nakit-i-skupocjene-satove-u-protuvrijednosti-od-oko-29-500-eura/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Četiri igrača PSG-a s navijačima pjevali homofobne pjesme. Suspendirani su, kažnjen i pariški klub &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.nacional.hr/cetiri-igraca-psg-a-s-navijacima-pjevali-homofobne-pjesme-suspendirani-su-kaznjen-i-pariski-klub/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Vosak za brodove tekući (473ml)""3 u 1"" čisti, daje sjaj, zaštićuje Meguiars ONE STEP BOAT/RV CLEANER WAX LIQUID - Auto Partes d.o.o. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://partes.hr/shop/akcije/akcija-brodski-samponi-i-voskovi/vosak-za-brodove-tekuci-473ml3-u-1-cisti-daje-sjaj-zasticuje-meguiars-one-step-boat-rv-cleaner-wax-liquid-1/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; San Canzian je otvoren nakon zimske stanke i ima puno gastro novosti! &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.facebook.com/555199346630086/posts/592704362879584 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Koristim ga oko godinu dana, započeo sam neznajući ni kako se pomicati u njemu. Onda sam pogledao Tutoriale od lika s YouTubea koji se zove BlenderGuru. Njegovi tutorijali su podijeljeni u epizode gdje objašnjava osnove blendera, ali ih i aktivno upotrebljava te na kraju serijala, ako si pratio tutorijal i nešto zapamtio, moći ćeš izmodelirati... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.reddit.com/r/CroatiaAlt/comments/16d3qki/_/jzvv595 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cvitanović: Igra Hajduka svodi se na Livaju &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.index.hr/sport/clanak/cvitanovic-igra-hajduka-svodi-se-na-livaju/2431309.aspx &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Treba ti muškarac koji te neće čuvati u tajnosti, koji će biti ponosan na tebe i koji će te bez srama predstaviti svima 🤗 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.facebook.com/247379955304003/posts/9516858338356072/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ovako su izgledali kamioni na turama prema Pakistanu - VIDEO &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://kam-bus.info/ovako-su-izgledali-kamioni-na-turama-prema-pakistanu-video/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; meanwhile SQL koristi 95% memorije i dalje &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.reddit.com/r/CroatiaAlt/comments/15hpgsq/_/juqtz2k &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Može se pripremiti, samo bez presinga i očekivanja. Mislim da ako išta, ne može odmoć, gledat epizode potjere - probat odgovarati brzo, samo izvježbat taj način odgovaranja. Meni je najgore pita me nešto za neki film, razmisliš sekundu o tom, odgovoriš, i odma dolazi novo pitanje, a ja još na prošlom pitanju… zanimljiva mi je potjera kao kviz,... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.reddit.com/r/croatia/comments/17mog4l/_/k7mvqya &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Nakon što je u petak Izvršni odbor MOK-a predložio, danas su članice tog tijela na sjednici ogromnom većinom usvojile uključivanje ovih sportova u program... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.facebook.com/450051237134411/posts/751117087027823 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Zato su i najbolji :) Ja sam sa sjevera i volim ove naše slavonske i zagorske šunke, ali pršut je ipak nešto posebno :) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.reddit.com/r/croatia/comments/11ss80b/_/jcgwmom &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; STRAVA NA LASTOVU! Priveden Poljak koji već godinama vrši nasilje nad kćeri nevjenčanje partnerice &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=mktaelZhvkU &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; U Štrosiki su opet po dva traka za ravno te skretanje lijevo i desno &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; http://glas-slavonije.hr/518288/3/U-Strosiki-su-opet-po-dva-traka-za-ravno-te-skretanje-lijevo-i-desno &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Gradonačelnik Radić dodijelio vrijednosnice za polaganje vozačkog ispita najboljim osječkim maturantima - Grad &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.osijek.hr/gradonacelnik-radic-dodijelio-vrijednosnice-za-polaganje-vozackog-ispita-najboljim-osjeckim-maturantima-2/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Policija tijekom vikenda evidentirala 1.363 prekoračenja brzine i 376 alkoholiziranih vozača &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://autoportal.hr/aktualno/policija-tijekom-vikenda-evidentirala-1-363-prekoracenja-brzine-i-376-alkoholiziranih-vozaca/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sastali se Biden i Xi. ""Naše suparništvo ne smije prerasti u sukob"" &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.index.hr/vijesti/clanak/sastali-se-biden-i-xi-nase-suparnistvo-ne-smije-prerasti-u-sukob/2512946.aspx &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; U Iki u subotu regata tradicijskih barki uz kulinarski show &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://burin.hr/u-iki-u-subotu-regata-tradicijskih-barki-uz-kulinarski-show/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Lokaliziran požar na Klisu, izgorjela 4 hektara borove šume i niskog raslinja &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.index.hr/vijesti/clanak/lokaliziran-pozar-na-klisu-izgorjela-4-hektara-borove-sume-i-niskog-raslinja/2428268.aspx &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Kada na Google ukucate riječ “Barbie”, čeka vas veliko iznenađenje &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://ilidzagrad.net/kada-na-google-ukucate-rijec-barbie-ceka-vas-veliko-iznenadenje/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; youtube &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Plesači i plesačice Step'n'Jazza pobrali niz odličja na Europskom prvenstvu u stepu &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.youtube.com/watch?v=1TiH-XO-nUk &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Iako se nepristojnost obično smatra negativnom, postoji i ispravna ili pozitivna nepristojnost na poslu koja zapravo ženama može pomoći da napreduju u... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.facebook.com/266092370110248/posts/6100849093301184/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Zvijezda 'Kumova' i Josipa Lisac srele se u Umagu pa zapjevale: 'Ovaj duet bi bio fenomenalan' &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://klik.hr/povezano/zvijezda-kumova-i-josipa-lisac-srele-se-u-umagu-pa-zapjevale-ovaj-duet-bi-bio-fenomenalan-4806169 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Pripremite živce: Za vikend i u ponedjeljak četiri tramvajske linije mijenjaju trasu &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.vecernji.hr/zagreb/pripremite-zivce-za-vikend-i-u-ponedjeljak-cetiri-tramvajske-linije-mijenjaju-trasu-1655819 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ZVONE BOBAN KOMENTIRAO VRUĆU TEMU! ‘To je suludo pravilo, neka mi ga objasne, penal za Hajduk je bio’ &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.7dnevno.hr/sport/zvone-boban-komentirao-vrucu-temu-to-je-suludo-pravilo-neka-mi-ga-objasne-penal-za-hajduk-je-bio/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ‘NISAM OD VELIKIH EMOCIJA, ALI…’ Petra Meštrić kandidatima posvetila posebno mjesto i time otkrila ono o čemu se raspravljalo: Sad se sve zna o njezinoj diplomi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://infokiosk.net/nisam-od-velikih-emocija-ali-petra-mestric-kandidatima-posvetila-posebno-mjesto-i-time-otkrila-ono-o-cemu-se-raspravljalo-sad-se-sve-zna-o-njezinoj-diplomi/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Obilne kiše u Španjolskoj: Prekinut željeznički promet, padalo drveće... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://n1info.hr/svijet/obilne-kise-u-spanjolskoj-prekinut-zeljeznicki-promet-padalo-drvece/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; USNE DVIJE LINIJE, “NEMA” JAGODICE, DRUGA OSOBA Ljudi trljaju oči i ne vjeruju: Evo kako je Aneli Ahmić izgledala prije svih operacija LINK U KOMENTARU ⤵️ &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.facebook.com/563676552444618/posts/721155620030043 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Zbog ovih bi razloga svatko trebao imati Strijelce za prijatelje &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.index.hr/horoskop/clanak/zbog-ovih-bi-razloga-svatko-trebao-imati-strijelce-za-prijatelje/2515910.aspx &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; reddit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jesi li siguran da je paket napustio Mađarsku? Na zadnjem koraku su samo posta.hu i neka njihova mail adresa mada gore piše beli+manastir. Možda stvarno Mađari nisu proslijedili. Probaj slati na taj mail. Sretno! &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.reddit.com/r/hrvatska/comments/18stpry/_/kf9tcmy &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sindikati Petrokemije: Pokrenuti proizvodnju i dovršiti proces promjene vlasništva &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://direktno.hr/razvoj/sindikati-petrokemije-pokrenuti-proizvodnju-i-dovrsiti-proces-promjene-vlasnistva-309347/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Novogradnja - ZG (vol. 4) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; http://www.forum.hr/showpost.php?p=100810613&amp;amp;postcount=5802 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Lansiran prvi turski satelit za posmatranje, koristit će ga za odbranu i prilikom katastrofa • Novosti &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://tvprofil.com/novosti/lansiran-prvi-turski-satelit-za-posmatranje-koristit-ce-ga-za-odbranu-i-prilikom-katastrofa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; U novogodišnjoj noći aktivirali ručnu bombu i ozlijedili mladića (27) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.vecernji.hr/vijesti/u-novogodisnjoj-noci-aktivirali-rucnu-bombu-i-ozlijedili-mladica-27-1646356 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Maja Grgić Novaković: koncert i promocija spota nove pjesme “Svijet gdje nismo sami” u Zagrebu &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; http://news.leportale.com/doc?id=846693793 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; (UŽIVO) HAJDUK OTIŠAO U GOSTE, DOČEKAO I POJAČANJE: ‘Nadam se da će nam pomoći’, traži se pobjeda &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.dnevno.hr/sport/uzivo-hajduk-otisao-u-goste-docekao-i-pojacanje-nadam-se-da-ce-nam-pomoci-trazi-se-pobjeda-2088980/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; FOTO Vilim Puclin: Nemoguće je da u tri mjeseca izgledaš kao fotomodel s naslovnice Men’s healtha &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://regionalni.com/foto-vilim-puclin-nemoguce-je-da-u-tri-mjeseca-izgledas-kao-fotomodel-s-naslovnice-mens-healtha/ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; SAMO MLIJEKO I VOĆE! UKUSAN I ZDRAV DESERT BEZ ŽELATINE I PEČENJA ZA 5 MINUTA... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.facebook.com/554894643345749/posts/566274375541109 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; twitter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ovoje tačno moja baba je išla 5km u školu uzbrdo po snegu od metar i po a vraćala se 6km nizbrdo po snegu od metar. https://t.co/bivJ7sJoIM RT @015_petar Ova odluka je najveći maskar u istoriji obrazovanja na ovim prostorima. Učilo se, pod svećama, lojanicama, fenjerima... Išlo se kilometrima u školu i nazad, u učionicama se ložilo da bi bilo toplo, za vreme svih ratova neko je neke časove držao deci... Mi kao narod izumiremo. Dno https://t.co/ant2XBWuEq &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://twitter.com/Rodoljub_Minsk/status/1664715509491703808 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; facebook &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Malena Jolly bi se radi ovako stisnula uz svog čovjeka🥰 Ova crna njuškica je jaako dobra, mazna i privržena čovjeku, a trenutno je u aktivnoj potrazi za... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.facebook.com/641971491313648/posts/761730152671114 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Započelo je slavlje Nove godine: U Puli je započelo okupljanje na Portarati gdje će pjevati Badrić &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://x.com.hr/rss.php?id=hr30c2bf298a54e88ef2e46960bb3c03c8&amp;amp;category=fun_HR &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Biografija pape emeritusa Benedikta XVI. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://laudato.hr/vijesti/vatikan/biografija-pape-emeritusa-benedikta-xvi &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Novi testovi bi konačno mogli dijagnosticirati dugotrajni COVID &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.plivamed.net/vijesti/clanak/19428/Novi-testovi-bi-konacno-mogli-dijagnosticirati-dugotrajni-COVID.html &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; web &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sky: Naglesmann je sve bliže novom klubu &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; https://www.index.hr/sport/clanak/sky-naglesmann-je-sve-blize-novom-klubu/2460997.aspx &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/div&gt;
+
+
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

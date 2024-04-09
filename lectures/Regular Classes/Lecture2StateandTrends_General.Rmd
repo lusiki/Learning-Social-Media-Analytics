@@ -210,7 +210,7 @@ data_read %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), # Make table responsive
                 full_width = F, 
                 fixed_thead = T) %>% # Keep the header visible while scrolling
-  scroll_box(width = "100%", height = "200px")
+  scroll_box(width = "100%", height = "400px")
 ```
 
 
