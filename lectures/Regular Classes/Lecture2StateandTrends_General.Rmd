@@ -399,7 +399,7 @@ web %>%
 
 ---
 
-- summary of important sources (by likes)
+- pages (by likes)
   
 ```{r, echo=F, warning=FALSE, message=FALSE}
 web %>% 
@@ -417,6 +417,81 @@ web %>%
                 fixed_thead = T) %>% # Keep the header visible while scrolling
   scroll_box(width = "100%", height = "400px")
 ```
+
+
+---
+
+- pages (by comment)
+  
+```{r, echo=F, warning=FALSE, message=FALSE}
+web %>% 
+  group_by(FROM_SITE) %>%
+  summarise(LIKES = sum(LIKE_COUNT),
+            COMMENT = sum(COMMENT_COUNT),
+            REACH = sum(REACH),
+            VIRALITY = sum(VIRALITY)) %>%
+  arrange(desc(COMMENT)) %>%
+  head(1000) %>%
+  mutate_if(is.numeric, format, big.mark = ",")  %>%
+  kable("html") %>% # Specify HTML to use kableExtra features effectively
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), # Make table responsive
+                full_width = F, 
+                fixed_thead = T) %>% # Keep the header visible while scrolling
+  scroll_box(width = "100%", height = "400px")
+```
+
+
+
+---
+
+- pages (by reach)
+  
+```{r, echo=F, warning=FALSE, message=FALSE}
+web %>% 
+  group_by(FROM_SITE) %>%
+  summarise(LIKES = sum(LIKE_COUNT),
+            COMMENT = sum(COMMENT_COUNT),
+            REACH = sum(REACH),
+            VIRALITY = sum(VIRALITY)) %>%
+  arrange(desc(REACH)) %>%
+  head(1000) %>%
+  mutate_if(is.numeric, format, big.mark = ",")  %>%
+  kable("html") %>% # Specify HTML to use kableExtra features effectively
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), # Make table responsive
+                full_width = F, 
+                fixed_thead = T) %>% # Keep the header visible while scrolling
+  scroll_box(width = "100%", height = "400px")
+```
+
+
+
+---
+
+- pages (by virality)
+  
+```{r, echo=F, warning=FALSE, message=FALSE}
+web %>% 
+  group_by(FROM_SITE) %>%
+  summarise(LIKES = sum(LIKE_COUNT),
+            COMMENT = sum(COMMENT_COUNT),
+            REACH = sum(REACH),
+            VIRALITY = sum(VIRALITY)) %>%
+  arrange(desc(REACH)) %>%
+  head(1000) %>%
+  mutate_if(is.numeric, format, big.mark = ",")  %>%
+  kable("html") %>% # Specify HTML to use kableExtra features effectively
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), # Make table responsive
+                full_width = F, 
+                fixed_thead = T) %>% # Keep the header visible while scrolling
+  scroll_box(width = "100%", height = "400px")
+```
+
+
+
+
+
+
+
 
 
 ---
