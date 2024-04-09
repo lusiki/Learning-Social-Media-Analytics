@@ -113,33 +113,35 @@ data <- dbGetQuery(conn, query)
 
 ```
 ```{r}
-data_read <- fread("C:/Users/lukas/Desktop/dta23.xlsx")
+data_read23 <- fread("C:/Users/lukas/Desktop/dta23.xlsx")
+#data_read22 <- fread("C:/Users/lukas/Desktop/dta23.xlsx")
+
 ```
 
 
 - time span
 
 ```{r, echo=F}
-range(data_read$DATE)
+range(data_read23$DATE)
 ```
 
 - social media avaliable
 
 ```{r, echo=F}
-unique(data_read$SOURCE_TYPE)
+unique(data_read23$SOURCE_TYPE)
 ```
 
 - how many authors
 
 ```{r, echo=F}
-length(unique(data_read$AUTHOR))
+length(unique(data_read23$AUTHOR))
 ```
 
 - how many unique titles
 
 ```{r, echo=F}
 # unique titles
-length(unique(data_read$TITLE))
+length(unique(data_read23$TITLE))
 ```
 
 ---
@@ -148,14 +150,14 @@ length(unique(data_read$TITLE))
 
 ```{r, echo=F}
 # unique sources
-length(unique(data_read$FROM))
+length(unique(data_read23$FROM))
 ```
 
 - how many unique urls
 
 ```{r, echo=F}
 # unique urls
-length(unique(data_read$URL))
+length(unique(data_read23$URL))
 
 ```
 
@@ -167,7 +169,7 @@ length(unique(data_read$URL))
 <br>
 ```{r, echo=F, warning=FALSE, message=FALSE}
 # GENERAL OVERVIEW 
-data_read %>%
+data_read23 %>%
   group_by(SOURCE_TYPE) %>%
   count() %>%
   arrange(desc(n)) %>%
@@ -184,7 +186,7 @@ data_read %>%
 
 ```{r, echo=F, warning=FALSE, message=FALSE}
 # SAMPLE SOME TXT
-data_read %>%
+data_read23 %>%
   select(SOURCE_TYPE, MENTION_SNIPPET, URL) %>%
   unique() %>%
   sample_n(50) %>%
@@ -203,7 +205,7 @@ data_read %>%
 <br>
 ```{r, echo=F, warning=FALSE, message=FALSE}
 # SAMPLE SOME TITLES
-data_read %>%
+data_read23 %>%
   select(SOURCE_TYPE, TITLE, URL) %>%
   sample_n(50)  %>%
   kable("html") %>% # Specify HTML to use kableExtra features effectively
@@ -227,7 +229,7 @@ layout: true
 
 ```{r, echo=F, warning=FALSE, message=FALSE}
 # choose variables to investigate
-data_read %>%
+data_read23 %>%
   filter(SOURCE_TYPE == "facebook") %>%
   select(AUTHOR,
          REACH,
@@ -365,7 +367,7 @@ layout: true
 
 ```{r, echo=F, warning=FALSE, message=FALSE}
 # choose variables to investigate
-data_read %>%
+data_read23 %>%
   filter(SOURCE_TYPE == "web") %>%
   select(FROM_SITE,
          AUTHOR,
@@ -384,10 +386,12 @@ data_read %>%
   
 ```{r, echo=F, warning=FALSE, message=FALSE}
 # most active authors
-web %>% 
+web %>%
   group_by(FROM_SITE) %>%
-  summarise(N = n()) %>%
-  arrange(desc(N))  %>%
+  summarise(Count = n()) %>%
+  arrange(desc(Count)) %>%
+  mutate(Percentage = (Count / sum(Count)) * 100, # Calculate percentage
+         Cumulative_Percentage = cumsum(Percentage)) %>% # Calculate cumulative percentage
   head(1000) %>%
   mutate_if(is.numeric, format, big.mark = ".") %>%
   kable("html") %>% # Specify HTML to use kableExtra features effectively
@@ -501,7 +505,7 @@ layout: true
   
 ```{r, echo=F, warning=FALSE, message=FALSE,}
 # choose variables to investigate
-data_read %>%
+data_read23 %>%
   filter(SOURCE_TYPE == "twitter") %>%
   select(AUTHOR,
          REACH,
@@ -618,7 +622,7 @@ layout: true
 <br>
 ```{r, echo=F, warning=FALSE, message=FALSE,}
 # choose variables to investigate
-data_read %>%
+data_read23 %>%
   filter(SOURCE_TYPE == "youtube") %>%
   select(AUTHOR,
          REACH,
@@ -702,7 +706,7 @@ layout: true
 
 ```{r, echo=F, warning=FALSE, message=FALSE,}
 # choose variables to investigate
-data_read %>%
+data_read23 %>%
   filter(SOURCE_TYPE == "forum") %>%
   select(FROM_SITE,
          TITLE,
@@ -736,7 +740,7 @@ layout: true
 
 ```{r, echo=F, warning=FALSE, message=FALSE,}
 # choose variables to investigate
-data_read %>%
+data_read23 %>%
   filter(SOURCE_TYPE == "instagram") %>%
   select(FROM_SITE,
          TITLE,
