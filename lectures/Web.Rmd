@@ -123,6 +123,13 @@ print(summ)
 ## Portals Analysis
 
 ```{r echo=FALSE, message=FALSE , warning=FALSE}
+
+# count unique portals
+num_portals <- dta %>%
+  summarise(count = n_distinct(FROM_SITE))
+print(num_portals)
+
+
 # Portals by activity
 activity <- dta %>%
   group_by(FROM_SITE) %>%
@@ -166,74 +173,76 @@ datatable(interaction, options = list(scrollX = TRUE, scrollY = "500px"))
 ## Authors Analysis
 
 ```{r echo=FALSE, message=FALSE , warning=FALSE}
-# Authors by activity
-authors <- dta %>%
+# Function to summarize metrics by authors
+summarize_author_metrics <- function(metric_column, metric_name) {
+  dta %>%
+    group_by(AUTHOR) %>%
+    summarise(metric = sum({{ metric_column }}, na.rm = TRUE)) %>%
+    mutate(percent = round(metric / sum(metric) * 100, 2)) %>% 
+    arrange(desc(metric)) %>%
+    rename(!!metric_name := metric)
+}
+
+# Authors by activity (post count)
+authors_activity <- dta %>%
   group_by(AUTHOR) %>%
   summarise(count = n()) %>%
   mutate(percent = round(count / sum(count) * 100, 2)) %>% 
   arrange(desc(count))
 
-datatable(authors, options = list(scrollX = TRUE, scrollY = "500px"))
+datatable(authors_activity, options = list(scrollX = TRUE, scrollY = "500px"))
 
 # Authors by reach
-authors_reach <- dta %>%
-  group_by(AUTHOR) %>%
-  summarise(reach = sum(REACH)) %>%
-  arrange(desc(reach))
-
+authors_reach <- summarize_author_metrics(REACH, "reach")
 datatable(authors_reach, options = list(scrollX = TRUE, scrollY = "500px"))
+
+# Authors by virality
+authors_virality <- summarize_author_metrics(VIRALITY, "virality")
+datatable(authors_virality, options = list(scrollX = TRUE, scrollY = "500px"))
+
+# Authors by engagement rate
+authors_engage <- summarize_author_metrics(ENGAGEMENT_RATE, "engagement_rate")
+datatable(authors_engage, options = list(scrollX = TRUE, scrollY = "500px"))
+
+# Authors by interactions
+authors_interaction <- summarize_author_metrics(INTERACTIONS, "interactions")
+datatable(authors_interaction, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 ## Articles Analysis
 
 ```{r echo=FALSE, message=FALSE , warning=FALSE, eval=TRUE}
-# Articles by reach
-articles_reach <- dta %>%
-  group_by(TITLE) %>%
-  summarise(reach = sum(REACH)) %>%
-  arrange(desc(reach)) %>%
-  slice(1:1000)
+## Articles Analysis
 
+# Function to summarize metrics by article title
+summarize_article_metrics <- function(metric_column, metric_name) {
+  dta %>%
+    group_by(TITLE) %>%
+    summarise(metric = sum({{ metric_column }}, na.rm = TRUE)) %>%
+    mutate(percent = round(metric / sum(metric) * 100, 2)) %>% 
+    arrange(desc(metric)) %>%
+    slice(1:1000) %>%  # Select top 1000 articles
+    rename(!!metric_name := metric)
+}
+
+# Articles by reach
+articles_reach <- summarize_article_metrics(REACH, "reach")
 datatable(articles_reach, options = list(scrollX = TRUE, scrollY = "500px"))
+
+# Articles by virality
+articles_virality <- summarize_article_metrics(VIRALITY, "virality")
+datatable(articles_virality, options = list(scrollX = TRUE, scrollY = "500px"))
+
+# Articles by engagement rate
+articles_engage <- summarize_article_metrics(ENGAGEMENT_RATE, "engagement_rate")
+datatable(articles_engage, options = list(scrollX = TRUE, scrollY = "500px"))
+
+# Articles by interactions
+articles_interaction <- summarize_article_metrics(INTERACTIONS, "interactions")
+datatable(articles_interaction, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 
-## Articles
-
-```{r echo=FALSE, message=FALSE , warning= FALSE, eval=FALSE}
-# Articles by activity
-articles <-  dta %>%
-  group_by(TITLE) %>%
-  summarise(count = n()) %>% 
-  arrange(desc(count))
-
-datatable(articles, options = list(scrollX = TRUE, scrollY = "500px"))
-
-```
-
-```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
-# Articles by reach
-reach <- dta %>%
-  group_by(TITLE) %>%
-  summarise(reach = sum(REACH)) %>%
-  arrange(desc(reach)) %>%
-  slice(1:1000)
-
-datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
-```
-
-
-```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
-# Articles by likes
-like <- dta %>%
-  group_by(TITLE) %>%
-  summarise(like = sum(LIKE_COUNT, na.rm = T)) %>%
-  mutate(percent = round(like / sum(like) * 100,2)) %>% 
-  arrange(desc(like)) %>%
-  slice(1:1000)
-
-datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
-```
 
 ```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
 # Articles by comments
