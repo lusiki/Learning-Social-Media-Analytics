@@ -12,193 +12,189 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Library
 
 ```{r echo=FALSE, message=FALSE , warning= FALSE}
-library(tidyverse)
-library(readxl)
-library(here)
-library(kableExtra)
-library(DT)
-library(purrr)
-library(data.table)
-library(tidytext)
-library(dplyr)
-library(lubridate)
-library(anytime)
-library(grid)
-library(wordcloud)
-library(reshape2)
-library(ggraph)
-library(widyr)
-library(topicmodels)
-library(ggthemes)
+# Load only necessary libraries, remove redundant imports
+library(tidyverse)  # Includes ggplot2, dplyr, tidyr, purrr, readr
+library(readxl)     # For reading excel files
+library(kableExtra) # For better table outputs
+library(DT)         # For interactive tables
+library(data.table) # For high-performance data manipulation
+library(lubridate)  # For date handling
+library(RMySQL)     # For MySQL connection
+library(DBI)
+library(RMySQL)
 ```
 
 ## Data
 
 
 ```{r echo=FALSE, message=FALSE, warning= FALSE}
-# read data
-dta <- fread("D:/LUKA/Freelance/Mediatoolkit/FULLDATA_NOTXT.csv")
 
-# select web
-dta <- dta %>% 
-  filter(SOURCE_TYPE == "web")
+# Connect to the database
+conn <- dbConnect(
+  RMySQL::MySQL(),
+  dbname = "determ_all",
+  host = "127.0.0.1",
+  user = "Lux",
+  password = "Theanswer0207",
+  local_infile = TRUE
+)
+
+# Define the columns of interest
+columns_of_interest <- c(
+  "DATE", "TIME", "TITLE", "FROM_SITE", "AUTHOR", "URL", "URL_PHOTO", 
+  "SOURCE_TYPE", "GROUP_NAME", "KEYWORD_NAME", "FOUND_KEYWORDS", 
+  "LANGUAGES", "LOCATIONS", "TAGS", "MANUAL_SENTIMENT", "AUTO_SENTIMENT", 
+  "MENTION_SNIPPET", "REACH", "VIRALITY", "ENGAGEMENT_RATE", "INTERACTIONS"
+)
+
+# Convert columns list to a string for SQL query
+columns_string <- paste(columns_of_interest, collapse = ", ")
+
+# Define the years to query and the corresponding tables
+years <- 2021:2024
+tables <- paste0("media_space_", years)
+
+# Query data for each year and combine row-wise
+data_list <- lapply(tables, function(table) {
+  query <- sprintf("SELECT %s FROM %s WHERE SOURCE_TYPE = 'web'", columns_string, table)
+  dbGetQuery(conn, query)
+})
+
+# Combine all dataframes row-wise
+merged_df <- bind_rows(data_list)
+
+# Disconnect from the database
+dbDisconnect(conn)
+
+# View the merged dataframe
+print(merged_df)
+
+
+
 ```
 
 ## Basic descriptives
 
-```{r echo=FALSE, message=FALSE , warning= FALSE}
+```{r echo=FALSE, message=FALSE , warning= FALSE, fig.width=15, fig.height=15}
 
-# date range
-range(dta$DATE)
-# number of articles
-nrow(dta)
+# Use combined data for analysis
+dta <- merged_df
 
-# articles over time
+# Date range
+date_range <- range(dta$DATE)
+print(date_range)
+
+# Number of articles
+num_articles <- nrow(dta)
+# print with points for milions
+print(num_articles, big.mark = ",")
+
+# Articles over time
 daily_counts <- dta %>%
+  #group by day
   group_by(DATE) %>%
+  #count number of articles
   summarise(count = n())
-
-# descriptives 
+  
+# Descriptive statistics
 summ <- daily_counts %>% 
-  summarize(min = min(count), max = max(count), 
-            mean = mean(count), q1= quantile(count, probs = 0.25), 
-            median = median(count), q3= quantile(count, probs = 0.75),
-            sd = sd(count)) %>%
-  mutate_if(is.numeric, round, digits=2) 
+  summarize(
+    min = min(count), max = max(count), 
+    mean = mean(count), q1 = quantile(count, probs = 0.25), 
+    median = median(count), q3 = quantile(count, probs = 0.75),
+    sd = sd(count)
+  ) %>%
+  mutate_if(is.numeric, round, digits = 2)
 
-summ
+print(summ)
 
-# create plot
-ggplot(data = daily_counts, aes(x = DATE, y = count)) +
-  geom_line() +
-  labs(x = "Date", y = "Number of Articles")
- 
-
+# # Create plot of articles over time but first change DATE to date type
+# 
+# daily_counts$DATE <- as.Date(daily_counts$DATE)
+# 
+# # Plot the number of articles over time in bart chart
+# ggplot(daily_counts, aes(x = DATE, y = count)) +
+#   geom_bar(stat = "identity", fill = "skyblue") +
+#   labs(title = "Number of articles over time", x = "Date", y = "Number of articles") +
+#   theme_minimal() +
+#   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-## Portals
+## Portals Analysis
 
-```{r echo=FALSE, message=FALSE , warning= FALSE}
+```{r echo=FALSE, message=FALSE , warning=FALSE}
 # Portals by activity
 activity <- dta %>%
-  group_by(FROM) %>%
+  group_by(FROM_SITE) %>%
   summarise(count = n()) %>%
-  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  mutate(percent = round(count / sum(count) * 100, 2)) %>% 
   arrange(desc(count))
 
 datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
+## Portals Metrics
 
+```{r echo=FALSE, message=FALSE , warning=FALSE}
+# Function to summarize metrics by portals
+summarize_portal_metrics <- function(metric_column, metric_name) {
+  dta %>%
+    group_by(FROM_SITE) %>%
+    summarise(metric = sum({{ metric_column }}, na.rm = TRUE)) %>%
+    mutate(percent = round(metric / sum(metric) * 100, 2)) %>% 
+    arrange(desc(metric)) %>%
+    rename(!!metric_name := metric)
+}
 
-
-```{r  eval = F, include = F, echo=FALSE, message=FALSE , warning= FALSE}
-prigorski <- dt %>%
-  filter(FROM == "prigorski.hr" ) %>%
-  distinct()
-
-write.csv2(prigorski, file = "D:/LUKA/Freelance/Mediatoolkit/prigorski.csv", row.names = T)
-```
-
-
-
-```{r echo=FALSE, message=FALSE , warning= FALSE}
 # Portals by reach
-reach <- dta %>%
-  group_by(FROM) %>%
-  summarise(reach = sum(REACH)) %>%
-  arrange(desc(reach))
-
+reach <- summarize_portal_metrics(REACH, "reach")
 datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
-```
 
-```{r echo=FALSE, message=FALSE , warning= FALSE}
 # Portals by likes
-like <- dta %>%
-  group_by(FROM) %>%
-  summarise(like = sum(LIKE_COUNT, na.rm = T)) %>%
-  mutate(percent = round(like / sum(like) * 100,2)) %>% 
-  arrange(desc(like))
+virality <- summarize_portal_metrics(VIRALITY, "virality")
+datatable(virality, options = list(scrollX = TRUE, scrollY = "500px"))
 
-datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
-```
-
-```{r echo=FALSE, message=FALSE , warning= FALSE}
 # Portals by comments
-comment <- dta %>%
-  group_by(FROM) %>%
-  summarise(comment = sum(COMMENT_COUNT, na.rm = T)) %>%
-  mutate(percent = round(comment / sum(comment) * 100,2)) %>% 
-  arrange(desc(comment))
+engage <- summarize_portal_metrics(ENGAGEMENT_RATE, "engagement_rate")
+datatable(engage, options = list(scrollX = TRUE, scrollY = "500px"))
 
-datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
-```
-
-```{r echo=FALSE, message=FALSE , warning= FALSE}
 # Portals by shares
-shares <- dta %>%
-  group_by(FROM) %>%
-  summarise(shares = sum(SHARE_COUNT, na.rm = T)) %>%
-  mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
-  arrange(desc(shares))
-
-datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
+interaction <- summarize_portal_metrics(INTERACTIONS, "interactions")
+datatable(interaction, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-## Authors
+## Authors Analysis
 
-```{r echo=FALSE, message=FALSE , warning= FALSE}
+```{r echo=FALSE, message=FALSE , warning=FALSE}
 # Authors by activity
 authors <- dta %>%
   group_by(AUTHOR) %>%
   summarise(count = n()) %>%
-  mutate(percent = round(count / sum(count) * 100,2)) %>% 
+  mutate(percent = round(count / sum(count) * 100, 2)) %>% 
   arrange(desc(count))
 
 datatable(authors, options = list(scrollX = TRUE, scrollY = "500px"))
-```
 
-```{r echo=FALSE, message=FALSE , warning= FALSE}
 # Authors by reach
-reach <- dta %>%
+authors_reach <- dta %>%
   group_by(AUTHOR) %>%
   summarise(reach = sum(REACH)) %>%
   arrange(desc(reach))
 
-datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
+datatable(authors_reach, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
-```{r echo=FALSE, message=FALSE , warning= FALSE}
-# Authors by likes
-like <- dta %>%
-  group_by(AUTHOR) %>%
-  summarise(like = sum(LIKE_COUNT, na.rm = T)) %>%
-  mutate(percent = round(like / sum(like) * 100,2)) %>% 
-  arrange(desc(like))
+## Articles Analysis
 
-datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
-```
+```{r echo=FALSE, message=FALSE , warning=FALSE, eval=TRUE}
+# Articles by reach
+articles_reach <- dta %>%
+  group_by(TITLE) %>%
+  summarise(reach = sum(REACH)) %>%
+  arrange(desc(reach)) %>%
+  slice(1:1000)
 
-```{r echo=FALSE, message=FALSE , warning= FALSE}
-# Authors by comments
-comment <- dta %>%
-  group_by(AUTHOR) %>%
-  summarise(comment = sum(COMMENT_COUNT, na.rm = T)) %>%
-  mutate(percent = round(comment / sum(comment) * 100,2)) %>% 
-  arrange(desc(comment))
-
-datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
-```
-
-```{r echo=FALSE, message=FALSE , warning= FALSE}
-# Authors by shares
-shares <- dta %>%
-  group_by(AUTHOR) %>%
-  summarise(shares = sum(SHARE_COUNT, na.rm = T)) %>%
-  mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
-  arrange(desc(shares))
-
-datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
+datatable(articles_reach, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 

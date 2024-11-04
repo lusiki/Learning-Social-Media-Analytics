@@ -399,6 +399,36 @@ web %>%
                 full_width = F, 
                 fixed_thead = T) %>% # Keep the header visible while scrolling
   scroll_box(width = "100%", height = "400px")
+
+
+
+
+
+web %>%
+  group_by(FROM_SITE) %>%
+  summarise(Count = n()) %>%
+  arrange(desc(Count)) %>%
+  mutate(Percentage = (Count / sum(Count)) * 100,  # Calculate percentage
+         Cumulative_Percentage = cumsum(Percentage)) %>%  # Calculate cumulative percentage
+  head(1000) %>%
+  mutate_if(is.numeric, format, big.mark = ".") %>%
+  kable("latex", booktabs = TRUE) %>%  # Use LaTeX for PDF rendering
+  kable_styling(bootstrap_options = c("striped", "hover"), 
+                latex_options = c("striped", "scale_down")) %>%
+  column_spec(1, width = "2cm") %>%  # Adjust the width of the first column, for example
+  footnote(general = "Source: Your Data Source", 
+           general_title = "Note: ", 
+           symbol = "Symbols: **significant at p<0.01; *significant at p<0.05")
+
+
+
+
+
+
+
+
+
+
 ```
 
 ---
