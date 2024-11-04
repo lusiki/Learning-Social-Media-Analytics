@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Web prikaz"
 author: "Lux"
 date: "2023-04-25"
 output: html_document
@@ -25,7 +25,6 @@ library(RMySQL)
 ```
 
 ## Data
-
 
 ```{r echo=FALSE, message=FALSE, warning= FALSE}
 
@@ -108,16 +107,6 @@ summ <- daily_counts %>%
 
 print(summ)
 
-# # Create plot of articles over time but first change DATE to date type
-# 
-# daily_counts$DATE <- as.Date(daily_counts$DATE)
-# 
-# # Plot the number of articles over time in bart chart
-# ggplot(daily_counts, aes(x = DATE, y = count)) +
-#   geom_bar(stat = "identity", fill = "skyblue") +
-#   labs(title = "Number of articles over time", x = "Date", y = "Number of articles") +
-#   theme_minimal() +
-#   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
 ## Portals Analysis
@@ -211,216 +200,43 @@ datatable(authors_interaction, options = list(scrollX = TRUE, scrollY = "500px")
 
 ## Articles Analysis
 
-```{r echo=FALSE, message=FALSE , warning=FALSE, eval=TRUE}
-## Articles Analysis
+```{r echo=FALSE, message=FALSE , warning=FALSE, eval=FALSE}
 
-# Function to summarize metrics by article title
-summarize_article_metrics <- function(metric_column, metric_name) {
-  dta %>%
-    group_by(TITLE) %>%
-    summarise(metric = sum({{ metric_column }}, na.rm = TRUE)) %>%
-    mutate(percent = round(metric / sum(metric) * 100, 2)) %>% 
-    arrange(desc(metric)) %>%
-    slice(1:1000) %>%  # Select top 1000 articles
-    rename(!!metric_name := metric)
-}
-
-# Articles by reach
-articles_reach <- summarize_article_metrics(REACH, "reach")
-datatable(articles_reach, options = list(scrollX = TRUE, scrollY = "500px"))
-
-# Articles by virality
-articles_virality <- summarize_article_metrics(VIRALITY, "virality")
-datatable(articles_virality, options = list(scrollX = TRUE, scrollY = "500px"))
-
-# Articles by engagement rate
-articles_engage <- summarize_article_metrics(ENGAGEMENT_RATE, "engagement_rate")
-datatable(articles_engage, options = list(scrollX = TRUE, scrollY = "500px"))
-
-# Articles by interactions
-articles_interaction <- summarize_article_metrics(INTERACTIONS, "interactions")
-datatable(articles_interaction, options = list(scrollX = TRUE, scrollY = "500px"))
-```
+dta  %>% 
+  arrange(desc(REACH)) %>%
+  head(100) 
 
 
 
-```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
-# Articles by comments
-comment <- dta %>%
-  group_by(TITLE) %>%
-  summarise(comment = sum(COMMENT_COUNT, na.rm = T)) %>%
-  mutate(percent = round(comment / sum(comment) * 100,2)) %>% 
-  arrange(desc(comment)) %>%
-  slice(1:1000)
+# Filter top 100 articles by reach, including FROM_SITE and URL columns
+top_articles_by_reach <- dta %>%
+  group_by(TITLE, FROM_SITE, URL) %>%
+  summarise(reach = sum(REACH, na.rm = TRUE)) %>%
+  arrange(desc(reach)) %>%
+  slice(1:100)  # Select top 100 articles
 
-datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
-```
+# Display the result in a datatable
+datatable(top_articles_by_reach, options = list(scrollX = TRUE, scrollY = "500px"))
 
-```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
-# Arcicles by shares
-shares <- dta %>%
-  group_by(TITLE) %>%
-  summarise(shares = sum(SHARE_COUNT, na.rm = T)) %>%
-  mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
-  arrange(desc(shares)) %>%
-  slice(1:1000)
 
-datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
+top_articles_by_reach <- dta %>%
+  group_by(TITLE, FROM_SITE, URL) %>%
+  summarise(
+    reach = sum(REACH, na.rm = TRUE),
+    virality = sum(VIRALITY, na.rm = TRUE),
+    engagement_rate = sum(ENGAGEMENT_RATE, na.rm = TRUE),
+    interactions = sum(INTERACTIONS, na.rm = TRUE)
+  ) %>%
+  arrange(desc(reach)) %>%
+  slice(1:100)  # Select top 100 articles by reach
 
-```
+# Display the result in a datatable
+datatable(top_articles_by_reach, options = list(scrollX = TRUE, scrollY = "500px"))
 
-## Humanitarne akcije
 
-```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
-
-dt <- fread("D:/LUKA/Freelance/Mediatoolkit/Humanitar.csv") %>%
-  select(-V1)
-
-daily_counts <- dt %>%
-  group_by(DATE) %>%
-  summarise(count = n())
-
-# descriptives 
-summ <- daily_counts %>% 
-  summarize(min = min(count), max = max(count), 
-            mean = mean(count), q1= quantile(count, probs = 0.25), 
-            median = median(count), q3= quantile(count, probs = 0.75),
-            sd = sd(count)) %>%
-  mutate_if(is.numeric, round, digits=2) 
-
-summ
-
-# create plot
-ggplot(data = daily_counts, aes(x = DATE, y = count)) +
-  geom_line() +
-  labs(x = "Date", y = "Number of Articles")
  
 ```
 
-
-
-
-```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
-activity <- dt %>%
-  group_by(SOURCE_TYPE) %>%
-  summarise(count = n()) %>%
-  mutate(percent = round(count / sum(count) * 100,2)) %>% 
-  arrange(desc(count))
-
-
-datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
-
-
-```
-
-
-## Web
-
-```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
-# Portals by activity
-activity <- dt %>%
-  filter(SOURCE_TYPE == "web") %>%
-  group_by(FROM) %>%
-  summarise(count = n()) %>%
-  mutate(percent = round(count / sum(count) * 100,2)) %>% 
-  arrange(desc(count))
-
-datatable(activity, options = list(scrollX = TRUE, scrollY = "500px"))
-```
-
-```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
-# Portals by reach
-reach <- dt %>%
-  filter(SOURCE_TYPE == "web") %>%
-  group_by(FROM) %>%
-  summarise(reach = sum(REACH)) %>%
-  arrange(desc(reach))
-
-datatable(reach, options = list(scrollX = TRUE, scrollY = "500px"))
-```
-
-```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
-# Portals by likes
-like <- dt %>%
-  filter(SOURCE_TYPE == "web") %>%
-  group_by(FROM) %>%
-  summarise(like = sum(LIKE_COUNT, na.rm = T)) %>%
-  mutate(percent = round(like / sum(like) * 100,2)) %>% 
-  arrange(desc(like))
-
-datatable(like, options = list(scrollX = TRUE, scrollY = "500px"))
-```
-
-```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
-# Portals by comments
-comment <- dt %>%
-  filter(SOURCE_TYPE == "web") %>%
-  group_by(FROM) %>%
-  summarise(comment = sum(COMMENT_COUNT, na.rm = T)) %>%
-  mutate(percent = round(comment / sum(comment) * 100,2)) %>% 
-  arrange(desc(comment))
-
-datatable(comment, options = list(scrollX = TRUE, scrollY = "500px"))
-```
-
-```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
-# Portals by shares
-shares <- dt %>%
-  filter(SOURCE_TYPE == "web") %>%
-  group_by(FROM) %>%
-  summarise(shares = sum(SHARE_COUNT, na.rm = T)) %>%
-  mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
-  arrange(desc(shares))
-
-datatable(shares, options = list(scrollX = TRUE, scrollY = "500px"))
-```
-
-
-```{r echo=FALSE, message=FALSE , warning= FALSE, eval=F}
-dt %>%
-  filter(SOURCE_TYPE == "web") %>%
-  group_by(TITLE) %>%
-  summarise(shares = sum(SHARE_COUNT, na.rm = T),
-            likes = sum(LIKE_COUNT, na.rm = T),
-            comments = sum(COMMENT_COUNT, na.rm = T),
-            reach = sum(REACH_COUNT, na.rm = T)) %>%
- # mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
-  arrange(desc(reach)) %>%
-  slice(1:200) %>%
-  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
-
-```
-
-
-
-```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
-dt %>%
-  filter(SOURCE_TYPE == "web") %>%
-  group_by(TITLE) %>%
-  summarise(shares = sum(REACH, na.rm = T),
-            likes = sum(LIKE_COUNT, na.rm = T),
-            comments = sum(COMMENT_COUNT, na.rm = T),
-            shares = sum(SHARE_COUNT, na.rm = T),
-            across(URL)) %>%
- # mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
-  arrange(desc(likes)) %>%
-  slice(1:200) %>%
-  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
-```
-
-```{r echo=FALSE, message=FALSE , warning= FALSE, eval=T}
-dt %>%
-  filter(SOURCE_TYPE == "web") %>%
-  group_by(TITLE) %>%
-  summarise(shares = sum(REACH, na.rm = T),
-            likes = sum(LIKE_COUNT, na.rm = T),
-            comments = sum(COMMENT_COUNT, na.rm = T),
-            shares = sum(SHARE_COUNT, na.rm = T)) %>%
- # mutate(percent = round(shares / sum(shares) * 100,2)) %>% 
-  arrange(desc(comments)) %>%
-  slice(1:200) %>%
-  datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
-```
 
 
 
@@ -490,49 +306,6 @@ stop_corpus <- my_stop_words %>%
 head(sample_n(stop_corpus,100),15)
 
 ```
-
-
-
-```{r echo=FALSE, message=FALSE , warning= FALSE, eval=F}
-
-token_dt <- dt %>%
-  filter(SOURCE_TYPE == "web") %>%
-  unnest_tokens(word, FULL_TEXT, "words")
-
-token_dt %>% 
-  anti_join(stop_corpus, by = "word") %>%
-  mutate(word = gsub("\\d+", NA, word)) %>%
-  mutate(word = gsub("^[a-zA-Z]$", NA, word)) -> tokenTidy
-
-tokenTidy %>%
-  filter(!is.na(word)) -> tokenTidy
-
-
-# check
-tokenTidy %>%
-  sample_n(.,15) %>%
-  datatable(., rownames = FALSE, options = list(pageLength = 5, scrollX=T))
-
-
-```
-
-
-
-```{r echo=FALSE, message=FALSE , warning= FALSE, eval=F}
-tokenTidy[,.N,by = word][order(-N),][N > 1500]
-
-## Vizualize most common words
-tokenTidy[,.N,by = word][N>5000][order(-N),][,word := reorder(word,N)][]
-tokenTidy[,.N,by = word][N>20000][order(-N),][,word := reorder(word,N)] %>%
-  ggplot(aes(word, N)) +
-  geom_col() +
-  xlab(NULL) +
-  coord_flip() +
-  theme_economist()
-```
-
-
-
 
 
 
