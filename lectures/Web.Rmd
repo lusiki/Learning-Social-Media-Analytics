@@ -200,7 +200,7 @@ datatable(authors_interaction, options = list(scrollX = TRUE, scrollY = "500px")
 
 ## Articles Analysis
 
-```{r echo=FALSE, message=FALSE , warning=FALSE, eval=FALSE}
+```{r echo=FALSE, message=FALSE , warning=FALSE, eval=T}
 
 dta  %>% 
   arrange(desc(REACH)) %>%
