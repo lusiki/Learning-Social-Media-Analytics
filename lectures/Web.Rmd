@@ -66,7 +66,7 @@ merged_df <- bind_rows(data_list)
 dbDisconnect(conn)
 
 # View the merged dataframe
-print(merged_df)
+#print(merged_df)
 
 
 
@@ -204,36 +204,20 @@ datatable(authors_interaction, options = list(scrollX = TRUE, scrollY = "500px")
 
 dta  %>% 
   arrange(desc(REACH)) %>%
-  head(100) 
+  head(100) %>%
+  datatable(options = list(scrollX = TRUE, scrollY = "500px"))
 
 
 
-# Filter top 100 articles by reach, including FROM_SITE and URL columns
-top_articles_by_reach <- dta %>%
-  group_by(TITLE, FROM_SITE, URL) %>%
-  summarise(reach = sum(REACH, na.rm = TRUE)) %>%
-  arrange(desc(reach)) %>%
-  slice(1:100)  # Select top 100 articles
+dta  %>% 
+  arrange(desc(VIRALITY)) %>%
+  head(100) %>%
+  datatable(options = list(scrollX = TRUE, scrollY = "500px"))
 
-# Display the result in a datatable
-datatable(top_articles_by_reach, options = list(scrollX = TRUE, scrollY = "500px"))
-
-
-top_articles_by_reach <- dta %>%
-  group_by(TITLE, FROM_SITE, URL) %>%
-  summarise(
-    reach = sum(REACH, na.rm = TRUE),
-    virality = sum(VIRALITY, na.rm = TRUE),
-    engagement_rate = sum(ENGAGEMENT_RATE, na.rm = TRUE),
-    interactions = sum(INTERACTIONS, na.rm = TRUE)
-  ) %>%
-  arrange(desc(reach)) %>%
-  slice(1:100)  # Select top 100 articles by reach
-
-# Display the result in a datatable
-datatable(top_articles_by_reach, options = list(scrollX = TRUE, scrollY = "500px"))
-
-
+dta  %>% 
+  arrange(desc(INTERACTIONS)) %>%
+  head(100) %>%
+  datatable(options = list(scrollX = TRUE, scrollY = "500px"))
  
 ```
 
